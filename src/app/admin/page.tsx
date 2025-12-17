@@ -1,0 +1,21 @@
+import AdminDashboard from "./page.client";
+
+import { getClients } from "@/data/clients";
+import { getProjects } from "@/data/projects";
+import { hasCloudinaryConfig, hasDatabaseConfig } from "@/lib/env";
+import { requireAdminSession } from "@/server/auth";
+
+export default async function AdminPage() {
+  await requireAdminSession();
+
+  const [clients, projects] = await Promise.all([getClients(), getProjects()]);
+
+  return (
+    <AdminDashboard
+      clients={clients}
+      projects={projects}
+      databaseReady={hasDatabaseConfig()}
+      cloudinaryReady={hasCloudinaryConfig()}
+    />
+  );
+}
