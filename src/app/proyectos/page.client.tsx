@@ -25,7 +25,7 @@ const hasLocaleContent = (value: LocaleText | undefined): boolean => {
 };
 
 const PAGE_TITLE = {
-  es: "Proyectos destacados",
+  es: "Algunos proyectos",
   en: "Featured work",
 } as const;
 

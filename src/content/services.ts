@@ -11,16 +11,16 @@ export const SERVICES: Service[] = [
   {
     slug: "estrategia-producto",
     title: {
-      es: "Estrategia de producto",
+      es: "Producción de Arte Digital",
       en: "Product strategy",
     },
     summary: {
-      es: "Diseñamos hojas de ruta accionables alineadas con los objetivos del negocio.",
+      es: "Desarrollo y materialización de obras digitales. Abarcamos desde la conceptualización visual hasta la ejecución técnica, creando piezas que integran nuevas tecnologías y estéticas contemporáneas.",
       en: "We design actionable roadmaps aligned with business goals.",
     },
     outcomes: [
       {
-        es: "Diagnóstico de oportunidades y priorización de iniciativas",
+        es: "Audio Espacial y Producción Multicanal",
         en: "Opportunity assessment and initiative prioritisation",
       },
       {
@@ -36,11 +36,11 @@ export const SERVICES: Service[] = [
   {
     slug: "diseno-ux-ui",
     title: {
-      es: "Diseño UX/UI",
+      es: "Audio Espacial y Producción Multicanal",
       en: "UX/UI design",
     },
     summary: {
-      es: "Creamos experiencias accesibles basadas en investigación con usuarios.",
+      es: "Diseño sonoro y producción técnica especializada para conciertos de música experimental y electroacústica. Gestionamos sistemas de audio inmersivo y difusión multicanal para crear experiencias auditivas envolventes.",
       en: "We craft accessible experiences grounded in user research.",
     },
     outcomes: [
@@ -61,11 +61,11 @@ export const SERVICES: Service[] = [
   {
     slug: "experimentacion-growth",
     title: {
-      es: "Experimentación y growth",
+      es: "Taller de Impresión 3D y Fabricación",
       en: "Experimentation & growth",
     },
     summary: {
-      es: "Validamos hipótesis con experimentos rápidos y mediciones continuas.",
+      es: "Soluciones de materialización física. Ofrecemos servicios de impresión 3D para prototipado, creación de piezas artísticas y modelado, llevando tus ideas del plano digital al objeto tangible.",
       en: "We validate hypotheses with rapid experiments and continuous measurement.",
     },
     outcomes: [
