@@ -102,7 +102,7 @@ export default function HomePageClient({
           </div>
         </div>
 
-        <div className="relative overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/5">
+        <div className="relative overflow-hidden rounded-3xl border border-foreground/10 bg-gradient-to-br from-foreground/5 via-background to-background">
           <Image
             src="/images/hero-visual.svg"
             alt={
@@ -115,30 +115,38 @@ export default function HomePageClient({
             className="object-cover"
           />
           <div className="relative grid gap-4 p-6 text-sm text-foreground/80 sm:p-8">
-            <div className="rounded-2xl bg-background/90 p-4 shadow-sm backdrop-blur">
-              <p className="font-semibold">Discovery</p>
-              <p className="mt-2 text-sm text-foreground/70">
-                {locale === "es"
-                  ? "Sumamos investigación rápida y workshops con tu equipo para entender el contexto desde el inicio."
-                  : "We run rapid research and workshops with your team to understand context from day one."}
-              </p>
-            </div>
-            <div className="rounded-2xl bg-background/90 p-4 shadow-sm backdrop-blur">
-              <p className="font-semibold">Delivery</p>
-              <p className="mt-2 text-sm text-foreground/70">
-                {locale === "es"
-                  ? "Trabajamos en ciclos cortos, con prototipos validados y métricas claras por sprint."
-                  : "We work in short cycles, with validated prototypes and clear metrics each sprint."}
-              </p>
-            </div>
-            <div className="rounded-2xl bg-background/90 p-4 shadow-sm backdrop-blur">
-              <p className="font-semibold">Growth</p>
-              <p className="mt-2 text-sm text-foreground/70">
-                {locale === "es"
-                  ? "Activamos experimentos de crecimiento y aprendizaje continuo para sostener resultados."
-                  : "We activate growth experiments and continuous learning to sustain outcomes."}
-              </p>
-            </div>
+            {["Discovery", "Delivery", "Growth"].map((phase, index) => (
+              <div
+                key={phase}
+                className="group relative overflow-hidden rounded-3xl border border-foreground/10 bg-background/90 p-5 shadow-sm backdrop-blur transition hover:-translate-y-[2px] hover:border-foreground/20"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-foreground/5 via-transparent to-transparent" />
+                <div className="absolute -left-6 top-1/2 hidden h-20 w-20 -translate-y-1/2 rounded-full bg-foreground/5 blur-2xl sm:block" />
+                <div className="relative flex items-start gap-3">
+                  <div className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl bg-foreground/5 text-xs font-semibold text-foreground/70">
+                    {`0${index + 1}`}
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-base font-semibold tracking-tight text-foreground">
+                      {phase}
+                    </p>
+                    <p className="text-sm leading-relaxed text-foreground/70">
+                      {phase === "Discovery"
+                        ? locale === "es"
+                          ? "Sumamos investigación rápida y workshops con tu equipo para entender el contexto desde el inicio."
+                          : "We run rapid research and workshops with your team to understand context from day one."
+                        : phase === "Delivery"
+                          ? locale === "es"
+                            ? "Trabajamos en ciclos cortos, con prototipos validados y métricas claras por sprint."
+                            : "We work in short cycles, with validated prototypes and clear metrics each sprint."
+                          : locale === "es"
+                            ? "Activamos experimentos de crecimiento y aprendizaje continuo para sostener resultados."
+                            : "We activate growth experiments and continuous learning to sustain outcomes."}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
