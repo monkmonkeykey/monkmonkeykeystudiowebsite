@@ -87,12 +87,13 @@ export default function ProjectsPageClient({
 
   return (
     <div className="space-y-12">
-      <header className="overflow-hidden rounded-3xl border border-foreground/10 bg-gradient-to-br from-foreground/5 via-background to-background shadow-sm">
-        <div className="grid gap-8 p-6 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] lg:items-center lg:p-10">
+      <header className="overflow-hidden rounded-4xl border border-foreground/10 bg-gradient-to-br from-primary/5 via-background to-accent/5 p-6 shadow-sm sm:p-10">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] lg:items-center">
           <div className="max-w-3xl space-y-4">
-            <span className="inline-flex items-center gap-2 rounded-full border border-foreground/10 bg-foreground/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-foreground/60">
+            <div className="inline-flex items-center gap-2 rounded-full bg-foreground/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-foreground/70 ring-1 ring-foreground/10">
+              <span className="size-2 rounded-full bg-primary" />
               {translate(locale, FILTER_LABEL)}
-            </span>
+            </div>
             <div className="space-y-3">
               <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
                 {translate(locale, PAGE_TITLE)}
@@ -100,6 +101,20 @@ export default function ProjectsPageClient({
               <p className="text-base text-foreground/70 sm:text-lg">
                 {translate(locale, PAGE_COPY)}
               </p>
+            </div>
+            <div className="flex flex-wrap gap-2 text-xs text-foreground/60">
+              <span className="inline-flex items-center gap-2 rounded-full bg-background/70 px-3 py-1.5 ring-1 ring-foreground/10">
+                <span className="size-2 rounded-full bg-emerald-400" />
+                {locale === "es" ? "Experiencias inmersivas" : "Immersive experiences"}
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full bg-background/70 px-3 py-1.5 ring-1 ring-foreground/10">
+                <span className="size-2 rounded-full bg-sky-400" />
+                {locale === "es" ? "Producción técnica" : "Technical production"}
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full bg-background/70 px-3 py-1.5 ring-1 ring-foreground/10">
+                <span className="size-2 rounded-full bg-fuchsia-400" />
+                {locale === "es" ? "Arte + nuevos medios" : "Art + new media"}
+              </span>
             </div>
           </div>
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/5">
@@ -128,7 +143,7 @@ export default function ProjectsPageClient({
             onClick={() => setActiveCategory("all")}
             className={`rounded-full border px-4 py-1.5 text-sm transition ${
               activeCategory === "all"
-                ? "border-foreground/20 bg-foreground/10 text-foreground"
+                ? "border-primary/30 bg-primary/10 text-primary"
                 : "border-foreground/10 text-foreground/60 hover:border-foreground/20 hover:text-foreground"
             }`}
           >
@@ -141,7 +156,7 @@ export default function ProjectsPageClient({
               onClick={() => setActiveCategory(category)}
               className={`rounded-full border px-4 py-1.5 text-sm transition ${
                 activeCategory === category
-                  ? "border-foreground/20 bg-foreground/10 text-foreground"
+                  ? "border-primary/30 bg-primary/10 text-primary"
                   : "border-foreground/10 text-foreground/60 hover:border-foreground/20 hover:text-foreground"
               }`}
             >
@@ -162,7 +177,7 @@ export default function ProjectsPageClient({
               <Link
                 key={project.slug}
                 href={`/proyectos/${project.slug}`}
-                className="group flex h-full flex-col overflow-hidden rounded-3xl border border-foreground/10 bg-background shadow-sm transition hover:-translate-y-1 hover:border-foreground/20 hover:shadow-md"
+                className="group flex h-full flex-col overflow-hidden rounded-3xl border border-foreground/10 bg-background/80 shadow-sm transition hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg"
               >
                 <div className="relative aspect-[16/9] w-full overflow-hidden border-b border-foreground/10 bg-foreground/5">
                   <Image
@@ -205,9 +220,7 @@ export default function ProjectsPageClient({
                   </div>
                   <div className="mt-auto flex items-center justify-between text-sm font-semibold text-foreground/70">
                     <span>{translate(locale, CARD_CTA)}</span>
-                    <span aria-hidden className="transition group-hover:translate-x-1">
-                      →
-                    </span>
+                    <span aria-hidden className="transition group-hover:translate-x-1">→</span>
                   </div>
                 </div>
               </Link>
@@ -216,7 +229,7 @@ export default function ProjectsPageClient({
         )}
       </div>
 
-      <section className="overflow-hidden rounded-3xl border border-foreground/10 bg-gradient-to-r from-foreground/5 via-foreground/10 to-foreground/5 p-6 shadow-sm sm:p-8 lg:p-10">
+      <section className="overflow-hidden rounded-3xl border border-foreground/10 bg-gradient-to-r from-primary/10 via-background to-accent/10 p-6 shadow-sm sm:p-8 lg:p-10">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div className="space-y-3">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-foreground/60">
@@ -228,7 +241,7 @@ export default function ProjectsPageClient({
           </div>
           <Link
             href="/contacto"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-semibold text-background shadow transition hover:bg-foreground/90"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-semibold text-background shadow transition hover:-translate-y-0.5 hover:bg-foreground/90"
           >
             <span>{translate(locale, CTA_ACTION)}</span>
             <span aria-hidden>↗</span>

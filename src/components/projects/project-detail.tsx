@@ -99,7 +99,7 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
 
   return (
     <article className="space-y-8">
-      <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-foreground/10 bg-foreground/5 px-4 py-3">
+      <div className="flex flex-wrap items-center justify-between gap-3 overflow-hidden rounded-3xl border border-foreground/10 bg-gradient-to-r from-primary/10 via-background to-foreground/5 px-4 py-3 shadow-sm">
         <Link
           href="/proyectos"
           className="inline-flex items-center gap-2 text-sm font-semibold text-foreground/70 transition hover:text-foreground"
@@ -109,14 +109,14 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
         </Link>
         <Link
           href="/contacto"
-          className="inline-flex items-center gap-2 rounded-full bg-foreground px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-background transition hover:bg-foreground/90"
+          className="inline-flex items-center gap-2 rounded-full bg-foreground px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-background shadow-sm transition hover:-translate-y-0.5 hover:bg-foreground/90"
         >
           <span>{translate(locale, CONTACT_CTA)}</span>
           <span aria-hidden>↗</span>
         </Link>
       </div>
 
-      <div className="overflow-hidden rounded-3xl border border-foreground/10 bg-gradient-to-br from-foreground/5 via-background to-background shadow-sm">
+      <div className="overflow-hidden rounded-3xl border border-foreground/10 bg-gradient-to-br from-primary/5 via-background to-accent/5 shadow-sm">
         <div className="grid gap-10 p-6 lg:grid-cols-[minmax(0,1.8fr)_minmax(0,1fr)] lg:p-10">
           <div className="space-y-7">
             <div className="relative overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/5 shadow-sm">

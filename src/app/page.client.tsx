@@ -50,9 +50,19 @@ const HOME_SERVICES_COPY = {
   en: "We assemble the right squad for every stage—from validating opportunities to accelerating products in production.",
 } as const;
 
+const HOME_SERVICES_CTA = {
+  es: "Ver todos los servicios",
+  en: "See all services",
+} as const;
+
 const HOME_PROJECTS_TITLE = {
   es: "Historias recientes",
   en: "Recent stories",
+} as const;
+
+const HOME_PROJECTS_CTA = {
+  es: "Ver proyectos",
+  en: "Browse projects",
 } as const;
 
 const HOME_CLIENTS_TITLE = {
@@ -63,6 +73,11 @@ const HOME_CLIENTS_TITLE = {
 const HOME_CLIENTS_WEBSITE = {
   es: "Abrir sitio",
   en: "Open site",
+} as const;
+
+const HOME_CONTACT_CTA = {
+  es: "Agenda una llamada",
+  en: "Book a call",
 } as const;
 
 const translateLocalizedValue = (locale: Locale, value: LocalizedValue): string =>
@@ -78,162 +93,246 @@ export default function HomePageClient({
 
   return (
     <div className="space-y-20">
-      <section className="grid gap-10 lg:grid-cols-[1.05fr,0.95fr] lg:items-center">
-        <div className="space-y-6">
-          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
-            {translate(locale, HERO_HEADLINE)}
-          </h1>
-          <p className="text-base text-foreground/70 sm:text-lg">
-            {translate(locale, HERO_SUBTITLE)}
-          </p>
-          <div className="flex flex-wrap gap-3">
-            <Link
-              href="/contacto"
-              className="rounded-full bg-foreground px-5 py-2 text-sm font-semibold text-background transition hover:bg-foreground/90"
-            >
-              {translate(locale, HERO_PRIMARY)}
-            </Link>
-            <Link
-              href="/proyectos"
-              className="rounded-full border border-foreground/20 px-5 py-2 text-sm font-semibold text-foreground transition hover:border-foreground/40 hover:text-foreground/80"
-            >
-              {translate(locale, HERO_SECONDARY)}
-            </Link>
-          </div>
-        </div>
-
-        <div className="relative overflow-hidden rounded-3xl border border-foreground/10 bg-gradient-to-br from-foreground/5 via-background to-background">
-          <Image
-            src="/images/hero-visual.svg"
-            alt={
-              locale === "es"
-                ? "Ilustración abstracta del flujo de trabajo de producto"
-                : "Abstract illustration of a product workflow"
-            }
-            fill
-            priority
-            className="object-cover"
-          />
-          <div className="relative grid gap-4 p-6 text-sm text-foreground/80 sm:p-8">
-            {["Discovery", "Delivery", "Growth"].map((phase, index) => (
-              <div
-                key={phase}
-                className="group relative overflow-hidden rounded-3xl border border-foreground/10 bg-background/90 p-5 shadow-sm backdrop-blur transition hover:-translate-y-[2px] hover:border-foreground/20"
+      <section className="overflow-hidden rounded-4xl border border-foreground/10 bg-gradient-to-br from-primary/5 via-background to-accent/5 p-6 shadow-sm sm:p-10">
+        <div className="grid gap-10 lg:grid-cols-[1.05fr,0.95fr] lg:items-center">
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-2 rounded-full bg-foreground/5 px-3 py-1 text-xs font-medium text-foreground/70 ring-1 ring-foreground/10">
+              <span className="size-2 rounded-full bg-primary shadow-[0_0_0_4px_rgba(56,189,248,0.12)]" />
+              {locale === "es" ? "Estudio creativo" : "Creative studio"}
+            </div>
+            <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+              {translate(locale, HERO_HEADLINE)}
+            </h1>
+            <p className="text-base text-foreground/70 sm:text-lg">
+              {translate(locale, HERO_SUBTITLE)}
+            </p>
+            <div className="flex flex-wrap gap-3 text-sm text-foreground/70">
+              <div className="inline-flex items-center gap-2 rounded-full bg-background/60 px-3 py-2 ring-1 ring-foreground/10">
+                <span className="size-2 rounded-full bg-emerald-400" />
+                {locale === "es" ? "Arte + tecnología" : "Art + technology"}
+              </div>
+              <div className="inline-flex items-center gap-2 rounded-full bg-background/60 px-3 py-2 ring-1 ring-foreground/10">
+                <span className="size-2 rounded-full bg-sky-400" />
+                {locale === "es" ? "Instalaciones inmersivas" : "Immersive setups"}
+              </div>
+              <div className="inline-flex items-center gap-2 rounded-full bg-background/60 px-3 py-2 ring-1 ring-foreground/10">
+                <span className="size-2 rounded-full bg-fuchsia-400" />
+                {locale === "es" ? "Producción técnica" : "Technical production"}
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/contacto"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-semibold text-background shadow-lg shadow-foreground/20 transition hover:-translate-y-0.5 hover:bg-foreground/90"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-foreground/5 via-transparent to-transparent" />
-                <div className="absolute -left-6 top-1/2 hidden h-20 w-20 -translate-y-1/2 rounded-full bg-foreground/5 blur-2xl sm:block" />
-                <div className="relative flex items-start gap-3">
-                  <div className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl bg-foreground/5 text-xs font-semibold text-foreground/70">
-                    {`0${index + 1}`}
-                  </div>
-                  <div className="space-y-1">
-                    <p className="text-base font-semibold tracking-tight text-foreground">
-                      {phase}
-                    </p>
-                    <p className="text-sm leading-relaxed text-foreground/70">
-                      {phase === "Discovery"
-                        ? locale === "es"
-                          ? "Sumamos investigación rápida y workshops con tu equipo para entender el contexto desde el inicio."
-                          : "We run rapid research and workshops with your team to understand context from day one."
-                        : phase === "Delivery"
+                {translate(locale, HERO_PRIMARY)}
+                <span aria-hidden>↗</span>
+              </Link>
+              <Link
+                href="/proyectos"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-foreground/20 bg-background/80 px-5 py-2.5 text-sm font-semibold text-foreground transition hover:-translate-y-0.5 hover:border-foreground/30 hover:text-foreground/90"
+              >
+                {translate(locale, HERO_SECONDARY)}
+                <span aria-hidden>→</span>
+              </Link>
+            </div>
+          </div>
+
+          <div className="relative overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/[0.04]">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(56,189,248,0.12),transparent_34%),radial-gradient(circle_at_80%_30%,rgba(192,132,252,0.12),transparent_30%)]" aria-hidden />
+            <div className="relative grid gap-4 p-6 text-sm text-foreground/80 sm:p-8">
+              {["Discovery", "Delivery", "Growth"].map((phase, index) => (
+                <div
+                  key={phase}
+                  className="relative overflow-hidden rounded-2xl border border-foreground/10 bg-background/80 p-4 backdrop-blur transition hover:-translate-y-[2px] hover:border-primary/30"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-transparent" />
+                  <div className="relative flex items-start gap-3">
+                    <div className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-xs font-semibold text-primary">
+                      {`0${index + 1}`}
+                    </div>
+                    <div className="space-y-1">
+                      <p className="text-base font-semibold tracking-tight text-foreground">
+                        {phase}
+                      </p>
+                      <p className="text-sm leading-relaxed text-foreground/70">
+                        {phase === "Discovery"
                           ? locale === "es"
-                            ? "Trabajamos en ciclos cortos, con prototipos validados y métricas claras por sprint."
-                            : "We work in short cycles, with validated prototypes and clear metrics each sprint."
-                          : locale === "es"
-                            ? "Activamos experimentos de crecimiento y aprendizaje continuo para sostener resultados."
-                            : "We activate growth experiments and continuous learning to sustain outcomes."}
-                    </p>
+                            ? "Sumamos investigación rápida y workshops con tu equipo para entender el contexto desde el inicio."
+                            : "We run rapid research and workshops with your team to understand context from day one."
+                          : phase === "Delivery"
+                            ? locale === "es"
+                              ? "Trabajamos en ciclos cortos, con prototipos validados y métricas claras por sprint."
+                              : "We work in short cycles, with validated prototypes and clear metrics each sprint."
+                            : locale === "es"
+                              ? "Activamos experimentos de crecimiento y aprendizaje continuo para sostener resultados."
+                              : "We activate growth experiments and continuous learning to sustain outcomes."}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       <section className="space-y-6">
-        <header className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div className="space-y-2">
-            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-              {translate(locale, HOME_SERVICES_TITLE)}
-            </h2>
-            <p className="text-base text-foreground/70">
-              {translate(locale, HOME_SERVICES_COPY)}
-            </p>
-          </div>
-          <div className="relative aspect-[4/3] w-full max-w-sm overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/5">
-            <Image
-              src="/images/services-visual.svg"
-              alt={
-                locale === "es"
-                  ? "Ilustración abstracta de servicios colaborativos"
-                  : "Abstract illustration of collaborative services"
-              }
-              fill
-              className="object-cover"
-            />
-          </div>
-        </header>
-        <div className="grid gap-6 lg:grid-cols-3">
-          {services.map((service) => (
-            <article
-              key={service.slug}
-              className="rounded-3xl border border-foreground/10 bg-background p-6 shadow-sm"
-            >
-              <div className="space-y-3">
-                <span className="text-xs uppercase tracking-[0.2em] text-foreground/50">
-                  {locale === "es" ? "Servicio" : "Service"}
-                </span>
-                <h3 className="text-xl font-semibold text-foreground">
-                  {translate(locale, service.title)}
-                </h3>
-                <p className="text-sm text-foreground/70">
-                  {translate(locale, service.summary)}
+        <header className="overflow-hidden rounded-3xl border border-foreground/10 bg-gradient-to-r from-foreground/5 via-background to-foreground/5 p-6 shadow-sm sm:p-8">
+          <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+            <div className="space-y-3">
+              <div className="inline-flex items-center gap-2 rounded-full bg-foreground/5 px-3 py-1 text-xs font-semibold text-foreground/70 ring-1 ring-foreground/10">
+                <span className="size-2 rounded-full bg-primary" />
+                {locale === "es" ? "Servicios" : "Services"}
+              </div>
+              <div className="space-y-2">
+                <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+                  {translate(locale, HOME_SERVICES_TITLE)}
+                </h2>
+                <p className="text-base text-foreground/70">
+                  {translate(locale, HOME_SERVICES_COPY)}
                 </p>
               </div>
-              <ul className="mt-6 space-y-2 text-sm text-foreground/70">
+              <div className="flex flex-wrap gap-2 text-xs text-foreground/60">
+                <span className="inline-flex items-center gap-2 rounded-full bg-background/60 px-3 py-1.5 ring-1 ring-foreground/10">
+                  <span className="size-2 rounded-full bg-emerald-400" />
+                  {locale === "es" ? "Discovery a delivery" : "Discovery to delivery"}
+                </span>
+                <span className="inline-flex items-center gap-2 rounded-full bg-background/60 px-3 py-1.5 ring-1 ring-foreground/10">
+                  <span className="size-2 rounded-full bg-sky-400" />
+                  {locale === "es" ? "Equipos extendidos" : "Embedded squads"}
+                </span>
+                <span className="inline-flex items-center gap-2 rounded-full bg-background/60 px-3 py-1.5 ring-1 ring-foreground/10">
+                  <span className="size-2 rounded-full bg-fuchsia-400" />
+                  {locale === "es" ? "Pruebas rápidas" : "Rapid tests"}
+                </span>
+              </div>
+              <Link
+                href="/servicios"
+                className="inline-flex w-fit items-center justify-center gap-2 rounded-full bg-foreground px-4 py-2 text-sm font-semibold text-background shadow-sm transition hover:-translate-y-0.5 hover:bg-foreground/90"
+              >
+                {translate(locale, HOME_SERVICES_CTA)}
+                <span aria-hidden>↗</span>
+              </Link>
+            </div>
+            <div className="relative flex flex-wrap gap-3 rounded-2xl bg-background/80 p-4 ring-1 ring-foreground/10">
+              {services.map((service, index) => (
+                <Link
+                  key={service.slug}
+                  href={`/servicios#${service.slug}`}
+                  className="group inline-flex items-center gap-2 rounded-full border border-foreground/10 bg-background px-3 py-2 text-sm font-semibold text-foreground/80 transition hover:-translate-y-0.5 hover:border-primary/30 hover:text-foreground"
+                >
+                  <span className="flex size-7 items-center justify-center rounded-full bg-primary/10 text-[11px] font-semibold text-primary">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  {translate(locale, service.title)}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </header>
+
+        <div className="grid gap-6 lg:grid-cols-3">
+          {services.map((service, serviceIndex) => (
+            <article
+              key={service.slug}
+              className="flex h-full flex-col justify-between rounded-3xl border border-foreground/10 bg-background/80 p-6 shadow-sm ring-1 ring-transparent transition hover:-translate-y-1 hover:border-primary/30 hover:ring-primary/10"
+            >
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+                    {locale === "es" ? "Servicio" : "Service"}
+                    <span className="text-[10px]">{String(serviceIndex + 1).padStart(2, "0")}</span>
+                  </span>
+                  <span className="rounded-full bg-foreground/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-foreground/60">
+                    {locale === "es" ? "Duración" : "Length"}
+                  </span>
+                </div>
+                <h3 className="text-xl font-semibold text-foreground">{translate(locale, service.title)}</h3>
+                <p className="text-sm text-foreground/70">{translate(locale, service.summary)}</p>
+              </div>
+              <div className="mt-6 space-y-2">
                 {service.outcomes.map((outcome, index) => (
-                  <li key={`${service.slug}-outcome-${index}`} className="flex gap-2">
-                    <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-foreground/50" />
+                  <div
+                    key={`${service.slug}-outcome-${index}`}
+                    className="flex items-start gap-3 rounded-2xl border border-foreground/10 bg-foreground/[0.03] px-4 py-3 text-sm text-foreground/70"
+                  >
+                    <span className="mt-0.5 flex size-6 items-center justify-center rounded-full bg-primary/10 text-[11px] font-semibold text-primary ring-1 ring-primary/20">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
                     <span>{translate(locale, outcome)}</span>
-                  </li>
+                  </div>
                 ))}
-              </ul>
+              </div>
+              <Link
+                href={`/servicios#${service.slug}`}
+                className="mt-6 inline-flex items-center justify-center gap-2 rounded-full border border-foreground/10 px-4 py-2 text-sm font-semibold text-foreground transition hover:-translate-y-0.5 hover:border-primary/30 hover:text-foreground"
+              >
+                {locale === "es" ? "Ver formato" : "View format"}
+                <span aria-hidden>→</span>
+              </Link>
             </article>
           ))}
         </div>
       </section>
 
       <section className="space-y-6">
-        <header className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-          <div className="space-y-2">
-            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-              {translate(locale, HOME_PROJECTS_TITLE)}
-            </h2>
-            <p className="text-base text-foreground/70">
-              {locale === "es"
-                ? "Casos recientes donde acompañamos lanzamientos y activaciones clave."
-                : "Recent cases where we supported key launches and activations."}
-            </p>
-          </div>
-          <div className="relative aspect-[4/3] w-full max-w-sm overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/5">
-            <Image
-              src="/images/projects-visual.svg"
-              alt={
-                locale === "es"
-                  ? "Ilustración abstracta de tableros de proyecto"
-                  : "Abstract illustration of project boards"
-              }
-              fill
-              className="object-cover"
-            />
+        <header className="overflow-hidden rounded-3xl border border-foreground/10 bg-gradient-to-r from-foreground/5 via-background to-foreground/5 p-6 shadow-sm sm:p-8">
+          <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+            <div className="space-y-2">
+              <div className="inline-flex items-center gap-2 rounded-full bg-foreground/5 px-3 py-1 text-xs font-semibold text-foreground/70 ring-1 ring-foreground/10">
+                <span className="size-2 rounded-full bg-primary" />
+                {locale === "es" ? "Proyectos" : "Projects"}
+              </div>
+              <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+                {translate(locale, HOME_PROJECTS_TITLE)}
+              </h2>
+              <p className="text-base text-foreground/70">
+                {locale === "es"
+                  ? "Casos recientes donde acompañamos lanzamientos y activaciones clave."
+                  : "Recent cases where we supported key launches and activations."}
+              </p>
+              <div className="flex flex-wrap gap-2 text-xs text-foreground/60">
+                <span className="inline-flex items-center gap-2 rounded-full bg-background/60 px-3 py-1.5 ring-1 ring-foreground/10">
+                  <span className="size-2 rounded-full bg-emerald-400" />
+                  {locale === "es" ? "Museos y universidades" : "Museums & universities"}
+                </span>
+                <span className="inline-flex items-center gap-2 rounded-full bg-background/60 px-3 py-1.5 ring-1 ring-foreground/10">
+                  <span className="size-2 rounded-full bg-sky-400" />
+                  {locale === "es" ? "Experiencias inmersivas" : "Immersive experiences"}
+                </span>
+                <span className="inline-flex items-center gap-2 rounded-full bg-background/60 px-3 py-1.5 ring-1 ring-foreground/10">
+                  <span className="size-2 rounded-full bg-fuchsia-400" />
+                  {locale === "es" ? "Producción técnica" : "Technical production"}
+                </span>
+              </div>
+              <Link
+                href="/proyectos"
+                className="inline-flex w-fit items-center justify-center gap-2 rounded-full bg-foreground px-4 py-2 text-sm font-semibold text-background shadow-sm transition hover:-translate-y-0.5 hover:bg-foreground/90"
+              >
+                {translate(locale, HOME_PROJECTS_CTA)}
+                <span aria-hidden>↗</span>
+              </Link>
+            </div>
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/5">
+              <Image
+                src="/images/projects-visual.svg"
+                alt={
+                  locale === "es"
+                    ? "Ilustración abstracta de tableros de proyecto"
+                    : "Abstract illustration of project boards"
+                }
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </header>
         <div className="grid gap-6 lg:grid-cols-2">
           {projects.slice(0, 2).map((project) => (
             <article
               key={project.slug}
-              className="flex h-full flex-col overflow-hidden rounded-3xl border border-foreground/10 bg-background shadow-sm"
+              className="group flex h-full flex-col overflow-hidden rounded-3xl border border-foreground/10 bg-background/80 shadow-sm transition hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg"
             >
               <div className="relative aspect-[16/9] w-full overflow-hidden border-b border-foreground/10 bg-foreground/5">
                 {project.video ? (
@@ -252,7 +351,7 @@ export default function HomePageClient({
                     alt={translate(locale, project.cover.alt)}
                     fill
                     sizes="(min-width: 1024px) 50vw, 100vw"
-                    className="object-cover"
+                    className="object-cover transition duration-500 group-hover:scale-105"
                   />
                 )}
               </div>
@@ -261,42 +360,40 @@ export default function HomePageClient({
                   <p className="text-xs uppercase tracking-[0.2em] text-foreground/50">
                     {translateLocalizedValue(locale, project.client)}
                   </p>
-                  <span className="inline-flex items-center rounded-full border border-foreground/10 px-3 py-1 text-xs uppercase tracking-[0.2em] text-foreground/50">
+                  <span className="inline-flex items-center rounded-full border border-foreground/10 bg-foreground/5 px-3 py-1 text-xs uppercase tracking-[0.2em] text-foreground/50">
                     {project.year}
                   </span>
                 </div>
-                <h3 className="text-xl font-semibold">
-                  {translate(locale, project.name)}
-                </h3>
-                <p className="text-sm text-foreground/70">
-                  {translate(locale, project.subtitle)}
-                </p>
-                <p className="text-sm text-foreground/70">
+                <div className="space-y-2">
+                  <h3 className="text-xl font-semibold">
+                    {translate(locale, project.name)}
+                  </h3>
+                  <p className="text-sm text-foreground/70">
+                    {translate(locale, project.subtitle)}
+                  </p>
+                </div>
+                <p className="text-sm text-foreground/70 line-clamp-3">
                   {translate(locale, project.description[0])}
                 </p>
-                <div className="mt-2 flex flex-wrap gap-2 text-xs text-foreground/60">
+                <div className="flex flex-wrap gap-2 text-xs text-foreground/60">
                   {project.categories.map((category) => (
                     <span
                       key={`${project.slug}-cat-${category}`}
-                      className="rounded-full border border-foreground/10 px-3 py-1"
+                      className="rounded-full border border-foreground/10 bg-foreground/5 px-3 py-1"
                     >
                       {translate(locale, categoryLabels[category])}
                     </span>
                   ))}
                 </div>
-                <div className="mt-auto pt-4">
-                  <span className="text-xs uppercase tracking-[0.2em] text-foreground/40">
+                <div className="mt-auto flex items-center justify-between pt-2 text-sm font-semibold text-foreground/70">
+                  <Link href={`/proyectos/${project.slug}`} className="inline-flex items-center gap-2 transition hover:text-foreground">
+                    <span>{locale === "es" ? "Ver caso completo" : "Read full case"}</span>
+                    <span aria-hidden className="transition group-hover:translate-x-1">→</span>
+                  </Link>
+                  <span className="text-xs uppercase tracking-[0.2em] text-foreground/50">
                     {translateLocalizedValue(locale, project.location)}
                   </span>
                 </div>
-              </div>
-              <div className="border-t border-foreground/10 bg-foreground/5 px-6 py-4">
-                <Link
-                  href={`/proyectos/${project.slug}`}
-                  className="text-sm font-semibold text-foreground/80 transition hover:text-foreground"
-                >
-                  {locale === "es" ? "Ver caso completo" : "Read full case"}
-                </Link>
               </div>
             </article>
           ))}
@@ -304,35 +401,33 @@ export default function HomePageClient({
       </section>
 
       <section className="space-y-6">
-        <header className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-          <div className="space-y-2">
-            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-              {translate(locale, HOME_CLIENTS_TITLE)}
-            </h2>
-            <p className="text-base text-foreground/70">
-              {locale === "es"
-                ? "Colaboramos con equipos de producto, innovación y data en toda Latinoamérica y Europa."
-                : "We collaborate with product, innovation, and data teams across Latin America and Europe."}
-            </p>
-          </div>
-          <div className="relative aspect-[4/3] w-full max-w-sm overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/5">
-            <Image
-              src="/images/clients-visual.svg"
-              alt={
-                locale === "es"
-                  ? "Ilustración abstracta de una red de clientes"
-                  : "Abstract illustration of a client network"
-              }
-              fill
-              className="object-cover"
-            />
+        <header className="overflow-hidden rounded-3xl border border-foreground/10 bg-gradient-to-r from-foreground/5 via-background to-foreground/5 p-6 shadow-sm sm:p-8">
+          <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+            <div className="space-y-2">
+              <div className="inline-flex items-center gap-2 rounded-full bg-foreground/5 px-3 py-1 text-xs font-semibold text-foreground/70 ring-1 ring-foreground/10">
+                <span className="size-2 rounded-full bg-primary" />
+                {translate(locale, HOME_CLIENTS_TITLE)}
+              </div>
+              <p className="text-base text-foreground/70">
+                {locale === "es"
+                  ? "Colaboramos con equipos de producto, innovación y data en toda Latinoamérica y Europa."
+                  : "We collaborate with product, innovation, and data teams across Latin America and Europe."}
+              </p>
+            </div>
+            <Link
+              href="/contacto"
+              className="inline-flex w-fit items-center justify-center gap-2 rounded-full bg-foreground px-4 py-2 text-sm font-semibold text-background shadow-sm transition hover:-translate-y-0.5 hover:bg-foreground/90"
+            >
+              {translate(locale, HOME_CONTACT_CTA)}
+              <span aria-hidden>↗</span>
+            </Link>
           </div>
         </header>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {clients.map((client) => (
             <article
               key={client.slug}
-              className="flex h-full flex-col gap-4 rounded-2xl border border-foreground/10 bg-background/80 p-4 shadow-sm"
+              className="flex h-full flex-col gap-4 rounded-2xl border border-foreground/10 bg-background/80 p-4 shadow-sm transition hover:-translate-y-1 hover:border-primary/30"
             >
               {client.image && (
                 <div className="relative h-16 w-16 overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/5">
