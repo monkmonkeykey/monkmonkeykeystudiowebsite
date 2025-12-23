@@ -8,8 +8,10 @@ import { getProjectBySlug, getProjects } from "@/data/projects";
 const DEFAULT_DESCRIPTION =
   "MonkMonkeyKey acompaña a equipos de producto y museografía con experiencias memorables.";
 
+type ProjectPageParams = { slug: string };
+
 type ProjectPageProps = {
-  params: { slug: string };
+  params: Promise<ProjectPageParams> | ProjectPageParams;
 };
 
 export async function generateStaticParams() {
@@ -21,7 +23,9 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
-  const project = await getProjectBySlug(params.slug);
+  const { slug } = await Promise.resolve(params);
+
+  const project = await getProjectBySlug(slug);
 
   if (!project) {
     return {
@@ -57,7 +61,9 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
-  const project = await getProjectBySlug(params.slug);
+  const { slug } = await Promise.resolve(params);
+
+  const project = await getProjectBySlug(slug);
 
   if (!project) {
     notFound();
