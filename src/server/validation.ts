@@ -59,6 +59,8 @@ export const projectPayloadSchema = z.object({
   subtitle: localeTextSchema,
   categories: z.array(projectCategorySchema).min(1),
   year: z.string().min(1),
+  startYear: z.number().int().optional(),
+  endYear: z.number().int().optional(),
   client: localizedValueSchema,
   location: localizedValueSchema,
   cover: projectImageSchema,
@@ -68,4 +70,5 @@ export const projectPayloadSchema = z.object({
   meta: z.array(projectMetaSchema).optional(),
   entities: z.array(z.string().min(1)).optional(),
   order: z.number().int().optional(),
+  isPrivate: z.boolean().optional(),
 });
