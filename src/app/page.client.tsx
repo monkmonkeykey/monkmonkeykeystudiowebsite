@@ -284,7 +284,7 @@ export default function HomePageClient({
               </div>
               <div className="border-t border-foreground/10 bg-foreground/5 px-6 py-4">
                 <Link
-                  href={`/proyectos#${project.slug}`}
+                  href={`/proyectos/${project.slug}`}
                   className="text-sm font-semibold text-foreground/80 transition hover:text-foreground"
                 >
                   {locale === "es" ? "Ver caso completo" : "Read full case"}
