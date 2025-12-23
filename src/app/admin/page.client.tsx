@@ -737,6 +737,8 @@ const ProjectManager = ({
       subtitle: createLocaleField(),
       categories: [] as ProjectCategory[],
       year: "",
+      startYear: "",
+      endYear: "",
       client: createLocaleField(),
       location: createLocaleField(),
       cover: createImageField(randomId()),
@@ -746,6 +748,7 @@ const ProjectManager = ({
       meta: [] as ProjectMetaField[],
       entities: [] as string[],
       order: "",
+      isPrivate: false,
     }),
     [],
   );
@@ -771,6 +774,8 @@ const ProjectManager = ({
         subtitle: createLocaleField(project.subtitle),
         categories: [...project.categories],
         year: project.year,
+        startYear: project.startYear ? String(project.startYear) : "",
+        endYear: project.endYear ? String(project.endYear) : "",
         client: createLocaleField(project.client),
         location: createLocaleField(project.location),
         cover: createImageField(randomId(), project.cover),
@@ -785,6 +790,7 @@ const ProjectManager = ({
         meta: project.meta.map((item) => createMetaField(randomId(), item)),
         entities: project.entities.map((entity) => entity.slug),
         order: "",
+        isPrivate: Boolean(project.isPrivate),
       });
     }
   }, [selectedSlug, projects, emptyForm]);
@@ -808,8 +814,11 @@ const ProjectManager = ({
       throw new Error("El proyecto necesita un slug");
     }
 
-    if (!form.year.trim()) {
-      throw new Error("El campo año es obligatorio");
+    const startYearValue = form.startYear.trim();
+    const endYearValue = form.endYear.trim();
+
+    if (!form.year.trim() && !startYearValue && !endYearValue) {
+      throw new Error("Agrega al menos un año de inicio o fin");
     }
 
     if (!imageHasData(form.cover)) {
@@ -829,7 +838,9 @@ const ProjectManager = ({
       name: trimLocaleField(form.name),
       subtitle: trimLocaleField(form.subtitle),
       categories: form.categories,
-      year: form.year.trim(),
+      year: form.year.trim() || `${startYearValue}${endYearValue ? `–${endYearValue}` : ""}`,
+      startYear: startYearValue ? Number.parseInt(startYearValue, 10) : undefined,
+      endYear: endYearValue ? Number.parseInt(endYearValue, 10) : undefined,
       client: trimLocaleField(form.client),
       location: trimLocaleField(form.location),
       cover: {
@@ -854,6 +865,7 @@ const ProjectManager = ({
         }))
         .filter((item) => hasLocaleContent(item.label) && hasLocaleContent(item.value)),
       entities: form.entities,
+      isPrivate: form.isPrivate,
     };
 
     if (form.video?.url.trim()) {
@@ -981,7 +993,7 @@ const ProjectManager = ({
         </aside>
 
         <div className="space-y-6 rounded-2xl border border-foreground/10 bg-background p-6 shadow-sm">
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid gap-4 md:grid-cols-3">
             <label className="space-y-1 text-xs font-semibold uppercase tracking-[0.18em] text-foreground/60">
               <span>Slug</span>
               <input
@@ -992,12 +1004,34 @@ const ProjectManager = ({
             </label>
 
             <label className="space-y-1 text-xs font-semibold uppercase tracking-[0.18em] text-foreground/60">
-              <span>Año</span>
+              <span>Año (etiqueta)</span>
               <input
                 value={form.year}
                 onChange={(event) => setForm((previous) => ({ ...previous, year: event.target.value }))}
                 className="w-full rounded-xl border border-foreground/15 bg-foreground/5 px-3 py-2 text-sm outline-none transition focus:border-foreground/40 focus:bg-background"
                 placeholder="2024"
+              />
+            </label>
+
+            <label className="space-y-1 text-xs font-semibold uppercase tracking-[0.18em] text-foreground/60">
+              <span>Año de inicio</span>
+              <input
+                value={form.startYear}
+                onChange={(event) => setForm((previous) => ({ ...previous, startYear: event.target.value }))}
+                className="w-full rounded-xl border border-foreground/15 bg-foreground/5 px-3 py-2 text-sm outline-none transition focus:border-foreground/40 focus:bg-background"
+                placeholder="2022"
+                inputMode="numeric"
+              />
+            </label>
+
+            <label className="space-y-1 text-xs font-semibold uppercase tracking-[0.18em] text-foreground/60">
+              <span>Año de cierre</span>
+              <input
+                value={form.endYear}
+                onChange={(event) => setForm((previous) => ({ ...previous, endYear: event.target.value }))}
+                className="w-full rounded-xl border border-foreground/15 bg-foreground/5 px-3 py-2 text-sm outline-none transition focus:border-foreground/40 focus:bg-background"
+                placeholder="2023"
+                inputMode="numeric"
               />
             </label>
 
@@ -1012,6 +1046,21 @@ const ProjectManager = ({
                   }))
                 }
                 className="w-full rounded-xl border border-foreground/15 bg-foreground/5 px-3 py-2 text-sm outline-none transition focus:border-foreground/40 focus:bg-background"
+              />
+            </label>
+
+            <label className="flex items-center gap-3 rounded-xl border border-foreground/15 bg-foreground/5 px-3 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-foreground/60 md:col-span-3">
+              <span className="flex-1 text-foreground/70">Ocultar en el sitio (privado)</span>
+              <input
+                type="checkbox"
+                checked={form.isPrivate}
+                onChange={(event) =>
+                  setForm((previous) => ({
+                    ...previous,
+                    isPrivate: event.target.checked,
+                  }))
+                }
+                className="size-4 rounded border-foreground/30 text-foreground focus:ring-foreground"
               />
             </label>
 

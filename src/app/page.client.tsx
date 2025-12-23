@@ -9,6 +9,7 @@ import type {
   Project,
   ProjectCategory,
 } from "@/domain/projects";
+import { formatProjectTimeline } from "@/domain/projects";
 import type { Service } from "@/content/services";
 import { translate, type Locale, type LocaleText } from "@/lib/i18n";
 import { useLocale } from "@/components/site/locale-context";
@@ -361,7 +362,7 @@ export default function HomePageClient({
                     {translateLocalizedValue(locale, project.client)}
                   </p>
                   <span className="inline-flex items-center rounded-full border border-foreground/10 bg-foreground/5 px-3 py-1 text-xs uppercase tracking-[0.2em] text-foreground/50">
-                    {project.year}
+                    {formatProjectTimeline(project)}
                   </span>
                 </div>
                 <div className="space-y-2">

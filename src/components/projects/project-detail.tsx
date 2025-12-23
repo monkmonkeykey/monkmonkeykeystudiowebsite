@@ -3,13 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import type {
-  LocalizedValue,
-  Project,
-  ProjectCategory,
-} from "@/domain/projects";
+import type { LocalizedValue, Project, ProjectCategory } from "@/domain/projects";
+import { formatProjectTimeline } from "@/domain/projects";
 import { translate, type Locale, type LocaleText } from "@/lib/i18n";
 import { useLocale } from "@/components/site/locale-context";
+import { useState } from "react";
 
 const DETAILS_TITLE = {
   es: "Ficha del proyecto",
@@ -89,13 +87,25 @@ type ProjectDetailProps = {
 
 export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
   const { locale } = useLocale();
+  const [activeImageIndex, setActiveImageIndex] = useState<number | null>(null);
 
   const detailItems = [
-    { label: YEAR_LABEL, value: project.year },
+    { label: YEAR_LABEL, value: formatProjectTimeline(project) },
     { label: CLIENT_LABEL, value: project.client },
     { label: LOCATION_LABEL, value: project.location },
     ...project.meta,
   ];
+
+  const closeLightbox = () => setActiveImageIndex(null);
+  const goTo = (direction: -1 | 1) => {
+    setActiveImageIndex((current) => {
+      if (current === null) return 0;
+      const next = current + direction;
+      if (next < 0) return project.gallery.length - 1;
+      if (next >= project.gallery.length) return 0;
+      return next;
+    });
+  };
 
   return (
     <article className="space-y-8">
@@ -143,7 +153,7 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
                   {translate(locale, project.name)}
                 </h1>
                 <span className="inline-flex items-center rounded-full border border-foreground/10 bg-foreground/5 px-3 py-1 text-xs uppercase tracking-[0.2em] text-foreground/60">
-                  {project.year}
+                  {formatProjectTimeline(project)}
                 </span>
               </div>
               <p className="text-lg text-foreground/70">
@@ -261,26 +271,46 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
                 </h2>
                 <div className="h-px flex-1 bg-foreground/10" />
               </div>
-              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                {project.gallery.map((image, index) => (
-                  <div
-                    key={`${project.slug}-gallery-${index}`}
-                    className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/5"
-                  >
-                    <Image
-                      src={image.src}
-                      alt={translate(locale, image.alt)}
-                      fill
-                      sizes="(min-width: 1024px) 20vw, 100vw"
-                      className="object-cover"
-                    />
-                    {hasLocaleContent(image.footnote) && (
-                      <p className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/80 to-transparent px-3 py-2 text-xs text-foreground/70 backdrop-blur-sm">
-                        {translate(locale, image.footnote!)}
-                      </p>
-                    )}
-                  </div>
-                ))}
+              <div className="grid auto-rows-[180px] gap-4 sm:auto-rows-[220px] sm:grid-cols-6 lg:auto-rows-[260px]">
+                {project.gallery.map((image, index) => {
+                  const spanClass =
+                    index % 5 === 0
+                      ? "sm:col-span-6 sm:row-span-2"
+                      : index % 3 === 0
+                        ? "sm:col-span-3 sm:row-span-2"
+                        : "sm:col-span-3";
+
+                  return (
+                    <button
+                      key={`${project.slug}-gallery-${index}`}
+                      type="button"
+                      onClick={() => setActiveImageIndex(index)}
+                      className={`${spanClass} group relative flex h-full w-full overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/5 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-primary/30`}
+                      aria-label={`${translate(locale, image.alt)} (abrir en galería)`}
+                    >
+                      <Image
+                        src={image.src}
+                        alt={translate(locale, image.alt)}
+                        fill
+                        sizes="(min-width: 1280px) 25vw, (min-width: 768px) 33vw, 100vw"
+                        className="object-cover transition duration-500 group-hover:scale-105"
+                      />
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/75 via-background/10 to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
+                      <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 p-3 text-xs text-background opacity-0 transition duration-300 group-hover:opacity-100">
+                        <p className="line-clamp-2 font-semibold drop-shadow">{translate(locale, image.alt)}</p>
+                        <span className="inline-flex items-center gap-1 rounded-full bg-background/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-foreground">
+                          {locale === "es" ? "Ver" : "View"}
+                          <span aria-hidden>↗</span>
+                        </span>
+                      </div>
+                      {hasLocaleContent(image.footnote) && (
+                        <span className="absolute right-3 top-3 rounded-full bg-background/85 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-foreground/70 backdrop-blur">
+                          {translate(locale, image.footnote!)}
+                        </span>
+                      )}
+                    </button>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -317,6 +347,66 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
           </aside>
         </div>
       </div>
+
+      {activeImageIndex !== null && project.gallery[activeImageIndex] && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm">
+          <div className="relative w-full max-w-5xl space-y-4 rounded-3xl border border-foreground/10 bg-background/95 p-4 shadow-2xl">
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex flex-col text-sm text-foreground/70">
+                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-foreground/50">
+                  {translate(locale, GALLERY_TITLE)}
+                </span>
+                <span className="font-semibold text-foreground">
+                  {translate(locale, project.gallery[activeImageIndex].alt)}
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => goTo(-1)}
+                  className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-foreground/5 px-3 py-1.5 text-xs font-semibold text-foreground/80 transition hover:border-foreground/30 hover:text-foreground"
+                >
+                  <span aria-hidden>←</span>
+                  <span>{locale === "es" ? "Anterior" : "Previous"}</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => goTo(1)}
+                  className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-foreground/5 px-3 py-1.5 text-xs font-semibold text-foreground/80 transition hover:border-foreground/30 hover:text-foreground"
+                >
+                  <span>{locale === "es" ? "Siguiente" : "Next"}</span>
+                  <span aria-hidden>→</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={closeLightbox}
+                  className="inline-flex items-center gap-2 rounded-full bg-foreground px-3 py-1.5 text-xs font-semibold text-background transition hover:bg-foreground/90"
+                >
+                  <span>{locale === "es" ? "Cerrar" : "Close"}</span>
+                  <span aria-hidden>✕</span>
+                </button>
+              </div>
+            </div>
+
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/5">
+              <Image
+                src={project.gallery[activeImageIndex].src}
+                alt={translate(locale, project.gallery[activeImageIndex].alt)}
+                fill
+                sizes="(min-width: 1280px) 70vw, 100vw"
+                className="object-contain"
+                priority
+              />
+            </div>
+
+            {hasLocaleContent(project.gallery[activeImageIndex].footnote) && (
+              <p className="text-sm text-foreground/70">
+                {translate(locale, project.gallery[activeImageIndex].footnote!)}
+              </p>
+            )}
+          </div>
+        </div>
+      )}
     </article>
   );
 }

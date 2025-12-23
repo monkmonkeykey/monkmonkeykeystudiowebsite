@@ -58,6 +58,8 @@ export type Project = {
   subtitle: LocaleText;
   categories: ProjectCategory[];
   year: string;
+  startYear?: number;
+  endYear?: number;
   client: LocalizedValue;
   location: LocalizedValue;
   cover: ProjectGalleryImage;
@@ -66,4 +68,17 @@ export type Project = {
   description: LocaleText[];
   meta: { label: LocaleText; value: LocalizedValue }[];
   entities: ProjectEntity[];
+  isPrivate?: boolean;
+};
+
+export const formatProjectTimeline = (project: Project): string => {
+  if (project.startYear && project.endYear) {
+    return `${project.startYear} – ${project.endYear}`;
+  }
+
+  if (project.startYear) {
+    return `${project.startYear}${project.endYear ? ` – ${project.endYear}` : ""}`;
+  }
+
+  return project.year;
 };

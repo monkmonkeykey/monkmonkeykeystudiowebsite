@@ -8,7 +8,7 @@ import { requireAdminSession } from "@/server/auth";
 export default async function AdminPage() {
   await requireAdminSession();
 
-  const [clients, projects] = await Promise.all([getClients(), getProjects()]);
+  const [clients, projects] = await Promise.all([getClients(), getProjects(true)]);
 
   return (
     <AdminDashboard

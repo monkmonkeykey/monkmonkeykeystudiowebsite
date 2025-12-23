@@ -15,6 +15,8 @@
     "experiencias-digitales"
   ],
   "year": "2021",
+  "startYear": 2020,
+  "endYear": 2021,
   "client": "Loop Brand Labs",
   "location": {
     "es": "Monterrey, México",
@@ -81,6 +83,7 @@
         "en": "Visual identity, UX design, production"
       }
     }
-  ]
+  ],
+  "isPrivate": false
 }
 ---
