@@ -48,6 +48,21 @@ const CARD_CTA = {
   en: "Read full case",
 } as const;
 
+const CTA_TITLE = {
+  es: "¿Listo para crear algo memorable?",
+  en: "Ready to create something memorable?",
+} as const;
+
+const CTA_DESCRIPTION = {
+  es: "Agendemos una llamada para entender tus objetivos y armar un plan a medida.",
+  en: "Let’s schedule a call to learn about your goals and craft a tailored plan together.",
+} as const;
+
+const CTA_ACTION = {
+  es: "Agenda una llamada",
+  en: "Book a call",
+} as const;
+
 export default function ProjectsPageClient({
   projects,
   categoryLabels,
@@ -72,27 +87,34 @@ export default function ProjectsPageClient({
 
   return (
     <div className="space-y-12">
-      <header className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-        <div className="max-w-3xl space-y-4">
-          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-            {translate(locale, PAGE_TITLE)}
-          </h1>
-          <p className="text-base text-foreground/70 sm:text-lg">
-            {translate(locale, PAGE_COPY)}
-          </p>
-        </div>
-        <div className="relative aspect-[4/3] w-full max-w-sm overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/5">
-          <Image
-            src="/images/projects-visual.svg"
-            alt={
-              locale === "es"
-                ? "Ilustración abstracta de tableros de proyecto"
-                : "Abstract illustration of project boards"
-            }
-            fill
-            sizes="(min-width: 1024px) 384px, 100vw"
-            className="object-cover"
-          />
+      <header className="overflow-hidden rounded-3xl border border-foreground/10 bg-gradient-to-br from-foreground/5 via-background to-background shadow-sm">
+        <div className="grid gap-8 p-6 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] lg:items-center lg:p-10">
+          <div className="max-w-3xl space-y-4">
+            <span className="inline-flex items-center gap-2 rounded-full border border-foreground/10 bg-foreground/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-foreground/60">
+              {translate(locale, FILTER_LABEL)}
+            </span>
+            <div className="space-y-3">
+              <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+                {translate(locale, PAGE_TITLE)}
+              </h1>
+              <p className="text-base text-foreground/70 sm:text-lg">
+                {translate(locale, PAGE_COPY)}
+              </p>
+            </div>
+          </div>
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/5">
+            <Image
+              src="/images/projects-visual.svg"
+              alt={
+                locale === "es"
+                  ? "Ilustración abstracta de tableros de proyecto"
+                  : "Abstract illustration of project boards"
+              }
+              fill
+              sizes="(min-width: 1024px) 420px, 100vw"
+              className="object-cover"
+            />
+          </div>
         </div>
       </header>
 
@@ -140,7 +162,7 @@ export default function ProjectsPageClient({
               <Link
                 key={project.slug}
                 href={`/proyectos/${project.slug}`}
-                className="group flex h-full flex-col overflow-hidden rounded-3xl border border-foreground/10 bg-background shadow-sm transition hover:-translate-y-1 hover:border-foreground/20"
+                className="group flex h-full flex-col overflow-hidden rounded-3xl border border-foreground/10 bg-background shadow-sm transition hover:-translate-y-1 hover:border-foreground/20 hover:shadow-md"
               >
                 <div className="relative aspect-[16/9] w-full overflow-hidden border-b border-foreground/10 bg-foreground/5">
                   <Image
@@ -156,7 +178,7 @@ export default function ProjectsPageClient({
                     <span className="text-xs uppercase tracking-[0.2em] text-foreground/50">
                       {translate(locale, DETAILS_TITLE)}
                     </span>
-                    <span className="inline-flex items-center rounded-full border border-foreground/10 px-3 py-1 text-xs uppercase tracking-[0.2em] text-foreground/50">
+                    <span className="inline-flex items-center rounded-full border border-foreground/10 bg-foreground/5 px-3 py-1 text-xs uppercase tracking-[0.2em] text-foreground/50">
                       {project.year}
                     </span>
                   </div>
@@ -175,7 +197,7 @@ export default function ProjectsPageClient({
                     {project.categories.map((category) => (
                       <span
                         key={`${project.slug}-cat-${category}`}
-                        className="rounded-full border border-foreground/10 px-3 py-1"
+                        className="rounded-full border border-foreground/10 bg-foreground/5 px-3 py-1"
                       >
                         {translate(locale, categoryLabels[category])}
                       </span>
@@ -193,6 +215,26 @@ export default function ProjectsPageClient({
           </div>
         )}
       </div>
+
+      <section className="overflow-hidden rounded-3xl border border-foreground/10 bg-gradient-to-r from-foreground/5 via-foreground/10 to-foreground/5 p-6 shadow-sm sm:p-8 lg:p-10">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <div className="space-y-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-foreground/60">
+              {translate(locale, CTA_TITLE)}
+            </p>
+            <p className="max-w-2xl text-base text-foreground/80 sm:text-lg">
+              {translate(locale, CTA_DESCRIPTION)}
+            </p>
+          </div>
+          <Link
+            href="/contacto"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-semibold text-background shadow transition hover:bg-foreground/90"
+          >
+            <span>{translate(locale, CTA_ACTION)}</span>
+            <span aria-hidden>↗</span>
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }
