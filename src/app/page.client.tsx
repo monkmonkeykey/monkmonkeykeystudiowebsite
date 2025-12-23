@@ -4,12 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 import type { Client } from "@/content/clients";
-import type {
-  LocalizedValue,
-  Project,
-  ProjectCategory,
-} from "@/domain/projects";
-import { formatProjectTimeline } from "@/domain/projects";
+import type { LocalizedValue, Project, ProjectCategory } from "@/domain/projects";
+import { formatProjectTimeline, translateCategoryLabel } from "@/domain/projects";
 import type { Service } from "@/content/services";
 import { translate, type Locale, type LocaleText } from "@/lib/i18n";
 import { useLocale } from "@/components/site/locale-context";
@@ -373,19 +369,19 @@ export default function HomePageClient({
                     {translate(locale, project.subtitle)}
                   </p>
                 </div>
-                <p className="text-sm text-foreground/70 line-clamp-3">
-                  {translate(locale, project.description[0])}
-                </p>
-                <div className="flex flex-wrap gap-2 text-xs text-foreground/60">
-                  {project.categories.map((category) => (
-                    <span
-                      key={`${project.slug}-cat-${category}`}
-                      className="rounded-full border border-foreground/10 bg-foreground/5 px-3 py-1"
-                    >
-                      {translate(locale, categoryLabels[category])}
-                    </span>
-                  ))}
-                </div>
+                  <p className="text-sm text-foreground/70 line-clamp-3">
+                    {translate(locale, project.description[0])}
+                  </p>
+                  <div className="flex flex-wrap gap-2 text-xs text-foreground/60">
+                    {project.categories.map((category) => (
+                      <span
+                        key={`${project.slug}-cat-${category}`}
+                        className="rounded-full border border-foreground/10 bg-foreground/5 px-3 py-1"
+                      >
+                      {translateCategoryLabel(locale, category, categoryLabels)}
+                      </span>
+                    ))}
+                  </div>
                 <div className="mt-auto flex items-center justify-between pt-2 text-sm font-semibold text-foreground/70">
                   <Link href={`/proyectos/${project.slug}`} className="inline-flex items-center gap-2 transition hover:text-foreground">
                     <span>{locale === "es" ? "Ver caso completo" : "Read full case"}</span>

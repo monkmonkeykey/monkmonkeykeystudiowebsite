@@ -32,11 +32,7 @@ export const clientPayloadSchema = z.object({
   image: clientImageSchema.nullable().optional(),
 });
 
-export const projectCategorySchema = z.enum([
-  "museografia",
-  "experiencias-digitales",
-  "branding",
-]);
+export const projectCategorySchema = z.string().trim().min(1);
 
 export const projectImageSchema = clientImageSchema;
 

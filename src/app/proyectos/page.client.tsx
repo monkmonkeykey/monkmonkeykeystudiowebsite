@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 
 import type { Project, ProjectCategory } from "@/domain/projects";
-import { formatProjectTimeline } from "@/domain/projects";
+import { formatProjectTimeline, translateCategoryLabel } from "@/domain/projects";
 import { translate, type LocaleText } from "@/lib/i18n";
 import { useLocale } from "@/components/site/locale-context";
 
@@ -161,7 +161,7 @@ export default function ProjectsPageClient({
                   : "border-foreground/10 text-foreground/60 hover:border-foreground/20 hover:text-foreground"
               }`}
             >
-              {translate(locale, categoryLabels[category])}
+              {translateCategoryLabel(locale, category, categoryLabels)}
             </button>
           ))}
         </div>
@@ -215,7 +215,7 @@ export default function ProjectsPageClient({
                         key={`${project.slug}-cat-${category}`}
                         className="rounded-full border border-foreground/10 bg-foreground/5 px-3 py-1"
                       >
-                        {translate(locale, categoryLabels[category])}
+                        {translateCategoryLabel(locale, category, categoryLabels)}
                       </span>
                     ))}
                   </div>

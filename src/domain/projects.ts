@@ -1,5 +1,5 @@
 import type { ClientImage } from "@/content/clients";
-import type { LocaleText } from "@/lib/i18n";
+import type { Locale, LocaleText } from "@/lib/i18n";
 
 export type LocalizedValue = string | LocaleText;
 
@@ -27,11 +27,7 @@ export type ProjectEntity = {
   image?: ClientImage;
 };
 
-export type ProjectCategory =
-  | "museografia"
-  | "experiencias-digitales"
-  | "produccion-obra"
-  | "branding";
+export type ProjectCategory = string;
 
 export const PROJECT_CATEGORY_LABELS: Record<ProjectCategory, LocaleText> = {
   museografia: {
@@ -81,4 +77,31 @@ export const formatProjectTimeline = (project: Project): string => {
   }
 
   return project.year;
+};
+
+const capitalizeWords = (value: string): string =>
+  value.replace(/\b(\w)/g, (match) => match.toUpperCase());
+
+const humanizeCategory = (category: string): string => {
+  const normalized = category.trim().replace(/[-_]+/g, " ");
+
+  if (!normalized) {
+    return category;
+  }
+
+  return capitalizeWords(normalized);
+};
+
+export const translateCategoryLabel = (
+  locale: Locale,
+  category: ProjectCategory,
+  labels: Record<ProjectCategory, LocaleText> = PROJECT_CATEGORY_LABELS,
+): string => {
+  const label = labels[category];
+
+  if (label) {
+    return label[locale];
+  }
+
+  return humanizeCategory(category);
 };

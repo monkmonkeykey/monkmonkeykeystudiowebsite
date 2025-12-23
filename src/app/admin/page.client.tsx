@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 
 import type { Client, ClientKind } from "@/content/clients";
 import type { LocalizedValue, Project, ProjectCategory } from "@/domain/projects";
-import { PROJECT_CATEGORY_LABELS } from "@/domain/projects";
+import { PROJECT_CATEGORY_LABELS, translateCategoryLabel } from "@/domain/projects";
 
 import type { LocaleText } from "@/lib/i18n";
 import { extractApiErrorMessage } from "@/lib/admin-api";
@@ -54,10 +54,6 @@ const CLIENT_KINDS: { value: ClientKind; label: string }[] = [
   { value: "institution", label: "Institución" },
   { value: "partner", label: "Aliado" },
 ];
-
-const CATEGORY_OPTIONS: { value: ProjectCategory; label: LocaleText }[] = (
-  Object.entries(PROJECT_CATEGORY_LABELS) as [ProjectCategory, LocaleText][]
-).map(([value, label]) => ({ value, label }));
 
 const createLocaleField = (value?: LocaleText | LocalizedValue): LocaleField => {
   if (!value) {
@@ -118,6 +114,19 @@ const imageHasData = (image: ImageField): boolean =>
   image.src.trim().length > 0 || image.publicId.trim().length > 0;
 
 const randomId = () => Math.random().toString(36).slice(2, 10);
+
+const slugifyCategory = (value: string): string => {
+  const normalized = value
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/gi, "-")
+    .replace(/-{2,}/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .trim();
+
+  return normalized || value.trim();
+};
 
 const uploadToCloudinary = async (file: File, folder: string) => {
   const formData = new FormData();
@@ -729,6 +738,7 @@ const ProjectManager = ({
   const [selectedSlug, setSelectedSlug] = useState<string>("new");
   const [status, setStatus] = useState<"idle" | "saving" | "deleting">("idle");
   const [message, setMessage] = useState<string | null>(null);
+  const [newCategoryInput, setNewCategoryInput] = useState("");
 
   const emptyForm = useMemo(
     () => ({
@@ -754,6 +764,20 @@ const ProjectManager = ({
   );
 
   const [form, setForm] = useState({ ...emptyForm });
+
+  const availableCategories = useMemo(() => {
+    const unique = new Set<ProjectCategory>(Object.keys(PROJECT_CATEGORY_LABELS));
+
+    projects.forEach((project) => {
+      project.categories.forEach((category) => unique.add(category));
+    });
+
+    form.categories.forEach((category) => unique.add(category));
+
+    return Array.from(unique).sort((a, b) =>
+      translateCategoryLabel("es", a).localeCompare(translateCategoryLabel("es", b)),
+    );
+  }, [projects, form.categories]);
 
   useEffect(() => {
     if (selectedSlug === "new") {
@@ -809,6 +833,23 @@ const ProjectManager = ({
     ensureDescription();
   }, [selectedSlug]);
 
+  const handleAddCategory = () => {
+    const slug = slugifyCategory(newCategoryInput);
+
+    if (!slug) {
+      setMessage("Escribe una categoría válida para agregarla");
+      return;
+    }
+
+    setForm((previous) => ({
+      ...previous,
+      categories: previous.categories.includes(slug)
+        ? previous.categories
+        : [...previous.categories, slug],
+    }));
+    setNewCategoryInput("");
+  };
+
   const buildPayload = () => {
     if (!form.slug.trim()) {
       throw new Error("El proyecto necesita un slug");
@@ -816,6 +857,19 @@ const ProjectManager = ({
 
     const startYearValue = form.startYear.trim();
     const endYearValue = form.endYear.trim();
+
+    const categories = Array.from(
+      new Set(
+        form.categories
+          .map((category) => slugifyCategory(category))
+          .map((category) => category.trim())
+          .filter((category) => category.length > 0),
+      ),
+    );
+
+    if (categories.length === 0) {
+      throw new Error("Agrega al menos una categoría");
+    }
 
     if (!form.year.trim() && !startYearValue && !endYearValue) {
       throw new Error("Agrega al menos un año de inicio o fin");
@@ -837,7 +891,7 @@ const ProjectManager = ({
       slug: form.slug.trim(),
       name: trimLocaleField(form.name),
       subtitle: trimLocaleField(form.subtitle),
-      categories: form.categories,
+      categories,
       year: form.year.trim() || `${startYearValue}${endYearValue ? `–${endYearValue}` : ""}`,
       startYear: startYearValue ? Number.parseInt(startYearValue, 10) : undefined,
       endYear: endYearValue ? Number.parseInt(endYearValue, 10) : undefined,
@@ -1106,14 +1160,37 @@ const ProjectManager = ({
               />
             </label>
 
-            <div className="space-y-1 text-xs font-semibold uppercase tracking-[0.18em] text-foreground/60 md:col-span-2">
-              <span>Categorías</span>
+            <div className="space-y-2 text-xs font-semibold uppercase tracking-[0.18em] text-foreground/60 md:col-span-2">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <span>Categorías</span>
+                <div className="flex flex-1 flex-wrap items-center gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-foreground/60 sm:flex-none">
+                  <input
+                    value={newCategoryInput}
+                    onChange={(event) => setNewCategoryInput(event.target.value)}
+                    onKeyDown={(event) => {
+                      if (event.key === "Enter") {
+                        event.preventDefault();
+                        handleAddCategory();
+                      }
+                    }}
+                    className="min-w-[200px] flex-1 rounded-xl border border-foreground/15 bg-foreground/5 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.18em] text-foreground/70 outline-none transition focus:border-foreground/40 focus:bg-background sm:flex-none"
+                    placeholder="Nueva categoría"
+                  />
+                  <button
+                    type="button"
+                    onClick={handleAddCategory}
+                    className="rounded-full border border-foreground/20 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground/80 transition hover:border-foreground/40 hover:text-foreground"
+                  >
+                    Agregar
+                  </button>
+                </div>
+              </div>
               <div className="flex flex-wrap gap-2">
-                {CATEGORY_OPTIONS.map((option) => (
+                {availableCategories.map((category) => (
                   <label
-                    key={option.value}
+                    key={category}
                     className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold transition ${
-                      form.categories.includes(option.value)
+                      form.categories.includes(category)
                         ? "border-foreground bg-foreground text-background"
                         : "border-foreground/15 text-foreground/70 hover:border-foreground/40 hover:text-foreground"
                     }`}
@@ -1121,17 +1198,17 @@ const ProjectManager = ({
                     <input
                       type="checkbox"
                       className="hidden"
-                      checked={form.categories.includes(option.value)}
+                      checked={form.categories.includes(category)}
                       onChange={(event) =>
                         setForm((previous) => ({
                           ...previous,
                           categories: event.target.checked
-                            ? [...previous.categories, option.value]
-                            : previous.categories.filter((item) => item !== option.value),
+                            ? [...previous.categories, category]
+                            : previous.categories.filter((item) => item !== category),
                         }))
                       }
                     />
-                    <span>{option.label.es}</span>
+                    <span>{translateCategoryLabel("es", category)}</span>
                   </label>
                 ))}
               </div>

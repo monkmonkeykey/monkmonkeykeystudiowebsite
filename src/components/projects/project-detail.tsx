@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import type { LocalizedValue, Project, ProjectCategory } from "@/domain/projects";
-import { formatProjectTimeline } from "@/domain/projects";
+import { formatProjectTimeline, translateCategoryLabel } from "@/domain/projects";
 import { translate, type Locale, type LocaleText } from "@/lib/i18n";
 import { useLocale } from "@/components/site/locale-context";
 import { useState } from "react";
@@ -165,7 +165,7 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
                     key={`${project.slug}-${category}`}
                     className="rounded-full border border-foreground/10 bg-foreground/5 px-3 py-1 text-xs font-medium text-foreground/70"
                   >
-                    {translate(locale, categoryLabels[category])}
+                    {translateCategoryLabel(locale, category, categoryLabels)}
                   </span>
                 ))}
               </div>
