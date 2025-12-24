@@ -34,19 +34,14 @@ const FILTER_ALL = {
   en: "All",
 } as const;
 
-const DETAILS_TITLE = {
-  es: "Ficha del proyecto",
-  en: "Project details",
-} as const;
-
 const EMPTY_STATE = {
   es: "No hay proyectos para esta categoría todavía.",
   en: "There are no projects for this category yet.",
 } as const;
 
 const CARD_CTA = {
-  es: "Ver caso completo",
-  en: "Read full case",
+  es: "Ver",
+  en: "View",
 } as const;
 
 const CTA_TITLE = {
@@ -190,14 +185,9 @@ export default function ProjectsPageClient({
                   />
                 </div>
                 <div className="flex flex-1 flex-col gap-4 p-6">
-                  <div className="flex flex-wrap items-center gap-3">
-                    <span className="text-xs uppercase tracking-[0.2em] text-foreground/50">
-                      {translate(locale, DETAILS_TITLE)}
-                    </span>
-                    <span className="inline-flex items-center rounded-full border border-foreground/10 bg-foreground/5 px-3 py-1 text-xs uppercase tracking-[0.2em] text-foreground/50">
-                      {formatProjectTimeline(project)}
-                    </span>
-                  </div>
+                  <span className="inline-flex items-center rounded-full border border-foreground/10 bg-foreground/5 px-3 py-1 text-xs uppercase tracking-[0.2em] text-foreground/50">
+                    {formatProjectTimeline(project)}
+                  </span>
                   <div className="space-y-2">
                     <h2 className="text-xl font-semibold text-foreground">
                       {translate(locale, project.name)}
