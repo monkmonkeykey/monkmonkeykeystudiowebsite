@@ -49,16 +49,6 @@ const BACK_LINK = {
   en: "Back to projects",
 } as const;
 
-const CONTACT_LABEL = {
-  es: "¿Hablamos de tu proyecto?",
-  en: "Ready to start your project?",
-} as const;
-
-const CONTACT_CTA = {
-  es: "Agenda una llamada",
-  en: "Book a call",
-} as const;
-
 const ENTITIES_TITLE = {
   es: "Organizaciones",
   en: "Organizations",
@@ -89,9 +79,14 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
   const { locale } = useLocale();
   const [activeImageIndex, setActiveImageIndex] = useState<number | null>(null);
 
+  const clientLabel =
+    project.entities.length > 0
+      ? project.entities.map((entity) => entity.name).join(", ")
+      : translateLocalizedValue(locale, project.client);
+
   const detailItems = [
     { label: YEAR_LABEL, value: formatProjectTimeline(project) },
-    { label: CLIENT_LABEL, value: project.client },
+    { label: CLIENT_LABEL, value: clientLabel },
     { label: LOCATION_LABEL, value: project.location },
     ...project.meta,
   ];
@@ -116,13 +111,6 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
         >
           <span aria-hidden>←</span>
           <span>{translate(locale, BACK_LINK)}</span>
-        </Link>
-        <Link
-          href="/contacto"
-          className="inline-flex items-center gap-2 rounded-full bg-foreground px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-background shadow-sm transition hover:-translate-y-0.5 hover:bg-foreground/90"
-        >
-          <span>{translate(locale, CONTACT_CTA)}</span>
-          <span aria-hidden>↗</span>
         </Link>
       </div>
 
@@ -271,31 +259,25 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
                 </h2>
                 <div className="h-px flex-1 bg-foreground/10" />
               </div>
-              <div className="grid auto-rows-[180px] gap-4 sm:auto-rows-[220px] sm:grid-cols-6 lg:auto-rows-[260px]">
-                {project.gallery.map((image, index) => {
-                  const spanClass =
-                    index % 5 === 0
-                      ? "sm:col-span-6 sm:row-span-2"
-                      : index % 3 === 0
-                        ? "sm:col-span-3 sm:row-span-2"
-                        : "sm:col-span-3";
-
-                  return (
-                    <button
-                      key={`${project.slug}-gallery-${index}`}
-                      type="button"
-                      onClick={() => setActiveImageIndex(index)}
-                      className={`${spanClass} group relative flex h-full w-full overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/5 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-primary/30`}
-                      aria-label={`${translate(locale, image.alt)} (abrir en galería)`}
-                    >
+              <div className="columns-1 gap-4 sm:columns-2 lg:columns-3 [column-fill:_balance]">
+                {project.gallery.map((image, index) => (
+                  <button
+                    key={`${project.slug}-gallery-${index}`}
+                    type="button"
+                    onClick={() => setActiveImageIndex(index)}
+                    className="group relative mb-4 block w-full overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/5 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-primary/30"
+                    style={{ breakInside: "avoid" }}
+                    aria-label={`${translate(locale, image.alt)} (abrir en galería)`}
+                  >
+                    <div className="relative w-full overflow-hidden">
                       <Image
                         src={image.src}
                         alt={translate(locale, image.alt)}
-                        fill
-                        sizes="(min-width: 1280px) 25vw, (min-width: 768px) 33vw, 100vw"
-                        className="object-cover transition duration-500 group-hover:scale-105"
+                        width={1200}
+                        height={800}
+                        className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                       />
-                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/75 via-background/10 to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/65 via-background/5 to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
                       <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 p-3 text-xs text-background opacity-0 transition duration-300 group-hover:opacity-100">
                         <p className="line-clamp-2 font-semibold drop-shadow">{translate(locale, image.alt)}</p>
                         <span className="inline-flex items-center gap-1 rounded-full bg-background/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-foreground">
@@ -303,50 +285,37 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
                           <span aria-hidden>↗</span>
                         </span>
                       </div>
-                      {hasLocaleContent(image.footnote) && (
-                        <span className="absolute right-3 top-3 rounded-full bg-background/85 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-foreground/70 backdrop-blur">
-                          {translate(locale, image.footnote!)}
-                        </span>
-                      )}
-                    </button>
-                  );
-                })}
+                    </div>
+                  </button>
+                ))}
               </div>
             </div>
-          </div>
-
-          <aside className="space-y-6 rounded-3xl border border-foreground/10 bg-background/80 p-6 shadow-sm lg:sticky lg:top-6">
-            <div className="space-y-1">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-foreground/50">
-                {translate(locale, DETAILS_TITLE)}
-              </p>
-              <p className="text-sm text-foreground/60">
-                {translate(locale, CONTACT_LABEL)}
-              </p>
             </div>
-            <dl className="space-y-4 text-sm text-foreground/80">
-              {detailItems.map((detail) => (
-                <div key={`${project.slug}-${detail.label.es}`} className="space-y-1 rounded-2xl border border-foreground/10 bg-foreground/5 px-4 py-3">
-                  <dt className="text-[11px] uppercase tracking-[0.2em] text-foreground/50">
-                    {translate(locale, detail.label)}
-                  </dt>
-                  <dd className="text-base text-foreground/80">
-                    {translateLocalizedValue(locale, detail.value)}
-                  </dd>
-                </div>
-              ))}
-            </dl>
 
-            <Link
-              href="/contacto"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-foreground px-4 py-3 text-sm font-semibold text-background transition hover:bg-foreground/90"
-            >
-              <span>{translate(locale, CONTACT_CTA)}</span>
-              <span aria-hidden>↗</span>
-            </Link>
-          </aside>
+            <aside className="space-y-6 rounded-3xl border border-foreground/10 bg-background/80 p-6 shadow-sm lg:sticky lg:top-6">
+              <div className="space-y-1">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-foreground/50">
+                  {translate(locale, DETAILS_TITLE)}
+                </p>
+              </div>
+              <dl className="space-y-4 text-sm text-foreground/80">
+                {detailItems.map((detail) => (
+                  <div
+                    key={`${project.slug}-${detail.label.es}`}
+                    className="space-y-1 rounded-2xl border border-foreground/10 bg-foreground/5 px-4 py-3"
+                  >
+                    <dt className="text-[11px] uppercase tracking-[0.2em] text-foreground/50">
+                      {translate(locale, detail.label)}
+                    </dt>
+                    <dd className="text-base text-foreground/80">
+                      {translateLocalizedValue(locale, detail.value)}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </aside>
+          </div>
         </div>
-      </div>
 
       {activeImageIndex !== null && project.gallery[activeImageIndex] && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm">
