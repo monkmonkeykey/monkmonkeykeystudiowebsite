@@ -1,8 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-
 import type { LocalizedValue, Project, ProjectCategory } from "@/domain/projects";
 import { formatProjectTimeline, translateCategoryLabel } from "@/domain/projects";
 import { translate, type Locale, type LocaleText } from "@/lib/i18n";
@@ -10,8 +8,8 @@ import { useLocale } from "@/components/site/locale-context";
 import { useState } from "react";
 
 const DETAILS_TITLE = {
-  es: "Ficha del proyecto",
-  en: "Project details",
+  es: "Datos clave",
+  en: "Key facts",
 } as const;
 
 const YEAR_LABEL = {
@@ -42,11 +40,6 @@ const VIDEO_TITLE = {
 const VIDEO_LINK_PREFIX = {
   es: "Ver en",
   en: "Watch on",
-} as const;
-
-const BACK_LINK = {
-  es: "Volver a proyectos",
-  en: "Back to projects",
 } as const;
 
 const ENTITIES_TITLE = {
@@ -104,16 +97,6 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
 
   return (
     <article className="space-y-8">
-      <div className="flex flex-wrap items-center justify-between gap-3 overflow-hidden rounded-3xl border border-foreground/10 bg-gradient-to-r from-primary/10 via-background to-foreground/5 px-4 py-3 shadow-sm">
-        <Link
-          href="/proyectos"
-          className="inline-flex items-center gap-2 text-sm font-semibold text-foreground/70 transition hover:text-foreground"
-        >
-          <span aria-hidden>←</span>
-          <span>{translate(locale, BACK_LINK)}</span>
-        </Link>
-      </div>
-
       <div className="overflow-hidden rounded-3xl border border-foreground/10 bg-gradient-to-br from-primary/5 via-background to-accent/5 shadow-sm">
         <div className="grid gap-10 p-6 lg:grid-cols-[minmax(0,1.8fr)_minmax(0,1fr)] lg:p-10">
           <div className="space-y-7">
@@ -201,57 +184,6 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
               </div>
             )}
 
-            {project.entities.length > 0 && (
-              <div className="space-y-4 rounded-3xl bg-background/80 p-5 shadow-sm">
-                <div className="flex items-center justify-between">
-                  <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-foreground/50">
-                    {translate(locale, ENTITIES_TITLE)}
-                  </h2>
-                  <div className="h-px flex-1 bg-foreground/10" />
-                </div>
-                <div className="grid gap-4 sm:grid-cols-2">
-                  {project.entities.map((entity) => (
-                    <div
-                      key={`${project.slug}-${entity.slug}`}
-                      className="flex flex-col gap-3 rounded-2xl border border-foreground/10 bg-foreground/5 p-4 transition hover:-translate-y-0.5 hover:border-foreground/20"
-                    >
-                      {entity.image && (
-                        <div className="relative h-14 w-14 overflow-hidden rounded-2xl border border-foreground/10 bg-background">
-                          <Image
-                            src={entity.image.src}
-                            alt={translate(locale, entity.image.alt)}
-                            fill
-                            sizes="56px"
-                            className="object-cover"
-                          />
-                        </div>
-                      )}
-                      <div className="space-y-1">
-                        <p className="text-sm font-semibold text-foreground/80">{entity.name}</p>
-                        <p className="text-xs uppercase tracking-[0.2em] text-foreground/50">
-                          {translate(locale, entity.sector)}
-                        </p>
-                      </div>
-                      <p className="text-sm text-foreground/70">
-                        {translate(locale, entity.summary)}
-                      </p>
-                      {entity.website && (
-                        <a
-                          href={entity.website}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="mt-auto inline-flex w-fit items-center gap-2 text-xs font-semibold text-foreground/70 transition hover:text-foreground"
-                        >
-                          <span>{translate(locale, ENTITY_WEBSITE)}</span>
-                          <span aria-hidden>↗</span>
-                        </a>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
             <div className="space-y-3 rounded-3xl bg-background/80 p-5 shadow-sm">
               <div className="flex items-center justify-between">
                 <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-foreground/50">
@@ -313,6 +245,55 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
                   </div>
                 ))}
               </dl>
+
+              {project.entities.length > 0 && (
+                <div className="space-y-4 rounded-2xl border border-foreground/10 bg-foreground/5 p-4">
+                  <div className="flex items-center justify-between">
+                    <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-foreground/50">
+                      {translate(locale, ENTITIES_TITLE)}
+                    </h2>
+                    <div className="h-px flex-1 bg-foreground/10" />
+                  </div>
+                  <div className="grid gap-3">
+                    {project.entities.map((entity) => (
+                      <div
+                        key={`${project.slug}-${entity.slug}`}
+                        className="flex gap-3 rounded-2xl border border-foreground/10 bg-background/70 p-3"
+                      >
+                        {entity.image && (
+                          <div className="relative h-14 w-14 overflow-hidden rounded-2xl border border-foreground/10 bg-background">
+                            <Image
+                              src={entity.image.src}
+                              alt={translate(locale, entity.image.alt)}
+                              fill
+                              sizes="56px"
+                              className="object-cover"
+                            />
+                          </div>
+                        )}
+                        <div className="flex flex-1 flex-col gap-1">
+                          <p className="text-sm font-semibold text-foreground/80">{entity.name}</p>
+                          <p className="text-[11px] uppercase tracking-[0.2em] text-foreground/50">
+                            {translate(locale, entity.sector)}
+                          </p>
+                          <p className="text-sm text-foreground/70">{translate(locale, entity.summary)}</p>
+                          {entity.website && (
+                            <a
+                              href={entity.website}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="inline-flex w-fit items-center gap-2 text-xs font-semibold text-foreground/70 transition hover:text-foreground"
+                            >
+                              <span>{translate(locale, ENTITY_WEBSITE)}</span>
+                              <span aria-hidden>↗</span>
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </aside>
           </div>
         </div>
