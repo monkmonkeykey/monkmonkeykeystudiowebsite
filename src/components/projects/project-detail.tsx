@@ -8,18 +8,13 @@ import { useLocale } from "@/components/site/locale-context";
 import { useState } from "react";
 
 const DETAILS_TITLE = {
-  es: "Datos clave",
-  en: "Key facts",
+  es: "Acerca",
+  en: "About",
 } as const;
 
 const YEAR_LABEL = {
   es: "Año",
   en: "Year",
-} as const;
-
-const CLIENT_LABEL = {
-  es: "Cliente",
-  en: "Client",
 } as const;
 
 const LOCATION_LABEL = {
@@ -43,8 +38,8 @@ const VIDEO_LINK_PREFIX = {
 } as const;
 
 const ENTITIES_TITLE = {
-  es: "Organizaciones",
-  en: "Organizations",
+  es: "Cliente",
+  en: "Client",
 } as const;
 
 const ENTITY_WEBSITE = {
@@ -72,14 +67,8 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
   const { locale } = useLocale();
   const [activeImageIndex, setActiveImageIndex] = useState<number | null>(null);
 
-  const clientLabel =
-    project.entities.length > 0
-      ? project.entities.map((entity) => entity.name).join(", ")
-      : translateLocalizedValue(locale, project.client);
-
   const detailItems = [
     { label: YEAR_LABEL, value: formatProjectTimeline(project) },
-    { label: CLIENT_LABEL, value: clientLabel },
     { label: LOCATION_LABEL, value: project.location },
     ...project.meta,
   ];
@@ -123,7 +112,7 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
                 <h1 className="text-3xl font-semibold tracking-tight">
                   {translate(locale, project.name)}
                 </h1>
-                <span className="inline-flex items-center rounded-full border border-foreground/10 bg-foreground/5 px-3 py-1 text-xs uppercase tracking-[0.2em] text-foreground/60">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-foreground/50">
                   {formatProjectTimeline(project)}
                 </span>
               </div>

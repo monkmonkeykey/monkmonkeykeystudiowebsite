@@ -185,7 +185,7 @@ export default function ProjectsPageClient({
                   />
                 </div>
                 <div className="flex flex-1 flex-col gap-4 p-6">
-                  <span className="inline-flex items-center rounded-full border border-foreground/10 bg-foreground/5 px-3 py-1 text-xs uppercase tracking-[0.2em] text-foreground/50">
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-foreground/50">
                     {formatProjectTimeline(project)}
                   </span>
                   <div className="space-y-2">
