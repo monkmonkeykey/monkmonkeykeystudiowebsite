@@ -11,7 +11,7 @@ const DEFAULT_DESCRIPTION =
 type ProjectPageParams = { slug: string };
 
 type ProjectPageProps = {
-  params: Promise<ProjectPageParams> | ProjectPageParams;
+  params: ProjectPageParams;
 };
 
 export async function generateStaticParams() {
@@ -23,7 +23,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
-  const { slug } = await Promise.resolve(params);
+  const { slug } = params;
 
   const project = await getProjectBySlug(slug);
 
@@ -61,7 +61,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
-  const { slug } = await Promise.resolve(params);
+  const { slug } = params;
 
   const project = await getProjectBySlug(slug);
 
