@@ -3,7 +3,6 @@ import { CLIENTS } from "@/content/clients";
 import { hasDatabaseConfig } from "@/lib/env";
 import { fetchClientBySlug, fetchClientsFromDatabase } from "@/server/clients";
 
-let cachedClients: Client[] | null = null;
 let warnedClientFallback = false;
 
 const logClientFallback = (reason: string) => {
@@ -18,18 +17,14 @@ export const getClients = async (): Promise<Client[]> => {
     return CLIENTS;
   }
 
-  if (!cachedClients) {
-    const clients = await fetchClientsFromDatabase();
+  const clients = await fetchClientsFromDatabase();
 
-    if (!clients) {
-      logClientFallback("no se pudo contactar la base de datos");
-      return CLIENTS;
-    }
-
-    cachedClients = clients.length > 0 ? clients : CLIENTS;
+  if (!clients) {
+    logClientFallback("no se pudo contactar la base de datos");
+    return CLIENTS;
   }
 
-  return cachedClients;
+  return clients.length > 0 ? clients : CLIENTS;
 };
 
 export const getClientBySlug = async (slug: string): Promise<Client | null> => {
@@ -49,15 +44,11 @@ export const getClientBySlug = async (slug: string): Promise<Client | null> => {
 
 export const refreshClientsCache = async (): Promise<void> => {
   if (!hasDatabaseConfig()) {
-    cachedClients = CLIENTS;
     return;
   }
 
   const clients = await fetchClientsFromDatabase();
   if (!clients) {
     logClientFallback("no se pudo contactar la base de datos");
-    return;
   }
-
-  cachedClients = clients.length > 0 ? clients : CLIENTS;
 };

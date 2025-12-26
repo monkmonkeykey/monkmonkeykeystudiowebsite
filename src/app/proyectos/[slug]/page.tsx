@@ -3,27 +3,22 @@ import { notFound } from "next/navigation";
 
 import { ProjectDetail } from "@/components/projects/project-detail";
 import { PROJECT_CATEGORY_LABELS } from "@/domain/projects";
-import { getProjectBySlug, getProjects } from "@/data/projects";
+import { getProjectBySlug } from "@/data/projects";
 
 const DEFAULT_DESCRIPTION =
   "MonkMonkeyKey acompaña a equipos de producto y museografía con experiencias memorables.";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 type ProjectPageParams = { slug: string };
 
 type ProjectPageProps = {
-  params: Promise<ProjectPageParams>;
+  params: ProjectPageParams;
 };
 
-export async function generateStaticParams() {
-  const projects = await getProjects();
-
-  return projects.map((project) => ({
-    slug: project.slug,
-  }));
-}
-
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug } = params;
 
   const project = await getProjectBySlug(slug);
 
@@ -61,7 +56,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
-  const { slug } = await params;
+  const { slug } = params;
 
   const project = await getProjectBySlug(slug);
 

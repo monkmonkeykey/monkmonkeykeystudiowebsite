@@ -3,7 +3,6 @@ import { PROJECTS } from "@/content/projects";
 import { hasDatabaseConfig } from "@/lib/env";
 import { fetchProjectBySlug, fetchProjectsFromDatabase } from "@/server/projects";
 
-let cachedProjects: Project[] | null = null;
 let warnedProjectFallback = false;
 
 const logProjectFallback = (reason: string) => {
@@ -49,18 +48,14 @@ export const getProjects = async (includePrivate = false): Promise<Project[]> =>
     return fallback();
   }
 
-  if (!cachedProjects) {
-    const projects = await fetchProjectsFromDatabase();
+  const projects = await fetchProjectsFromDatabase();
 
-    if (!projects) {
-      logProjectFallback("no se pudo contactar la base de datos");
-      return fallback();
-    }
-
-    cachedProjects = projects.length > 0 ? projects : PROJECTS;
+  if (!projects) {
+    logProjectFallback("no se pudo contactar la base de datos");
+    return fallback();
   }
 
-  return sortProjectsByTimeline(filterPrivate(cachedProjects, includePrivate));
+  return sortProjectsByTimeline(filterPrivate(projects.length > 0 ? projects : PROJECTS, includePrivate));
 };
 
 export const getProjectBySlug = async (
@@ -89,15 +84,11 @@ export const getProjectBySlug = async (
 
 export const refreshProjectsCache = async (): Promise<void> => {
   if (!hasDatabaseConfig()) {
-    cachedProjects = PROJECTS;
     return;
   }
 
   const projects = await fetchProjectsFromDatabase();
   if (!projects) {
     logProjectFallback("no se pudo contactar la base de datos");
-    return;
   }
-
-  cachedProjects = projects.length > 0 ? projects : PROJECTS;
 };
