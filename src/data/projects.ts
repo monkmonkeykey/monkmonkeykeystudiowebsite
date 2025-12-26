@@ -4,6 +4,14 @@ import { hasDatabaseConfig } from "@/lib/env";
 import { fetchProjectBySlug, fetchProjectsFromDatabase } from "@/server/projects";
 
 let cachedProjects: Project[] | null = null;
+let warnedProjectFallback = false;
+
+const logProjectFallback = (reason: string) => {
+  if (!warnedProjectFallback) {
+    console.warn(`[projects] Usando contenido local: ${reason}`);
+    warnedProjectFallback = true;
+  }
+};
 
 const sortProjectsByTimeline = (projects: Project[]): Project[] => {
   const score = (project: Project) => {
@@ -35,18 +43,21 @@ const filterPrivate = (projects: Project[], includePrivate: boolean) =>
   includePrivate ? projects : projects.filter((project) => !project.isPrivate);
 
 export const getProjects = async (includePrivate = false): Promise<Project[]> => {
+  const fallback = () => sortProjectsByTimeline(filterPrivate(PROJECTS, includePrivate));
+
   if (!hasDatabaseConfig()) {
-    return sortProjectsByTimeline(filterPrivate(PROJECTS, includePrivate));
+    return fallback();
   }
 
   if (!cachedProjects) {
     const projects = await fetchProjectsFromDatabase();
 
-    if (!projects || projects.length === 0) {
-      cachedProjects = PROJECTS;
-    } else {
-      cachedProjects = projects;
+    if (!projects) {
+      logProjectFallback("no se pudo contactar la base de datos");
+      return fallback();
     }
+
+    cachedProjects = projects.length > 0 ? projects : PROJECTS;
   }
 
   return sortProjectsByTimeline(filterPrivate(cachedProjects, includePrivate));
@@ -56,9 +67,13 @@ export const getProjectBySlug = async (
   slug: string,
   includePrivate = false,
 ): Promise<Project | null> => {
-  if (!hasDatabaseConfig()) {
+  const fallbackLookup = () => {
     const project = PROJECTS.find((item) => item.slug === slug);
     return project && (includePrivate || !project.isPrivate) ? project : null;
+  };
+
+  if (!hasDatabaseConfig()) {
+    return fallbackLookup();
   }
 
   const project = await fetchProjectBySlug(slug);
@@ -67,16 +82,9 @@ export const getProjectBySlug = async (
     return project;
   }
 
-  if (!cachedProjects) {
-    await getProjects(true);
-  }
-
-  const cached = cachedProjects?.find((item) => item.slug === slug) ?? null;
-  if (!cached) {
-    return null;
-  }
-
-  return includePrivate || !cached.isPrivate ? cached : null;
+  const hydratedProjects = await getProjects(true);
+  const fallback = hydratedProjects.find((item) => item.slug === slug) ?? null;
+  return fallback && (includePrivate || !fallback.isPrivate) ? fallback : null;
 };
 
 export const refreshProjectsCache = async (): Promise<void> => {
@@ -86,5 +94,10 @@ export const refreshProjectsCache = async (): Promise<void> => {
   }
 
   const projects = await fetchProjectsFromDatabase();
-  cachedProjects = projects && projects.length > 0 ? projects : PROJECTS;
+  if (!projects) {
+    logProjectFallback("no se pudo contactar la base de datos");
+    return;
+  }
+
+  cachedProjects = projects.length > 0 ? projects : PROJECTS;
 };

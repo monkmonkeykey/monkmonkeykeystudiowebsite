@@ -4,22 +4,29 @@ import { hasDatabaseConfig } from "@/lib/env";
 import { fetchClientBySlug, fetchClientsFromDatabase } from "@/server/clients";
 
 let cachedClients: Client[] | null = null;
+let warnedClientFallback = false;
+
+const logClientFallback = (reason: string) => {
+  if (!warnedClientFallback) {
+    console.warn(`[clients] Usando contenido local: ${reason}`);
+    warnedClientFallback = true;
+  }
+};
 
 export const getClients = async (): Promise<Client[]> => {
   if (!hasDatabaseConfig()) {
     return CLIENTS;
   }
 
-  if (cachedClients) {
-    return cachedClients;
-  }
+  if (!cachedClients) {
+    const clients = await fetchClientsFromDatabase();
 
-  const clients = await fetchClientsFromDatabase();
+    if (!clients) {
+      logClientFallback("no se pudo contactar la base de datos");
+      return CLIENTS;
+    }
 
-  if (!clients || clients.length === 0) {
-    cachedClients = CLIENTS;
-  } else {
-    cachedClients = clients;
+    cachedClients = clients.length > 0 ? clients : CLIENTS;
   }
 
   return cachedClients;
@@ -36,11 +43,8 @@ export const getClientBySlug = async (slug: string): Promise<Client | null> => {
     return client;
   }
 
-  if (!cachedClients) {
-    await getClients();
-  }
-
-  return cachedClients?.find((item) => item.slug === slug) ?? null;
+  const clients = await getClients();
+  return clients.find((item) => item.slug === slug) ?? null;
 };
 
 export const refreshClientsCache = async (): Promise<void> => {
@@ -50,5 +54,10 @@ export const refreshClientsCache = async (): Promise<void> => {
   }
 
   const clients = await fetchClientsFromDatabase();
-  cachedClients = clients && clients.length > 0 ? clients : CLIENTS;
+  if (!clients) {
+    logClientFallback("no se pudo contactar la base de datos");
+    return;
+  }
+
+  cachedClients = clients.length > 0 ? clients : CLIENTS;
 };

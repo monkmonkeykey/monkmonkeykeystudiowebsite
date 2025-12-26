@@ -1,0 +1,62 @@
+import { NextResponse } from "next/server";
+
+import { env, hasDatabaseConfig } from "@/lib/env";
+import { getMongoDatabase } from "@/server/mongodb";
+
+export async function GET() {
+  const hasConfig = hasDatabaseConfig();
+
+  if (!hasConfig) {
+    return NextResponse.json(
+      {
+        connected: false,
+        hasConfig,
+        reason: "Falta configurar MONGODB_URI",
+      },
+      { status: 503 },
+    );
+  }
+
+  try {
+    const db = await getMongoDatabase();
+
+    if (!db) {
+      return NextResponse.json(
+        {
+          connected: false,
+          hasConfig,
+          reason: "No fue posible conectar con la base de datos (ver logs)",
+        },
+        { status: 503 },
+      );
+    }
+
+    const [projectSample, clientSample] = await Promise.all([
+      db.collection("projects").find({}, { projection: { _id: 0 }, limit: 1 }).toArray(),
+      db
+        .collection(env.mongodbClientsCollection)
+        .find({}, { projection: { _id: 0 }, limit: 1 })
+        .toArray(),
+    ]);
+
+    return NextResponse.json({
+      connected: true,
+      hasConfig,
+      reason: null,
+      sampleCounts: {
+        projects: projectSample.length,
+        clients: clientSample.length,
+      },
+    });
+  } catch (error) {
+    const reason = error instanceof Error ? error.message : "Error desconocido";
+    return NextResponse.json(
+      {
+        connected: false,
+        hasConfig,
+        reason,
+      },
+      { status: 500 },
+    );
+  }
+}
