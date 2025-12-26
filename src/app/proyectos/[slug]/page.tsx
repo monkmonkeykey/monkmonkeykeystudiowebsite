@@ -14,11 +14,15 @@ export const revalidate = 0;
 type ProjectPageParams = { slug: string };
 
 type ProjectPageProps = {
-  params: ProjectPageParams;
+  params: ProjectPageParams | Promise<ProjectPageParams>;
 };
 
+async function resolveParams(params: ProjectPageProps["params"]) {
+  return Promise.resolve(params);
+}
+
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
-  const { slug } = params;
+  const { slug } = await resolveParams(params);
 
   const project = await getProjectBySlug(slug);
 
@@ -56,7 +60,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
-  const { slug } = params;
+  const { slug } = await resolveParams(params);
 
   const project = await getProjectBySlug(slug);
 
