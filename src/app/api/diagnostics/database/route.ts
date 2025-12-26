@@ -3,19 +3,32 @@ import { NextResponse } from "next/server";
 import { env, hasDatabaseConfig } from "@/lib/env";
 import { getMongoDatabase } from "@/server/mongodb";
 
+const getDatabaseName = (): string | null => {
+  try {
+    const parsed = new URL(env.mongodbUri);
+    const name = parsed.pathname.replace(/^\//, "").split("?")[0];
+    return env.mongodbDb || (name.length > 0 ? name : null);
+  } catch {
+    return env.mongodbDb || null;
+  }
+};
+
 export async function GET() {
   const hasConfig = hasDatabaseConfig();
-
+  
   if (!hasConfig) {
     return NextResponse.json(
       {
         connected: false,
         hasConfig,
         reason: "Falta configurar MONGODB_URI",
+        database: null,
       },
       { status: 503 },
     );
   }
+
+  const database = getDatabaseName();
 
   try {
     const db = await getMongoDatabase();
@@ -26,6 +39,7 @@ export async function GET() {
           connected: false,
           hasConfig,
           reason: "No fue posible conectar con la base de datos (ver logs)",
+          database,
         },
         { status: 503 },
       );
@@ -43,6 +57,7 @@ export async function GET() {
       connected: true,
       hasConfig,
       reason: null,
+      database,
       sampleCounts: {
         projects: projectSample.length,
         clients: clientSample.length,
@@ -55,6 +70,7 @@ export async function GET() {
         connected: false,
         hasConfig,
         reason,
+        database,
       },
       { status: 500 },
     );

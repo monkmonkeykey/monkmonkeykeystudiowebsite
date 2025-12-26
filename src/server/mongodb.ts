@@ -41,6 +41,24 @@ let mongoClientPromise: Promise<MongoClientInstance> | null = null;
 let warnedMissingDriver = false;
 let warnedConnectionFailure = false;
 let activeMongoUri: string | null = null;
+let parsedDatabaseName: string | null | undefined;
+
+const getDatabaseFromUri = (): string | null => {
+  if (parsedDatabaseName !== undefined) {
+    return parsedDatabaseName;
+  }
+
+  try {
+    const parsed = new URL(env.mongodbUri);
+    const name = parsed.pathname.replace(/^\//, "").split("?")[0];
+
+    parsedDatabaseName = name.length > 0 ? name : null;
+  } catch {
+    parsedDatabaseName = null;
+  }
+
+  return parsedDatabaseName;
+};
 
 const describeUri = (uri: string): string => {
   try {
@@ -192,6 +210,6 @@ export const getMongoDatabase = async (): Promise<MongoDatabase | null> => {
     return null;
   }
 
-  const databaseName = env.mongodbDb || undefined;
+  const databaseName = env.mongodbDb || getDatabaseFromUri() || undefined;
   return client.db(databaseName);
 };
