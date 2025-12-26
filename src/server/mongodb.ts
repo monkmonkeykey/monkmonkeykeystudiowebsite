@@ -40,9 +40,16 @@ let mongoModulePromise: Promise<MongoModule | null> | null = null;
 let mongoClientPromise: Promise<MongoClientInstance> | null = null;
 let warnedMissingDriver = false;
 let warnedConnectionFailure = false;
-const RETRY_DELAY_MS = 5 * 60 * 1000;
-let nextRetryTimestamp = 0;
 let activeMongoUri: string | null = null;
+
+const describeUri = (uri: string): string => {
+  try {
+    const parsed = new URL(uri);
+    return `${parsed.protocol}//${parsed.hostname}${parsed.port ? `:${parsed.port}` : ""}${parsed.pathname}`;
+  } catch {
+    return uri;
+  }
+};
 
 const buildSrvFallbackUri = (uri: string): string | null => {
   if (!uri.startsWith("mongodb+srv://")) {
@@ -90,6 +97,8 @@ const connectWithUri = async (mongodb: MongoModule, uri: string): Promise<MongoC
     serverSelectionTimeoutMS: 5000,
   });
 
+  console.info(`[MongoDB] Intentando conectar a ${describeUri(uri)}`);
+
   const connectedClient = await clientInstance.connect();
   activeMongoUri = uri;
   warnedConnectionFailure = false;
@@ -134,10 +143,6 @@ export const getMongoClient = async (): Promise<MongoClientInstance | null> => {
     return null;
   }
 
-  if (nextRetryTimestamp > Date.now()) {
-    return null;
-  }
-
   const mongodb = await loadMongoModule();
 
   if (!mongodb) {
@@ -167,14 +172,12 @@ export const getMongoClient = async (): Promise<MongoClientInstance | null> => {
     return client;
   } catch (error) {
     mongoClientPromise = null;
-    nextRetryTimestamp = Date.now() + RETRY_DELAY_MS;
-
     if (!warnedConnectionFailure) {
       warnedConnectionFailure = true;
       const errorMessage =
         error instanceof Error ? error.message : "Unknown MongoDB connection error";
       console.error(
-        `Failed to connect to MongoDB. Falling back to Markdown content. Error: ${errorMessage}`,
+        `Failed to connect to MongoDB (${describeUri(env.mongodbUri)}). Falling back to Markdown content. Error: ${errorMessage}`,
       );
     }
 
