@@ -14,11 +14,15 @@ export const revalidate = 0;
 type ProjectPageParams = { slug: string };
 
 type ProjectPageProps = {
-  params: ProjectPageParams | Promise<ProjectPageParams>;
+  params?: Promise<ProjectPageParams>;
 };
 
-async function resolveParams(params: ProjectPageProps["params"]) {
-  return Promise.resolve(params);
+async function resolveParams(params?: Promise<ProjectPageParams>) {
+  if (!params) {
+    notFound();
+  }
+
+  return params;
 }
 
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
