@@ -22,7 +22,13 @@ async function resolveParams(params?: Promise<ProjectPageParams>) {
     notFound();
   }
 
-  return params;
+  const resolved = await params;
+
+  if (!resolved) {
+    notFound();
+  }
+
+  return resolved;
 }
 
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
