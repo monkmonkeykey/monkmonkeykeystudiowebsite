@@ -78,7 +78,7 @@ export default function ProjectsPageClient({
   }, [projectCovers.length, projects]);
   const [activeCoverIndex, setActiveCoverIndex] = useState(() => seededCoverIndex);
   const [previousCover, setPreviousCover] = useState(() => projectCovers[seededCoverIndex] ?? null);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [fadePreviousOut, setFadePreviousOut] = useState(false);
   const [loadedCoverSrc, setLoadedCoverSrc] = useState<string | null>(null);
 
   const safeActiveCoverIndex = useMemo(() => {
@@ -94,7 +94,7 @@ export default function ProjectsPageClient({
     const interval = setInterval(() => {
       setPreviousCover(projectCovers[safeActiveCoverIndex] ?? null);
       setLoadedCoverSrc(null);
-      setIsTransitioning(true);
+      setFadePreviousOut(false);
       setActiveCoverIndex((current) =>
         projectCovers.length ? (current + 1) % projectCovers.length : current,
       );
@@ -104,12 +104,14 @@ export default function ProjectsPageClient({
   }, [projectCovers, safeActiveCoverIndex]);
 
   useEffect(() => {
-    if (!isTransitioning) return undefined;
+    if (!fadePreviousOut && loadedCoverSrc) {
+      const timeout = setTimeout(() => setFadePreviousOut(true), 200);
 
-    const timeout = setTimeout(() => setIsTransitioning(false), 900);
+      return () => clearTimeout(timeout);
+    }
 
-    return () => clearTimeout(timeout);
-  }, [isTransitioning]);
+    return undefined;
+  }, [fadePreviousOut, loadedCoverSrc]);
 
   const categories = useMemo(() => {
     const unique = new Set<ProjectCategory>();
@@ -165,7 +167,7 @@ export default function ProjectsPageClient({
                     fill
                     sizes="(min-width: 1024px) 420px, 100vw"
                     className={`absolute inset-0 object-cover transition-opacity duration-1000 ease-in-out ${
-                      isTransitioning ? "opacity-0" : "opacity-100"
+                      fadePreviousOut ? "opacity-0" : "opacity-100"
                     }`}
                     priority
                   />
