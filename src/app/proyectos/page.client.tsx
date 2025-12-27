@@ -76,26 +76,40 @@ export default function ProjectsPageClient({
 
     return hash % projectCovers.length;
   }, [projectCovers.length, projects]);
-  const [coverTick, setCoverTick] = useState(0);
+  const [activeCoverIndex, setActiveCoverIndex] = useState(() => seededCoverIndex);
+  const [previousCover, setPreviousCover] = useState(() => projectCovers[seededCoverIndex] ?? null);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const [loadedCoverSrc, setLoadedCoverSrc] = useState<string | null>(null);
+
+  const safeActiveCoverIndex = useMemo(() => {
+    if (projectCovers.length === 0) return 0;
+
+    return ((activeCoverIndex % projectCovers.length) + projectCovers.length) % projectCovers.length;
+  }, [activeCoverIndex, projectCovers.length]);
+  const activeCover = projectCovers[safeActiveCoverIndex];
 
   useEffect(() => {
     if (projectCovers.length === 0) return undefined;
 
     const interval = setInterval(() => {
-      setCoverTick((current) => current + 1);
-    }, 4200);
+      setPreviousCover(projectCovers[safeActiveCoverIndex] ?? null);
+      setLoadedCoverSrc(null);
+      setIsTransitioning(true);
+      setActiveCoverIndex((current) =>
+        projectCovers.length ? (current + 1) % projectCovers.length : current,
+      );
+    }, 5200);
 
     return () => clearInterval(interval);
-  }, [projectCovers.length]);
+  }, [projectCovers, safeActiveCoverIndex]);
 
-  const activeCoverIndex = useMemo(() => {
-    if (projectCovers.length === 0) return 0;
+  useEffect(() => {
+    if (!isTransitioning) return undefined;
 
-    return projectCovers.length
-      ? (seededCoverIndex + (coverTick % projectCovers.length)) % projectCovers.length
-      : 0;
-  }, [coverTick, projectCovers.length, seededCoverIndex]);
+    const timeout = setTimeout(() => setIsTransitioning(false), 900);
+
+    return () => clearTimeout(timeout);
+  }, [isTransitioning]);
 
   const categories = useMemo(() => {
     const unique = new Set<ProjectCategory>();
@@ -115,9 +129,9 @@ export default function ProjectsPageClient({
   return (
     <div className="space-y-12">
       <header className="overflow-hidden rounded-4xl border border-foreground/10 bg-gradient-to-br from-primary/5 via-background to-accent/5 p-6 shadow-sm sm:p-10">
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] lg:items-center">
-          <div className="max-w-3xl space-y-3">
-            <div className="space-y-3">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] lg:items-start lg:gap-12">
+          <div className="max-w-3xl space-y-2">
+            <div className="space-y-2">
               <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
                 {translate(locale, PAGE_TITLE)}
               </h1>
@@ -142,18 +156,33 @@ export default function ProjectsPageClient({
           </div>
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/5">
             {projectCovers.length > 0 ? (
-              <Image
-                key={projectCovers[activeCoverIndex]?.src}
-                src={projectCovers[activeCoverIndex]?.src ?? "/images/projects-visual.svg"}
-                alt={translate(locale, projectCovers[activeCoverIndex]?.alt ?? PAGE_TITLE)}
-                fill
-                sizes="(min-width: 1024px) 420px, 100vw"
-                className={`object-cover transition-opacity duration-700 ${
-                  loadedCoverSrc === projectCovers[activeCoverIndex]?.src ? "opacity-100" : "opacity-0"
-                }`}
-                priority
-                onLoad={() => setLoadedCoverSrc(projectCovers[activeCoverIndex]?.src ?? null)}
-              />
+              <>
+                {previousCover && previousCover.src !== activeCover?.src ? (
+                  <Image
+                    key={`${previousCover.src}-previous`}
+                    src={previousCover.src}
+                    alt={translate(locale, previousCover.alt ?? PAGE_TITLE)}
+                    fill
+                    sizes="(min-width: 1024px) 420px, 100vw"
+                    className={`absolute inset-0 object-cover transition-opacity duration-1000 ease-in-out ${
+                      isTransitioning ? "opacity-0" : "opacity-100"
+                    }`}
+                    priority
+                  />
+                ) : null}
+                <Image
+                  key={activeCover?.src}
+                  src={activeCover?.src ?? "/images/projects-visual.svg"}
+                  alt={translate(locale, activeCover?.alt ?? PAGE_TITLE)}
+                  fill
+                  sizes="(min-width: 1024px) 420px, 100vw"
+                  className={`object-cover transition-opacity duration-1000 ease-in-out ${
+                    loadedCoverSrc === activeCover?.src ? "opacity-100" : "opacity-0"
+                  }`}
+                  priority
+                  onLoad={() => setLoadedCoverSrc(activeCover?.src ?? null)}
+                />
+              </>
             ) : (
               <Image
                 src="/images/projects-visual.svg"
