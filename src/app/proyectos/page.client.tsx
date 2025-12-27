@@ -24,11 +24,6 @@ const PAGE_COPY = {
   en: "Projects where we partner with product, museography, and brand teams to deploy memorable experiences.",
 } as const;
 
-const FILTER_LABEL = {
-  es: "Filtrar por",
-  en: "Filter by",
-} as const;
-
 const FILTER_ALL = {
   es: "Todos",
   en: "All",
@@ -82,16 +77,25 @@ export default function ProjectsPageClient({
     return hash % projectCovers.length;
   }, [projectCovers.length, projects]);
   const [coverTick, setCoverTick] = useState(0);
+  const [loadedCoverSrc, setLoadedCoverSrc] = useState<string | null>(null);
 
   useEffect(() => {
     if (projectCovers.length === 0) return undefined;
 
     const interval = setInterval(() => {
       setCoverTick((current) => current + 1);
-    }, 3200);
+    }, 4200);
 
     return () => clearInterval(interval);
   }, [projectCovers.length]);
+
+  const activeCoverIndex = useMemo(() => {
+    if (projectCovers.length === 0) return 0;
+
+    return projectCovers.length
+      ? (seededCoverIndex + (coverTick % projectCovers.length)) % projectCovers.length
+      : 0;
+  }, [coverTick, projectCovers.length, seededCoverIndex]);
 
   const categories = useMemo(() => {
     const unique = new Set<ProjectCategory>();
@@ -112,11 +116,7 @@ export default function ProjectsPageClient({
     <div className="space-y-12">
       <header className="overflow-hidden rounded-4xl border border-foreground/10 bg-gradient-to-br from-primary/5 via-background to-accent/5 p-6 shadow-sm sm:p-10">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] lg:items-center">
-          <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 rounded-full bg-foreground/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-foreground/70 ring-1 ring-foreground/10">
-              <span className="size-2 rounded-full bg-primary" />
-              {translate(locale, FILTER_LABEL)}
-            </div>
+          <div className="max-w-3xl space-y-3">
             <div className="space-y-3">
               <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
                 {translate(locale, PAGE_TITLE)}
@@ -142,24 +142,18 @@ export default function ProjectsPageClient({
           </div>
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/5">
             {projectCovers.length > 0 ? (
-              // Clamp the cover index so layout never crashes if the projects array changes length.
-              (() => {
-                const safeIndex = projectCovers.length
-                  ? (seededCoverIndex + (coverTick % projectCovers.length)) % projectCovers.length
-                  : 0;
-
-                return (
-                  <Image
-                    key={projectCovers[safeIndex]?.src}
-                    src={projectCovers[safeIndex]?.src ?? "/images/projects-visual.svg"}
-                    alt={translate(locale, projectCovers[safeIndex]?.alt ?? PAGE_TITLE)}
-                    fill
-                    sizes="(min-width: 1024px) 420px, 100vw"
-                    className="object-cover"
-                    priority
-                  />
-                );
-              })()
+              <Image
+                key={projectCovers[activeCoverIndex]?.src}
+                src={projectCovers[activeCoverIndex]?.src ?? "/images/projects-visual.svg"}
+                alt={translate(locale, projectCovers[activeCoverIndex]?.alt ?? PAGE_TITLE)}
+                fill
+                sizes="(min-width: 1024px) 420px, 100vw"
+                className={`object-cover transition-opacity duration-700 ${
+                  loadedCoverSrc === projectCovers[activeCoverIndex]?.src ? "opacity-100" : "opacity-0"
+                }`}
+                priority
+                onLoad={() => setLoadedCoverSrc(projectCovers[activeCoverIndex]?.src ?? null)}
+              />
             ) : (
               <Image
                 src="/images/projects-visual.svg"
@@ -174,37 +168,32 @@ export default function ProjectsPageClient({
         </div>
       </header>
 
-      <div className="flex flex-wrap items-center gap-4">
-        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-foreground/50">
-          {translate(locale, FILTER_LABEL)}
-        </span>
-        <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2">
+        <button
+          type="button"
+          onClick={() => setActiveCategory("all")}
+          className={`rounded-full border px-4 py-1.5 text-sm transition ${
+            activeCategory === "all"
+              ? "border-primary/30 bg-primary/10 text-primary"
+              : "border-foreground/10 text-foreground/60 hover:border-foreground/20 hover:text-foreground"
+          }`}
+        >
+          {translate(locale, FILTER_ALL)}
+        </button>
+        {categories.map((category) => (
           <button
+            key={category}
             type="button"
-            onClick={() => setActiveCategory("all")}
+            onClick={() => setActiveCategory(category)}
             className={`rounded-full border px-4 py-1.5 text-sm transition ${
-              activeCategory === "all"
+              activeCategory === category
                 ? "border-primary/30 bg-primary/10 text-primary"
                 : "border-foreground/10 text-foreground/60 hover:border-foreground/20 hover:text-foreground"
             }`}
           >
-            {translate(locale, FILTER_ALL)}
+            {translateCategoryLabel(locale, category, categoryLabels)}
           </button>
-          {categories.map((category) => (
-            <button
-              key={category}
-              type="button"
-              onClick={() => setActiveCategory(category)}
-              className={`rounded-full border px-4 py-1.5 text-sm transition ${
-                activeCategory === category
-                  ? "border-primary/30 bg-primary/10 text-primary"
-                  : "border-foreground/10 text-foreground/60 hover:border-foreground/20 hover:text-foreground"
-              }`}
-            >
-              {translateCategoryLabel(locale, category, categoryLabels)}
-            </button>
-          ))}
-        </div>
+        ))}
       </div>
 
       <div className="space-y-8">
