@@ -69,15 +69,25 @@ export default function ProjectsPageClient({
     () => projects.map((project) => ({ src: project.cover.src, alt: project.cover.alt })),
     [projects],
   );
-  const [activeCoverIndex, setActiveCoverIndex] = useState(() =>
-    projectCovers.length ? Math.floor(Math.random() * projectCovers.length) : 0,
-  );
+  const seededCoverIndex = useMemo(() => {
+    if (projectCovers.length === 0) return 0;
+
+    const seedString = projects.map((project) => project.slug).join("|");
+    let hash = 0;
+
+    for (let i = 0; i < seedString.length; i += 1) {
+      hash = (hash * 31 + seedString.charCodeAt(i)) >>> 0;
+    }
+
+    return hash % projectCovers.length;
+  }, [projectCovers.length, projects]);
+  const [coverTick, setCoverTick] = useState(0);
 
   useEffect(() => {
     if (projectCovers.length === 0) return undefined;
 
     const interval = setInterval(() => {
-      setActiveCoverIndex((current) => (current + 1) % projectCovers.length);
+      setCoverTick((current) => current + 1);
     }, 3200);
 
     return () => clearInterval(interval);
@@ -135,7 +145,7 @@ export default function ProjectsPageClient({
               // Clamp the cover index so layout never crashes if the projects array changes length.
               (() => {
                 const safeIndex = projectCovers.length
-                  ? activeCoverIndex % projectCovers.length
+                  ? (seededCoverIndex + (coverTick % projectCovers.length)) % projectCovers.length
                   : 0;
 
                 return (
