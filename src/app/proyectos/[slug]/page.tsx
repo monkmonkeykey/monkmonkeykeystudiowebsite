@@ -6,7 +6,7 @@ import { PROJECT_CATEGORY_LABELS } from "@/domain/projects";
 import { getProjectBySlug } from "@/data/projects";
 
 const DEFAULT_DESCRIPTION =
-  "MonkMonkeyKey acompaña a equipos de producto y museografía con experiencias memorables.";
+  "monkmonkeykey acompaña a equipos de producto y museografía con experiencias memorables.";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -38,12 +38,12 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
 
   if (!project) {
     return {
-      title: "Proyecto no encontrado · MonkMonkeyKey",
+      title: "Proyecto no encontrado · monkmonkeykey",
       description: DEFAULT_DESCRIPTION,
     };
   }
 
-  const title = `${project.name.es} · MonkMonkeyKey`;
+  const title = `${project.name.es} · monkmonkeykey`;
   const description = project.subtitle.es || DEFAULT_DESCRIPTION;
 
   return {

@@ -3,9 +3,9 @@ import { SiteShell } from "@/components/site/SiteShell";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "MonkMonkeyKey · Product Strategy Studio",
+  title: "monkmonkeykey · Product Strategy Studio",
   description:
-    "MonkMonkeyKey impulsa productos digitales con estrategia, diseño y desarrollo centrados en resultados tangibles.",
+    "monkmonkeykey impulsa productos digitales con estrategia, diseño y desarrollo centrados en resultados tangibles.",
 };
 
 export default function RootLayout({

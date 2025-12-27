@@ -1,4 +1,4 @@
-# MonkMonkeyKey Website
+# monkmonkeykey Website
 
 Sitio institucional construido con Next.js 16 y el App Router. Carga contenido bilingüe (español/inglés) para servicios, clientes y proyectos, y puede funcionar únicamente con los archivos Markdown del repositorio o con un backend opcional en MongoDB + Cloudinary para gestión desde un panel administrativo.
 
