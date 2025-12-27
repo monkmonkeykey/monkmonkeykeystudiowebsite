@@ -141,20 +141,6 @@ export default function ProjectsPageClient({
                 {translate(locale, PAGE_COPY)}
               </p>
             </div>
-            <div className="flex flex-wrap gap-2 text-xs text-foreground/60">
-              <span className="inline-flex items-center gap-2 rounded-full bg-background/70 px-3 py-1.5 ring-1 ring-foreground/10">
-                <span className="size-2 rounded-full bg-emerald-400" />
-                {locale === "es" ? "Experiencias inmersivas" : "Immersive experiences"}
-              </span>
-              <span className="inline-flex items-center gap-2 rounded-full bg-background/70 px-3 py-1.5 ring-1 ring-foreground/10">
-                <span className="size-2 rounded-full bg-sky-400" />
-                {locale === "es" ? "Producción técnica" : "Technical production"}
-              </span>
-              <span className="inline-flex items-center gap-2 rounded-full bg-background/70 px-3 py-1.5 ring-1 ring-foreground/10">
-                <span className="size-2 rounded-full bg-fuchsia-400" />
-                {locale === "es" ? "Arte + nuevos medios" : "Art + new media"}
-              </span>
-            </div>
           </div>
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/5">
             {projectCovers.length > 0 ? (
