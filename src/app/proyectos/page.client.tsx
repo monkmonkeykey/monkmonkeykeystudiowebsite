@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import type { Project, ProjectCategory } from "@/domain/projects";
 import { formatProjectTimeline, translateCategoryLabel } from "@/domain/projects";
@@ -65,6 +65,23 @@ export default function ProjectsPageClient({
 }: ProjectsPageClientProps) {
   const { locale } = useLocale();
   const [activeCategory, setActiveCategory] = useState<ProjectCategory | "all">("all");
+  const projectCovers = useMemo(
+    () => projects.map((project) => ({ src: project.cover.src, alt: project.cover.alt })),
+    [projects],
+  );
+  const [activeCoverIndex, setActiveCoverIndex] = useState(() =>
+    projectCovers.length ? Math.floor(Math.random() * projectCovers.length) : 0,
+  );
+
+  useEffect(() => {
+    if (projectCovers.length === 0) return undefined;
+
+    const interval = setInterval(() => {
+      setActiveCoverIndex((current) => (current + 1) % projectCovers.length);
+    }, 3200);
+
+    return () => clearInterval(interval);
+  }, [projectCovers.length]);
 
   const categories = useMemo(() => {
     const unique = new Set<ProjectCategory>();
@@ -114,17 +131,35 @@ export default function ProjectsPageClient({
             </div>
           </div>
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/5">
-            <Image
-              src="/images/projects-visual.svg"
-              alt={
-                locale === "es"
-                  ? "Ilustración abstracta de tableros de proyecto"
-                  : "Abstract illustration of project boards"
-              }
-              fill
-              sizes="(min-width: 1024px) 420px, 100vw"
-              className="object-cover"
-            />
+            {projectCovers.length > 0 ? (
+              // Clamp the cover index so layout never crashes if the projects array changes length.
+              (() => {
+                const safeIndex = projectCovers.length
+                  ? activeCoverIndex % projectCovers.length
+                  : 0;
+
+                return (
+                  <Image
+                    key={projectCovers[safeIndex]?.src}
+                    src={projectCovers[safeIndex]?.src ?? "/images/projects-visual.svg"}
+                    alt={translate(locale, projectCovers[safeIndex]?.alt ?? PAGE_TITLE)}
+                    fill
+                    sizes="(min-width: 1024px) 420px, 100vw"
+                    className="object-cover"
+                    priority
+                  />
+                );
+              })()
+            ) : (
+              <Image
+                src="/images/projects-visual.svg"
+                alt={translate(locale, PAGE_TITLE)}
+                fill
+                sizes="(min-width: 1024px) 420px, 100vw"
+                className="object-cover"
+                priority
+              />
+            )}
           </div>
         </div>
       </header>
