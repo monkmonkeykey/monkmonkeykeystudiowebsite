@@ -42,10 +42,10 @@ export default function HomePageClient({
       <section className="overflow-hidden rounded-4xl border border-foreground/10 bg-gradient-to-br from-primary/5 via-background to-accent/5 p-6 shadow-sm sm:p-10">
         <div className="grid gap-10 lg:grid-cols-[1.05fr,0.95fr] lg:items-center">
           <div className="space-y-6">
-            <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl lg:text-4xl">
+            <h1 className="text-sm font-normal leading-relaxed text-foreground">
               {translate(locale, siteContent.home.heroHeadline)}
             </h1>
-            <div className="space-y-3 text-sm text-foreground/70 sm:text-base">
+            <div className="space-y-3 text-sm font-normal text-foreground/70">
               {heroSubtitleParagraphs.map((paragraph, index) => (
                 <p key={index} className="leading-relaxed">
                   {paragraph}
