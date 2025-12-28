@@ -73,7 +73,7 @@ export const serviceSchema = z.object({
   slug: z.string().min(1),
   title: localeTextSchema,
   summary: localeTextSchema,
-  outcomes: z.array(localeTextSchema).optional(),
+  outcomes: z.array(localeTextSchema).default([]),
 });
 
 export const siteCopySchema = z.object({
@@ -82,11 +82,11 @@ export const siteCopySchema = z.object({
     heroSubtitle: localeTextSchema,
     heroPrimaryCta: localeTextSchema,
     heroSecondaryCta: localeTextSchema,
-    heroTags: z.array(localeTextSchema).optional(),
+    heroTags: z.array(localeTextSchema).default([]),
     servicesTitle: localeTextSchema,
     servicesCopy: localeTextSchema,
     servicesCta: localeTextSchema,
-    servicesTags: z.array(localeTextSchema).optional(),
+    servicesTags: z.array(localeTextSchema).default([]),
     projectsTitle: localeTextSchema,
     projectsCta: localeTextSchema,
     clientsTitle: localeTextSchema,
@@ -97,14 +97,14 @@ export const siteCopySchema = z.object({
     title: localeTextSchema,
     copy: localeTextSchema,
     ctaLabel: localeTextSchema,
-    chips: z.array(localeTextSchema).optional(),
+    chips: z.array(localeTextSchema).default([]),
     outcomesLabel: localeTextSchema,
   }),
   contact: z.object({
     title: localeTextSchema,
     copy: localeTextSchema,
     email: z.string().email(),
-    preparation: z.array(localeTextSchema).optional(),
+    preparation: z.array(localeTextSchema).default([]),
   }),
   services: z.array(serviceSchema).min(1),
 });
