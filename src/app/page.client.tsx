@@ -31,35 +31,25 @@ export default function HomePageClient({
 }: HomePageClientProps) {
   const { locale } = useLocale();
 
+  const heroSubtitle = translate(locale, siteContent.home.heroSubtitle);
+  const heroSubtitleParagraphs = heroSubtitle
+    .split(/\n{2,}/)
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean);
+
   return (
     <div className="space-y-20">
       <section className="overflow-hidden rounded-4xl border border-foreground/10 bg-gradient-to-br from-primary/5 via-background to-accent/5 p-6 shadow-sm sm:p-10">
         <div className="grid gap-10 lg:grid-cols-[1.05fr,0.95fr] lg:items-center">
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 rounded-full bg-foreground/5 px-3 py-1 text-xs font-medium text-foreground/70 ring-1 ring-foreground/10">
-              <span className="size-2 rounded-full bg-primary shadow-[0_0_0_4px_rgba(56,189,248,0.12)]" />
-              {translate(locale, siteContent.home.heroTags[0] ?? { es: "Estudio creativo", en: "Creative studio" })}
-            </div>
-            <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+            <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl lg:text-4xl">
               {translate(locale, siteContent.home.heroHeadline)}
             </h1>
-            <p className="text-base text-foreground/70 sm:text-lg">
-              {translate(locale, siteContent.home.heroSubtitle)}
-            </p>
-            <div className="flex flex-wrap gap-3 text-sm text-foreground/70">
-              {siteContent.home.heroTags.slice(1).map((tag, index) => (
-                <div
-                  key={`${tag.es}-${index}`}
-                  className="inline-flex items-center gap-2 rounded-full bg-background/60 px-3 py-2 ring-1 ring-foreground/10"
-                >
-                  <span
-                    className="size-2 rounded-full"
-                    style={{
-                      backgroundColor: index === 0 ? "rgb(74 222 128)" : index === 1 ? "rgb(56 189 248)" : "rgb(232 121 249)",
-                    }}
-                  />
-                  {translate(locale, tag)}
-                </div>
+            <div className="space-y-3 text-base text-foreground/70 sm:text-lg">
+              {heroSubtitleParagraphs.map((paragraph, index) => (
+                <p key={index} className="leading-relaxed">
+                  {paragraph}
+                </p>
               ))}
             </div>
             <div className="flex flex-wrap gap-3">

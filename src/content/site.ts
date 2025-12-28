@@ -5,20 +5,15 @@ export const DEFAULT_SITE_CONTENT: SiteCopy = {
   home: {
     heroHeadline: {
       es: "Producción técnica audiovisual y desarrollo de obra con nuevos medios para el sector artístico y cultural.",
-      en: "A strategic partner to scale your digital products",
+      en: "Technical production and new-media execution for the arts and cultural sector.",
     },
     heroSubtitle: {
-      es: "Somos un estudio especializado en producción técnica audiovisual y nuevos medios, colaborando con museos, universidades y artistas en proyectos que integran arte, tecnología y experimentación. Contamos con experiencia en sistemas de audio multicanal, programación creativa y fabricación mediante impresión 3D.",
-      en: "We combine strategy, design, and growth so every release matches your business goals.",
+      es: "monkmonkeykey estudio es un estudio de producción creativa y técnica especializado en obras de arte con nuevos medios, experiencias interactivas y conciertos de música experimental.\n\nTrabajamos con artistas, instituciones culturales y académicas para desarrollar proyectos que integran tecnología, sonido y espacio, desde la concepción técnica hasta la implementación, operación y puesta en funcionamiento.\n\nCon base en la Ciudad de México, colaboramos en proyectos a nivel nacional e internacional, tanto en montajes presenciales como en implementaciones remotas cuando la naturaleza de la obra lo permite.\n\nNuestro enfoque parte del arte, pero se sostiene en la producción: resolver, materializar y hacer que las ideas funcionen en contextos reales.",
+      en: "monkmonkeykey estudio is a creative and technical production studio focused on new-media artworks, interactive experiences, and experimental music performances.\n\nWe partner with artists, cultural institutions, and academia to craft projects that merge technology, sound, and space—from technical conception through implementation, operation, and go-live.\n\nBased in Mexico City, we collaborate on projects across Mexico and internationally, on-site when needed or remotely when the work allows.\n\nOur perspective starts from art but is grounded in production: solving, materializing, and making ideas work in real contexts.",
     },
     heroPrimaryCta: { es: "Contáctanos", en: "Book a call" },
     heroSecondaryCta: { es: "Ver proyectos", en: "View work" },
-    heroTags: [
-      { es: "Estudio creativo", en: "Creative studio" },
-      { es: "Arte + tecnología", en: "Art + technology" },
-      { es: "Instalaciones inmersivas", en: "Immersive setups" },
-      { es: "Producción técnica", en: "Technical production" },
-    ],
+    heroTags: [],
     servicesTitle: { es: "Cómo colaboramos", en: "How we collaborate" },
     servicesCopy: {
       es: "Seleccionamos squads a medida para cada etapa: desde validar oportunidades hasta acelerar productos en producción.",
