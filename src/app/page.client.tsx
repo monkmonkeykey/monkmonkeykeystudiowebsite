@@ -45,7 +45,7 @@ export default function HomePageClient({
             <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl lg:text-4xl">
               {translate(locale, siteContent.home.heroHeadline)}
             </h1>
-            <div className="space-y-3 text-base text-foreground/70 sm:text-lg">
+            <div className="space-y-3 text-sm text-foreground/70 sm:text-base">
               {heroSubtitleParagraphs.map((paragraph, index) => (
                 <p key={index} className="leading-relaxed">
                   {paragraph}
