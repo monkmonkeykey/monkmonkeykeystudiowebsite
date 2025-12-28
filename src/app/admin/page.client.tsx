@@ -67,6 +67,11 @@ type SiteContentField = {
     heroPrimaryCta: LocaleField;
     heroSecondaryCta: LocaleField;
     heroTags: LocaleField[];
+    heroVideo: {
+      url: string;
+      publicId: string;
+      poster: string;
+    };
     servicesTitle: LocaleField;
     servicesCopy: LocaleField;
     servicesCta: LocaleField;
@@ -148,6 +153,11 @@ const createSiteContentField = (siteContent: SiteContent): SiteContentField => (
     heroPrimaryCta: createLocaleField(siteContent.home.heroPrimaryCta),
     heroSecondaryCta: createLocaleField(siteContent.home.heroSecondaryCta),
     heroTags: (siteContent.home.heroTags || []).map((tag, index) => createDescriptionField(`hero-tag-${index}`, tag).text),
+    heroVideo: {
+      url: siteContent.home.heroVideo?.url ?? "",
+      publicId: siteContent.home.heroVideo?.publicId ?? "",
+      poster: siteContent.home.heroVideo?.poster ?? "",
+    },
     servicesTitle: createLocaleField(siteContent.home.servicesTitle),
     servicesCopy: createLocaleField(siteContent.home.servicesCopy),
     servicesCta: createLocaleField(siteContent.home.servicesCta),
@@ -232,6 +242,14 @@ const buildSitePayload = (draft: SiteContentField): SiteContent => ({
     heroPrimaryCta: localeFieldToText(trimLocaleField(draft.home.heroPrimaryCta)),
     heroSecondaryCta: localeFieldToText(trimLocaleField(draft.home.heroSecondaryCta)),
     heroTags: normalizeLocaleListField(draft.home.heroTags),
+    heroVideo:
+      draft.home.heroVideo.url.trim() || draft.home.heroVideo.publicId.trim() || draft.home.heroVideo.poster.trim()
+        ? {
+            url: draft.home.heroVideo.url.trim() || undefined,
+            publicId: draft.home.heroVideo.publicId.trim() || undefined,
+            poster: draft.home.heroVideo.poster.trim() || undefined,
+          }
+        : undefined,
     servicesTitle: localeFieldToText(trimLocaleField(draft.home.servicesTitle)),
     servicesCopy: localeFieldToText(trimLocaleField(draft.home.servicesCopy)),
     servicesCta: localeFieldToText(trimLocaleField(draft.home.servicesCta)),
@@ -500,6 +518,8 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
   const [draft, setDraft] = useState<SiteContentField>(() => createSiteContentField(siteContent));
   const [status, setStatus] = useState<"idle" | "saving">("idle");
   const [message, setMessage] = useState<string | null>(null);
+  const [heroVideoUploadStatus, setHeroVideoUploadStatus] = useState<"idle" | "uploading">("idle");
+  const [heroPosterUploadStatus, setHeroPosterUploadStatus] = useState<"idle" | "uploading">("idle");
 
   const handleSave = useCallback(async () => {
     setStatus("saving");
@@ -525,6 +545,62 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
     setMessage("Contenido guardado en MongoDB.");
     router.refresh();
   }, [draft, router]);
+
+  const handleHeroVideoFile = useCallback(
+    async (file?: File) => {
+      if (!file) return;
+
+      setHeroVideoUploadStatus("uploading");
+      setMessage(null);
+
+      try {
+        const result = await uploadToCloudinary(file, "site/hero/video");
+        setDraft((previous) => ({
+          ...previous,
+          home: {
+            ...previous.home,
+            heroVideo: {
+              ...previous.home.heroVideo,
+              url: result.src,
+              publicId: result.publicId,
+            },
+          },
+        }));
+        setMessage("Video subido a Cloudinary. Se usará como fondo en el hero.");
+      } catch (error) {
+        setMessage(error instanceof Error ? error.message : "No se pudo subir el video");
+      } finally {
+        setHeroVideoUploadStatus("idle");
+      }
+    },
+    [],
+  );
+
+  const handleHeroPosterFile = useCallback(
+    async (file?: File) => {
+      if (!file) return;
+
+      setHeroPosterUploadStatus("uploading");
+      setMessage(null);
+
+      try {
+        const result = await uploadToCloudinary(file, "site/hero/poster");
+        setDraft((previous) => ({
+          ...previous,
+          home: {
+            ...previous.home,
+            heroVideo: { ...previous.home.heroVideo, poster: result.src },
+          },
+        }));
+        setMessage("Poster subido a Cloudinary y listo para el video de fondo.");
+      } catch (error) {
+        setMessage(error instanceof Error ? error.message : "No se pudo subir el poster");
+      } finally {
+        setHeroPosterUploadStatus("idle");
+      }
+    },
+    [],
+  );
 
   return (
     <section className="space-y-6 rounded-4xl border border-foreground/10 bg-foreground/5 p-6 shadow-sm">
@@ -571,6 +647,87 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
             value={draft.home.heroSecondaryCta}
             onChange={(value) => setDraft({ ...draft, home: { ...draft.home, heroSecondaryCta: value } })}
           />
+          <div className="space-y-2 rounded-2xl border border-foreground/10 bg-foreground/[0.03] p-3 text-sm text-foreground/70">
+            <div className="flex items-center justify-between gap-3 text-xs uppercase tracking-[0.14em] text-foreground/60">
+              <span>Video de fondo (opcional)</span>
+              <span className="rounded-full bg-foreground/10 px-2 py-0.5 text-[11px] font-semibold text-foreground/70">Hero</span>
+            </div>
+            <p className="text-xs text-foreground/60">
+              Sube un video a Cloudinary o pega cualquier URL segura (mp4/webm). El video se reproducirá en loop detrás de las tarjetas de Discovery/Delivery/Growth.
+            </p>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <label className="space-y-1">
+                <span className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/60">URL del video</span>
+                <input
+                  className="w-full rounded-xl border border-foreground/10 bg-background px-3 py-2 text-sm"
+                  placeholder="https://.../video.mp4"
+                  value={draft.home.heroVideo.url}
+                  onChange={(event) =>
+                    setDraft({
+                      ...draft,
+                      home: { ...draft.home, heroVideo: { ...draft.home.heroVideo, url: event.target.value } },
+                    })
+                  }
+                />
+              </label>
+              <label className="space-y-1">
+                <span className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/60">Public ID (Cloudinary)</span>
+                <input
+                  className="w-full rounded-xl border border-foreground/10 bg-background px-3 py-2 text-sm"
+                  placeholder="carpeta/video-id"
+                  value={draft.home.heroVideo.publicId}
+                  onChange={(event) =>
+                    setDraft({
+                      ...draft,
+                      home: { ...draft.home, heroVideo: { ...draft.home.heroVideo, publicId: event.target.value } },
+                    })
+                  }
+                />
+              </label>
+              <label className="space-y-1">
+                <span className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/60">Poster (opcional)</span>
+                <input
+                  className="w-full rounded-xl border border-foreground/10 bg-background px-3 py-2 text-sm"
+                  placeholder="https://.../frame.jpg"
+                  value={draft.home.heroVideo.poster}
+                  onChange={(event) =>
+                    setDraft({
+                      ...draft,
+                      home: { ...draft.home, heroVideo: { ...draft.home.heroVideo, poster: event.target.value } },
+                    })
+                  }
+                />
+              </label>
+              <div className="flex flex-wrap gap-2 pt-1 text-xs text-foreground/60">
+                <label className="inline-flex items-center gap-2 rounded-full border border-foreground/10 px-3 py-1 font-semibold text-foreground/80 hover:border-foreground/30">
+                  <input
+                    type="file"
+                    accept="video/*"
+                    className="hidden"
+                    onChange={(event) => {
+                      const [file] = Array.from(event.target.files ?? []);
+                      void handleHeroVideoFile(file);
+                      event.target.value = "";
+                    }}
+                  />
+                  {heroVideoUploadStatus === "uploading" ? "Subiendo video..." : "Subir video"}
+                </label>
+                <label className="inline-flex items-center gap-2 rounded-full border border-foreground/10 px-3 py-1 font-semibold text-foreground/80 hover:border-foreground/30">
+                  <input
+                    type="file"
+                    accept="image/*"
+                    className="hidden"
+                    onChange={(event) => {
+                      const [file] = Array.from(event.target.files ?? []);
+                      void handleHeroPosterFile(file);
+                      event.target.value = "";
+                    }}
+                  />
+                  {heroPosterUploadStatus === "uploading" ? "Subiendo poster..." : "Subir poster"}
+                </label>
+              </div>
+            </div>
+          </div>
           <LocaleListEditor
             label="Chips del hero"
             addLabel="Agregar chip"

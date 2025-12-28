@@ -1,6 +1,7 @@
 import { DEFAULT_SITE_CONTENT } from "@/content/site";
 import type { SiteContent, SiteCopy } from "@/domain/site";
 import type { LocaleText } from "@/lib/i18n";
+import { buildCloudinaryVideoUrl } from "@/server/cloudinary";
 import { getMongoDatabase } from "@/server/mongodb";
 
 const COLLECTION = "siteContent";
@@ -14,6 +15,27 @@ const normalizeLocaleText = (value: LocaleText): LocaleText => ({
 const normalizeLocaleList = (values: LocaleText[] | undefined): LocaleText[] =>
   (values ?? []).map(normalizeLocaleText).filter((item) => item.es.length > 0 || item.en.length > 0);
 
+const normalizeHeroVideo = (
+  value: SiteCopy["home"]["heroVideo"],
+): SiteCopy["home"]["heroVideo"] | undefined => {
+  if (!value) return undefined;
+
+  const urlCandidate = value.url?.trim();
+  const publicId = value.publicId?.trim();
+  const poster = value.poster?.trim();
+  const resolvedUrl = urlCandidate || (publicId ? buildCloudinaryVideoUrl(publicId) ?? "" : "");
+
+  if (!resolvedUrl && !poster) {
+    return undefined;
+  }
+
+  return {
+    url: resolvedUrl || undefined,
+    publicId: publicId || undefined,
+    poster: poster || undefined,
+  };
+};
+
 const normalizeSiteCopy = (value: SiteCopy): SiteCopy => ({
   home: {
     heroHeadline: normalizeLocaleText(value.home.heroHeadline),
@@ -21,6 +43,7 @@ const normalizeSiteCopy = (value: SiteCopy): SiteCopy => ({
     heroPrimaryCta: normalizeLocaleText(value.home.heroPrimaryCta),
     heroSecondaryCta: normalizeLocaleText(value.home.heroSecondaryCta),
     heroTags: normalizeLocaleList(value.home.heroTags),
+    heroVideo: normalizeHeroVideo(value.home.heroVideo),
     servicesTitle: normalizeLocaleText(value.home.servicesTitle),
     servicesCopy: normalizeLocaleText(value.home.servicesCopy),
     servicesCta: normalizeLocaleText(value.home.servicesCta),

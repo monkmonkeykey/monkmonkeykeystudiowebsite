@@ -76,6 +76,18 @@ export const serviceSchema = z.object({
   outcomes: z.array(localeTextSchema).default([]),
 });
 
+const mediaSchema = z
+  .object({
+    url: z.string().url().optional(),
+    publicId: z.string().min(1).optional(),
+    poster: z.string().url().optional(),
+  })
+  .optional()
+  .refine((value) => {
+    if (!value) return true;
+    return Boolean(value.url) || Boolean(value.publicId) || Boolean(value.poster);
+  }, "Provide a video URL, publicId, or poster to enable the hero video.");
+
 export const siteCopySchema = z.object({
   home: z.object({
     heroHeadline: localeTextSchema,
@@ -83,6 +95,7 @@ export const siteCopySchema = z.object({
     heroPrimaryCta: localeTextSchema,
     heroSecondaryCta: localeTextSchema,
     heroTags: z.array(localeTextSchema).default([]),
+    heroVideo: mediaSchema,
     servicesTitle: localeTextSchema,
     servicesCopy: localeTextSchema,
     servicesCta: localeTextSchema,

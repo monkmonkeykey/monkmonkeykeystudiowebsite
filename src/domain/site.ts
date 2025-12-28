@@ -8,6 +8,11 @@ export type SiteCopy = {
     heroPrimaryCta: LocaleText;
     heroSecondaryCta: LocaleText;
     heroTags: LocaleText[];
+    heroVideo?: {
+      url?: string;
+      publicId?: string;
+      poster?: string;
+    };
     servicesTitle: LocaleText;
     servicesCopy: LocaleText;
     servicesCta: LocaleText;

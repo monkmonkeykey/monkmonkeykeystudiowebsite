@@ -37,10 +37,29 @@ export default function HomePageClient({
     .map((paragraph) => paragraph.trim())
     .filter(Boolean);
 
+  const heroVideoUrl = siteContent.home.heroVideo?.url?.trim();
+  const heroVideoPoster = siteContent.home.heroVideo?.poster?.trim();
+
   return (
     <div className="space-y-20">
-      <section className="overflow-hidden rounded-4xl border border-foreground/10 bg-gradient-to-br from-primary/5 via-background to-accent/5 p-6 shadow-sm sm:p-10">
-        <div className="grid gap-10 lg:grid-cols-[1.05fr,0.95fr] lg:items-center">
+      <section className="relative overflow-hidden rounded-4xl border border-foreground/10 bg-gradient-to-br from-primary/5 via-background to-accent/5 p-6 shadow-sm sm:p-10">
+        {heroVideoUrl && (
+          <div className="pointer-events-none absolute inset-0">
+            <video
+              key={heroVideoUrl}
+              className="h-full w-full object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+              poster={heroVideoPoster || undefined}
+            >
+              <source src={heroVideoUrl} />
+            </video>
+            <div className="absolute inset-0 bg-gradient-to-br from-background/85 via-background/75 to-background/70" />
+          </div>
+        )}
+        <div className="relative grid gap-10 lg:grid-cols-[1.05fr,0.95fr] lg:items-center">
           <div className="space-y-6">
             <h1 className="text-sm font-normal leading-relaxed text-foreground">
               {translate(locale, siteContent.home.heroHeadline)}
