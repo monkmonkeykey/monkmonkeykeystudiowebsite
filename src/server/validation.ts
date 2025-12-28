@@ -32,11 +32,7 @@ export const clientPayloadSchema = z.object({
   image: clientImageSchema.nullable().optional(),
 });
 
-export const projectCategorySchema = z.enum([
-  "museografia",
-  "experiencias-digitales",
-  "branding",
-]);
+export const projectCategorySchema = z.string().trim().min(1);
 
 export const projectImageSchema = clientImageSchema;
 
@@ -59,6 +55,8 @@ export const projectPayloadSchema = z.object({
   subtitle: localeTextSchema,
   categories: z.array(projectCategorySchema).min(1),
   year: z.string().min(1),
+  startYear: z.number().int().optional(),
+  endYear: z.number().int().optional(),
   client: localizedValueSchema,
   location: localizedValueSchema,
   cover: projectImageSchema,
@@ -68,4 +66,47 @@ export const projectPayloadSchema = z.object({
   meta: z.array(projectMetaSchema).optional(),
   entities: z.array(z.string().min(1)).optional(),
   order: z.number().int().optional(),
+  isPrivate: z.boolean().optional(),
 });
+
+export const serviceSchema = z.object({
+  slug: z.string().min(1),
+  title: localeTextSchema,
+  summary: localeTextSchema,
+  outcomes: z.array(localeTextSchema).optional(),
+});
+
+export const siteCopySchema = z.object({
+  home: z.object({
+    heroHeadline: localeTextSchema,
+    heroSubtitle: localeTextSchema,
+    heroPrimaryCta: localeTextSchema,
+    heroSecondaryCta: localeTextSchema,
+    heroTags: z.array(localeTextSchema).optional(),
+    servicesTitle: localeTextSchema,
+    servicesCopy: localeTextSchema,
+    servicesCta: localeTextSchema,
+    servicesTags: z.array(localeTextSchema).optional(),
+    projectsTitle: localeTextSchema,
+    projectsCta: localeTextSchema,
+    clientsTitle: localeTextSchema,
+    clientsWebsiteLabel: localeTextSchema,
+    contactCta: localeTextSchema,
+  }),
+  servicesPage: z.object({
+    title: localeTextSchema,
+    copy: localeTextSchema,
+    ctaLabel: localeTextSchema,
+    chips: z.array(localeTextSchema).optional(),
+    outcomesLabel: localeTextSchema,
+  }),
+  contact: z.object({
+    title: localeTextSchema,
+    copy: localeTextSchema,
+    email: z.string().email(),
+    preparation: z.array(localeTextSchema).optional(),
+  }),
+  services: z.array(serviceSchema).min(1),
+});
+
+export const sitePayloadSchema = siteCopySchema;
