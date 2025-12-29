@@ -53,15 +53,12 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
                   {locale === "es" ? "Mapa rápido" : "Quick map"}
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {services.map((service, index) => (
+                  {services.map((service) => (
                     <a
                       key={service.slug}
                       href={`#${service.slug}`}
                       className="group inline-flex items-center gap-2 rounded-full border border-foreground/10 bg-background/70 px-3 py-2 text-sm text-foreground/80 transition hover:-translate-y-0.5 hover:border-primary/40 hover:bg-primary/10 hover:text-foreground"
                     >
-                      <span className="flex size-6 items-center justify-center rounded-full bg-primary/10 text-xs font-semibold text-primary group-hover:bg-primary/20">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
                       {translate(locale, service.title)}
                     </a>
                   ))}
@@ -83,7 +80,7 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
       </header>
 
       <div className="space-y-12">
-        {services.map((service, serviceIndex) => (
+        {services.map((service) => (
           <section
             key={service.slug}
             id={service.slug}
@@ -91,12 +88,6 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
           >
             <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
               <div className="max-w-3xl space-y-4">
-                <div className="inline-flex items-center gap-2 rounded-full bg-foreground/5 px-3 py-1 text-xs font-semibold text-foreground/70 ring-1 ring-foreground/10">
-                  <span className="flex size-6 items-center justify-center rounded-full bg-primary/10 text-[0.7rem] font-semibold text-primary">
-                    {String(serviceIndex + 1).padStart(2, "0")}
-                  </span>
-                  {locale === "es" ? "Servicio" : "Service"}
-                </div>
                 <div className="space-y-2">
                   <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
                     {translate(locale, service.title)}
@@ -156,9 +147,6 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
                     key={`${service.slug}-outcome-${outcomeIndex}`}
                     className="flex items-start gap-3 rounded-2xl bg-foreground/5 px-4 py-3 ring-1 ring-foreground/10"
                   >
-                    <span className="mt-1 inline-flex size-7 items-center justify-center rounded-full bg-primary/10 text-[11px] font-semibold text-primary">
-                      {String(outcomeIndex + 1).padStart(2, "0")}
-                    </span>
                     <p className="text-sm text-foreground/70">{translate(locale, outcome)}</p>
                   </div>
                 ))}
