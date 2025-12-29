@@ -42,7 +42,7 @@ export default function HomePageClient({
 
   return (
     <div className="space-y-20">
-      <section className="relative overflow-hidden rounded-4xl border border-foreground/10 bg-gradient-to-br from-primary/5 via-background to-accent/5 p-6 shadow-sm sm:p-10">
+      <section className="relative isolate -mx-[calc(50vw-50%)] w-screen overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/5 py-10 sm:py-12 lg:py-16">
         {heroVideoUrl && (
           <div className="pointer-events-none absolute inset-0">
             <video
@@ -56,73 +56,75 @@ export default function HomePageClient({
             >
               <source src={heroVideoUrl} />
             </video>
-            <div className="absolute inset-0 bg-gradient-to-br from-background/85 via-background/75 to-background/70" />
+            <div className="absolute inset-0 bg-gradient-to-br from-background/88 via-background/78 to-background/72" />
           </div>
         )}
-        <div className="relative grid gap-10 lg:grid-cols-[1.05fr,0.95fr] lg:items-center">
-          <div className="space-y-6">
-            <h1 className="text-sm font-normal leading-relaxed text-foreground">
-              {translate(locale, siteContent.home.heroHeadline)}
-            </h1>
-            <div className="space-y-3 text-sm font-normal text-foreground/70">
-              {heroSubtitleParagraphs.map((paragraph, index) => (
-                <p key={index} className="leading-relaxed">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-            <div className="flex flex-wrap gap-3">
-              <Link
-                href="/contacto"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-semibold text-background shadow-lg shadow-foreground/20 transition hover:-translate-y-0.5 hover:bg-foreground/90"
-              >
-                {translate(locale, siteContent.home.heroPrimaryCta)}
-                <span aria-hidden>↗</span>
-              </Link>
-              <Link
-                href="/proyectos"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-foreground/20 bg-background/80 px-5 py-2.5 text-sm font-semibold text-foreground transition hover:-translate-y-0.5 hover:border-foreground/30 hover:text-foreground/90"
-              >
-                {translate(locale, siteContent.home.heroSecondaryCta)}
-                <span aria-hidden>→</span>
-              </Link>
-            </div>
-          </div>
-
-          <div className="relative overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/[0.04]">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(56,189,248,0.12),transparent_34%),radial-gradient(circle_at_80%_30%,rgba(192,132,252,0.12),transparent_30%)]" aria-hidden />
-            <div className="relative grid gap-4 p-6 text-sm text-foreground/80 sm:p-8">
-              {["Discovery", "Delivery", "Growth"].map((phase, index) => (
-                <div
-                  key={phase}
-                  className="relative overflow-hidden rounded-2xl border border-foreground/10 bg-background/80 p-4 backdrop-blur transition hover:-translate-y-[2px] hover:border-primary/30"
+        <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-6 sm:px-10 lg:px-14">
+          <div className="grid gap-10 lg:grid-cols-[1.05fr,0.95fr] lg:items-center">
+            <div className="space-y-6">
+              <h1 className="text-sm font-normal leading-relaxed text-foreground">
+                {translate(locale, siteContent.home.heroHeadline)}
+              </h1>
+              <div className="space-y-3 text-sm font-normal text-foreground/70">
+                {heroSubtitleParagraphs.map((paragraph, index) => (
+                  <p key={index} className="leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  href="/contacto"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-semibold text-background shadow-lg shadow-foreground/20 transition hover:-translate-y-0.5 hover:bg-foreground/90"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-transparent" />
-                  <div className="relative flex items-start gap-3">
-                    <div className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-xs font-semibold text-primary">
-                      {`0${index + 1}`}
-                    </div>
-                    <div className="space-y-1">
-                      <p className="text-base font-semibold tracking-tight text-foreground">
-                        {phase}
-                      </p>
-                      <p className="text-sm leading-relaxed text-foreground/70">
-                        {phase === "Discovery"
-                          ? locale === "es"
-                            ? "Sumamos investigación rápida y workshops con tu equipo para entender el contexto desde el inicio."
-                            : "We run rapid research and workshops with your team to understand context from day one."
-                          : phase === "Delivery"
+                  {translate(locale, siteContent.home.heroPrimaryCta)}
+                  <span aria-hidden>↗</span>
+                </Link>
+                <Link
+                  href="/proyectos"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-foreground/20 bg-background/80 px-5 py-2.5 text-sm font-semibold text-foreground transition hover:-translate-y-0.5 hover:border-foreground/30 hover:text-foreground/90"
+                >
+                  {translate(locale, siteContent.home.heroSecondaryCta)}
+                  <span aria-hidden>→</span>
+                </Link>
+              </div>
+            </div>
+
+            <div className="relative overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/[0.04]">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(56,189,248,0.12),transparent_34%),radial-gradient(circle_at_80%_30%,rgba(192,132,252,0.12),transparent_30%)]" aria-hidden />
+              <div className="relative grid gap-4 p-6 text-sm text-foreground/80 sm:p-8">
+                {["Discovery", "Delivery", "Growth"].map((phase, index) => (
+                  <div
+                    key={phase}
+                    className="relative overflow-hidden rounded-2xl border border-foreground/10 bg-background/80 p-4 backdrop-blur transition hover:-translate-y-[2px] hover:border-primary/30"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-transparent" />
+                    <div className="relative flex items-start gap-3">
+                      <div className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-xs font-semibold text-primary">
+                        {`0${index + 1}`}
+                      </div>
+                      <div className="space-y-1">
+                        <p className="text-base font-semibold tracking-tight text-foreground">
+                          {phase}
+                        </p>
+                        <p className="text-sm leading-relaxed text-foreground/70">
+                          {phase === "Discovery"
                             ? locale === "es"
-                              ? "Trabajamos en ciclos cortos, con prototipos validados y métricas claras por sprint."
-                              : "We work in short cycles, with validated prototypes and clear metrics each sprint."
-                            : locale === "es"
-                              ? "Activamos experimentos de crecimiento y aprendizaje continuo para sostener resultados."
-                              : "We activate growth experiments and continuous learning to sustain outcomes."}
-                      </p>
+                              ? "Sumamos investigación rápida y workshops con tu equipo para entender el contexto desde el inicio."
+                              : "We run rapid research and workshops with your team to understand context from day one."
+                            : phase === "Delivery"
+                              ? locale === "es"
+                                ? "Trabajamos en ciclos cortos, con prototipos validados y métricas claras por sprint."
+                                : "We work in short cycles, with validated prototypes and clear metrics each sprint."
+                              : locale === "es"
+                                ? "Activamos experimentos de crecimiento y aprendizaje continuo para sostener resultados."
+                                : "We activate growth experiments and continuous learning to sustain outcomes."}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
