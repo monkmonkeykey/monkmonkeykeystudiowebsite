@@ -42,7 +42,7 @@ export default function HomePageClient({
 
   return (
     <div className="space-y-20">
-      <section className="relative isolate -mx-[calc(50vw-50%)] w-screen overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/5 pt-2 sm:pt-4 lg:pt-6 pb-14 sm:pb-16 lg:pb-20 min-h-[70vh]">
+      <section className="relative isolate -mx-[calc(50vw-50%)] w-screen overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/5 min-h-[80vh] pb-10">
         {heroVideoUrl && (
           <div className="pointer-events-none absolute inset-0">
             <video
@@ -59,34 +59,32 @@ export default function HomePageClient({
             <div className="absolute inset-0 bg-gradient-to-br from-background/88 via-background/78 to-background/72" />
           </div>
         )}
-        <div className="relative z-10 mx-auto flex max-w-5xl flex-col gap-8 px-6 sm:px-10 lg:px-14 lg:py-4">
-          <div className="space-y-6 text-center lg:text-left">
-            <h1 className="text-sm font-normal leading-relaxed text-foreground">
-              {translate(locale, siteContent.home.heroHeadline)}
-            </h1>
-            <div className="space-y-3 text-sm font-normal text-foreground/70">
-              {heroSubtitleParagraphs.map((paragraph, index) => (
-                <p key={index} className="leading-relaxed">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-            <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
-              <Link
-                href="/contacto"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-semibold text-background shadow-lg shadow-foreground/20 transition hover:-translate-y-0.5 hover:bg-foreground/90"
-              >
-                {translate(locale, siteContent.home.heroPrimaryCta)}
-                <span aria-hidden>↗</span>
-              </Link>
-              <Link
-                href="/proyectos"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-foreground/20 bg-background/80 px-5 py-2.5 text-sm font-semibold text-foreground transition hover:-translate-y-0.5 hover:border-foreground/30 hover:text-foreground/90"
-              >
-                {translate(locale, siteContent.home.heroSecondaryCta)}
-                <span aria-hidden>→</span>
-              </Link>
-            </div>
+        <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-5xl flex-col justify-end gap-6 px-6 pb-10 text-center sm:px-10 lg:px-14">
+          <h1 className="text-sm font-normal leading-relaxed text-foreground">
+            {translate(locale, siteContent.home.heroHeadline)}
+          </h1>
+          <div className="space-y-3 text-sm font-normal text-foreground/70">
+            {heroSubtitleParagraphs.map((paragraph, index) => (
+              <p key={index} className="leading-relaxed">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+          <div className="flex flex-wrap justify-center gap-3">
+            <Link
+              href="/contacto"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-semibold text-background shadow-lg shadow-foreground/20 transition hover:-translate-y-0.5 hover:bg-foreground/90"
+            >
+              {translate(locale, siteContent.home.heroPrimaryCta)}
+              <span aria-hidden>↗</span>
+            </Link>
+            <Link
+              href="/proyectos"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-foreground/20 bg-background/80 px-5 py-2.5 text-sm font-semibold text-foreground transition hover:-translate-y-0.5 hover:border-foreground/30 hover:text-foreground/90"
+            >
+              {translate(locale, siteContent.home.heroSecondaryCta)}
+              <span aria-hidden>→</span>
+            </Link>
           </div>
         </div>
       </section>
