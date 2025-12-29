@@ -42,7 +42,7 @@ export default function HomePageClient({
 
   return (
     <div className="space-y-20">
-      <section className="relative isolate -mx-[calc(50vw-50%)] w-screen overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/5 py-10 sm:py-12 lg:py-16">
+      <section className="relative isolate -mx-[calc(50vw-50%)] w-screen overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/5 pt-2 sm:pt-4 lg:pt-6 pb-14 sm:pb-16 lg:pb-20 min-h-[70vh]">
         {heroVideoUrl && (
           <div className="pointer-events-none absolute inset-0">
             <video
@@ -59,7 +59,7 @@ export default function HomePageClient({
             <div className="absolute inset-0 bg-gradient-to-br from-background/88 via-background/78 to-background/72" />
           </div>
         )}
-        <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-6 sm:px-10 lg:px-14">
+        <div className="relative z-10 mx-auto flex max-w-6xl flex-col gap-10 px-6 sm:px-10 lg:px-14 lg:py-2">
           <div className="grid gap-10 lg:grid-cols-[1.05fr,0.95fr] lg:items-center">
             <div className="space-y-6">
               <h1 className="text-sm font-normal leading-relaxed text-foreground">
