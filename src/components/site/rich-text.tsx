@@ -1,5 +1,7 @@
 import type { ComponentPropsWithoutRef, ElementType } from "react";
 
+import clsx from "clsx";
+
 import { translate, type LocaleText } from "@/lib/i18n";
 import { useLocale } from "@/components/site/locale-context";
 
@@ -20,7 +22,7 @@ export function RichText<T extends ElementType = "div">({
 
   return (
     <Component
-      className={className}
+      className={clsx("rich-text-reset", className)}
       dangerouslySetInnerHTML={{ __html: content?.replace(/\n/g, "<br />") ?? "" }}
       {...props}
     />
