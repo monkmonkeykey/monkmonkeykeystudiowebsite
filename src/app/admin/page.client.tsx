@@ -421,6 +421,18 @@ const RichTextInput = ({
   const editorRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    if (typeof document !== "undefined") {
+      // Ensure formatting commands emit inline CSS styles for consistency across browsers.
+      document.execCommand("styleWithCSS", false, "true");
+    }
+  }, []);
+
+  const syncContent = useCallback(() => {
+    const html = editorRef.current?.innerHTML ?? "";
+    onChange(html);
+  }, [onChange]);
+
+  useEffect(() => {
     const editor = editorRef.current;
     if (editor && editor.innerHTML !== value) {
       editor.innerHTML = value || "";
@@ -431,7 +443,8 @@ const RichTextInput = ({
     if (typeof document === "undefined") return;
     editorRef.current?.focus();
     document.execCommand(command, false, arg);
-  }, []);
+    syncContent();
+  }, [syncContent]);
 
   return (
     <div className="space-y-2">
@@ -478,7 +491,7 @@ const RichTextInput = ({
         contentEditable
         suppressContentEditableWarning
         className="min-h-[120px] w-full rounded-2xl border border-foreground/10 bg-background px-3 py-2 text-sm leading-relaxed focus:border-foreground/40 focus:outline-none"
-        onInput={(event) => onChange(event.currentTarget.innerHTML)}
+        onInput={syncContent}
         data-placeholder={placeholder}
       />
     </div>
