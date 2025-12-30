@@ -19,9 +19,11 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
     <div className="space-y-10">
       <header className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-2xl space-y-4">
-          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-            {translate(locale, siteContent.contact.title)}
-          </h1>
+          <RichText
+            as="h1"
+            value={siteContent.contact.title}
+            className="text-3xl font-semibold tracking-tight sm:text-4xl"
+          />
           <RichText
             value={siteContent.contact.copy}
             className="prose prose-sm max-w-none text-foreground/70 sm:prose-base"

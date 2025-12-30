@@ -25,10 +25,10 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
           <div className="space-y-4">
             <div className="inline-flex items-center gap-2 rounded-full bg-foreground/5 px-3 py-1 text-xs font-medium text-foreground/70 ring-1 ring-foreground/10">
               <span className="size-2 rounded-full bg-primary shadow-[0_0_0_4px_rgba(56,189,248,0.12)]" />
-              {translate(locale, siteContent.servicesPage.title)}
+              <RichText as="span" value={siteContent.servicesPage.title} />
             </div>
             <h1 className="text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
-              {translate(locale, siteContent.servicesPage.title)}
+              <RichText as="span" value={siteContent.servicesPage.title} />
             </h1>
             <RichText
               value={siteContent.servicesPage.copy}
@@ -61,7 +61,7 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
                       href={`#${service.slug}`}
                       className="group inline-flex items-center gap-2 rounded-full border border-foreground/10 bg-background/70 px-3 py-2 text-sm text-foreground/80 transition hover:-translate-y-0.5 hover:border-primary/40 hover:bg-primary/10 hover:text-foreground"
                     >
-                      {translate(locale, service.title)}
+                      <RichText as="span" value={service.title} />
                     </a>
                   ))}
                 </div>
@@ -71,7 +71,7 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
                 href="/contacto"
                 className="inline-flex items-center justify-center gap-2 self-start rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-primary/30 transition hover:-translate-y-0.5 hover:shadow-primary/40"
               >
-                {translate(locale, siteContent.servicesPage.ctaLabel)}
+                <RichText as="span" value={siteContent.servicesPage.ctaLabel} />
                 <span aria-hidden className="text-lg">
                   →
                 </span>
@@ -92,10 +92,10 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
               <div className="max-w-3xl space-y-4">
                 <div className="space-y-2">
                   <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-                    {translate(locale, service.title)}
+                    <RichText as="span" value={service.title} />
                   </h2>
                   <p className="text-base text-foreground/70 sm:text-lg">
-                    {translate(locale, service.summary)}
+                    <RichText as="span" value={service.summary} />
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-3 text-sm text-foreground/70">
@@ -133,7 +133,7 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
             <div className="mt-8 space-y-3">
               <div className="flex items-center justify-between gap-4">
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-foreground/50">
-                  {translate(locale, siteContent.servicesPage.outcomesLabel)}
+                  <RichText as="span" value={siteContent.servicesPage.outcomesLabel} />
                 </p>
                 <a
                   href="#top"

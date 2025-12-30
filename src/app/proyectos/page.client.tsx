@@ -97,9 +97,11 @@ export default function ProjectsPageClient({
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] lg:items-start lg:gap-12">
           <div className="max-w-3xl space-y-2">
             <div className="space-y-2">
-              <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-                {translate(locale, copy.title)}
-              </h1>
+              <RichText
+                as="h1"
+                value={copy.title}
+                className="text-3xl font-semibold tracking-tight sm:text-4xl"
+              />
               <RichText value={copy.copy} className="prose prose-sm max-w-none text-foreground/70 sm:prose-base" />
             </div>
           </div>
@@ -222,7 +224,7 @@ export default function ProjectsPageClient({
                     ))}
                   </div>
                   <div className="mt-auto flex items-center justify-between text-sm font-semibold text-foreground/70">
-                    <span>{translate(locale, copy.cardCta)}</span>
+                    <RichText as="span" value={copy.cardCta} />
                     <span aria-hidden className="transition group-hover:translate-x-1">→</span>
                   </div>
                 </div>
@@ -236,7 +238,7 @@ export default function ProjectsPageClient({
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div className="space-y-3">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-foreground/60">
-              {translate(locale, copy.ctaTitle)}
+              <RichText as="span" value={copy.ctaTitle} />
             </p>
             <RichText
               value={copy.ctaDescription}
@@ -247,7 +249,7 @@ export default function ProjectsPageClient({
             href="/contacto"
             className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-semibold text-background shadow transition hover:-translate-y-0.5 hover:bg-foreground/90"
           >
-            <span>{translate(locale, copy.ctaAction)}</span>
+            <RichText as="span" value={copy.ctaAction} />
             <span aria-hidden>↗</span>
           </Link>
         </div>

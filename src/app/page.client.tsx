@@ -69,14 +69,14 @@ export default function HomePageClient({
               href="/contacto"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-semibold text-background shadow-lg shadow-foreground/20 transition hover:-translate-y-0.5 hover:bg-foreground/90"
             >
-              {translate(locale, siteContent.home.heroPrimaryCta)}
+              <RichText as="span" value={siteContent.home.heroPrimaryCta} />
               <span aria-hidden>↗</span>
             </Link>
             <Link
               href="/proyectos"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-foreground/20 bg-background/80 px-5 py-2.5 text-sm font-semibold text-foreground transition hover:-translate-y-0.5 hover:border-foreground/30 hover:text-foreground/90"
             >
-              {translate(locale, siteContent.home.heroSecondaryCta)}
+              <RichText as="span" value={siteContent.home.heroSecondaryCta} />
               <span aria-hidden>→</span>
             </Link>
           </div>
@@ -92,9 +92,11 @@ export default function HomePageClient({
                 {locale === "es" ? "Servicios" : "Services"}
               </div>
               <div className="space-y-2">
-                <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-                  {translate(locale, siteContent.home.servicesTitle)}
-                </h2>
+                <RichText
+                  as="h2"
+                  value={siteContent.home.servicesTitle}
+                  className="text-2xl font-semibold tracking-tight sm:text-3xl"
+                />
                 <RichText value={siteContent.home.servicesCopy} className="prose prose-sm max-w-none text-foreground/70" />
               </div>
               <div className="flex flex-wrap gap-2 text-xs text-foreground/60">
@@ -117,7 +119,7 @@ export default function HomePageClient({
                 href="/servicios"
                 className="inline-flex w-fit items-center justify-center gap-2 rounded-full bg-foreground px-4 py-2 text-sm font-semibold text-background shadow-sm transition hover:-translate-y-0.5 hover:bg-foreground/90"
               >
-                {translate(locale, siteContent.home.servicesCta)}
+                <RichText as="span" value={siteContent.home.servicesCta} />
                 <span aria-hidden>↗</span>
               </Link>
             </div>
@@ -128,7 +130,7 @@ export default function HomePageClient({
                   href={`/servicios#${service.slug}`}
                   className="group inline-flex items-center gap-2 rounded-full border border-foreground/10 bg-background px-3 py-2 text-sm font-semibold text-foreground/80 transition hover:-translate-y-0.5 hover:border-primary/30 hover:text-foreground"
                 >
-                  {translate(locale, service.title)}
+                  <RichText as="span" value={service.title} />
                 </Link>
               ))}
             </div>
@@ -137,17 +139,21 @@ export default function HomePageClient({
 
         <div className="grid gap-6 lg:grid-cols-3">
           {services.map((service) => (
-            <article
-              key={service.slug}
-              className="flex h-full flex-col justify-between rounded-3xl border border-foreground/10 bg-background/80 p-6 shadow-sm ring-1 ring-transparent transition hover:-translate-y-1 hover:border-primary/30 hover:ring-primary/10"
-            >
-              <div className="space-y-3">
-                <h3 className="text-xl font-semibold text-foreground">{translate(locale, service.title)}</h3>
-                <p className="text-sm text-foreground/70">{translate(locale, service.summary)}</p>
-              </div>
-              <div className="mt-6 space-y-2">
-                {service.outcomes.map((outcome, index) => (
-                  <div
+          <article
+            key={service.slug}
+            className="flex h-full flex-col justify-between rounded-3xl border border-foreground/10 bg-background/80 p-6 shadow-sm ring-1 ring-transparent transition hover:-translate-y-1 hover:border-primary/30 hover:ring-primary/10"
+          >
+            <div className="space-y-3">
+              <h3 className="text-xl font-semibold text-foreground">
+                <RichText as="span" value={service.title} />
+              </h3>
+              <p className="text-sm text-foreground/70">
+                <RichText as="span" value={service.summary} />
+              </p>
+            </div>
+            <div className="mt-6 space-y-2">
+              {service.outcomes.map((outcome, index) => (
+                <div
                     key={`${service.slug}-outcome-${index}`}
                     className="flex items-start gap-3 rounded-2xl border border-foreground/10 bg-foreground/[0.03] px-4 py-3 text-sm text-foreground/70"
                   >
@@ -178,9 +184,11 @@ export default function HomePageClient({
                 <span className="size-2 rounded-full bg-primary" />
                 {locale === "es" ? "Proyectos" : "Projects"}
               </div>
-              <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-                {translate(locale, siteContent.home.projectsTitle)}
-              </h2>
+              <RichText
+                as="h2"
+                value={siteContent.home.projectsTitle}
+                className="text-2xl font-semibold tracking-tight sm:text-3xl"
+              />
               <p className="text-base text-foreground/70">
                 {locale === "es"
                   ? "Casos recientes donde acompañamos lanzamientos y activaciones clave."
@@ -204,7 +212,7 @@ export default function HomePageClient({
                 href="/proyectos"
                 className="inline-flex w-fit items-center justify-center gap-2 rounded-full bg-foreground px-4 py-2 text-sm font-semibold text-background shadow-sm transition hover:-translate-y-0.5 hover:bg-foreground/90"
               >
-                {translate(locale, siteContent.home.projectsCta)}
+                <RichText as="span" value={siteContent.home.projectsCta} />
                 <span aria-hidden>↗</span>
               </Link>
             </div>
@@ -300,7 +308,7 @@ export default function HomePageClient({
             <div className="space-y-2">
               <div className="inline-flex items-center gap-2 rounded-full bg-foreground/5 px-3 py-1 text-xs font-semibold text-foreground/70 ring-1 ring-foreground/10">
                 <span className="size-2 rounded-full bg-primary" />
-                {translate(locale, siteContent.home.clientsTitle)}
+                <RichText as="span" value={siteContent.home.clientsTitle} />
               </div>
               <p className="text-base text-foreground/70">
                 {locale === "es"
@@ -312,7 +320,7 @@ export default function HomePageClient({
               href="/contacto"
               className="inline-flex w-fit items-center justify-center gap-2 rounded-full bg-foreground px-4 py-2 text-sm font-semibold text-background shadow-sm transition hover:-translate-y-0.5 hover:bg-foreground/90"
             >
-              {translate(locale, siteContent.home.contactCta)}
+              <RichText as="span" value={siteContent.home.contactCta} />
               <span aria-hidden>↗</span>
             </Link>
           </div>
@@ -350,7 +358,7 @@ export default function HomePageClient({
                   rel="noreferrer"
                   className="mt-auto inline-flex w-fit items-center gap-2 text-xs font-semibold text-foreground/70 transition hover:text-foreground"
                 >
-                  <span>{translate(locale, siteContent.home.clientsWebsiteLabel)}</span>
+                  <RichText as="span" value={siteContent.home.clientsWebsiteLabel} />
                   <span aria-hidden>↗</span>
                 </a>
               )}

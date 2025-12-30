@@ -409,38 +409,6 @@ const CloudinaryLibraryShortcut = ({
   );
 };
 
-const LocaleInputs = ({
-  label,
-  value,
-  onChange,
-}: {
-  label: string;
-  value: LocaleField;
-  onChange: (value: LocaleField) => void;
-}) => (
-  <div className="space-y-2">
-    <p className="text-sm font-semibold text-foreground/80">{label}</p>
-    <div className="grid gap-2 sm:grid-cols-2">
-      <label className="space-y-1 text-sm text-foreground/70">
-        <span className="block text-xs font-semibold uppercase tracking-[0.16em] text-foreground/50">ES</span>
-        <input
-          className="w-full rounded-2xl border border-foreground/10 bg-background px-3 py-2 text-sm"
-          value={value.es}
-          onChange={(event) => onChange({ ...value, es: event.target.value })}
-        />
-      </label>
-      <label className="space-y-1 text-sm text-foreground/70">
-        <span className="block text-xs font-semibold uppercase tracking-[0.16em] text-foreground/50">EN</span>
-        <input
-          className="w-full rounded-2xl border border-foreground/10 bg-background px-3 py-2 text-sm"
-          value={value.en}
-          onChange={(event) => onChange({ ...value, en: event.target.value })}
-        />
-      </label>
-    </div>
-  </div>
-);
-
 const RichTextInput = ({
   value,
   onChange,
@@ -632,8 +600,8 @@ const ServiceEditor = ({
         onChange={(event) => onChange({ ...service, slug: event.target.value })}
       />
     </label>
-    <LocaleInputs label="Título" value={service.title} onChange={(value) => onChange({ ...service, title: value })} />
-    <LocaleInputs
+    <RichLocaleInputs label="Título" value={service.title} onChange={(value) => onChange({ ...service, title: value })} />
+    <RichLocaleInputs
       label="Descripción breve"
       value={service.summary}
       onChange={(value) => onChange({ ...service, summary: value })}
@@ -808,7 +776,7 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
       {activeSection === "home" && (
         <div className="space-y-4 rounded-3xl border border-foreground/10 bg-background p-4">
           <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-foreground/60">Home</h3>
-          <LocaleInputs
+          <RichLocaleInputs
             label="Titular principal"
             value={draft.home.heroHeadline}
             onChange={(value) => setDraft({ ...draft, home: { ...draft.home, heroHeadline: value } })}
@@ -819,12 +787,12 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
             onChange={(value) => setDraft({ ...draft, home: { ...draft.home, heroSubtitle: value } })}
             placeholder="Redacta con estilos: negritas, itálicas, color y tamaños."
           />
-          <LocaleInputs
+          <RichLocaleInputs
             label="CTA primaria"
             value={draft.home.heroPrimaryCta}
             onChange={(value) => setDraft({ ...draft, home: { ...draft.home, heroPrimaryCta: value } })}
           />
-          <LocaleInputs
+          <RichLocaleInputs
             label="CTA secundaria"
             value={draft.home.heroSecondaryCta}
             onChange={(value) => setDraft({ ...draft, home: { ...draft.home, heroSecondaryCta: value } })}
@@ -917,7 +885,7 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
             values={draft.home.heroTags}
             onChange={(values) => setDraft({ ...draft, home: { ...draft.home, heroTags: values } })}
           />
-          <LocaleInputs
+          <RichLocaleInputs
             label="Título de servicios"
             value={draft.home.servicesTitle}
             onChange={(value) => setDraft({ ...draft, home: { ...draft.home, servicesTitle: value } })}
@@ -927,7 +895,7 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
             value={draft.home.servicesCopy}
             onChange={(value) => setDraft({ ...draft, home: { ...draft.home, servicesCopy: value } })}
           />
-          <LocaleInputs
+          <RichLocaleInputs
             label="CTA de servicios"
             value={draft.home.servicesCta}
             onChange={(value) => setDraft({ ...draft, home: { ...draft.home, servicesCta: value } })}
@@ -938,27 +906,27 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
             values={draft.home.servicesTags}
             onChange={(values) => setDraft({ ...draft, home: { ...draft.home, servicesTags: values } })}
           />
-          <LocaleInputs
+          <RichLocaleInputs
             label="Título de proyectos"
             value={draft.home.projectsTitle}
             onChange={(value) => setDraft({ ...draft, home: { ...draft.home, projectsTitle: value } })}
           />
-          <LocaleInputs
+          <RichLocaleInputs
             label="CTA de proyectos"
             value={draft.home.projectsCta}
             onChange={(value) => setDraft({ ...draft, home: { ...draft.home, projectsCta: value } })}
           />
-          <LocaleInputs
+          <RichLocaleInputs
             label="Título de clientes"
             value={draft.home.clientsTitle}
             onChange={(value) => setDraft({ ...draft, home: { ...draft.home, clientsTitle: value } })}
           />
-          <LocaleInputs
+          <RichLocaleInputs
             label="CTA de contacto"
             value={draft.home.contactCta}
             onChange={(value) => setDraft({ ...draft, home: { ...draft.home, contactCta: value } })}
           />
-          <LocaleInputs
+          <RichLocaleInputs
             label="Texto de enlace a sitios de clientes"
             value={draft.home.clientsWebsiteLabel}
             onChange={(value) => setDraft({ ...draft, home: { ...draft.home, clientsWebsiteLabel: value } })}
@@ -969,7 +937,7 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
       {activeSection === "servicesPage" && (
         <div className="space-y-4 rounded-3xl border border-foreground/10 bg-background p-4">
           <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-foreground/60">Servicios</h3>
-          <LocaleInputs
+          <RichLocaleInputs
             label="Título página servicios"
             value={draft.servicesPage.title}
             onChange={(value) => setDraft({ ...draft, servicesPage: { ...draft.servicesPage, title: value } })}
@@ -979,7 +947,7 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
             value={draft.servicesPage.copy}
             onChange={(value) => setDraft({ ...draft, servicesPage: { ...draft.servicesPage, copy: value } })}
           />
-          <LocaleInputs
+          <RichLocaleInputs
             label="CTA servicios"
             value={draft.servicesPage.ctaLabel}
             onChange={(value) => setDraft({ ...draft, servicesPage: { ...draft.servicesPage, ctaLabel: value } })}
@@ -989,7 +957,7 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
             values={draft.servicesPage.chips}
             onChange={(values) => setDraft({ ...draft, servicesPage: { ...draft.servicesPage, chips: values } })}
           />
-          <LocaleInputs
+          <RichLocaleInputs
             label="Título de entregables"
             value={draft.servicesPage.outcomesLabel}
             onChange={(value) => setDraft({ ...draft, servicesPage: { ...draft.servicesPage, outcomesLabel: value } })}
@@ -1000,7 +968,7 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
       {activeSection === "projectsPage" && (
         <div className="space-y-4 rounded-3xl border border-foreground/10 bg-background p-4">
           <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-foreground/60">Proyectos</h3>
-          <LocaleInputs
+          <RichLocaleInputs
             label="Título página proyectos"
             value={draft.projectsPage.title}
             onChange={(value) => setDraft({ ...draft, projectsPage: { ...draft.projectsPage, title: value } })}
@@ -1011,22 +979,22 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
             onChange={(value) => setDraft({ ...draft, projectsPage: { ...draft.projectsPage, copy: value } })}
             placeholder="Puedes usar negritas, itálicas, colores y tamaños."
           />
-          <LocaleInputs
+          <RichLocaleInputs
             label="Etiqueta del filtro Todos"
             value={draft.projectsPage.filterAllLabel}
             onChange={(value) => setDraft({ ...draft, projectsPage: { ...draft.projectsPage, filterAllLabel: value } })}
           />
-          <LocaleInputs
+          <RichLocaleInputs
             label="Estado vacío"
             value={draft.projectsPage.emptyState}
             onChange={(value) => setDraft({ ...draft, projectsPage: { ...draft.projectsPage, emptyState: value } })}
           />
-          <LocaleInputs
+          <RichLocaleInputs
             label="CTA de tarjeta"
             value={draft.projectsPage.cardCta}
             onChange={(value) => setDraft({ ...draft, projectsPage: { ...draft.projectsPage, cardCta: value } })}
           />
-          <LocaleInputs
+          <RichLocaleInputs
             label="Título CTA final"
             value={draft.projectsPage.ctaTitle}
             onChange={(value) => setDraft({ ...draft, projectsPage: { ...draft.projectsPage, ctaTitle: value } })}
@@ -1036,7 +1004,7 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
             value={draft.projectsPage.ctaDescription}
             onChange={(value) => setDraft({ ...draft, projectsPage: { ...draft.projectsPage, ctaDescription: value } })}
           />
-          <LocaleInputs
+          <RichLocaleInputs
             label="Botón CTA"
             value={draft.projectsPage.ctaAction}
             onChange={(value) => setDraft({ ...draft, projectsPage: { ...draft.projectsPage, ctaAction: value } })}
@@ -1047,7 +1015,7 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
       {activeSection === "contact" && (
         <div className="space-y-4 rounded-3xl border border-foreground/10 bg-background p-4">
           <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-foreground/60">Contacto</h3>
-          <LocaleInputs
+          <RichLocaleInputs
             label="Título contacto"
             value={draft.contact.title}
             onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, title: value } })}
