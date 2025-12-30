@@ -98,6 +98,8 @@ type SiteContentField = {
   services: ServiceField[];
 };
 
+type SiteContentSection = "home" | "servicesPage" | "contact" | "servicesList";
+
 const CLIENT_KINDS: { value: ClientKind; label: string }[] = [
   { value: "client", label: "Cliente" },
   { value: "institution", label: "Institución" },
@@ -518,6 +520,7 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
   const [draft, setDraft] = useState<SiteContentField>(() => createSiteContentField(siteContent));
   const [status, setStatus] = useState<"idle" | "saving">("idle");
   const [message, setMessage] = useState<string | null>(null);
+  const [activeSection, setActiveSection] = useState<SiteContentSection>("home");
   const [heroVideoUploadStatus, setHeroVideoUploadStatus] = useState<"idle" | "uploading">("idle");
   const [heroPosterUploadStatus, setHeroPosterUploadStatus] = useState<"idle" | "uploading">("idle");
 
@@ -602,6 +605,29 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
     [],
   );
 
+  const siteSections: { key: SiteContentSection; label: string; description: string }[] = [
+    {
+      key: "home",
+      label: "Home",
+      description: "Hero, video de fondo y CTAs principales.",
+    },
+    {
+      key: "servicesPage",
+      label: "Servicios",
+      description: "Copy de la página y chips destacados.",
+    },
+    {
+      key: "contact",
+      label: "Contacto",
+      description: "Texto, correo y lista de preparación.",
+    },
+    {
+      key: "servicesList",
+      label: "Lista de servicios",
+      description: "Ofertas publicadas y entregables.",
+    },
+  ];
+
   return (
     <section className="space-y-6 rounded-4xl border border-foreground/10 bg-foreground/5 p-6 shadow-sm">
       <header className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
@@ -624,7 +650,25 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
         <p className="rounded-2xl border border-foreground/10 bg-background px-4 py-3 text-sm text-foreground/80">{message}</p>
       )}
 
-      <div className="grid gap-6 lg:grid-cols-2">
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        {siteSections.map((section) => (
+          <button
+            key={section.key}
+            type="button"
+            onClick={() => setActiveSection(section.key)}
+            className={`flex flex-col items-start rounded-3xl border p-4 text-left transition ${
+              activeSection === section.key
+                ? "border-foreground/40 bg-background shadow-sm"
+                : "border-foreground/10 bg-background/60 hover:border-foreground/20"
+            }`}
+          >
+            <span className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/60">{section.label}</span>
+            <p className="pt-1 text-sm text-foreground/80">{section.description}</p>
+          </button>
+        ))}
+      </div>
+
+      {activeSection === "home" && (
         <div className="space-y-4 rounded-3xl border border-foreground/10 bg-background p-4">
           <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-foreground/60">Home</h3>
           <LocaleInputs
@@ -653,7 +697,8 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
               <span className="rounded-full bg-foreground/10 px-2 py-0.5 text-[11px] font-semibold text-foreground/70">Hero</span>
             </div>
             <p className="text-xs text-foreground/60">
-              Sube un video a Cloudinary o pega cualquier URL segura (mp4/webm). El video se reproducirá en loop detrás de las tarjetas de Discovery/Delivery/Growth.
+              Sube un video a Cloudinary o pega cualquier URL segura (mp4/webm). El video se reproducirá en loop detrás de las tarjetas
+              de Discovery/Delivery/Growth.
             </p>
             <div className="grid gap-3 sm:grid-cols-2">
               <label className="space-y-1">
@@ -781,9 +826,11 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
             onChange={(value) => setDraft({ ...draft, home: { ...draft.home, clientsWebsiteLabel: value } })}
           />
         </div>
+      )}
 
+      {activeSection === "servicesPage" && (
         <div className="space-y-4 rounded-3xl border border-foreground/10 bg-background p-4">
-          <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-foreground/60">Servicios & contacto</h3>
+          <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-foreground/60">Servicios</h3>
           <LocaleInputs
             label="Título página servicios"
             value={draft.servicesPage.title}
@@ -809,7 +856,12 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
             value={draft.servicesPage.outcomesLabel}
             onChange={(value) => setDraft({ ...draft, servicesPage: { ...draft.servicesPage, outcomesLabel: value } })}
           />
+        </div>
+      )}
 
+      {activeSection === "contact" && (
+        <div className="space-y-4 rounded-3xl border border-foreground/10 bg-background p-4">
+          <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-foreground/60">Contacto</h3>
           <LocaleInputs
             label="Título contacto"
             value={draft.contact.title}
@@ -835,44 +887,46 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
             onChange={(values) => setDraft({ ...draft, contact: { ...draft.contact, preparation: values } })}
           />
         </div>
-      </div>
+      )}
 
-      <div className="space-y-3 rounded-3xl border border-foreground/10 bg-background/60 p-4">
-        <div className="flex items-center justify-between">
-          <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-foreground/60">Servicios publicados</h3>
-          <button
-            type="button"
-            onClick={() =>
-              setDraft({
-                ...draft,
-                services: [...draft.services, createServiceField(`service-${draft.services.length}`)],
-              })
-            }
-            className="inline-flex items-center gap-2 rounded-full border border-foreground/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-foreground/70 hover:border-foreground/30"
-          >
-            Agregar servicio
-          </button>
-        </div>
-        <div className="grid gap-3 md:grid-cols-2">
-          {draft.services.map((service, index) => (
-            <ServiceEditor
-              key={service.id}
-              service={service}
-              onRemove={() =>
+      {activeSection === "servicesList" && (
+        <div className="space-y-3 rounded-3xl border border-foreground/10 bg-background/60 p-4">
+          <div className="flex items-center justify-between">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-foreground/60">Servicios publicados</h3>
+            <button
+              type="button"
+              onClick={() =>
                 setDraft({
                   ...draft,
-                  services: draft.services.filter((_, serviceIndex) => serviceIndex !== index),
+                  services: [...draft.services, createServiceField(`service-${draft.services.length}`)],
                 })
               }
-              onChange={(value) => {
-                const next = [...draft.services];
-                next[index] = value;
-                setDraft({ ...draft, services: next });
-              }}
-            />
-          ))}
+              className="inline-flex items-center gap-2 rounded-full border border-foreground/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-foreground/70 hover:border-foreground/30"
+            >
+              Agregar servicio
+            </button>
+          </div>
+          <div className="grid gap-3 md:grid-cols-2">
+            {draft.services.map((service, index) => (
+              <ServiceEditor
+                key={service.id}
+                service={service}
+                onRemove={() =>
+                  setDraft({
+                    ...draft,
+                    services: draft.services.filter((_, serviceIndex) => serviceIndex !== index),
+                  })
+                }
+                onChange={(value) => {
+                  const next = [...draft.services];
+                  next[index] = value;
+                  setDraft({ ...draft, services: next });
+                }}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </section>
   );
 };
