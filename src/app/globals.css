@@ -31,10 +31,8 @@ body {
   line-height: inherit;
 }
 
-.rich-text-reset :is(h1, h2, h3, h4, h5, h6, p, div, span) {
+.rich-text-reset :is(h1, h2, h3, h4, h5, h6, p, div, span, font) {
   margin: 0;
-  font-size: inherit;
-  font-weight: inherit;
   line-height: inherit;
 }
 
