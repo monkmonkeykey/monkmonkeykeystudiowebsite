@@ -86,6 +86,26 @@ const normalizeSiteCopy = (value: SiteCopy): SiteCopy => ({
   })),
 });
 
+const mergeSiteCopy = (payload: Partial<SiteCopy>): SiteCopy => ({
+  home: {
+    ...DEFAULT_SITE_CONTENT.home,
+    ...(payload.home ?? {}),
+  },
+  projectsPage: {
+    ...DEFAULT_SITE_CONTENT.projectsPage,
+    ...(payload.projectsPage ?? {}),
+  },
+  servicesPage: {
+    ...DEFAULT_SITE_CONTENT.servicesPage,
+    ...(payload.servicesPage ?? {}),
+  },
+  contact: {
+    ...DEFAULT_SITE_CONTENT.contact,
+    ...(payload.contact ?? {}),
+  },
+  services: payload.services ?? DEFAULT_SITE_CONTENT.services,
+});
+
 export const fetchSiteContent = async (): Promise<SiteContent | null> => {
   const db = await getMongoDatabase();
 
@@ -99,7 +119,7 @@ export const fetchSiteContent = async (): Promise<SiteContent | null> => {
     return null;
   }
 
-  return normalizeSiteCopy(document);
+  return normalizeSiteCopy(mergeSiteCopy(document));
 };
 
 export const upsertSiteContent = async (payload: SiteCopy): Promise<SiteContent | null> => {
@@ -109,7 +129,7 @@ export const upsertSiteContent = async (payload: SiteCopy): Promise<SiteContent 
     return null;
   }
 
-  const normalized = normalizeSiteCopy({ ...DEFAULT_SITE_CONTENT, ...payload });
+  const normalized = normalizeSiteCopy(mergeSiteCopy(payload));
 
   await db
     .collection<SiteContent>(COLLECTION)
