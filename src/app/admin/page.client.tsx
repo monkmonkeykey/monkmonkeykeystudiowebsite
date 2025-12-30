@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import type { Client, ClientKind } from "@/content/clients";
@@ -89,6 +89,16 @@ type SiteContentField = {
     chips: LocaleField[];
     outcomesLabel: LocaleField;
   };
+  projectsPage: {
+    title: LocaleField;
+    copy: LocaleField;
+    filterAllLabel: LocaleField;
+    emptyState: LocaleField;
+    cardCta: LocaleField;
+    ctaTitle: LocaleField;
+    ctaDescription: LocaleField;
+    ctaAction: LocaleField;
+  };
   contact: {
     title: LocaleField;
     copy: LocaleField;
@@ -98,7 +108,7 @@ type SiteContentField = {
   services: ServiceField[];
 };
 
-type SiteContentSection = "home" | "servicesPage" | "contact" | "servicesList";
+type SiteContentSection = "home" | "servicesPage" | "projectsPage" | "contact" | "servicesList";
 
 const CLIENT_KINDS: { value: ClientKind; label: string }[] = [
   { value: "client", label: "Cliente" },
@@ -178,6 +188,16 @@ const createSiteContentField = (siteContent: SiteContent): SiteContentField => (
     ctaLabel: createLocaleField(siteContent.servicesPage.ctaLabel),
     chips: (siteContent.servicesPage.chips || []).map((chip, index) => createDescriptionField(`chip-${index}`, chip).text),
     outcomesLabel: createLocaleField(siteContent.servicesPage.outcomesLabel),
+  },
+  projectsPage: {
+    title: createLocaleField(siteContent.projectsPage.title),
+    copy: createLocaleField(siteContent.projectsPage.copy),
+    filterAllLabel: createLocaleField(siteContent.projectsPage.filterAllLabel),
+    emptyState: createLocaleField(siteContent.projectsPage.emptyState),
+    cardCta: createLocaleField(siteContent.projectsPage.cardCta),
+    ctaTitle: createLocaleField(siteContent.projectsPage.ctaTitle),
+    ctaDescription: createLocaleField(siteContent.projectsPage.ctaDescription),
+    ctaAction: createLocaleField(siteContent.projectsPage.ctaAction),
   },
   contact: {
     title: createLocaleField(siteContent.contact.title),
@@ -268,6 +288,16 @@ const buildSitePayload = (draft: SiteContentField): SiteContent => ({
     ctaLabel: localeFieldToText(trimLocaleField(draft.servicesPage.ctaLabel)),
     chips: normalizeLocaleListField(draft.servicesPage.chips),
     outcomesLabel: localeFieldToText(trimLocaleField(draft.servicesPage.outcomesLabel)),
+  },
+  projectsPage: {
+    title: localeFieldToText(trimLocaleField(draft.projectsPage.title)),
+    copy: localeFieldToText(trimLocaleField(draft.projectsPage.copy)),
+    filterAllLabel: localeFieldToText(trimLocaleField(draft.projectsPage.filterAllLabel)),
+    emptyState: localeFieldToText(trimLocaleField(draft.projectsPage.emptyState)),
+    cardCta: localeFieldToText(trimLocaleField(draft.projectsPage.cardCta)),
+    ctaTitle: localeFieldToText(trimLocaleField(draft.projectsPage.ctaTitle)),
+    ctaDescription: localeFieldToText(trimLocaleField(draft.projectsPage.ctaDescription)),
+    ctaAction: localeFieldToText(trimLocaleField(draft.projectsPage.ctaAction)),
   },
   contact: {
     title: localeFieldToText(trimLocaleField(draft.contact.title)),
@@ -407,6 +437,108 @@ const LocaleInputs = ({
           onChange={(event) => onChange({ ...value, en: event.target.value })}
         />
       </label>
+    </div>
+  </div>
+);
+
+const RichTextInput = ({
+  value,
+  onChange,
+  placeholder,
+}: {
+  value: string;
+  onChange: (value: string) => void;
+  placeholder?: string;
+}) => {
+  const editorRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const editor = editorRef.current;
+    if (editor && editor.innerHTML !== value) {
+      editor.innerHTML = value || "";
+    }
+  }, [value]);
+
+  const exec = useCallback((command: string, arg?: string) => {
+    if (typeof document === "undefined") return;
+    editorRef.current?.focus();
+    document.execCommand(command, false, arg);
+  }, []);
+
+  return (
+    <div className="space-y-2">
+      <div className="flex flex-wrap items-center gap-2 rounded-2xl border border-foreground/10 bg-foreground/5 px-3 py-2 text-xs font-semibold text-foreground/70">
+        <button
+          type="button"
+          onClick={() => exec("bold")}
+          className="rounded-lg px-2 py-1 transition hover:bg-foreground/10"
+        >
+          B
+        </button>
+        <button
+          type="button"
+          onClick={() => exec("italic")}
+          className="rounded-lg px-2 py-1 transition hover:bg-foreground/10"
+        >
+          I
+        </button>
+        <button
+          type="button"
+          onClick={() => exec("underline")}
+          className="rounded-lg px-2 py-1 transition hover:bg-foreground/10"
+        >
+          U
+        </button>
+        <select
+          className="rounded-lg border border-foreground/10 bg-background px-2 py-1 text-xs"
+          onChange={(event) => exec("fontSize", event.target.value)}
+          defaultValue=""
+        >
+          <option value="">Tamaño</option>
+          <option value="2">Pequeño</option>
+          <option value="3">Base</option>
+          <option value="4">Grande</option>
+          <option value="5">Muy grande</option>
+        </select>
+        <label className="flex items-center gap-2 rounded-lg px-2 py-1 transition hover:bg-foreground/10">
+          <span>Color</span>
+          <input type="color" onChange={(event) => exec("foreColor", event.target.value)} />
+        </label>
+      </div>
+      <div
+        ref={editorRef}
+        contentEditable
+        suppressContentEditableWarning
+        className="min-h-[120px] w-full rounded-2xl border border-foreground/10 bg-background px-3 py-2 text-sm leading-relaxed focus:border-foreground/40 focus:outline-none"
+        onInput={(event) => onChange(event.currentTarget.innerHTML)}
+        data-placeholder={placeholder}
+      />
+    </div>
+  );
+};
+
+const RichLocaleInputs = ({
+  label,
+  value,
+  onChange,
+  placeholder,
+}: {
+  label: string;
+  value: LocaleField;
+  onChange: (value: LocaleField) => void;
+  placeholder?: string;
+}) => (
+  <div className="space-y-2">
+    <p className="text-sm font-semibold text-foreground/80">{label}</p>
+    <div className="grid gap-4 sm:grid-cols-2">
+      <div className="space-y-1 text-sm text-foreground/70">
+        <span className="block text-xs font-semibold uppercase tracking-[0.16em] text-foreground/50">ES</span>
+        <RichTextInput value={value.es} onChange={(content) => onChange({ ...value, es: content })} placeholder={placeholder} />
+      </div>
+      <div className="space-y-1 text-sm text-foreground/70">
+        <span className="block text-xs font-semibold uppercase tracking-[0.16em] text-foreground/50">EN</span>
+        <RichTextInput value={value.en} onChange={(content) => onChange({ ...value, en: content })} placeholder={placeholder} />
+      </div>
     </div>
   </div>
 );
@@ -617,6 +749,11 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
       description: "Copy de la página y chips destacados.",
     },
     {
+      key: "projectsPage",
+      label: "Proyectos",
+      description: "Hero, filtros y CTA de la página de proyectos.",
+    },
+    {
       key: "contact",
       label: "Contacto",
       description: "Texto, correo y lista de preparación.",
@@ -676,10 +813,11 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
             value={draft.home.heroHeadline}
             onChange={(value) => setDraft({ ...draft, home: { ...draft.home, heroHeadline: value } })}
           />
-          <LocaleInputs
+          <RichLocaleInputs
             label="Subtítulo"
             value={draft.home.heroSubtitle}
             onChange={(value) => setDraft({ ...draft, home: { ...draft.home, heroSubtitle: value } })}
+            placeholder="Redacta con estilos: negritas, itálicas, color y tamaños."
           />
           <LocaleInputs
             label="CTA primaria"
@@ -784,7 +922,7 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
             value={draft.home.servicesTitle}
             onChange={(value) => setDraft({ ...draft, home: { ...draft.home, servicesTitle: value } })}
           />
-          <LocaleInputs
+          <RichLocaleInputs
             label="Descripción de servicios"
             value={draft.home.servicesCopy}
             onChange={(value) => setDraft({ ...draft, home: { ...draft.home, servicesCopy: value } })}
@@ -836,7 +974,7 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
             value={draft.servicesPage.title}
             onChange={(value) => setDraft({ ...draft, servicesPage: { ...draft.servicesPage, title: value } })}
           />
-          <LocaleInputs
+          <RichLocaleInputs
             label="Copy principal servicios"
             value={draft.servicesPage.copy}
             onChange={(value) => setDraft({ ...draft, servicesPage: { ...draft.servicesPage, copy: value } })}
@@ -859,6 +997,53 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
         </div>
       )}
 
+      {activeSection === "projectsPage" && (
+        <div className="space-y-4 rounded-3xl border border-foreground/10 bg-background p-4">
+          <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-foreground/60">Proyectos</h3>
+          <LocaleInputs
+            label="Título página proyectos"
+            value={draft.projectsPage.title}
+            onChange={(value) => setDraft({ ...draft, projectsPage: { ...draft.projectsPage, title: value } })}
+          />
+          <RichLocaleInputs
+            label="Copy introductorio"
+            value={draft.projectsPage.copy}
+            onChange={(value) => setDraft({ ...draft, projectsPage: { ...draft.projectsPage, copy: value } })}
+            placeholder="Puedes usar negritas, itálicas, colores y tamaños."
+          />
+          <LocaleInputs
+            label="Etiqueta del filtro Todos"
+            value={draft.projectsPage.filterAllLabel}
+            onChange={(value) => setDraft({ ...draft, projectsPage: { ...draft.projectsPage, filterAllLabel: value } })}
+          />
+          <LocaleInputs
+            label="Estado vacío"
+            value={draft.projectsPage.emptyState}
+            onChange={(value) => setDraft({ ...draft, projectsPage: { ...draft.projectsPage, emptyState: value } })}
+          />
+          <LocaleInputs
+            label="CTA de tarjeta"
+            value={draft.projectsPage.cardCta}
+            onChange={(value) => setDraft({ ...draft, projectsPage: { ...draft.projectsPage, cardCta: value } })}
+          />
+          <LocaleInputs
+            label="Título CTA final"
+            value={draft.projectsPage.ctaTitle}
+            onChange={(value) => setDraft({ ...draft, projectsPage: { ...draft.projectsPage, ctaTitle: value } })}
+          />
+          <RichLocaleInputs
+            label="Descripción CTA"
+            value={draft.projectsPage.ctaDescription}
+            onChange={(value) => setDraft({ ...draft, projectsPage: { ...draft.projectsPage, ctaDescription: value } })}
+          />
+          <LocaleInputs
+            label="Botón CTA"
+            value={draft.projectsPage.ctaAction}
+            onChange={(value) => setDraft({ ...draft, projectsPage: { ...draft.projectsPage, ctaAction: value } })}
+          />
+        </div>
+      )}
+
       {activeSection === "contact" && (
         <div className="space-y-4 rounded-3xl border border-foreground/10 bg-background p-4">
           <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-foreground/60">Contacto</h3>
@@ -867,7 +1052,7 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
             value={draft.contact.title}
             onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, title: value } })}
           />
-          <LocaleInputs
+          <RichLocaleInputs
             label="Copy contacto"
             value={draft.contact.copy}
             onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, copy: value } })}

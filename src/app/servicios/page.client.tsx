@@ -7,6 +7,7 @@ import type { Service } from "@/content/services";
 import type { SiteContent } from "@/domain/site";
 import { translate } from "@/lib/i18n";
 import { useLocale } from "@/components/site/locale-context";
+import { RichText } from "@/components/site/rich-text";
 
 type ServicesPageClientProps = {
   services: Service[];
@@ -29,9 +30,10 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
             <h1 className="text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
               {translate(locale, siteContent.servicesPage.title)}
             </h1>
-            <p className="text-base text-foreground/70 sm:text-lg">
-              {translate(locale, siteContent.servicesPage.copy)}
-            </p>
+            <RichText
+              value={siteContent.servicesPage.copy}
+              className="prose prose-sm max-w-none text-foreground/70 sm:prose-base"
+            />
             <div className="flex flex-wrap gap-3 pt-2 text-sm text-foreground/70">
               {(siteContent.servicesPage.chips || []).map((chip, index) => (
                 <div

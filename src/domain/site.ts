@@ -30,6 +30,16 @@ export type SiteCopy = {
     chips: LocaleText[];
     outcomesLabel: LocaleText;
   };
+  projectsPage: {
+    title: LocaleText;
+    copy: LocaleText;
+    filterAllLabel: LocaleText;
+    emptyState: LocaleText;
+    cardCta: LocaleText;
+    ctaTitle: LocaleText;
+    ctaDescription: LocaleText;
+    ctaAction: LocaleText;
+  };
   contact: {
     title: LocaleText;
     copy: LocaleText;

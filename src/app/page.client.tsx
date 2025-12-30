@@ -10,6 +10,7 @@ import type { Service } from "@/content/services";
 import type { SiteContent } from "@/domain/site";
 import { translate, type Locale, type LocaleText } from "@/lib/i18n";
 import { useLocale } from "@/components/site/locale-context";
+import { RichText } from "@/components/site/rich-text";
 
 type HomePageClientProps = {
   projects: Project[];
@@ -30,12 +31,6 @@ export default function HomePageClient({
   categoryLabels,
 }: HomePageClientProps) {
   const { locale } = useLocale();
-
-  const heroSubtitle = translate(locale, siteContent.home.heroSubtitle);
-  const heroSubtitleParagraphs = heroSubtitle
-    .split(/\n{2,}/)
-    .map((paragraph) => paragraph.trim())
-    .filter(Boolean);
 
   const heroVideoUrl = siteContent.home.heroVideo?.url?.trim();
   const heroVideoPoster = siteContent.home.heroVideo?.poster?.trim();
@@ -60,16 +55,15 @@ export default function HomePageClient({
           </div>
         )}
         <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-5xl flex-col justify-end gap-6 px-6 pb-10 text-center sm:px-10 lg:px-14">
-          <h1 className="text-sm font-normal leading-relaxed text-foreground">
-            {translate(locale, siteContent.home.heroHeadline)}
-          </h1>
-          <div className="space-y-3 text-sm font-normal text-foreground/70">
-            {heroSubtitleParagraphs.map((paragraph, index) => (
-              <p key={index} className="leading-relaxed">
-                {paragraph}
-              </p>
-            ))}
-          </div>
+          <RichText
+            as="h1"
+            value={siteContent.home.heroHeadline}
+            className="text-sm font-normal leading-relaxed text-foreground"
+          />
+          <RichText
+            value={siteContent.home.heroSubtitle}
+            className="space-y-3 text-sm font-normal leading-relaxed text-foreground/70 [&>p]:leading-relaxed"
+          />
           <div className="flex flex-wrap justify-center gap-3">
             <Link
               href="/contacto"
@@ -101,9 +95,7 @@ export default function HomePageClient({
                 <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
                   {translate(locale, siteContent.home.servicesTitle)}
                 </h2>
-                <p className="text-base text-foreground/70">
-                  {translate(locale, siteContent.home.servicesCopy)}
-                </p>
+                <RichText value={siteContent.home.servicesCopy} className="prose prose-sm max-w-none text-foreground/70" />
               </div>
               <div className="flex flex-wrap gap-2 text-xs text-foreground/60">
                 {siteContent.home.servicesTags.map((tag, index) => (

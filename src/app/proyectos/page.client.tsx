@@ -8,55 +8,18 @@ import type { Project, ProjectCategory } from "@/domain/projects";
 import { formatProjectTimeline, translateCategoryLabel } from "@/domain/projects";
 import { translate, type LocaleText } from "@/lib/i18n";
 import { useLocale } from "@/components/site/locale-context";
+import type { SiteContent } from "@/domain/site";
+import { RichText } from "@/components/site/rich-text";
 
 type ProjectsPageClientProps = {
   projects: Project[];
   categoryLabels: Record<ProjectCategory, LocaleText>;
+  copy: SiteContent["projectsPage"];
 };
-
-const PAGE_TITLE = {
-  es: "Algunos proyectos",
-  en: "Featured work",
-} as const;
-
-const PAGE_COPY = {
-  es: "Casos en los que acompañamos a equipos de producto, museografía y marcas para desplegar experiencias memorables.",
-  en: "Projects where we partner with product, museography, and brand teams to deploy memorable experiences.",
-} as const;
-
-const FILTER_ALL = {
-  es: "Todos",
-  en: "All",
-} as const;
-
-const EMPTY_STATE = {
-  es: "No hay proyectos para esta categoría todavía.",
-  en: "There are no projects for this category yet.",
-} as const;
-
-const CARD_CTA = {
-  es: "Ver",
-  en: "View",
-} as const;
-
-const CTA_TITLE = {
-  es: "¿Listo para crear algo memorable?",
-  en: "Ready to create something memorable?",
-} as const;
-
-const CTA_DESCRIPTION = {
-  es: "Agendemos una llamada para entender tus objetivos y armar un plan a medida.",
-  en: "Let’s schedule a call to learn about your goals and craft a tailored plan together.",
-} as const;
-
-const CTA_ACTION = {
-  es: "Agenda una llamada",
-  en: "Book a call",
-} as const;
-
 export default function ProjectsPageClient({
   projects,
   categoryLabels,
+  copy,
 }: ProjectsPageClientProps) {
   const { locale } = useLocale();
   const [activeCategory, setActiveCategory] = useState<ProjectCategory | "all">("all");
@@ -135,11 +98,9 @@ export default function ProjectsPageClient({
           <div className="max-w-3xl space-y-2">
             <div className="space-y-2">
               <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-                {translate(locale, PAGE_TITLE)}
+                {translate(locale, copy.title)}
               </h1>
-              <p className="text-base text-foreground/70 sm:text-lg">
-                {translate(locale, PAGE_COPY)}
-              </p>
+              <RichText value={copy.copy} className="prose prose-sm max-w-none text-foreground/70 sm:prose-base" />
             </div>
           </div>
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/5">
@@ -149,7 +110,7 @@ export default function ProjectsPageClient({
                   <Image
                     key={`${previousCover.src}-previous`}
                     src={previousCover.src}
-                    alt={translate(locale, previousCover.alt ?? PAGE_TITLE)}
+                    alt={translate(locale, previousCover.alt ?? copy.title)}
                     fill
                     sizes="(min-width: 1024px) 420px, 100vw"
                     className={`absolute inset-0 object-cover transition-opacity duration-1000 ease-in-out ${
@@ -161,7 +122,7 @@ export default function ProjectsPageClient({
                 <Image
                   key={activeCover?.src}
                   src={activeCover?.src ?? "/images/projects-visual.svg"}
-                  alt={translate(locale, activeCover?.alt ?? PAGE_TITLE)}
+                  alt={translate(locale, activeCover?.alt ?? copy.title)}
                   fill
                   sizes="(min-width: 1024px) 420px, 100vw"
                   className={`object-cover transition-opacity duration-1000 ease-in-out ${
@@ -174,7 +135,7 @@ export default function ProjectsPageClient({
             ) : (
               <Image
                 src="/images/projects-visual.svg"
-                alt={translate(locale, PAGE_TITLE)}
+                alt={translate(locale, copy.title)}
                 fill
                 sizes="(min-width: 1024px) 420px, 100vw"
                 className="object-cover"
@@ -195,7 +156,7 @@ export default function ProjectsPageClient({
               : "border-foreground/10 text-foreground/60 hover:border-foreground/20 hover:text-foreground"
           }`}
         >
-          {translate(locale, FILTER_ALL)}
+          {translate(locale, copy.filterAllLabel)}
         </button>
         {categories.map((category) => (
           <button
@@ -216,7 +177,7 @@ export default function ProjectsPageClient({
       <div className="space-y-8">
         {filteredProjects.length === 0 ? (
           <p className="rounded-3xl border border-dashed border-foreground/10 bg-foreground/5 p-6 text-sm text-foreground/60">
-            {translate(locale, EMPTY_STATE)}
+            {translate(locale, copy.emptyState)}
           </p>
         ) : (
           <div className="grid gap-6 lg:grid-cols-2">
@@ -261,7 +222,7 @@ export default function ProjectsPageClient({
                     ))}
                   </div>
                   <div className="mt-auto flex items-center justify-between text-sm font-semibold text-foreground/70">
-                    <span>{translate(locale, CARD_CTA)}</span>
+                    <span>{translate(locale, copy.cardCta)}</span>
                     <span aria-hidden className="transition group-hover:translate-x-1">→</span>
                   </div>
                 </div>
@@ -275,17 +236,18 @@ export default function ProjectsPageClient({
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div className="space-y-3">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-foreground/60">
-              {translate(locale, CTA_TITLE)}
+              {translate(locale, copy.ctaTitle)}
             </p>
-            <p className="max-w-2xl text-base text-foreground/80 sm:text-lg">
-              {translate(locale, CTA_DESCRIPTION)}
-            </p>
+            <RichText
+              value={copy.ctaDescription}
+              className="prose prose-sm max-w-2xl text-foreground/80 sm:prose-base"
+            />
           </div>
           <Link
             href="/contacto"
             className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-semibold text-background shadow transition hover:-translate-y-0.5 hover:bg-foreground/90"
           >
-            <span>{translate(locale, CTA_ACTION)}</span>
+            <span>{translate(locale, copy.ctaAction)}</span>
             <span aria-hidden>↗</span>
           </Link>
         </div>

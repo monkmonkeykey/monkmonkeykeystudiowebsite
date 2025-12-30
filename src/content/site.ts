@@ -45,6 +45,25 @@ export const DEFAULT_SITE_CONTENT: SiteCopy = {
     ],
     outcomesLabel: { es: "Entregables principales", en: "Key deliverables" },
   },
+  projectsPage: {
+    title: { es: "Algunos proyectos", en: "Featured work" },
+    copy: {
+      es: "Casos en los que acompañamos a equipos de producto, museografía y marcas para desplegar experiencias memorables.",
+      en: "Projects where we partner with product, museography, and brand teams to deploy memorable experiences.",
+    },
+    filterAllLabel: { es: "Todos", en: "All" },
+    emptyState: {
+      es: "No hay proyectos para esta categoría todavía.",
+      en: "There are no projects for this category yet.",
+    },
+    cardCta: { es: "Ver", en: "View" },
+    ctaTitle: { es: "¿Listo para crear algo memorable?", en: "Ready to create something memorable?" },
+    ctaDescription: {
+      es: "Agendemos una llamada para entender tus objetivos y armar un plan a medida.",
+      en: "Let’s schedule a call to learn about your goals and craft a tailored plan together.",
+    },
+    ctaAction: { es: "Agenda una llamada", en: "Book a call" },
+  },
   contact: {
     title: { es: "Construyamos juntos", en: "Let’s build together" },
     copy: {

@@ -113,6 +113,16 @@ export const siteCopySchema = z.object({
     chips: z.array(localeTextSchema).default([]),
     outcomesLabel: localeTextSchema,
   }),
+  projectsPage: z.object({
+    title: localeTextSchema,
+    copy: localeTextSchema,
+    filterAllLabel: localeTextSchema,
+    emptyState: localeTextSchema,
+    cardCta: localeTextSchema,
+    ctaTitle: localeTextSchema,
+    ctaDescription: localeTextSchema,
+    ctaAction: localeTextSchema,
+  }),
   contact: z.object({
     title: localeTextSchema,
     copy: localeTextSchema,

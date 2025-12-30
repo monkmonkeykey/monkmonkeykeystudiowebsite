@@ -54,6 +54,16 @@ const normalizeSiteCopy = (value: SiteCopy): SiteCopy => ({
     clientsWebsiteLabel: normalizeLocaleText(value.home.clientsWebsiteLabel),
     contactCta: normalizeLocaleText(value.home.contactCta),
   },
+  projectsPage: {
+    title: normalizeLocaleText(value.projectsPage.title),
+    copy: normalizeLocaleText(value.projectsPage.copy),
+    filterAllLabel: normalizeLocaleText(value.projectsPage.filterAllLabel),
+    emptyState: normalizeLocaleText(value.projectsPage.emptyState),
+    cardCta: normalizeLocaleText(value.projectsPage.cardCta),
+    ctaTitle: normalizeLocaleText(value.projectsPage.ctaTitle),
+    ctaDescription: normalizeLocaleText(value.projectsPage.ctaDescription),
+    ctaAction: normalizeLocaleText(value.projectsPage.ctaAction),
+  },
   servicesPage: {
     title: normalizeLocaleText(value.servicesPage.title),
     copy: normalizeLocaleText(value.servicesPage.copy),

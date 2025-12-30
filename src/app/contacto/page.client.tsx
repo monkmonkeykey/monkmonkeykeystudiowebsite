@@ -6,6 +6,7 @@ import Link from "next/link";
 import type { SiteContent } from "@/domain/site";
 import { translate } from "@/lib/i18n";
 import { useLocale } from "@/components/site/locale-context";
+import { RichText } from "@/components/site/rich-text";
 
 type ContactPageClientProps = {
   siteContent: SiteContent;
@@ -21,9 +22,10 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
           <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
             {translate(locale, siteContent.contact.title)}
           </h1>
-          <p className="text-base text-foreground/70 sm:text-lg">
-            {translate(locale, siteContent.contact.copy)}
-          </p>
+          <RichText
+            value={siteContent.contact.copy}
+            className="prose prose-sm max-w-none text-foreground/70 sm:prose-base"
+          />
         </div>
         <div className="relative aspect-[4/3] w-full max-w-sm overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/5">
           <Image
