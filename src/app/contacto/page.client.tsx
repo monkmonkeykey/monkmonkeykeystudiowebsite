@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState, type FormEvent } from "react";
 
 import type { SiteContent } from "@/domain/site";
 import { translate } from "@/lib/i18n";
@@ -14,6 +15,54 @@ type ContactPageClientProps = {
 
 export default function ContactPageClient({ siteContent }: ContactPageClientProps) {
   const { locale } = useLocale();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    organization: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [error, setError] = useState<string | null>(null);
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setStatus("sending");
+    setError(null);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+
+      setStatus("success");
+      setFormData({
+        name: "",
+        email: "",
+        organization: "",
+        phone: "",
+        subject: "",
+        message: "",
+      });
+    } catch (submissionError) {
+      console.error(submissionError);
+      setError(
+        locale === "es"
+          ? "No pudimos enviar tu mensaje. Intenta de nuevo."
+          : "We couldn't send your message. Please try again.",
+      );
+      setStatus("error");
+    }
+  };
 
   return (
     <div className="space-y-10">
@@ -69,6 +118,163 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
             {siteContent.contact.preparation.map((item, index) => (
               <li key={`${item.es}-${index}`}>{translate(locale, item)}</li>
             ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="grid gap-6 lg:grid-cols-3">
+        <div className="lg:col-span-2">
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-4 rounded-3xl border border-foreground/10 bg-background p-6 shadow-sm"
+          >
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm font-semibold text-foreground/80">
+                  {locale === "es" ? "Escríbenos" : "Send a message"}
+                </p>
+                <p className="text-xs text-foreground/60">
+                  {locale === "es"
+                    ? "Te responderemos en menos de un día hábil."
+                    : "We’ll reply within one business day."}
+                </p>
+              </div>
+              {status === "success" && (
+                <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-700">
+                  {locale === "es" ? "Enviado" : "Sent"}
+                </span>
+              )}
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              <label className="space-y-2 text-sm text-foreground/80">
+                <span>{locale === "es" ? "Nombre" : "Name"}</span>
+                <input
+                  required
+                  value={formData.name}
+                  onChange={(event) =>
+                    setFormData((prev) => ({ ...prev, name: event.target.value }))
+                  }
+                  className="w-full rounded-xl border border-foreground/10 bg-foreground/5 px-3 py-2 text-sm text-foreground outline-none transition focus:border-foreground/30 focus:bg-background"
+                  name="name"
+                />
+              </label>
+              <label className="space-y-2 text-sm text-foreground/80">
+                <span>Email</span>
+                <input
+                  required
+                  type="email"
+                  value={formData.email}
+                  onChange={(event) =>
+                    setFormData((prev) => ({ ...prev, email: event.target.value }))
+                  }
+                  className="w-full rounded-xl border border-foreground/10 bg-foreground/5 px-3 py-2 text-sm text-foreground outline-none transition focus:border-foreground/30 focus:bg-background"
+                  name="email"
+                />
+              </label>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              <label className="space-y-2 text-sm text-foreground/80">
+                <span>{locale === "es" ? "Organización" : "Organization"}</span>
+                <input
+                  value={formData.organization}
+                  onChange={(event) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      organization: event.target.value,
+                    }))
+                  }
+                  className="w-full rounded-xl border border-foreground/10 bg-foreground/5 px-3 py-2 text-sm text-foreground outline-none transition focus:border-foreground/30 focus:bg-background"
+                  name="organization"
+                />
+              </label>
+              <label className="space-y-2 text-sm text-foreground/80">
+                <span>{locale === "es" ? "Teléfono" : "Phone"}</span>
+                <input
+                  value={formData.phone}
+                  onChange={(event) =>
+                    setFormData((prev) => ({ ...prev, phone: event.target.value }))
+                  }
+                  className="w-full rounded-xl border border-foreground/10 bg-foreground/5 px-3 py-2 text-sm text-foreground outline-none transition focus:border-foreground/30 focus:bg-background"
+                  name="phone"
+                />
+              </label>
+            </div>
+
+            <label className="space-y-2 text-sm text-foreground/80">
+              <span>{locale === "es" ? "Asunto" : "Subject"}</span>
+              <input
+                value={formData.subject}
+                onChange={(event) =>
+                  setFormData((prev) => ({ ...prev, subject: event.target.value }))
+                }
+                className="w-full rounded-xl border border-foreground/10 bg-foreground/5 px-3 py-2 text-sm text-foreground outline-none transition focus:border-foreground/30 focus:bg-background"
+                name="subject"
+              />
+            </label>
+
+            <label className="space-y-2 text-sm text-foreground/80">
+              <span>{locale === "es" ? "Mensaje" : "Message"}</span>
+              <textarea
+                required
+                rows={5}
+                value={formData.message}
+                onChange={(event) =>
+                  setFormData((prev) => ({ ...prev, message: event.target.value }))
+                }
+                className="w-full rounded-xl border border-foreground/10 bg-foreground/5 px-3 py-2 text-sm text-foreground outline-none transition focus:border-foreground/30 focus:bg-background"
+                name="message"
+              />
+            </label>
+
+            {error ? (
+              <p className="text-sm text-red-600">{error}</p>
+            ) : (
+              <p className="text-xs text-foreground/60">
+                {locale === "es"
+                  ? "Compartiremos disponibilidad y próximos pasos por correo."
+                  : "We’ll reply with availability and next steps via email."}
+              </p>
+            )}
+
+            <button
+              type="submit"
+              className="inline-flex w-full items-center justify-center rounded-full bg-foreground px-4 py-2 text-sm font-semibold text-background transition hover:bg-foreground/90 disabled:cursor-not-allowed disabled:bg-foreground/40"
+              disabled={status === "sending"}
+            >
+              {status === "sending"
+                ? locale === "es"
+                  ? "Enviando..."
+                  : "Sending..."
+                : locale === "es"
+                  ? "Enviar mensaje"
+                  : "Send message"}
+            </button>
+          </form>
+        </div>
+
+        <div className="space-y-4 rounded-3xl border border-foreground/10 bg-foreground/5 p-6">
+          <h2 className="text-lg font-semibold text-foreground/90">
+            {locale === "es" ? "Más formas de contacto" : "More ways to reach us"}
+          </h2>
+          <ul className="space-y-3 text-sm text-foreground/70">
+            <li>
+              <span className="block text-xs uppercase tracking-wide text-foreground/50">
+                {locale === "es" ? "Correo" : "Email"}
+              </span>
+              <Link
+                href={`mailto:${siteContent.contact.email}`}
+                className="font-semibold text-foreground underline underline-offset-2"
+              >
+                {siteContent.contact.email}
+              </Link>
+            </li>
+            <li className="text-xs text-foreground/60">
+              {locale === "es"
+                ? "Prefieres agendar? También puedes escribirnos para compartir detalles y coordinar una llamada."
+                : "Prefer to schedule? Share details here and we’ll coordinate a call."}
+            </li>
           </ul>
         </div>
       </section>
