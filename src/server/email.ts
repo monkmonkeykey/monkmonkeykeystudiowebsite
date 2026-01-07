@@ -3,6 +3,7 @@ import tls from "node:tls";
 const RESEND_ENDPOINT = "https://api.resend.com/emails";
 
 type ContactEmailPayload = {
+  from?: string;
   recipient: string;
   name: string;
   email: string;
@@ -54,7 +55,7 @@ function formatText(payload: ContactEmailPayload) {
 }
 
 function resolveProvider(): EmailProvider {
-  if (process.env.RESEND_API_KEY && process.env.CONTACT_FROM) {
+  if (process.env.RESEND_API_KEY) {
     return "resend";
   }
 
@@ -69,7 +70,7 @@ function resolveProvider(): EmailProvider {
 
 async function sendViaResend(payload: ContactEmailPayload) {
   const apiKey = process.env.RESEND_API_KEY;
-  const from = process.env.CONTACT_FROM || payload.email;
+  const from = payload.from || process.env.CONTACT_FROM || payload.email;
 
   if (!apiKey || !from) {
     throw new Error("Resend provider not configured (RESEND_API_KEY/CONTACT_FROM)");
