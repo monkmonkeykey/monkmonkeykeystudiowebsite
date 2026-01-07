@@ -41,7 +41,12 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
       });
 
       if (!response.ok) {
-        throw new Error("Failed to send message");
+        const errorBody = await response.json().catch(() => null);
+        const message =
+          errorBody && typeof errorBody.error === "string"
+            ? errorBody.error
+            : "Failed to send message";
+        throw new Error(message);
       }
 
       setStatus("success");
@@ -55,10 +60,14 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
       });
     } catch (submissionError) {
       console.error(submissionError);
+      const message =
+        submissionError instanceof Error ? submissionError.message : null;
       setError(
-        locale === "es"
-          ? "No pudimos enviar tu mensaje. Intenta de nuevo."
-          : "We couldn't send your message. Please try again.",
+        message && message !== "Failed to send message"
+          ? message
+          : locale === "es"
+            ? "No pudimos enviar tu mensaje. Intenta de nuevo."
+            : "We couldn't send your message. Please try again.",
       );
       setStatus("error");
     }

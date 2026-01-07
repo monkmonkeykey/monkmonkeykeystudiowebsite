@@ -28,6 +28,13 @@ export async function POST(request: Request) {
   const siteContent = await getSiteContent();
   const recipient = process.env.CONTACT_RECIPIENT || siteContent.contact.email;
 
+  if (!recipient) {
+    return NextResponse.json(
+      { error: "No contact recipient configured" },
+      { status: 500 },
+    );
+  }
+
   try {
     await sendContactEmail({
       recipient,
@@ -35,8 +42,9 @@ export async function POST(request: Request) {
     });
   } catch (error) {
     console.error("Failed to send contact email", error);
+    const message = error instanceof Error ? error.message : "Failed to send message";
     return NextResponse.json(
-      { error: "Failed to send message" },
+      { error: message },
       { status: 500 },
     );
   }
