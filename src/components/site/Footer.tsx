@@ -19,6 +19,14 @@ export function Footer() {
         <p>&copy; {new Date().getFullYear()} MonkMonkeyKey</p>
         <div className="flex flex-col gap-2 text-sm md:items-end">
           <p>{translate(locale, FOOTER_COPY)}</p>
+          <a
+            href="https://www.instagram.com/monkmokeykey_studio/"
+            target="_blank"
+            rel="noreferrer"
+            className="text-xs font-semibold text-foreground/50 transition hover:text-foreground/80"
+          >
+            Instagram · @monkmokeykey_studio
+          </a>
           <Link
             href="/admin/login"
             className="text-xs font-semibold text-foreground/50 transition hover:text-foreground/80"
