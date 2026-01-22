@@ -150,6 +150,11 @@ export const DEFAULT_SITE_CONTENT: SiteCopy = {
     },
     adminLabel: { es: "Administrar sitio", en: "Manage site" },
     instagramLabel: { es: "Instagram · @monkmokeykey_studio", en: "Instagram · @monkmokeykey_studio" },
+    instagramUrl: "https://www.instagram.com/monkmokeykey_studio/",
+    facebookLabel: { es: "Facebook", en: "Facebook" },
+    facebookUrl: "",
+    linkedinLabel: { es: "LinkedIn", en: "LinkedIn" },
+    linkedinUrl: "",
   },
   services: SERVICES,
 };

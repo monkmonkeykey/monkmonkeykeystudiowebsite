@@ -153,6 +153,11 @@ type SiteContentField = {
     tagline: LocaleField;
     adminLabel: LocaleField;
     instagramLabel: LocaleField;
+    instagramUrl: string;
+    facebookLabel: LocaleField;
+    facebookUrl: string;
+    linkedinLabel: LocaleField;
+    linkedinUrl: string;
   };
   services: ServiceField[];
 };
@@ -313,6 +318,11 @@ const createSiteContentField = (siteContent: SiteContent): SiteContentField => (
     tagline: createLocaleField(siteContent.footer.tagline),
     adminLabel: createLocaleField(siteContent.footer.adminLabel),
     instagramLabel: createLocaleField(siteContent.footer.instagramLabel),
+    instagramUrl: siteContent.footer.instagramUrl ?? "",
+    facebookLabel: createLocaleField(siteContent.footer.facebookLabel),
+    facebookUrl: siteContent.footer.facebookUrl ?? "",
+    linkedinLabel: createLocaleField(siteContent.footer.linkedinLabel),
+    linkedinUrl: siteContent.footer.linkedinUrl ?? "",
   },
   services: siteContent.services.map((service, index) => createServiceField(`service-${index}`, service)),
 });
@@ -460,6 +470,11 @@ const buildSitePayload = (draft: SiteContentField): SiteContent => ({
     tagline: localeFieldToText(trimLocaleField(draft.footer.tagline)),
     adminLabel: localeFieldToText(trimLocaleField(draft.footer.adminLabel)),
     instagramLabel: localeFieldToText(trimLocaleField(draft.footer.instagramLabel)),
+    instagramUrl: draft.footer.instagramUrl.trim() || undefined,
+    facebookLabel: localeFieldToText(trimLocaleField(draft.footer.facebookLabel)),
+    facebookUrl: draft.footer.facebookUrl.trim() || undefined,
+    linkedinLabel: localeFieldToText(trimLocaleField(draft.footer.linkedinLabel)),
+    linkedinUrl: draft.footer.linkedinUrl.trim() || undefined,
   },
   services: draft.services.map((service) => ({
     slug: slugifyCategory(service.slug) || slugifyCategory(service.title.es || service.title.en),
@@ -1461,6 +1476,49 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
             value={draft.footer.instagramLabel}
             onChange={(value) => setDraft({ ...draft, footer: { ...draft.footer, instagramLabel: value } })}
           />
+          <label className="space-y-1 text-sm text-foreground/70">
+            <span className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/50">URL Instagram</span>
+            <input
+              className="w-full rounded-xl border border-foreground/10 bg-background px-3 py-2 text-sm"
+              placeholder="https://www.instagram.com/..."
+              value={draft.footer.instagramUrl}
+              onChange={(event) =>
+                setDraft({ ...draft, footer: { ...draft.footer, instagramUrl: event.target.value } })
+              }
+            />
+          </label>
+          <RichLocaleInputs
+            label="Etiqueta Facebook"
+            value={draft.footer.facebookLabel}
+            onChange={(value) => setDraft({ ...draft, footer: { ...draft.footer, facebookLabel: value } })}
+          />
+          <label className="space-y-1 text-sm text-foreground/70">
+            <span className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/50">URL Facebook</span>
+            <input
+              className="w-full rounded-xl border border-foreground/10 bg-background px-3 py-2 text-sm"
+              placeholder="https://www.facebook.com/..."
+              value={draft.footer.facebookUrl}
+              onChange={(event) =>
+                setDraft({ ...draft, footer: { ...draft.footer, facebookUrl: event.target.value } })
+              }
+            />
+          </label>
+          <RichLocaleInputs
+            label="Etiqueta LinkedIn"
+            value={draft.footer.linkedinLabel}
+            onChange={(value) => setDraft({ ...draft, footer: { ...draft.footer, linkedinLabel: value } })}
+          />
+          <label className="space-y-1 text-sm text-foreground/70">
+            <span className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/50">URL LinkedIn</span>
+            <input
+              className="w-full rounded-xl border border-foreground/10 bg-background px-3 py-2 text-sm"
+              placeholder="https://www.linkedin.com/company/..."
+              value={draft.footer.linkedinUrl}
+              onChange={(event) =>
+                setDraft({ ...draft, footer: { ...draft.footer, linkedinUrl: event.target.value } })
+              }
+            />
+          </label>
           <RichLocaleInputs
             label="Etiqueta admin"
             value={draft.footer.adminLabel}

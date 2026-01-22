@@ -177,6 +177,11 @@ export const siteCopySchema = z.object({
     tagline: localeTextSchema,
     adminLabel: localeTextSchema,
     instagramLabel: localeTextSchema,
+    instagramUrl: z.string().url().optional(),
+    facebookLabel: localeTextSchema,
+    facebookUrl: z.string().url().optional(),
+    linkedinLabel: localeTextSchema,
+    linkedinUrl: z.string().url().optional(),
   }),
   services: z.array(serviceSchema).min(1),
 });

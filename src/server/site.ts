@@ -166,6 +166,11 @@ const normalizeSiteCopy = (value: SiteCopy): SiteCopy => ({
     tagline: normalizeLocaleText(value.footer.tagline),
     adminLabel: normalizeLocaleText(value.footer.adminLabel),
     instagramLabel: normalizeLocaleText(value.footer.instagramLabel),
+    instagramUrl: value.footer.instagramUrl?.trim() || undefined,
+    facebookLabel: normalizeLocaleText(value.footer.facebookLabel),
+    facebookUrl: value.footer.facebookUrl?.trim() || undefined,
+    linkedinLabel: normalizeLocaleText(value.footer.linkedinLabel),
+    linkedinUrl: value.footer.linkedinUrl?.trim() || undefined,
   },
   services: value.services.map((service) => ({
     ...service,

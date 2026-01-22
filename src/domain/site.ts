@@ -94,6 +94,11 @@ export type SiteCopy = {
     tagline: LocaleText;
     adminLabel: LocaleText;
     instagramLabel: LocaleText;
+    instagramUrl?: string;
+    facebookLabel: LocaleText;
+    facebookUrl?: string;
+    linkedinLabel: LocaleText;
+    linkedinUrl?: string;
   };
   services: Service[];
 };
