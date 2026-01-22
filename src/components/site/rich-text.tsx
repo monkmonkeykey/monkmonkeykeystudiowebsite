@@ -8,6 +8,47 @@ type RichTextProps<T extends ElementType> = {
   value: LocaleText;
 } & ComponentPropsWithoutRef<T>;
 
+const FONT_SIZE_MAP: Record<string, string> = {
+  "1": "0.75rem",
+  "2": "0.875rem",
+  "3": "1rem",
+  "4": "1.125rem",
+  "5": "1.25rem",
+  "6": "1.5rem",
+  "7": "1.875rem",
+};
+
+const normalizeRichText = (value: string | undefined): string => {
+  if (!value) return "";
+
+  const withSpanFonts = value.replace(/<font([^>]*)>/gi, (_, attributes) => {
+    const sizeMatch = attributes.match(/size=["']?(\d)["']?/i);
+    const colorMatch = attributes.match(/color=["']?([^"'\s>]+)["']?/i);
+    const styleMatch = attributes.match(/style=["']?([^"']+)["']?/i);
+    const styles: string[] = [];
+
+    if (sizeMatch?.[1]) {
+      const mappedSize = FONT_SIZE_MAP[sizeMatch[1]];
+      if (mappedSize) {
+        styles.push(`font-size: ${mappedSize}`);
+      }
+    }
+
+    if (colorMatch?.[1]) {
+      styles.push(`color: ${colorMatch[1]}`);
+    }
+
+    if (styleMatch?.[1]) {
+      styles.push(styleMatch[1]);
+    }
+
+    const styleAttr = styles.length > 0 ? ` style="${styles.join("; ")}"` : "";
+    return `<span${styleAttr}>`;
+  });
+
+  return withSpanFonts.replace(/<\/font>/gi, "</span>");
+};
+
 export function RichText<T extends ElementType = "div">({
   as,
   value,
@@ -16,7 +57,7 @@ export function RichText<T extends ElementType = "div">({
 }: RichTextProps<T>) {
   const { locale } = useLocale();
   const Component = (as || "div") as ElementType;
-  const content = translate(locale, value);
+  const content = normalizeRichText(translate(locale, value));
   const mergedClassName = ["rich-text-reset", className].filter(Boolean).join(" ");
 
   return (
