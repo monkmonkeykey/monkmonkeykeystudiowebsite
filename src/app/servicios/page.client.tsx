@@ -7,7 +7,7 @@ import type { Service } from "@/content/services";
 import type { SiteContent } from "@/domain/site";
 import { translate } from "@/lib/i18n";
 import { useLocale } from "@/components/site/locale-context";
-import { RichText } from "@/components/site/rich-text";
+import { getPlainText, RichText } from "@/components/site/rich-text";
 
 type ServicesPageClientProps = {
   services: Service[];
@@ -16,6 +16,9 @@ type ServicesPageClientProps = {
 
 export default function ServicesPageClient({ services, siteContent }: ServicesPageClientProps) {
   const { locale } = useLocale();
+  const chips = (siteContent.servicesPage.chips || []).filter(
+    (chip) => getPlainText(translate(locale, chip)).length > 0,
+  );
 
   return (
     <div className="space-y-12" id="top">
@@ -31,13 +34,13 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
               className="prose prose-sm max-w-none text-foreground/70 sm:prose-base"
             />
             <div className="flex flex-wrap gap-3 pt-2 text-sm text-foreground/70">
-              {(siteContent.servicesPage.chips || []).map((chip, index) => (
+              {chips.map((chip, index) => (
                 <div
                   key={`${chip.es}-${index}`}
                   className="inline-flex items-center gap-2 rounded-full bg-background/60 px-3 py-2 ring-1 ring-foreground/10"
                 >
                   <span className="size-2 rounded-full" />
-                  {translate(locale, chip)}
+                  <RichText as="span" value={chip} />
                 </div>
               ))}
             </div>
@@ -47,9 +50,11 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(56,189,248,0.12),transparent_30%),radial-gradient(circle_at_80%_30%,rgba(192,132,252,0.12),transparent_26%)]" aria-hidden />
             <div className="relative z-10 flex h-full flex-col justify-between gap-4">
               <div className="space-y-2">
-                <p className="text-sm uppercase tracking-[0.16em] text-foreground/60">
-                  {translate(locale, siteContent.servicesPage.quickMapLabel)}
-                </p>
+                <RichText
+                  as="p"
+                  value={siteContent.servicesPage.quickMapLabel}
+                  className="text-sm uppercase tracking-[0.16em] text-foreground/60"
+                />
                 <div className="flex flex-wrap gap-2">
                   {services.map((service) => (
                     <a
@@ -93,10 +98,10 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
                 </div>
                 <div className="flex flex-wrap gap-3 text-sm text-foreground/70">
                   <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1.5 text-primary ring-1 ring-primary/20">
-                    {translate(locale, siteContent.servicesPage.highlightPrimaryLabel)}
+                    <RichText as="span" value={siteContent.servicesPage.highlightPrimaryLabel} />
                   </div>
                   <div className="inline-flex items-center gap-2 rounded-full bg-foreground/5 px-3 py-1.5 ring-1 ring-foreground/10">
-                    {translate(locale, siteContent.servicesPage.highlightSecondaryLabel)}
+                    <RichText as="span" value={siteContent.servicesPage.highlightSecondaryLabel} />
                   </div>
                 </div>
               </div>
@@ -105,18 +110,20 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
                 <div className="relative h-16 w-16 overflow-hidden rounded-2xl bg-background ring-1 ring-foreground/10">
                   <Image
                     src="/images/services-visual.svg"
-                    alt={translate(locale, siteContent.servicesPage.imageAlt)}
+                    alt={getPlainText(translate(locale, siteContent.servicesPage.imageAlt))}
                     fill
                     className="object-cover"
                   />
                 </div>
                 <div className="space-y-1 text-sm text-foreground/70">
-                  <p className="font-semibold text-foreground">
-                    {translate(locale, siteContent.servicesPage.sessionTitle)}
-                  </p>
-                  <p>{translate(locale, siteContent.servicesPage.sessionCopy)}</p>
+                  <RichText
+                    as="p"
+                    value={siteContent.servicesPage.sessionTitle}
+                    className="font-semibold text-foreground"
+                  />
+                  <RichText as="p" value={siteContent.servicesPage.sessionCopy} />
                   <Link href="/contacto" className="inline-flex items-center gap-2 text-primary hover:text-primary/80">
-                    {translate(locale, siteContent.servicesPage.talkCtaLabel)}
+                    <RichText as="span" value={siteContent.servicesPage.talkCtaLabel} />
                   </Link>
                 </div>
               </div>
@@ -131,7 +138,7 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
                   href="#top"
                   className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-foreground/60 transition hover:text-foreground"
                 >
-                  {translate(locale, siteContent.servicesPage.backToTopLabel)}
+                  <RichText as="span" value={siteContent.servicesPage.backToTopLabel} />
                 </a>
               </div>
               <div className="grid gap-3 md:grid-cols-2">

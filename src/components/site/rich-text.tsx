@@ -57,6 +57,9 @@ const normalizeRichText = (value: string | undefined): string => {
   return stripHtmlContent(normalized) ? normalized : "";
 };
 
+export const getPlainText = (value: string | undefined): string =>
+  stripHtmlContent(normalizeRichText(value));
+
 export function RichText<T extends ElementType = "div">({
   as,
   value,

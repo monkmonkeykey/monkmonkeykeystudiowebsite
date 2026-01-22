@@ -10,7 +10,7 @@ import type { Service } from "@/content/services";
 import type { SiteContent } from "@/domain/site";
 import { translate, type Locale, type LocaleText } from "@/lib/i18n";
 import { useLocale } from "@/components/site/locale-context";
-import { RichText } from "@/components/site/rich-text";
+import { getPlainText, RichText } from "@/components/site/rich-text";
 
 type HomePageClientProps = {
   projects: Project[];
@@ -34,6 +34,12 @@ export default function HomePageClient({
 
   const heroVideoUrl = siteContent.home.heroVideo?.url?.trim();
   const heroVideoPoster = siteContent.home.heroVideo?.poster?.trim();
+  const servicesTags = siteContent.home.servicesTags.filter(
+    (tag) => getPlainText(translate(locale, tag)).length > 0,
+  );
+  const projectsTags = siteContent.home.projectsTags.filter(
+    (tag) => getPlainText(translate(locale, tag)).length > 0,
+  );
 
   return (
     <div className="space-y-20">
@@ -87,7 +93,7 @@ export default function HomePageClient({
             <div className="space-y-3">
               <div className="inline-flex items-center gap-2 rounded-full bg-foreground/5 px-3 py-1 text-xs font-semibold text-foreground/70 ring-1 ring-foreground/10">
                 <span className="size-2 rounded-full bg-primary" />
-                {translate(locale, siteContent.home.servicesBadgeLabel)}
+                <RichText as="span" value={siteContent.home.servicesBadgeLabel} />
               </div>
               <div className="space-y-2">
                 <RichText
@@ -98,7 +104,7 @@ export default function HomePageClient({
                 <RichText value={siteContent.home.servicesCopy} className="prose prose-sm max-w-none text-foreground/70" />
               </div>
               <div className="flex flex-wrap gap-2 text-xs text-foreground/60">
-                {siteContent.home.servicesTags.map((tag, index) => (
+                {servicesTags.map((tag, index) => (
                   <span
                     key={`${tag.es}-${index}`}
                     className="inline-flex items-center gap-2 rounded-full bg-background/60 px-3 py-1.5 ring-1 ring-foreground/10"
@@ -178,7 +184,7 @@ export default function HomePageClient({
             <div className="space-y-2">
               <div className="inline-flex items-center gap-2 rounded-full bg-foreground/5 px-3 py-1 text-xs font-semibold text-foreground/70 ring-1 ring-foreground/10">
                 <span className="size-2 rounded-full bg-primary" />
-                {translate(locale, siteContent.home.projectsBadgeLabel)}
+                <RichText as="span" value={siteContent.home.projectsBadgeLabel} />
               </div>
               <RichText
                 as="h2"
@@ -190,7 +196,7 @@ export default function HomePageClient({
                 className="text-base text-foreground/70"
               />
               <div className="flex flex-wrap gap-2 text-xs text-foreground/60">
-                {siteContent.home.projectsTags.map((tag, index) => (
+                {projectsTags.map((tag, index) => (
                   <span
                     key={`${tag.es}-${index}`}
                     className="inline-flex items-center gap-2 rounded-full bg-background/60 px-3 py-1.5 ring-1 ring-foreground/10"
@@ -216,7 +222,7 @@ export default function HomePageClient({
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/5">
               <Image
                 src="/images/projects-visual.svg"
-                alt={translate(locale, siteContent.home.projectsImageAlt)}
+                alt={getPlainText(translate(locale, siteContent.home.projectsImageAlt))}
                 fill
                 className="object-cover"
               />

@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import type { SiteContent } from "@/domain/site";
 import { translate } from "@/lib/i18n";
+import { getPlainText } from "@/components/site/rich-text";
 import { useLocale } from "./locale-context";
 
 type FooterProps = {
@@ -38,7 +39,7 @@ export function Footer({ footer }: FooterProps) {
                 target="_blank"
                 rel="noreferrer"
                 className={socialIconStyles}
-                aria-label={translate(locale, footer.instagramLabel)}
+                aria-label={getPlainText(translate(locale, footer.instagramLabel))}
               >
                 <svg className="h-4 w-4" aria-hidden {...iconProps}>
                   <rect x="3" y="3" width="18" height="18" rx="5" />
@@ -53,7 +54,7 @@ export function Footer({ footer }: FooterProps) {
                 target="_blank"
                 rel="noreferrer"
                 className={socialIconStyles}
-                aria-label={translate(locale, footer.facebookLabel)}
+                aria-label={getPlainText(translate(locale, footer.facebookLabel))}
               >
                 <svg className="h-4 w-4" aria-hidden {...iconProps}>
                   <path d="M15 3h-2.4c-2.5 0-4.1 1.6-4.1 4.1V9H6v3h2.5v8H12v-8h2.8l.7-3H12V7.6c0-1 .5-1.6 1.5-1.6H15V3z" />
@@ -66,7 +67,7 @@ export function Footer({ footer }: FooterProps) {
                 target="_blank"
                 rel="noreferrer"
                 className={socialIconStyles}
-                aria-label={translate(locale, footer.linkedinLabel)}
+                aria-label={getPlainText(translate(locale, footer.linkedinLabel))}
               >
                 <svg className="h-4 w-4" aria-hidden {...iconProps}>
                   <rect x="3" y="3" width="18" height="18" rx="2" />

@@ -7,7 +7,7 @@ import { useState, type FormEvent } from "react";
 import type { SiteContent } from "@/domain/site";
 import { translate } from "@/lib/i18n";
 import { useLocale } from "@/components/site/locale-context";
-import { RichText } from "@/components/site/rich-text";
+import { getPlainText, RichText } from "@/components/site/rich-text";
 
 type ContactPageClientProps = {
   siteContent: SiteContent;
@@ -90,7 +90,7 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
         <div className="relative aspect-[4/3] w-full max-w-sm overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/5">
           <Image
             src="/images/contact-visual.svg"
-            alt={translate(locale, siteContent.contact.imageAlt)}
+            alt={getPlainText(translate(locale, siteContent.contact.imageAlt))}
             fill
             className="object-cover"
           />
@@ -99,24 +99,29 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
 
       <section className="grid gap-6 lg:grid-cols-2">
         <div className="rounded-3xl border border-foreground/10 bg-background p-6 shadow-sm">
-          <h2 className="text-lg font-semibold text-foreground/90">
-            {translate(locale, siteContent.contact.bookCallTitle)}
-          </h2>
-          <p className="mt-3 text-sm text-foreground/70">
-            {translate(locale, siteContent.contact.bookCallCopy)}
-          </p>
+          <RichText
+            as="h2"
+            value={siteContent.contact.bookCallTitle}
+            className="text-lg font-semibold text-foreground/90"
+          />
+          <RichText
+            value={siteContent.contact.bookCallCopy}
+            className="mt-3 text-sm text-foreground/70"
+          />
           <Link
             href={`mailto:${siteContent.contact.email}`}
             className="mt-4 inline-flex w-fit items-center justify-center rounded-full bg-foreground px-5 py-2 text-sm font-semibold text-background transition hover:bg-foreground/90"
           >
-            {translate(locale, siteContent.contact.bookCallCta)}
+            <RichText as="span" value={siteContent.contact.bookCallCta} />
           </Link>
         </div>
 
         <div className="space-y-4 rounded-3xl border border-foreground/10 bg-foreground/5 p-6">
-          <h2 className="text-lg font-semibold text-foreground/90">
-            {translate(locale, siteContent.contact.preparationTitle)}
-          </h2>
+          <RichText
+            as="h2"
+            value={siteContent.contact.preparationTitle}
+            className="text-lg font-semibold text-foreground/90"
+          />
           <ul className="space-y-3 text-sm text-foreground/70">
             {siteContent.contact.preparation.map((item, index) => (
               <li key={`${item.es}-${index}`}>{translate(locale, item)}</li>
@@ -132,24 +137,28 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
             className="space-y-4 rounded-3xl border border-foreground/10 bg-background p-6 shadow-sm"
           >
             <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm font-semibold text-foreground/80">
-                  {translate(locale, siteContent.contact.formTitle)}
-                </p>
-                <p className="text-xs text-foreground/60">
-                  {translate(locale, siteContent.contact.formSubtitle)}
-                </p>
+            <div>
+                <RichText
+                  as="p"
+                  value={siteContent.contact.formTitle}
+                  className="text-sm font-semibold text-foreground/80"
+                />
+                <RichText
+                  as="p"
+                  value={siteContent.contact.formSubtitle}
+                  className="text-xs text-foreground/60"
+                />
               </div>
               {status === "success" && (
                 <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-700">
-                  {translate(locale, siteContent.contact.successLabel)}
+                  <RichText as="span" value={siteContent.contact.successLabel} />
                 </span>
               )}
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
               <label className="space-y-2 text-sm text-foreground/80">
-                <span>{translate(locale, siteContent.contact.nameLabel)}</span>
+                <RichText as="span" value={siteContent.contact.nameLabel} />
                 <input
                   required
                   value={formData.name}
@@ -161,7 +170,7 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
                 />
               </label>
               <label className="space-y-2 text-sm text-foreground/80">
-                <span>{translate(locale, siteContent.contact.emailLabel)}</span>
+                <RichText as="span" value={siteContent.contact.emailLabel} />
                 <input
                   required
                   type="email"
@@ -177,7 +186,7 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
 
             <div className="grid gap-4 sm:grid-cols-2">
               <label className="space-y-2 text-sm text-foreground/80">
-                <span>{translate(locale, siteContent.contact.organizationLabel)}</span>
+                <RichText as="span" value={siteContent.contact.organizationLabel} />
                 <input
                   value={formData.organization}
                   onChange={(event) =>
@@ -191,7 +200,7 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
                 />
               </label>
               <label className="space-y-2 text-sm text-foreground/80">
-                <span>{translate(locale, siteContent.contact.phoneLabel)}</span>
+                <RichText as="span" value={siteContent.contact.phoneLabel} />
                 <input
                   value={formData.phone}
                   onChange={(event) =>
@@ -204,7 +213,7 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
             </div>
 
             <label className="space-y-2 text-sm text-foreground/80">
-              <span>{translate(locale, siteContent.contact.subjectLabel)}</span>
+              <RichText as="span" value={siteContent.contact.subjectLabel} />
               <input
                 value={formData.subject}
                 onChange={(event) =>
@@ -216,7 +225,7 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
             </label>
 
             <label className="space-y-2 text-sm text-foreground/80">
-              <span>{translate(locale, siteContent.contact.messageLabel)}</span>
+              <RichText as="span" value={siteContent.contact.messageLabel} />
               <textarea
                 required
                 rows={5}
@@ -244,21 +253,25 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
               className="inline-flex w-full items-center justify-center rounded-full bg-foreground px-4 py-2 text-sm font-semibold text-background transition hover:bg-foreground/90 disabled:cursor-not-allowed disabled:bg-foreground/40"
               disabled={status === "sending"}
             >
-              {status === "sending"
-                ? translate(locale, siteContent.contact.sendingLabel)
-                : translate(locale, siteContent.contact.submitLabel)}
+              {status === "sending" ? (
+                <RichText as="span" value={siteContent.contact.sendingLabel} />
+              ) : (
+                <RichText as="span" value={siteContent.contact.submitLabel} />
+              )}
             </button>
           </form>
         </div>
 
         <div className="space-y-4 rounded-3xl border border-foreground/10 bg-foreground/5 p-6">
-          <h2 className="text-lg font-semibold text-foreground/90">
-            {translate(locale, siteContent.contact.moreContactTitle)}
-          </h2>
+          <RichText
+            as="h2"
+            value={siteContent.contact.moreContactTitle}
+            className="text-lg font-semibold text-foreground/90"
+          />
           <ul className="space-y-3 text-sm text-foreground/70">
             <li>
               <span className="block text-xs uppercase tracking-wide text-foreground/50">
-                {translate(locale, siteContent.contact.moreContactLabel)}
+                <RichText as="span" value={siteContent.contact.moreContactLabel} />
               </span>
               <Link
                 href={`mailto:${siteContent.contact.email}`}
@@ -268,7 +281,7 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
               </Link>
             </li>
             <li className="text-xs text-foreground/60">
-              {translate(locale, siteContent.contact.moreContactNote)}
+              <RichText as="span" value={siteContent.contact.moreContactNote} />
             </li>
           </ul>
         </div>
