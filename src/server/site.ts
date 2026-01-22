@@ -7,9 +7,50 @@ import { getMongoDatabase } from "@/server/mongodb";
 const COLLECTION = "siteContent";
 const DOCUMENT_ID = "global";
 
+const FONT_SIZE_MAP: Record<string, string> = {
+  "1": "0.75rem",
+  "2": "0.875rem",
+  "3": "1rem",
+  "4": "1.125rem",
+  "5": "1.25rem",
+  "6": "1.5rem",
+  "7": "1.875rem",
+};
+
+const normalizeRichText = (value: string): string => {
+  if (!value) return value;
+
+  const withSpanFonts = value.replace(/<font([^>]*)>/gi, (_, attributes) => {
+    const sizeMatch = attributes.match(/size=["']?(\d)["']?/i);
+    const colorMatch = attributes.match(/color=["']?([^"'\s>]+)["']?/i);
+    const styleMatch = attributes.match(/style=["']?([^"']+)["']?/i);
+    const styles: string[] = [];
+
+    if (sizeMatch?.[1]) {
+      const mappedSize = FONT_SIZE_MAP[sizeMatch[1]];
+      if (mappedSize) {
+        styles.push(`font-size: ${mappedSize}`);
+      }
+    }
+
+    if (colorMatch?.[1]) {
+      styles.push(`color: ${colorMatch[1]}`);
+    }
+
+    if (styleMatch?.[1]) {
+      styles.push(styleMatch[1]);
+    }
+
+    const styleAttr = styles.length > 0 ? ` style="${styles.join("; ")}"` : "";
+    return `<span${styleAttr}>`;
+  });
+
+  return withSpanFonts.replace(/<\/font>/gi, "</span>");
+};
+
 const normalizeLocaleText = (value: LocaleText): LocaleText => ({
-  es: value.es.trim(),
-  en: value.en.trim(),
+  es: normalizeRichText(value.es.trim()),
+  en: normalizeRichText(value.en.trim()),
 });
 
 const normalizeLocaleList = (values: LocaleText[] | undefined): LocaleText[] =>
