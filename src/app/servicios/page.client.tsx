@@ -23,10 +23,6 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.06),transparent_35%)]" aria-hidden />
         <div className="relative z-10 grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="space-y-4">
-            <div className="inline-flex items-center gap-2 rounded-full bg-foreground/5 px-3 py-1 text-xs font-medium text-foreground/70 ring-1 ring-foreground/10">
-              <span className="size-2 rounded-full bg-primary shadow-[0_0_0_4px_rgba(56,189,248,0.12)]" />
-              <RichText as="span" value={siteContent.servicesPage.title} />
-            </div>
             <h1 className="text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
               <RichText as="span" value={siteContent.servicesPage.title} />
             </h1>

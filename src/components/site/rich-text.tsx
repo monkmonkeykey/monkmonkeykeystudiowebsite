@@ -18,6 +18,13 @@ const FONT_SIZE_MAP: Record<string, string> = {
   "7": "1.875rem",
 };
 
+const stripHtmlContent = (value: string): string =>
+  value
+    .replace(/<br\s*\/?>/gi, "")
+    .replace(/<[^>]*>/g, "")
+    .replace(/&nbsp;/gi, " ")
+    .trim();
+
 const normalizeRichText = (value: string | undefined): string => {
   if (!value) return "";
 
@@ -46,7 +53,8 @@ const normalizeRichText = (value: string | undefined): string => {
     return `<span${styleAttr}>`;
   });
 
-  return withSpanFonts.replace(/<\/font>/gi, "</span>");
+  const normalized = withSpanFonts.replace(/<\/font>/gi, "</span>");
+  return stripHtmlContent(normalized) ? normalized : "";
 };
 
 export function RichText<T extends ElementType = "div">({
@@ -59,6 +67,10 @@ export function RichText<T extends ElementType = "div">({
   const Component = (as || "div") as ElementType;
   const content = normalizeRichText(translate(locale, value));
   const mergedClassName = ["rich-text-reset", className].filter(Boolean).join(" ");
+
+  if (!content) {
+    return null;
+  }
 
   return (
     <Component
