@@ -78,6 +78,16 @@ const normalizeHeroVideo = (
 };
 
 const normalizeSiteCopy = (value: SiteCopy): SiteCopy => ({
+  navigation: {
+    brand: normalizeLocaleText(value.navigation.brand),
+    homeLabel: normalizeLocaleText(value.navigation.homeLabel),
+    servicesLabel: normalizeLocaleText(value.navigation.servicesLabel),
+    clientsLabel: normalizeLocaleText(value.navigation.clientsLabel),
+    projectsLabel: normalizeLocaleText(value.navigation.projectsLabel),
+    contactLabel: normalizeLocaleText(value.navigation.contactLabel),
+    openMenuLabel: normalizeLocaleText(value.navigation.openMenuLabel),
+    closeMenuLabel: normalizeLocaleText(value.navigation.closeMenuLabel),
+  },
   home: {
     heroHeadline: normalizeLocaleText(value.home.heroHeadline),
     heroSubtitle: normalizeLocaleText(value.home.heroSubtitle),
@@ -89,7 +99,14 @@ const normalizeSiteCopy = (value: SiteCopy): SiteCopy => ({
     servicesCopy: normalizeLocaleText(value.home.servicesCopy),
     servicesCta: normalizeLocaleText(value.home.servicesCta),
     servicesTags: normalizeLocaleList(value.home.servicesTags),
+    servicesBadgeLabel: normalizeLocaleText(value.home.servicesBadgeLabel),
+    servicesCardCta: normalizeLocaleText(value.home.servicesCardCta),
     projectsTitle: normalizeLocaleText(value.home.projectsTitle),
+    projectsDescription: normalizeLocaleText(value.home.projectsDescription),
+    projectsTags: normalizeLocaleList(value.home.projectsTags),
+    projectsBadgeLabel: normalizeLocaleText(value.home.projectsBadgeLabel),
+    projectsCardCta: normalizeLocaleText(value.home.projectsCardCta),
+    projectsImageAlt: normalizeLocaleText(value.home.projectsImageAlt),
     projectsCta: normalizeLocaleText(value.home.projectsCta),
     clientsTitle: normalizeLocaleText(value.home.clientsTitle),
     clientsWebsiteLabel: normalizeLocaleText(value.home.clientsWebsiteLabel),
@@ -111,12 +128,44 @@ const normalizeSiteCopy = (value: SiteCopy): SiteCopy => ({
     ctaLabel: normalizeLocaleText(value.servicesPage.ctaLabel),
     chips: normalizeLocaleList(value.servicesPage.chips),
     outcomesLabel: normalizeLocaleText(value.servicesPage.outcomesLabel),
+    quickMapLabel: normalizeLocaleText(value.servicesPage.quickMapLabel),
+    highlightPrimaryLabel: normalizeLocaleText(value.servicesPage.highlightPrimaryLabel),
+    highlightSecondaryLabel: normalizeLocaleText(value.servicesPage.highlightSecondaryLabel),
+    sessionTitle: normalizeLocaleText(value.servicesPage.sessionTitle),
+    sessionCopy: normalizeLocaleText(value.servicesPage.sessionCopy),
+    talkCtaLabel: normalizeLocaleText(value.servicesPage.talkCtaLabel),
+    backToTopLabel: normalizeLocaleText(value.servicesPage.backToTopLabel),
+    imageAlt: normalizeLocaleText(value.servicesPage.imageAlt),
   },
   contact: {
     title: normalizeLocaleText(value.contact.title),
     copy: normalizeLocaleText(value.contact.copy),
     email: value.contact.email.trim(),
     preparation: normalizeLocaleList(value.contact.preparation),
+    bookCallTitle: normalizeLocaleText(value.contact.bookCallTitle),
+    bookCallCopy: normalizeLocaleText(value.contact.bookCallCopy),
+    bookCallCta: normalizeLocaleText(value.contact.bookCallCta),
+    preparationTitle: normalizeLocaleText(value.contact.preparationTitle),
+    formTitle: normalizeLocaleText(value.contact.formTitle),
+    formSubtitle: normalizeLocaleText(value.contact.formSubtitle),
+    successLabel: normalizeLocaleText(value.contact.successLabel),
+    nameLabel: normalizeLocaleText(value.contact.nameLabel),
+    emailLabel: normalizeLocaleText(value.contact.emailLabel),
+    organizationLabel: normalizeLocaleText(value.contact.organizationLabel),
+    phoneLabel: normalizeLocaleText(value.contact.phoneLabel),
+    subjectLabel: normalizeLocaleText(value.contact.subjectLabel),
+    messageLabel: normalizeLocaleText(value.contact.messageLabel),
+    submitLabel: normalizeLocaleText(value.contact.submitLabel),
+    sendingLabel: normalizeLocaleText(value.contact.sendingLabel),
+    moreContactTitle: normalizeLocaleText(value.contact.moreContactTitle),
+    moreContactLabel: normalizeLocaleText(value.contact.moreContactLabel),
+    moreContactNote: normalizeLocaleText(value.contact.moreContactNote),
+    imageAlt: normalizeLocaleText(value.contact.imageAlt),
+  },
+  footer: {
+    tagline: normalizeLocaleText(value.footer.tagline),
+    adminLabel: normalizeLocaleText(value.footer.adminLabel),
+    instagramLabel: normalizeLocaleText(value.footer.instagramLabel),
   },
   services: value.services.map((service) => ({
     ...service,
@@ -128,6 +177,10 @@ const normalizeSiteCopy = (value: SiteCopy): SiteCopy => ({
 });
 
 const mergeSiteCopy = (payload: Partial<SiteCopy>): SiteCopy => ({
+  navigation: {
+    ...DEFAULT_SITE_CONTENT.navigation,
+    ...(payload.navigation ?? {}),
+  },
   home: {
     ...DEFAULT_SITE_CONTENT.home,
     ...(payload.home ?? {}),
@@ -143,6 +196,10 @@ const mergeSiteCopy = (payload: Partial<SiteCopy>): SiteCopy => ({
   contact: {
     ...DEFAULT_SITE_CONTENT.contact,
     ...(payload.contact ?? {}),
+  },
+  footer: {
+    ...DEFAULT_SITE_CONTENT.footer,
+    ...(payload.footer ?? {}),
   },
   services: payload.services ?? DEFAULT_SITE_CONTENT.services,
 });

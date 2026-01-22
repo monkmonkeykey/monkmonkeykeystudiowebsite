@@ -2,6 +2,16 @@ import type { SiteCopy } from "@/domain/site";
 import { SERVICES } from "@/content/services";
 
 export const DEFAULT_SITE_CONTENT: SiteCopy = {
+  navigation: {
+    brand: { es: "monkmonkeykey.studio", en: "monkmonkeykey.studio" },
+    homeLabel: { es: "Inicio", en: "Home" },
+    servicesLabel: { es: "Servicios", en: "Services" },
+    clientsLabel: { es: "Clientes", en: "Clients" },
+    projectsLabel: { es: "Proyectos", en: "Work" },
+    contactLabel: { es: "Contacto", en: "Contact" },
+    openMenuLabel: { es: "Abrir menú", en: "Open menu" },
+    closeMenuLabel: { es: "Cerrar menú", en: "Close menu" },
+  },
   home: {
     heroHeadline: {
       es: "Producción técnica audiovisual y desarrollo de obra con nuevos medios para el sector artístico y cultural.",
@@ -25,7 +35,24 @@ export const DEFAULT_SITE_CONTENT: SiteCopy = {
       { es: "Equipos extendidos", en: "Embedded squads" },
       { es: "Pruebas rápidas", en: "Rapid tests" },
     ],
+    servicesBadgeLabel: { es: "Servicios", en: "Services" },
+    servicesCardCta: { es: "Ver formato", en: "View format" },
     projectsTitle: { es: "Historias recientes", en: "Recent stories" },
+    projectsDescription: {
+      es: "Casos recientes donde acompañamos lanzamientos y activaciones clave.",
+      en: "Recent cases where we supported key launches and activations.",
+    },
+    projectsTags: [
+      { es: "Museos y universidades", en: "Museums & universities" },
+      { es: "Experiencias inmersivas", en: "Immersive experiences" },
+      { es: "Producción técnica", en: "Technical production" },
+    ],
+    projectsBadgeLabel: { es: "Proyectos", en: "Projects" },
+    projectsCardCta: { es: "Ver caso completo", en: "Read full case" },
+    projectsImageAlt: {
+      es: "Ilustración abstracta de tableros de proyecto",
+      en: "Abstract illustration of project boards",
+    },
     projectsCta: { es: "Ver proyectos", en: "Browse projects" },
     clientsTitle: { es: "Equipos que confían en nosotros", en: "Teams that trust us" },
     clientsWebsiteLabel: { es: "Abrir sitio", en: "Open site" },
@@ -44,6 +71,17 @@ export const DEFAULT_SITE_CONTENT: SiteCopy = {
       { es: "Pruebas rápidas", en: "Rapid experiments" },
     ],
     outcomesLabel: { es: "Entregables principales", en: "Key deliverables" },
+    quickMapLabel: { es: "Mapa rápido", en: "Quick map" },
+    highlightPrimaryLabel: { es: "Inicio en 2-3 semanas", en: "Kick off in 2-3 weeks" },
+    highlightSecondaryLabel: { es: "Equipo dedicado", en: "Dedicated squad" },
+    sessionTitle: { es: "Sesión inicial", en: "Kick-off session" },
+    sessionCopy: {
+      es: "Alineamos objetivos, métricas y responsables",
+      en: "Align on goals, metrics, and owners",
+    },
+    talkCtaLabel: { es: "Hablar con el equipo", en: "Talk with the team" },
+    backToTopLabel: { es: "Volver arriba", en: "Back to top" },
+    imageAlt: { es: "Ilustración de servicio", en: "Service illustration" },
   },
   projectsPage: {
     title: { es: "Algunos proyectos", en: "Featured work" },
@@ -76,6 +114,42 @@ export const DEFAULT_SITE_CONTENT: SiteCopy = {
       { es: "Estado actual del equipo y métricas disponibles.", en: "Current team setup and available metrics." },
       { es: "Hipótesis a validar y próximos hitos.", en: "Hypotheses to validate and upcoming milestones." },
     ],
+    bookCallTitle: { es: "Agenda una llamada", en: "Book a call" },
+    bookCallCopy: {
+      es: "Compartiremos disponibilidad en menos de 24 horas hábiles.",
+      en: "We will share our availability within 24 business hours.",
+    },
+    bookCallCta: { es: "Escríbenos", en: "Write to us" },
+    preparationTitle: { es: "Qué preparamos", en: "What we prepare" },
+    formTitle: { es: "Escríbenos", en: "Send a message" },
+    formSubtitle: { es: "Te responderemos en menos de un día hábil.", en: "We’ll reply within one business day." },
+    successLabel: { es: "Enviado", en: "Sent" },
+    nameLabel: { es: "Nombre", en: "Name" },
+    emailLabel: { es: "Correo", en: "Email" },
+    organizationLabel: { es: "Organización", en: "Organization" },
+    phoneLabel: { es: "Teléfono", en: "Phone" },
+    subjectLabel: { es: "Asunto", en: "Subject" },
+    messageLabel: { es: "Mensaje", en: "Message" },
+    submitLabel: { es: "Enviar mensaje", en: "Send message" },
+    sendingLabel: { es: "Enviando...", en: "Sending..." },
+    moreContactTitle: { es: "Más formas de contacto", en: "More ways to reach us" },
+    moreContactLabel: { es: "Correo", en: "Email" },
+    moreContactNote: {
+      es: "Prefieres agendar? También puedes escribirnos para compartir detalles y coordinar una llamada.",
+      en: "Prefer to schedule? Share details here and we’ll coordinate a call.",
+    },
+    imageAlt: {
+      es: "Ilustración abstracta de una reunión de trabajo",
+      en: "Abstract illustration of a working session",
+    },
+  },
+  footer: {
+    tagline: {
+      es: "Construimos productos digitales centrados en las personas.",
+      en: "We build people-centred digital products.",
+    },
+    adminLabel: { es: "Administrar sitio", en: "Manage site" },
+    instagramLabel: { es: "Instagram · @monkmokeykey_studio", en: "Instagram · @monkmokeykey_studio" },
   },
   services: SERVICES,
 };

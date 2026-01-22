@@ -52,7 +52,7 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
             <div className="relative z-10 flex h-full flex-col justify-between gap-4">
               <div className="space-y-2">
                 <p className="text-sm uppercase tracking-[0.16em] text-foreground/60">
-                  {locale === "es" ? "Mapa rápido" : "Quick map"}
+                  {translate(locale, siteContent.servicesPage.quickMapLabel)}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {services.map((service) => (
@@ -100,10 +100,10 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
                 </div>
                 <div className="flex flex-wrap gap-3 text-sm text-foreground/70">
                   <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1.5 text-primary ring-1 ring-primary/20">
-                    {locale === "es" ? "Inicio en 2-3 semanas" : "Kick off in 2-3 weeks"}
+                    {translate(locale, siteContent.servicesPage.highlightPrimaryLabel)}
                   </div>
                   <div className="inline-flex items-center gap-2 rounded-full bg-foreground/5 px-3 py-1.5 ring-1 ring-foreground/10">
-                    {locale === "es" ? "Equipo dedicado" : "Dedicated squad"}
+                    {translate(locale, siteContent.servicesPage.highlightSecondaryLabel)}
                   </div>
                 </div>
               </div>
@@ -112,18 +112,18 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
                 <div className="relative h-16 w-16 overflow-hidden rounded-2xl bg-background ring-1 ring-foreground/10">
                   <Image
                     src="/images/services-visual.svg"
-                    alt={locale === "es" ? "Ilustración de servicio" : "Service illustration"}
+                    alt={translate(locale, siteContent.servicesPage.imageAlt)}
                     fill
                     className="object-cover"
                   />
                 </div>
                 <div className="space-y-1 text-sm text-foreground/70">
                   <p className="font-semibold text-foreground">
-                    {locale === "es" ? "Sesión inicial" : "Kick-off session"}
+                    {translate(locale, siteContent.servicesPage.sessionTitle)}
                   </p>
-                  <p>{locale === "es" ? "Alineamos objetivos, métricas y responsables" : "Align on goals, metrics, and owners"}</p>
+                  <p>{translate(locale, siteContent.servicesPage.sessionCopy)}</p>
                   <Link href="/contacto" className="inline-flex items-center gap-2 text-primary hover:text-primary/80">
-                    {locale === "es" ? "Hablar con el equipo" : "Talk with the team"}
+                    {translate(locale, siteContent.servicesPage.talkCtaLabel)}
                     <span aria-hidden>→</span>
                   </Link>
                 </div>
@@ -139,7 +139,7 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
                   href="#top"
                   className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-foreground/60 transition hover:text-foreground"
                 >
-                  {locale === "es" ? "Volver arriba" : "Back to top"}
+                  {translate(locale, siteContent.servicesPage.backToTopLabel)}
                   <span aria-hidden>↑</span>
                 </a>
               </div>

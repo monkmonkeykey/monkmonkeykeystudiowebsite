@@ -2,15 +2,15 @@
 
 import Link from "next/link";
 
+import type { SiteContent } from "@/domain/site";
 import { translate } from "@/lib/i18n";
 import { useLocale } from "./locale-context";
 
-const FOOTER_COPY = {
-  es: "Construimos productos digitales centrados en las personas.",
-  en: "We build people-centred digital products.",
-} as const;
+type FooterProps = {
+  footer: SiteContent["footer"];
+};
 
-export function Footer() {
+export function Footer({ footer }: FooterProps) {
   const { locale } = useLocale();
 
   return (
@@ -18,20 +18,20 @@ export function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-8 text-sm text-foreground/60 md:flex-row md:items-center md:justify-between">
         <p>&copy; {new Date().getFullYear()} MonkMonkeyKey</p>
         <div className="flex flex-col gap-2 text-sm md:items-end">
-          <p>{translate(locale, FOOTER_COPY)}</p>
+          <p>{translate(locale, footer.tagline)}</p>
           <a
             href="https://www.instagram.com/monkmokeykey_studio/"
             target="_blank"
             rel="noreferrer"
             className="text-xs font-semibold text-foreground/50 transition hover:text-foreground/80"
           >
-            Instagram · @monkmokeykey_studio
+            {translate(locale, footer.instagramLabel)}
           </a>
           <Link
             href="/admin/login"
             className="text-xs font-semibold text-foreground/50 transition hover:text-foreground/80"
           >
-            Administrar sitio
+            {translate(locale, footer.adminLabel)}
           </Link>
         </div>
       </div>

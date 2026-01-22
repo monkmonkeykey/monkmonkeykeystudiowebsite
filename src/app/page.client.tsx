@@ -89,7 +89,7 @@ export default function HomePageClient({
             <div className="space-y-3">
               <div className="inline-flex items-center gap-2 rounded-full bg-foreground/5 px-3 py-1 text-xs font-semibold text-foreground/70 ring-1 ring-foreground/10">
                 <span className="size-2 rounded-full bg-primary" />
-                {locale === "es" ? "Servicios" : "Services"}
+                {translate(locale, siteContent.home.servicesBadgeLabel)}
               </div>
               <div className="space-y-2">
                 <RichText
@@ -168,7 +168,7 @@ export default function HomePageClient({
                 href={`/servicios#${service.slug}`}
                 className="mt-6 inline-flex items-center justify-center gap-2 rounded-full border border-foreground/10 px-4 py-2 text-sm font-semibold text-foreground transition hover:-translate-y-0.5 hover:border-primary/30 hover:text-foreground"
               >
-                {locale === "es" ? "Ver formato" : "View format"}
+                <RichText as="span" value={siteContent.home.servicesCardCta} />
                 <span aria-hidden>→</span>
               </Link>
             </article>
@@ -182,31 +182,33 @@ export default function HomePageClient({
             <div className="space-y-2">
               <div className="inline-flex items-center gap-2 rounded-full bg-foreground/5 px-3 py-1 text-xs font-semibold text-foreground/70 ring-1 ring-foreground/10">
                 <span className="size-2 rounded-full bg-primary" />
-                {locale === "es" ? "Proyectos" : "Projects"}
+                {translate(locale, siteContent.home.projectsBadgeLabel)}
               </div>
               <RichText
                 as="h2"
                 value={siteContent.home.projectsTitle}
                 className="text-2xl font-semibold tracking-tight sm:text-3xl"
               />
-              <p className="text-base text-foreground/70">
-                {locale === "es"
-                  ? "Casos recientes donde acompañamos lanzamientos y activaciones clave."
-                  : "Recent cases where we supported key launches and activations."}
-              </p>
+              <RichText
+                value={siteContent.home.projectsDescription}
+                className="text-base text-foreground/70"
+              />
               <div className="flex flex-wrap gap-2 text-xs text-foreground/60">
-                <span className="inline-flex items-center gap-2 rounded-full bg-background/60 px-3 py-1.5 ring-1 ring-foreground/10">
-                  <span className="size-2 rounded-full bg-emerald-400" />
-                  {locale === "es" ? "Museos y universidades" : "Museums & universities"}
-                </span>
-                <span className="inline-flex items-center gap-2 rounded-full bg-background/60 px-3 py-1.5 ring-1 ring-foreground/10">
-                  <span className="size-2 rounded-full bg-sky-400" />
-                  {locale === "es" ? "Experiencias inmersivas" : "Immersive experiences"}
-                </span>
-                <span className="inline-flex items-center gap-2 rounded-full bg-background/60 px-3 py-1.5 ring-1 ring-foreground/10">
-                  <span className="size-2 rounded-full bg-fuchsia-400" />
-                  {locale === "es" ? "Producción técnica" : "Technical production"}
-                </span>
+                {siteContent.home.projectsTags.map((tag, index) => (
+                  <span
+                    key={`${tag.es}-${index}`}
+                    className="inline-flex items-center gap-2 rounded-full bg-background/60 px-3 py-1.5 ring-1 ring-foreground/10"
+                  >
+                    <span
+                      className="size-2 rounded-full"
+                      style={{
+                        backgroundColor:
+                          index === 0 ? "rgb(52 211 153)" : index === 1 ? "rgb(56 189 248)" : "rgb(232 121 249)",
+                      }}
+                    />
+                    {translate(locale, tag)}
+                  </span>
+                ))}
               </div>
               <Link
                 href="/proyectos"
@@ -219,11 +221,7 @@ export default function HomePageClient({
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/5">
               <Image
                 src="/images/projects-visual.svg"
-                alt={
-                  locale === "es"
-                    ? "Ilustración abstracta de tableros de proyecto"
-                    : "Abstract illustration of project boards"
-                }
+                alt={translate(locale, siteContent.home.projectsImageAlt)}
                 fill
                 className="object-cover"
               />
@@ -289,7 +287,7 @@ export default function HomePageClient({
                   </div>
                 <div className="mt-auto flex items-center justify-between pt-2 text-sm font-semibold text-foreground/70">
                   <Link href={`/proyectos/${project.slug}`} className="inline-flex items-center gap-2 transition hover:text-foreground">
-                    <span>{locale === "es" ? "Ver caso completo" : "Read full case"}</span>
+                    <RichText as="span" value={siteContent.home.projectsCardCta} />
                     <span aria-hidden className="transition group-hover:translate-x-1">→</span>
                   </Link>
                   <span className="text-xs uppercase tracking-[0.2em] text-foreground/50">

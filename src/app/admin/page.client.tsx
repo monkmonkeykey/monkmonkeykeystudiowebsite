@@ -61,6 +61,16 @@ type ServiceField = {
 };
 
 type SiteContentField = {
+  navigation: {
+    brand: LocaleField;
+    homeLabel: LocaleField;
+    servicesLabel: LocaleField;
+    clientsLabel: LocaleField;
+    projectsLabel: LocaleField;
+    contactLabel: LocaleField;
+    openMenuLabel: LocaleField;
+    closeMenuLabel: LocaleField;
+  };
   home: {
     heroHeadline: LocaleField;
     heroSubtitle: LocaleField;
@@ -76,7 +86,14 @@ type SiteContentField = {
     servicesCopy: LocaleField;
     servicesCta: LocaleField;
     servicesTags: LocaleField[];
+    servicesBadgeLabel: LocaleField;
+    servicesCardCta: LocaleField;
     projectsTitle: LocaleField;
+    projectsDescription: LocaleField;
+    projectsTags: LocaleField[];
+    projectsBadgeLabel: LocaleField;
+    projectsCardCta: LocaleField;
+    projectsImageAlt: LocaleField;
     projectsCta: LocaleField;
     clientsTitle: LocaleField;
     clientsWebsiteLabel: LocaleField;
@@ -88,6 +105,14 @@ type SiteContentField = {
     ctaLabel: LocaleField;
     chips: LocaleField[];
     outcomesLabel: LocaleField;
+    quickMapLabel: LocaleField;
+    highlightPrimaryLabel: LocaleField;
+    highlightSecondaryLabel: LocaleField;
+    sessionTitle: LocaleField;
+    sessionCopy: LocaleField;
+    talkCtaLabel: LocaleField;
+    backToTopLabel: LocaleField;
+    imageAlt: LocaleField;
   };
   projectsPage: {
     title: LocaleField;
@@ -104,11 +129,42 @@ type SiteContentField = {
     copy: LocaleField;
     email: string;
     preparation: LocaleField[];
+    bookCallTitle: LocaleField;
+    bookCallCopy: LocaleField;
+    bookCallCta: LocaleField;
+    preparationTitle: LocaleField;
+    formTitle: LocaleField;
+    formSubtitle: LocaleField;
+    successLabel: LocaleField;
+    nameLabel: LocaleField;
+    emailLabel: LocaleField;
+    organizationLabel: LocaleField;
+    phoneLabel: LocaleField;
+    subjectLabel: LocaleField;
+    messageLabel: LocaleField;
+    submitLabel: LocaleField;
+    sendingLabel: LocaleField;
+    moreContactTitle: LocaleField;
+    moreContactLabel: LocaleField;
+    moreContactNote: LocaleField;
+    imageAlt: LocaleField;
+  };
+  footer: {
+    tagline: LocaleField;
+    adminLabel: LocaleField;
+    instagramLabel: LocaleField;
   };
   services: ServiceField[];
 };
 
-type SiteContentSection = "home" | "servicesPage" | "projectsPage" | "contact" | "servicesList";
+type SiteContentSection =
+  | "navigation"
+  | "home"
+  | "servicesPage"
+  | "projectsPage"
+  | "contact"
+  | "footer"
+  | "servicesList";
 
 const CLIENT_KINDS: { value: ClientKind; label: string }[] = [
   { value: "client", label: "Cliente" },
@@ -159,6 +215,16 @@ const createServiceField = (id: string, service?: Service): ServiceField => ({
 });
 
 const createSiteContentField = (siteContent: SiteContent): SiteContentField => ({
+  navigation: {
+    brand: createLocaleField(siteContent.navigation.brand),
+    homeLabel: createLocaleField(siteContent.navigation.homeLabel),
+    servicesLabel: createLocaleField(siteContent.navigation.servicesLabel),
+    clientsLabel: createLocaleField(siteContent.navigation.clientsLabel),
+    projectsLabel: createLocaleField(siteContent.navigation.projectsLabel),
+    contactLabel: createLocaleField(siteContent.navigation.contactLabel),
+    openMenuLabel: createLocaleField(siteContent.navigation.openMenuLabel),
+    closeMenuLabel: createLocaleField(siteContent.navigation.closeMenuLabel),
+  },
   home: {
     heroHeadline: createLocaleField(siteContent.home.heroHeadline),
     heroSubtitle: createLocaleField(siteContent.home.heroSubtitle),
@@ -176,7 +242,16 @@ const createSiteContentField = (siteContent: SiteContent): SiteContentField => (
     servicesTags: (siteContent.home.servicesTags || []).map((tag, index) =>
       createDescriptionField(`services-tag-${index}`, tag).text,
     ),
+    servicesBadgeLabel: createLocaleField(siteContent.home.servicesBadgeLabel),
+    servicesCardCta: createLocaleField(siteContent.home.servicesCardCta),
     projectsTitle: createLocaleField(siteContent.home.projectsTitle),
+    projectsDescription: createLocaleField(siteContent.home.projectsDescription),
+    projectsTags: (siteContent.home.projectsTags || []).map((tag, index) =>
+      createDescriptionField(`projects-tag-${index}`, tag).text,
+    ),
+    projectsBadgeLabel: createLocaleField(siteContent.home.projectsBadgeLabel),
+    projectsCardCta: createLocaleField(siteContent.home.projectsCardCta),
+    projectsImageAlt: createLocaleField(siteContent.home.projectsImageAlt),
     projectsCta: createLocaleField(siteContent.home.projectsCta),
     clientsTitle: createLocaleField(siteContent.home.clientsTitle),
     clientsWebsiteLabel: createLocaleField(siteContent.home.clientsWebsiteLabel),
@@ -188,6 +263,14 @@ const createSiteContentField = (siteContent: SiteContent): SiteContentField => (
     ctaLabel: createLocaleField(siteContent.servicesPage.ctaLabel),
     chips: (siteContent.servicesPage.chips || []).map((chip, index) => createDescriptionField(`chip-${index}`, chip).text),
     outcomesLabel: createLocaleField(siteContent.servicesPage.outcomesLabel),
+    quickMapLabel: createLocaleField(siteContent.servicesPage.quickMapLabel),
+    highlightPrimaryLabel: createLocaleField(siteContent.servicesPage.highlightPrimaryLabel),
+    highlightSecondaryLabel: createLocaleField(siteContent.servicesPage.highlightSecondaryLabel),
+    sessionTitle: createLocaleField(siteContent.servicesPage.sessionTitle),
+    sessionCopy: createLocaleField(siteContent.servicesPage.sessionCopy),
+    talkCtaLabel: createLocaleField(siteContent.servicesPage.talkCtaLabel),
+    backToTopLabel: createLocaleField(siteContent.servicesPage.backToTopLabel),
+    imageAlt: createLocaleField(siteContent.servicesPage.imageAlt),
   },
   projectsPage: {
     title: createLocaleField(siteContent.projectsPage.title),
@@ -206,6 +289,30 @@ const createSiteContentField = (siteContent: SiteContent): SiteContentField => (
     preparation: (siteContent.contact.preparation || []).map((item, index) =>
       createDescriptionField(`prep-${index}`, item).text,
     ),
+    bookCallTitle: createLocaleField(siteContent.contact.bookCallTitle),
+    bookCallCopy: createLocaleField(siteContent.contact.bookCallCopy),
+    bookCallCta: createLocaleField(siteContent.contact.bookCallCta),
+    preparationTitle: createLocaleField(siteContent.contact.preparationTitle),
+    formTitle: createLocaleField(siteContent.contact.formTitle),
+    formSubtitle: createLocaleField(siteContent.contact.formSubtitle),
+    successLabel: createLocaleField(siteContent.contact.successLabel),
+    nameLabel: createLocaleField(siteContent.contact.nameLabel),
+    emailLabel: createLocaleField(siteContent.contact.emailLabel),
+    organizationLabel: createLocaleField(siteContent.contact.organizationLabel),
+    phoneLabel: createLocaleField(siteContent.contact.phoneLabel),
+    subjectLabel: createLocaleField(siteContent.contact.subjectLabel),
+    messageLabel: createLocaleField(siteContent.contact.messageLabel),
+    submitLabel: createLocaleField(siteContent.contact.submitLabel),
+    sendingLabel: createLocaleField(siteContent.contact.sendingLabel),
+    moreContactTitle: createLocaleField(siteContent.contact.moreContactTitle),
+    moreContactLabel: createLocaleField(siteContent.contact.moreContactLabel),
+    moreContactNote: createLocaleField(siteContent.contact.moreContactNote),
+    imageAlt: createLocaleField(siteContent.contact.imageAlt),
+  },
+  footer: {
+    tagline: createLocaleField(siteContent.footer.tagline),
+    adminLabel: createLocaleField(siteContent.footer.adminLabel),
+    instagramLabel: createLocaleField(siteContent.footer.instagramLabel),
   },
   services: siteContent.services.map((service, index) => createServiceField(`service-${index}`, service)),
 });
@@ -258,6 +365,16 @@ const slugifyCategory = (value: string): string => {
 };
 
 const buildSitePayload = (draft: SiteContentField): SiteContent => ({
+  navigation: {
+    brand: localeFieldToText(trimLocaleField(draft.navigation.brand)),
+    homeLabel: localeFieldToText(trimLocaleField(draft.navigation.homeLabel)),
+    servicesLabel: localeFieldToText(trimLocaleField(draft.navigation.servicesLabel)),
+    clientsLabel: localeFieldToText(trimLocaleField(draft.navigation.clientsLabel)),
+    projectsLabel: localeFieldToText(trimLocaleField(draft.navigation.projectsLabel)),
+    contactLabel: localeFieldToText(trimLocaleField(draft.navigation.contactLabel)),
+    openMenuLabel: localeFieldToText(trimLocaleField(draft.navigation.openMenuLabel)),
+    closeMenuLabel: localeFieldToText(trimLocaleField(draft.navigation.closeMenuLabel)),
+  },
   home: {
     heroHeadline: localeFieldToText(trimLocaleField(draft.home.heroHeadline)),
     heroSubtitle: localeFieldToText(trimLocaleField(draft.home.heroSubtitle)),
@@ -276,7 +393,14 @@ const buildSitePayload = (draft: SiteContentField): SiteContent => ({
     servicesCopy: localeFieldToText(trimLocaleField(draft.home.servicesCopy)),
     servicesCta: localeFieldToText(trimLocaleField(draft.home.servicesCta)),
     servicesTags: normalizeLocaleListField(draft.home.servicesTags),
+    servicesBadgeLabel: localeFieldToText(trimLocaleField(draft.home.servicesBadgeLabel)),
+    servicesCardCta: localeFieldToText(trimLocaleField(draft.home.servicesCardCta)),
     projectsTitle: localeFieldToText(trimLocaleField(draft.home.projectsTitle)),
+    projectsDescription: localeFieldToText(trimLocaleField(draft.home.projectsDescription)),
+    projectsTags: normalizeLocaleListField(draft.home.projectsTags),
+    projectsBadgeLabel: localeFieldToText(trimLocaleField(draft.home.projectsBadgeLabel)),
+    projectsCardCta: localeFieldToText(trimLocaleField(draft.home.projectsCardCta)),
+    projectsImageAlt: localeFieldToText(trimLocaleField(draft.home.projectsImageAlt)),
     projectsCta: localeFieldToText(trimLocaleField(draft.home.projectsCta)),
     clientsTitle: localeFieldToText(trimLocaleField(draft.home.clientsTitle)),
     clientsWebsiteLabel: localeFieldToText(trimLocaleField(draft.home.clientsWebsiteLabel)),
@@ -288,6 +412,14 @@ const buildSitePayload = (draft: SiteContentField): SiteContent => ({
     ctaLabel: localeFieldToText(trimLocaleField(draft.servicesPage.ctaLabel)),
     chips: normalizeLocaleListField(draft.servicesPage.chips),
     outcomesLabel: localeFieldToText(trimLocaleField(draft.servicesPage.outcomesLabel)),
+    quickMapLabel: localeFieldToText(trimLocaleField(draft.servicesPage.quickMapLabel)),
+    highlightPrimaryLabel: localeFieldToText(trimLocaleField(draft.servicesPage.highlightPrimaryLabel)),
+    highlightSecondaryLabel: localeFieldToText(trimLocaleField(draft.servicesPage.highlightSecondaryLabel)),
+    sessionTitle: localeFieldToText(trimLocaleField(draft.servicesPage.sessionTitle)),
+    sessionCopy: localeFieldToText(trimLocaleField(draft.servicesPage.sessionCopy)),
+    talkCtaLabel: localeFieldToText(trimLocaleField(draft.servicesPage.talkCtaLabel)),
+    backToTopLabel: localeFieldToText(trimLocaleField(draft.servicesPage.backToTopLabel)),
+    imageAlt: localeFieldToText(trimLocaleField(draft.servicesPage.imageAlt)),
   },
   projectsPage: {
     title: localeFieldToText(trimLocaleField(draft.projectsPage.title)),
@@ -304,6 +436,30 @@ const buildSitePayload = (draft: SiteContentField): SiteContent => ({
     copy: localeFieldToText(trimLocaleField(draft.contact.copy)),
     email: draft.contact.email.trim(),
     preparation: normalizeLocaleListField(draft.contact.preparation),
+    bookCallTitle: localeFieldToText(trimLocaleField(draft.contact.bookCallTitle)),
+    bookCallCopy: localeFieldToText(trimLocaleField(draft.contact.bookCallCopy)),
+    bookCallCta: localeFieldToText(trimLocaleField(draft.contact.bookCallCta)),
+    preparationTitle: localeFieldToText(trimLocaleField(draft.contact.preparationTitle)),
+    formTitle: localeFieldToText(trimLocaleField(draft.contact.formTitle)),
+    formSubtitle: localeFieldToText(trimLocaleField(draft.contact.formSubtitle)),
+    successLabel: localeFieldToText(trimLocaleField(draft.contact.successLabel)),
+    nameLabel: localeFieldToText(trimLocaleField(draft.contact.nameLabel)),
+    emailLabel: localeFieldToText(trimLocaleField(draft.contact.emailLabel)),
+    organizationLabel: localeFieldToText(trimLocaleField(draft.contact.organizationLabel)),
+    phoneLabel: localeFieldToText(trimLocaleField(draft.contact.phoneLabel)),
+    subjectLabel: localeFieldToText(trimLocaleField(draft.contact.subjectLabel)),
+    messageLabel: localeFieldToText(trimLocaleField(draft.contact.messageLabel)),
+    submitLabel: localeFieldToText(trimLocaleField(draft.contact.submitLabel)),
+    sendingLabel: localeFieldToText(trimLocaleField(draft.contact.sendingLabel)),
+    moreContactTitle: localeFieldToText(trimLocaleField(draft.contact.moreContactTitle)),
+    moreContactLabel: localeFieldToText(trimLocaleField(draft.contact.moreContactLabel)),
+    moreContactNote: localeFieldToText(trimLocaleField(draft.contact.moreContactNote)),
+    imageAlt: localeFieldToText(trimLocaleField(draft.contact.imageAlt)),
+  },
+  footer: {
+    tagline: localeFieldToText(trimLocaleField(draft.footer.tagline)),
+    adminLabel: localeFieldToText(trimLocaleField(draft.footer.adminLabel)),
+    instagramLabel: localeFieldToText(trimLocaleField(draft.footer.instagramLabel)),
   },
   services: draft.services.map((service) => ({
     slug: slugifyCategory(service.slug) || slugifyCategory(service.title.es || service.title.en),
@@ -720,6 +876,11 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
 
   const siteSections: { key: SiteContentSection; label: string; description: string }[] = [
     {
+      key: "navigation",
+      label: "Navegación",
+      description: "Nombre del sitio, menú y etiquetas del header.",
+    },
+    {
       key: "home",
       label: "Home",
       description: "Hero, video de fondo y CTAs principales.",
@@ -738,6 +899,11 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
       key: "contact",
       label: "Contacto",
       description: "Texto, correo y lista de preparación.",
+    },
+    {
+      key: "footer",
+      label: "Footer",
+      description: "Copy inferior, Instagram y enlace de administración.",
     },
     {
       key: "servicesList",
@@ -904,6 +1070,11 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
             onChange={(value) => setDraft({ ...draft, home: { ...draft.home, servicesTitle: value } })}
           />
           <RichLocaleInputs
+            label="Etiqueta sección servicios"
+            value={draft.home.servicesBadgeLabel}
+            onChange={(value) => setDraft({ ...draft, home: { ...draft.home, servicesBadgeLabel: value } })}
+          />
+          <RichLocaleInputs
             label="Descripción de servicios"
             value={draft.home.servicesCopy}
             onChange={(value) => setDraft({ ...draft, home: { ...draft.home, servicesCopy: value } })}
@@ -912,6 +1083,11 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
             label="CTA de servicios"
             value={draft.home.servicesCta}
             onChange={(value) => setDraft({ ...draft, home: { ...draft.home, servicesCta: value } })}
+          />
+          <RichLocaleInputs
+            label="CTA tarjetas de servicio"
+            value={draft.home.servicesCardCta}
+            onChange={(value) => setDraft({ ...draft, home: { ...draft.home, servicesCardCta: value } })}
           />
           <LocaleListEditor
             label="Píldoras de servicios"
@@ -923,6 +1099,32 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
             label="Título de proyectos"
             value={draft.home.projectsTitle}
             onChange={(value) => setDraft({ ...draft, home: { ...draft.home, projectsTitle: value } })}
+          />
+          <RichLocaleInputs
+            label="Etiqueta sección proyectos"
+            value={draft.home.projectsBadgeLabel}
+            onChange={(value) => setDraft({ ...draft, home: { ...draft.home, projectsBadgeLabel: value } })}
+          />
+          <RichLocaleInputs
+            label="Descripción de proyectos"
+            value={draft.home.projectsDescription}
+            onChange={(value) => setDraft({ ...draft, home: { ...draft.home, projectsDescription: value } })}
+          />
+          <LocaleListEditor
+            label="Píldoras de proyectos"
+            addLabel="Agregar píldora"
+            values={draft.home.projectsTags}
+            onChange={(values) => setDraft({ ...draft, home: { ...draft.home, projectsTags: values } })}
+          />
+          <RichLocaleInputs
+            label="CTA tarjetas de proyecto"
+            value={draft.home.projectsCardCta}
+            onChange={(value) => setDraft({ ...draft, home: { ...draft.home, projectsCardCta: value } })}
+          />
+          <RichLocaleInputs
+            label="Alt imagen proyectos"
+            value={draft.home.projectsImageAlt}
+            onChange={(value) => setDraft({ ...draft, home: { ...draft.home, projectsImageAlt: value } })}
           />
           <RichLocaleInputs
             label="CTA de proyectos"
@@ -944,6 +1146,54 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
             value={draft.home.clientsWebsiteLabel}
             onChange={(value) => setDraft({ ...draft, home: { ...draft.home, clientsWebsiteLabel: value } })}
           />
+        </div>
+      )}
+
+      {activeSection === "navigation" && (
+        <div className="space-y-4 rounded-3xl border border-foreground/10 bg-background p-4">
+          <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-foreground/60">Navegación</h3>
+          <RichLocaleInputs
+            label="Nombre del sitio"
+            value={draft.navigation.brand}
+            onChange={(value) => setDraft({ ...draft, navigation: { ...draft.navigation, brand: value } })}
+          />
+          <div className="grid gap-4 lg:grid-cols-2">
+            <RichLocaleInputs
+              label="Etiqueta Inicio"
+              value={draft.navigation.homeLabel}
+              onChange={(value) => setDraft({ ...draft, navigation: { ...draft.navigation, homeLabel: value } })}
+            />
+            <RichLocaleInputs
+              label="Etiqueta Servicios"
+              value={draft.navigation.servicesLabel}
+              onChange={(value) => setDraft({ ...draft, navigation: { ...draft.navigation, servicesLabel: value } })}
+            />
+            <RichLocaleInputs
+              label="Etiqueta Clientes"
+              value={draft.navigation.clientsLabel}
+              onChange={(value) => setDraft({ ...draft, navigation: { ...draft.navigation, clientsLabel: value } })}
+            />
+            <RichLocaleInputs
+              label="Etiqueta Proyectos"
+              value={draft.navigation.projectsLabel}
+              onChange={(value) => setDraft({ ...draft, navigation: { ...draft.navigation, projectsLabel: value } })}
+            />
+            <RichLocaleInputs
+              label="Etiqueta Contacto"
+              value={draft.navigation.contactLabel}
+              onChange={(value) => setDraft({ ...draft, navigation: { ...draft.navigation, contactLabel: value } })}
+            />
+            <RichLocaleInputs
+              label="Label abrir menú"
+              value={draft.navigation.openMenuLabel}
+              onChange={(value) => setDraft({ ...draft, navigation: { ...draft.navigation, openMenuLabel: value } })}
+            />
+            <RichLocaleInputs
+              label="Label cerrar menú"
+              value={draft.navigation.closeMenuLabel}
+              onChange={(value) => setDraft({ ...draft, navigation: { ...draft.navigation, closeMenuLabel: value } })}
+            />
+          </div>
         </div>
       )}
 
@@ -971,9 +1221,53 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
             onChange={(values) => setDraft({ ...draft, servicesPage: { ...draft.servicesPage, chips: values } })}
           />
           <RichLocaleInputs
+            label="Etiqueta mapa rápido"
+            value={draft.servicesPage.quickMapLabel}
+            onChange={(value) => setDraft({ ...draft, servicesPage: { ...draft.servicesPage, quickMapLabel: value } })}
+          />
+          <RichLocaleInputs
+            label="Etiqueta highlight 1"
+            value={draft.servicesPage.highlightPrimaryLabel}
+            onChange={(value) =>
+              setDraft({ ...draft, servicesPage: { ...draft.servicesPage, highlightPrimaryLabel: value } })
+            }
+          />
+          <RichLocaleInputs
+            label="Etiqueta highlight 2"
+            value={draft.servicesPage.highlightSecondaryLabel}
+            onChange={(value) =>
+              setDraft({ ...draft, servicesPage: { ...draft.servicesPage, highlightSecondaryLabel: value } })
+            }
+          />
+          <RichLocaleInputs
+            label="Título sesión inicial"
+            value={draft.servicesPage.sessionTitle}
+            onChange={(value) => setDraft({ ...draft, servicesPage: { ...draft.servicesPage, sessionTitle: value } })}
+          />
+          <RichLocaleInputs
+            label="Copy sesión inicial"
+            value={draft.servicesPage.sessionCopy}
+            onChange={(value) => setDraft({ ...draft, servicesPage: { ...draft.servicesPage, sessionCopy: value } })}
+          />
+          <RichLocaleInputs
+            label="CTA hablar con el equipo"
+            value={draft.servicesPage.talkCtaLabel}
+            onChange={(value) => setDraft({ ...draft, servicesPage: { ...draft.servicesPage, talkCtaLabel: value } })}
+          />
+          <RichLocaleInputs
             label="Título de entregables"
             value={draft.servicesPage.outcomesLabel}
             onChange={(value) => setDraft({ ...draft, servicesPage: { ...draft.servicesPage, outcomesLabel: value } })}
+          />
+          <RichLocaleInputs
+            label="Alt imagen servicios"
+            value={draft.servicesPage.imageAlt}
+            onChange={(value) => setDraft({ ...draft, servicesPage: { ...draft.servicesPage, imageAlt: value } })}
+          />
+          <RichLocaleInputs
+            label="CTA volver arriba"
+            value={draft.servicesPage.backToTopLabel}
+            onChange={(value) => setDraft({ ...draft, servicesPage: { ...draft.servicesPage, backToTopLabel: value } })}
           />
         </div>
       )}
@@ -1046,11 +1340,131 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
               onChange={(event) => setDraft({ ...draft, contact: { ...draft.contact, email: event.target.value } })}
             />
           </label>
+          <RichLocaleInputs
+            label="Título tarjeta agenda"
+            value={draft.contact.bookCallTitle}
+            onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, bookCallTitle: value } })}
+          />
+          <RichLocaleInputs
+            label="Copy tarjeta agenda"
+            value={draft.contact.bookCallCopy}
+            onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, bookCallCopy: value } })}
+          />
+          <RichLocaleInputs
+            label="CTA tarjeta agenda"
+            value={draft.contact.bookCallCta}
+            onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, bookCallCta: value } })}
+          />
+          <RichLocaleInputs
+            label="Título lista preparación"
+            value={draft.contact.preparationTitle}
+            onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, preparationTitle: value } })}
+          />
           <LocaleListEditor
             label="Lista de preparación"
             addLabel="Agregar punto"
             values={draft.contact.preparation}
             onChange={(values) => setDraft({ ...draft, contact: { ...draft.contact, preparation: values } })}
+          />
+          <RichLocaleInputs
+            label="Título formulario"
+            value={draft.contact.formTitle}
+            onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, formTitle: value } })}
+          />
+          <RichLocaleInputs
+            label="Subtítulo formulario"
+            value={draft.contact.formSubtitle}
+            onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, formSubtitle: value } })}
+          />
+          <RichLocaleInputs
+            label="Etiqueta éxito"
+            value={draft.contact.successLabel}
+            onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, successLabel: value } })}
+          />
+          <div className="grid gap-4 md:grid-cols-2">
+            <RichLocaleInputs
+              label="Etiqueta nombre"
+              value={draft.contact.nameLabel}
+              onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, nameLabel: value } })}
+            />
+            <RichLocaleInputs
+              label="Etiqueta correo"
+              value={draft.contact.emailLabel}
+              onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, emailLabel: value } })}
+            />
+            <RichLocaleInputs
+              label="Etiqueta organización"
+              value={draft.contact.organizationLabel}
+              onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, organizationLabel: value } })}
+            />
+            <RichLocaleInputs
+              label="Etiqueta teléfono"
+              value={draft.contact.phoneLabel}
+              onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, phoneLabel: value } })}
+            />
+            <RichLocaleInputs
+              label="Etiqueta asunto"
+              value={draft.contact.subjectLabel}
+              onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, subjectLabel: value } })}
+            />
+            <RichLocaleInputs
+              label="Etiqueta mensaje"
+              value={draft.contact.messageLabel}
+              onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, messageLabel: value } })}
+            />
+          </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            <RichLocaleInputs
+              label="CTA enviar"
+              value={draft.contact.submitLabel}
+              onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, submitLabel: value } })}
+            />
+            <RichLocaleInputs
+              label="CTA enviando"
+              value={draft.contact.sendingLabel}
+              onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, sendingLabel: value } })}
+            />
+          </div>
+          <RichLocaleInputs
+            label="Título más formas de contacto"
+            value={draft.contact.moreContactTitle}
+            onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, moreContactTitle: value } })}
+          />
+          <RichLocaleInputs
+            label="Etiqueta más contacto"
+            value={draft.contact.moreContactLabel}
+            onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, moreContactLabel: value } })}
+          />
+          <RichLocaleInputs
+            label="Nota más contacto"
+            value={draft.contact.moreContactNote}
+            onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, moreContactNote: value } })}
+          />
+          <RichLocaleInputs
+            label="Alt imagen contacto"
+            value={draft.contact.imageAlt}
+            onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, imageAlt: value } })}
+          />
+        </div>
+      )}
+
+      {activeSection === "footer" && (
+        <div className="space-y-4 rounded-3xl border border-foreground/10 bg-background p-4">
+          <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-foreground/60">Footer</h3>
+          <RichLocaleInputs
+            label="Copy footer"
+            value={draft.footer.tagline}
+            onChange={(value) => setDraft({ ...draft, footer: { ...draft.footer, tagline: value } })}
+          />
+          <RichLocaleInputs
+            label="Etiqueta Instagram"
+            value={draft.footer.instagramLabel}
+            onChange={(value) => setDraft({ ...draft, footer: { ...draft.footer, instagramLabel: value } })}
+          />
+          <RichLocaleInputs
+            label="Etiqueta admin"
+            value={draft.footer.adminLabel}
+            onChange={(value) => setDraft({ ...draft, footer: { ...draft.footer, adminLabel: value } })}
           />
         </div>
       )}
