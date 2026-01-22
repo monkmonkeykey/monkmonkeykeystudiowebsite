@@ -156,7 +156,6 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
                         project.video.provider === "youtube" ? "YouTube" : "Vimeo"
                       }`}
                     </span>
-                    <span aria-hidden>↗</span>
                   </a>
                 </div>
                 <div className="relative aspect-video overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/5">
@@ -203,7 +202,6 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
                         <p className="line-clamp-2 font-semibold drop-shadow">{translate(locale, image.alt)}</p>
                         <span className="inline-flex items-center gap-1 rounded-full bg-background/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-foreground">
                           {locale === "es" ? "Ver" : "View"}
-                          <span aria-hidden>↗</span>
                         </span>
                       </div>
                     </div>
@@ -274,7 +272,6 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
                               className="inline-flex w-fit items-center gap-2 text-xs font-semibold text-foreground/70 transition hover:text-foreground"
                             >
                               <span>{translate(locale, ENTITY_WEBSITE)}</span>
-                              <span aria-hidden>↗</span>
                             </a>
                           )}
                         </div>
@@ -305,7 +302,6 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
                   onClick={() => goTo(-1)}
                   className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-foreground/5 px-3 py-1.5 text-xs font-semibold text-foreground/80 transition hover:border-foreground/30 hover:text-foreground"
                 >
-                  <span aria-hidden>←</span>
                   <span>{locale === "es" ? "Anterior" : "Previous"}</span>
                 </button>
                 <button
@@ -314,7 +310,6 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
                   className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-foreground/5 px-3 py-1.5 text-xs font-semibold text-foreground/80 transition hover:border-foreground/30 hover:text-foreground"
                 >
                   <span>{locale === "es" ? "Siguiente" : "Next"}</span>
-                  <span aria-hidden>→</span>
                 </button>
                 <button
                   type="button"

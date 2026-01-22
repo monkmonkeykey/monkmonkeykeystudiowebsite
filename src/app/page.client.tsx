@@ -70,14 +70,12 @@ export default function HomePageClient({
               className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-semibold text-background shadow-lg shadow-foreground/20 transition hover:-translate-y-0.5 hover:bg-foreground/90"
             >
               <RichText as="span" value={siteContent.home.heroPrimaryCta} />
-              <span aria-hidden>↗</span>
             </Link>
             <Link
               href="/proyectos"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-foreground/20 bg-background/80 px-5 py-2.5 text-sm font-semibold text-foreground transition hover:-translate-y-0.5 hover:border-foreground/30 hover:text-foreground/90"
             >
               <RichText as="span" value={siteContent.home.heroSecondaryCta} />
-              <span aria-hidden>→</span>
             </Link>
           </div>
         </div>
@@ -120,7 +118,6 @@ export default function HomePageClient({
                 className="inline-flex w-fit items-center justify-center gap-2 rounded-full bg-foreground px-4 py-2 text-sm font-semibold text-background shadow-sm transition hover:-translate-y-0.5 hover:bg-foreground/90"
               >
                 <RichText as="span" value={siteContent.home.servicesCta} />
-                <span aria-hidden>↗</span>
               </Link>
             </div>
             <div className="relative flex flex-wrap gap-3 rounded-2xl bg-background/80 p-4 ring-1 ring-foreground/10">
@@ -169,7 +166,6 @@ export default function HomePageClient({
                 className="mt-6 inline-flex items-center justify-center gap-2 rounded-full border border-foreground/10 px-4 py-2 text-sm font-semibold text-foreground transition hover:-translate-y-0.5 hover:border-primary/30 hover:text-foreground"
               >
                 <RichText as="span" value={siteContent.home.servicesCardCta} />
-                <span aria-hidden>→</span>
               </Link>
             </article>
           ))}
@@ -215,7 +211,6 @@ export default function HomePageClient({
                 className="inline-flex w-fit items-center justify-center gap-2 rounded-full bg-foreground px-4 py-2 text-sm font-semibold text-background shadow-sm transition hover:-translate-y-0.5 hover:bg-foreground/90"
               >
                 <RichText as="span" value={siteContent.home.projectsCta} />
-                <span aria-hidden>↗</span>
               </Link>
             </div>
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/5">
@@ -288,7 +283,6 @@ export default function HomePageClient({
                 <div className="mt-auto flex items-center justify-between pt-2 text-sm font-semibold text-foreground/70">
                   <Link href={`/proyectos/${project.slug}`} className="inline-flex items-center gap-2 transition hover:text-foreground">
                     <RichText as="span" value={siteContent.home.projectsCardCta} />
-                    <span aria-hidden className="transition group-hover:translate-x-1">→</span>
                   </Link>
                   <span className="text-xs uppercase tracking-[0.2em] text-foreground/50">
                     {translateLocalizedValue(locale, project.location)}
@@ -319,7 +313,6 @@ export default function HomePageClient({
               className="inline-flex w-fit items-center justify-center gap-2 rounded-full bg-foreground px-4 py-2 text-sm font-semibold text-background shadow-sm transition hover:-translate-y-0.5 hover:bg-foreground/90"
             >
               <RichText as="span" value={siteContent.home.contactCta} />
-              <span aria-hidden>↗</span>
             </Link>
           </div>
         </header>
@@ -357,7 +350,6 @@ export default function HomePageClient({
                   className="mt-auto inline-flex w-fit items-center gap-2 text-xs font-semibold text-foreground/70 transition hover:text-foreground"
                 >
                   <RichText as="span" value={siteContent.home.clientsWebsiteLabel} />
-                  <span aria-hidden>↗</span>
                 </a>
               )}
             </article>

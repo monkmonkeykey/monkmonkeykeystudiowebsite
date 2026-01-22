@@ -72,9 +72,6 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
                 className="inline-flex items-center justify-center gap-2 self-start rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-primary/30 transition hover:-translate-y-0.5 hover:shadow-primary/40"
               >
                 <RichText as="span" value={siteContent.servicesPage.ctaLabel} />
-                <span aria-hidden className="text-lg">
-                  →
-                </span>
               </Link>
             </div>
           </div>
@@ -124,7 +121,6 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
                   <p>{translate(locale, siteContent.servicesPage.sessionCopy)}</p>
                   <Link href="/contacto" className="inline-flex items-center gap-2 text-primary hover:text-primary/80">
                     {translate(locale, siteContent.servicesPage.talkCtaLabel)}
-                    <span aria-hidden>→</span>
                   </Link>
                 </div>
               </div>
@@ -140,7 +136,6 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
                   className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-foreground/60 transition hover:text-foreground"
                 >
                   {translate(locale, siteContent.servicesPage.backToTopLabel)}
-                  <span aria-hidden>↑</span>
                 </a>
               </div>
               <div className="grid gap-3 md:grid-cols-2">

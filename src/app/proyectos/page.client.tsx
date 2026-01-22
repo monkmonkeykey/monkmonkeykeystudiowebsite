@@ -225,7 +225,6 @@ export default function ProjectsPageClient({
                   </div>
                   <div className="mt-auto flex items-center justify-between text-sm font-semibold text-foreground/70">
                     <RichText as="span" value={copy.cardCta} />
-                    <span aria-hidden className="transition group-hover:translate-x-1">→</span>
                   </div>
                 </div>
               </Link>
@@ -250,7 +249,6 @@ export default function ProjectsPageClient({
             className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-semibold text-background shadow transition hover:-translate-y-0.5 hover:bg-foreground/90"
           >
             <RichText as="span" value={copy.ctaAction} />
-            <span aria-hidden>↗</span>
           </Link>
         </div>
       </section>
