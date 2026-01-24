@@ -115,7 +115,7 @@ export default function HomePageClient({
                         backgroundColor: index === 0 ? "rgb(74 222 128)" : index === 1 ? "rgb(56 189 248)" : "rgb(232 121 249)",
                       }}
                     />
-                    {translate(locale, tag)}
+                    <RichText as="span" value={tag} />
                   </span>
                 ))}
               </div>
@@ -208,7 +208,7 @@ export default function HomePageClient({
                           index === 0 ? "rgb(52 211 153)" : index === 1 ? "rgb(56 189 248)" : "rgb(232 121 249)",
                       }}
                     />
-                    {translate(locale, tag)}
+                    <RichText as="span" value={tag} />
                   </span>
                 ))}
               </div>
