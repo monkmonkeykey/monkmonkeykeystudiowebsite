@@ -3367,19 +3367,47 @@ const AdminDashboard = ({
         openCloudinaryPicker={cloudinaryReady ? openPicker : undefined}
       />
 
-      <SiteContentManager siteContent={siteContent} />
+      <nav className="flex flex-wrap gap-3 rounded-3xl border border-foreground/10 bg-background/60 p-4">
+        <a
+          href="#contenido-sitio"
+          className="rounded-full border border-foreground/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-foreground/70 transition hover:border-foreground/30 hover:text-foreground"
+        >
+          Contenido del sitio
+        </a>
+        <a
+          href="#clientes"
+          className="rounded-full border border-foreground/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-foreground/70 transition hover:border-foreground/30 hover:text-foreground"
+        >
+          Clientes
+        </a>
+        <a
+          href="#proyectos"
+          className="rounded-full border border-foreground/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-foreground/70 transition hover:border-foreground/30 hover:text-foreground"
+        >
+          Proyectos
+        </a>
+      </nav>
 
-      <ClientManager
-        clients={clients}
-        cloudinaryReady={cloudinaryReady}
-        openCloudinaryPicker={cloudinaryReady ? openPicker : undefined}
-      />
-      <ProjectManager
-        projects={projects}
-        clients={clients}
-        cloudinaryReady={cloudinaryReady}
-        openCloudinaryPicker={cloudinaryReady ? openPicker : undefined}
-      />
+      <section id="contenido-sitio">
+        <SiteContentManager siteContent={siteContent} />
+      </section>
+
+      <section id="clientes">
+        <ClientManager
+          clients={clients}
+          cloudinaryReady={cloudinaryReady}
+          openCloudinaryPicker={cloudinaryReady ? openPicker : undefined}
+        />
+      </section>
+
+      <section id="proyectos">
+        <ProjectManager
+          projects={projects}
+          clients={clients}
+          cloudinaryReady={cloudinaryReady}
+          openCloudinaryPicker={cloudinaryReady ? openPicker : undefined}
+        />
+      </section>
 
       {cloudinaryReady && <CloudinaryLibraryDialog state={picker} onClose={closePicker} />}
     </div>
