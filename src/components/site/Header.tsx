@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { SiteContent } from "@/domain/site";
 import { AVAILABLE_LOCALES, translate } from "@/lib/i18n";
+import { RichText } from "@/components/site/rich-text";
 import { useLocale } from "./locale-context";
 
 type HeaderProps = {
@@ -32,7 +33,7 @@ export function Header({ navigation }: HeaderProps) {
     <header className="border-b border-foreground/10 bg-background/80 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 lg:px-6 lg:py-4">
         <Link href="/" className="font-semibold tracking-tight">
-          {translate(locale, navigation.brand)}
+          <RichText as="span" value={navigation.brand} />
         </Link>
 
         <nav className="hidden items-center gap-6 text-sm lg:flex">
