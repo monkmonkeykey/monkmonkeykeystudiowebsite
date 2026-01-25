@@ -107,7 +107,6 @@ export default function ClientsPageClient({ clients }: ClientsPageClientProps) {
                 className="inline-flex w-fit items-center gap-2 rounded-full border border-foreground/10 px-4 py-2 text-xs font-semibold text-foreground/70 transition hover:border-foreground/30 hover:text-foreground"
               >
                 <span>{translate(locale, WEBSITE_LABEL)}</span>
-                <span aria-hidden>↗</span>
               </a>
             )}
           </article>
