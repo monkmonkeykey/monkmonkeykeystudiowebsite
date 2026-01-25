@@ -70,10 +70,16 @@ function resolveProvider(): EmailProvider {
 
 async function sendViaResend(payload: ContactEmailPayload) {
   const apiKey = process.env.RESEND_API_KEY;
-  const from = payload.from || process.env.CONTACT_FROM || payload.email;
+  const from = process.env.CONTACT_FROM || payload.from;
 
-  if (!apiKey || !from) {
-    throw new Error("Resend provider not configured (RESEND_API_KEY/CONTACT_FROM)");
+  if (!apiKey) {
+    throw new Error("Resend provider not configured (RESEND_API_KEY missing)");
+  }
+
+  if (!from) {
+    throw new Error(
+      "Resend provider not configured (CONTACT_FROM missing). Use a verified domain sender.",
+    );
   }
 
   const subject = payload.subject?.trim()
