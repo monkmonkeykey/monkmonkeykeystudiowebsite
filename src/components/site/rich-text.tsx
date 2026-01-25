@@ -30,7 +30,7 @@ const normalizeRichText = (value: string | undefined): string => {
 
   const withSpanFonts = value.replace(/<font([^>]*)>/gi, (_, attributes) => {
     const sizeMatch = attributes.match(/size=["']?(\d)["']?/i);
-    const colorMatch = attributes.match(/color=["']?([^"'\s>]+)["']?/i);
+    const colorMatch = attributes.match(/color=["']?([^"'>]+)["']?/i);
     const styleMatch = attributes.match(/style=["']?([^"']+)["']?/i);
     const styles: string[] = [];
 
