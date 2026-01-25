@@ -102,6 +102,18 @@ export const DEFAULT_SITE_CONTENT: SiteCopy = {
     },
     ctaAction: { es: "Agenda una llamada", en: "Book a call" },
   },
+  clientsPage: {
+    title: { es: "Clientes y aliados", en: "Clients and partners" },
+    copy: {
+      es: "Co-diseñamos soluciones junto a startups, scaleups y corporativos que buscan acelerar la entrega de valor.",
+      en: "We co-design solutions with startups, scaleups, and enterprises that need to accelerate value delivery.",
+    },
+    imageAlt: {
+      es: "Ilustración abstracta de conexiones con clientes",
+      en: "Abstract illustration of client connections",
+    },
+    websiteLabel: { es: "Visitar sitio", en: "Visit site" },
+  },
   contact: {
     title: { es: "Construyamos juntos", en: "Let’s build together" },
     copy: {

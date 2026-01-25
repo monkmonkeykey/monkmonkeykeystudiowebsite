@@ -122,6 +122,12 @@ const normalizeSiteCopy = (value: SiteCopy): SiteCopy => ({
     ctaDescription: normalizeLocaleText(value.projectsPage.ctaDescription),
     ctaAction: normalizeLocaleText(value.projectsPage.ctaAction),
   },
+  clientsPage: {
+    title: normalizeLocaleText(value.clientsPage.title),
+    copy: normalizeLocaleText(value.clientsPage.copy),
+    imageAlt: normalizeLocaleText(value.clientsPage.imageAlt),
+    websiteLabel: normalizeLocaleText(value.clientsPage.websiteLabel),
+  },
   servicesPage: {
     title: normalizeLocaleText(value.servicesPage.title),
     copy: normalizeLocaleText(value.servicesPage.copy),
@@ -193,6 +199,10 @@ const mergeSiteCopy = (payload: Partial<SiteCopy>): SiteCopy => ({
   projectsPage: {
     ...DEFAULT_SITE_CONTENT.projectsPage,
     ...(payload.projectsPage ?? {}),
+  },
+  clientsPage: {
+    ...DEFAULT_SITE_CONTENT.clientsPage,
+    ...(payload.clientsPage ?? {}),
   },
   servicesPage: {
     ...DEFAULT_SITE_CONTENT.servicesPage,

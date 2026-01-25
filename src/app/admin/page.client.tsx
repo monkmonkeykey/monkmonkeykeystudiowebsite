@@ -124,6 +124,12 @@ type SiteContentField = {
     ctaDescription: LocaleField;
     ctaAction: LocaleField;
   };
+  clientsPage: {
+    title: LocaleField;
+    copy: LocaleField;
+    imageAlt: LocaleField;
+    websiteLabel: LocaleField;
+  };
   contact: {
     title: LocaleField;
     copy: LocaleField;
@@ -167,6 +173,7 @@ type SiteContentSection =
   | "home"
   | "servicesPage"
   | "projectsPage"
+  | "clientsPage"
   | "contact"
   | "footer"
   | "servicesList";
@@ -286,6 +293,12 @@ const createSiteContentField = (siteContent: SiteContent): SiteContentField => (
     ctaTitle: createLocaleField(siteContent.projectsPage.ctaTitle),
     ctaDescription: createLocaleField(siteContent.projectsPage.ctaDescription),
     ctaAction: createLocaleField(siteContent.projectsPage.ctaAction),
+  },
+  clientsPage: {
+    title: createLocaleField(siteContent.clientsPage.title),
+    copy: createLocaleField(siteContent.clientsPage.copy),
+    imageAlt: createLocaleField(siteContent.clientsPage.imageAlt),
+    websiteLabel: createLocaleField(siteContent.clientsPage.websiteLabel),
   },
   contact: {
     title: createLocaleField(siteContent.contact.title),
@@ -440,6 +453,12 @@ const buildSitePayload = (draft: SiteContentField): SiteContent => ({
     ctaTitle: localeFieldToText(trimLocaleField(draft.projectsPage.ctaTitle)),
     ctaDescription: localeFieldToText(trimLocaleField(draft.projectsPage.ctaDescription)),
     ctaAction: localeFieldToText(trimLocaleField(draft.projectsPage.ctaAction)),
+  },
+  clientsPage: {
+    title: localeFieldToText(trimLocaleField(draft.clientsPage.title)),
+    copy: localeFieldToText(trimLocaleField(draft.clientsPage.copy)),
+    imageAlt: localeFieldToText(trimLocaleField(draft.clientsPage.imageAlt)),
+    websiteLabel: localeFieldToText(trimLocaleField(draft.clientsPage.websiteLabel)),
   },
   contact: {
     title: localeFieldToText(trimLocaleField(draft.contact.title)),
@@ -911,6 +930,11 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
       description: "Hero, filtros y CTA de la página de proyectos.",
     },
     {
+      key: "clientsPage",
+      label: "Clientes",
+      description: "Título, copy e imagen de la página de clientes.",
+    },
+    {
       key: "contact",
       label: "Contacto",
       description: "Texto, correo y lista de preparación.",
@@ -1330,6 +1354,32 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
             label="Botón CTA"
             value={draft.projectsPage.ctaAction}
             onChange={(value) => setDraft({ ...draft, projectsPage: { ...draft.projectsPage, ctaAction: value } })}
+          />
+        </div>
+      )}
+
+      {activeSection === "clientsPage" && (
+        <div className="space-y-4 rounded-3xl border border-foreground/10 bg-background p-4">
+          <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-foreground/60">Clientes</h3>
+          <RichLocaleInputs
+            label="Título"
+            value={draft.clientsPage.title}
+            onChange={(value) => setDraft({ ...draft, clientsPage: { ...draft.clientsPage, title: value } })}
+          />
+          <RichLocaleInputs
+            label="Descripción"
+            value={draft.clientsPage.copy}
+            onChange={(value) => setDraft({ ...draft, clientsPage: { ...draft.clientsPage, copy: value } })}
+          />
+          <RichLocaleInputs
+            label="Alt imagen"
+            value={draft.clientsPage.imageAlt}
+            onChange={(value) => setDraft({ ...draft, clientsPage: { ...draft.clientsPage, imageAlt: value } })}
+          />
+          <RichLocaleInputs
+            label="Texto enlace sitio"
+            value={draft.clientsPage.websiteLabel}
+            onChange={(value) => setDraft({ ...draft, clientsPage: { ...draft.clientsPage, websiteLabel: value } })}
           />
         </div>
       )}

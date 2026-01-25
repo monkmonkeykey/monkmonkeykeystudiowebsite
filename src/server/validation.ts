@@ -148,6 +148,12 @@ export const siteCopySchema = z.object({
     ctaDescription: localeTextSchema,
     ctaAction: localeTextSchema,
   }),
+  clientsPage: z.object({
+    title: localeTextSchema,
+    copy: localeTextSchema,
+    imageAlt: localeTextSchema,
+    websiteLabel: localeTextSchema,
+  }),
   contact: z.object({
     title: localeTextSchema,
     copy: localeTextSchema,

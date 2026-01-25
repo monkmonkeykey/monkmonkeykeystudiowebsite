@@ -65,6 +65,12 @@ export type SiteCopy = {
     ctaDescription: LocaleText;
     ctaAction: LocaleText;
   };
+  clientsPage: {
+    title: LocaleText;
+    copy: LocaleText;
+    imageAlt: LocaleText;
+    websiteLabel: LocaleText;
+  };
   contact: {
     title: LocaleText;
     copy: LocaleText;
