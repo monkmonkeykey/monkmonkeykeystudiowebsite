@@ -58,7 +58,7 @@ export default function HomePageClient({
               >
                 <source src={heroVideoUrl} />
               </video>
-              <div className="absolute inset-0 bg-gradient-to-br from-background/88 via-background/78 to-background/72" />
+              <div className="absolute inset-0 bg-gradient-to-br from-background/20 via-background/20 to-background/20" />
             </div>
           )}
         </div>
