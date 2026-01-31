@@ -43,7 +43,7 @@ export default function HomePageClient({
 
   return (
     <div className="space-y-20">
-      <section className="relative isolate -mx-[calc(50vw-50%)] w-screen overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/5 min-h-[80vh] pb-10">
+      <section className="relative isolate -mx-[calc(50vw-50%)] -mt-12 w-screen overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/5 pb-10 aspect-[16/9] sm:-mt-16 sm:aspect-auto sm:min-h-[80vh]">
         {heroVideoUrl && (
           <div className="pointer-events-none absolute inset-0">
             <video
@@ -60,7 +60,7 @@ export default function HomePageClient({
             <div className="absolute inset-0 bg-gradient-to-br from-background/88 via-background/78 to-background/72" />
           </div>
         )}
-        <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-5xl flex-col justify-end gap-6 px-6 pb-10 text-center sm:px-10 lg:px-14">
+        <div className="relative z-10 mx-auto flex min-h-[56.25vw] max-w-5xl flex-col justify-end gap-6 px-6 pb-10 text-center sm:min-h-[80vh] sm:px-10 lg:px-14">
           <RichText
             as="h1"
             value={siteContent.home.heroHeadline}
