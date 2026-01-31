@@ -43,24 +43,26 @@ export default function HomePageClient({
 
   return (
     <div className="space-y-20">
-      <section className="relative isolate -mx-[calc(50vw-50%)] -mt-12 w-screen overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/5 pb-10 aspect-[16/9] sm:-mt-16 sm:aspect-auto sm:min-h-[80vh]">
-        {heroVideoUrl && (
-          <div className="pointer-events-none absolute inset-0">
-            <video
-              key={heroVideoUrl}
-              className="h-full w-full object-cover"
-              autoPlay
-              loop
-              muted
-              playsInline
-              poster={heroVideoPoster || undefined}
-            >
-              <source src={heroVideoUrl} />
-            </video>
-            <div className="absolute inset-0 bg-gradient-to-br from-background/88 via-background/78 to-background/72" />
-          </div>
-        )}
-        <div className="relative z-10 mx-auto flex min-h-[56.25vw] max-w-5xl flex-col justify-end gap-6 px-6 pb-10 text-center sm:min-h-[80vh] sm:px-10 lg:px-14">
+      <section className="relative isolate -mx-[calc(50vw-50%)] -mt-12 w-screen bg-gradient-to-br from-primary/5 via-background to-accent/5 sm:-mt-16">
+        <div className="relative aspect-[16/9] w-full overflow-hidden">
+          {heroVideoUrl && (
+            <div className="pointer-events-none absolute inset-0">
+              <video
+                key={heroVideoUrl}
+                className="h-full w-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+                poster={heroVideoPoster || undefined}
+              >
+                <source src={heroVideoUrl} />
+              </video>
+              <div className="absolute inset-0 bg-gradient-to-br from-background/88 via-background/78 to-background/72" />
+            </div>
+          )}
+        </div>
+        <div className="mx-auto flex max-w-5xl flex-col items-center gap-6 px-6 pb-12 pt-10 text-center sm:px-10 lg:px-14">
           <RichText
             as="h1"
             value={siteContent.home.heroHeadline}
