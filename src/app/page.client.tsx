@@ -66,11 +66,11 @@ export default function HomePageClient({
           <RichText
             as="h1"
             value={siteContent.home.heroHeadline}
-            className="text-sm font-normal leading-relaxed text-foreground"
+            className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl lg:text-4xl"
           />
           <RichText
             value={siteContent.home.heroSubtitle}
-            className="space-y-3 text-sm font-normal leading-relaxed text-foreground/70 [&>p]:leading-relaxed"
+            className="max-w-3xl text-base font-normal leading-relaxed text-foreground/70 sm:text-lg [&>p]:leading-relaxed"
           />
           <div className="flex flex-wrap justify-center gap-3">
             <Link
