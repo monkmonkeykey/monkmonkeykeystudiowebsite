@@ -66,7 +66,7 @@ export default function HomePageClient({
           <RichText
             as="h1"
             value={siteContent.home.heroHeadline}
-            className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl lg:text-4xl"
+            className="text-xl font-semibold tracking-tight text-foreground sm:text-2xl lg:text-3xl"
           />
           <RichText
             value={siteContent.home.heroSubtitle}
