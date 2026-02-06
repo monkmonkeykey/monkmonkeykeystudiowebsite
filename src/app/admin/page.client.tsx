@@ -362,6 +362,11 @@ const normalizeOptionalLocaleField = (value: LocaleField): LocaleField | undefin
 };
 
 const localeFieldToText = (value: LocaleField): LocaleText => ({
+  es: value.es.trim(),
+  en: value.en.trim(),
+});
+
+const localeFieldToTextWithFallback = (value: LocaleField): LocaleText => ({
   es: value.es.trim() || value.en.trim(),
   en: value.en.trim() || value.es.trim(),
 });
@@ -497,8 +502,8 @@ const buildSitePayload = (draft: SiteContentField): SiteContent => ({
   },
   services: draft.services.map((service) => ({
     slug: slugifyCategory(service.slug) || slugifyCategory(service.title.es || service.title.en),
-    title: localeFieldToText(trimLocaleField(service.title)),
-    summary: localeFieldToText(trimLocaleField(service.summary)),
+    title: localeFieldToTextWithFallback(trimLocaleField(service.title)),
+    summary: localeFieldToTextWithFallback(trimLocaleField(service.summary)),
     outcomes: normalizeLocaleListField(service.outcomes),
   })),
 });
