@@ -14,6 +14,8 @@
     "experiencias-digitales"
   ],
   "year": "2022",
+  "startYear": 2021,
+  "endYear": 2022,
   "client": "Atlas Labs",
   "location": {
     "es": "Bogotá, Colombia",
@@ -80,6 +82,7 @@
         "en": "Honourable mention at UX Latam Awards"
       }
     }
-  ]
+  ],
+  "isPrivate": false
 }
 ---

@@ -3,32 +3,41 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { NAVIGATION } from "@/content/navigation";
+import type { SiteContent } from "@/domain/site";
 import { AVAILABLE_LOCALES, translate } from "@/lib/i18n";
+import { RichText } from "@/components/site/rich-text";
 import { useLocale } from "./locale-context";
 
-export function Header() {
+type HeaderProps = {
+  navigation: SiteContent["navigation"];
+};
+
+export function Header({ navigation }: HeaderProps) {
   const pathname = usePathname();
   const { locale, setLocale } = useLocale();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleLabel = isMobileMenuOpen
-    ? locale === "es"
-      ? "Cerrar menú"
-      : "Close menu"
-    : locale === "es"
-      ? "Abrir menú"
-      : "Open menu";
+    ? translate(locale, navigation.closeMenuLabel)
+    : translate(locale, navigation.openMenuLabel);
+
+  const navItems = [
+    { href: "/", label: navigation.homeLabel },
+    { href: "/servicios", label: navigation.servicesLabel },
+    { href: "/clientes", label: navigation.clientsLabel },
+    { href: "/proyectos", label: navigation.projectsLabel },
+    { href: "/contacto", label: navigation.contactLabel },
+  ];
 
   return (
     <header className="border-b border-foreground/10 bg-background/80 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 lg:px-6 lg:py-4">
         <Link href="/" className="font-semibold tracking-tight">
-          monkmonkeykey.studio
+          <RichText as="span" value={navigation.brand} />
         </Link>
 
         <nav className="hidden items-center gap-6 text-sm lg:flex">
-          {NAVIGATION.map((item) => {
+          {navItems.map((item) => {
             const isActive = pathname === item.href;
 
             return (
@@ -106,7 +115,7 @@ export function Header() {
           className="border-t border-foreground/10 bg-background/95 px-4 pb-4 pt-2 backdrop-blur lg:hidden"
         >
           <nav className="flex flex-col gap-3 text-sm">
-            {NAVIGATION.map((item) => {
+            {navItems.map((item) => {
               const isActive = pathname === item.href;
 
               return (

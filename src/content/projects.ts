@@ -20,7 +20,9 @@ type ProjectFrontmatter = {
   name: LocaleText;
   subtitle: LocaleText;
   categories: ProjectCategory[];
-  year: string;
+  year?: string;
+  startYear?: number;
+  endYear?: number;
   client: LocalizedValue;
   location: LocalizedValue;
   cover: ProjectGalleryImage;
@@ -32,6 +34,7 @@ type ProjectFrontmatter = {
   description: Record<Locale, string[]>;
   meta: { label: LocaleText; value: LocalizedValue }[];
   entities?: string[];
+  isPrivate?: boolean;
 };
 
 const FRONTMATTER_REGEX = /^---\s*\r?\n([\s\S]*?)\r?\n---\s*/;
@@ -204,6 +207,18 @@ const parseGallery = (value: unknown, projectName: string): ProjectGalleryImage[
   });
 };
 
+const parseYearNumber = (value: unknown, field: string): number | undefined => {
+  if (value === undefined || value === null) {
+    return undefined;
+  }
+
+  if (typeof value !== "number") {
+    throw new Error(`${field} debe ser un número`);
+  }
+
+  return value;
+};
+
 const parseDescription = (
   value: Record<Locale, string[]>,
   projectName: string,
@@ -283,6 +298,8 @@ const readProjectFile = (filePath: string): { project: Project; order: number } 
 
   const name = parseLocaleText(frontmatter.name, `${frontmatter.slug} name`);
   const subtitle = parseLocaleText(frontmatter.subtitle, `${frontmatter.slug} subtitle`);
+  const startYear = parseYearNumber(frontmatter.startYear, `${frontmatter.slug} startYear`);
+  const endYear = parseYearNumber(frontmatter.endYear, `${frontmatter.slug} endYear`);
   const cover = {
     src: frontmatter.cover?.src ?? "",
     alt: parseLocaleText(frontmatter.cover?.alt, `${frontmatter.slug} cover alt`),
@@ -300,7 +317,9 @@ const readProjectFile = (filePath: string): { project: Project; order: number } 
     name,
     subtitle,
     categories: frontmatter.categories ?? [],
-    year: frontmatter.year,
+    year: frontmatter.year ?? (startYear && endYear ? `${startYear}–${endYear}` : `${startYear ?? ""}`),
+    startYear,
+    endYear,
     client: parseLocalizedValue(frontmatter.client, `${frontmatter.slug} client`),
     location: parseLocalizedValue(frontmatter.location, `${frontmatter.slug} location`),
     cover,
@@ -309,6 +328,7 @@ const readProjectFile = (filePath: string): { project: Project; order: number } 
     description: parseDescription(frontmatter.description, frontmatter.slug),
     meta: parseMeta(frontmatter.meta, frontmatter.slug),
     entities: parseEntities(frontmatter.entities, frontmatter.slug),
+    isPrivate: Boolean(frontmatter.isPrivate),
   };
 
   return { project, order: frontmatter.order ?? Number.MAX_SAFE_INTEGER };
