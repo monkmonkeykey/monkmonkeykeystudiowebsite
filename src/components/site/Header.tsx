@@ -24,8 +24,8 @@ export function Header({ navigation }: HeaderProps) {
   const navItems = [
     { href: "/", label: navigation.homeLabel },
     { href: "/servicios", label: navigation.servicesLabel },
-    { href: "/clientes", label: navigation.clientsLabel },
     { href: "/proyectos", label: navigation.projectsLabel },
+    { href: "/clientes", label: navigation.clientsLabel },
     { href: "/contacto", label: navigation.contactLabel },
   ];
 

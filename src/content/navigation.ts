@@ -8,7 +8,7 @@ export type NavigationItem = {
 export const NAVIGATION: NavigationItem[] = [
   { href: "/", label: { es: "Inicio", en: "Home" } },
   { href: "/servicios", label: { es: "Servicios", en: "Services" } },
+    { href: "/proyectos", label: { es: "Proyectos", en: "Work" } },
   { href: "/clientes", label: { es: "Clientes", en: "Clients" } },
-  { href: "/proyectos", label: { es: "Proyectos", en: "Work" } },
   { href: "/contacto", label: { es: "Contacto", en: "Contact" } },
 ];

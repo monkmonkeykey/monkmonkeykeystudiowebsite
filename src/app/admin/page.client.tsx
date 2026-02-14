@@ -1221,16 +1221,17 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
               value={draft.navigation.servicesLabel}
               onChange={(value) => setDraft({ ...draft, navigation: { ...draft.navigation, servicesLabel: value } })}
             />
+             <RichLocaleInputs
+              label="Etiqueta Proyectos"
+              value={draft.navigation.projectsLabel}
+              onChange={(value) => setDraft({ ...draft, navigation: { ...draft.navigation, projectsLabel: value } })}
+            />
             <RichLocaleInputs
               label="Etiqueta Clientes"
               value={draft.navigation.clientsLabel}
               onChange={(value) => setDraft({ ...draft, navigation: { ...draft.navigation, clientsLabel: value } })}
             />
-            <RichLocaleInputs
-              label="Etiqueta Proyectos"
-              value={draft.navigation.projectsLabel}
-              onChange={(value) => setDraft({ ...draft, navigation: { ...draft.navigation, projectsLabel: value } })}
-            />
+           
             <RichLocaleInputs
               label="Etiqueta Contacto"
               value={draft.navigation.contactLabel}
