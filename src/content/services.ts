@@ -65,12 +65,12 @@ export const SERVICES: Service[] = [
       en: "Experimentation & growth",
     },
     summary: {
-      es: "Soluciones de materialización física. Ofrecemos servicios de impresión 3D para prototipado, creación de piezas artísticas y modelado, llevando tus ideas del plano digital al objeto tangible.",
-      en: "We validate hypotheses with rapid experiments and continuous measurement.",
+      es: "Impresión 3D por filamento. Producción de piezas funcionales y aplicaciones para obra artística e instalaciones. Contamos con capacidad de impresión multicolor y formatos de impresión de hasta 30 x 30 x 60cm.",
+      en: "Impresión 3D por filamento. Producción de piezas funcionales y aplicaciones para obra artística e instalaciones. Contamos con capacidad de impresión multicolor y formatos de impresión de hasta 30 x 30 x 60cm.",
     },
     outcomes: [
       {
-        es: "Diseño e implementación de experimentos A/B",
+        es: "Producción de piezas funcionales y estructurales en distintos materiales",
         en: "Design and implementation of A/B tests",
       },
       {

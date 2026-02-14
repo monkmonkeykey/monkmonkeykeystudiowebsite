@@ -70,7 +70,7 @@ export const DEFAULT_SITE_CONTENT: SiteCopy = {
       { es: "Equipos extendidos", en: "Extended squads" },
       { es: "Pruebas rápidas", en: "Rapid experiments" },
     ],
-    outcomesLabel: { es: "Entregables principales", en: "Key deliverables" },
+    outcomesLabel: { es: "Servicios", en: "Services" },
     quickMapLabel: { es: "Mapa rápido", en: "Quick map" },
     highlightPrimaryLabel: { es: "Inicio en 2-3 semanas", en: "Kick off in 2-3 weeks" },
     highlightSecondaryLabel: { es: "Equipo dedicado", en: "Dedicated squad" },

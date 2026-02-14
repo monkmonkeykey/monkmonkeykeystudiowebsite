@@ -4,9 +4,9 @@ import { getSiteContent } from "@/data/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "MonkMonkeyKey · Product Strategy Studio",
+  title: "monkmonkeykey estudio",
   description:
-    "MonkMonkeyKey impulsa productos digitales con estrategia, diseño y desarrollo centrados en resultados tangibles.",
+    "Estudio de producción artistica con nuevos medios.",
 };
 
 export const dynamic = "force-dynamic";

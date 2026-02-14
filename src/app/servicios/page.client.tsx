@@ -96,37 +96,10 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
                     <RichText as="span" value={service.summary} />
                   </p>
                 </div>
-                <div className="flex flex-wrap gap-3 text-sm text-foreground/70">
-                  <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1.5 text-primary ring-1 ring-primary/20">
-                    <RichText as="span" value={siteContent.servicesPage.highlightPrimaryLabel} />
-                  </div>
-                  <div className="inline-flex items-center gap-2 rounded-full bg-foreground/5 px-3 py-1.5 ring-1 ring-foreground/10">
-                    <RichText as="span" value={siteContent.servicesPage.highlightSecondaryLabel} />
-                  </div>
-                </div>
+
               </div>
 
-              <div className="flex items-center gap-4 rounded-2xl bg-gradient-to-br from-primary/10 via-background to-accent/10 p-4 ring-1 ring-foreground/10">
-                <div className="relative h-16 w-16 overflow-hidden rounded-2xl bg-background ring-1 ring-foreground/10">
-                  <Image
-                    src={siteContent.servicesPage.imageSrc || "/images/services-visual.svg"}
-                    alt={getPlainText(translate(locale, siteContent.servicesPage.imageAlt))}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="space-y-1 text-sm text-foreground/70">
-                  <RichText
-                    as="p"
-                    value={siteContent.servicesPage.sessionTitle}
-                    className="font-semibold text-foreground"
-                  />
-                  <RichText as="p" value={siteContent.servicesPage.sessionCopy} />
-                  <Link href="/contacto" className="inline-flex items-center gap-2 text-primary hover:text-primary/80">
-                    <RichText as="span" value={siteContent.servicesPage.talkCtaLabel} />
-                  </Link>
-                </div>
-              </div>
+            
             </div>
 
             <div className="mt-8 space-y-3">

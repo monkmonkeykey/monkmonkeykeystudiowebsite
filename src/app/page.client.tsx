@@ -90,57 +90,7 @@ export default function HomePageClient({
       </section>
 
       <section className="space-y-6">
-        <header className="overflow-hidden rounded-3xl border border-foreground/10 bg-gradient-to-r from-foreground/5 via-background to-foreground/5 p-6 shadow-sm sm:p-8">
-          <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
-            <div className="space-y-3">
-              <div className="inline-flex items-center gap-2 rounded-full bg-foreground/5 px-3 py-1 text-xs font-semibold text-foreground/70 ring-1 ring-foreground/10">
-                <span className="size-2 rounded-full bg-primary" />
-                <RichText as="span" value={siteContent.home.servicesBadgeLabel} />
-              </div>
-              <div className="space-y-2">
-                <RichText
-                  as="h2"
-                  value={siteContent.home.servicesTitle}
-                  className="text-2xl font-semibold tracking-tight sm:text-3xl"
-                />
-                <RichText value={siteContent.home.servicesCopy} className="prose prose-sm max-w-none text-foreground/70" />
-              </div>
-              <div className="flex flex-wrap gap-2 text-xs text-foreground/60">
-                {servicesTags.map((tag, index) => (
-                  <span
-                    key={`${tag.es}-${index}`}
-                    className="inline-flex items-center gap-2 rounded-full bg-background/60 px-3 py-1.5 ring-1 ring-foreground/10"
-                  >
-                    <span
-                      className="size-2 rounded-full"
-                      style={{
-                        backgroundColor: index === 0 ? "rgb(74 222 128)" : index === 1 ? "rgb(56 189 248)" : "rgb(232 121 249)",
-                      }}
-                    />
-                    <RichText as="span" value={tag} />
-                  </span>
-                ))}
-              </div>
-              <Link
-                href="/servicios"
-                className="inline-flex w-fit items-center justify-center gap-2 rounded-full bg-foreground px-4 py-2 text-sm font-semibold text-background shadow-sm transition hover:-translate-y-0.5 hover:bg-foreground/90"
-              >
-                <RichText as="span" value={siteContent.home.servicesCta} />
-              </Link>
-            </div>
-            <div className="relative flex flex-wrap gap-3 rounded-2xl bg-background/80 p-4 ring-1 ring-foreground/10">
-              {services.map((service) => (
-                <Link
-                  key={service.slug}
-                  href={`/servicios#${service.slug}`}
-                  className="group inline-flex items-center gap-2 rounded-full border border-foreground/10 bg-background px-3 py-2 text-sm font-semibold text-foreground/80 transition hover:-translate-y-0.5 hover:border-primary/30 hover:text-foreground"
-                >
-                  <RichText as="span" value={service.title} />
-                </Link>
-              ))}
-            </div>
-          </div>
-        </header>
+        
 
         <div className="grid gap-6 lg:grid-cols-3">
           {services.map((service) => (
@@ -162,9 +112,6 @@ export default function HomePageClient({
                     key={`${service.slug}-outcome-${index}`}
                     className="flex items-start gap-3 rounded-2xl border border-foreground/10 bg-foreground/[0.03] px-4 py-3 text-sm text-foreground/70"
                   >
-                    <span className="mt-0.5 flex size-6 items-center justify-center rounded-full bg-primary/10 text-[11px] font-semibold text-primary ring-1 ring-primary/20">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
                     <span>{translate(locale, outcome)}</span>
                   </div>
                 ))}
@@ -312,8 +259,8 @@ export default function HomePageClient({
               </div>
               <p className="text-base text-foreground/70">
                 {locale === "es"
-                  ? "Colaboramos con equipos de producto, innovación y data en toda Latinoamérica y Europa."
-                  : "We collaborate with product, innovation, and data teams across Latin America and Europe."}
+                  ? "Colaboramos con instituciones del sector público y privado, así como con artístas y otros agentes culturales."
+                  : "Colaboramos con instituciones del sector público y privado, así como con artístas y otros agentes culturales."}
               </p>
             </div>
             <Link
