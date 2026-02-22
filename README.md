@@ -32,6 +32,13 @@ Sitio institucional construido con Next.js 16 y el App Router. Carga contenido b
 | `CLOUDINARY_CLOUD_NAME` | Cloud name de tu cuenta de Cloudinary. |
 | `CLOUDINARY_API_KEY` | API key con permisos de subida. |
 | `CLOUDINARY_API_SECRET` | API secret asociado a la key. |
+| `RESEND_API_KEY` | (Opcional) API key de Resend para enviar los correos del formulario de contacto. |
+| `CONTACT_FROM` | Remitente para los correos de contacto (ej. `contacto@tudominio.com` o tu Gmail). |
+| `CONTACT_RECIPIENT` | (Opcional) Email destino para los mensajes; por defecto usa `CONTACT_FROM`. |
+| `GMAIL_USER` | (Opcional) Usuario de Gmail para enviar correos vía SMTP. |
+| `GMAIL_APP_PASSWORD` | (Opcional) App password de Gmail (16 caracteres) para SMTP seguro. |
+| `GMAIL_HOST` | (Opcional) Host SMTP de Gmail, por defecto `smtp.gmail.com`. |
+| `GMAIL_PORT` | (Opcional) Puerto SMTP, por defecto `465`. |
 
 Si no configuras MongoDB, el sitio seguirá leyendo los archivos Markdown de `content/`. Si no configuras Cloudinary, podrás seguir pegando URLs manualmente para las imágenes y videos.
 
@@ -49,6 +56,39 @@ Si no configuras MongoDB, el sitio seguirá leyendo los archivos Markdown de `co
 > **Nota:** sin MongoDB el panel sólo mostrará el contenido existente en los Markdown, pero no permitirá guardar cambios.
 
 Para cerrar sesión usa el botón “Cerrar sesión” dentro del panel o borra la cookie `mmk_admin_session`.
+
+## Configurar el envío de correos del formulario de contacto
+El formulario de contacto enviará los mensajes por **Resend** o por **Gmail SMTP**. La app elige automáticamente el proveedor:
+- Usa **Resend** si existen `RESEND_API_KEY` y `CONTACT_FROM`.
+- Si no, usa **Gmail** si existen `GMAIL_USER` y `GMAIL_APP_PASSWORD`.
+
+### Opción A: Resend (recomendado)
+1. Crea una cuenta en [Resend](https://resend.com/) y genera una API key.
+2. Define en `.env.local`:
+   ```bash
+   RESEND_API_KEY="tu_api_key"
+   CONTACT_FROM="contacto@tudominio.com"
+   CONTACT_RECIPIENT="tu-correo@tudominio.com" # opcional
+   ```
+3. Si usas un dominio propio, verifica el dominio en Resend para poder usarlo como remitente.
+
+### Opción B: Gmail SMTP
+1. Activa la verificación en dos pasos en tu cuenta de Gmail.
+2. Crea un **App password** (Contraseñas de aplicaciones) y copia el valor de 16 caracteres.
+3. Define en `.env.local`:
+   ```bash
+   GMAIL_USER="tuusuario@gmail.com"
+   GMAIL_APP_PASSWORD="tu_app_password"
+   CONTACT_FROM="tuusuario@gmail.com"
+   CONTACT_RECIPIENT="tu-correo@tudominio.com" # opcional
+   ```
+4. (Opcional) si necesitas otro host/puerto SMTP:
+   ```bash
+   GMAIL_HOST="smtp.gmail.com"
+   GMAIL_PORT="465"
+   ```
+
+> **Nota:** el destinatario final usa `CONTACT_RECIPIENT` si está definido; de lo contrario, se enviará a `CONTACT_FROM`.
 
 ## Depuración rápida de MongoDB
 - Ejecuta un smoke test directo contra tu clúster para comprobar que las credenciales y la red funcionan:

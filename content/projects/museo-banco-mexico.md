@@ -15,6 +15,8 @@
     "experiencias-digitales"
   ],
   "year": "2023",
+  "startYear": 2022,
+  "endYear": 2023,
   "client": "MIDE / Banco de México",
   "location": {
     "es": "Ciudad de México",
@@ -83,6 +85,7 @@
         "en": "Mexican Design Biennial Selection 2024"
       }
     }
-  ]
+  ],
+  "isPrivate": false
 }
 ---

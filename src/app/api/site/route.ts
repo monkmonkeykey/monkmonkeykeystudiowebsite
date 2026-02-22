@@ -1,15 +1,14 @@
 import { NextResponse } from "next/server";
 
-import type { Project } from "@/domain/projects";
-import { getProjects, refreshProjectsCache } from "@/data/projects";
+import type { SiteContent } from "@/domain/site";
 import { hasDatabaseConfig } from "@/lib/env";
-import { upsertProject } from "@/server/projects";
-import { projectPayloadSchema } from "@/server/validation";
 import { verifyRequestSession } from "@/server/auth";
+import { fetchSiteContent, upsertSiteContent } from "@/server/site";
+import { sitePayloadSchema } from "@/server/validation";
 
 export async function GET() {
-  const projects = await getProjects(true);
-  return NextResponse.json(projects satisfies Project[]);
+  const site = await fetchSiteContent();
+  return NextResponse.json(site satisfies SiteContent | null);
 }
 
 export async function POST(request: Request) {
@@ -34,18 +33,17 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
   }
 
-  const parseResult = projectPayloadSchema.safeParse(payload);
+  const parseResult = sitePayloadSchema.safeParse(payload);
 
   if (!parseResult.success) {
     return NextResponse.json({ error: parseResult.error.flatten() }, { status: 400 });
   }
 
-  const project = await upsertProject(parseResult.data);
+  const site = await upsertSiteContent(parseResult.data);
 
-  if (!project) {
-    return NextResponse.json({ error: "Failed to save project" }, { status: 500 });
+  if (!site) {
+    return NextResponse.json({ error: "Failed to save site content" }, { status: 500 });
   }
 
-  await refreshProjectsCache();
-  return NextResponse.json(project satisfies Project);
+  return NextResponse.json(site satisfies SiteContent);
 }

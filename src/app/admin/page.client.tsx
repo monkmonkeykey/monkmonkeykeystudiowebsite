@@ -1,11 +1,13 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import type { Client, ClientKind } from "@/content/clients";
+import type { Service } from "@/content/services";
 import type { LocalizedValue, Project, ProjectCategory } from "@/domain/projects";
-import { PROJECT_CATEGORY_LABELS } from "@/domain/projects";
+import { PROJECT_CATEGORY_LABELS, translateCategoryLabel } from "@/domain/projects";
+import type { SiteContent } from "@/domain/site";
 
 import type { LocaleText } from "@/lib/i18n";
 import { extractApiErrorMessage } from "@/lib/admin-api";
@@ -19,6 +21,7 @@ import {
 type AdminDashboardProps = {
   clients: Client[];
   projects: Project[];
+  siteContent: SiteContent;
   databaseReady: boolean;
   cloudinaryReady: boolean;
 };
@@ -49,15 +52,147 @@ type ProjectVideoField = {
   title: LocaleField;
 };
 
+type ServiceField = {
+  id: string;
+  slug: string;
+  title: LocaleField;
+  summary: LocaleField;
+  outcomes: LocaleField[];
+};
+
+type SiteGalleryImageField = {
+  id: string;
+  src: string;
+  alt: LocaleField;
+};
+
+type SiteContentField = {
+  navigation: {
+    brand: LocaleField;
+    homeLabel: LocaleField;
+    servicesLabel: LocaleField;
+    clientsLabel: LocaleField;
+    projectsLabel: LocaleField;
+    contactLabel: LocaleField;
+    openMenuLabel: LocaleField;
+    closeMenuLabel: LocaleField;
+  };
+  home: {
+    heroHeadline: LocaleField;
+    heroSubtitle: LocaleField;
+    heroPrimaryCta: LocaleField;
+    heroSecondaryCta: LocaleField;
+    heroTags: LocaleField[];
+    heroVideo: {
+      url: string;
+      publicId: string;
+      poster: string;
+    };
+    servicesTitle: LocaleField;
+    servicesCopy: LocaleField;
+    servicesCta: LocaleField;
+    servicesTags: LocaleField[];
+    servicesBadgeLabel: LocaleField;
+    servicesCardCta: LocaleField;
+    projectsTitle: LocaleField;
+    projectsDescription: LocaleField;
+    projectsTags: LocaleField[];
+    projectsBadgeLabel: LocaleField;
+    projectsCardCta: LocaleField;
+    projectsImageAlt: LocaleField;
+    projectsCta: LocaleField;
+    clientsTitle: LocaleField;
+    clientsWebsiteLabel: LocaleField;
+    contactCta: LocaleField;
+  };
+  servicesPage: {
+    title: LocaleField;
+    copy: LocaleField;
+    ctaLabel: LocaleField;
+    chips: LocaleField[];
+    outcomesLabel: LocaleField;
+    quickMapLabel: LocaleField;
+    highlightPrimaryLabel: LocaleField;
+    highlightSecondaryLabel: LocaleField;
+    sessionTitle: LocaleField;
+    sessionCopy: LocaleField;
+    talkCtaLabel: LocaleField;
+    backToTopLabel: LocaleField;
+    imageSrc: string;
+    imageAlt: LocaleField;
+    gallery: SiteGalleryImageField[];
+  };
+  projectsPage: {
+    title: LocaleField;
+    copy: LocaleField;
+    filterAllLabel: LocaleField;
+    emptyState: LocaleField;
+    cardCta: LocaleField;
+    ctaTitle: LocaleField;
+    ctaDescription: LocaleField;
+    ctaAction: LocaleField;
+  };
+  clientsPage: {
+    title: LocaleField;
+    copy: LocaleField;
+    imageSrc: string;
+    imageAlt: LocaleField;
+    websiteLabel: LocaleField;
+  };
+  contact: {
+    title: LocaleField;
+    copy: LocaleField;
+    email: string;
+    preparation: LocaleField[];
+    bookCallTitle: LocaleField;
+    bookCallCopy: LocaleField;
+    bookCallCta: LocaleField;
+    preparationTitle: LocaleField;
+    formTitle: LocaleField;
+    formSubtitle: LocaleField;
+    successLabel: LocaleField;
+    nameLabel: LocaleField;
+    emailLabel: LocaleField;
+    organizationLabel: LocaleField;
+    phoneLabel: LocaleField;
+    subjectLabel: LocaleField;
+    messageLabel: LocaleField;
+    submitLabel: LocaleField;
+    sendingLabel: LocaleField;
+    moreContactTitle: LocaleField;
+    moreContactLabel: LocaleField;
+    moreContactNote: LocaleField;
+    imageSrc: string;
+    imageAlt: LocaleField;
+  };
+  footer: {
+    tagline: LocaleField;
+    adminLabel: LocaleField;
+    instagramLabel: LocaleField;
+    instagramUrl: string;
+    facebookLabel: LocaleField;
+    facebookUrl: string;
+    linkedinLabel: LocaleField;
+    linkedinUrl: string;
+  };
+  services: ServiceField[];
+};
+
+type SiteContentSection =
+  | "navigation"
+  | "home"
+  | "servicesPage"
+  | "projectsPage"
+  | "clientsPage"
+  | "contact"
+  | "footer"
+  | "servicesList";
+
 const CLIENT_KINDS: { value: ClientKind; label: string }[] = [
   { value: "client", label: "Cliente" },
   { value: "institution", label: "Institución" },
   { value: "partner", label: "Aliado" },
 ];
-
-const CATEGORY_OPTIONS: { value: ProjectCategory; label: LocaleText }[] = (
-  Object.entries(PROJECT_CATEGORY_LABELS) as [ProjectCategory, LocaleText][]
-).map(([value, label]) => ({ value, label }));
 
 const createLocaleField = (value?: LocaleText | LocalizedValue): LocaleField => {
   if (!value) {
@@ -93,6 +228,143 @@ const createDescriptionField = (id: string, text?: LocaleText): ProjectDescripti
   text: createLocaleField(text),
 });
 
+const createServiceField = (id: string, service?: Service): ServiceField => ({
+  id,
+  slug: service?.slug ?? "",
+  title: createLocaleField(service?.title),
+  summary: createLocaleField(service?.summary),
+  outcomes: (service?.outcomes ?? []).map((outcome, index) => createDescriptionField(`${id}-outcome-${index}`, outcome).text),
+});
+
+const createSiteGalleryImageField = (
+  id: string,
+  image?: { src: string; alt: LocaleText },
+): SiteGalleryImageField => ({
+  id,
+  src: image?.src ?? "",
+  alt: createLocaleField(image?.alt),
+});
+
+const createSiteContentField = (siteContent: SiteContent): SiteContentField => ({
+  navigation: {
+    brand: createLocaleField(siteContent.navigation.brand),
+    homeLabel: createLocaleField(siteContent.navigation.homeLabel),
+    servicesLabel: createLocaleField(siteContent.navigation.servicesLabel),
+    clientsLabel: createLocaleField(siteContent.navigation.clientsLabel),
+    projectsLabel: createLocaleField(siteContent.navigation.projectsLabel),
+    contactLabel: createLocaleField(siteContent.navigation.contactLabel),
+    openMenuLabel: createLocaleField(siteContent.navigation.openMenuLabel),
+    closeMenuLabel: createLocaleField(siteContent.navigation.closeMenuLabel),
+  },
+  home: {
+    heroHeadline: createLocaleField(siteContent.home.heroHeadline),
+    heroSubtitle: createLocaleField(siteContent.home.heroSubtitle),
+    heroPrimaryCta: createLocaleField(siteContent.home.heroPrimaryCta),
+    heroSecondaryCta: createLocaleField(siteContent.home.heroSecondaryCta),
+    heroTags: (siteContent.home.heroTags || []).map((tag, index) => createDescriptionField(`hero-tag-${index}`, tag).text),
+    heroVideo: {
+      url: siteContent.home.heroVideo?.url ?? "",
+      publicId: siteContent.home.heroVideo?.publicId ?? "",
+      poster: siteContent.home.heroVideo?.poster ?? "",
+    },
+    servicesTitle: createLocaleField(siteContent.home.servicesTitle),
+    servicesCopy: createLocaleField(siteContent.home.servicesCopy),
+    servicesCta: createLocaleField(siteContent.home.servicesCta),
+    servicesTags: (siteContent.home.servicesTags || []).map((tag, index) =>
+      createDescriptionField(`services-tag-${index}`, tag).text,
+    ),
+    servicesBadgeLabel: createLocaleField(siteContent.home.servicesBadgeLabel),
+    servicesCardCta: createLocaleField(siteContent.home.servicesCardCta),
+    projectsTitle: createLocaleField(siteContent.home.projectsTitle),
+    projectsDescription: createLocaleField(siteContent.home.projectsDescription),
+    projectsTags: (siteContent.home.projectsTags || []).map((tag, index) =>
+      createDescriptionField(`projects-tag-${index}`, tag).text,
+    ),
+    projectsBadgeLabel: createLocaleField(siteContent.home.projectsBadgeLabel),
+    projectsCardCta: createLocaleField(siteContent.home.projectsCardCta),
+    projectsImageAlt: createLocaleField(siteContent.home.projectsImageAlt),
+    projectsCta: createLocaleField(siteContent.home.projectsCta),
+    clientsTitle: createLocaleField(siteContent.home.clientsTitle),
+    clientsWebsiteLabel: createLocaleField(siteContent.home.clientsWebsiteLabel),
+    contactCta: createLocaleField(siteContent.home.contactCta),
+  },
+  servicesPage: {
+    title: createLocaleField(siteContent.servicesPage.title),
+    copy: createLocaleField(siteContent.servicesPage.copy),
+    ctaLabel: createLocaleField(siteContent.servicesPage.ctaLabel),
+    chips: (siteContent.servicesPage.chips || []).map((chip, index) => createDescriptionField(`chip-${index}`, chip).text),
+    outcomesLabel: createLocaleField(siteContent.servicesPage.outcomesLabel),
+    quickMapLabel: createLocaleField(siteContent.servicesPage.quickMapLabel),
+    highlightPrimaryLabel: createLocaleField(siteContent.servicesPage.highlightPrimaryLabel),
+    highlightSecondaryLabel: createLocaleField(siteContent.servicesPage.highlightSecondaryLabel),
+    sessionTitle: createLocaleField(siteContent.servicesPage.sessionTitle),
+    sessionCopy: createLocaleField(siteContent.servicesPage.sessionCopy),
+    talkCtaLabel: createLocaleField(siteContent.servicesPage.talkCtaLabel),
+    backToTopLabel: createLocaleField(siteContent.servicesPage.backToTopLabel),
+    imageSrc: siteContent.servicesPage.imageSrc ?? "",
+    imageAlt: createLocaleField(siteContent.servicesPage.imageAlt),
+    gallery: (siteContent.servicesPage.gallery ?? []).map((image, index) =>
+      createSiteGalleryImageField(`services-gallery-${index}`, image),
+    ),
+  },
+  projectsPage: {
+    title: createLocaleField(siteContent.projectsPage.title),
+    copy: createLocaleField(siteContent.projectsPage.copy),
+    filterAllLabel: createLocaleField(siteContent.projectsPage.filterAllLabel),
+    emptyState: createLocaleField(siteContent.projectsPage.emptyState),
+    cardCta: createLocaleField(siteContent.projectsPage.cardCta),
+    ctaTitle: createLocaleField(siteContent.projectsPage.ctaTitle),
+    ctaDescription: createLocaleField(siteContent.projectsPage.ctaDescription),
+    ctaAction: createLocaleField(siteContent.projectsPage.ctaAction),
+  },
+  clientsPage: {
+    title: createLocaleField(siteContent.clientsPage.title),
+    copy: createLocaleField(siteContent.clientsPage.copy),
+    imageSrc: siteContent.clientsPage.imageSrc ?? "",
+    imageAlt: createLocaleField(siteContent.clientsPage.imageAlt),
+    websiteLabel: createLocaleField(siteContent.clientsPage.websiteLabel),
+  },
+  contact: {
+    title: createLocaleField(siteContent.contact.title),
+    copy: createLocaleField(siteContent.contact.copy),
+    email: siteContent.contact.email,
+    preparation: (siteContent.contact.preparation || []).map((item, index) =>
+      createDescriptionField(`prep-${index}`, item).text,
+    ),
+    bookCallTitle: createLocaleField(siteContent.contact.bookCallTitle),
+    bookCallCopy: createLocaleField(siteContent.contact.bookCallCopy),
+    bookCallCta: createLocaleField(siteContent.contact.bookCallCta),
+    preparationTitle: createLocaleField(siteContent.contact.preparationTitle),
+    formTitle: createLocaleField(siteContent.contact.formTitle),
+    formSubtitle: createLocaleField(siteContent.contact.formSubtitle),
+    successLabel: createLocaleField(siteContent.contact.successLabel),
+    nameLabel: createLocaleField(siteContent.contact.nameLabel),
+    emailLabel: createLocaleField(siteContent.contact.emailLabel),
+    organizationLabel: createLocaleField(siteContent.contact.organizationLabel),
+    phoneLabel: createLocaleField(siteContent.contact.phoneLabel),
+    subjectLabel: createLocaleField(siteContent.contact.subjectLabel),
+    messageLabel: createLocaleField(siteContent.contact.messageLabel),
+    submitLabel: createLocaleField(siteContent.contact.submitLabel),
+    sendingLabel: createLocaleField(siteContent.contact.sendingLabel),
+    moreContactTitle: createLocaleField(siteContent.contact.moreContactTitle),
+    moreContactLabel: createLocaleField(siteContent.contact.moreContactLabel),
+    moreContactNote: createLocaleField(siteContent.contact.moreContactNote),
+    imageSrc: siteContent.contact.imageSrc ?? "",
+    imageAlt: createLocaleField(siteContent.contact.imageAlt),
+  },
+  footer: {
+    tagline: createLocaleField(siteContent.footer.tagline),
+    adminLabel: createLocaleField(siteContent.footer.adminLabel),
+    instagramLabel: createLocaleField(siteContent.footer.instagramLabel),
+    instagramUrl: siteContent.footer.instagramUrl ?? "",
+    facebookLabel: createLocaleField(siteContent.footer.facebookLabel),
+    facebookUrl: siteContent.footer.facebookUrl ?? "",
+    linkedinLabel: createLocaleField(siteContent.footer.linkedinLabel),
+    linkedinUrl: siteContent.footer.linkedinUrl ?? "",
+  },
+  services: siteContent.services.map((service, index) => createServiceField(`service-${index}`, service)),
+});
+
 const trimLocaleField = (value: LocaleField): LocaleField => ({
   es: value.es.trim(),
   en: value.en.trim(),
@@ -114,10 +386,161 @@ const normalizeOptionalLocaleField = (value: LocaleField): LocaleField | undefin
   };
 };
 
+const localeFieldToText = (value: LocaleField): LocaleText => ({
+  es: value.es.trim(),
+  en: value.en.trim(),
+});
+
+const localeFieldToTextWithFallback = (value: LocaleField): LocaleText => ({
+  es: value.es.trim() || value.en.trim(),
+  en: value.en.trim() || value.es.trim(),
+});
+
+const normalizeLocaleListField = (values: LocaleField[]): LocaleText[] =>
+  values.map(localeFieldToText).filter((item) => item.es.length > 0 || item.en.length > 0);
+
 const imageHasData = (image: ImageField): boolean =>
   image.src.trim().length > 0 || image.publicId.trim().length > 0;
 
 const randomId = () => Math.random().toString(36).slice(2, 10);
+
+const slugifyCategory = (value: string): string => {
+  const normalized = value
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/gi, "-")
+    .replace(/-{2,}/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .trim();
+
+  return normalized || value.trim();
+};
+
+const buildSitePayload = (draft: SiteContentField): SiteContent => ({
+  navigation: {
+    brand: localeFieldToText(trimLocaleField(draft.navigation.brand)),
+    homeLabel: localeFieldToText(trimLocaleField(draft.navigation.homeLabel)),
+    servicesLabel: localeFieldToText(trimLocaleField(draft.navigation.servicesLabel)),
+    clientsLabel: localeFieldToText(trimLocaleField(draft.navigation.clientsLabel)),
+    projectsLabel: localeFieldToText(trimLocaleField(draft.navigation.projectsLabel)),
+    contactLabel: localeFieldToText(trimLocaleField(draft.navigation.contactLabel)),
+    openMenuLabel: localeFieldToText(trimLocaleField(draft.navigation.openMenuLabel)),
+    closeMenuLabel: localeFieldToText(trimLocaleField(draft.navigation.closeMenuLabel)),
+  },
+  home: {
+    heroHeadline: localeFieldToText(trimLocaleField(draft.home.heroHeadline)),
+    heroSubtitle: localeFieldToText(trimLocaleField(draft.home.heroSubtitle)),
+    heroPrimaryCta: localeFieldToText(trimLocaleField(draft.home.heroPrimaryCta)),
+    heroSecondaryCta: localeFieldToText(trimLocaleField(draft.home.heroSecondaryCta)),
+    heroTags: normalizeLocaleListField(draft.home.heroTags),
+    heroVideo:
+      draft.home.heroVideo.url.trim() || draft.home.heroVideo.publicId.trim() || draft.home.heroVideo.poster.trim()
+        ? {
+            url: draft.home.heroVideo.url.trim() || undefined,
+            publicId: draft.home.heroVideo.publicId.trim() || undefined,
+            poster: draft.home.heroVideo.poster.trim() || undefined,
+          }
+        : undefined,
+    servicesTitle: localeFieldToText(trimLocaleField(draft.home.servicesTitle)),
+    servicesCopy: localeFieldToText(trimLocaleField(draft.home.servicesCopy)),
+    servicesCta: localeFieldToText(trimLocaleField(draft.home.servicesCta)),
+    servicesTags: normalizeLocaleListField(draft.home.servicesTags),
+    servicesBadgeLabel: localeFieldToText(trimLocaleField(draft.home.servicesBadgeLabel)),
+    servicesCardCta: localeFieldToText(trimLocaleField(draft.home.servicesCardCta)),
+    projectsTitle: localeFieldToText(trimLocaleField(draft.home.projectsTitle)),
+    projectsDescription: localeFieldToText(trimLocaleField(draft.home.projectsDescription)),
+    projectsTags: normalizeLocaleListField(draft.home.projectsTags),
+    projectsBadgeLabel: localeFieldToText(trimLocaleField(draft.home.projectsBadgeLabel)),
+    projectsCardCta: localeFieldToText(trimLocaleField(draft.home.projectsCardCta)),
+    projectsImageAlt: localeFieldToText(trimLocaleField(draft.home.projectsImageAlt)),
+    projectsCta: localeFieldToText(trimLocaleField(draft.home.projectsCta)),
+    clientsTitle: localeFieldToText(trimLocaleField(draft.home.clientsTitle)),
+    clientsWebsiteLabel: localeFieldToText(trimLocaleField(draft.home.clientsWebsiteLabel)),
+    contactCta: localeFieldToText(trimLocaleField(draft.home.contactCta)),
+  },
+  servicesPage: {
+    title: localeFieldToText(trimLocaleField(draft.servicesPage.title)),
+    copy: localeFieldToText(trimLocaleField(draft.servicesPage.copy)),
+    ctaLabel: localeFieldToText(trimLocaleField(draft.servicesPage.ctaLabel)),
+    chips: normalizeLocaleListField(draft.servicesPage.chips),
+    outcomesLabel: localeFieldToText(trimLocaleField(draft.servicesPage.outcomesLabel)),
+    quickMapLabel: localeFieldToText(trimLocaleField(draft.servicesPage.quickMapLabel)),
+    highlightPrimaryLabel: localeFieldToText(trimLocaleField(draft.servicesPage.highlightPrimaryLabel)),
+    highlightSecondaryLabel: localeFieldToText(trimLocaleField(draft.servicesPage.highlightSecondaryLabel)),
+    sessionTitle: localeFieldToText(trimLocaleField(draft.servicesPage.sessionTitle)),
+    sessionCopy: localeFieldToText(trimLocaleField(draft.servicesPage.sessionCopy)),
+    talkCtaLabel: localeFieldToText(trimLocaleField(draft.servicesPage.talkCtaLabel)),
+    backToTopLabel: localeFieldToText(trimLocaleField(draft.servicesPage.backToTopLabel)),
+    imageSrc: draft.servicesPage.imageSrc.trim() || undefined,
+    imageAlt: localeFieldToText(trimLocaleField(draft.servicesPage.imageAlt)),
+    gallery: draft.servicesPage.gallery
+      .map((image) => ({
+        src: image.src.trim(),
+        alt: localeFieldToText(trimLocaleField(image.alt)),
+      }))
+      .filter((image) => image.src.length > 0),
+  },
+  projectsPage: {
+    title: localeFieldToText(trimLocaleField(draft.projectsPage.title)),
+    copy: localeFieldToText(trimLocaleField(draft.projectsPage.copy)),
+    filterAllLabel: localeFieldToText(trimLocaleField(draft.projectsPage.filterAllLabel)),
+    emptyState: localeFieldToText(trimLocaleField(draft.projectsPage.emptyState)),
+    cardCta: localeFieldToText(trimLocaleField(draft.projectsPage.cardCta)),
+    ctaTitle: localeFieldToText(trimLocaleField(draft.projectsPage.ctaTitle)),
+    ctaDescription: localeFieldToText(trimLocaleField(draft.projectsPage.ctaDescription)),
+    ctaAction: localeFieldToText(trimLocaleField(draft.projectsPage.ctaAction)),
+  },
+  clientsPage: {
+    title: localeFieldToText(trimLocaleField(draft.clientsPage.title)),
+    copy: localeFieldToText(trimLocaleField(draft.clientsPage.copy)),
+    imageSrc: draft.clientsPage.imageSrc.trim() || undefined,
+    imageAlt: localeFieldToText(trimLocaleField(draft.clientsPage.imageAlt)),
+    websiteLabel: localeFieldToText(trimLocaleField(draft.clientsPage.websiteLabel)),
+  },
+  contact: {
+    title: localeFieldToText(trimLocaleField(draft.contact.title)),
+    copy: localeFieldToText(trimLocaleField(draft.contact.copy)),
+    email: draft.contact.email.trim(),
+    preparation: normalizeLocaleListField(draft.contact.preparation),
+    bookCallTitle: localeFieldToText(trimLocaleField(draft.contact.bookCallTitle)),
+    bookCallCopy: localeFieldToText(trimLocaleField(draft.contact.bookCallCopy)),
+    bookCallCta: localeFieldToText(trimLocaleField(draft.contact.bookCallCta)),
+    preparationTitle: localeFieldToText(trimLocaleField(draft.contact.preparationTitle)),
+    formTitle: localeFieldToText(trimLocaleField(draft.contact.formTitle)),
+    formSubtitle: localeFieldToText(trimLocaleField(draft.contact.formSubtitle)),
+    successLabel: localeFieldToText(trimLocaleField(draft.contact.successLabel)),
+    nameLabel: localeFieldToText(trimLocaleField(draft.contact.nameLabel)),
+    emailLabel: localeFieldToText(trimLocaleField(draft.contact.emailLabel)),
+    organizationLabel: localeFieldToText(trimLocaleField(draft.contact.organizationLabel)),
+    phoneLabel: localeFieldToText(trimLocaleField(draft.contact.phoneLabel)),
+    subjectLabel: localeFieldToText(trimLocaleField(draft.contact.subjectLabel)),
+    messageLabel: localeFieldToText(trimLocaleField(draft.contact.messageLabel)),
+    submitLabel: localeFieldToText(trimLocaleField(draft.contact.submitLabel)),
+    sendingLabel: localeFieldToText(trimLocaleField(draft.contact.sendingLabel)),
+    moreContactTitle: localeFieldToText(trimLocaleField(draft.contact.moreContactTitle)),
+    moreContactLabel: localeFieldToText(trimLocaleField(draft.contact.moreContactLabel)),
+    moreContactNote: localeFieldToText(trimLocaleField(draft.contact.moreContactNote)),
+    imageSrc: draft.contact.imageSrc.trim() || undefined,
+    imageAlt: localeFieldToText(trimLocaleField(draft.contact.imageAlt)),
+  },
+  footer: {
+    tagline: localeFieldToText(trimLocaleField(draft.footer.tagline)),
+    adminLabel: localeFieldToText(trimLocaleField(draft.footer.adminLabel)),
+    instagramLabel: localeFieldToText(trimLocaleField(draft.footer.instagramLabel)),
+    instagramUrl: draft.footer.instagramUrl.trim() || undefined,
+    facebookLabel: localeFieldToText(trimLocaleField(draft.footer.facebookLabel)),
+    facebookUrl: draft.footer.facebookUrl.trim() || undefined,
+    linkedinLabel: localeFieldToText(trimLocaleField(draft.footer.linkedinLabel)),
+    linkedinUrl: draft.footer.linkedinUrl.trim() || undefined,
+  },
+  services: draft.services.map((service) => ({
+    slug: slugifyCategory(service.slug) || slugifyCategory(service.title.es || service.title.en),
+    title: localeFieldToTextWithFallback(trimLocaleField(service.title)),
+    summary: localeFieldToTextWithFallback(trimLocaleField(service.summary)),
+    outcomes: normalizeLocaleListField(service.outcomes),
+  })),
+});
 
 const uploadToCloudinary = async (file: File, folder: string) => {
   const formData = new FormData();
@@ -211,6 +634,1158 @@ const CloudinaryLibraryShortcut = ({
           </p>
         </div>
       </div>
+    </section>
+  );
+};
+
+const RichTextInput = ({
+  value,
+  onChange,
+  placeholder,
+}: {
+  value: string;
+  onChange: (value: string) => void;
+  placeholder?: string;
+}) => {
+  const editorRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      // Ensure formatting commands emit inline CSS styles for consistency across browsers.
+      document.execCommand("styleWithCSS", false, "true");
+    }
+  }, []);
+
+  const syncContent = useCallback(() => {
+    const html = editorRef.current?.innerHTML ?? "";
+    onChange(html);
+  }, [onChange]);
+
+  useEffect(() => {
+    const editor = editorRef.current;
+    if (editor && editor.innerHTML !== value) {
+      editor.innerHTML = value || "";
+    }
+  }, [value]);
+
+  const exec = useCallback((command: string, arg?: string) => {
+    if (typeof document === "undefined") return;
+    editorRef.current?.focus();
+    document.execCommand(command, false, arg);
+    syncContent();
+  }, [syncContent]);
+
+  return (
+    <div className="space-y-2">
+      <div className="flex flex-wrap items-center gap-2 rounded-2xl border border-foreground/10 bg-foreground/5 px-3 py-2 text-xs font-semibold text-foreground/70">
+        <button
+          type="button"
+          onClick={() => exec("bold")}
+          className="rounded-lg px-2 py-1 transition hover:bg-foreground/10"
+        >
+          B
+        </button>
+        <button
+          type="button"
+          onClick={() => exec("italic")}
+          className="rounded-lg px-2 py-1 transition hover:bg-foreground/10"
+        >
+          I
+        </button>
+        <button
+          type="button"
+          onClick={() => exec("underline")}
+          className="rounded-lg px-2 py-1 transition hover:bg-foreground/10"
+        >
+          U
+        </button>
+        <select
+          className="rounded-lg border border-foreground/10 bg-background px-2 py-1 text-xs"
+          onChange={(event) => exec("fontSize", event.target.value)}
+          defaultValue=""
+        >
+          <option value="">Tamaño</option>
+          <option value="2">Pequeño</option>
+          <option value="3">Base</option>
+          <option value="4">Grande</option>
+          <option value="5">Muy grande</option>
+        </select>
+        <label className="flex items-center gap-2 rounded-lg px-2 py-1 transition hover:bg-foreground/10">
+          <span>Color</span>
+          <input type="color" onChange={(event) => exec("foreColor", event.target.value)} />
+        </label>
+      </div>
+      <div
+        ref={editorRef}
+        contentEditable
+        suppressContentEditableWarning
+        className="min-h-[120px] w-full rounded-2xl border border-foreground/10 bg-background px-3 py-2 text-sm leading-relaxed focus:border-foreground/40 focus:outline-none"
+        onInput={syncContent}
+        data-placeholder={placeholder}
+      />
+    </div>
+  );
+};
+
+const RichLocaleInputs = ({
+  label,
+  value,
+  onChange,
+  placeholder,
+}: {
+  label: string;
+  value: LocaleField;
+  onChange: (value: LocaleField) => void;
+  placeholder?: string;
+}) => (
+  <div className="space-y-2">
+    <p className="text-sm font-semibold text-foreground/80">{label}</p>
+    <div className="grid gap-4 sm:grid-cols-2">
+      <div className="space-y-1 text-sm text-foreground/70">
+        <span className="block text-xs font-semibold uppercase tracking-[0.16em] text-foreground/50">ES</span>
+        <RichTextInput value={value.es} onChange={(content) => onChange({ ...value, es: content })} placeholder={placeholder} />
+      </div>
+      <div className="space-y-1 text-sm text-foreground/70">
+        <span className="block text-xs font-semibold uppercase tracking-[0.16em] text-foreground/50">EN</span>
+        <RichTextInput value={value.en} onChange={(content) => onChange({ ...value, en: content })} placeholder={placeholder} />
+      </div>
+    </div>
+  </div>
+);
+
+const LocaleListEditor = ({
+  label,
+  values,
+  onChange,
+  addLabel,
+}: {
+  label: string;
+  values: LocaleField[];
+  onChange: (values: LocaleField[]) => void;
+  addLabel?: string;
+}) => (
+  <div className="space-y-2">
+    <p className="text-sm font-semibold text-foreground/80">{label}</p>
+    <div className="space-y-3">
+      {values.map((item, index) => (
+        <div key={`${label}-${index}`} className="rounded-2xl border border-foreground/10 bg-background px-3 py-2">
+          <div className="flex items-center justify-between gap-3">
+            <p className="text-xs uppercase tracking-[0.14em] text-foreground/60">{String(index + 1).padStart(2, "0")}</p>
+            <button
+              type="button"
+              onClick={() => onChange(values.filter((_, itemIndex) => itemIndex !== index))}
+              className="text-xs font-semibold text-foreground/50 hover:text-foreground"
+            >
+              {"Eliminar"}
+            </button>
+          </div>
+          <div className="mt-2 grid gap-2 sm:grid-cols-2">
+            <input
+              className="w-full rounded-xl border border-foreground/10 bg-background px-3 py-2 text-sm"
+              placeholder="Texto ES"
+              value={item.es}
+              onChange={(event) => {
+                const next = [...values];
+                next[index] = { ...item, es: event.target.value };
+                onChange(next);
+              }}
+            />
+            <input
+              className="w-full rounded-xl border border-foreground/10 bg-background px-3 py-2 text-sm"
+              placeholder="Texto EN"
+              value={item.en}
+              onChange={(event) => {
+                const next = [...values];
+                next[index] = { ...item, en: event.target.value };
+                onChange(next);
+              }}
+            />
+          </div>
+        </div>
+      ))}
+      <button
+        type="button"
+        onClick={() => onChange([...values, { es: "", en: "" }])}
+        className="inline-flex items-center gap-2 rounded-full border border-foreground/10 px-3 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-foreground/70 hover:border-foreground/30"
+      >
+        {addLabel ?? "Agregar"}
+      </button>
+    </div>
+  </div>
+);
+
+const ServiceEditor = ({
+  service,
+  onChange,
+  onRemove,
+}: {
+  service: ServiceField;
+  onChange: (value: ServiceField) => void;
+  onRemove: () => void;
+}) => (
+  <div className="space-y-3 rounded-3xl border border-foreground/10 bg-background/70 p-4">
+    <div className="flex items-center justify-between gap-2">
+      <p className="text-sm font-semibold text-foreground/80">Servicio</p>
+      <button
+        type="button"
+        onClick={onRemove}
+        className="text-xs font-semibold text-foreground/50 transition hover:text-foreground"
+      >
+        Eliminar
+      </button>
+    </div>
+    <label className="space-y-1 text-sm text-foreground/70">
+      <span className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/50">Slug</span>
+      <input
+        className="w-full rounded-xl border border-foreground/10 bg-background px-3 py-2 text-sm"
+        value={service.slug}
+        onChange={(event) => onChange({ ...service, slug: event.target.value })}
+      />
+    </label>
+    <RichLocaleInputs label="Título" value={service.title} onChange={(value) => onChange({ ...service, title: value })} />
+    <RichLocaleInputs
+      label="Descripción breve"
+      value={service.summary}
+      onChange={(value) => onChange({ ...service, summary: value })}
+    />
+    <LocaleListEditor
+      label="Entregables"
+      addLabel="Agregar entregable"
+      values={service.outcomes}
+      onChange={(values) => onChange({ ...service, outcomes: values })}
+    />
+  </div>
+);
+
+const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
+  const router = useRouter();
+  const [draft, setDraft] = useState<SiteContentField>(() => createSiteContentField(siteContent));
+  const [status, setStatus] = useState<"idle" | "saving">("idle");
+  const [message, setMessage] = useState<string | null>(null);
+  const [activeSection, setActiveSection] = useState<SiteContentSection>("home");
+  const [heroVideoUploadStatus, setHeroVideoUploadStatus] = useState<"idle" | "uploading">("idle");
+  const [heroPosterUploadStatus, setHeroPosterUploadStatus] = useState<"idle" | "uploading">("idle");
+
+  const handleSave = useCallback(async () => {
+    setStatus("saving");
+    setMessage(null);
+
+    const payload = buildSitePayload(draft);
+
+    const response = await fetch("/api/site", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+      credentials: "include",
+    });
+
+    if (!response.ok) {
+      const data = await response.json().catch(() => ({}));
+      setStatus("idle");
+      setMessage(extractApiErrorMessage(data, "No se pudo guardar el contenido"));
+      return;
+    }
+
+    setStatus("idle");
+    setMessage("Contenido guardado en MongoDB.");
+    router.refresh();
+  }, [draft, router]);
+
+  const handleHeroVideoFile = useCallback(
+    async (file?: File) => {
+      if (!file) return;
+
+      setHeroVideoUploadStatus("uploading");
+      setMessage(null);
+
+      try {
+        const result = await uploadToCloudinary(file, "site/hero/video");
+        setDraft((previous) => ({
+          ...previous,
+          home: {
+            ...previous.home,
+            heroVideo: {
+              ...previous.home.heroVideo,
+              url: result.src,
+              publicId: result.publicId,
+            },
+          },
+        }));
+        setMessage("Video subido a Cloudinary. Se usará como fondo en el hero.");
+      } catch (error) {
+        setMessage(error instanceof Error ? error.message : "No se pudo subir el video");
+      } finally {
+        setHeroVideoUploadStatus("idle");
+      }
+    },
+    [],
+  );
+
+  const handleHeroPosterFile = useCallback(
+    async (file?: File) => {
+      if (!file) return;
+
+      setHeroPosterUploadStatus("uploading");
+      setMessage(null);
+
+      try {
+        const result = await uploadToCloudinary(file, "site/hero/poster");
+        setDraft((previous) => ({
+          ...previous,
+          home: {
+            ...previous.home,
+            heroVideo: { ...previous.home.heroVideo, poster: result.src },
+          },
+        }));
+        setMessage("Poster subido a Cloudinary y listo para el video de fondo.");
+      } catch (error) {
+        setMessage(error instanceof Error ? error.message : "No se pudo subir el poster");
+      } finally {
+        setHeroPosterUploadStatus("idle");
+      }
+    },
+    [],
+  );
+
+  const siteSections: { key: SiteContentSection; label: string; description: string }[] = [
+    {
+      key: "navigation",
+      label: "Navegación",
+      description: "Nombre del sitio, menú y etiquetas del header.",
+    },
+    {
+      key: "home",
+      label: "Home",
+      description: "Hero, video de fondo y CTAs principales.",
+    },
+    {
+      key: "servicesPage",
+      label: "Servicios",
+      description: "Copy de la página y chips destacados.",
+    },
+    {
+      key: "projectsPage",
+      label: "Proyectos",
+      description: "Hero, filtros y CTA de la página de proyectos.",
+    },
+    {
+      key: "clientsPage",
+      label: "Clientes",
+      description: "Título, copy e imagen de la página de clientes.",
+    },
+    {
+      key: "contact",
+      label: "Contacto",
+      description: "Texto, correo y lista de preparación.",
+    },
+    {
+      key: "footer",
+      label: "Footer",
+      description: "Copy inferior, Instagram y enlace de administración.",
+    },
+    {
+      key: "servicesList",
+      label: "Lista de servicios",
+      description: "Ofertas publicadas y entregables.",
+    },
+  ];
+
+  return (
+    <section className="space-y-6 rounded-4xl border border-foreground/10 bg-foreground/5 p-6 shadow-sm">
+      <header className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/50">Sitio</p>
+          <h2 className="text-xl font-semibold text-foreground">Copys generales</h2>
+          <p className="text-sm text-foreground/70">Edita los textos del home, servicios y contacto desde un solo lugar.</p>
+        </div>
+        <button
+          type="button"
+          onClick={handleSave}
+          disabled={status === "saving"}
+          className="inline-flex items-center gap-2 rounded-full bg-foreground px-4 py-2 text-sm font-semibold text-background shadow-sm transition hover:-translate-y-0.5 hover:bg-foreground/90 disabled:cursor-not-allowed disabled:opacity-70"
+        >
+          {status === "saving" ? "Guardando..." : "Guardar cambios"}
+        </button>
+      </header>
+
+      {message && (
+        <p className="rounded-2xl border border-foreground/10 bg-background px-4 py-3 text-sm text-foreground/80">{message}</p>
+      )}
+
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        {siteSections.map((section) => (
+          <button
+            key={section.key}
+            type="button"
+            onClick={() => setActiveSection(section.key)}
+            className={`flex flex-col items-start rounded-3xl border p-4 text-left transition ${
+              activeSection === section.key
+                ? "border-foreground/40 bg-background shadow-sm"
+                : "border-foreground/10 bg-background/60 hover:border-foreground/20"
+            }`}
+          >
+            <span className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/60">{section.label}</span>
+            <p className="pt-1 text-sm text-foreground/80">{section.description}</p>
+          </button>
+        ))}
+      </div>
+
+      {activeSection === "home" && (
+        <div className="space-y-4 rounded-3xl border border-foreground/10 bg-background p-4">
+          <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-foreground/60">Home</h3>
+          <RichLocaleInputs
+            label="Titular principal"
+            value={draft.home.heroHeadline}
+            onChange={(value) => setDraft({ ...draft, home: { ...draft.home, heroHeadline: value } })}
+          />
+          <RichLocaleInputs
+            label="Subtítulo"
+            value={draft.home.heroSubtitle}
+            onChange={(value) => setDraft({ ...draft, home: { ...draft.home, heroSubtitle: value } })}
+            placeholder="Redacta con estilos: negritas, itálicas, color y tamaños."
+          />
+          <RichLocaleInputs
+            label="CTA primaria"
+            value={draft.home.heroPrimaryCta}
+            onChange={(value) => setDraft({ ...draft, home: { ...draft.home, heroPrimaryCta: value } })}
+          />
+          <RichLocaleInputs
+            label="CTA secundaria"
+            value={draft.home.heroSecondaryCta}
+            onChange={(value) => setDraft({ ...draft, home: { ...draft.home, heroSecondaryCta: value } })}
+          />
+          <div className="space-y-2 rounded-2xl border border-foreground/10 bg-foreground/[0.03] p-3 text-sm text-foreground/70">
+            <div className="flex items-center justify-between gap-3 text-xs uppercase tracking-[0.14em] text-foreground/60">
+              <span>Video de fondo (opcional)</span>
+              <span className="rounded-full bg-foreground/10 px-2 py-0.5 text-[11px] font-semibold text-foreground/70">Hero</span>
+            </div>
+            <p className="text-xs text-foreground/60">
+              Sube un video a Cloudinary o pega cualquier URL segura (mp4/webm). El video se reproducirá en loop detrás de las tarjetas
+              de Discovery/Delivery/Growth.
+            </p>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <label className="space-y-1">
+                <span className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/60">URL del video</span>
+                <input
+                  className="w-full rounded-xl border border-foreground/10 bg-background px-3 py-2 text-sm"
+                  placeholder="https://.../video.mp4"
+                  value={draft.home.heroVideo.url}
+                  onChange={(event) =>
+                    setDraft({
+                      ...draft,
+                      home: { ...draft.home, heroVideo: { ...draft.home.heroVideo, url: event.target.value } },
+                    })
+                  }
+                />
+              </label>
+              <label className="space-y-1">
+                <span className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/60">Public ID (Cloudinary)</span>
+                <input
+                  className="w-full rounded-xl border border-foreground/10 bg-background px-3 py-2 text-sm"
+                  placeholder="carpeta/video-id"
+                  value={draft.home.heroVideo.publicId}
+                  onChange={(event) =>
+                    setDraft({
+                      ...draft,
+                      home: { ...draft.home, heroVideo: { ...draft.home.heroVideo, publicId: event.target.value } },
+                    })
+                  }
+                />
+              </label>
+              <label className="space-y-1">
+                <span className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/60">Poster (opcional)</span>
+                <input
+                  className="w-full rounded-xl border border-foreground/10 bg-background px-3 py-2 text-sm"
+                  placeholder="https://.../frame.jpg"
+                  value={draft.home.heroVideo.poster}
+                  onChange={(event) =>
+                    setDraft({
+                      ...draft,
+                      home: { ...draft.home, heroVideo: { ...draft.home.heroVideo, poster: event.target.value } },
+                    })
+                  }
+                />
+              </label>
+              <div className="flex flex-wrap gap-2 pt-1 text-xs text-foreground/60">
+                <label className="inline-flex items-center gap-2 rounded-full border border-foreground/10 px-3 py-1 font-semibold text-foreground/80 hover:border-foreground/30">
+                  <input
+                    type="file"
+                    accept="video/*"
+                    className="hidden"
+                    onChange={(event) => {
+                      const [file] = Array.from(event.target.files ?? []);
+                      void handleHeroVideoFile(file);
+                      event.target.value = "";
+                    }}
+                  />
+                  {heroVideoUploadStatus === "uploading" ? "Subiendo video..." : "Subir video"}
+                </label>
+                <label className="inline-flex items-center gap-2 rounded-full border border-foreground/10 px-3 py-1 font-semibold text-foreground/80 hover:border-foreground/30">
+                  <input
+                    type="file"
+                    accept="image/*"
+                    className="hidden"
+                    onChange={(event) => {
+                      const [file] = Array.from(event.target.files ?? []);
+                      void handleHeroPosterFile(file);
+                      event.target.value = "";
+                    }}
+                  />
+                  {heroPosterUploadStatus === "uploading" ? "Subiendo poster..." : "Subir poster"}
+                </label>
+              </div>
+            </div>
+          </div>
+          <LocaleListEditor
+            label="Chips del hero"
+            addLabel="Agregar chip"
+            values={draft.home.heroTags}
+            onChange={(values) => setDraft({ ...draft, home: { ...draft.home, heroTags: values } })}
+          />
+          <RichLocaleInputs
+            label="Título de servicios"
+            value={draft.home.servicesTitle}
+            onChange={(value) => setDraft({ ...draft, home: { ...draft.home, servicesTitle: value } })}
+          />
+          <RichLocaleInputs
+            label="Etiqueta sección servicios"
+            value={draft.home.servicesBadgeLabel}
+            onChange={(value) => setDraft({ ...draft, home: { ...draft.home, servicesBadgeLabel: value } })}
+          />
+          <RichLocaleInputs
+            label="Descripción de servicios"
+            value={draft.home.servicesCopy}
+            onChange={(value) => setDraft({ ...draft, home: { ...draft.home, servicesCopy: value } })}
+          />
+          <RichLocaleInputs
+            label="CTA de servicios"
+            value={draft.home.servicesCta}
+            onChange={(value) => setDraft({ ...draft, home: { ...draft.home, servicesCta: value } })}
+          />
+          <RichLocaleInputs
+            label="CTA tarjetas de servicio"
+            value={draft.home.servicesCardCta}
+            onChange={(value) => setDraft({ ...draft, home: { ...draft.home, servicesCardCta: value } })}
+          />
+          <LocaleListEditor
+            label="Píldoras de servicios"
+            addLabel="Agregar píldora"
+            values={draft.home.servicesTags}
+            onChange={(values) => setDraft({ ...draft, home: { ...draft.home, servicesTags: values } })}
+          />
+          <RichLocaleInputs
+            label="Título de proyectos"
+            value={draft.home.projectsTitle}
+            onChange={(value) => setDraft({ ...draft, home: { ...draft.home, projectsTitle: value } })}
+          />
+          <RichLocaleInputs
+            label="Etiqueta sección proyectos"
+            value={draft.home.projectsBadgeLabel}
+            onChange={(value) => setDraft({ ...draft, home: { ...draft.home, projectsBadgeLabel: value } })}
+          />
+          <RichLocaleInputs
+            label="Descripción de proyectos"
+            value={draft.home.projectsDescription}
+            onChange={(value) => setDraft({ ...draft, home: { ...draft.home, projectsDescription: value } })}
+          />
+          <LocaleListEditor
+            label="Píldoras de proyectos"
+            addLabel="Agregar píldora"
+            values={draft.home.projectsTags}
+            onChange={(values) => setDraft({ ...draft, home: { ...draft.home, projectsTags: values } })}
+          />
+          <RichLocaleInputs
+            label="CTA tarjetas de proyecto"
+            value={draft.home.projectsCardCta}
+            onChange={(value) => setDraft({ ...draft, home: { ...draft.home, projectsCardCta: value } })}
+          />
+          <RichLocaleInputs
+            label="Alt imagen proyectos"
+            value={draft.home.projectsImageAlt}
+            onChange={(value) => setDraft({ ...draft, home: { ...draft.home, projectsImageAlt: value } })}
+          />
+          <RichLocaleInputs
+            label="CTA de proyectos"
+            value={draft.home.projectsCta}
+            onChange={(value) => setDraft({ ...draft, home: { ...draft.home, projectsCta: value } })}
+          />
+          <RichLocaleInputs
+            label="Título de clientes"
+            value={draft.home.clientsTitle}
+            onChange={(value) => setDraft({ ...draft, home: { ...draft.home, clientsTitle: value } })}
+          />
+          <RichLocaleInputs
+            label="CTA de contacto"
+            value={draft.home.contactCta}
+            onChange={(value) => setDraft({ ...draft, home: { ...draft.home, contactCta: value } })}
+          />
+          <RichLocaleInputs
+            label="Texto de enlace a sitios de clientes"
+            value={draft.home.clientsWebsiteLabel}
+            onChange={(value) => setDraft({ ...draft, home: { ...draft.home, clientsWebsiteLabel: value } })}
+          />
+        </div>
+      )}
+
+      {activeSection === "navigation" && (
+        <div className="space-y-4 rounded-3xl border border-foreground/10 bg-background p-4">
+          <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-foreground/60">Navegación</h3>
+          <RichLocaleInputs
+            label="Nombre del sitio"
+            value={draft.navigation.brand}
+            onChange={(value) => setDraft({ ...draft, navigation: { ...draft.navigation, brand: value } })}
+          />
+          <div className="grid gap-4 lg:grid-cols-2">
+            <RichLocaleInputs
+              label="Etiqueta Inicio"
+              value={draft.navigation.homeLabel}
+              onChange={(value) => setDraft({ ...draft, navigation: { ...draft.navigation, homeLabel: value } })}
+            />
+            <RichLocaleInputs
+              label="Etiqueta Servicios"
+              value={draft.navigation.servicesLabel}
+              onChange={(value) => setDraft({ ...draft, navigation: { ...draft.navigation, servicesLabel: value } })}
+            />
+            <RichLocaleInputs
+              label="Etiqueta Clientes"
+              value={draft.navigation.clientsLabel}
+              onChange={(value) => setDraft({ ...draft, navigation: { ...draft.navigation, clientsLabel: value } })}
+            />
+            <RichLocaleInputs
+              label="Etiqueta Proyectos"
+              value={draft.navigation.projectsLabel}
+              onChange={(value) => setDraft({ ...draft, navigation: { ...draft.navigation, projectsLabel: value } })}
+            />
+            <RichLocaleInputs
+              label="Etiqueta Contacto"
+              value={draft.navigation.contactLabel}
+              onChange={(value) => setDraft({ ...draft, navigation: { ...draft.navigation, contactLabel: value } })}
+            />
+            <RichLocaleInputs
+              label="Label abrir menú"
+              value={draft.navigation.openMenuLabel}
+              onChange={(value) => setDraft({ ...draft, navigation: { ...draft.navigation, openMenuLabel: value } })}
+            />
+            <RichLocaleInputs
+              label="Label cerrar menú"
+              value={draft.navigation.closeMenuLabel}
+              onChange={(value) => setDraft({ ...draft, navigation: { ...draft.navigation, closeMenuLabel: value } })}
+            />
+          </div>
+        </div>
+      )}
+
+      {activeSection === "servicesPage" && (
+        <div className="space-y-4 rounded-3xl border border-foreground/10 bg-background p-4">
+          <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-foreground/60">Servicios</h3>
+          <RichLocaleInputs
+            label="Título página servicios"
+            value={draft.servicesPage.title}
+            onChange={(value) => setDraft({ ...draft, servicesPage: { ...draft.servicesPage, title: value } })}
+          />
+          <RichLocaleInputs
+            label="Copy principal servicios"
+            value={draft.servicesPage.copy}
+            onChange={(value) => setDraft({ ...draft, servicesPage: { ...draft.servicesPage, copy: value } })}
+          />
+          <RichLocaleInputs
+            label="CTA servicios"
+            value={draft.servicesPage.ctaLabel}
+            onChange={(value) => setDraft({ ...draft, servicesPage: { ...draft.servicesPage, ctaLabel: value } })}
+          />
+          <LocaleListEditor
+            label="Chips de servicios"
+            values={draft.servicesPage.chips}
+            onChange={(values) => setDraft({ ...draft, servicesPage: { ...draft.servicesPage, chips: values } })}
+          />
+          <RichLocaleInputs
+            label="Etiqueta mapa rápido"
+            value={draft.servicesPage.quickMapLabel}
+            onChange={(value) => setDraft({ ...draft, servicesPage: { ...draft.servicesPage, quickMapLabel: value } })}
+          />
+          <RichLocaleInputs
+            label="Etiqueta highlight 1"
+            value={draft.servicesPage.highlightPrimaryLabel}
+            onChange={(value) =>
+              setDraft({ ...draft, servicesPage: { ...draft.servicesPage, highlightPrimaryLabel: value } })
+            }
+          />
+          <RichLocaleInputs
+            label="Etiqueta highlight 2"
+            value={draft.servicesPage.highlightSecondaryLabel}
+            onChange={(value) =>
+              setDraft({ ...draft, servicesPage: { ...draft.servicesPage, highlightSecondaryLabel: value } })
+            }
+          />
+          <RichLocaleInputs
+            label="Título sesión inicial"
+            value={draft.servicesPage.sessionTitle}
+            onChange={(value) => setDraft({ ...draft, servicesPage: { ...draft.servicesPage, sessionTitle: value } })}
+          />
+          <RichLocaleInputs
+            label="Copy sesión inicial"
+            value={draft.servicesPage.sessionCopy}
+            onChange={(value) => setDraft({ ...draft, servicesPage: { ...draft.servicesPage, sessionCopy: value } })}
+          />
+          <RichLocaleInputs
+            label="CTA hablar con el equipo"
+            value={draft.servicesPage.talkCtaLabel}
+            onChange={(value) => setDraft({ ...draft, servicesPage: { ...draft.servicesPage, talkCtaLabel: value } })}
+          />
+          <RichLocaleInputs
+            label="Título de entregables"
+            value={draft.servicesPage.outcomesLabel}
+            onChange={(value) => setDraft({ ...draft, servicesPage: { ...draft.servicesPage, outcomesLabel: value } })}
+          />
+          <label className="space-y-1 text-sm text-foreground/70">
+            <span className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/50">URL imagen servicios</span>
+            <input
+              className="w-full rounded-xl border border-foreground/10 bg-background px-3 py-2 text-sm"
+              placeholder="/images/services-visual.svg"
+              value={draft.servicesPage.imageSrc}
+              onChange={(event) =>
+                setDraft({ ...draft, servicesPage: { ...draft.servicesPage, imageSrc: event.target.value } })
+              }
+            />
+          </label>
+          <RichLocaleInputs
+            label="Alt imagen servicios"
+            value={draft.servicesPage.imageAlt}
+            onChange={(value) => setDraft({ ...draft, servicesPage: { ...draft.servicesPage, imageAlt: value } })}
+          />
+          <div className="space-y-3 rounded-2xl border border-foreground/10 bg-foreground/[0.03] p-3">
+            <div className="flex items-center justify-between gap-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/60">Galería de servicios</p>
+              <button
+                type="button"
+                className="rounded-full border border-foreground/20 px-3 py-1 text-xs font-semibold text-foreground/70 hover:border-foreground/40"
+                onClick={() =>
+                  setDraft({
+                    ...draft,
+                    servicesPage: {
+                      ...draft.servicesPage,
+                      gallery: [...draft.servicesPage.gallery, createSiteGalleryImageField(randomId())],
+                    },
+                  })
+                }
+              >
+                Añadir imagen
+              </button>
+            </div>
+            <div className="space-y-3">
+              {draft.servicesPage.gallery.map((image) => (
+                <div key={image.id} className="space-y-2 rounded-xl border border-foreground/10 bg-background p-3">
+                  <div className="flex items-center justify-between gap-3">
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/50">Imagen</p>
+                    <button
+                      type="button"
+                      className="text-xs font-semibold text-red-500 hover:text-red-400"
+                      onClick={() =>
+                        setDraft({
+                          ...draft,
+                          servicesPage: {
+                            ...draft.servicesPage,
+                            gallery: draft.servicesPage.gallery.filter((item) => item.id !== image.id),
+                          },
+                        })
+                      }
+                    >
+                      Eliminar
+                    </button>
+                  </div>
+                  <label className="space-y-1 text-sm text-foreground/70">
+                    <span className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/50">URL imagen</span>
+                    <input
+                      className="w-full rounded-xl border border-foreground/10 bg-background px-3 py-2 text-sm"
+                      placeholder="/images/services-visual.svg"
+                      value={image.src}
+                      onChange={(event) =>
+                        setDraft({
+                          ...draft,
+                          servicesPage: {
+                            ...draft.servicesPage,
+                            gallery: draft.servicesPage.gallery.map((item) =>
+                              item.id === image.id ? { ...item, src: event.target.value } : item,
+                            ),
+                          },
+                        })
+                      }
+                    />
+                  </label>
+                  <div className="grid gap-3 md:grid-cols-2">
+                    <label className="space-y-1 text-sm text-foreground/70">
+                      <span className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/50">Alt ES</span>
+                      <input
+                        className="w-full rounded-xl border border-foreground/10 bg-background px-3 py-2 text-sm"
+                        value={image.alt.es}
+                        onChange={(event) =>
+                          setDraft({
+                            ...draft,
+                            servicesPage: {
+                              ...draft.servicesPage,
+                              gallery: draft.servicesPage.gallery.map((item) =>
+                                item.id === image.id ? { ...item, alt: { ...item.alt, es: event.target.value } } : item,
+                              ),
+                            },
+                          })
+                        }
+                      />
+                    </label>
+                    <label className="space-y-1 text-sm text-foreground/70">
+                      <span className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/50">Alt EN</span>
+                      <input
+                        className="w-full rounded-xl border border-foreground/10 bg-background px-3 py-2 text-sm"
+                        value={image.alt.en}
+                        onChange={(event) =>
+                          setDraft({
+                            ...draft,
+                            servicesPage: {
+                              ...draft.servicesPage,
+                              gallery: draft.servicesPage.gallery.map((item) =>
+                                item.id === image.id ? { ...item, alt: { ...item.alt, en: event.target.value } } : item,
+                              ),
+                            },
+                          })
+                        }
+                      />
+                    </label>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <RichLocaleInputs
+            label="CTA volver arriba"
+            value={draft.servicesPage.backToTopLabel}
+            onChange={(value) => setDraft({ ...draft, servicesPage: { ...draft.servicesPage, backToTopLabel: value } })}
+          />
+        </div>
+      )}
+
+      {activeSection === "projectsPage" && (
+        <div className="space-y-4 rounded-3xl border border-foreground/10 bg-background p-4">
+          <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-foreground/60">Proyectos</h3>
+          <RichLocaleInputs
+            label="Título página proyectos"
+            value={draft.projectsPage.title}
+            onChange={(value) => setDraft({ ...draft, projectsPage: { ...draft.projectsPage, title: value } })}
+          />
+          <RichLocaleInputs
+            label="Copy introductorio"
+            value={draft.projectsPage.copy}
+            onChange={(value) => setDraft({ ...draft, projectsPage: { ...draft.projectsPage, copy: value } })}
+            placeholder="Puedes usar negritas, itálicas, colores y tamaños."
+          />
+          <RichLocaleInputs
+            label="Etiqueta del filtro Todos"
+            value={draft.projectsPage.filterAllLabel}
+            onChange={(value) => setDraft({ ...draft, projectsPage: { ...draft.projectsPage, filterAllLabel: value } })}
+          />
+          <RichLocaleInputs
+            label="Estado vacío"
+            value={draft.projectsPage.emptyState}
+            onChange={(value) => setDraft({ ...draft, projectsPage: { ...draft.projectsPage, emptyState: value } })}
+          />
+          <RichLocaleInputs
+            label="CTA de tarjeta"
+            value={draft.projectsPage.cardCta}
+            onChange={(value) => setDraft({ ...draft, projectsPage: { ...draft.projectsPage, cardCta: value } })}
+          />
+          <RichLocaleInputs
+            label="Título CTA final"
+            value={draft.projectsPage.ctaTitle}
+            onChange={(value) => setDraft({ ...draft, projectsPage: { ...draft.projectsPage, ctaTitle: value } })}
+          />
+          <RichLocaleInputs
+            label="Descripción CTA"
+            value={draft.projectsPage.ctaDescription}
+            onChange={(value) => setDraft({ ...draft, projectsPage: { ...draft.projectsPage, ctaDescription: value } })}
+          />
+          <RichLocaleInputs
+            label="Botón CTA"
+            value={draft.projectsPage.ctaAction}
+            onChange={(value) => setDraft({ ...draft, projectsPage: { ...draft.projectsPage, ctaAction: value } })}
+          />
+        </div>
+      )}
+
+      {activeSection === "clientsPage" && (
+        <div className="space-y-4 rounded-3xl border border-foreground/10 bg-background p-4">
+          <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-foreground/60">Clientes</h3>
+          <RichLocaleInputs
+            label="Título"
+            value={draft.clientsPage.title}
+            onChange={(value) => setDraft({ ...draft, clientsPage: { ...draft.clientsPage, title: value } })}
+          />
+          <RichLocaleInputs
+            label="Descripción"
+            value={draft.clientsPage.copy}
+            onChange={(value) => setDraft({ ...draft, clientsPage: { ...draft.clientsPage, copy: value } })}
+          />
+          <label className="space-y-1 text-sm text-foreground/70">
+            <span className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/50">URL imagen</span>
+            <input
+              className="w-full rounded-xl border border-foreground/10 bg-background px-3 py-2 text-sm"
+              placeholder="/images/clients-visual.svg"
+              value={draft.clientsPage.imageSrc}
+              onChange={(event) =>
+                setDraft({ ...draft, clientsPage: { ...draft.clientsPage, imageSrc: event.target.value } })
+              }
+            />
+          </label>
+          <RichLocaleInputs
+            label="Alt imagen"
+            value={draft.clientsPage.imageAlt}
+            onChange={(value) => setDraft({ ...draft, clientsPage: { ...draft.clientsPage, imageAlt: value } })}
+          />
+          <RichLocaleInputs
+            label="Texto enlace sitio"
+            value={draft.clientsPage.websiteLabel}
+            onChange={(value) => setDraft({ ...draft, clientsPage: { ...draft.clientsPage, websiteLabel: value } })}
+          />
+        </div>
+      )}
+
+      {activeSection === "contact" && (
+        <div className="space-y-4 rounded-3xl border border-foreground/10 bg-background p-4">
+          <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-foreground/60">Contacto</h3>
+          <RichLocaleInputs
+            label="Título contacto"
+            value={draft.contact.title}
+            onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, title: value } })}
+          />
+          <RichLocaleInputs
+            label="Copy contacto"
+            value={draft.contact.copy}
+            onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, copy: value } })}
+          />
+          <label className="space-y-1 text-sm text-foreground/70">
+            <span className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/50">Correo</span>
+            <input
+              className="w-full rounded-xl border border-foreground/10 bg-background px-3 py-2 text-sm"
+              value={draft.contact.email}
+              onChange={(event) => setDraft({ ...draft, contact: { ...draft.contact, email: event.target.value } })}
+            />
+          </label>
+          <RichLocaleInputs
+            label="Título tarjeta agenda"
+            value={draft.contact.bookCallTitle}
+            onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, bookCallTitle: value } })}
+          />
+          <RichLocaleInputs
+            label="Copy tarjeta agenda"
+            value={draft.contact.bookCallCopy}
+            onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, bookCallCopy: value } })}
+          />
+          <RichLocaleInputs
+            label="CTA tarjeta agenda"
+            value={draft.contact.bookCallCta}
+            onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, bookCallCta: value } })}
+          />
+          <RichLocaleInputs
+            label="Título lista preparación"
+            value={draft.contact.preparationTitle}
+            onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, preparationTitle: value } })}
+          />
+          <LocaleListEditor
+            label="Lista de preparación"
+            addLabel="Agregar punto"
+            values={draft.contact.preparation}
+            onChange={(values) => setDraft({ ...draft, contact: { ...draft.contact, preparation: values } })}
+          />
+          <RichLocaleInputs
+            label="Título formulario"
+            value={draft.contact.formTitle}
+            onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, formTitle: value } })}
+          />
+          <RichLocaleInputs
+            label="Subtítulo formulario"
+            value={draft.contact.formSubtitle}
+            onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, formSubtitle: value } })}
+          />
+          <RichLocaleInputs
+            label="Etiqueta éxito"
+            value={draft.contact.successLabel}
+            onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, successLabel: value } })}
+          />
+          <div className="grid gap-4 md:grid-cols-2">
+            <RichLocaleInputs
+              label="Etiqueta nombre"
+              value={draft.contact.nameLabel}
+              onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, nameLabel: value } })}
+            />
+            <RichLocaleInputs
+              label="Etiqueta correo"
+              value={draft.contact.emailLabel}
+              onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, emailLabel: value } })}
+            />
+            <RichLocaleInputs
+              label="Etiqueta organización"
+              value={draft.contact.organizationLabel}
+              onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, organizationLabel: value } })}
+            />
+            <RichLocaleInputs
+              label="Etiqueta teléfono"
+              value={draft.contact.phoneLabel}
+              onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, phoneLabel: value } })}
+            />
+            <RichLocaleInputs
+              label="Etiqueta asunto"
+              value={draft.contact.subjectLabel}
+              onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, subjectLabel: value } })}
+            />
+            <RichLocaleInputs
+              label="Etiqueta mensaje"
+              value={draft.contact.messageLabel}
+              onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, messageLabel: value } })}
+            />
+          </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            <RichLocaleInputs
+              label="CTA enviar"
+              value={draft.contact.submitLabel}
+              onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, submitLabel: value } })}
+            />
+            <RichLocaleInputs
+              label="CTA enviando"
+              value={draft.contact.sendingLabel}
+              onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, sendingLabel: value } })}
+            />
+          </div>
+          <RichLocaleInputs
+            label="Título más formas de contacto"
+            value={draft.contact.moreContactTitle}
+            onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, moreContactTitle: value } })}
+          />
+          <RichLocaleInputs
+            label="Etiqueta más contacto"
+            value={draft.contact.moreContactLabel}
+            onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, moreContactLabel: value } })}
+          />
+          <RichLocaleInputs
+            label="Nota más contacto"
+            value={draft.contact.moreContactNote}
+            onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, moreContactNote: value } })}
+          />
+          <label className="space-y-1 text-sm text-foreground/70">
+            <span className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/50">URL imagen contacto</span>
+            <input
+              className="w-full rounded-xl border border-foreground/10 bg-background px-3 py-2 text-sm"
+              placeholder="/images/contact-visual.svg"
+              value={draft.contact.imageSrc}
+              onChange={(event) => setDraft({ ...draft, contact: { ...draft.contact, imageSrc: event.target.value } })}
+            />
+          </label>
+          <RichLocaleInputs
+            label="Alt imagen contacto"
+            value={draft.contact.imageAlt}
+            onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, imageAlt: value } })}
+          />
+        </div>
+      )}
+
+      {activeSection === "footer" && (
+        <div className="space-y-4 rounded-3xl border border-foreground/10 bg-background p-4">
+          <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-foreground/60">Footer</h3>
+          <RichLocaleInputs
+            label="Copy footer"
+            value={draft.footer.tagline}
+            onChange={(value) => setDraft({ ...draft, footer: { ...draft.footer, tagline: value } })}
+          />
+          <RichLocaleInputs
+            label="Etiqueta Instagram"
+            value={draft.footer.instagramLabel}
+            onChange={(value) => setDraft({ ...draft, footer: { ...draft.footer, instagramLabel: value } })}
+          />
+          <label className="space-y-1 text-sm text-foreground/70">
+            <span className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/50">URL Instagram</span>
+            <input
+              className="w-full rounded-xl border border-foreground/10 bg-background px-3 py-2 text-sm"
+              placeholder="https://www.instagram.com/..."
+              value={draft.footer.instagramUrl}
+              onChange={(event) =>
+                setDraft({ ...draft, footer: { ...draft.footer, instagramUrl: event.target.value } })
+              }
+            />
+          </label>
+          <RichLocaleInputs
+            label="Etiqueta Facebook"
+            value={draft.footer.facebookLabel}
+            onChange={(value) => setDraft({ ...draft, footer: { ...draft.footer, facebookLabel: value } })}
+          />
+          <label className="space-y-1 text-sm text-foreground/70">
+            <span className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/50">URL Facebook</span>
+            <input
+              className="w-full rounded-xl border border-foreground/10 bg-background px-3 py-2 text-sm"
+              placeholder="https://www.facebook.com/..."
+              value={draft.footer.facebookUrl}
+              onChange={(event) =>
+                setDraft({ ...draft, footer: { ...draft.footer, facebookUrl: event.target.value } })
+              }
+            />
+          </label>
+          <RichLocaleInputs
+            label="Etiqueta LinkedIn"
+            value={draft.footer.linkedinLabel}
+            onChange={(value) => setDraft({ ...draft, footer: { ...draft.footer, linkedinLabel: value } })}
+          />
+          <label className="space-y-1 text-sm text-foreground/70">
+            <span className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/50">URL LinkedIn</span>
+            <input
+              className="w-full rounded-xl border border-foreground/10 bg-background px-3 py-2 text-sm"
+              placeholder="https://www.linkedin.com/company/..."
+              value={draft.footer.linkedinUrl}
+              onChange={(event) =>
+                setDraft({ ...draft, footer: { ...draft.footer, linkedinUrl: event.target.value } })
+              }
+            />
+          </label>
+          <RichLocaleInputs
+            label="Etiqueta admin"
+            value={draft.footer.adminLabel}
+            onChange={(value) => setDraft({ ...draft, footer: { ...draft.footer, adminLabel: value } })}
+          />
+        </div>
+      )}
+
+      {activeSection === "servicesList" && (
+        <div className="space-y-3 rounded-3xl border border-foreground/10 bg-background/60 p-4">
+          <div className="flex items-center justify-between">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-foreground/60">Servicios publicados</h3>
+            <button
+              type="button"
+              onClick={() =>
+                setDraft({
+                  ...draft,
+                  services: [...draft.services, createServiceField(`service-${draft.services.length}`)],
+                })
+              }
+              className="inline-flex items-center gap-2 rounded-full border border-foreground/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-foreground/70 hover:border-foreground/30"
+            >
+              Agregar servicio
+            </button>
+          </div>
+          <div className="grid gap-3 md:grid-cols-2">
+            {draft.services.map((service, index) => (
+              <ServiceEditor
+                key={service.id}
+                service={service}
+                onRemove={() =>
+                  setDraft({
+                    ...draft,
+                    services: draft.services.filter((_, serviceIndex) => serviceIndex !== index),
+                  })
+                }
+                onChange={(value) => {
+                  const next = [...draft.services];
+                  next[index] = value;
+                  setDraft({ ...draft, services: next });
+                }}
+              />
+            ))}
+          </div>
+        </div>
+      )}
     </section>
   );
 };
@@ -729,6 +2304,7 @@ const ProjectManager = ({
   const [selectedSlug, setSelectedSlug] = useState<string>("new");
   const [status, setStatus] = useState<"idle" | "saving" | "deleting">("idle");
   const [message, setMessage] = useState<string | null>(null);
+  const [newCategoryInput, setNewCategoryInput] = useState("");
 
   const emptyForm = useMemo(
     () => ({
@@ -737,6 +2313,8 @@ const ProjectManager = ({
       subtitle: createLocaleField(),
       categories: [] as ProjectCategory[],
       year: "",
+      startYear: "",
+      endYear: "",
       client: createLocaleField(),
       location: createLocaleField(),
       cover: createImageField(randomId()),
@@ -746,11 +2324,26 @@ const ProjectManager = ({
       meta: [] as ProjectMetaField[],
       entities: [] as string[],
       order: "",
+      isPrivate: false,
     }),
     [],
   );
 
   const [form, setForm] = useState({ ...emptyForm });
+
+  const availableCategories = useMemo(() => {
+    const unique = new Set<ProjectCategory>(Object.keys(PROJECT_CATEGORY_LABELS));
+
+    projects.forEach((project) => {
+      project.categories.forEach((category) => unique.add(category));
+    });
+
+    form.categories.forEach((category) => unique.add(category));
+
+    return Array.from(unique).sort((a, b) =>
+      translateCategoryLabel("es", a).localeCompare(translateCategoryLabel("es", b)),
+    );
+  }, [projects, form.categories]);
 
   useEffect(() => {
     if (selectedSlug === "new") {
@@ -771,6 +2364,8 @@ const ProjectManager = ({
         subtitle: createLocaleField(project.subtitle),
         categories: [...project.categories],
         year: project.year,
+        startYear: project.startYear ? String(project.startYear) : "",
+        endYear: project.endYear ? String(project.endYear) : "",
         client: createLocaleField(project.client),
         location: createLocaleField(project.location),
         cover: createImageField(randomId(), project.cover),
@@ -785,6 +2380,7 @@ const ProjectManager = ({
         meta: project.meta.map((item) => createMetaField(randomId(), item)),
         entities: project.entities.map((entity) => entity.slug),
         order: "",
+        isPrivate: Boolean(project.isPrivate),
       });
     }
   }, [selectedSlug, projects, emptyForm]);
@@ -803,13 +2399,46 @@ const ProjectManager = ({
     ensureDescription();
   }, [selectedSlug]);
 
+  const handleAddCategory = () => {
+    const slug = slugifyCategory(newCategoryInput);
+
+    if (!slug) {
+      setMessage("Escribe una categoría válida para agregarla");
+      return;
+    }
+
+    setForm((previous) => ({
+      ...previous,
+      categories: previous.categories.includes(slug)
+        ? previous.categories
+        : [...previous.categories, slug],
+    }));
+    setNewCategoryInput("");
+  };
+
   const buildPayload = () => {
     if (!form.slug.trim()) {
       throw new Error("El proyecto necesita un slug");
     }
 
-    if (!form.year.trim()) {
-      throw new Error("El campo año es obligatorio");
+    const startYearValue = form.startYear.trim();
+    const endYearValue = form.endYear.trim();
+
+    const categories = Array.from(
+      new Set(
+        form.categories
+          .map((category) => slugifyCategory(category))
+          .map((category) => category.trim())
+          .filter((category) => category.length > 0),
+      ),
+    );
+
+    if (categories.length === 0) {
+      throw new Error("Agrega al menos una categoría");
+    }
+
+    if (!form.year.trim() && !startYearValue && !endYearValue) {
+      throw new Error("Agrega al menos un año de inicio o fin");
     }
 
     if (!imageHasData(form.cover)) {
@@ -828,8 +2457,10 @@ const ProjectManager = ({
       slug: form.slug.trim(),
       name: trimLocaleField(form.name),
       subtitle: trimLocaleField(form.subtitle),
-      categories: form.categories,
-      year: form.year.trim(),
+      categories,
+      year: form.year.trim() || `${startYearValue}${endYearValue ? `–${endYearValue}` : ""}`,
+      startYear: startYearValue ? Number.parseInt(startYearValue, 10) : undefined,
+      endYear: endYearValue ? Number.parseInt(endYearValue, 10) : undefined,
       client: trimLocaleField(form.client),
       location: trimLocaleField(form.location),
       cover: {
@@ -854,6 +2485,7 @@ const ProjectManager = ({
         }))
         .filter((item) => hasLocaleContent(item.label) && hasLocaleContent(item.value)),
       entities: form.entities,
+      isPrivate: form.isPrivate,
     };
 
     if (form.video?.url.trim()) {
@@ -981,7 +2613,7 @@ const ProjectManager = ({
         </aside>
 
         <div className="space-y-6 rounded-2xl border border-foreground/10 bg-background p-6 shadow-sm">
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="grid gap-4 md:grid-cols-3">
             <label className="space-y-1 text-xs font-semibold uppercase tracking-[0.18em] text-foreground/60">
               <span>Slug</span>
               <input
@@ -992,12 +2624,34 @@ const ProjectManager = ({
             </label>
 
             <label className="space-y-1 text-xs font-semibold uppercase tracking-[0.18em] text-foreground/60">
-              <span>Año</span>
+              <span>Año (etiqueta)</span>
               <input
                 value={form.year}
                 onChange={(event) => setForm((previous) => ({ ...previous, year: event.target.value }))}
                 className="w-full rounded-xl border border-foreground/15 bg-foreground/5 px-3 py-2 text-sm outline-none transition focus:border-foreground/40 focus:bg-background"
                 placeholder="2024"
+              />
+            </label>
+
+            <label className="space-y-1 text-xs font-semibold uppercase tracking-[0.18em] text-foreground/60">
+              <span>Año de inicio</span>
+              <input
+                value={form.startYear}
+                onChange={(event) => setForm((previous) => ({ ...previous, startYear: event.target.value }))}
+                className="w-full rounded-xl border border-foreground/15 bg-foreground/5 px-3 py-2 text-sm outline-none transition focus:border-foreground/40 focus:bg-background"
+                placeholder="2022"
+                inputMode="numeric"
+              />
+            </label>
+
+            <label className="space-y-1 text-xs font-semibold uppercase tracking-[0.18em] text-foreground/60">
+              <span>Año de cierre</span>
+              <input
+                value={form.endYear}
+                onChange={(event) => setForm((previous) => ({ ...previous, endYear: event.target.value }))}
+                className="w-full rounded-xl border border-foreground/15 bg-foreground/5 px-3 py-2 text-sm outline-none transition focus:border-foreground/40 focus:bg-background"
+                placeholder="2023"
+                inputMode="numeric"
               />
             </label>
 
@@ -1012,6 +2666,21 @@ const ProjectManager = ({
                   }))
                 }
                 className="w-full rounded-xl border border-foreground/15 bg-foreground/5 px-3 py-2 text-sm outline-none transition focus:border-foreground/40 focus:bg-background"
+              />
+            </label>
+
+            <label className="flex items-center gap-3 rounded-xl border border-foreground/15 bg-foreground/5 px-3 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-foreground/60 md:col-span-3">
+              <span className="flex-1 text-foreground/70">Ocultar en el sitio (privado)</span>
+              <input
+                type="checkbox"
+                checked={form.isPrivate}
+                onChange={(event) =>
+                  setForm((previous) => ({
+                    ...previous,
+                    isPrivate: event.target.checked,
+                  }))
+                }
+                className="size-4 rounded border-foreground/30 text-foreground focus:ring-foreground"
               />
             </label>
 
@@ -1057,14 +2726,37 @@ const ProjectManager = ({
               />
             </label>
 
-            <div className="space-y-1 text-xs font-semibold uppercase tracking-[0.18em] text-foreground/60 md:col-span-2">
-              <span>Categorías</span>
+            <div className="space-y-2 text-xs font-semibold uppercase tracking-[0.18em] text-foreground/60 md:col-span-2">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <span>Categorías</span>
+                <div className="flex flex-1 flex-wrap items-center gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-foreground/60 sm:flex-none">
+                  <input
+                    value={newCategoryInput}
+                    onChange={(event) => setNewCategoryInput(event.target.value)}
+                    onKeyDown={(event) => {
+                      if (event.key === "Enter") {
+                        event.preventDefault();
+                        handleAddCategory();
+                      }
+                    }}
+                    className="min-w-[200px] flex-1 rounded-xl border border-foreground/15 bg-foreground/5 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.18em] text-foreground/70 outline-none transition focus:border-foreground/40 focus:bg-background sm:flex-none"
+                    placeholder="Nueva categoría"
+                  />
+                  <button
+                    type="button"
+                    onClick={handleAddCategory}
+                    className="rounded-full border border-foreground/20 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-foreground/80 transition hover:border-foreground/40 hover:text-foreground"
+                  >
+                    Agregar
+                  </button>
+                </div>
+              </div>
               <div className="flex flex-wrap gap-2">
-                {CATEGORY_OPTIONS.map((option) => (
+                {availableCategories.map((category) => (
                   <label
-                    key={option.value}
+                    key={category}
                     className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold transition ${
-                      form.categories.includes(option.value)
+                      form.categories.includes(category)
                         ? "border-foreground bg-foreground text-background"
                         : "border-foreground/15 text-foreground/70 hover:border-foreground/40 hover:text-foreground"
                     }`}
@@ -1072,17 +2764,17 @@ const ProjectManager = ({
                     <input
                       type="checkbox"
                       className="hidden"
-                      checked={form.categories.includes(option.value)}
+                      checked={form.categories.includes(category)}
                       onChange={(event) =>
                         setForm((previous) => ({
                           ...previous,
                           categories: event.target.checked
-                            ? [...previous.categories, option.value]
-                            : previous.categories.filter((item) => item !== option.value),
+                            ? [...previous.categories, category]
+                            : previous.categories.filter((item) => item !== category),
                         }))
                       }
                     />
-                    <span>{option.label.es}</span>
+                    <span>{translateCategoryLabel("es", category)}</span>
                   </label>
                 ))}
               </div>
@@ -1869,6 +3561,7 @@ const ProjectManager = ({
 const AdminDashboard = ({
   clients,
   projects,
+  siteContent,
   databaseReady,
   cloudinaryReady,
 }: AdminDashboardProps) => {
@@ -1895,17 +3588,47 @@ const AdminDashboard = ({
         openCloudinaryPicker={cloudinaryReady ? openPicker : undefined}
       />
 
-      <ClientManager
-        clients={clients}
-        cloudinaryReady={cloudinaryReady}
-        openCloudinaryPicker={cloudinaryReady ? openPicker : undefined}
-      />
-      <ProjectManager
-        projects={projects}
-        clients={clients}
-        cloudinaryReady={cloudinaryReady}
-        openCloudinaryPicker={cloudinaryReady ? openPicker : undefined}
-      />
+      <nav className="flex flex-wrap gap-3 rounded-3xl border border-foreground/10 bg-background/60 p-4">
+        <a
+          href="#contenido-sitio"
+          className="rounded-full border border-foreground/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-foreground/70 transition hover:border-foreground/30 hover:text-foreground"
+        >
+          Contenido del sitio
+        </a>
+        <a
+          href="#clientes"
+          className="rounded-full border border-foreground/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-foreground/70 transition hover:border-foreground/30 hover:text-foreground"
+        >
+          Clientes
+        </a>
+        <a
+          href="#proyectos"
+          className="rounded-full border border-foreground/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-foreground/70 transition hover:border-foreground/30 hover:text-foreground"
+        >
+          Proyectos
+        </a>
+      </nav>
+
+      <section id="contenido-sitio">
+        <SiteContentManager siteContent={siteContent} />
+      </section>
+
+      <section id="clientes">
+        <ClientManager
+          clients={clients}
+          cloudinaryReady={cloudinaryReady}
+          openCloudinaryPicker={cloudinaryReady ? openPicker : undefined}
+        />
+      </section>
+
+      <section id="proyectos">
+        <ProjectManager
+          projects={projects}
+          clients={clients}
+          cloudinaryReady={cloudinaryReady}
+          openCloudinaryPicker={cloudinaryReady ? openPicker : undefined}
+        />
+      </section>
 
       {cloudinaryReady && <CloudinaryLibraryDialog state={picker} onClose={closePicker} />}
     </div>
