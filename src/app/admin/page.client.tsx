@@ -557,10 +557,20 @@ const buildSitePayload = (draft: SiteContentField): SiteContent => ({
           : { es: "Descripción pendiente", en: "Pending description" },
       outcomes: normalizeLocaleListField(service.outcomes),
       gallery: service.gallery
-        .map((image) => ({
-          src: image.src.trim(),
-          alt: localeFieldToTextWithFallback(trimLocaleField(image.alt)),
-        }))
+        .map((image, imageIndex) => {
+          const normalizedAlt = localeFieldToTextWithFallback(trimLocaleField(image.alt));
+
+          return {
+            src: image.src.trim(),
+            alt:
+              normalizedAlt.es.length > 0 || normalizedAlt.en.length > 0
+                ? normalizedAlt
+                : {
+                  es: `Imagen ${imageIndex + 1} del servicio ${index + 1}`,
+                  en: `Image ${imageIndex + 1} for service ${index + 1}`,
+                },
+          };
+        })
         .filter((image) => image.src.length > 0),
     };
   }),
