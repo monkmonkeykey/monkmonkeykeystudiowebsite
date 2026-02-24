@@ -38,6 +38,29 @@ export const SERVICES: Service[] = [
         en: "Quarterly roadmaps with clear deliverables",
       },
     ],
+    gallery: [
+      {
+        src: "/projects/atlas-experience-lab/cover.svg",
+        alt: {
+          es: "Montaje principal de obra digital",
+          en: "Main digital artwork setup",
+        },
+      },
+      {
+        src: "/projects/atlas-experience-lab/gallery-1.svg",
+        alt: {
+          es: "Detalle técnico de instalación",
+          en: "Technical installation detail",
+        },
+      },
+      {
+        src: "/projects/atlas-experience-lab/gallery-2.svg",
+        alt: {
+          es: "Espacio expositivo con visuales",
+          en: "Exhibition space with visuals",
+        },
+      },
+    ],
   },
   {
     slug: "diseno-ux-ui",
@@ -63,6 +86,29 @@ export const SERVICES: Service[] = [
         en: "Tested prototypes before development",
       },
     ],
+    gallery: [
+      {
+        src: "/projects/museo-banco-mexico/cover.svg",
+        alt: {
+          es: "Escenario sonoro en museo",
+          en: "Museum sound stage",
+        },
+      },
+      {
+        src: "/projects/museo-banco-mexico/gallery-1.svg",
+        alt: {
+          es: "Sistema de audio multicanal",
+          en: "Multichannel audio system",
+        },
+      },
+      {
+        src: "/projects/museo-banco-mexico/gallery-3.svg",
+        alt: {
+          es: "Ajustes técnicos en sala",
+          en: "Technical adjustments onsite",
+        },
+      },
+    ],
   },
   {
     slug: "experimentacion-growth",
@@ -86,6 +132,29 @@ export const SERVICES: Service[] = [
       {
         es: "Optimización recurrente de funnel y retención",
         en: "Recurring funnel and retention optimisation",
+      },
+    ],
+    gallery: [
+      {
+        src: "/projects/loop-brand-labs/cover.svg",
+        alt: {
+          es: "Prototipo físico impreso en 3D",
+          en: "3D printed physical prototype",
+        },
+      },
+      {
+        src: "/projects/loop-brand-labs/gallery-1.svg",
+        alt: {
+          es: "Piezas impresas para obra",
+          en: "Printed pieces for artwork",
+        },
+      },
+      {
+        src: "/projects/loop-brand-labs/gallery-2.svg",
+        alt: {
+          es: "Iteración de modelos en taller",
+          en: "Workshop model iterations",
+        },
       },
     ],
   },
