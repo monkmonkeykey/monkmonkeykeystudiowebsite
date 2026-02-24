@@ -33,21 +33,13 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
       return fromService;
     }
 
-    const fromGlobalGallery = (siteContent.servicesPage.gallery ?? []).filter(
-      (image) => image.src.trim().length > 0,
-    );
-
-    if (fromGlobalGallery.length > 0) {
-      return fromGlobalGallery;
-    }
-
     return [
       {
         src: siteContent.servicesPage.imageSrc || "/images/services-visual.svg",
         alt: siteContent.servicesPage.imageAlt,
       },
     ];
-  }, [activeService?.gallery, siteContent.servicesPage.gallery, siteContent.servicesPage.imageAlt, siteContent.servicesPage.imageSrc]);
+  }, [activeService?.gallery, siteContent.servicesPage.imageAlt, siteContent.servicesPage.imageSrc]);
 
   useEffect(() => {
     if (galleryImages.length <= 1) {

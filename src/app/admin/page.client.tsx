@@ -399,7 +399,9 @@ const localeFieldToTextWithFallback = (value: LocaleField): LocaleText => ({
 });
 
 const normalizeLocaleListField = (values: LocaleField[]): LocaleText[] =>
-  values.map(localeFieldToText).filter((item) => item.es.length > 0 || item.en.length > 0);
+  values
+    .map((value) => localeFieldToTextWithFallback(trimLocaleField(value)))
+    .filter((item) => item.es.length > 0 && item.en.length > 0);
 
 const imageHasData = (image: ImageField): boolean =>
   image.src.trim().length > 0 || image.publicId.trim().length > 0;
@@ -1539,108 +1541,6 @@ const SiteContentManager = ({
             value={draft.servicesPage.imageAlt}
             onChange={(value) => setDraft({ ...draft, servicesPage: { ...draft.servicesPage, imageAlt: value } })}
           />
-          <div className="space-y-3 rounded-2xl border border-foreground/10 bg-foreground/[0.03] p-3">
-            <div className="flex items-center justify-between gap-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/60">Galería de servicios (fallback global)</p>
-              <button
-                type="button"
-                className="rounded-full border border-foreground/20 px-3 py-1 text-xs font-semibold text-foreground/70 hover:border-foreground/40"
-                onClick={() =>
-                  setDraft({
-                    ...draft,
-                    servicesPage: {
-                      ...draft.servicesPage,
-                      gallery: [...draft.servicesPage.gallery, createSiteGalleryImageField(randomId())],
-                    },
-                  })
-                }
-              >
-                Añadir imagen
-              </button>
-            </div>
-            <div className="space-y-3">
-              {draft.servicesPage.gallery.map((image) => (
-                <div key={image.id} className="space-y-2 rounded-xl border border-foreground/10 bg-background p-3">
-                  <div className="flex items-center justify-between gap-3">
-                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/50">Imagen</p>
-                    <button
-                      type="button"
-                      className="text-xs font-semibold text-red-500 hover:text-red-400"
-                      onClick={() =>
-                        setDraft({
-                          ...draft,
-                          servicesPage: {
-                            ...draft.servicesPage,
-                            gallery: draft.servicesPage.gallery.filter((item) => item.id !== image.id),
-                          },
-                        })
-                      }
-                    >
-                      Eliminar
-                    </button>
-                  </div>
-                  <label className="space-y-1 text-sm text-foreground/70">
-                    <span className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/50">URL imagen</span>
-                    <input
-                      className="w-full rounded-xl border border-foreground/10 bg-background px-3 py-2 text-sm"
-                      placeholder="/images/services-visual.svg"
-                      value={image.src}
-                      onChange={(event) =>
-                        setDraft({
-                          ...draft,
-                          servicesPage: {
-                            ...draft.servicesPage,
-                            gallery: draft.servicesPage.gallery.map((item) =>
-                              item.id === image.id ? { ...item, src: event.target.value } : item,
-                            ),
-                          },
-                        })
-                      }
-                    />
-                  </label>
-                  <div className="grid gap-3 md:grid-cols-2">
-                    <label className="space-y-1 text-sm text-foreground/70">
-                      <span className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/50">Alt ES</span>
-                      <input
-                        className="w-full rounded-xl border border-foreground/10 bg-background px-3 py-2 text-sm"
-                        value={image.alt.es}
-                        onChange={(event) =>
-                          setDraft({
-                            ...draft,
-                            servicesPage: {
-                              ...draft.servicesPage,
-                              gallery: draft.servicesPage.gallery.map((item) =>
-                                item.id === image.id ? { ...item, alt: { ...item.alt, es: event.target.value } } : item,
-                              ),
-                            },
-                          })
-                        }
-                      />
-                    </label>
-                    <label className="space-y-1 text-sm text-foreground/70">
-                      <span className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/50">Alt EN</span>
-                      <input
-                        className="w-full rounded-xl border border-foreground/10 bg-background px-3 py-2 text-sm"
-                        value={image.alt.en}
-                        onChange={(event) =>
-                          setDraft({
-                            ...draft,
-                            servicesPage: {
-                              ...draft.servicesPage,
-                              gallery: draft.servicesPage.gallery.map((item) =>
-                                item.id === image.id ? { ...item, alt: { ...item.alt, en: event.target.value } } : item,
-                              ),
-                            },
-                          })
-                        }
-                      />
-                    </label>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
           <div className="space-y-3 rounded-2xl border border-foreground/10 bg-foreground/[0.03] p-3">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/60">
               Galerías por servicio (las que se muestran en el contenedor principal)
