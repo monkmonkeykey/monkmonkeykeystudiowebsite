@@ -58,6 +58,7 @@ type ServiceField = {
   title: LocaleField;
   summary: LocaleField;
   outcomes: LocaleField[];
+  gallery: SiteGalleryImageField[];
 };
 
 type SiteGalleryImageField = {
@@ -234,6 +235,7 @@ const createServiceField = (id: string, service?: Service): ServiceField => ({
   title: createLocaleField(service?.title),
   summary: createLocaleField(service?.summary),
   outcomes: (service?.outcomes ?? []).map((outcome, index) => createDescriptionField(`${id}-outcome-${index}`, outcome).text),
+  gallery: (service?.gallery ?? []).map((image, index) => createSiteGalleryImageField(`${id}-gallery-${index}`, image)),
 });
 
 const createSiteGalleryImageField = (
@@ -539,6 +541,12 @@ const buildSitePayload = (draft: SiteContentField): SiteContent => ({
     title: localeFieldToTextWithFallback(trimLocaleField(service.title)),
     summary: localeFieldToTextWithFallback(trimLocaleField(service.summary)),
     outcomes: normalizeLocaleListField(service.outcomes),
+    gallery: service.gallery
+      .map((image) => ({
+        src: image.src.trim(),
+        alt: localeFieldToTextWithFallback(trimLocaleField(image.alt)),
+      }))
+      .filter((image) => image.src.length > 0),
   })),
 });
 
@@ -860,12 +868,19 @@ const ServiceEditor = ({
   service,
   onChange,
   onRemove,
+  cloudinaryReady,
+  openCloudinaryPicker,
 }: {
   service: ServiceField;
   onChange: (value: ServiceField) => void;
   onRemove: () => void;
-}) => (
-  <div className="space-y-3 rounded-3xl border border-foreground/10 bg-background/70 p-4">
+  cloudinaryReady: boolean;
+  openCloudinaryPicker?: (options: CloudinaryPickerOptions) => void;
+}) => {
+  const [uploadingGalleryId, setUploadingGalleryId] = useState<string | null>(null);
+
+  return (
+    <div className="space-y-3 rounded-3xl border border-foreground/10 bg-background/70 p-4">
     <div className="flex items-center justify-between gap-2">
       <p className="text-sm font-semibold text-foreground/80">Servicio</p>
       <button
@@ -896,10 +911,125 @@ const ServiceEditor = ({
       values={service.outcomes}
       onChange={(values) => onChange({ ...service, outcomes: values })}
     />
-  </div>
-);
+    <div className="space-y-2 rounded-2xl border border-foreground/10 bg-foreground/5 p-3">
+      <div className="flex items-center justify-between">
+        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/50">Galería del servicio</p>
+        <button
+          type="button"
+          onClick={() =>
+            onChange({
+              ...service,
+              gallery: [...service.gallery, createSiteGalleryImageField(randomId())],
+            })
+          }
+          className="rounded-full border border-foreground/10 px-3 py-1 text-xs font-semibold text-foreground/70 hover:border-foreground/30"
+        >
+          Agregar imagen
+        </button>
+      </div>
 
-const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
+      {service.gallery.map((image) => (
+        <div key={image.id} className="space-y-2 rounded-xl border border-foreground/10 bg-background/60 p-3">
+          <div className="flex items-center justify-between gap-2">
+            <p className="text-xs text-foreground/50">Imagen</p>
+            <button
+              type="button"
+              onClick={() => onChange({ ...service, gallery: service.gallery.filter((item) => item.id !== image.id) })}
+              className="text-xs font-semibold text-foreground/50 hover:text-foreground"
+            >
+              Eliminar
+            </button>
+          </div>
+          <input
+            className="w-full rounded-xl border border-foreground/10 bg-background px-3 py-2 text-sm"
+            placeholder="https://..."
+            value={image.src}
+            onChange={(event) =>
+              onChange({
+                ...service,
+                gallery: service.gallery.map((item) =>
+                  item.id === image.id ? { ...item, src: event.target.value } : item,
+                ),
+              })
+            }
+          />
+          <RichLocaleInputs
+            label="Alt imagen"
+            value={image.alt}
+            onChange={(value) =>
+              onChange({
+                ...service,
+                gallery: service.gallery.map((item) =>
+                  item.id === image.id ? { ...item, alt: value } : item,
+                ),
+              })
+            }
+          />
+          <div className="flex flex-wrap gap-2">
+            <label className="inline-flex cursor-pointer items-center gap-2 rounded-full border border-foreground/10 px-3 py-1.5 text-xs font-semibold text-foreground/70 hover:border-foreground/30">
+              {uploadingGalleryId === image.id ? "Cargando..." : "Subir"}
+              <input
+                type="file"
+                accept="image/*"
+                className="hidden"
+                disabled={uploadingGalleryId === image.id}
+                onChange={async (event) => {
+                  const file = event.target.files?.[0];
+                  if (!file) return;
+
+                  setUploadingGalleryId(image.id);
+                  try {
+                    const upload = await uploadToCloudinary(file, `services/${service.slug || "library"}`);
+                    onChange({
+                      ...service,
+                      gallery: service.gallery.map((item) =>
+                        item.id === image.id ? { ...item, src: upload.src } : item,
+                      ),
+                    });
+                  } finally {
+                    setUploadingGalleryId(null);
+                    event.currentTarget.value = "";
+                  }
+                }}
+              />
+            </label>
+            {cloudinaryReady && openCloudinaryPicker && (
+              <button
+                type="button"
+                onClick={() =>
+                  openCloudinaryPicker({
+                    onSelect: (asset) => {
+                      onChange({
+                        ...service,
+                        gallery: service.gallery.map((item) =>
+                          item.id === image.id ? { ...item, src: asset.url } : item,
+                        ),
+                      });
+                    },
+                  })
+                }
+                className="rounded-full border border-foreground/10 px-3 py-1.5 text-xs font-semibold text-foreground/70 hover:border-foreground/30"
+              >
+                Elegir de biblioteca
+              </button>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+  );
+};
+
+const SiteContentManager = ({
+  siteContent,
+  cloudinaryReady,
+  openCloudinaryPicker,
+}: {
+  siteContent: SiteContent;
+  cloudinaryReady: boolean;
+  openCloudinaryPicker?: (options: CloudinaryPickerOptions) => void;
+}) => {
   const router = useRouter();
   const [draft, setDraft] = useState<SiteContentField>(() => createSiteContentField(siteContent));
   const [status, setStatus] = useState<"idle" | "saving">("idle");
@@ -1812,6 +1942,8 @@ const SiteContentManager = ({ siteContent }: { siteContent: SiteContent }) => {
               <ServiceEditor
                 key={service.id}
                 service={service}
+                cloudinaryReady={cloudinaryReady}
+                openCloudinaryPicker={openCloudinaryPicker}
                 onRemove={() =>
                   setDraft({
                     ...draft,
@@ -3652,7 +3784,11 @@ const AdminDashboard = ({
       </nav>
 
       <section id="contenido-sitio">
-        <SiteContentManager siteContent={siteContent} />
+        <SiteContentManager
+          siteContent={siteContent}
+          cloudinaryReady={cloudinaryReady}
+          openCloudinaryPicker={cloudinaryReady ? openPicker : undefined}
+        />
       </section>
 
       <section id="clientes">

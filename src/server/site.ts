@@ -203,6 +203,12 @@ const normalizeSiteCopy = (value: SiteCopy): SiteCopy => ({
     title: normalizeLocaleText(service.title),
     summary: normalizeLocaleText(service.summary),
     outcomes: normalizeLocaleList(service.outcomes),
+    gallery: (service.gallery ?? [])
+      .map((image) => ({
+        src: image.src.trim(),
+        alt: normalizeLocaleText(image.alt),
+      }))
+      .filter((image) => image.src.length > 0),
   })),
 });
 

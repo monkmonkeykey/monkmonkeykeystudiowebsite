@@ -79,6 +79,14 @@ export const serviceSchema = z.object({
   title: localeTextSchema,
   summary: localeTextSchema,
   outcomes: z.array(localeTextSchema).default([]),
+  gallery: z
+    .array(
+      z.object({
+        src: z.string().min(1),
+        alt: localeTextSchema,
+      }),
+    )
+    .default([]),
 });
 
 const mediaSchema = z
