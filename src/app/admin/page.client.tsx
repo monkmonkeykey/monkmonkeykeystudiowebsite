@@ -1527,7 +1527,7 @@ const SiteContentManager = ({
           />
           <div className="space-y-3 rounded-2xl border border-foreground/10 bg-foreground/[0.03] p-3">
             <div className="flex items-center justify-between gap-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/60">Galería de servicios</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/60">Galería de servicios (fallback global)</p>
               <button
                 type="button"
                 className="rounded-full border border-foreground/20 px-3 py-1 text-xs font-semibold text-foreground/70 hover:border-foreground/40"
@@ -1626,6 +1626,86 @@ const SiteContentManager = ({
               ))}
             </div>
           </div>
+
+          <div className="space-y-3 rounded-2xl border border-foreground/10 bg-foreground/[0.03] p-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/60">
+              Galerías por servicio (las que se muestran en el contenedor principal)
+            </p>
+            <div className="space-y-3">
+              {draft.services.map((service, serviceIndex) => (
+                <div key={service.id} className="space-y-3 rounded-xl border border-foreground/10 bg-background p-3">
+                  <div className="flex items-center justify-between gap-3">
+                    <p className="text-sm font-semibold text-foreground/80">
+                      Servicio {serviceIndex + 1}: {service.title.es || service.title.en || service.slug || "Sin título"}
+                    </p>
+                    <button
+                      type="button"
+                      className="rounded-full border border-foreground/20 px-3 py-1 text-xs font-semibold text-foreground/70 hover:border-foreground/40"
+                      onClick={() => {
+                        const nextServices = [...draft.services];
+                        nextServices[serviceIndex] = {
+                          ...service,
+                          gallery: [...service.gallery, createSiteGalleryImageField(randomId())],
+                        };
+                        setDraft({ ...draft, services: nextServices });
+                      }}
+                    >
+                      Añadir imagen
+                    </button>
+                  </div>
+
+                  {service.gallery.length === 0 && (
+                    <p className="text-xs text-foreground/60">
+                      Este servicio no tiene imágenes. Se usará la galería fallback global o la URL de imagen servicios.
+                    </p>
+                  )}
+
+                  <div className="space-y-2">
+                    {service.gallery.map((image) => (
+                      <div key={image.id} className="space-y-2 rounded-xl border border-foreground/10 bg-foreground/5 p-3">
+                        <div className="flex items-center justify-between gap-3">
+                          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/50">Imagen</p>
+                          <button
+                            type="button"
+                            className="text-xs font-semibold text-red-500 hover:text-red-400"
+                            onClick={() => {
+                              const nextServices = [...draft.services];
+                              nextServices[serviceIndex] = {
+                                ...service,
+                                gallery: service.gallery.filter((item) => item.id !== image.id),
+                              };
+                              setDraft({ ...draft, services: nextServices });
+                            }}
+                          >
+                            Eliminar
+                          </button>
+                        </div>
+                        <label className="space-y-1 text-sm text-foreground/70">
+                          <span className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/50">URL imagen</span>
+                          <input
+                            className="w-full rounded-xl border border-foreground/10 bg-background px-3 py-2 text-sm"
+                            placeholder="https://..."
+                            value={image.src}
+                            onChange={(event) => {
+                              const nextServices = [...draft.services];
+                              nextServices[serviceIndex] = {
+                                ...service,
+                                gallery: service.gallery.map((item) =>
+                                  item.id === image.id ? { ...item, src: event.target.value } : item,
+                                ),
+                              };
+                              setDraft({ ...draft, services: nextServices });
+                            }}
+                          />
+                        </label>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <RichLocaleInputs
             label="CTA volver arriba"
             value={draft.servicesPage.backToTopLabel}
