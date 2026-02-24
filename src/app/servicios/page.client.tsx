@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import type { Service } from "@/content/services";
 import type { SiteContent } from "@/domain/site";
@@ -21,13 +21,16 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
     (chip) => getPlainText(translate(locale, chip)).length > 0,
   );
   const [activeServiceIndex, setActiveServiceIndex] = useState(0);
+  const [activeGalleryIndex, setActiveGalleryIndex] = useState(0);
+  const [previousGalleryImage, setPreviousGalleryImage] = useState<string | null>(null);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const activeService = services[activeServiceIndex] ?? services[0];
   const galleryImages = useMemo(() => {
-    const configured = (siteContent.servicesPage.gallery ?? []).filter((image) => image.src.trim().length > 0);
+    const fromService = (activeService?.gallery ?? []).filter((image) => image.src.trim().length > 0);
 
-    if (configured.length > 0) {
-      return configured;
+    if (fromService.length > 0) {
+      return fromService;
     }
 
     return [
@@ -36,9 +39,26 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
         alt: siteContent.servicesPage.imageAlt,
       },
     ];
-  }, [siteContent.servicesPage.gallery, siteContent.servicesPage.imageAlt, siteContent.servicesPage.imageSrc]);
+  }, [activeService?.gallery, siteContent.servicesPage.imageAlt, siteContent.servicesPage.imageSrc]);
 
-  const activeGalleryImage = galleryImages[activeServiceIndex % galleryImages.length] ?? galleryImages[0];
+  useEffect(() => {
+    if (galleryImages.length <= 1) {
+      return undefined;
+    }
+
+    const timer = window.setInterval(() => {
+      setActiveGalleryIndex((previousIndex) => {
+        const nextIndex = (previousIndex + 1) % galleryImages.length;
+        setPreviousGalleryImage(galleryImages[previousIndex]?.src ?? null);
+        setIsTransitioning(true);
+        return nextIndex;
+      });
+    }, 3000);
+
+    return () => window.clearInterval(timer);
+  }, [galleryImages]);
+
+  const activeGalleryImage = galleryImages[activeGalleryIndex % galleryImages.length] ?? galleryImages[0];
 
   return (
     <div className="space-y-12" id="top">
@@ -76,14 +96,20 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
                   className="text-sm uppercase tracking-[0.16em] text-foreground/60"
                 />
                 <div className="flex flex-wrap gap-2">
-                  {services.map((service) => (
-                    <a
+                  {services.map((service, index) => (
+                    <button
                       key={service.slug}
-                      href={`#${service.slug}`}
+                      type="button"
+                      onClick={() => {
+                        setActiveServiceIndex(index);
+                        setActiveGalleryIndex(0);
+                        setPreviousGalleryImage(null);
+                        setIsTransitioning(false);
+                      }}
                       className="group inline-flex items-center gap-2 rounded-full border border-foreground/10 bg-background/70 px-3 py-2 text-sm text-foreground/80 transition hover:-translate-y-0.5 hover:border-primary/40 hover:bg-primary/10 hover:text-foreground"
                     >
                       <RichText as="span" value={service.title} />
-                    </a>
+                    </button>
                   ))}
                 </div>
               </div>
@@ -119,7 +145,7 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
                 <button
                   key={service.slug}
                   type="button"
-                  onClick={() => setActiveServiceIndex(index)}
+                  onClick={() => { setActiveServiceIndex(index); setActiveGalleryIndex(0); setPreviousGalleryImage(null); setIsTransitioning(false); }}
                   className={`w-full rounded-2xl border px-4 py-4 text-left transition ${
                     index === activeServiceIndex
                       ? "border-primary/50 bg-primary/10"
@@ -139,29 +165,21 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
 
           <div className="space-y-4">
             <div className="relative aspect-[16/10] overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/5">
+              {previousGalleryImage && isTransitioning && previousGalleryImage !== activeGalleryImage.src && (
+                <Image src={previousGalleryImage} alt="" fill className="object-cover" />
+              )}
               <Image
                 src={activeGalleryImage.src}
                 alt={getPlainText(translate(locale, activeGalleryImage.alt))}
                 fill
-                className="object-cover"
+                className={`object-cover transition-opacity duration-700 ${isTransitioning ? "opacity-0" : "opacity-100"}`}
+                onLoad={() => {
+                  if (isTransitioning) {
+                    setIsTransitioning(false);
+                    setPreviousGalleryImage(null);
+                  }
+                }}
               />
-            </div>
-
-            <div className="grid gap-3 sm:grid-cols-3">
-              {galleryImages.map((image, index) => (
-                <button
-                  key={`${image.src}-${index}`}
-                  type="button"
-                  onClick={() => setActiveServiceIndex(index)}
-                  className={`relative aspect-[4/3] overflow-hidden rounded-2xl border transition ${
-                    index === activeServiceIndex % galleryImages.length
-                      ? "border-primary/60 ring-2 ring-primary/30"
-                      : "border-foreground/10 hover:border-foreground/30"
-                  }`}
-                >
-                  <Image src={image.src} alt={getPlainText(translate(locale, image.alt))} fill className="object-cover" />
-                </button>
-              ))}
             </div>
 
             {activeService && (
