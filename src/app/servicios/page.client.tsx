@@ -64,8 +64,8 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
     <div className="space-y-12" id="top">
       <header className="relative overflow-hidden rounded-4xl border border-foreground/10 bg-gradient-to-br from-primary/10 via-background to-accent/10 p-8 shadow-sm sm:p-10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.06),transparent_35%)]" aria-hidden />
-        <div className="relative z-10 grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div className="space-y-4">
+        <div className="relative z-10">
+          <div className="max-w-3xl space-y-4">
             <h1 className="text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
               <RichText as="span" value={siteContent.servicesPage.title} />
             </h1>
@@ -83,43 +83,6 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
                   <RichText as="span" value={chip} />
                 </div>
               ))}
-            </div>
-          </div>
-
-          <div className="relative h-full min-h-[240px] overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/[0.04] p-6">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(56,189,248,0.12),transparent_30%),radial-gradient(circle_at_80%_30%,rgba(192,132,252,0.12),transparent_26%)]" aria-hidden />
-            <div className="relative z-10 flex h-full flex-col justify-between gap-4">
-              <div className="space-y-2">
-                <RichText
-                  as="p"
-                  value={siteContent.servicesPage.quickMapLabel}
-                  className="text-sm uppercase tracking-[0.16em] text-foreground/60"
-                />
-                <div className="flex flex-wrap gap-2">
-                  {services.map((service, index) => (
-                    <button
-                      key={service.slug}
-                      type="button"
-                      onClick={() => {
-                        setActiveServiceIndex(index);
-                        setActiveGalleryIndex(0);
-                        setPreviousGalleryImage(null);
-                        setIsTransitioning(false);
-                      }}
-                      className="group inline-flex items-center gap-2 rounded-full border border-foreground/10 bg-background/70 px-3 py-2 text-sm text-foreground/80 transition hover:-translate-y-0.5 hover:border-primary/40 hover:bg-primary/10 hover:text-foreground"
-                    >
-                      <RichText as="span" value={service.title} />
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <Link
-                href="/contacto"
-                className="inline-flex items-center justify-center gap-2 self-start rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-primary/30 transition hover:-translate-y-0.5 hover:shadow-primary/40"
-              >
-                <RichText as="span" value={siteContent.servicesPage.ctaLabel} />
-              </Link>
             </div>
           </div>
         </div>
