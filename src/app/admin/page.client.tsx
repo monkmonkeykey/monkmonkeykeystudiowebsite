@@ -574,30 +574,57 @@ const CloudinaryLibraryShortcut = ({
   openCloudinaryPicker?: (options: CloudinaryPickerOptions) => void;
 }) => {
   const [message, setMessage] = useState<string | null>(null);
+  const [isUploading, setIsUploading] = useState(false);
+  const uploadInputRef = useRef<HTMLInputElement | null>(null);
+
+  const copyUrlMessage = useCallback(async (url: string, label: string) => {
+    if (typeof navigator !== "undefined" && navigator.clipboard) {
+      try {
+        await navigator.clipboard.writeText(url);
+        setMessage(`Se copió la URL de “${label}” al portapapeles. Pégala en el campo que prefieras.`);
+        return;
+      } catch {
+        // Fall through to manual copy message.
+      }
+    }
+
+    setMessage(`Seleccionaste “${label}”. Copia manualmente esta URL: ${url || "sin URL pública"}`);
+  }, []);
 
   const handleSelect = useCallback(
     (asset: CloudinaryAsset) => {
-      const copyToClipboard = async () => {
-        const label = asset.publicId || asset.url;
-
-        if (typeof navigator !== "undefined" && navigator.clipboard) {
-          try {
-            await navigator.clipboard.writeText(asset.url);
-            setMessage(`Se copió la URL de “${label}” al portapapeles. Pégala en el campo que prefieras.`);
-            return;
-          } catch {
-            // Fall through to manual copy message.
-          }
-        }
-
-        setMessage(
-          `Seleccionaste “${label}”. Copia manualmente esta URL: ${asset.url || "sin URL pública"}`,
-        );
-      };
-
-      void copyToClipboard();
+      const label = asset.publicId || asset.url;
+      void copyUrlMessage(asset.url, label);
     },
-    [],
+    [copyUrlMessage],
+  );
+
+  const handleUploadFile = useCallback(
+    async (event: React.ChangeEvent<HTMLInputElement>) => {
+      const file = event.target.files?.[0];
+
+      if (!file) {
+        return;
+      }
+
+      try {
+        setIsUploading(true);
+        const uploaded = await uploadToCloudinary(file, "library");
+        await copyUrlMessage(uploaded.src, uploaded.publicId || uploaded.src);
+      } catch (error) {
+        setMessage(
+          error instanceof Error
+            ? error.message
+            : "No fue posible cargar el archivo en la biblioteca.",
+        );
+      } finally {
+        setIsUploading(false);
+        if (uploadInputRef.current) {
+          uploadInputRef.current.value = "";
+        }
+      }
+    },
+    [copyUrlMessage],
   );
 
   if (!cloudinaryReady || !openCloudinaryPicker) {
@@ -628,9 +655,24 @@ const CloudinaryLibraryShortcut = ({
           >
             Abrir biblioteca
           </button>
+          <input
+            ref={uploadInputRef}
+            type="file"
+            accept="image/*,video/*"
+            className="hidden"
+            onChange={(event) => void handleUploadFile(event)}
+          />
+          <button
+            type="button"
+            onClick={() => uploadInputRef.current?.click()}
+            disabled={isUploading}
+            className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-5 py-2 text-sm font-semibold text-foreground/80 transition hover:border-foreground/40 hover:text-foreground disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            {isUploading ? "Cargando..." : "Cargar archivo"}
+          </button>
           <p className="text-xs text-foreground/60">
-            Al seleccionar una imagen se copiará automáticamente su URL segura al portapapeles para pegarla en cualquier
-            formulario.
+            Al seleccionar una imagen o cargar un archivo se copiará su URL segura al portapapeles para pegarla en
+            cualquier formulario.
           </p>
         </div>
       </div>
