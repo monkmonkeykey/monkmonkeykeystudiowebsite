@@ -536,18 +536,32 @@ const buildSitePayload = (draft: SiteContentField): SiteContent => ({
     linkedinLabel: localeFieldToText(trimLocaleField(draft.footer.linkedinLabel)),
     linkedinUrl: draft.footer.linkedinUrl.trim() || undefined,
   },
-  services: draft.services.map((service) => ({
-    slug: slugifyCategory(service.slug) || slugifyCategory(service.title.es || service.title.en),
-    title: localeFieldToTextWithFallback(trimLocaleField(service.title)),
-    summary: localeFieldToTextWithFallback(trimLocaleField(service.summary)),
-    outcomes: normalizeLocaleListField(service.outcomes),
-    gallery: service.gallery
-      .map((image) => ({
-        src: image.src.trim(),
-        alt: localeFieldToTextWithFallback(trimLocaleField(image.alt)),
-      }))
-      .filter((image) => image.src.length > 0),
-  })),
+  services: draft.services.map((service, index) => {
+    const normalizedTitle = localeFieldToTextWithFallback(trimLocaleField(service.title));
+    const normalizedSummary = localeFieldToTextWithFallback(trimLocaleField(service.summary));
+
+    return {
+      slug:
+        slugifyCategory(service.slug)
+        || slugifyCategory(normalizedTitle.es || normalizedTitle.en)
+        || `servicio-${index + 1}`,
+      title:
+        normalizedTitle.es.length > 0 || normalizedTitle.en.length > 0
+          ? normalizedTitle
+          : { es: `Servicio ${index + 1}`, en: `Service ${index + 1}` },
+      summary:
+        normalizedSummary.es.length > 0 || normalizedSummary.en.length > 0
+          ? normalizedSummary
+          : { es: "Descripción pendiente", en: "Pending description" },
+      outcomes: normalizeLocaleListField(service.outcomes),
+      gallery: service.gallery
+        .map((image) => ({
+          src: image.src.trim(),
+          alt: localeFieldToTextWithFallback(trimLocaleField(image.alt)),
+        }))
+        .filter((image) => image.src.length > 0),
+    };
+  }),
 });
 
 const uploadToCloudinary = async (file: File, folder: string) => {
