@@ -88,37 +88,37 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
         </div>
       </header>
 
-      <section className="rounded-3xl border border-foreground/10 bg-background p-6 shadow-sm sm:p-8">
-        <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
-          <div className="space-y-4">
+      <section className="rounded-3xl border border-foreground/10 bg-background p-5 shadow-sm sm:p-8">
+        <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:gap-8">
+          <div className="order-2 space-y-4 lg:order-1">
             <div className="flex items-center justify-between gap-4">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-foreground/50">
                 <RichText as="span" value={siteContent.servicesPage.outcomesLabel} />
               </p>
               <a
                 href="#top"
-                className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-foreground/60 transition hover:text-foreground"
+                className="hidden text-xs font-semibold uppercase tracking-[0.2em] text-foreground/60 transition hover:text-foreground sm:inline-flex sm:items-center sm:gap-2"
               >
                 <RichText as="span" value={siteContent.servicesPage.backToTopLabel} />
               </a>
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-2 sm:space-y-3">
               {services.map((service, index) => (
                 <button
                   key={service.slug}
                   type="button"
                   onClick={() => { setActiveServiceIndex(index); setActiveGalleryIndex(0); setPreviousGalleryImage(null); setIsTransitioning(false); }}
-                  className={`w-full rounded-2xl border px-4 py-4 text-left transition ${
+                  className={`w-full rounded-2xl border px-4 py-3 text-left transition sm:py-4 ${
                     index === activeServiceIndex
                       ? "border-primary/50 bg-primary/10"
                       : "border-foreground/10 bg-foreground/5 hover:border-foreground/25"
                   }`}
                 >
-                  <p className="text-lg font-semibold tracking-tight text-foreground/90">
+                  <p className="text-base font-semibold tracking-tight text-foreground/90 sm:text-lg">
                     <RichText as="span" value={service.title} />
                   </p>
-                  <p className="mt-2 text-sm text-foreground/70">
+                  <p className="mt-1.5 text-sm text-foreground/70 sm:mt-2">
                     <RichText as="span" value={service.summary} />
                   </p>
                 </button>
@@ -126,7 +126,7 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
             </div>
           </div>
 
-          <div className="space-y-4">
+          <div className="order-1 space-y-4 lg:order-2 lg:sticky lg:top-24 lg:self-start">
             <div className="relative aspect-[16/10] overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/5">
               {previousGalleryImage && isTransitioning && previousGalleryImage !== activeGalleryImage.src && (
                 <Image src={previousGalleryImage} alt="" fill className="object-cover" />
@@ -166,6 +166,12 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
                   <Link href="/contacto" className="inline-flex items-center gap-2 text-primary hover:text-primary/80">
                     <RichText as="span" value={siteContent.servicesPage.talkCtaLabel} />
                   </Link>
+                  <a
+                    href="#top"
+                    className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-foreground/60 transition hover:text-foreground sm:hidden"
+                  >
+                    <RichText as="span" value={siteContent.servicesPage.backToTopLabel} />
+                  </a>
                 </div>
 
                 <div className="space-y-2">
