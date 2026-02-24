@@ -1,10 +1,16 @@
 import type { LocaleText } from "@/lib/i18n";
 
+export type ServiceGalleryImage = {
+  src: string;
+  alt: LocaleText;
+};
+
 export type Service = {
   slug: string;
   title: LocaleText;
   summary: LocaleText;
   outcomes: LocaleText[];
+  gallery?: ServiceGalleryImage[];
 };
 
 export const SERVICES: Service[] = [
