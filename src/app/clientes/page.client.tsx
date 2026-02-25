@@ -26,26 +26,16 @@ export default function ClientsPageClient({ clients, copy }: ClientsPageClientPr
 
   return (
     <div className="space-y-10">
-      <header className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-        <div className="max-w-3xl space-y-4">
-          <RichText
-            as="h1"
-            value={copy.title}
-            className="text-3xl font-semibold tracking-tight sm:text-4xl"
-          />
-          <RichText
-            value={copy.copy}
-            className="text-base text-foreground/70 sm:text-lg"
-          />
-        </div>
-        <div className="relative aspect-[4/3] w-full max-w-sm overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/5">
-          <Image
-            src={copy.imageSrc || "/images/clients-visual.svg"}
-            alt={translate(locale, copy.imageAlt)}
-            fill
-            className="object-cover"
-          />
-        </div>
+      <header className="max-w-3xl space-y-2 sm:space-y-3">
+        <RichText
+          as="h1"
+          value={copy.title}
+          className="text-3xl font-semibold tracking-tight sm:text-4xl"
+        />
+        <RichText
+          value={copy.copy}
+          className="prose prose-sm max-w-none text-foreground/70 sm:prose-base [&_p]:my-0"
+        />
       </header>
 
       <div className="grid gap-6 md:grid-cols-2">
