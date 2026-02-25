@@ -90,7 +90,7 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
 
       <section className="rounded-3xl border border-foreground/10 bg-background p-5 shadow-sm sm:p-8">
         <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:gap-8">
-          <div className="order-2 space-y-4 lg:order-1">
+          <div className="order-1 space-y-4">
             <div className="flex items-center justify-between gap-4">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-foreground/50">
                 <RichText as="span" value={siteContent.servicesPage.outcomesLabel} />
@@ -126,36 +126,9 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
             </div>
           </div>
 
-          <div className="order-1 space-y-4 lg:order-2 lg:sticky lg:top-24 lg:self-start">
-            <div className="relative aspect-[16/10] overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/5">
-              {previousGalleryImage && isTransitioning && previousGalleryImage !== activeGalleryImage.src && (
-                <Image src={previousGalleryImage} alt="" fill className="object-cover" />
-              )}
-              <Image
-                src={activeGalleryImage.src}
-                alt={getPlainText(translate(locale, activeGalleryImage.alt))}
-                fill
-                className={`object-cover transition-opacity duration-700 ${isTransitioning ? "opacity-0" : "opacity-100"}`}
-                onLoad={() => {
-                  if (isTransitioning) {
-                    setIsTransitioning(false);
-                    setPreviousGalleryImage(null);
-                  }
-                }}
-              />
-            </div>
-
+          <div className="order-2 space-y-4 lg:sticky lg:top-24 lg:self-start">
             {activeService && (
               <div className="space-y-4 rounded-2xl border border-foreground/10 bg-foreground/[0.03] p-4">
-                <div className="flex flex-wrap gap-3 text-sm text-foreground/70">
-                  <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1.5 text-primary ring-1 ring-primary/20">
-                    <RichText as="span" value={siteContent.servicesPage.highlightPrimaryLabel} />
-                  </div>
-                  <div className="inline-flex items-center gap-2 rounded-full bg-foreground/5 px-3 py-1.5 ring-1 ring-foreground/10">
-                    <RichText as="span" value={siteContent.servicesPage.highlightSecondaryLabel} />
-                  </div>
-                </div>
-
                 <div className="space-y-2 text-sm text-foreground/70">
                   <RichText
                     as="p"
@@ -186,6 +159,24 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
                 </div>
               </div>
             )}
+
+            <div className="relative aspect-[16/10] overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/5">
+              {previousGalleryImage && isTransitioning && previousGalleryImage !== activeGalleryImage.src && (
+                <Image src={previousGalleryImage} alt="" fill className="object-cover" />
+              )}
+              <Image
+                src={activeGalleryImage.src}
+                alt={getPlainText(translate(locale, activeGalleryImage.alt))}
+                fill
+                className={`object-cover transition-opacity duration-700 ${isTransitioning ? "opacity-0" : "opacity-100"}`}
+                onLoad={() => {
+                  if (isTransitioning) {
+                    setIsTransitioning(false);
+                    setPreviousGalleryImage(null);
+                  }
+                }}
+              />
+            </div>
           </div>
         </div>
       </section>
