@@ -65,13 +65,13 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
       <header className="relative overflow-hidden rounded-4xl border border-foreground/10 bg-gradient-to-br from-primary/10 via-background to-accent/10 p-8 shadow-sm sm:p-10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.06),transparent_35%)]" aria-hidden />
         <div className="relative z-10">
-          <div className="max-w-3xl space-y-4">
+          <div className="max-w-3xl space-y-2 sm:space-y-3">
             <h1 className="text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
               <RichText as="span" value={siteContent.servicesPage.title} />
             </h1>
             <RichText
               value={siteContent.servicesPage.copy}
-              className="prose prose-sm max-w-none text-foreground/70 sm:prose-base"
+              className="prose prose-sm max-w-none text-foreground/70 sm:prose-base [&_p]:my-0"
             />
             <div className="flex flex-wrap gap-3 pt-2 text-sm text-foreground/70">
               {chips.map((chip, index) => (
