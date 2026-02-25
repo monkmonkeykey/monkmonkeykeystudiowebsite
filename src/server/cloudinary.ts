@@ -101,6 +101,18 @@ export const buildCloudinaryImageUrl = (
   return `https://res.cloudinary.com/${env.cloudinaryCloudName}/image/upload/${transformation}${publicId}`;
 };
 
+export const buildCloudinaryVideoUrl = (
+  publicId: string,
+  options: { transformation?: string } = {},
+): string | null => {
+  if (!env.cloudinaryCloudName) {
+    return null;
+  }
+
+  const transformation = options.transformation ? `${options.transformation}/` : "";
+  return `https://res.cloudinary.com/${env.cloudinaryCloudName}/video/upload/${transformation}${publicId}`;
+};
+
 export type CloudinaryLibraryAsset = {
   id: string;
   publicId: string;

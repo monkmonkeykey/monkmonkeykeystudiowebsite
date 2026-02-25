@@ -30,19 +30,39 @@ type MongoModule = {
   MongoClient: new (uri: string, options?: Record<string, unknown>) => MongoClientInstance;
 };
 
-const dynamicImport = new Function(
-  "specifier",
-  "return import(specifier);",
-) as <TModule>(specifier: string) => Promise<TModule>;
-
 let mongoModule: MongoModule | null | undefined;
 let mongoModulePromise: Promise<MongoModule | null> | null = null;
 let mongoClientPromise: Promise<MongoClientInstance> | null = null;
 let warnedMissingDriver = false;
 let warnedConnectionFailure = false;
-const RETRY_DELAY_MS = 5 * 60 * 1000;
-let nextRetryTimestamp = 0;
 let activeMongoUri: string | null = null;
+let parsedDatabaseName: string | null | undefined;
+
+const getDatabaseFromUri = (): string | null => {
+  if (parsedDatabaseName !== undefined) {
+    return parsedDatabaseName;
+  }
+
+  try {
+    const parsed = new URL(env.mongodbUri);
+    const name = parsed.pathname.replace(/^\//, "").split("?")[0];
+
+    parsedDatabaseName = name.length > 0 ? name : null;
+  } catch {
+    parsedDatabaseName = null;
+  }
+
+  return parsedDatabaseName;
+};
+
+const describeUri = (uri: string): string => {
+  try {
+    const parsed = new URL(uri);
+    return `${parsed.protocol}//${parsed.hostname}${parsed.port ? `:${parsed.port}` : ""}${parsed.pathname}`;
+  } catch {
+    return uri;
+  }
+};
 
 const buildSrvFallbackUri = (uri: string): string | null => {
   if (!uri.startsWith("mongodb+srv://")) {
@@ -90,6 +110,8 @@ const connectWithUri = async (mongodb: MongoModule, uri: string): Promise<MongoC
     serverSelectionTimeoutMS: 5000,
   });
 
+  console.info(`[MongoDB] Intentando conectar a ${describeUri(uri)}`);
+
   const connectedClient = await clientInstance.connect();
   activeMongoUri = uri;
   warnedConnectionFailure = false;
@@ -102,7 +124,7 @@ const loadMongoModule = async (): Promise<MongoModule | null> => {
   }
 
   if (!mongoModulePromise) {
-    mongoModulePromise = dynamicImport<MongoModule>("mongodb")
+    mongoModulePromise = import("mongodb")
       .then((module) => {
         mongoModule = module as MongoModule;
         return mongoModule;
@@ -131,10 +153,6 @@ const loadMongoModule = async (): Promise<MongoModule | null> => {
 
 export const getMongoClient = async (): Promise<MongoClientInstance | null> => {
   if (!env.mongodbUri) {
-    return null;
-  }
-
-  if (nextRetryTimestamp > Date.now()) {
     return null;
   }
 
@@ -167,14 +185,12 @@ export const getMongoClient = async (): Promise<MongoClientInstance | null> => {
     return client;
   } catch (error) {
     mongoClientPromise = null;
-    nextRetryTimestamp = Date.now() + RETRY_DELAY_MS;
-
     if (!warnedConnectionFailure) {
       warnedConnectionFailure = true;
       const errorMessage =
         error instanceof Error ? error.message : "Unknown MongoDB connection error";
       console.error(
-        `Failed to connect to MongoDB. Falling back to Markdown content. Error: ${errorMessage}`,
+        `Failed to connect to MongoDB (${describeUri(env.mongodbUri)}). Falling back to Markdown content. Error: ${errorMessage}`,
       );
     }
 
@@ -189,6 +205,6 @@ export const getMongoDatabase = async (): Promise<MongoDatabase | null> => {
     return null;
   }
 
-  const databaseName = env.mongodbDb || undefined;
+  const databaseName = env.mongodbDb || getDatabaseFromUri() || undefined;
   return client.db(databaseName);
 };

@@ -26,6 +26,8 @@ export type ProjectPayload = {
   subtitle: LocaleText;
   categories: ProjectCategory[];
   year: string;
+  startYear?: number | null;
+  endYear?: number | null;
   client: LocalizedValue;
   location: LocalizedValue;
   cover: ProjectImagePayload;
@@ -35,6 +37,7 @@ export type ProjectPayload = {
   meta?: { label: LocaleText; value: LocalizedValue }[];
   entities?: string[];
   order?: number | null;
+  isPrivate?: boolean;
 };
 
 type ProjectDocument = {
@@ -43,6 +46,8 @@ type ProjectDocument = {
   subtitle: LocaleText;
   categories: ProjectCategory[];
   year: string;
+  startYear?: number | null;
+  endYear?: number | null;
   client: LocalizedValue;
   location: LocalizedValue;
   cover: ProjectImagePayload | null;
@@ -54,6 +59,7 @@ type ProjectDocument = {
   order?: number | null;
   createdAt?: Date;
   updatedAt?: Date;
+  isPrivate?: boolean;
 };
 
 const normalizeLocaleText = (value: LocaleText): LocaleText => ({
@@ -237,6 +243,8 @@ const normalizeProjectDocument = async (document: ProjectDocument): Promise<Proj
     subtitle: normalizeLocaleText(document.subtitle),
     categories: document.categories ?? [],
     year: document.year,
+    startYear: document.startYear ?? undefined,
+    endYear: document.endYear ?? undefined,
     client: normalizeLocalizedValue(document.client),
     location: normalizeLocalizedValue(document.location),
     cover,
@@ -252,6 +260,7 @@ const normalizeProjectDocument = async (document: ProjectDocument): Promise<Proj
         }))
       : [],
     entities,
+    isPrivate: Boolean(document.isPrivate),
   } satisfies Project;
 };
 
@@ -303,6 +312,8 @@ const prepareProjectDocument = (payload: ProjectPayload) => {
     subtitle: normalizeLocaleText(payload.subtitle),
     categories: payload.categories,
     year: payload.year,
+    startYear: payload.startYear ?? null,
+    endYear: payload.endYear ?? null,
     client: normalizeLocalizedValue(payload.client),
     location: normalizeLocalizedValue(payload.location),
     cover: normalizeImage(payload.cover) ?? null,
@@ -325,6 +336,7 @@ const prepareProjectDocument = (payload: ProjectPayload) => {
     entities: payload.entities ?? [],
     order: payload.order ?? null,
     updatedAt: new Date(),
+    isPrivate: Boolean(payload.isPrivate),
   };
 };
 
