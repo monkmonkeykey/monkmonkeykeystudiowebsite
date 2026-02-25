@@ -1,13 +1,12 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useState, type FormEvent } from "react";
 
 import type { SiteContent } from "@/domain/site";
 import { translate } from "@/lib/i18n";
 import { useLocale } from "@/components/site/locale-context";
-import { getPlainText, RichText } from "@/components/site/rich-text";
+import { RichText } from "@/components/site/rich-text";
 
 type ContactPageClientProps = {
   siteContent: SiteContent;
@@ -75,26 +74,16 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
 
   return (
     <div className="space-y-10">
-      <header className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-        <div className="max-w-2xl space-y-4">
-          <RichText
-            as="h1"
-            value={siteContent.contact.title}
-            className="text-3xl font-semibold tracking-tight sm:text-4xl"
-          />
-          <RichText
-            value={siteContent.contact.copy}
-            className="prose prose-sm max-w-none text-foreground/70 sm:prose-base"
-          />
-        </div>
-        <div className="relative aspect-[4/3] w-full max-w-sm overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/5">
-          <Image
-            src={siteContent.contact.imageSrc || "/images/contact-visual.svg"}
-            alt={getPlainText(translate(locale, siteContent.contact.imageAlt))}
-            fill
-            className="object-cover"
-          />
-        </div>
+      <header className="max-w-3xl space-y-2 sm:space-y-3">
+        <RichText
+          as="h1"
+          value={siteContent.contact.title}
+          className="text-3xl font-semibold tracking-tight sm:text-4xl"
+        />
+        <RichText
+          value={siteContent.contact.copy}
+          className="prose prose-sm max-w-none text-foreground/70 sm:prose-base [&_p]:my-0"
+        />
       </header>
 
       <section className="grid gap-6 lg:grid-cols-2">
