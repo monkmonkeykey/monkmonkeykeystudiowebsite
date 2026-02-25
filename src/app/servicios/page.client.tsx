@@ -26,6 +26,7 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const activeService = services[activeServiceIndex] ?? services[0];
+  const deliverablesLabel = locale === "es" ? "Entregables" : "Deliverables";
   const galleryImages = useMemo(() => {
     const fromService = (activeService?.gallery ?? []).filter((image) => image.src.trim().length > 0);
 
@@ -142,13 +143,24 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
                   </a>
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-2.5">
+                  <p className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/90">
+                    <span className="size-1.5 rounded-full bg-primary" aria-hidden />
+                    {deliverablesLabel}
+                  </p>
+
                   {(activeService.outcomes || []).map((outcome, outcomeIndex) => (
                     <div
                       key={`${activeService.slug}-outcome-${outcomeIndex}`}
-                      className="rounded-xl bg-background px-3 py-2 text-sm text-foreground/70 ring-1 ring-foreground/10"
+                      className="flex items-start gap-2.5 rounded-xl border border-foreground/10 bg-background/90 px-3 py-2.5 text-sm text-foreground/75 shadow-[inset_0_1px_0_rgba(255,255,255,0.02)]"
                     >
-                      {translate(locale, outcome)}
+                      <span
+                        className="mt-1 inline-flex size-5 shrink-0 items-center justify-center rounded-full border border-primary/35 bg-primary/10 text-[10px] font-semibold text-primary"
+                        aria-hidden
+                      >
+                        ✓
+                      </span>
+                      <span className="leading-relaxed">{translate(locale, outcome)}</span>
                     </div>
                   ))}
                 </div>
