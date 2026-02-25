@@ -53,7 +53,12 @@ const normalizeRichText = (value: string | undefined): string => {
     return `<span${styleAttr}>`;
   });
 
-  const normalized = withSpanFonts.replace(/<\/font>/gi, "</span>");
+  const normalized = withSpanFonts
+    .replace(/<\/font>/gi, "</span>")
+    .replace(/<(p|div|span)[^>]*>(\s|&nbsp;|<br\s*\/?>)*<\/(p|div|span)>/gi, "")
+    .replace(/^(\s|&nbsp;|<br\s*\/?>)+/gi, "")
+    .replace(/(\s|&nbsp;|<br\s*\/?>)+$/gi, "");
+
   return stripHtmlContent(normalized) ? normalized : "";
 };
 
