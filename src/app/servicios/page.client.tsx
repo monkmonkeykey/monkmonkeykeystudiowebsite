@@ -127,15 +127,20 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
             {activeService && (
               <div className="space-y-4 rounded-2xl border border-foreground/10 bg-foreground/[0.03] p-4">
                 <div className="space-y-2 text-sm text-foreground/70">
-                  <RichText
-                    as="p"
-                    value={siteContent.servicesPage.sessionTitle}
-                    className="font-semibold text-foreground"
-                  />
+                  <div className="flex items-start justify-between gap-3">
+                    <RichText
+                      as="p"
+                      value={siteContent.servicesPage.sessionTitle}
+                      className="font-semibold text-foreground"
+                    />
+                    <Link
+                      href="/contacto"
+                      className="inline-flex shrink-0 items-center rounded-full border border-primary/35 bg-primary/10 px-3 py-1.5 text-xs font-semibold text-primary transition hover:border-primary/50 hover:bg-primary/15 hover:text-primary/90"
+                    >
+                      <RichText as="span" value={siteContent.servicesPage.talkCtaLabel} />
+                    </Link>
+                  </div>
                   <RichText as="p" value={siteContent.servicesPage.sessionCopy} />
-                  <Link href="/contacto" className="inline-flex items-center gap-2 text-primary hover:text-primary/80">
-                    <RichText as="span" value={siteContent.servicesPage.talkCtaLabel} />
-                  </Link>
                   <a
                     href="#top"
                     className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-foreground/60 transition hover:text-foreground sm:hidden"
