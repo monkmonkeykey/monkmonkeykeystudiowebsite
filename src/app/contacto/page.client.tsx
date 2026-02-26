@@ -105,18 +105,7 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
           </Link>
         </div>
 
-        <div className="space-y-4 rounded-3xl border border-foreground/10 bg-foreground/5 p-6">
-          <RichText
-            as="h2"
-            value={siteContent.contact.preparationTitle}
-            className="text-lg font-semibold text-foreground/90"
-          />
-          <ul className="space-y-3 text-sm text-foreground/70">
-            {siteContent.contact.preparation.map((item, index) => (
-              <li key={`${item.es}-${index}`}>{translate(locale, item)}</li>
-            ))}
-          </ul>
-        </div>
+      
       </section>
 
       <section className="grid gap-6 lg:grid-cols-3">

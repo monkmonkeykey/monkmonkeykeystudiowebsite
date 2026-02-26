@@ -1758,11 +1758,7 @@ const SiteContentManager = ({
             value={draft.contact.bookCallCta}
             onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, bookCallCta: value } })}
           />
-          <RichLocaleInputs
-            label="Título lista preparación"
-            value={draft.contact.preparationTitle}
-            onChange={(value) => setDraft({ ...draft, contact: { ...draft.contact, preparationTitle: value } })}
-          />
+        
           <LocaleListEditor
             label="Lista de preparación"
             addLabel="Agregar punto"

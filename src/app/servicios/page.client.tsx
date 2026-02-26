@@ -26,7 +26,7 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const activeService = services[activeServiceIndex] ?? services[0];
-  const deliverablesLabel = locale === "es" ? "Entregables" : "Deliverables";
+  const deliverablesLabel = locale === "es" ? "Nuestros servicios" : "Deliverables";
   const deliverableDotStyles = ["bg-sky-400", "bg-violet-400", "bg-emerald-400", "bg-amber-400"];
   const galleryImages = useMemo(() => {
     const fromService = (activeService?.gallery ?? []).filter((image) => image.src.trim().length > 0);
@@ -150,8 +150,8 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
                 </div>
 
                 <div className="space-y-2.5">
-                  <p className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/90">
-                    <span className="size-1.5 rounded-full bg-primary" aria-hidden />
+                  <p className="inline-flex items-center gap-1 rounded-full border border-primary/25 bg-primary/10 px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/90">
+                    <span className="size-1. rounded-full bg-primary" aria-hidden/>
                     {deliverablesLabel}
                   </p>
 
