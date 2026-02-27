@@ -62,7 +62,7 @@ export default function HomePageClient({
             </div>
           )}
           <div className="absolute inset-0 flex items-end justify-center px-4 pb-5 sm:items-center sm:px-10 sm:pb-0 lg:px-14">
-            <div className="flex w-full max-w-5xl flex-col items-center gap-4 rounded-2xl bg-black/35 px-4 py-4 text-center backdrop-blur-[1px] sm:gap-6 sm:bg-transparent sm:px-0 sm:py-0 sm:backdrop-blur-0">
+            <div className="flex w-full max-w-5xl flex-col items-center gap-4 px-4 py-4 text-center sm:gap-6 sm:px-0 sm:py-0">
               <RichText
                 as="h1"
                 value={siteContent.home.heroHeadline}
@@ -92,7 +92,13 @@ export default function HomePageClient({
       </section>
 
       <section className="space-y-6">
-        
+        <div className="flex items-center gap-3 px-1">
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-foreground/30 to-foreground/10" />
+          <span className="rounded-full border border-foreground/15 bg-foreground/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-foreground/70">
+            <RichText as="span" value={siteContent.home.servicesBadgeLabel} />
+          </span>
+          <div className="h-px flex-1 bg-gradient-to-r from-foreground/10 via-foreground/30 to-transparent" />
+        </div>
 
         <div className="grid gap-6 lg:grid-cols-3">
           {services.map((service) => (
