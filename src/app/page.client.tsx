@@ -61,16 +61,16 @@ export default function HomePageClient({
               <div className="absolute inset-0 bg-gradient-to-br from-background/20 via-background/20 to-background/20" />
             </div>
           )}
-          <div className="absolute inset-0 flex items-center justify-center px-6 sm:px-10 lg:px-14">
-            <div className="flex max-w-5xl flex-col items-center gap-6 text-center">
+          <div className="absolute inset-0 flex items-end justify-center px-4 pb-5 sm:items-center sm:px-10 sm:pb-0 lg:px-14">
+            <div className="flex w-full max-w-5xl flex-col items-center gap-4 rounded-2xl bg-black/35 px-4 py-4 text-center backdrop-blur-[1px] sm:gap-6 sm:bg-transparent sm:px-0 sm:py-0 sm:backdrop-blur-0">
               <RichText
                 as="h1"
                 value={siteContent.home.heroHeadline}
-                className="text-lg font-semibold tracking-tight leading-[1.1] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] sm:text-2xl lg:text-4xl [&>*]:m-0 [&>*]:leading-[1.1] [&>p]:inline [&>div]:inline"
+                className="text-[clamp(1.05rem,4.8vw,1.35rem)] font-semibold tracking-tight leading-[1.15] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] sm:text-2xl lg:text-4xl [&>*]:m-0 [&>*]:!text-inherit [&>*]:leading-[1.15] [&>p]:inline [&>div]:inline"
               />
               <RichText
                 value={siteContent.home.heroSubtitle}
-                className="max-w-3xl text-sm font-normal leading-relaxed text-white/80 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)] sm:text-base lg:text-lg [&>p]:leading-relaxed"
+                className="hidden max-w-3xl text-sm font-normal leading-relaxed text-white/80 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)] sm:block sm:text-base lg:text-lg [&>p]:leading-relaxed"
               />
               <div className="flex flex-wrap justify-center gap-3">
                 <Link
