@@ -66,7 +66,7 @@ export default function HomePageClient({
               <RichText
                 as="h1"
                 value={siteContent.home.heroHeadline}
-                className="hero-mobile-headline text-[clamp(0.7rem,3vw,0.95rem)] font-semibold tracking-tight leading-[1.15] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] sm:text-2xl lg:text-4xl [&>*]:m-0 [&>*]:leading-[1.15] [&>p]:inline [&>div]:inline"
+                className="hero-mobile-headline text-[clamp(0.7rem,3vw,0.95rem)] font-semibold tracking-tight leading-[1.15] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] sm:text-2xl lg:text-1xl [&>*]:m-0 [&>*]:leading-[1.15] [&>p]:inline [&>div]:inline"
               />
               <RichText
                 value={siteContent.home.heroSubtitle}
