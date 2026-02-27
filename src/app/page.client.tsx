@@ -61,30 +61,32 @@ export default function HomePageClient({
               <div className="absolute inset-0 bg-gradient-to-br from-background/20 via-background/20 to-background/20" />
             </div>
           )}
-        </div>
-        <div className="mx-auto flex max-w-5xl flex-col items-center gap-6 px-6 pb-12 pt-10 text-center sm:px-10 lg:px-14">
-          <RichText
-            as="h1"
-            value={siteContent.home.heroHeadline}
-            className="text-lg font-semibold tracking-tight text-foreground sm:text-xl lg:text-2xl"
-          />
-          <RichText
-            value={siteContent.home.heroSubtitle}
-            className="max-w-3xl text-base font-normal leading-relaxed text-foreground/70 sm:text-lg [&>p]:leading-relaxed"
-          />
-          <div className="flex flex-wrap justify-center gap-3">
-            <Link
-              href="/contacto"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-semibold text-background shadow-lg shadow-foreground/20 transition hover:-translate-y-0.5 hover:bg-foreground/90"
-            >
-              <RichText as="span" value={siteContent.home.heroPrimaryCta} />
-            </Link>
-            <Link
-              href="/proyectos"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-foreground/20 bg-background/80 px-5 py-2.5 text-sm font-semibold text-foreground transition hover:-translate-y-0.5 hover:border-foreground/30 hover:text-foreground/90"
-            >
-              <RichText as="span" value={siteContent.home.heroSecondaryCta} />
-            </Link>
+          <div className="absolute inset-0 flex items-center justify-center px-6 sm:px-10 lg:px-14">
+            <div className="flex max-w-5xl flex-col items-center gap-6 text-center">
+              <RichText
+                as="h1"
+                value={siteContent.home.heroHeadline}
+                className="text-lg font-semibold tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] sm:text-2xl lg:text-4xl"
+              />
+              <RichText
+                value={siteContent.home.heroSubtitle}
+                className="max-w-3xl text-sm font-normal leading-relaxed text-white/80 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)] sm:text-base lg:text-lg [&>p]:leading-relaxed"
+              />
+              <div className="flex flex-wrap justify-center gap-3">
+                <Link
+                  href="/contacto"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-semibold text-background shadow-lg shadow-foreground/20 transition hover:-translate-y-0.5 hover:bg-foreground/90"
+                >
+                  <RichText as="span" value={siteContent.home.heroPrimaryCta} />
+                </Link>
+                <Link
+                  href="/proyectos"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-black/30 px-5 py-2.5 text-sm font-semibold text-white backdrop-blur-sm transition hover:-translate-y-0.5 hover:border-white/40"
+                >
+                  <RichText as="span" value={siteContent.home.heroSecondaryCta} />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -112,8 +114,13 @@ export default function HomePageClient({
                     key={`${service.slug}-outcome-${index}`}
                     className="flex items-start gap-3 rounded-2xl border border-foreground/10 bg-foreground/[0.03] px-4 py-3 text-sm text-foreground/70"
                   >
-                    <span className="mt-0.5 flex size-6 items-center justify-center rounded-full bg-primary/10 text-[11px] font-semibold text-primary ring-1 ring-primary/20">
-                      {String(index + 1).padStart(2, "0")}
+                    <span
+                      className="mt-1.5 size-2.5 shrink-0 rounded-full"
+                      style={{
+                        backgroundColor: ["#a855f7", "#3b82f6", "#14b8a6", "#f97316"][index % 4],
+                      }}
+                    >
+                      <span className="sr-only">{index + 1}</span>
                     </span>
                     <span>{translate(locale, outcome)}</span>
                   </div>
