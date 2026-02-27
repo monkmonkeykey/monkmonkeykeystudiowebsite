@@ -36,3 +36,11 @@ body {
 .rich-text-reset :is(em, i) {
   font-style: italic;
 }
+
+
+@media (max-width: 639px) {
+  .hero-mobile-headline :is(p, div, span, font, strong, em, b, i) {
+    font-size: inherit !important;
+    line-height: inherit !important;
+  }
+}
