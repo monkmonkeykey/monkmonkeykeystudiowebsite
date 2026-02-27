@@ -6,7 +6,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "monkmonkeykey estudio",
   description:
-    "Monkmonkeykey Estudio es un estudio de producción artística y técnica enfocado en nuevos medios, sistemas interactivos y proyectos culturales, especialmente en el ámbito de la música experimental, con especialización en audio multicanal.",
+    "monkmonkeykey estudio es un estudio de producción artística y técnica enfocado en nuevos medios, sistemas interactivos y proyectos culturales, especialmente en el ámbito de la música experimental, con especialización en audio multicanal.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
