@@ -6,7 +6,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "monkmonkeykey estudio",
   description:
-    "MonkMonkeyKey impulsa productos digitales con estrategia, diseño y desarrollo centrados en resultados tangibles.",
+    "Monkmonkeykey Estudio es un estudio de producción artística y técnica enfocado en nuevos medios, sistemas interactivos y proyectos culturales, especialmente en el ámbito de la música experimental, con especialización en audio multicanal.",
 };
 
 export const dynamic = "force-dynamic";
