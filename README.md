@@ -118,6 +118,12 @@ El formulario de contacto enviará los mensajes por **Resend** o por **Gmail SMT
   La respuesta debe devolverte el mismo JSON con estado `200`. Si ves un `401` revisa la cookie; si aparece un mensaje sobre MongoDB,
   significa que el servidor no consigue abrir la conexión y el administrador mostrará el mismo error legible en pantalla en lugar de `[object Object]`.
 
+## Personalizar el ícono del sitio (favicon)
+- El favicon actual está en `public/favicon.svg`.
+- Next.js lo carga desde `src/app/layout.tsx` en `metadata.icons`.
+- Para usar tu propio ícono, reemplaza `public/favicon.svg` por tu archivo (idealmente SVG o PNG cuadrado) y conserva el mismo nombre, o cambia la ruta en `metadata.icons`.
+- Si quieres soportar un ícono específico para iPhone/iPad, puedes agregar otro archivo (por ejemplo `public/apple-touch-icon.png`) y actualizar la propiedad `apple` en `metadata.icons`.
+
 ## Scripts disponibles
 - `npm run dev`: inicia el servidor de desarrollo.
 - `npm run build`: genera el build de producción.

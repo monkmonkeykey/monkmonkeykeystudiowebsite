@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   title: "monkmonkeykey estudio",
   description:
     "Monkmonkeykey Estudio es un estudio de producción artística y técnica enfocado en nuevos medios, sistemas interactivos y proyectos culturales, especialmente en el ámbito de la música experimental, con especialización en audio multicanal.",
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
 };
 
 export const dynamic = "force-dynamic";
