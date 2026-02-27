@@ -92,12 +92,12 @@ export default function HomePageClient({
       </section>
 
       <section className="space-y-6">
-        <div className="flex items-center gap-3 px-1">
-          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-foreground/30 to-foreground/10" />
-          <span className="rounded-full border border-foreground/15 bg-foreground/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-foreground/70">
+        <div className="flex justify-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-foreground/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-foreground/70">
+            <span className="size-1.5 rounded-full bg-primary/80" />
             <RichText as="span" value={siteContent.home.servicesBadgeLabel} />
-          </span>
-          <div className="h-px flex-1 bg-gradient-to-r from-foreground/10 via-foreground/30 to-transparent" />
+            <span className="size-1.5 rounded-full bg-primary/80" />
+          </div>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-3">
@@ -144,7 +144,14 @@ export default function HomePageClient({
       </section>
 
       <section className="space-y-6">
-        
+        <div className="flex justify-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-foreground/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-foreground/70">
+            <span className="size-1.5 rounded-full bg-primary/80" />
+            <RichText as="span" value={siteContent.home.projectsBadgeLabel} />
+            <span className="size-1.5 rounded-full bg-primary/80" />
+          </div>
+        </div>
+
         <div className="grid gap-6 lg:grid-cols-2">
           {projects.slice(0, 2).map((project) => (
             <article
@@ -217,13 +224,17 @@ export default function HomePageClient({
       </section>
 
       <section className="space-y-6">
+        <div className="flex justify-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-foreground/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-foreground/70">
+            <span className="size-1.5 rounded-full bg-primary/80" />
+            <RichText as="span" value={siteContent.home.clientsTitle} />
+            <span className="size-1.5 rounded-full bg-primary/80" />
+          </div>
+        </div>
+
         <header className="overflow-hidden rounded-3xl border border-foreground/10 bg-gradient-to-r from-foreground/5 via-background to-foreground/5 p-6 shadow-sm sm:p-8">
           <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
             <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 rounded-full bg-foreground/5 px-3 py-1 text-xs font-semibold text-foreground/70 ring-1 ring-foreground/10">
-                <span className="size-2 rounded-full bg-primary" />
-                <RichText as="span" value={siteContent.home.clientsTitle} />
-              </div>
               <p className="text-base text-foreground/70">
                 {locale === "es"
                   ? "Colaboramos con diversos artistas e instituciones del sector público y privado."
