@@ -62,6 +62,19 @@ El formulario de contacto enviará los mensajes por **Resend** o por **Gmail SMT
 - Usa **Resend** si existen `RESEND_API_KEY` y `CONTACT_FROM`.
 - Si no, usa **Gmail** si existen `GMAIL_USER` y `GMAIL_APP_PASSWORD`.
 
+### ¿Dónde agrego mi correo y/o la automatización?
+- **Correo visible en la página de contacto:** se toma de `contact.email` en `src/content/site.ts` (o desde MongoDB si ya editas el sitio desde `/admin`).
+- **Correo destino real de los formularios (automatización):** define `CONTACT_RECIPIENT` en `.env.local`.
+- **Remitente del correo automático:** define `CONTACT_FROM` en `.env.local`.
+- **Regla de fallback importante:** si no defines `CONTACT_RECIPIENT`, la API usa primero `contact.email` del contenido del sitio; si tampoco existe, devuelve error de configuración.
+
+Ejemplo mínimo en `.env.local`:
+
+```bash
+CONTACT_FROM="tuusuario@gmail.com"
+CONTACT_RECIPIENT="tuusuario@gmail.com"
+```
+
 ### Opción A: Resend (recomendado)
 1. Crea una cuenta en [Resend](https://resend.com/) y genera una API key.
 2. Define en `.env.local`:
@@ -87,6 +100,21 @@ El formulario de contacto enviará los mensajes por **Resend** o por **Gmail SMT
    GMAIL_HOST="smtp.gmail.com"
    GMAIL_PORT="465"
    ```
+
+Checklist rápida para Gmail:
+- Si ves errores `535 Authentication failed`, vuelve a generar el App Password y verifica que no haya espacios al copiarlo.
+- `CONTACT_FROM` debe ser una dirección válida; para evitar bloqueos, usa el mismo correo de `GMAIL_USER`.
+- El formulario envía al endpoint `POST /api/contact`; si responde `{"ok":true}` la automatización quedó funcionando.
+- Puedes probarlo por terminal:
+  ```bash
+  curl -X POST http://localhost:3000/api/contact \
+    -H "Content-Type: application/json" \
+    -d '{
+      "name":"Prueba",
+      "email":"tuusuario@gmail.com",
+      "message":"Mensaje de prueba desde curl"
+    }'
+  ```
 
 > **Nota:** el destinatario final usa `CONTACT_RECIPIENT` si está definido; de lo contrario, se enviará a `CONTACT_FROM`.
 
