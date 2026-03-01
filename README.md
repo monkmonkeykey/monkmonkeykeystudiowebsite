@@ -76,14 +76,59 @@ CONTACT_RECIPIENT="tuusuario@gmail.com"
 ```
 
 ### Opción A: Resend (recomendado)
-1. Crea una cuenta en [Resend](https://resend.com/) y genera una API key.
-2. Define en `.env.local`:
+Guía paso a paso para vincular el formulario con Resend:
+
+1. **Crea tu cuenta en Resend**
+   - Entra a [https://resend.com](https://resend.com) y crea tu cuenta.
+
+2. **Verifica el dominio del remitente (recomendado)**
+   - En el panel de Resend abre **Domains** y agrega tu dominio (ej. `tudominio.com`).
+   - Copia los registros DNS (SPF/DKIM) que Resend te muestra y pégalos en tu proveedor DNS.
+   - Espera a que el estado del dominio aparezca como **Verified**.
+
+3. **(Alternativa rápida) usa un remitente de pruebas**
+   - Si todavía no verificas dominio, puedes probar con un remitente sandbox de Resend (según lo permitido en tu cuenta).
+   - Para producción, usa siempre un dominio verificado.
+
+4. **Genera una API Key en Resend**
+   - Ve a **API Keys** → **Create API Key**.
+   - Ponle nombre (ej. `monkmonkeykey-web`) y copia el valor.
+
+5. **Configura variables en tu `.env.local`**
    ```bash
-   RESEND_API_KEY="tu_api_key"
+   RESEND_API_KEY="re_xxxxxxxxxxxxxxxxx"
    CONTACT_FROM="contacto@tudominio.com"
    CONTACT_RECIPIENT="tu-correo@tudominio.com" # opcional
    ```
-3. Si usas un dominio propio, verifica el dominio en Resend para poder usarlo como remitente.
+   - `CONTACT_FROM`: remitente que verá el receptor.
+   - `CONTACT_RECIPIENT`: buzón que recibirá los mensajes del formulario.
+   - Si omites `CONTACT_RECIPIENT`, la app usa fallback (`contact.email` del contenido del sitio).
+
+6. **Reinicia tu servidor local**
+   - Si `npm run dev` ya estaba corriendo, detenlo y vuelve a iniciarlo para cargar variables nuevas.
+
+7. **Prueba el envío desde el formulario web**
+   - Abre `/contacto`, llena el formulario y envía.
+
+8. **Prueba técnica por API (opcional)**
+   ```bash
+   curl -X POST http://localhost:3000/api/contact \
+     -H "Content-Type: application/json" \
+     -d '{
+       "name":"Prueba Resend",
+       "email":"tuusuario@gmail.com",
+       "message":"Mensaje de prueba con Resend"
+     }'
+   ```
+   - Si todo está bien, recibirás `{"ok":true}`.
+
+9. **Confirma en el dashboard de Resend**
+   - Revisa **Logs** para verificar que el correo se envió sin errores.
+
+Errores comunes en Resend:
+- `401/403`: API key inválida o con permisos insuficientes.
+- Error de remitente: `CONTACT_FROM` no corresponde a un dominio verificado.
+- `500 No contact recipient configured`: define `CONTACT_RECIPIENT` o asegúrate de tener `contact.email` configurado en el contenido del sitio.
 
 ### Opción B: Gmail SMTP
 1. Activa la verificación en dos pasos en tu cuenta de Gmail.
