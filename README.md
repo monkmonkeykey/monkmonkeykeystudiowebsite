@@ -39,6 +39,7 @@ Sitio institucional construido con Next.js 16 y el App Router. Carga contenido b
 | `GMAIL_APP_PASSWORD` | (Opcional) App password de Gmail (16 caracteres) para SMTP seguro. |
 | `GMAIL_HOST` | (Opcional) Host SMTP de Gmail, por defecto `smtp.gmail.com`. |
 | `GMAIL_PORT` | (Opcional) Puerto SMTP, por defecto `465`. |
+| `NEXT_PUBLIC_SITE_URL` | (Opcional) URL pública del sitio (ej. `https://monkmonkeykey.com`) para generar metadatos absolutos de Open Graph/Twitter al compartir enlaces. |
 
 Si no configuras MongoDB, el sitio seguirá leyendo los archivos Markdown de `content/`. Si no configuras Cloudinary, podrás seguir pegando URLs manualmente para las imágenes y videos.
 
