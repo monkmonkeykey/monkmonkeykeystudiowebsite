@@ -33,7 +33,7 @@ Sitio institucional construido con Next.js 16 y el App Router. Carga contenido b
 | `CLOUDINARY_API_KEY` | API key con permisos de subida. |
 | `CLOUDINARY_API_SECRET` | API secret asociado a la key. |
 | `RESEND_API_KEY` | (Opcional) API key de Resend para enviar los correos del formulario de contacto. |
-| `CONTACT_FROM` | Remitente para los correos de contacto (ej. `contacto@tudominio.com` o tu Gmail). |
+| `CONTACT_FROM` | (Opcional recomendado) Remitente para los correos de contacto (ej. `contacto@tudominio.com` o tu Gmail). |
 | `CONTACT_RECIPIENT` | (Opcional) Email destino para los mensajes; por defecto usa `CONTACT_FROM`. |
 | `GMAIL_USER` | (Opcional) Usuario de Gmail para enviar correos vía SMTP. |
 | `GMAIL_APP_PASSWORD` | (Opcional) App password de Gmail (16 caracteres) para SMTP seguro. |
@@ -60,13 +60,13 @@ Para cerrar sesión usa el botón “Cerrar sesión” dentro del panel o borra 
 
 ## Configurar el envío de correos del formulario de contacto
 El formulario de contacto enviará los mensajes por **Resend** o por **Gmail SMTP**. La app elige automáticamente el proveedor:
-- Usa **Resend** si existen `RESEND_API_KEY` y `CONTACT_FROM`.
+- Usa **Resend** si existe `RESEND_API_KEY` (si no defines `CONTACT_FROM`, usa fallback automático).
 - Si no, usa **Gmail** si existen `GMAIL_USER` y `GMAIL_APP_PASSWORD`.
 
 ### ¿Dónde agrego mi correo y/o la automatización?
 - **Correo visible en la página de contacto:** se toma de `contact.email` en `src/content/site.ts` (o desde MongoDB si ya editas el sitio desde `/admin`).
 - **Correo destino real de los formularios (automatización):** define `CONTACT_RECIPIENT` en `.env.local`.
-- **Remitente del correo automático:** define `CONTACT_FROM` en `.env.local`.
+- **Remitente del correo automático:** define `CONTACT_FROM` en `.env.local` (recomendado para producción).
 - **Regla de fallback importante:** si no defines `CONTACT_RECIPIENT`, la API usa primero `contact.email` del contenido del sitio; si tampoco existe, devuelve error de configuración.
 
 Ejemplo mínimo en `.env.local`:
@@ -75,6 +75,8 @@ Ejemplo mínimo en `.env.local`:
 CONTACT_FROM="tuusuario@gmail.com"
 CONTACT_RECIPIENT="tuusuario@gmail.com"
 ```
+
+> Si usas Resend sin `CONTACT_FROM`, la app intentará usar `contact.email` del sitio y, como último fallback, `onboarding@resend.dev` (modo pruebas). Para producción se recomienda siempre un remitente de dominio verificado en Resend.
 
 ### Opción A: Resend (recomendado)
 Guía paso a paso para vincular el formulario con Resend:

@@ -1,6 +1,7 @@
 import tls from "node:tls";
 
 const RESEND_ENDPOINT = "https://api.resend.com/emails";
+const RESEND_DEFAULT_FROM = "onboarding@resend.dev";
 
 type ContactEmailPayload = {
   from?: string;
@@ -55,32 +56,30 @@ function formatText(payload: ContactEmailPayload) {
 }
 
 function resolveProvider(): EmailProvider {
-  if (process.env.RESEND_API_KEY) {
+  const hasResend = Boolean(process.env.RESEND_API_KEY);
+  const hasGmail = Boolean(process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD);
+
+  if (hasResend) {
     return "resend";
   }
 
-  if (process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD) {
+  if (hasGmail) {
     return "gmail";
   }
 
   throw new Error(
-    "Email provider not configured (RESEND_API_KEY/CONTACT_FROM or GMAIL_USER/GMAIL_APP_PASSWORD)",
+    "Email provider not configured (RESEND_API_KEY or GMAIL_USER/GMAIL_APP_PASSWORD)",
   );
 }
 
 async function sendViaResend(payload: ContactEmailPayload) {
   const apiKey = process.env.RESEND_API_KEY;
-  const from = process.env.CONTACT_FROM || payload.from;
+  const from = process.env.CONTACT_FROM || payload.from || RESEND_DEFAULT_FROM;
 
   if (!apiKey) {
     throw new Error("Resend provider not configured (RESEND_API_KEY missing)");
   }
 
-  if (!from) {
-    throw new Error(
-      "Resend provider not configured (CONTACT_FROM missing). Use a verified domain sender.",
-    );
-  }
 
   const subject = payload.subject?.trim()
     ? payload.subject.trim()
