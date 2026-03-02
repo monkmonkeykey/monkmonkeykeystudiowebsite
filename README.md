@@ -67,7 +67,7 @@ El formulario de contacto enviará los mensajes por **Resend** o por **Gmail SMT
 - **Correo visible en la página de contacto:** se toma de `contact.email` en `src/content/site.ts` (o desde MongoDB si ya editas el sitio desde `/admin`).
 - **Correo destino real de los formularios (automatización):** define `CONTACT_RECIPIENT` en `.env.local`.
 - **Remitente del correo automático:** define `CONTACT_FROM` en `.env.local` (recomendado para producción).
-- **Regla de fallback importante:** si no defines `CONTACT_RECIPIENT`, la API usa primero `contact.email` del contenido del sitio; si tampoco existe, devuelve error de configuración.
+- **Regla de fallback importante:** si no defines `CONTACT_RECIPIENT`, la API usa `contact.email` del contenido del sitio; si tampoco existe, devuelve error de configuración.
 
 Ejemplo mínimo en `.env.local`:
 
@@ -76,7 +76,7 @@ CONTACT_FROM="tuusuario@gmail.com"
 CONTACT_RECIPIENT="tuusuario@gmail.com"
 ```
 
-> Si usas Resend sin `CONTACT_FROM`, la app intentará usar `contact.email` del sitio y, como último fallback, `onboarding@resend.dev` (modo pruebas). Para producción se recomienda siempre un remitente de dominio verificado en Resend.
+> Si usas Resend sin `CONTACT_FROM`, la app usará `onboarding@resend.dev` (modo pruebas). Para producción se recomienda siempre un remitente de dominio verificado en Resend.
 
 ### Opción A: Resend (recomendado)
 Guía paso a paso para vincular el formulario con Resend:

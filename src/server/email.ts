@@ -74,7 +74,7 @@ function resolveProvider(): EmailProvider {
 
 async function sendViaResend(payload: ContactEmailPayload) {
   const apiKey = process.env.RESEND_API_KEY;
-  const from = process.env.CONTACT_FROM || payload.from || RESEND_DEFAULT_FROM;
+  const from = process.env.CONTACT_FROM || RESEND_DEFAULT_FROM;
 
   if (!apiKey) {
     throw new Error("Resend provider not configured (RESEND_API_KEY missing)");

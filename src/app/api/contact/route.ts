@@ -27,7 +27,7 @@ export async function POST(request: Request) {
 
   const siteContent = await getSiteContent();
   const recipient = process.env.CONTACT_RECIPIENT || siteContent.contact.email;
-  const from = process.env.CONTACT_FROM || siteContent.contact.email || undefined;
+  const from = process.env.CONTACT_FROM || undefined;
 
   if (!recipient) {
     return NextResponse.json(
