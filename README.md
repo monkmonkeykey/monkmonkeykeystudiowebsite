@@ -33,6 +33,7 @@ Sitio institucional construido con Next.js 16 y el App Router. Carga contenido b
 | `CLOUDINARY_API_KEY` | API key con permisos de subida. |
 | `CLOUDINARY_API_SECRET` | API secret asociado a la key. |
 | `RESEND_API_KEY` | (Opcional) API key de Resend para enviar los correos del formulario de contacto. |
+| `EMAIL_PROVIDER` | (Opcional) Fuerza el proveedor de correo: `auto` (por defecto), `resend` o `gmail`. |
 | `CONTACT_FROM` | (Opcional recomendado) Remitente para los correos de contacto (ej. `contacto@tudominio.com` o tu Gmail). |
 | `CONTACT_RECIPIENT` | (Opcional) Email destino para los mensajes; por defecto usa `CONTACT_FROM`. |
 | `GMAIL_USER` | (Opcional) Usuario de Gmail para enviar correos vía SMTP. |
@@ -60,8 +61,8 @@ Para cerrar sesión usa el botón “Cerrar sesión” dentro del panel o borra 
 
 ## Configurar el envío de correos del formulario de contacto
 El formulario de contacto enviará los mensajes por **Resend** o por **Gmail SMTP**. La app elige automáticamente el proveedor:
-- Usa **Resend** si existe `RESEND_API_KEY` (si no defines `CONTACT_FROM`, usa fallback automático).
-- Si no, usa **Gmail** si existen `GMAIL_USER` y `GMAIL_APP_PASSWORD`.
+- En modo `auto` (por defecto): usa **Resend** si existe `RESEND_API_KEY`; si no, usa **Gmail** si existen `GMAIL_USER` y `GMAIL_APP_PASSWORD`.
+- Puedes forzarlo con `EMAIL_PROVIDER=gmail` o `EMAIL_PROVIDER=resend`.
 
 ### ¿Dónde agrego mi correo y/o la automatización?
 - **Correo visible en la página de contacto:** se toma de `contact.email` en `src/content/site.ts` (o desde MongoDB si ya editas el sitio desde `/admin`).
@@ -133,36 +134,42 @@ Errores comunes en Resend:
 - Error de remitente: `CONTACT_FROM` no corresponde a un dominio verificado.
 - `500 No contact recipient configured`: define `CONTACT_RECIPIENT` o asegúrate de tener `contact.email` configurado en el contenido del sitio.
 
-### Opción B: Gmail SMTP
-1. Activa la verificación en dos pasos en tu cuenta de Gmail.
-2. Crea un **App password** (Contraseñas de aplicaciones) y copia el valor de 16 caracteres.
-3. Define en `.env.local`:
+### Opción B: Gmail SMTP (paso a paso)
+Si vas a usar Gmail (y no dominio con Resend), te recomiendo forzarlo con `EMAIL_PROVIDER=gmail`.
+
+1. **Activa verificación en dos pasos** en tu cuenta Google.
+2. Ve a **Cuenta de Google → Seguridad → Contraseñas de aplicaciones**.
+3. Crea una contraseña de aplicación para “Correo” y copia los 16 caracteres.
+4. Configura `.env.local` así:
    ```bash
+   EMAIL_PROVIDER="gmail"
    GMAIL_USER="tuusuario@gmail.com"
-   GMAIL_APP_PASSWORD="tu_app_password"
+   GMAIL_APP_PASSWORD="tu_app_password_de_16_chars"
    CONTACT_FROM="tuusuario@gmail.com"
-   CONTACT_RECIPIENT="tu-correo@tudominio.com" # opcional
+   CONTACT_RECIPIENT="tuusuario@gmail.com" # o el correo destino real
    ```
-4. (Opcional) si necesitas otro host/puerto SMTP:
+5. (Opcional) host/puerto SMTP:
    ```bash
    GMAIL_HOST="smtp.gmail.com"
    GMAIL_PORT="465"
    ```
+6. **Importante:** si tienes `RESEND_API_KEY` cargada y no defines `EMAIL_PROVIDER=gmail`, en modo `auto` la app podría intentar Resend primero.
+7. Reinicia `npm run dev` para recargar variables.
+8. Prueba por terminal:
+   ```bash
+   curl -X POST http://localhost:3000/api/contact \
+     -H "Content-Type: application/json" \
+     -d '{
+       "name":"Prueba Gmail",
+       "email":"tuusuario@gmail.com",
+       "message":"Mensaje de prueba desde curl"
+     }'
+   ```
 
 Checklist rápida para Gmail:
-- Si ves errores `535 Authentication failed`, vuelve a generar el App Password y verifica que no haya espacios al copiarlo.
-- `CONTACT_FROM` debe ser una dirección válida; para evitar bloqueos, usa el mismo correo de `GMAIL_USER`.
-- El formulario envía al endpoint `POST /api/contact`; si responde `{"ok":true}` la automatización quedó funcionando.
-- Puedes probarlo por terminal:
-  ```bash
-  curl -X POST http://localhost:3000/api/contact \
-    -H "Content-Type: application/json" \
-    -d '{
-      "name":"Prueba",
-      "email":"tuusuario@gmail.com",
-      "message":"Mensaje de prueba desde curl"
-    }'
-  ```
+- Si ves errores `535 Authentication failed`, regenera el App Password y verifica que no haya espacios.
+- Usa `CONTACT_FROM` igual a `GMAIL_USER` para evitar rechazos del servidor SMTP.
+- Si responde `{"ok":true}`, el envío ya quedó funcionando.
 
 > **Nota:** el destinatario final usa `CONTACT_RECIPIENT` si está definido; de lo contrario, se enviará a `CONTACT_FROM`.
 

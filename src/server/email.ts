@@ -15,6 +15,7 @@ type ContactEmailPayload = {
 };
 
 type EmailProvider = "resend" | "gmail";
+type EmailProviderMode = EmailProvider | "auto";
 
 function formatHtml(payload: ContactEmailPayload) {
   const details = [
@@ -58,6 +59,27 @@ function formatText(payload: ContactEmailPayload) {
 function resolveProvider(): EmailProvider {
   const hasResend = Boolean(process.env.RESEND_API_KEY);
   const hasGmail = Boolean(process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD);
+  const configuredProvider = (process.env.EMAIL_PROVIDER || "auto").trim().toLowerCase() as EmailProviderMode;
+
+  if (!["auto", "resend", "gmail"].includes(configuredProvider)) {
+    throw new Error('Invalid EMAIL_PROVIDER value. Use "auto", "resend", or "gmail".');
+  }
+
+  if (configuredProvider === "resend") {
+    if (!hasResend) {
+      throw new Error('EMAIL_PROVIDER is "resend" but RESEND_API_KEY is missing.');
+    }
+
+    return "resend";
+  }
+
+  if (configuredProvider === "gmail") {
+    if (!hasGmail) {
+      throw new Error('EMAIL_PROVIDER is "gmail" but GMAIL_USER/GMAIL_APP_PASSWORD are missing.');
+    }
+
+    return "gmail";
+  }
 
   if (hasResend) {
     return "resend";
@@ -71,6 +93,7 @@ function resolveProvider(): EmailProvider {
     "Email provider not configured (RESEND_API_KEY or GMAIL_USER/GMAIL_APP_PASSWORD)",
   );
 }
+
 
 async function sendViaResend(payload: ContactEmailPayload) {
   const apiKey = process.env.RESEND_API_KEY;
