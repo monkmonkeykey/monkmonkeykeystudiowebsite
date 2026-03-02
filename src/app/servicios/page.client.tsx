@@ -22,8 +22,6 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
   );
   const [activeServiceIndex, setActiveServiceIndex] = useState(0);
   const [activeGalleryIndex, setActiveGalleryIndex] = useState(0);
-  const [previousGalleryImage, setPreviousGalleryImage] = useState<string | null>(null);
-  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const activeService = services[activeServiceIndex] ?? services[0];
   const deliverablesLabel = locale === "es" ? "Nuestros servicios" : "Deliverables";
@@ -43,24 +41,20 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
     ];
   }, [activeService?.gallery, siteContent.servicesPage.imageAlt, siteContent.servicesPage.imageSrc]);
 
+
   useEffect(() => {
     if (galleryImages.length <= 1) {
       return undefined;
     }
 
     const timer = window.setInterval(() => {
-      setActiveGalleryIndex((previousIndex) => {
-        const nextIndex = (previousIndex + 1) % galleryImages.length;
-        setPreviousGalleryImage(galleryImages[previousIndex]?.src ?? null);
-        setIsTransitioning(true);
-        return nextIndex;
-      });
+      setActiveGalleryIndex((previousIndex) => (previousIndex + 1) % galleryImages.length);
     }, 3000);
 
     return () => window.clearInterval(timer);
-  }, [galleryImages]);
+  }, [galleryImages.length]);
 
-  const activeGalleryImage = galleryImages[activeGalleryIndex % galleryImages.length] ?? galleryImages[0];
+  const normalizedGalleryIndex = galleryImages.length > 0 ? activeGalleryIndex % galleryImages.length : 0;
 
   return (
     <div className="space-y-12" id="top">
@@ -105,7 +99,10 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
                 <button
                   key={service.slug}
                   type="button"
-                  onClick={() => { setActiveServiceIndex(index); setActiveGalleryIndex(0); setPreviousGalleryImage(null); setIsTransitioning(false); }}
+                  onClick={() => {
+                    setActiveServiceIndex(index);
+                    setActiveGalleryIndex(0);
+                  }}
                   className={`w-full rounded-2xl border px-4 py-3 text-left transition sm:py-4 ${
                     index === activeServiceIndex
                       ? "border-primary/50 bg-primary/10"
@@ -151,7 +148,7 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
 
                 <div className="space-y-2.5">
                   <p className="inline-flex items-center gap-1 rounded-full border border-primary/25 bg-primary/10 px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/90">
-                    <span className="size-1. rounded-full bg-primary" aria-hidden/>
+                    <span className="size-1. rounded-full bg-primary" aria-hidden />
                     {deliverablesLabel}
                   </p>
 
@@ -172,21 +169,18 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
             )}
 
             <div className="relative aspect-[16/10] overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/5">
-              {previousGalleryImage && isTransitioning && previousGalleryImage !== activeGalleryImage.src && (
-                <Image src={previousGalleryImage} alt="" fill className="object-cover" />
-              )}
-              <Image
-                src={activeGalleryImage.src}
-                alt={getPlainText(translate(locale, activeGalleryImage.alt))}
-                fill
-                className={`object-cover transition-opacity duration-700 ${isTransitioning ? "opacity-0" : "opacity-100"}`}
-                onLoad={() => {
-                  if (isTransitioning) {
-                    setIsTransitioning(false);
-                    setPreviousGalleryImage(null);
-                  }
-                }}
-              />
+              {galleryImages.map((image, index) => (
+                <Image
+                  key={`${activeService?.slug ?? "service"}-${image.src}-${index}`}
+                  src={image.src}
+                  alt={getPlainText(translate(locale, image.alt))}
+                  fill
+                  className={`object-cover transition-opacity duration-700 ${
+                    index === normalizedGalleryIndex ? "opacity-100" : "opacity-0"
+                  }`}
+                  priority={index === normalizedGalleryIndex}
+                />
+              ))}
             </div>
           </div>
         </div>
