@@ -173,6 +173,30 @@ async function smtpCommand(socket: tls.TLSSocket, command: string) {
   return readSmtpResponse(socket);
 }
 
+
+function toFriendlyGmailError(error: unknown) {
+  if (!(error instanceof Error)) {
+    return new Error("Failed to send message via Gmail SMTP");
+  }
+
+  const message = error.message;
+
+  if (message.includes("SMTP error 534") || message.includes("Application-specific password required")) {
+    return new Error(
+      "Gmail rechazó el inicio de sesión: necesitas un App Password de Google (16 caracteres). "
+      + "Activa 2-Step Verification, genera una nueva contraseña de aplicación y colócala en GMAIL_APP_PASSWORD.",
+    );
+  }
+
+  if (message.includes("SMTP error 535") || message.includes("Authentication failed")) {
+    return new Error(
+      "Gmail rechazó las credenciales SMTP. Verifica GMAIL_USER, regenera GMAIL_APP_PASSWORD y elimina espacios extra.",
+    );
+  }
+
+  return error;
+}
+
 async function sendViaGmail(payload: ContactEmailPayload) {
   const user = process.env.GMAIL_USER;
   const password = process.env.GMAIL_APP_PASSWORD;
@@ -210,12 +234,12 @@ async function sendViaGmail(payload: ContactEmailPayload) {
 
     const boundary = `----=_Part_${Date.now()}`;
     const headers = [
-      `From: \"${payload.name}\" <${from}>`,
+      `From: "${payload.name}" <${from}>`,
       `To: ${payload.recipient}`,
       `Reply-To: ${payload.email}`,
       `Subject: ${subject}`,
       "MIME-Version: 1.0",
-      `Content-Type: multipart/alternative; boundary=\"${boundary}\"`,
+      `Content-Type: multipart/alternative; boundary="${boundary}"`,
     ].join("\r\n");
 
     const body = [
@@ -234,6 +258,8 @@ async function sendViaGmail(payload: ContactEmailPayload) {
     socket.write(`${headers}\r\n\r\n${body}\r\n.\r\n`);
     await readSmtpResponse(socket);
     await smtpCommand(socket, "QUIT");
+  } catch (error) {
+    throw toFriendlyGmailError(error);
   } finally {
     socket.end();
   }

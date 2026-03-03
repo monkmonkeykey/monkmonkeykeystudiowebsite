@@ -168,6 +168,7 @@ Si vas a usar Gmail (y no dominio con Resend), te recomiendo forzarlo con `EMAIL
 
 Checklist rápida para Gmail:
 - Si ves errores `535 Authentication failed`, regenera el App Password y verifica que no haya espacios.
+- Si ves `SMTP error 534 ... Application-specific password required`, significa que Gmail no acepta tu contraseña normal: debes usar App Password (16 caracteres) con 2FA activa.
 - Usa `CONTACT_FROM` igual a `GMAIL_USER` para evitar rechazos del servidor SMTP.
 - Si responde `{"ok":true}`, el envío ya quedó funcionando.
 
