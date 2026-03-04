@@ -86,28 +86,7 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
         />
       </header>
 
-      <section className="grid gap-6 lg:grid-cols-2">
-        <div className="rounded-3xl border border-foreground/10 bg-background p-6 shadow-sm">
-          <RichText
-            as="h2"
-            value={siteContent.contact.bookCallTitle}
-            className="text-lg font-semibold text-foreground/90"
-          />
-          <RichText
-            value={siteContent.contact.bookCallCopy}
-            className="mt-3 text-sm text-foreground/70"
-          />
-          <Link
-            href={`mailto:${siteContent.contact.email}`}
-            className="mt-4 inline-flex w-fit items-center justify-center rounded-full bg-foreground px-5 py-2 text-sm font-semibold text-background transition hover:bg-foreground/90"
-          >
-            <RichText as="span" value={siteContent.contact.bookCallCta} />
-          </Link>
-        </div>
-
       
-      </section>
-
       <section className="grid gap-6 lg:grid-cols-3">
         <div className="lg:col-span-2">
           <form
@@ -221,8 +200,8 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
             ) : (
               <p className="text-xs text-foreground/60">
                 {locale === "es"
-                  ? "Compartiremos disponibilidad y próximos pasos por correo."
-                  : "We’ll reply with availability and next steps via email."}
+                  ? ""
+                  : ""}
               </p>
             )}
 
@@ -240,29 +219,7 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
           </form>
         </div>
 
-        <div className="space-y-4 rounded-3xl border border-foreground/10 bg-foreground/5 p-6">
-          <RichText
-            as="h2"
-            value={siteContent.contact.moreContactTitle}
-            className="text-lg font-semibold text-foreground/90"
-          />
-          <ul className="space-y-3 text-sm text-foreground/70">
-            <li>
-              <span className="block text-xs uppercase tracking-wide text-foreground/50">
-                <RichText as="span" value={siteContent.contact.moreContactLabel} />
-              </span>
-              <Link
-                href={`mailto:${siteContent.contact.email}`}
-                className="font-semibold text-foreground underline underline-offset-2"
-              >
-                {siteContent.contact.email}
-              </Link>
-            </li>
-            <li className="text-xs text-foreground/60">
-              <RichText as="span" value={siteContent.contact.moreContactNote} />
-            </li>
-          </ul>
-        </div>
+        
       </section>
     </div>
   );
