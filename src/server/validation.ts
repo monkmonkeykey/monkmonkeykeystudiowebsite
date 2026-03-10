@@ -35,6 +35,7 @@ export const clientPayloadSchema = z.object({
   summary: localeTextSchema,
   website: z.string().url().optional(),
   image: clientImageSchema.nullable().optional(),
+  isPrivate: z.boolean().optional(),
 });
 
 export const projectCategorySchema = z.string().trim().min(1);

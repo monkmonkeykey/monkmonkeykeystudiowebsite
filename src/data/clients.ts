@@ -12,19 +12,22 @@ const logClientFallback = (reason: string) => {
   }
 };
 
-export const getClients = async (): Promise<Client[]> => {
+const filterPrivate = (clients: Client[], includePrivate: boolean) =>
+  includePrivate ? clients : clients.filter((client) => !client.isPrivate);
+
+export const getClients = async (includePrivate = false): Promise<Client[]> => {
   if (!hasDatabaseConfig()) {
-    return CLIENTS;
+    return filterPrivate(CLIENTS, includePrivate);
   }
 
   const clients = await fetchClientsFromDatabase();
 
   if (!clients) {
     logClientFallback("no se pudo contactar la base de datos");
-    return CLIENTS;
+    return filterPrivate(CLIENTS, includePrivate);
   }
 
-  return clients.length > 0 ? clients : CLIENTS;
+  return filterPrivate(clients.length > 0 ? clients : CLIENTS, includePrivate);
 };
 
 export const getClientBySlug = async (slug: string): Promise<Client | null> => {

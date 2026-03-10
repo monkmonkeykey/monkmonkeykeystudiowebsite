@@ -13,7 +13,7 @@ export default async function AdminPage() {
   await requireAdminSession();
 
   const [clients, projects, siteContent] = await Promise.all([
-    getClients(),
+    getClients(true),
     getProjects(true),
     getSiteContent(),
   ]);

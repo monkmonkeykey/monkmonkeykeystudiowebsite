@@ -1987,6 +1987,7 @@ const ClientManager = ({
       summary: { es: "", en: "" },
       website: "",
       order: "",
+      isPrivate: false,
       image: createImageField(randomId()),
     }),
     [],
@@ -2011,6 +2012,7 @@ const ClientManager = ({
         summary: createLocaleField(client.summary),
         website: client.website ?? "",
         order: "",
+        isPrivate: Boolean(client.isPrivate),
         image: createImageField(randomId(), client.image),
       });
     }
@@ -2031,6 +2033,7 @@ const ClientManager = ({
         kind: form.kind,
         sector: trimLocaleField(form.sector),
         summary: trimLocaleField(form.summary),
+        isPrivate: form.isPrivate,
       };
 
       if (form.website.trim()) {
@@ -2147,6 +2150,7 @@ const ClientManager = ({
                 }`}
               >
                 {client.name}
+                {client.isPrivate ? " · Privado" : ""}
               </button>
             ))}
           </div>
@@ -2236,6 +2240,18 @@ const ClientManager = ({
                 className="w-full rounded-xl border border-foreground/15 bg-foreground/5 px-3 py-2 text-sm outline-none transition focus:border-foreground/40 focus:bg-background"
                 placeholder="https://"
               />
+            </label>
+
+            <label className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-foreground/60 sm:col-span-2">
+              <input
+                type="checkbox"
+                checked={form.isPrivate}
+                onChange={(event) =>
+                  setForm((previous) => ({ ...previous, isPrivate: event.target.checked }))
+                }
+                className="h-4 w-4 rounded border border-foreground/30"
+              />
+              <span>Ocultar cliente del sitio público (privado)</span>
             </label>
           </div>
 
