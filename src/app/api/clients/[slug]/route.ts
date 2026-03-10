@@ -1,3 +1,4 @@
+import { revalidatePath } from "next/cache";
 import { NextResponse } from "next/server";
 
 import type { Client } from "@/content/clients";
@@ -6,6 +7,11 @@ import { hasDatabaseConfig } from "@/lib/env";
 import { deleteClient, upsertClient } from "@/server/clients";
 import { clientPayloadSchema } from "@/server/validation";
 import { verifyRequestSession } from "@/server/auth";
+
+const revalidatePublicClientPages = () => {
+  revalidatePath("/");
+  revalidatePath("/clientes");
+};
 
 const respondWithMongoError = (error: unknown, action: string) => {
   const detail =
@@ -91,6 +97,7 @@ export async function PATCH(request: Request, context: RouteContext) {
     }
 
     await refreshClientsCache();
+    revalidatePublicClientPages();
     return NextResponse.json(client satisfies Client);
   } catch (error) {
     return respondWithMongoError(error, "MongoDB rechazó la operación al actualizar el cliente");
@@ -126,6 +133,7 @@ export async function DELETE(request: Request, context: RouteContext) {
     }
 
     await refreshClientsCache();
+    revalidatePublicClientPages();
     return NextResponse.json({ success: true });
   } catch (error) {
     return respondWithMongoError(error, "MongoDB rechazó la operación al eliminar el cliente");
