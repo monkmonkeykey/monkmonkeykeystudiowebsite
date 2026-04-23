@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 import { env, hasDatabaseConfig } from "@/lib/env";
+import { verifyRequestSession } from "@/server/auth";
 import { getMongoDatabase } from "@/server/mongodb";
 
 const getDatabaseName = (): string | null => {
@@ -13,9 +14,15 @@ const getDatabaseName = (): string | null => {
   }
 };
 
-export async function GET() {
+export async function GET(request: Request) {
+  const session = verifyRequestSession(request.headers.get("cookie") ?? undefined);
+
+  if (!session) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
   const hasConfig = hasDatabaseConfig();
-  
+
   if (!hasConfig) {
     return NextResponse.json(
       {
@@ -64,12 +71,13 @@ export async function GET() {
       },
     });
   } catch (error) {
-    const reason = error instanceof Error ? error.message : "Error desconocido";
+    console.error("[Diagnostics] Database check failed", error);
+
     return NextResponse.json(
       {
         connected: false,
         hasConfig,
-        reason,
+        reason: "No fue posible verificar la base de datos (ver logs del servidor)",
         database,
       },
       { status: 500 },
