@@ -27,6 +27,7 @@ Sitio institucional construido con Next.js 16 y el App Router. Carga contenido b
 | `MONGODB_URI` | Cadena de conexión a tu clúster de MongoDB Atlas o instancia propia. |
 | `MONGODB_DB` | Nombre de la base de datos donde se guardarán clientes y proyectos. |
 | `MONGODB_CLIENTS_COLLECTION` | (Opcional) Nombre de la colección donde se almacenan los clientes; por defecto `clients`. |
+| `ADMIN_EMAIL` | Correo autorizado para acceder al panel administrativo. |
 | `ADMIN_PASSWORD` | Contraseña que usarás para acceder al panel administrativo. |
 | `ADMIN_SESSION_SECRET` | Cadena aleatoria larga para firmar las sesiones del panel. |
 | `CLOUDINARY_CLOUD_NAME` | Cloud name de tu cuenta de Cloudinary. |
@@ -46,7 +47,7 @@ Si no configuras MongoDB, el sitio seguirá leyendo los archivos Markdown de `co
 
 ## Panel administrativo
 1. Arranca la aplicación (en modo desarrollo o producción) y ve a [`/admin/login`](http://localhost:3000/admin/login).
-2. Introduce la contraseña definida en `ADMIN_PASSWORD`. Se creará una sesión firmada con `ADMIN_SESSION_SECRET`.
+2. Introduce el correo de `ADMIN_EMAIL` y la contraseña de `ADMIN_PASSWORD`. Se creará una sesión firmada con `ADMIN_SESSION_SECRET`.
 3. Una vez dentro, podrás:
    - Crear, actualizar y eliminar clientes, instituciones o aliados.
    - Crear, actualizar y eliminar proyectos, incluidas galerías de imágenes, metadatos y videos opcionales de YouTube/Vimeo.

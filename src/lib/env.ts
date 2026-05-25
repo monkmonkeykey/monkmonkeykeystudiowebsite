@@ -12,6 +12,7 @@ export const env = {
   cloudinaryCloudName: normalize(process.env.CLOUDINARY_CLOUD_NAME),
   cloudinaryApiKey: normalize(process.env.CLOUDINARY_API_KEY),
   cloudinaryApiSecret: normalize(process.env.CLOUDINARY_API_SECRET),
+  adminEmail: normalize(process.env.ADMIN_EMAIL).toLowerCase(),
   adminPassword: normalize(process.env.ADMIN_PASSWORD),
   adminSessionSecret: normalize(process.env.ADMIN_SESSION_SECRET),
 };

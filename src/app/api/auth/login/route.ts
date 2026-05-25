@@ -4,9 +4,9 @@ import { env } from "@/lib/env";
 import { attachSessionCookie, createAdminSession } from "@/server/auth";
 
 export async function POST(request: Request) {
-  if (!env.adminPassword || !env.adminSessionSecret) {
+  if (!env.adminEmail || !env.adminPassword || !env.adminSessionSecret) {
     return NextResponse.json(
-      { error: "Authentication is not configured. Set ADMIN_PASSWORD and ADMIN_SESSION_SECRET." },
+      { error: "Authentication is not configured. Set ADMIN_EMAIL, ADMIN_PASSWORD and ADMIN_SESSION_SECRET." },
       { status: 500 },
     );
   }
@@ -19,13 +19,22 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
   }
 
-  const password = typeof body === "object" && body !== null ? (body as Record<string, unknown>).password : undefined;
+  const email =
+    typeof body === "object" && body !== null ? (body as Record<string, unknown>).email : undefined;
+  const password =
+    typeof body === "object" && body !== null ? (body as Record<string, unknown>).password : undefined;
+
+  if (typeof email !== "string" || email.trim().length === 0) {
+    return NextResponse.json({ error: "Email is required" }, { status: 400 });
+  }
 
   if (typeof password !== "string" || password.length === 0) {
     return NextResponse.json({ error: "Password is required" }, { status: 400 });
   }
 
-  if (password !== env.adminPassword) {
+  const normalizedEmail = email.trim().toLowerCase();
+
+  if (normalizedEmail !== env.adminEmail || password !== env.adminPassword) {
     return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
   }
 
