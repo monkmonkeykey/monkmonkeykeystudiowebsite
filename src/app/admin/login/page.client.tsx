@@ -27,6 +27,7 @@ type LoginPageClientProps = {
 
 export default function LoginPageClient({ cloudinaryReady }: LoginPageClientProps) {
   const router = useRouter();
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [status, setStatus] = useState<"idle" | "pending">("idle");
@@ -65,7 +66,7 @@ export default function LoginPageClient({ cloudinaryReady }: LoginPageClientProp
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (!password) {
+    if (!email || !password) {
       setError(LOGIN_COPY.errorMessage);
       return;
     }
@@ -79,7 +80,7 @@ export default function LoginPageClient({ cloudinaryReady }: LoginPageClientProp
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ password }),
+        body: JSON.stringify({ email, password }),
       });
 
       if (!response.ok) {
@@ -112,12 +113,12 @@ export default function LoginPageClient({ cloudinaryReady }: LoginPageClientProp
            <label className="space-y-2 text-sm font-medium text-foreground/80">
             <span>{LOGIN_COPY.mailLabel}</span>
             <input
-              type="password"
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
+              type="email"
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
               className="w-full rounded-xl border border-foreground/15 bg-foreground/5 px-4 py-2 text-base outline-none transition focus:border-foreground/40 focus:bg-background"
               required
-              autoComplete="current-password"
+              autoComplete="email"
             />
           </label>
 
