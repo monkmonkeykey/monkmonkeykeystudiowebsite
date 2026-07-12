@@ -28,7 +28,7 @@ const collectValidationMessages = (error: unknown): string[] => {
     });
   }
 
-  return messages;
+  return Array.from(new Set(messages));
 };
 
 export const extractApiErrorMessage = (payload: unknown, fallback: string): string => {

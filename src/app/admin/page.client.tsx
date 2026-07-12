@@ -398,6 +398,16 @@ const localeFieldToTextWithFallback = (value: LocaleField): LocaleText => ({
   en: value.en.trim() || value.es.trim(),
 });
 
+const requireLocaleField = (value: LocaleField, label: string): LocaleText => {
+  const normalized = localeFieldToTextWithFallback(trimLocaleField(value));
+
+  if (!normalized.es || !normalized.en) {
+    throw new Error(`Agrega ${label} en español o inglés`);
+  }
+
+  return normalized;
+};
+
 const normalizeLocaleListField = (values: LocaleField[]): LocaleText[] =>
   values
     .map((value) => localeFieldToTextWithFallback(trimLocaleField(value)))
@@ -2645,26 +2655,26 @@ const ProjectManager = ({
 
     const payload: Record<string, unknown> = {
       slug: form.slug.trim(),
-      name: trimLocaleField(form.name),
-      subtitle: trimLocaleField(form.subtitle),
+      name: requireLocaleField(form.name, "el nombre del proyecto"),
+      subtitle: requireLocaleField(form.subtitle, "el subtítulo del proyecto"),
       categories,
       year: form.year.trim() || `${startYearValue}${endYearValue ? `–${endYearValue}` : ""}`,
       startYear: startYearValue ? Number.parseInt(startYearValue, 10) : undefined,
       endYear: endYearValue ? Number.parseInt(endYearValue, 10) : undefined,
-      client: trimLocaleField(form.client),
-      location: trimLocaleField(form.location),
+      client: requireLocaleField(form.client, "el cliente del proyecto"),
+      location: requireLocaleField(form.location, "la ubicación del proyecto"),
       cover: {
         src: form.cover.src.trim() || undefined,
         publicId: form.cover.publicId.trim() || undefined,
-        alt: trimLocaleField(form.cover.alt),
+        alt: requireLocaleField(form.cover.alt, "el texto alternativo de la portada"),
         footnote: normalizeOptionalLocaleField(form.cover.footnote),
       },
       gallery: form.gallery
         .filter(imageHasData)
-        .map((image) => ({
+        .map((image, index) => ({
           src: image.src.trim() || undefined,
           publicId: image.publicId.trim() || undefined,
-          alt: trimLocaleField(image.alt),
+          alt: requireLocaleField(image.alt, `el texto alternativo de la imagen ${index + 1}`),
           footnote: normalizeOptionalLocaleField(image.footnote),
         })),
       description,
@@ -2681,7 +2691,7 @@ const ProjectManager = ({
     if (form.video?.url.trim()) {
       payload.video = {
         url: form.video.url.trim(),
-        title: trimLocaleField(form.video.title),
+        title: requireLocaleField(form.video.title, "el título del video"),
       };
     }
 
