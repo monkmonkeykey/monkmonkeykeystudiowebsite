@@ -2711,8 +2711,10 @@ const ProjectManager = ({
 
     try {
       const payload = buildPayload();
-      const endpoint = selectedSlug === "new" ? "/api/projects" : `/api/projects/${selectedSlug}`;
-      const method = selectedSlug === "new" ? "POST" : "PATCH";
+      const payloadSlug = typeof payload.slug === "string" ? payload.slug : "";
+      const shouldCreateProject = selectedSlug === "new" || payloadSlug !== selectedSlug;
+      const endpoint = shouldCreateProject ? "/api/projects" : `/api/projects/${selectedSlug}`;
+      const method = shouldCreateProject ? "POST" : "PATCH";
 
       const response = await fetch(endpoint, {
         method,
@@ -2726,8 +2728,13 @@ const ProjectManager = ({
         throw new Error(extractApiErrorMessage(data, "No fue posible guardar el proyecto"));
       }
 
-      setMessage("Proyecto guardado correctamente");
+      setMessage(
+        shouldCreateProject && selectedSlug !== "new"
+          ? "Proyecto creado como entrada nueva"
+          : "Proyecto guardado correctamente",
+      );
       setStatus("idle");
+      setSelectedSlug(payloadSlug || selectedSlug);
       router.refresh();
     } catch (error) {
       console.error(error);
