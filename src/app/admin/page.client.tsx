@@ -2713,7 +2713,7 @@ const ProjectManager = ({
 
       if (!response.ok) {
         const data = await response.json().catch(() => ({}));
-        throw new Error((data as { error?: string }).error ?? "No fue posible guardar el proyecto");
+        throw new Error(extractApiErrorMessage(data, "No fue posible guardar el proyecto"));
       }
 
       setMessage("Proyecto guardado correctamente");
@@ -2747,7 +2747,7 @@ const ProjectManager = ({
 
       if (!response.ok) {
         const data = await response.json().catch(() => ({}));
-        throw new Error((data as { error?: string }).error ?? "No fue posible eliminar el proyecto");
+        throw new Error(extractApiErrorMessage(data, "No fue posible eliminar el proyecto"));
       }
 
       setMessage("Proyecto eliminado");
