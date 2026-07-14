@@ -48,7 +48,7 @@ export const DEFAULT_SITE_CONTENT: SiteCopy = {
       { es: "Producción técnica", en: "Technical production" },
     ],
     projectsBadgeLabel: { es: "Proyectos", en: "Projects" },
-    projectsCardCta: { es: "Ver caso completo", en: "Read full case" },
+    projectsCardCta: { es: "Ver más", en: "View more" },
     projectsImageAlt: {
       es: "Ilustración abstracta de tableros de proyecto",
       en: "Abstract illustration of project boards",
