@@ -17,6 +17,7 @@ export type ClientPayload = {
   } | null;
   kind?: ClientKind;
   order?: number | null;
+  isPrivate?: boolean;
 };
 
 type ClientDocument = {
@@ -28,6 +29,7 @@ type ClientDocument = {
   image?: (ClientImage & { publicId?: string; footnote?: { es: string; en: string } }) | null;
   kind?: ClientKind;
   order?: number | null;
+  isPrivate?: boolean;
   createdAt?: Date;
   updatedAt?: Date;
 };
@@ -75,6 +77,7 @@ const normalizeClient = (document: ClientDocument): Client => {
     website: document.website,
     image,
     kind: document.kind ?? "client",
+    isPrivate: document.isPrivate ?? false,
   } satisfies Client;
 };
 
@@ -131,6 +134,7 @@ const prepareClientDocument = (payload: ClientPayload) => {
     image: baseImage,
     kind: payload.kind ?? "client",
     order: payload.order ?? null,
+    isPrivate: payload.isPrivate ?? false,
     updatedAt: new Date(),
   };
 };

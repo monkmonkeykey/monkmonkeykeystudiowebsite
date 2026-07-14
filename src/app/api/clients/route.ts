@@ -1,3 +1,4 @@
+import { revalidatePath } from "next/cache";
 import { NextResponse } from "next/server";
 
 import type { Client } from "@/content/clients";
@@ -6,6 +7,11 @@ import { hasDatabaseConfig } from "@/lib/env";
 import { clientPayloadSchema } from "@/server/validation";
 import { upsertClient } from "@/server/clients";
 import { verifyRequestSession } from "@/server/auth";
+
+const revalidatePublicClientPages = () => {
+  revalidatePath("/");
+  revalidatePath("/clientes");
+};
 
 const respondWithMongoError = (error: unknown, action: string) => {
   const detail =
@@ -76,6 +82,7 @@ export async function POST(request: Request) {
     }
 
     await refreshClientsCache();
+    revalidatePublicClientPages();
     return NextResponse.json(client satisfies Client);
   } catch (error) {
     return respondWithMongoError(error, "MongoDB rechazó la operación al guardar el cliente");

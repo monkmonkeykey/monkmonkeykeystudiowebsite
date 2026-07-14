@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ededed;
   --font-geist-sans: "Arial", "Helvetica", sans-serif;
   --font-geist-mono: "Courier New", Courier, monospace;
 }
@@ -14,15 +14,33 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans);
+}
+
+.rich-text-reset {
+  line-height: inherit;
+}
+
+.rich-text-reset :is(h1, h2, h3, h4, h5, h6, p, div, span, font) {
+  margin: 0;
+  line-height: inherit;
+}
+
+.rich-text-reset :is(strong, b) {
+  font-weight: 600;
+}
+
+.rich-text-reset :is(em, i) {
+  font-style: italic;
+}
+
+
+@media (max-width: 639px) {
+  .hero-mobile-headline :is(p, div, span, font, strong, em, b, i) {
+    font-size: inherit !important;
+    line-height: inherit !important;
+  }
 }

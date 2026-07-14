@@ -14,10 +14,11 @@ const LOGIN_COPY = {
   description:
     "Introduce la contraseña de administración para gestionar clientes, organizaciones y proyectos desde la web.",
   passwordLabel: "Contraseña",
+  mailLabel: "Correo electrónico",
   submitLabel: "Entrar",
   errorMessage: "Credenciales incorrectas. Inténtalo de nuevo.",
   missingConfig:
-    "Configura ADMIN_PASSWORD y ADMIN_SESSION_SECRET en tus variables de entorno para habilitar el acceso.",
+    "Si tienes problemas para acceder, contacta al administrador.",
 } as const;
 
 type LoginPageClientProps = {
@@ -26,6 +27,7 @@ type LoginPageClientProps = {
 
 export default function LoginPageClient({ cloudinaryReady }: LoginPageClientProps) {
   const router = useRouter();
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [status, setStatus] = useState<"idle" | "pending">("idle");
@@ -64,7 +66,7 @@ export default function LoginPageClient({ cloudinaryReady }: LoginPageClientProp
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (!password) {
+    if (!email || !password) {
       setError(LOGIN_COPY.errorMessage);
       return;
     }
@@ -78,7 +80,7 @@ export default function LoginPageClient({ cloudinaryReady }: LoginPageClientProp
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ password }),
+        body: JSON.stringify({ email, password }),
       });
 
       if (!response.ok) {
@@ -108,6 +110,18 @@ export default function LoginPageClient({ cloudinaryReady }: LoginPageClientProp
         </header>
 
         <form onSubmit={handleSubmit} className="space-y-5">
+           <label className="space-y-2 text-sm font-medium text-foreground/80">
+            <span>{LOGIN_COPY.mailLabel}</span>
+            <input
+              type="email"
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+              className="w-full rounded-xl border border-foreground/15 bg-foreground/5 px-4 py-2 text-base outline-none transition focus:border-foreground/40 focus:bg-background"
+              required
+              autoComplete="email"
+            />
+          </label>
+
           <label className="space-y-2 text-sm font-medium text-foreground/80">
             <span>{LOGIN_COPY.passwordLabel}</span>
             <input

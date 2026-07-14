@@ -5,9 +5,12 @@ import Image from "next/image";
 import type { Client } from "@/content/clients";
 import { translate } from "@/lib/i18n";
 import { useLocale } from "@/components/site/locale-context";
+import type { SiteContent } from "@/domain/site";
+import { RichText } from "@/components/site/rich-text";
 
 type ClientsPageClientProps = {
   clients: Client[];
+  copy: SiteContent["clientsPage"];
 };
 
 const hasLocaleContent = (value: { es: string; en: string } | undefined): boolean => {
@@ -18,47 +21,21 @@ const hasLocaleContent = (value: { es: string; en: string } | undefined): boolea
   return value.es.trim().length > 0 || value.en.trim().length > 0;
 };
 
-const PAGE_TITLE = {
-  es: "Clientes y aliados",
-  en: "Clients and partners",
-} as const;
-
-const PAGE_COPY = {
-  es: "Co-diseñamos soluciones junto a startups, scaleups y corporativos que buscan acelerar la entrega de valor.",
-  en: "We co-design solutions with startups, scaleups, and enterprises that need to accelerate value delivery.",
-} as const;
-
-const WEBSITE_LABEL = {
-  es: "Visitar sitio",
-  en: "Visit site",
-} as const;
-
-export default function ClientsPageClient({ clients }: ClientsPageClientProps) {
+export default function ClientsPageClient({ clients, copy }: ClientsPageClientProps) {
   const { locale } = useLocale();
 
   return (
     <div className="space-y-10">
-      <header className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-        <div className="max-w-3xl space-y-4">
-          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-            {translate(locale, PAGE_TITLE)}
-          </h1>
-          <p className="text-base text-foreground/70 sm:text-lg">
-            {translate(locale, PAGE_COPY)}
-          </p>
-        </div>
-        <div className="relative aspect-[4/3] w-full max-w-sm overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/5">
-          <Image
-            src="/images/clients-visual.svg"
-            alt={
-              locale === "es"
-                ? "Ilustración abstracta de conexiones con clientes"
-                : "Abstract illustration of client connections"
-            }
-            fill
-            className="object-cover"
-          />
-        </div>
+      <header className="max-w-3xl space-y-2 sm:space-y-3">
+        <RichText
+          as="h1"
+          value={copy.title}
+          className="text-3xl font-semibold tracking-tight sm:text-4xl"
+        />
+        <RichText
+          value={copy.copy}
+          className="prose prose-sm max-w-none text-foreground/70 sm:prose-base [&_p]:my-0"
+        />
       </header>
 
       <div className="grid gap-6 md:grid-cols-2">
@@ -106,8 +83,7 @@ export default function ClientsPageClient({ clients }: ClientsPageClientProps) {
                 rel="noreferrer"
                 className="inline-flex w-fit items-center gap-2 rounded-full border border-foreground/10 px-4 py-2 text-xs font-semibold text-foreground/70 transition hover:border-foreground/30 hover:text-foreground"
               >
-                <span>{translate(locale, WEBSITE_LABEL)}</span>
-                <span aria-hidden>↗</span>
+                <span>{translate(locale, copy.websiteLabel)}</span>
               </a>
             )}
           </article>

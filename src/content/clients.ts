@@ -19,6 +19,7 @@ export type Client = {
   website?: string;
   image?: ClientImage;
   kind: ClientKind;
+  isPrivate?: boolean;
 };
 
 type ClientFrontmatter = {
@@ -30,6 +31,7 @@ type ClientFrontmatter = {
   website?: string;
   image?: ClientImage;
   kind?: ClientKind;
+  isPrivate?: boolean;
 };
 
 const FRONTMATTER_REGEX = /^---\s*\r?\n([\s\S]*?)\r?\n---\s*/;
@@ -105,6 +107,7 @@ const readClientFile = (filePath: string): { client: Client; order: number } => 
     website: frontmatter.website,
     image: parseImage(frontmatter.image, frontmatter.name),
     kind: frontmatter.kind ?? "client",
+    isPrivate: frontmatter.isPrivate ?? false,
   };
 
   return { client, order: frontmatter.order ?? Number.MAX_SAFE_INTEGER };
