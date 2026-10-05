@@ -17,6 +17,7 @@ export function SiteShell({ children, siteContent }: SiteShellProps) {
   const [locale, setLocale] = useState<Locale>("es");
   const pathname = usePathname();
   const isAdminRoute = pathname?.startsWith("/admin");
+  const isHomeRoute = pathname === "/";
 
   return (
     <LocaleProvider value={{ locale, setLocale }}>
@@ -29,9 +30,11 @@ export function SiteShell({ children, siteContent }: SiteShellProps) {
           <>
             <Header navigation={siteContent.navigation} />
             <main className="flex-1">
-              <div className="mx-auto max-w-6xl px-6 py-12 sm:py-16">{children}</div>
+              <div className={`mx-auto w-full max-w-[1520px] px-4 sm:px-7 lg:px-12 ${isHomeRoute ? "" : "pb-12 sm:pb-16 lg:pb-24"}`}>
+                {children}
+              </div>
             </main>
-            <Footer footer={siteContent.footer} />
+            <Footer footer={siteContent.footer} contactEmail={siteContent.contact.email} />
           </>
         )}
       </div>

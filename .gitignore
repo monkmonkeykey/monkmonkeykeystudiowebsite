@@ -37,6 +37,7 @@ logs/
 .parcel-cache/
 .eslintcache
 .vite/
+*.tsbuildinfo
 
 # --------------------
 # Archivos del sistema

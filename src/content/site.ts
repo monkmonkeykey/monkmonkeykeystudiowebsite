@@ -24,23 +24,23 @@ export const DEFAULT_SITE_CONTENT: SiteCopy = {
     heroPrimaryCta: { es: "Contáctanos", en: "Book a call" },
     heroSecondaryCta: { es: "Ver proyectos", en: "View work" },
     heroTags: [],
-    servicesTitle: { es: "Cómo colaboramos", en: "How we collaborate" },
+    servicesTitle: { es: "Del concepto a la puesta en marcha", en: "From concept to activation" },
     servicesCopy: {
-      es: "Seleccionamos squads a medida para cada etapa: desde validar oportunidades hasta acelerar productos en producción.",
-      en: "We assemble the right squad for every stage—from validating opportunities to accelerating products in production.",
+      es: "Integramos producción creativa y resolución técnica para materializar obras, instalaciones y experiencias en contextos reales.",
+      en: "We combine creative production and technical execution to materialize artworks, installations, and experiences in real-world settings.",
     },
     servicesCta: { es: "Ver todos los servicios", en: "See all services" },
     servicesTags: [
-      { es: "Discovery a delivery", en: "Discovery to delivery" },
-      { es: "Equipos extendidos", en: "Embedded squads" },
-      { es: "Pruebas rápidas", en: "Rapid tests" },
+      { es: "Concepto a montaje", en: "Concept to installation" },
+      { es: "Producción integral", en: "End-to-end production" },
+      { es: "Operación en sitio", en: "On-site operation" },
     ],
     servicesBadgeLabel: { es: "Servicios", en: "Services" },
     servicesCardCta: { es: "Ver formato", en: "View format" },
-    projectsTitle: { es: "Historias recientes", en: "Recent stories" },
+    projectsTitle: { es: "Trabajo seleccionado", en: "Selected work" },
     projectsDescription: {
-      es: "Casos recientes donde acompañamos lanzamientos y activaciones clave.",
-      en: "Recent cases where we supported key launches and activations.",
+      es: "Una selección de instalaciones, experiencias y producciones desarrolladas junto a artistas e instituciones.",
+      en: "A selection of installations, experiences, and productions developed with artists and institutions.",
     },
     projectsTags: [
       { es: "Museos y universidades", en: "Museums & universities" },
@@ -54,30 +54,30 @@ export const DEFAULT_SITE_CONTENT: SiteCopy = {
       en: "Abstract illustration of project boards",
     },
     projectsCta: { es: "Ver proyectos", en: "Browse projects" },
-    clientsTitle: { es: "Equipos que confían en nosotros", en: "Teams that trust us" },
+    clientsTitle: { es: "Colaboraciones", en: "Collaborations" },
     clientsWebsiteLabel: { es: "Abrir sitio", en: "Open site" },
     contactCta: { es: "Agenda una llamada", en: "Book a call" },
   },
   servicesPage: {
-    title: { es: "Servicios y formatos de trabajo", en: "Services and collaboration formats" },
+    title: { es: "Capacidades y formas de trabajo", en: "Capabilities and ways of working" },
     copy: {
-      es: "Cada engagement se adapta al momento de tu producto. Podemos sumarnos como task force temporal, equipo extendido o líderes de práctica.",
-      en: "Each engagement adapts to your product stage. We can join as a temporary task force, extended team, or practice leads.",
+      es: "Cada proyecto requiere una combinación distinta de sensibilidad artística, conocimiento técnico y producción. Nos integramos desde la planeación hasta el montaje y la operación.",
+      en: "Every project calls for a different combination of artistic sensitivity, technical expertise, and production. We join from planning through installation and operation.",
     },
     ctaLabel: { es: "Agenda una llamada", en: "Book a call" },
     chips: [
-      { es: "Discovery a ejecución", en: "Discovery to delivery" },
-      { es: "Equipos extendidos", en: "Extended squads" },
-      { es: "Pruebas rápidas", en: "Rapid experiments" },
+      { es: "Concepto a ejecución", en: "Concept to execution" },
+      { es: "Equipos a la medida", en: "Project-specific teams" },
+      { es: "Pruebas y prototipos", en: "Tests and prototypes" },
     ],
     outcomesLabel: { es: "Entregables principales", en: "Key deliverables" },
     quickMapLabel: { es: "Mapa rápido", en: "Quick map" },
-    highlightPrimaryLabel: { es: "Inicio en 2-3 semanas", en: "Kick off in 2-3 weeks" },
-    highlightSecondaryLabel: { es: "Equipo dedicado", en: "Dedicated squad" },
+    highlightPrimaryLabel: { es: "Planeación técnica", en: "Technical planning" },
+    highlightSecondaryLabel: { es: "Equipo dedicado", en: "Dedicated team" },
     sessionTitle: { es: "Sesión inicial", en: "Kick-off session" },
     sessionCopy: {
-      es: "Alineamos objetivos, métricas y responsables",
-      en: "Align on goals, metrics, and owners",
+      es: "Alineamos intención artística, alcance, espacio, tiempos y responsables.",
+      en: "We align artistic intent, scope, space, timing, and responsibilities.",
     },
     talkCtaLabel: { es: "Hablar con el equipo", en: "Talk with the team" },
     backToTopLabel: { es: "Volver arriba", en: "Back to top" },
@@ -101,8 +101,8 @@ export const DEFAULT_SITE_CONTENT: SiteCopy = {
   projectsPage: {
     title: { es: "Algunos proyectos", en: "Featured work" },
     copy: {
-      es: "Casos en los que acompañamos a equipos de producto, museografía y marcas para desplegar experiencias memorables.",
-      en: "Projects where we partner with product, museography, and brand teams to deploy memorable experiences.",
+      es: "Obras e instalaciones desarrolladas junto a artistas, museos, universidades y organizaciones culturales.",
+      en: "Works and installations developed with artists, museums, universities, and cultural organizations.",
     },
     filterAllLabel: { es: "Todos", en: "All" },
     emptyState: {
@@ -120,8 +120,8 @@ export const DEFAULT_SITE_CONTENT: SiteCopy = {
   clientsPage: {
     title: { es: "Clientes y aliados", en: "Clients and partners" },
     copy: {
-      es: "Co-diseñamos soluciones junto a startups, scaleups y corporativos que buscan acelerar la entrega de valor.",
-      en: "We co-design solutions with startups, scaleups, and enterprises that need to accelerate value delivery.",
+      es: "Colaboramos con artistas, instituciones culturales, universidades y equipos independientes para hacer posibles proyectos complejos.",
+      en: "We collaborate with artists, cultural institutions, universities, and independent teams to make complex projects possible.",
     },
     imageSrc: "/images/clients-visual.svg",
     imageAlt: {
@@ -133,14 +133,14 @@ export const DEFAULT_SITE_CONTENT: SiteCopy = {
   contact: {
     title: { es: "Construyamos juntos", en: "Let’s build together" },
     copy: {
-      es: "Cuéntanos sobre tu reto de producto y coordinemos una sesión exploratoria de 30 minutos.",
-      en: "Tell us about your product challenge and we will schedule a 30-minute exploratory session.",
+      es: "Cuéntanos sobre la obra, instalación o experiencia que quieres desarrollar y conversemos sobre sus posibilidades técnicas.",
+      en: "Tell us about the artwork, installation, or experience you want to develop, and let’s explore its technical possibilities.",
     },
     email: "hola@monkmonkeykey.com",
     preparation: [
-      { es: "Contexto del producto y objetivos de negocio.", en: "Product context and business goals." },
-      { es: "Estado actual del equipo y métricas disponibles.", en: "Current team setup and available metrics." },
-      { es: "Hipótesis a validar y próximos hitos.", en: "Hypotheses to validate and upcoming milestones." },
+      { es: "Intención artística, contexto y objetivos del proyecto.", en: "Artistic intent, context, and project goals." },
+      { es: "Espacio, recursos técnicos y equipo involucrado.", en: "Space, technical resources, and team involved." },
+      { es: "Fechas, restricciones y próximos hitos.", en: "Dates, constraints, and upcoming milestones." },
     ],
     bookCallTitle: { es: "Agenda una llamada", en: "Book a call" },
     bookCallCopy: {
@@ -174,8 +174,8 @@ export const DEFAULT_SITE_CONTENT: SiteCopy = {
   },
   footer: {
     tagline: {
-      es: "Construimos productos digitales centrados en las personas.",
-      en: "We build people-centred digital products.",
+      es: "Producción artística y técnica para proyectos que integran tecnología, sonido y espacio.",
+      en: "Creative and technical production for projects combining technology, sound, and space.",
     },
     adminLabel: { es: "Administrar sitio", en: "Manage site" },
     instagramLabel: { es: "Instagram · @monkmokeykey_studio", en: "Instagram · @monkmokeykey_studio" },

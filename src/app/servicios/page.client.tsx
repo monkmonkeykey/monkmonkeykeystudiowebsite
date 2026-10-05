@@ -25,7 +25,6 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
 
   const activeService = services[activeServiceIndex] ?? services[0];
   const deliverablesLabel = locale === "es" ? "Nuestros servicios" : "Deliverables";
-  const deliverableDotStyles = ["bg-sky-400", "bg-violet-400", "bg-emerald-400", "bg-amber-400"];
   const galleryImages = useMemo(() => {
     const fromService = (activeService?.gallery ?? []).filter((image) => image.src.trim().length > 0);
 
@@ -57,38 +56,39 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
   const normalizedGalleryIndex = galleryImages.length > 0 ? activeGalleryIndex % galleryImages.length : 0;
 
   return (
-    <div className="space-y-12" id="top">
-      <header className="max-w-3xl space-y-2 sm:space-y-3">
-        <h1 className="text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
+    <div className="space-y-16 sm:space-y-24" id="top">
+      <header className="grid gap-8 border-t border-line pt-5 lg:grid-cols-12">
+        <div className="lg:col-span-10">
+        <h1 className="studio-display max-w-5xl text-[clamp(3.2rem,7vw,7.2rem)] leading-[0.9] tracking-[-0.05em]">
           <RichText as="span" value={siteContent.servicesPage.title} />
         </h1>
         <RichText
           value={siteContent.servicesPage.copy}
-          className="prose prose-sm max-w-none text-foreground/70 sm:prose-base [&_p]:my-0"
+          className="mt-8 max-w-2xl text-base leading-relaxed text-muted sm:text-lg"
         />
-        <div className="flex flex-wrap gap-3 pt-1 text-sm text-foreground/70">
+        <div className="mt-8 flex flex-wrap gap-x-5 gap-y-3 text-xs text-muted">
           {chips.map((chip, index) => (
             <div
               key={`${chip.es}-${index}`}
-              className="inline-flex items-center gap-2 rounded-full bg-background/60 px-3 py-2 ring-1 ring-foreground/10"
+              className="inline-flex items-center border-b border-line pb-1"
             >
-              <span className="size-2 rounded-full" />
               <RichText as="span" value={chip} />
             </div>
           ))}
         </div>
+        </div>
       </header>
 
-      <section className="rounded-3xl border border-foreground/10 bg-background p-5 shadow-sm sm:p-8">
-        <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:gap-8">
+      <section className="border-t border-line pt-5">
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <div className="order-1 space-y-4">
             <div className="flex items-center justify-between gap-4">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-foreground/50">
+              <p className="text-xs text-muted">
                 <RichText as="span" value={siteContent.servicesPage.outcomesLabel} />
               </p>
               <a
                 href="#top"
-                className="hidden text-xs font-semibold uppercase tracking-[0.2em] text-foreground/60 transition hover:text-foreground sm:inline-flex sm:items-center sm:gap-2"
+                className="hidden text-xs text-muted transition hover:text-foreground sm:inline-flex sm:items-center sm:gap-2"
               >
                 <RichText as="span" value={siteContent.servicesPage.backToTopLabel} />
               </a>
@@ -103,18 +103,20 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
                     setActiveServiceIndex(index);
                     setActiveGalleryIndex(0);
                   }}
-                  className={`w-full rounded-2xl border px-4 py-3 text-left transition sm:py-4 ${
+                    className={`group w-full border-l px-4 py-4 text-left transition sm:px-5 sm:py-5 ${
                     index === activeServiceIndex
-                      ? "border-primary/50 bg-primary/10"
-                      : "border-foreground/10 bg-foreground/5 hover:border-foreground/25"
+                      ? "border-foreground bg-surface"
+                      : "border-line hover:border-muted hover:bg-surface"
                   }`}
                 >
-                  <p className="text-base font-semibold tracking-tight text-foreground/90 sm:text-lg">
+                  <div>
+                  <p className="studio-display text-2xl tracking-[-0.025em] text-foreground sm:text-3xl">
                     <RichText as="span" value={service.title} />
                   </p>
-                  <p className="mt-1.5 text-sm text-foreground/70 sm:mt-2">
+                  <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted">
                     <RichText as="span" value={service.summary} />
                   </p>
+                  </div>
                 </button>
               ))}
             </div>
@@ -122,7 +124,7 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
 
           <div className="order-2 space-y-4 lg:sticky lg:top-24 lg:self-start">
             {activeService && (
-              <div className="space-y-4 rounded-2xl border border-foreground/10 bg-foreground/[0.03] p-4">
+              <div className="space-y-6 border border-line bg-surface p-5 sm:p-6">
                 <div className="space-y-2 text-sm text-foreground/70">
                   <div className="flex items-start justify-between gap-3">
                     <RichText
@@ -132,35 +134,31 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
                     />
                     <Link
                       href="/contacto"
-                      className="inline-flex shrink-0 items-center rounded-full border border-primary/35 bg-primary/10 px-3 py-1.5 text-xs font-semibold text-primary transition hover:border-primary/50 hover:bg-primary/15 hover:text-primary/90"
-                    >
-                      <RichText as="span" value={siteContent.servicesPage.talkCtaLabel} />
-                    </Link>
+                    className="studio-action studio-action--primary studio-action--small shrink-0"
+                  >
+                    <RichText as="span" value={siteContent.servicesPage.talkCtaLabel} />
+                    <span aria-hidden>↗</span>
+                  </Link>
                   </div>
                   <RichText as="p" value={siteContent.servicesPage.sessionCopy} />
                   <a
                     href="#top"
-                    className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-foreground/60 transition hover:text-foreground sm:hidden"
+                    className="inline-flex items-center gap-2 text-xs text-muted transition hover:text-foreground sm:hidden"
                   >
                     <RichText as="span" value={siteContent.servicesPage.backToTopLabel} />
                   </a>
                 </div>
 
                 <div className="space-y-2.5">
-                  <p className="inline-flex items-center gap-1 rounded-full border border-primary/25 bg-primary/10 px-2 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/90">
-                    <span className="size-1. rounded-full bg-primary" aria-hidden />
+                  <p className="text-xs text-muted">
                     {deliverablesLabel}
                   </p>
 
                   {(activeService.outcomes || []).map((outcome, outcomeIndex) => (
                     <div
                       key={`${activeService.slug}-outcome-${outcomeIndex}`}
-                      className="flex items-start gap-2.5 rounded-xl border border-foreground/10 bg-background/90 px-3 py-2.5 text-sm text-foreground/75 shadow-[inset_0_1px_0_rgba(255,255,255,0.02)]"
+                      className="border-t border-line px-1 py-3 text-sm leading-relaxed text-foreground/75"
                     >
-                      <span
-                        className={`mt-2 size-2.5 shrink-0 rounded-full ${deliverableDotStyles[outcomeIndex % deliverableDotStyles.length]}`}
-                        aria-hidden
-                      />
                       <span className="leading-relaxed">{translate(locale, outcome)}</span>
                     </div>
                   ))}
@@ -168,7 +166,7 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
               </div>
             )}
 
-            <div className="relative aspect-[16/10] overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/5">
+            <div className="relative aspect-[16/10] overflow-hidden border border-line bg-surface">
               {galleryImages.map((image, index) => (
                 <Image
                   key={`${activeService?.slug ?? "service"}-${image.src}-${index}`}

@@ -7,11 +7,6 @@ import { translate, type Locale, type LocaleText } from "@/lib/i18n";
 import { useLocale } from "@/components/site/locale-context";
 import { useState } from "react";
 
-const DETAILS_TITLE = {
-  es: "Acerca",
-  en: "About",
-} as const;
-
 const YEAR_LABEL = {
   es: "Año",
   en: "Year",
@@ -85,11 +80,11 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
   };
 
   return (
-    <article className="space-y-8">
-      <div className="overflow-hidden rounded-3xl border border-foreground/10 bg-gradient-to-br from-primary/5 via-background to-accent/5 shadow-sm">
-        <div className="grid gap-10 p-6 lg:grid-cols-[minmax(0,1.8fr)_minmax(0,1fr)] lg:p-10">
-          <div className="space-y-7">
-            <div className="relative overflow-hidden rounded-3xl border border-foreground/10 bg-foreground/5 shadow-sm">
+    <article className="space-y-16">
+      <div className="border-y border-line">
+        <div className="grid gap-10 py-6 lg:grid-cols-[minmax(0,1.8fr)_minmax(0,1fr)] lg:py-10">
+          <div className="space-y-10">
+            <div className="relative overflow-hidden border border-line bg-surface">
               <div className="relative aspect-[16/9] w-full">
                 <Image
                   src={project.cover.src}
@@ -101,29 +96,29 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
                 />
               </div>
               {hasLocaleContent(project.cover.footnote) && (
-                <p className="border-t border-foreground/10 bg-background/80 px-4 py-2 text-xs text-foreground/60 backdrop-blur">
+                <p className="border-t border-line bg-background/90 px-4 py-2 text-xs text-muted backdrop-blur">
                   {translate(locale, project.cover.footnote!)}
                 </p>
               )}
             </div>
 
-            <div className="space-y-4 rounded-3xl bg-background/80 p-5 shadow-sm backdrop-blur">
-              <div className="flex flex-wrap items-center gap-3">
-                <h1 className="text-3xl font-semibold tracking-tight">
+            <div className="space-y-5 border-t border-line pt-5">
+              <div className="flex flex-wrap items-end justify-between gap-3">
+                <h1 className="studio-display max-w-3xl text-[clamp(3.2rem,7vw,7.2rem)] leading-[0.9] tracking-[-0.05em]">
                   {translate(locale, project.name)}
                 </h1>
-                <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-foreground/50">
+                <span className="text-xs text-muted">
                   {formatProjectTimeline(project)}
                 </span>
               </div>
-              <p className="text-lg text-foreground/70">
+              <p className="max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
                 {translate(locale, project.subtitle)}
               </p>
               <div className="flex flex-wrap gap-2">
                 {project.categories.map((category) => (
                   <span
                     key={`${project.slug}-${category}`}
-                    className="rounded-full border border-foreground/10 bg-foreground/5 px-3 py-1 text-xs font-medium text-foreground/70"
+                  className="border-b border-line pb-1 text-xs text-muted"
                   >
                     {translateCategoryLabel(locale, category, categoryLabels)}
                   </span>
@@ -131,25 +126,25 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
               </div>
             </div>
 
-            <div className="space-y-4 text-sm leading-relaxed text-foreground/80 sm:text-base">
+            <div className="space-y-6 border-t border-line pt-6 text-sm leading-relaxed text-foreground/75 sm:text-base">
               {project.description.map((paragraph, index) => (
-                <p key={`${project.slug}-paragraph-${index}`} className="rounded-2xl bg-background/70 p-4 shadow-sm">
+                <p key={`${project.slug}-paragraph-${index}`} className="max-w-3xl">
                   {translate(locale, paragraph)}
                 </p>
               ))}
             </div>
 
             {project.video && (
-              <div className="space-y-3 rounded-3xl bg-background/80 p-5 shadow-sm">
+              <div className="space-y-4 border-t border-line pt-5">
                 <div className="flex flex-wrap items-center justify-between gap-3">
-                  <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-foreground/50">
+                  <h2 className="text-xs text-muted">
                     {translate(locale, VIDEO_TITLE)}
                   </h2>
                   <a
                     href={project.video.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 text-xs font-semibold text-foreground/70 transition hover:text-foreground"
+                    className="inline-flex items-center gap-2 border-b border-line pb-1 text-xs text-muted transition hover:border-foreground hover:text-foreground"
                   >
                     <span>
                       {`${translate(locale, VIDEO_LINK_PREFIX)} ${
@@ -158,7 +153,7 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
                     </span>
                   </a>
                 </div>
-                <div className="relative aspect-video overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/5">
+                <div className="relative aspect-video overflow-hidden border border-line bg-surface">
                   <iframe
                     src={project.video.embedUrl}
                     title={translate(locale, project.video.title)}
@@ -172,9 +167,9 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
               </div>
             )}
 
-            <div className="space-y-3 rounded-3xl bg-background/80 p-5 shadow-sm">
+            <div className="space-y-5 border-t border-line pt-5">
               <div className="flex items-center justify-between">
-                <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-foreground/50">
+                <h2 className="text-xs text-muted">
                   {translate(locale, GALLERY_TITLE)}
                 </h2>
                 <div className="h-px flex-1 bg-foreground/10" />
@@ -185,7 +180,7 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
                     key={`${project.slug}-gallery-${index}`}
                     type="button"
                     onClick={() => setActiveImageIndex(index)}
-                    className="group relative mb-4 block w-full overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/5 text-left shadow-sm transition hover:-translate-y-0.5 hover:border-primary/30"
+                    className="group relative mb-4 block w-full overflow-hidden border border-line bg-surface text-left transition hover:border-foreground"
                     style={{ breakInside: "avoid" }}
                     aria-label={`${translate(locale, image.alt)} (abrir en galería)`}
                   >
@@ -200,7 +195,7 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
                       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/65 via-background/5 to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
                       <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 p-3 text-xs text-background opacity-0 transition duration-300 group-hover:opacity-100">
                         <p className="line-clamp-2 font-semibold drop-shadow">{translate(locale, image.alt)}</p>
-                        <span className="inline-flex items-center gap-1 rounded-full bg-background/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-foreground">
+                        <span className="inline-flex items-center gap-1 bg-foreground px-3 py-1 text-xs text-background">
                           {locale === "es" ? "Ver" : "View"}
                         </span>
                       </div>
@@ -211,22 +206,17 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
             </div>
             </div>
 
-            <aside className="space-y-6 rounded-3xl border border-foreground/10 bg-background/80 p-6 shadow-sm lg:sticky lg:top-6">
-              <div className="space-y-1">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-foreground/50">
-                  {translate(locale, DETAILS_TITLE)}
-                </p>
-              </div>
+            <aside className="space-y-8 border border-line bg-surface p-5 lg:sticky lg:top-24 lg:self-start lg:p-6">
               <dl className="space-y-4 text-sm text-foreground/80">
                 {detailItems.map((detail) => (
                   <div
                     key={`${project.slug}-${detail.label.es}`}
-                    className="space-y-1 rounded-2xl border border-foreground/10 bg-foreground/5 px-4 py-3"
+                    className="grid grid-cols-[0.8fr_1.2fr] gap-4 border-t border-line py-3"
                   >
-                    <dt className="text-[11px] uppercase tracking-[0.2em] text-foreground/50">
+                    <dt className="text-xs text-muted">
                       {translate(locale, detail.label)}
                     </dt>
-                    <dd className="text-base text-foreground/80">
+                    <dd className="text-sm text-foreground/80">
                       {translateLocalizedValue(locale, detail.value)}
                     </dd>
                   </div>
@@ -234,9 +224,9 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
               </dl>
 
               {project.entities.length > 0 && (
-                <div className="space-y-4 rounded-2xl border border-foreground/10 bg-foreground/5 p-4">
+                <div className="space-y-4 border-t border-line pt-5">
                   <div className="flex items-center justify-between">
-                    <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-foreground/50">
+                    <h2 className="text-xs text-muted">
                       {translate(locale, ENTITIES_TITLE)}
                     </h2>
                     <div className="h-px flex-1 bg-foreground/10" />
@@ -245,10 +235,10 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
                     {project.entities.map((entity) => (
                       <div
                         key={`${project.slug}-${entity.slug}`}
-                        className="flex gap-3 rounded-2xl border border-foreground/10 bg-background/70 p-3"
+                        className="flex gap-3 border-t border-line py-3"
                       >
                         {entity.image && (
-                          <div className="relative h-14 w-14 overflow-hidden rounded-2xl border border-foreground/10 bg-background">
+                          <div className="relative h-14 w-14 overflow-hidden border border-line bg-background">
                             <Image
                               src={entity.image.src}
                               alt={translate(locale, entity.image.alt)}
@@ -260,7 +250,7 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
                         )}
                         <div className="flex flex-1 flex-col gap-1">
                           <p className="text-sm font-semibold text-foreground/80">{entity.name}</p>
-                          <p className="text-[11px] uppercase tracking-[0.2em] text-foreground/50">
+                          <p className="text-xs text-muted">
                             {translate(locale, entity.sector)}
                           </p>
                           <p className="text-sm text-foreground/70">{translate(locale, entity.summary)}</p>
@@ -269,7 +259,7 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
                               href={entity.website}
                               target="_blank"
                               rel="noreferrer"
-                              className="inline-flex w-fit items-center gap-2 text-xs font-semibold text-foreground/70 transition hover:text-foreground"
+                              className="inline-flex w-fit items-center gap-2 border-b border-line pb-1 text-xs text-muted transition hover:border-foreground hover:text-foreground"
                             >
                               <span>{translate(locale, ENTITY_WEBSITE)}</span>
                             </a>
@@ -286,10 +276,10 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
 
       {activeImageIndex !== null && project.gallery[activeImageIndex] && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm">
-          <div className="relative w-full max-w-5xl space-y-4 rounded-3xl border border-foreground/10 bg-background/95 p-4 shadow-2xl">
+          <div className="relative w-full max-w-5xl space-y-4 border border-line bg-background/95 p-4 shadow-2xl">
             <div className="flex items-center justify-between gap-3">
               <div className="flex flex-col text-sm text-foreground/70">
-                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-foreground/50">
+                <span className="text-xs text-muted">
                   {translate(locale, GALLERY_TITLE)}
                 </span>
                 <span className="font-semibold text-foreground">
@@ -300,21 +290,21 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
                 <button
                   type="button"
                   onClick={() => goTo(-1)}
-                  className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-foreground/5 px-3 py-1.5 text-xs font-semibold text-foreground/80 transition hover:border-foreground/30 hover:text-foreground"
+                  className="studio-action studio-action--secondary studio-action--small"
                 >
                   <span>{locale === "es" ? "Anterior" : "Previous"}</span>
                 </button>
                 <button
                   type="button"
                   onClick={() => goTo(1)}
-                  className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-foreground/5 px-3 py-1.5 text-xs font-semibold text-foreground/80 transition hover:border-foreground/30 hover:text-foreground"
+                  className="studio-action studio-action--secondary studio-action--small"
                 >
                   <span>{locale === "es" ? "Siguiente" : "Next"}</span>
                 </button>
                 <button
                   type="button"
                   onClick={closeLightbox}
-                  className="inline-flex items-center gap-2 rounded-full bg-foreground px-3 py-1.5 text-xs font-semibold text-background transition hover:bg-foreground/90"
+                  className="studio-action studio-action--primary studio-action--small"
                 >
                   <span>{locale === "es" ? "Cerrar" : "Close"}</span>
                   <span aria-hidden>✕</span>

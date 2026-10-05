@@ -2869,6 +2869,10 @@ const ProjectManager = ({
                 onChange={(event) =>
                   setForm((previous) => ({
                     ...previous,
+                    slug:
+                      selectedSlug === "new" && !previous.slug.trim()
+                        ? slugifyCategory(event.target.value)
+                        : previous.slug,
                     name: { ...previous.name, es: event.target.value },
                   }))
                 }

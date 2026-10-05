@@ -1,16 +1,17 @@
 "use client";
 
-import Link from "next/link";
 import { useState, type FormEvent } from "react";
 
 import type { SiteContent } from "@/domain/site";
-import { translate } from "@/lib/i18n";
 import { useLocale } from "@/components/site/locale-context";
 import { RichText } from "@/components/site/rich-text";
 
 type ContactPageClientProps = {
   siteContent: SiteContent;
 };
+
+const fieldStyles =
+  "w-full border border-line bg-background px-3 py-3 text-sm text-foreground outline-none transition placeholder:text-muted focus:border-primary focus:bg-surface";
 
 export default function ContactPageClient({ siteContent }: ContactPageClientProps) {
   const { locale } = useLocale();
@@ -73,48 +74,77 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
   };
 
   return (
-    <div className="space-y-10">
-      <header className="max-w-3xl space-y-2 sm:space-y-3">
+    <div className="space-y-16 sm:space-y-24">
+      <header className="grid gap-8 border-t border-line pt-5 lg:grid-cols-12">
+        <div className="lg:col-span-10">
         <RichText
           as="h1"
           value={siteContent.contact.title}
-          className="text-3xl font-semibold tracking-tight sm:text-4xl"
+          className="studio-display text-[clamp(3.2rem,7vw,7.2rem)] leading-[0.9] tracking-[-0.05em]"
         />
         <RichText
           value={siteContent.contact.copy}
-          className="prose prose-sm max-w-none text-foreground/70 sm:prose-base [&_p]:my-0"
+          className="mt-8 max-w-2xl text-base leading-relaxed text-muted sm:text-lg"
         />
+        </div>
       </header>
 
-      
-      <section className="grid gap-6 lg:grid-cols-3">
-        <div className="lg:col-span-2">
+      <section className="grid gap-12 border-t border-line pt-5 lg:grid-cols-12 lg:gap-6">
+        <aside className="space-y-10 lg:col-span-3">
+          <div>
+            <p className="text-xs text-muted">
+              {locale === "es" ? "Correo directo" : "Direct email"}
+            </p>
+            <a
+              href={`mailto:${siteContent.contact.email}`}
+              className="mt-3 inline-flex border-b border-foreground pb-1 text-sm text-foreground transition hover:opacity-70"
+            >
+              {siteContent.contact.email}
+            </a>
+          </div>
+          <div>
+            <RichText
+              as="p"
+              value={siteContent.contact.preparationTitle}
+              className="text-xs text-muted"
+            />
+            <div className="mt-3 border-t border-line">
+              {siteContent.contact.preparation.map((item, index) => (
+                <div key={`${item.es}-${index}`} className="border-b border-line py-3 text-xs leading-relaxed text-foreground/70">
+                  <RichText as="span" value={item} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </aside>
+
+        <div className="lg:col-span-8 lg:col-start-5">
           <form
             onSubmit={handleSubmit}
-            className="space-y-4 rounded-3xl border border-foreground/10 bg-background p-6 shadow-sm"
+            className="space-y-6 border border-line bg-surface p-5 sm:p-8"
           >
             <div className="flex items-center justify-between">
             <div>
                 <RichText
                   as="p"
                   value={siteContent.contact.formTitle}
-                  className="text-sm font-semibold text-foreground/80"
+                  className="text-lg font-medium text-foreground"
                 />
                 <RichText
                   as="p"
                   value={siteContent.contact.formSubtitle}
-                  className="text-xs text-foreground/60"
+                  className="mt-1 text-xs text-muted"
                 />
               </div>
               {status === "success" && (
-                <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-700">
+                <span className="bg-foreground px-3 py-2 text-xs text-background">
                   <RichText as="span" value={siteContent.contact.successLabel} />
                 </span>
               )}
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
-              <label className="space-y-2 text-sm text-foreground/80">
+              <label className="space-y-2 text-xs text-muted">
                 <RichText as="span" value={siteContent.contact.nameLabel} />
                 <input
                   required
@@ -122,11 +152,11 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
                   onChange={(event) =>
                     setFormData((prev) => ({ ...prev, name: event.target.value }))
                   }
-                  className="w-full rounded-xl border border-foreground/10 bg-foreground/5 px-3 py-2 text-sm text-foreground outline-none transition focus:border-foreground/30 focus:bg-background"
+                  className={fieldStyles}
                   name="name"
                 />
               </label>
-              <label className="space-y-2 text-sm text-foreground/80">
+              <label className="space-y-2 text-xs text-muted">
                 <RichText as="span" value={siteContent.contact.emailLabel} />
                 <input
                   required
@@ -135,14 +165,14 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
                   onChange={(event) =>
                     setFormData((prev) => ({ ...prev, email: event.target.value }))
                   }
-                  className="w-full rounded-xl border border-foreground/10 bg-foreground/5 px-3 py-2 text-sm text-foreground outline-none transition focus:border-foreground/30 focus:bg-background"
+                  className={fieldStyles}
                   name="email"
                 />
               </label>
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
-              <label className="space-y-2 text-sm text-foreground/80">
+              <label className="space-y-2 text-xs text-muted">
                 <RichText as="span" value={siteContent.contact.organizationLabel} />
                 <input
                   value={formData.organization}
@@ -152,36 +182,36 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
                       organization: event.target.value,
                     }))
                   }
-                  className="w-full rounded-xl border border-foreground/10 bg-foreground/5 px-3 py-2 text-sm text-foreground outline-none transition focus:border-foreground/30 focus:bg-background"
+                  className={fieldStyles}
                   name="organization"
                 />
               </label>
-              <label className="space-y-2 text-sm text-foreground/80">
+              <label className="space-y-2 text-xs text-muted">
                 <RichText as="span" value={siteContent.contact.phoneLabel} />
                 <input
                   value={formData.phone}
                   onChange={(event) =>
                     setFormData((prev) => ({ ...prev, phone: event.target.value }))
                   }
-                  className="w-full rounded-xl border border-foreground/10 bg-foreground/5 px-3 py-2 text-sm text-foreground outline-none transition focus:border-foreground/30 focus:bg-background"
+                  className={fieldStyles}
                   name="phone"
                 />
               </label>
             </div>
 
-            <label className="space-y-2 text-sm text-foreground/80">
+            <label className="space-y-2 text-xs text-muted">
               <RichText as="span" value={siteContent.contact.subjectLabel} />
               <input
                 value={formData.subject}
                 onChange={(event) =>
                   setFormData((prev) => ({ ...prev, subject: event.target.value }))
                 }
-                className="w-full rounded-xl border border-foreground/10 bg-foreground/5 px-3 py-2 text-sm text-foreground outline-none transition focus:border-foreground/30 focus:bg-background"
+                className={fieldStyles}
                 name="subject"
               />
             </label>
 
-            <label className="space-y-2 text-sm text-foreground/80">
+            <label className="space-y-2 text-xs text-muted">
               <RichText as="span" value={siteContent.contact.messageLabel} />
               <textarea
                 required
@@ -190,7 +220,7 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
                 onChange={(event) =>
                   setFormData((prev) => ({ ...prev, message: event.target.value }))
                 }
-                className="w-full rounded-xl border border-foreground/10 bg-foreground/5 px-3 py-2 text-sm text-foreground outline-none transition focus:border-foreground/30 focus:bg-background"
+                className={fieldStyles}
                 name="message"
               />
             </label>
@@ -198,7 +228,7 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
             {error ? (
               <p className="text-sm text-red-600">{error}</p>
             ) : (
-              <p className="text-xs text-foreground/60">
+              <p className="text-xs text-muted">
                 {locale === "es"
                   ? ""
                   : ""}
@@ -207,19 +237,18 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
 
             <button
               type="submit"
-              className="inline-flex w-full items-center justify-center rounded-full bg-foreground px-4 py-2 text-sm font-semibold text-background transition hover:bg-foreground/90 disabled:cursor-not-allowed disabled:bg-foreground/40"
+              className="studio-action studio-action--primary w-full disabled:cursor-not-allowed disabled:border-muted disabled:bg-muted"
               disabled={status === "sending"}
             >
               {status === "sending" ? (
                 <RichText as="span" value={siteContent.contact.sendingLabel} />
               ) : (
-                <RichText as="span" value={siteContent.contact.submitLabel} />
+                <><RichText as="span" value={siteContent.contact.submitLabel} /><span aria-hidden>↗</span></>
               )}
             </button>
           </form>
         </div>
 
-        
       </section>
     </div>
   );

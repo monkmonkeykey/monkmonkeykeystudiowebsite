@@ -27,7 +27,7 @@ Sitio institucional construido con Next.js 16 y el App Router. Carga contenido b
 | `MONGODB_URI` | Cadena de conexión a tu clúster de MongoDB Atlas o instancia propia. |
 | `MONGODB_DB` | Nombre de la base de datos donde se guardarán clientes y proyectos. |
 | `MONGODB_CLIENTS_COLLECTION` | (Opcional) Nombre de la colección donde se almacenan los clientes; por defecto `clients`. |
-| `ADMIN_EMAIL` | Correo autorizado para acceder al panel administrativo. |
+| `ADMIN_EMAIL` | Correo autorizado para acceder al panel administrativo. Si no se define, el entorno local reutiliza los correos configurados en `GMAIL_USER`, `CONTACT_FROM` o `CONTACT_RECIPIENT`. |
 | `ADMIN_PASSWORD` | Contraseña que usarás para acceder al panel administrativo. |
 | `ADMIN_SESSION_SECRET` | Cadena aleatoria larga para firmar las sesiones del panel. |
 | `CLOUDINARY_CLOUD_NAME` | Cloud name de tu cuenta de Cloudinary. |

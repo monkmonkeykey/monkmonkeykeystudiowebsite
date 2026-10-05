@@ -5,6 +5,20 @@ const normalizeWithFallback = (value: string | undefined, fallback: string): str
   return normalized.length > 0 ? normalized : fallback;
 };
 
+// Keep existing installations working when the dedicated admin email was not
+// added but the same account is already configured for outgoing mail.
+const explicitAdminEmail = normalize(process.env.ADMIN_EMAIL).toLowerCase();
+const adminEmails = Array.from(
+  new Set(
+    (explicitAdminEmail
+      ? [explicitAdminEmail]
+      : [process.env.GMAIL_USER, process.env.CONTACT_FROM, process.env.CONTACT_RECIPIENT]
+    )
+      .map((value) => normalize(value).toLowerCase())
+      .filter(Boolean),
+  ),
+);
+
 export const env = {
   mongodbUri: normalize(process.env.MONGODB_URI),
   mongodbDb: normalize(process.env.MONGODB_DB),
@@ -12,7 +26,8 @@ export const env = {
   cloudinaryCloudName: normalize(process.env.CLOUDINARY_CLOUD_NAME),
   cloudinaryApiKey: normalize(process.env.CLOUDINARY_API_KEY),
   cloudinaryApiSecret: normalize(process.env.CLOUDINARY_API_SECRET),
-  adminEmail: normalize(process.env.ADMIN_EMAIL).toLowerCase(),
+  adminEmail: adminEmails[0] ?? "",
+  adminEmails,
   adminPassword: normalize(process.env.ADMIN_PASSWORD),
   adminSessionSecret: normalize(process.env.ADMIN_SESSION_SECRET),
 };

@@ -4,9 +4,12 @@ import { env } from "@/lib/env";
 import { attachSessionCookie, createAdminSession } from "@/server/auth";
 
 export async function POST(request: Request) {
-  if (!env.adminEmail || !env.adminPassword || !env.adminSessionSecret) {
+  if (env.adminEmails.length === 0 || !env.adminPassword || !env.adminSessionSecret) {
     return NextResponse.json(
-      { error: "Authentication is not configured. Set ADMIN_EMAIL, ADMIN_PASSWORD and ADMIN_SESSION_SECRET." },
+      {
+        code: "AUTH_NOT_CONFIGURED",
+        error: "Authentication is not configured. Set ADMIN_EMAIL, ADMIN_PASSWORD and ADMIN_SESSION_SECRET.",
+      },
       { status: 500 },
     );
   }
@@ -34,8 +37,11 @@ export async function POST(request: Request) {
 
   const normalizedEmail = email.trim().toLowerCase();
 
-  if (normalizedEmail !== env.adminEmail || password !== env.adminPassword) {
-    return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
+  if (!env.adminEmails.includes(normalizedEmail) || password !== env.adminPassword) {
+    return NextResponse.json(
+      { code: "INVALID_CREDENTIALS", error: "Invalid credentials" },
+      { status: 401 },
+    );
   }
 
   const token = createAdminSession();

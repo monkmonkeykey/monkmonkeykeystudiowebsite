@@ -18,24 +18,24 @@ export const SERVICES: Service[] = [
     slug: "estrategia-producto",
     title: {
       es: "Producción de Arte Digital",
-      en: "Product strategy",
+      en: "Digital Art Production",
     },
     summary: {
       es: "Desarrollo y materialización de obras digitales. Abarcamos desde la conceptualización visual hasta la ejecución técnica, creando piezas que integran nuevas tecnologías y estéticas contemporáneas.",
-      en: "We design actionable roadmaps aligned with business goals.",
+      en: "Development and production of digital artworks, from visual conception to technical execution, integrating new technologies and contemporary aesthetics.",
     },
     outcomes: [
       {
-        es: "Audio Espacial y Producción Multicanal",
-        en: "Opportunity assessment and initiative prioritisation",
+        es: "Desarrollo de sistemas interactivos y audiovisuales",
+        en: "Interactive and audiovisual system development",
       },
       {
-        es: "Definición de métricas de impacto y governance",
-        en: "Impact metrics and governance definition",
+        es: "Integración de hardware, software y contenido",
+        en: "Hardware, software, and content integration",
       },
       {
-        es: "Roadmaps trimestrales con entregables claros",
-        en: "Quarterly roadmaps with clear deliverables",
+        es: "Documentación, montaje y operación de la obra",
+        en: "Artwork documentation, installation, and operation",
       },
     ],
     gallery: [
@@ -66,24 +66,24 @@ export const SERVICES: Service[] = [
     slug: "diseno-ux-ui",
     title: {
       es: "Audio Espacial y Producción Multicanal",
-      en: "UX/UI design",
+      en: "Spatial Audio and Multichannel Production",
     },
     summary: {
       es: "Diseño sonoro y producción técnica especializada para conciertos de música experimental y electroacústica. Gestionamos sistemas de audio inmersivo y difusión multicanal para crear experiencias auditivas envolventes.",
-      en: "We craft accessible experiences grounded in user research.",
+      en: "Specialized sound design and technical production for experimental and electroacoustic music, with immersive and multichannel audio systems.",
     },
     outcomes: [
       {
-        es: "Investigación cualitativa y cuantitativa",
-        en: "Qualitative and quantitative research",
+        es: "Diseño sonoro y espacialización",
+        en: "Sound design and spatialization",
       },
       {
-        es: "Sistemas de diseño reutilizables",
-        en: "Reusable design systems",
+        es: "Diseño, ajuste y calibración de sistemas multicanal",
+        en: "Multichannel system design, tuning, and calibration",
       },
       {
-        es: "Prototipos testeados antes del desarrollo",
-        en: "Tested prototypes before development",
+        es: "Producción y operación técnica de conciertos",
+        en: "Concert production and technical operation",
       },
     ],
     gallery: [
@@ -114,24 +114,24 @@ export const SERVICES: Service[] = [
     slug: "experimentacion-growth",
     title: {
       es: "Taller de Impresión 3D y Fabricación",
-      en: "Experimentation & growth",
+      en: "3D Printing and Fabrication Workshop",
     },
     summary: {
       es: "Soluciones de materialización física. Ofrecemos servicios de impresión 3D para prototipado, creación de piezas artísticas y modelado, llevando tus ideas del plano digital al objeto tangible.",
-      en: "We validate hypotheses with rapid experiments and continuous measurement.",
+      en: "Physical production solutions for prototyping, artistic pieces, and modeling, taking ideas from digital files to tangible objects.",
     },
     outcomes: [
       {
-        es: "Diseño e implementación de experimentos A/B",
-        en: "Design and implementation of A/B tests",
+        es: "Modelado y preparación de archivos para fabricación",
+        en: "Modeling and file preparation for fabrication",
       },
       {
-        es: "Laboratorios de discovery continuo",
-        en: "Continuous discovery labs",
+        es: "Prototipado y producción de piezas",
+        en: "Prototyping and part production",
       },
       {
-        es: "Optimización recurrente de funnel y retención",
-        en: "Recurring funnel and retention optimisation",
+        es: "Pruebas de material, ensamble y acabados",
+        en: "Material testing, assembly, and finishing",
       },
     ],
     gallery: [

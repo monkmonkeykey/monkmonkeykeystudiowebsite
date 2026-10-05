@@ -17,6 +17,8 @@ const LOGIN_COPY = {
   mailLabel: "Correo electrónico",
   submitLabel: "Entrar",
   errorMessage: "Credenciales incorrectas. Inténtalo de nuevo.",
+  configurationError:
+    "El acceso administrativo no está configurado. Revisa las variables del servidor.",
   missingConfig:
     "Si tienes problemas para acceder, contacta al administrador.",
 } as const;
@@ -84,8 +86,15 @@ export default function LoginPageClient({ cloudinaryReady }: LoginPageClientProp
       });
 
       if (!response.ok) {
-        const data = (await response.json().catch(() => ({}))) as { error?: string };
-        setError(data.error ?? LOGIN_COPY.errorMessage);
+        const data = (await response.json().catch(() => ({}))) as {
+          code?: string;
+          error?: string;
+        };
+        setError(
+          data.code === "AUTH_NOT_CONFIGURED"
+            ? LOGIN_COPY.configurationError
+            : LOGIN_COPY.errorMessage,
+        );
         setStatus("idle");
         return;
       }
