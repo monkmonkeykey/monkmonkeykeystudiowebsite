@@ -22,6 +22,7 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
   );
   const [activeServiceIndex, setActiveServiceIndex] = useState(0);
   const [activeGalleryIndex, setActiveGalleryIndex] = useState(0);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
   const activeService = services[activeServiceIndex] ?? services[0];
   const deliverablesLabel = locale === "es" ? "Nuestros servicios" : "Deliverables";
@@ -42,7 +43,16 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
 
 
   useEffect(() => {
-    if (galleryImages.length <= 1) {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const updateMotionPreference = () => setPrefersReducedMotion(mediaQuery.matches);
+    updateMotionPreference();
+    mediaQuery.addEventListener("change", updateMotionPreference);
+
+    return () => mediaQuery.removeEventListener("change", updateMotionPreference);
+  }, []);
+
+  useEffect(() => {
+    if (galleryImages.length <= 1 || prefersReducedMotion) {
       return undefined;
     }
 
@@ -51,7 +61,7 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
     }, 3000);
 
     return () => window.clearInterval(timer);
-  }, [galleryImages.length]);
+  }, [galleryImages.length, prefersReducedMotion]);
 
   const normalizedGalleryIndex = galleryImages.length > 0 ? activeGalleryIndex % galleryImages.length : 0;
 
@@ -108,6 +118,7 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
                       ? "border-foreground bg-surface"
                       : "border-line hover:border-muted hover:bg-surface"
                   }`}
+                  aria-pressed={index === activeServiceIndex}
                 >
                   <div>
                   <p className="studio-display text-2xl tracking-[-0.025em] text-foreground sm:text-3xl">

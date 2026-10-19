@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 
 import type { Client } from "@/content/clients";
 import type { Service } from "@/content/services";
@@ -33,6 +34,27 @@ export default function HomePageClient({
   const { locale } = useLocale();
   const heroVideoUrl = siteContent.home.heroVideo?.url?.trim();
   const heroVideoPoster = siteContent.home.heroVideo?.poster?.trim();
+  const heroVideoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (!heroVideoRef.current || !heroVideoUrl) {
+      return undefined;
+    }
+
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const updatePlayback = () => {
+      if (mediaQuery.matches) {
+        heroVideoRef.current?.pause();
+      } else {
+        void heroVideoRef.current?.play().catch(() => undefined);
+      }
+    };
+
+    updatePlayback();
+    mediaQuery.addEventListener("change", updatePlayback);
+
+    return () => mediaQuery.removeEventListener("change", updatePlayback);
+  }, [heroVideoUrl]);
 
   return (
     <div className="studio-home">
@@ -40,6 +62,7 @@ export default function HomePageClient({
         {heroVideoUrl ? (
           <video
             key={heroVideoUrl}
+            ref={heroVideoRef}
             className="absolute inset-0 h-full w-full object-cover"
             autoPlay
             loop

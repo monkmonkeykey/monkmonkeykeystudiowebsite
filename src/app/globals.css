@@ -183,7 +183,7 @@ body {
 }
 
 .studio-filter {
-  min-height: 2.25rem;
+  min-height: 2.75rem;
   border: 0;
   border-bottom: 1px solid var(--line);
   padding: 0.5rem 0.15rem;

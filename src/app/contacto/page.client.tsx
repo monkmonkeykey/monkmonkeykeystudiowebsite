@@ -137,7 +137,7 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
                 />
               </div>
               {status === "success" && (
-                <span className="bg-foreground px-3 py-2 text-xs text-background">
+                <span role="status" aria-live="polite" className="bg-foreground px-3 py-2 text-xs text-background">
                   <RichText as="span" value={siteContent.contact.successLabel} />
                 </span>
               )}
@@ -226,7 +226,7 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
             </label>
 
             {error ? (
-              <p className="text-sm text-red-600">{error}</p>
+              <p role="alert" className="text-sm text-red-600">{error}</p>
             ) : (
               <p className="text-xs text-muted">
                 {locale === "es"

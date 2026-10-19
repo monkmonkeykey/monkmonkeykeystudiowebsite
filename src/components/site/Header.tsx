@@ -44,7 +44,7 @@ export function Header({ navigation }: HeaderProps) {
           </span>
         </Link>
 
-        <nav className="hidden h-full items-center gap-7 lg:flex">
+        <nav aria-label={locale === "es" ? "Navegación principal" : "Main navigation"} className="hidden h-full items-center gap-7 lg:flex">
           {navItems.map((item) => {
             const isActive =
               item.href === "/" ? pathname === "/" : pathname?.startsWith(item.href);
@@ -126,7 +126,7 @@ export function Header({ navigation }: HeaderProps) {
           id="mobile-navigation"
           className="border-t border-line bg-background px-4 pb-6 pt-4 lg:hidden"
         >
-          <nav className="flex flex-col text-sm">
+          <nav aria-label={locale === "es" ? "Navegación principal" : "Main navigation"} className="flex flex-col text-sm">
             {navItems.map((item) => {
               const isActive =
                 item.href === "/" ? pathname === "/" : pathname?.startsWith(item.href);
@@ -160,7 +160,7 @@ export function Header({ navigation }: HeaderProps) {
                     setLocale(option.code);
                     setIsMobileMenuOpen(false);
                   }}
-                  className={`py-2 transition ${
+                  className={`min-h-11 min-w-11 py-2 transition ${
                     isSelected
                       ? "text-foreground"
                       : "text-muted hover:text-foreground"

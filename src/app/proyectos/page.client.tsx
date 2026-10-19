@@ -54,7 +54,7 @@ export default function ProjectsPageClient({
         </div>
       </header>
 
-      <div className="flex flex-wrap gap-2 border-y border-line py-4 text-xs">
+      <div className="flex flex-wrap gap-2 border-y border-line py-4 text-xs" role="group" aria-label={translate(locale, copy.filterAllLabel)}>
         <button
           type="button"
           onClick={() => setActiveCategory("all")}
@@ -63,6 +63,7 @@ export default function ProjectsPageClient({
               ? "studio-filter--active"
               : "studio-filter--idle"
           }`}
+          aria-pressed={activeCategory === "all"}
         >
           {translate(locale, copy.filterAllLabel)}
         </button>
@@ -76,6 +77,7 @@ export default function ProjectsPageClient({
                 ? "studio-filter--active"
                 : "studio-filter--idle"
             }`}
+            aria-pressed={activeCategory === category}
           >
             {translateCategoryLabel(locale, category, categoryLabels)}
           </button>

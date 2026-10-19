@@ -5,7 +5,7 @@ import type { LocalizedValue, Project, ProjectCategory } from "@/domain/projects
 import { formatProjectTimeline, translateCategoryLabel } from "@/domain/projects";
 import { translate, type Locale, type LocaleText } from "@/lib/i18n";
 import { useLocale } from "@/components/site/locale-context";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const YEAR_LABEL = {
   es: "Año",
@@ -69,6 +69,20 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
   ];
 
   const closeLightbox = () => setActiveImageIndex(null);
+  useEffect(() => {
+    if (activeImageIndex === null) {
+      return undefined;
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        closeLightbox();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [activeImageIndex]);
   const goTo = (direction: -1 | 1) => {
     setActiveImageIndex((current) => {
       if (current === null) return 0;
@@ -275,7 +289,12 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
         </div>
 
       {activeImageIndex !== null && project.gallery[activeImageIndex] && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm">
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm"
+          role="dialog"
+          aria-modal="true"
+          aria-label={translate(locale, GALLERY_TITLE)}
+        >
           <div className="relative w-full max-w-5xl space-y-4 border border-line bg-background/95 p-4 shadow-2xl">
             <div className="flex items-center justify-between gap-3">
               <div className="flex flex-col text-sm text-foreground/70">
