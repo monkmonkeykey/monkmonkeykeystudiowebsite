@@ -80,11 +80,11 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
         <RichText
           as="h1"
           value={siteContent.contact.title}
-          className="studio-display text-[clamp(3.2rem,7vw,7.2rem)] leading-[0.9] tracking-[-0.05em]"
+          className="studio-page-title"
         />
         <RichText
           value={siteContent.contact.copy}
-          className="mt-8 max-w-2xl text-base leading-relaxed text-muted sm:text-lg"
+          className="studio-page-intro"
         />
         </div>
       </header>

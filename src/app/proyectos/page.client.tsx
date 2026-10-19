@@ -45,43 +45,49 @@ export default function ProjectsPageClient({
         <RichText
           as="h1"
           value={copy.title}
-          className="studio-display text-[clamp(3.2rem,7vw,7.2rem)] leading-[0.9] tracking-[-0.05em]"
+          className="studio-page-title"
         />
         <RichText
           value={copy.copy}
-          className="mt-8 max-w-2xl text-base leading-relaxed text-muted sm:text-lg"
+          className="studio-page-intro"
         />
         </div>
       </header>
 
-      <div className="flex flex-wrap gap-2 border-y border-line py-4 text-xs" role="group" aria-label={translate(locale, copy.filterAllLabel)}>
-        <button
-          type="button"
-          onClick={() => setActiveCategory("all")}
-          className={`studio-filter ${
-            activeCategory === "all"
-              ? "studio-filter--active"
-              : "studio-filter--idle"
-          }`}
-          aria-pressed={activeCategory === "all"}
-        >
-          {translate(locale, copy.filterAllLabel)}
-        </button>
-        {categories.map((category) => (
+      <div className="border-y border-line py-5" role="group" aria-label={translate(locale, copy.filterAllLabel)}>
+        <div className="mb-4 flex items-center gap-3 font-mono text-[9px] uppercase tracking-[0.14em] text-muted">
+          <span className="size-1.5 rounded-full bg-signal" aria-hidden />
+          <span>{locale === "es" ? "Explorar por disciplina" : "Explore by discipline"}</span>
+        </div>
+        <div className="flex gap-6 overflow-x-auto pb-1 sm:flex-wrap sm:gap-x-8 sm:gap-y-2">
           <button
-            key={category}
             type="button"
-            onClick={() => setActiveCategory(category)}
+            onClick={() => setActiveCategory("all")}
             className={`studio-filter ${
-              activeCategory === category
+              activeCategory === "all"
                 ? "studio-filter--active"
                 : "studio-filter--idle"
             }`}
-            aria-pressed={activeCategory === category}
+            aria-pressed={activeCategory === "all"}
           >
-            {translateCategoryLabel(locale, category, categoryLabels)}
+            {translate(locale, copy.filterAllLabel)}
           </button>
-        ))}
+          {categories.map((category) => (
+            <button
+              key={category}
+              type="button"
+              onClick={() => setActiveCategory(category)}
+              className={`studio-filter ${
+                activeCategory === category
+                  ? "studio-filter--active"
+                  : "studio-filter--idle"
+              }`}
+              aria-pressed={activeCategory === category}
+            >
+              {translateCategoryLabel(locale, category, categoryLabels)}
+            </button>
+          ))}
+        </div>
       </div>
 
       <div>

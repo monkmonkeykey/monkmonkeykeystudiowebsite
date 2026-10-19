@@ -52,6 +52,29 @@ body {
   letter-spacing: -0.055em;
 }
 
+.studio-page-title {
+  display: block;
+  margin: 0;
+  max-width: 58rem;
+  font-family: var(--font-studio-display);
+  font-size: clamp(3.2rem, 7vw, 7.2rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 0;
+}
+
+.studio-page-title br {
+  line-height: 0;
+}
+
+.studio-page-intro {
+  max-width: 42rem;
+  margin-top: 1.25rem;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
 .studio-grid {
   background-image:
     linear-gradient(to right, rgb(241 238 232 / 0.025) 1px, transparent 1px),
@@ -189,22 +212,34 @@ body {
 }
 
 .studio-filter {
+  position: relative;
   min-height: 2.75rem;
-  border: 1px solid transparent;
-  border-radius: 999px;
-  border-bottom: 1px solid var(--line);
-  padding: 0.5rem 0.15rem;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  padding: 0.5rem 0.15rem 0.65rem;
   font-family: var(--font-studio-mono);
   font-size: 0.625rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease;
+  white-space: nowrap;
+  transition: border-color 180ms ease, color 180ms ease;
 }
 
 .studio-filter--active {
   border-color: var(--signal);
-  background: rgb(231 101 80 / 0.12);
   color: var(--foreground);
+}
+
+.studio-filter--active::before {
+  position: absolute;
+  bottom: -0.3rem;
+  left: 50%;
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 999px;
+  background: var(--signal);
+  content: "";
+  transform: translateX(-50%);
 }
 
 .studio-filter--idle {
@@ -213,7 +248,6 @@ body {
 
 .studio-filter--idle:hover {
   border-color: var(--signal);
-  background: rgb(231 101 80 / 0.08);
   color: var(--foreground);
 }
 
@@ -304,6 +338,7 @@ body {
 .studio-rule { border-top: 1px solid var(--line); }
 .rich-text-reset { line-height: inherit; }
 .rich-text-reset :is(h1, h2, h3, h4, h5, h6, p, div, span, font) { margin: 0; line-height: inherit; }
+.rich-text-reset.studio-page-title { line-height: 1.1; }
 .rich-text-reset :is(strong, b) { font-weight: 600; }
 .rich-text-reset :is(em, i) { font-style: italic; }
 input, textarea, button { border-radius: 3px; }
@@ -321,7 +356,9 @@ button:disabled {
 
 @media (max-width: 639px) {
   .studio-grid { background-size: 64px 64px; }
-  .studio-display { letter-spacing: -0.04em; }
+  .studio-display,
+  .studio-page-title { letter-spacing: -0.04em; }
+  .studio-page-intro { margin-top: 1rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

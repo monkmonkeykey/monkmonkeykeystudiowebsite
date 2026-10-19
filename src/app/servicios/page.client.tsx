@@ -69,12 +69,14 @@ export default function ServicesPageClient({ services, siteContent }: ServicesPa
     <div className="space-y-16 sm:space-y-24" id="top">
       <header className="grid gap-8 border-t border-line pt-5 lg:grid-cols-12">
         <div className="lg:col-span-10">
-        <h1 className="studio-display max-w-5xl text-[clamp(3.2rem,7vw,7.2rem)] leading-[0.9] tracking-[-0.05em]">
-          <RichText as="span" value={siteContent.servicesPage.title} />
-        </h1>
+        <RichText
+          as="h1"
+          value={siteContent.servicesPage.title}
+          className="studio-page-title"
+        />
         <RichText
           value={siteContent.servicesPage.copy}
-          className="mt-8 max-w-2xl text-base leading-relaxed text-muted sm:text-lg"
+          className="studio-page-intro"
         />
         <div className="mt-8 flex flex-wrap gap-x-5 gap-y-3 text-xs text-muted">
           {chips.map((chip, index) => (
