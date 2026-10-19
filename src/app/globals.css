@@ -57,14 +57,20 @@ body {
   margin: 0;
   max-width: 58rem;
   font-family: var(--font-studio-display);
-  font-size: clamp(3.2rem, 7vw, 7.2rem);
+  font-size: clamp(3.2rem, 5.5vw, 7.2rem);
   font-weight: 500;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.0055em;
   line-height: 0;
 }
 
 .studio-page-title br {
   line-height: 0;
+}
+
+.studio-page-title :is(h1, h2, h3, h4, h5, h6, p, div, span, font, strong, em, b, i) {
+  font-size: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
 }
 
 .studio-page-intro {
@@ -338,7 +344,7 @@ body {
 .studio-rule { border-top: 1px solid var(--line); }
 .rich-text-reset { line-height: inherit; }
 .rich-text-reset :is(h1, h2, h3, h4, h5, h6, p, div, span, font) { margin: 0; line-height: inherit; }
-.rich-text-reset.studio-page-title { line-height: 1.1; }
+.rich-text-reset.studio-page-title { line-height: 1; }
 .rich-text-reset :is(strong, b) { font-weight: 600; }
 .rich-text-reset :is(em, i) { font-style: italic; }
 input, textarea, button { border-radius: 3px; }
