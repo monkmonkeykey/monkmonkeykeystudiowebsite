@@ -22,6 +22,7 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
     phone: "",
     subject: "",
     message: "",
+    website: "",
   });
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [error, setError] = useState<string | null>(null);
@@ -57,6 +58,7 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
         phone: "",
         subject: "",
         message: "",
+        website: "",
       });
     } catch (submissionError) {
       console.error(submissionError);
@@ -137,9 +139,20 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
                 />
               </div>
               {status === "success" && (
-                <span role="status" aria-live="polite" className="bg-foreground px-3 py-2 text-xs text-background">
-                  <RichText as="span" value={siteContent.contact.successLabel} />
-                </span>
+                <div
+                  role="status"
+                  aria-live="polite"
+                  className="border-l-2 border-signal bg-background px-4 py-3 text-sm text-foreground"
+                >
+                  <p className="font-medium">
+                    <RichText as="span" value={siteContent.contact.successLabel} />
+                  </p>
+                  <p className="mt-1 text-xs leading-relaxed text-muted">
+                    {locale === "es"
+                      ? "Tu mensaje fue enviado correctamente. Nos pondremos en contacto contigo pronto."
+                      : "Your message was sent successfully. We will get back to you soon."}
+                  </p>
+                </div>
               )}
             </div>
 
@@ -222,6 +235,19 @@ export default function ContactPageClient({ siteContent }: ContactPageClientProp
                 }
                 className={fieldStyles}
                 name="message"
+              />
+            </label>
+
+            <label className="absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true">
+              <span>Website</span>
+              <input
+                tabIndex={-1}
+                autoComplete="off"
+                value={formData.website}
+                onChange={(event) =>
+                  setFormData((prev) => ({ ...prev, website: event.target.value }))
+                }
+                name="website"
               />
             </label>
 

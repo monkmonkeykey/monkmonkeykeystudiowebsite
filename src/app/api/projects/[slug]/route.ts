@@ -13,7 +13,7 @@ type RouteContext = {
 
 export async function GET(_: Request, context: RouteContext) {
   const params = await context.params;
-  const project = await getProjectBySlug(params.slug, true);
+  const project = await getProjectBySlug(params.slug);
 
   if (!project) {
     return NextResponse.json({ error: "Not found" }, { status: 404 });

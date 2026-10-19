@@ -8,7 +8,7 @@ import { projectPayloadSchema } from "@/server/validation";
 import { verifyRequestSession } from "@/server/auth";
 
 export async function GET() {
-  const projects = await getProjects(true);
+  const projects = await getProjects();
   return NextResponse.json(projects satisfies Project[]);
 }
 

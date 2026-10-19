@@ -17,23 +17,34 @@ type ContactEmailPayload = {
 type EmailProvider = "resend" | "gmail";
 type EmailProviderMode = EmailProvider | "auto";
 
+const escapeHtml = (value: string): string =>
+  value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+
 function formatHtml(payload: ContactEmailPayload) {
+  const name = escapeHtml(payload.name);
+  const email = escapeHtml(payload.email);
+  const organization = payload.organization ? escapeHtml(payload.organization) : "";
+  const phone = payload.phone ? escapeHtml(payload.phone) : "";
+  const message = escapeHtml(payload.message).replace(/\n/g, "<br/>");
   const details = [
-    `<p><strong>Nombre:</strong> ${payload.name}</p>`,
-    `<p><strong>Email:</strong> ${payload.email}</p>`,
+    `<p><strong>Nombre:</strong> ${name}</p>`,
+    `<p><strong>Email:</strong> ${email}</p>`,
   ];
 
   if (payload.organization) {
-    details.push(`<p><strong>Organización:</strong> ${payload.organization}</p>`);
+    details.push(`<p><strong>Organización:</strong> ${organization}</p>`);
   }
 
   if (payload.phone) {
-    details.push(`<p><strong>Teléfono:</strong> ${payload.phone}</p>`);
+    details.push(`<p><strong>Teléfono:</strong> ${phone}</p>`);
   }
 
-  const message = `<p><strong>Mensaje:</strong></p><p>${payload.message.replace(/\n/g, "<br/>")}</p>`;
-
-  return `${details.join("")}${message}`;
+  return `${details.join("")}<p><strong>Mensaje:</strong></p><p>${message}</p>`;
 }
 
 function formatText(payload: ContactEmailPayload) {

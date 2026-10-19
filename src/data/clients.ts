@@ -30,18 +30,22 @@ export const getClients = async (includePrivate = false): Promise<Client[]> => {
   return filterPrivate(clients.length > 0 ? clients : CLIENTS, includePrivate);
 };
 
-export const getClientBySlug = async (slug: string): Promise<Client | null> => {
+export const getClientBySlug = async (
+  slug: string,
+  includePrivate = false,
+): Promise<Client | null> => {
   if (!hasDatabaseConfig()) {
-    return CLIENTS.find((client) => client.slug === slug) ?? null;
+    const client = CLIENTS.find((item) => item.slug === slug);
+    return client && (includePrivate || !client.isPrivate) ? client : null;
   }
 
   const client = await fetchClientBySlug(slug);
 
-  if (client) {
+  if (client && (includePrivate || !client.isPrivate)) {
     return client;
   }
 
-  const clients = await getClients();
+  const clients = await getClients(includePrivate);
   return clients.find((item) => item.slug === slug) ?? null;
 };
 
