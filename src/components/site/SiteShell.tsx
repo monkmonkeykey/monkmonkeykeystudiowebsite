@@ -30,7 +30,7 @@ export function SiteShell({ children, siteContent }: SiteShellProps) {
           <>
             <Header navigation={siteContent.navigation} />
             <main className="flex-1">
-              <div className={`mx-auto w-full max-w-[1520px] px-4 sm:px-7 lg:px-12 ${isHomeRoute ? "" : "pb-12 sm:pb-16 lg:pb-24"}`}>
+              <div className={`mx-auto w-full max-w-[1320px] px-6 sm:px-12 lg:px-16 ${isHomeRoute ? "" : "pb-20 sm:pb-28 lg:pb-36"}`}>
                 {children}
               </div>
             </main>

@@ -20,7 +20,7 @@ export function Footer({ footer, contactEmail }: FooterProps) {
 
   return (
     <footer className="border-t border-line bg-ink text-foreground">
-      <div className="mx-auto max-w-[1520px] px-4 py-12 sm:px-7 sm:py-16 lg:px-12 lg:py-20">
+      <div className="mx-auto max-w-[1320px] px-6 py-16 sm:px-12 sm:py-20 lg:px-16 lg:py-24">
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-6">
           <p className="font-mono text-[9px] uppercase tracking-[0.16em] text-foreground/55 lg:col-span-3">
             MONKMONKEYKEY · CDMX

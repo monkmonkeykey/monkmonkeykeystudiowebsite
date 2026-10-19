@@ -31,20 +31,18 @@ export function Header({ navigation }: HeaderProps) {
 
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-background/92 backdrop-blur-md">
-      <div className="mx-auto grid h-[68px] max-w-[1520px] grid-cols-[1fr_auto] items-center px-4 sm:px-7 lg:h-[76px] lg:grid-cols-[minmax(15rem,1fr)_auto_minmax(15rem,1fr)] lg:px-12">
+      <div className="mx-auto grid h-[76px] max-w-[1320px] grid-cols-[1fr_auto] items-center px-6 sm:px-12 lg:h-[92px] lg:grid-cols-[minmax(15rem,1fr)_auto_minmax(15rem,1fr)] lg:px-16">
         <Link href="/" className="group flex w-fit items-center gap-3" aria-label="monkmonkeykey.studio">
-          <span className="size-2 bg-signal transition-transform group-hover:rotate-45" aria-hidden />
           <span className="flex flex-col leading-none">
             <RichText
               as="span"
               value={navigation.brand}
               className="text-[13px] font-semibold tracking-[-0.025em] text-foreground"
             />
-            <span className="mt-1 font-mono text-[8px] uppercase tracking-[0.2em] text-muted">Art + Technical Studio</span>
           </span>
         </Link>
 
-        <nav aria-label={locale === "es" ? "Navegación principal" : "Main navigation"} className="hidden h-full items-center gap-7 lg:flex">
+        <nav aria-label={locale === "es" ? "Navegación principal" : "Main navigation"} className="hidden h-full items-center gap-8 lg:flex">
           {navItems.map((item) => {
             const isActive =
               item.href === "/" ? pathname === "/" : pathname?.startsWith(item.href);
@@ -53,7 +51,7 @@ export function Header({ navigation }: HeaderProps) {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative flex h-full items-center text-[11px] uppercase tracking-[0.08em] transition-colors hover:text-signal ${
+                className={`relative flex h-full items-center text-xs tracking-[0.02em] transition-colors hover:text-signal ${
                   isActive ? "text-foreground" : "text-muted"
                 }`}
               >
@@ -124,7 +122,7 @@ export function Header({ navigation }: HeaderProps) {
       {isMobileMenuOpen ? (
         <div
           id="mobile-navigation"
-          className="border-t border-line bg-background px-4 pb-6 pt-4 lg:hidden"
+          className="border-t border-line bg-background px-5 pb-8 pt-5 sm:px-10 lg:hidden"
         >
           <nav aria-label={locale === "es" ? "Navegación principal" : "Main navigation"} className="flex flex-col text-sm">
             {navItems.map((item) => {
