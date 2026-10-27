@@ -1,0 +1,29 @@
+{
+  "changedFields": [
+    "projectsPage.title",
+    "projectsPage.copy"
+  ],
+  "before": {
+    "title": {
+      "es": "Algunos proyectos",
+      "en": "Featured work"
+    },
+    "copy": {
+      "es": "<p data-start=\"404\" data-end=\"555\">\n</p><p data-start=\"338\" data-end=\"490\"></p><p></p><p data-start=\"210\" data-end=\"336\">Selección de proyectos en arte, nuevos medios y producción técnica, realizados por encargo y en colaboración.</p>\n<p data-start=\"557\" data-end=\"749\"></p>",
+      "en": "<p data-start=\"404\" data-end=\"555\">\n</p><p data-start=\"338\" data-end=\"490\"></p><p></p><p data-start=\"210\" data-end=\"336\">Selección de proyectos en arte, nuevos medios y producción técnica, realizados por encargo y en colaboración.</p>\n<p data-start=\"557\" data-end=\"749\"></p>"
+    }
+  },
+  "after": {
+    "title": {
+      "es": "Proyectos",
+      "en": "Projects"
+    },
+    "copy": {
+      "es": "Obras, experiencias y colaboraciones desarrolladas junto a artistas e instituciones.",
+      "en": "Works, experiences, and collaborations developed alongside artists and institutions."
+    }
+  },
+  "otherFieldsUnchanged": true,
+  "matchedCount": 1,
+  "modifiedCount": 1
+}

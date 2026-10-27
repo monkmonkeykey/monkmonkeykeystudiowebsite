@@ -1,0 +1,50 @@
+[
+  {
+    "locale": "es",
+    "emptyState": true
+  },
+  {
+    "locale": "es",
+    "editableCopy": true
+  },
+  {
+    "locale": "es",
+    "period": "2026"
+  },
+  {
+    "locale": "es",
+    "period": "2021 – 2024"
+  },
+  {
+    "locale": "es",
+    "period": "2026"
+  },
+  {
+    "locale": "es",
+    "period": "2024"
+  },
+  {
+    "locale": "en",
+    "emptyState": true
+  },
+  {
+    "locale": "en",
+    "editableCopy": true
+  },
+  {
+    "locale": "en",
+    "period": "2026"
+  },
+  {
+    "locale": "en",
+    "period": "2021 – 2024"
+  },
+  {
+    "locale": "en",
+    "period": "2026"
+  },
+  {
+    "locale": "en",
+    "period": "2024"
+  }
+]

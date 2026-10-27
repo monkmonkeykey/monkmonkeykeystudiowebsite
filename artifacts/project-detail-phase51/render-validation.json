@@ -1,0 +1,64 @@
+[
+  {
+    "locale": "es",
+    "slug": "otro_dia_otro_dolar",
+    "descriptionLength": 35,
+    "passed": true
+  },
+  {
+    "locale": "es",
+    "slug": "leam2025",
+    "descriptionLength": 71,
+    "passed": true
+  },
+  {
+    "locale": "es",
+    "slug": "nime2023",
+    "descriptionLength": 61,
+    "passed": true
+  },
+  {
+    "locale": "es",
+    "slug": "museo-banco-mexico",
+    "descriptionLength": 642,
+    "passed": true
+  },
+  {
+    "locale": "en",
+    "slug": "otro_dia_otro_dolar",
+    "descriptionLength": 35,
+    "passed": true
+  },
+  {
+    "locale": "en",
+    "slug": "leam2025",
+    "descriptionLength": 52,
+    "passed": true
+  },
+  {
+    "locale": "en",
+    "slug": "nime2023",
+    "descriptionLength": 61,
+    "passed": true
+  },
+  {
+    "locale": "en",
+    "slug": "museo-banco-mexico",
+    "descriptionLength": 589,
+    "passed": true
+  },
+  {
+    "minimalOptionalFieldsHidden": true
+  },
+  {
+    "sameCloudinaryAssetDeduplicated": true
+  },
+  {
+    "richTextKeepsSingleH1": true
+  },
+  {
+    "metadataUsesActualDescription": true,
+    "invalidSocialCoverOmitted": true,
+    "missingProject404": true
+  }
+]

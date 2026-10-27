@@ -736,12 +736,22 @@ const RichTextInput = ({
   value,
   onChange,
   placeholder,
+  ariaLabel,
 }: {
   value: string;
   onChange: (value: string) => void;
   placeholder?: string;
+  ariaLabel?: string;
 }) => {
   const editorRef = useRef<HTMLDivElement | null>(null);
+  const selectionRef = useRef<Range | null>(null);
+
+  const rememberSelection = useCallback(() => {
+    const selection = window.getSelection();
+    if (!selection?.rangeCount) return;
+    const range = selection.getRangeAt(0);
+    if (editorRef.current?.contains(range.commonAncestorContainer)) selectionRef.current = range.cloneRange();
+  }, []);
 
   useEffect(() => {
     if (typeof document !== "undefined") {
@@ -759,22 +769,32 @@ const RichTextInput = ({
     const editor = editorRef.current;
     if (editor && editor.innerHTML !== value) {
       editor.innerHTML = value || "";
+      selectionRef.current = null;
     }
   }, [value]);
 
   const exec = useCallback((command: string, arg?: string) => {
     if (typeof document === "undefined") return;
     editorRef.current?.focus();
+    const range = selectionRef.current;
+    if (range && editorRef.current?.contains(range.commonAncestorContainer)) {
+      const selection = window.getSelection();
+      selection?.removeAllRanges();
+      selection?.addRange(range);
+    }
     document.execCommand(command, false, arg);
+    rememberSelection();
     syncContent();
-  }, [syncContent]);
+  }, [syncContent, rememberSelection]);
 
   return (
     <div className="space-y-2">
-      <div className="flex flex-wrap items-center gap-2 rounded-2xl border border-foreground/10 bg-foreground/5 px-3 py-2 text-xs font-semibold text-foreground/70">
+      <div role="group" aria-label={`Formato de ${ariaLabel || "texto"}`} className="flex flex-wrap items-center gap-2 rounded-2xl border border-foreground/10 bg-foreground/5 px-3 py-2 text-xs font-semibold text-foreground/70">
         <button
           type="button"
           onClick={() => exec("bold")}
+          onMouseDown={(event) => event.preventDefault()}
+          aria-label="Negrita"
           className="rounded-lg px-2 py-1 transition hover:bg-foreground/10"
         >
           B
@@ -782,6 +802,8 @@ const RichTextInput = ({
         <button
           type="button"
           onClick={() => exec("italic")}
+          onMouseDown={(event) => event.preventDefault()}
+          aria-label="Cursiva"
           className="rounded-lg px-2 py-1 transition hover:bg-foreground/10"
         >
           I
@@ -789,11 +811,14 @@ const RichTextInput = ({
         <button
           type="button"
           onClick={() => exec("underline")}
+          onMouseDown={(event) => event.preventDefault()}
+          aria-label="Subrayado"
           className="rounded-lg px-2 py-1 transition hover:bg-foreground/10"
         >
           U
         </button>
         <select
+          aria-label="Tamaño del texto"
           className="rounded-lg border border-foreground/10 bg-background px-2 py-1 text-xs"
           onChange={(event) => exec("fontSize", event.target.value)}
           defaultValue=""
@@ -806,15 +831,21 @@ const RichTextInput = ({
         </select>
         <label className="flex items-center gap-2 rounded-lg px-2 py-1 transition hover:bg-foreground/10">
           <span>Color</span>
-          <input type="color" onChange={(event) => exec("foreColor", event.target.value)} />
+          <input type="color" aria-label="Color del texto" onChange={(event) => exec("foreColor", event.target.value)} />
         </label>
       </div>
       <div
         ref={editorRef}
         contentEditable
+        role="textbox"
+        aria-label={ariaLabel || "Editor de texto"}
+        aria-multiline="true"
         suppressContentEditableWarning
-        className="min-h-[120px] w-full rounded-2xl border border-foreground/10 bg-background px-3 py-2 text-sm leading-relaxed focus:border-foreground/40 focus:outline-none"
+        className="min-h-[120px] w-full whitespace-pre-wrap rounded-2xl border border-foreground/10 bg-background px-3 py-2 text-sm leading-relaxed focus:border-foreground/40 focus:outline-none"
         onInput={syncContent}
+        onMouseUp={rememberSelection}
+        onKeyUp={rememberSelection}
+        onBlur={rememberSelection}
         data-placeholder={placeholder}
       />
     </div>
@@ -837,11 +868,11 @@ const RichLocaleInputs = ({
     <div className="grid gap-4 sm:grid-cols-2">
       <div className="space-y-1 text-sm text-foreground/70">
         <span className="block text-xs font-semibold uppercase tracking-[0.16em] text-foreground/50">ES</span>
-        <RichTextInput value={value.es} onChange={(content) => onChange({ ...value, es: content })} placeholder={placeholder} />
+        <RichTextInput value={value.es} onChange={(content) => onChange({ ...value, es: content })} placeholder={placeholder} ariaLabel={`${label} (ES)`} />
       </div>
       <div className="space-y-1 text-sm text-foreground/70">
         <span className="block text-xs font-semibold uppercase tracking-[0.16em] text-foreground/50">EN</span>
-        <RichTextInput value={value.en} onChange={(content) => onChange({ ...value, en: content })} placeholder={placeholder} />
+        <RichTextInput value={value.en} onChange={(content) => onChange({ ...value, en: content })} placeholder={placeholder} ariaLabel={`${label} (EN)`} />
       </div>
     </div>
   </div>
@@ -2946,33 +2977,15 @@ const ProjectManager = ({
               />
             </label>
 
-            <label className="space-y-1 text-xs font-semibold uppercase tracking-[0.18em] text-foreground/60">
-              <span>Subtítulo (ES)</span>
-              <input
-                value={form.subtitle.es}
-                onChange={(event) =>
-                  setForm((previous) => ({
-                    ...previous,
-                    subtitle: { ...previous.subtitle, es: event.target.value },
-                  }))
-                }
-                className="w-full rounded-xl border border-foreground/15 bg-foreground/5 px-3 py-2 text-sm outline-none transition focus:border-foreground/40 focus:bg-background"
+            <div className="space-y-2 md:col-span-3">
+              <RichLocaleInputs
+                label="Subtítulo"
+                value={form.subtitle}
+                onChange={(value) => setForm((previous) => ({ ...previous, subtitle: value }))}
+                placeholder="Escribe el subtítulo y aplica formato al texto seleccionado."
               />
-            </label>
-
-            <label className="space-y-1 text-xs font-semibold uppercase tracking-[0.18em] text-foreground/60">
-              <span>Subtítulo (EN)</span>
-              <input
-                value={form.subtitle.en}
-                onChange={(event) =>
-                  setForm((previous) => ({
-                    ...previous,
-                    subtitle: { ...previous.subtitle, en: event.target.value },
-                  }))
-                }
-                className="w-full rounded-xl border border-foreground/15 bg-foreground/5 px-3 py-2 text-sm outline-none transition focus:border-foreground/40 focus:bg-background"
-              />
-            </label>
+              <p className="text-xs leading-relaxed text-foreground/60">Selecciona texto para aplicar cursiva, negrita o subrayado. Enter crea un párrafo; Mayús+Enter agrega un salto de línea. Guarda el proyecto para publicar los cambios.</p>
+            </div>
 
             <div className="space-y-2 text-xs font-semibold uppercase tracking-[0.18em] text-foreground/60 md:col-span-2">
               <div className="flex flex-wrap items-center justify-between gap-3">

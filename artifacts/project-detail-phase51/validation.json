@@ -1,0 +1,3874 @@
+{
+  "projects": [
+    "otro_dia_otro_dolar",
+    "nime2023",
+    "leam2025"
+  ],
+  "viewports": [
+    {
+      "slug": "otro_dia_otro_dolar",
+      "locale": "es",
+      "meta": {
+        "title": "Otro día, otro dólar · MonkMonkeyKey",
+        "description": "[Una serie de pensamientos concatenados (o no) sobre el tiempo-capital y el trabajo.]        En mi trabajo me dieron una tarjeta de regalo de Amazon con un valor de $500 como compensación por haber perdido mis papeles de ingreso y retrasar mi pago inicial un mes.         En la Ley Federal del Trabajo de 2026 la palabra tiempo aparece 165 veces a lo largo de 83 páginas, descanso aparece 49 veces a lo largo de 28 páginas, dinero aparece 32 veces a lo largo de 21 páginas, vacaciones aparece 29 veces a lo largo de 18 páginas, capital aparece 10 veces a lo largo de 9 páginas. Las palabras desgaste y cuerpo aparecen 3 veces a lo largo de 3 páginas. La extensión total del documento es de 455 páginas.",
+        "image": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783886137/projects/otro_dia_otro_dolar/cover/obvadqy94jhbmftyqso3.jpg"
+      },
+      "width": 375,
+      "h1": [
+        "Otro día, otro dólar"
+      ],
+      "overflow": false,
+      "children": [
+        {
+          "tag": "HEADER",
+          "label": null,
+          "class": "project-detail_header__OMp_B"
+        },
+        {
+          "tag": "FIGURE",
+          "label": null,
+          "class": "project-detail_cover__gXRX_"
+        },
+        {
+          "tag": "SECTION",
+          "label": "Sobre el proyecto",
+          "class": "project-detail_context__zLBpJ project-detail_contextColumns__c4Xp3"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-gallery-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-collaborations-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "NAV",
+          "label": "Archivo de proyectos",
+          "class": "project-detail_return__jf87s"
+        }
+      ],
+      "cover": {
+        "x": 24,
+        "y": 733.578125,
+        "width": 327,
+        "height": 249.796875
+      },
+      "coverImage": {
+        "x": 24,
+        "y": 733.578125,
+        "width": 327,
+        "height": 218,
+        "naturalWidth": 1192,
+        "naturalHeight": 794
+      },
+      "gallery": [
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783886158/projects/otro_dia_otro_dolar/gallery/lxnzuwzwv551limhuvgi.jpg",
+          "rect": {
+            "x": 24,
+            "y": 1316.65625,
+            "width": 327,
+            "height": 249.453125
+          },
+          "caption": "Vista instalación"
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783887282/projects/otro_dia_otro_dolar/gallery/jji1pbd7rxtj4klogeoq.jpg",
+          "rect": {
+            "x": 24,
+            "y": 1598.109375,
+            "width": 327,
+            "height": 277.046875
+          },
+          "caption": "Detalle ensamblaje"
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783887297/projects/otro_dia_otro_dolar/gallery/tasfjn0calpsh2djbo0h.jpg",
+          "rect": {
+            "x": 24,
+            "y": 1907.15625,
+            "width": 327,
+            "height": 277.046875
+          },
+          "caption": "Detalle ensamblaje"
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783887959/projects/otro_dia_otro_dolar/gallery/ogy1rlzamvy2wvuv6n3u.jpg",
+          "rect": {
+            "x": 24,
+            "y": 2216.203125,
+            "width": 327,
+            "height": 263.25
+          },
+          "caption": "Detalle dibujo"
+        }
+      ],
+      "captions": [
+        "Otro día, otro dólar",
+        "Vista instalación",
+        "Detalle ensamblaje",
+        "Detalle ensamblaje",
+        "Detalle dibujo"
+      ],
+      "images": [
+        {
+          "alt": "Otro día, otro dólar",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "Otro día, otro dólar",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "Detalle ensamblaje",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "Detalle ensamblaje",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "dibujo",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "Karen Aixa",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        }
+      ],
+      "entities": [
+        "Karen Aixa"
+      ],
+      "entityLinks": [
+        {
+          "href": "https://www.instagram.com/karenaixa",
+          "rel": "noopener noreferrer"
+        }
+      ],
+      "backLinks": [
+        "Volver a proyectos",
+        "Volver a todos los proyectos"
+      ],
+      "asideSticky": "static",
+      "video": null
+    },
+    {
+      "slug": "otro_dia_otro_dolar",
+      "locale": "es",
+      "meta": {
+        "title": "Otro día, otro dólar · MonkMonkeyKey",
+        "description": "[Una serie de pensamientos concatenados (o no) sobre el tiempo-capital y el trabajo.]        En mi trabajo me dieron una tarjeta de regalo de Amazon con un valor de $500 como compensación por haber perdido mis papeles de ingreso y retrasar mi pago inicial un mes.         En la Ley Federal del Trabajo de 2026 la palabra tiempo aparece 165 veces a lo largo de 83 páginas, descanso aparece 49 veces a lo largo de 28 páginas, dinero aparece 32 veces a lo largo de 21 páginas, vacaciones aparece 29 veces a lo largo de 18 páginas, capital aparece 10 veces a lo largo de 9 páginas. Las palabras desgaste y cuerpo aparecen 3 veces a lo largo de 3 páginas. La extensión total del documento es de 455 páginas.",
+        "image": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783886137/projects/otro_dia_otro_dolar/cover/obvadqy94jhbmftyqso3.jpg"
+      },
+      "width": 768,
+      "h1": [
+        "Otro día, otro dólar"
+      ],
+      "overflow": false,
+      "children": [
+        {
+          "tag": "HEADER",
+          "label": null,
+          "class": "project-detail_header__OMp_B"
+        },
+        {
+          "tag": "FIGURE",
+          "label": null,
+          "class": "project-detail_cover__gXRX_"
+        },
+        {
+          "tag": "SECTION",
+          "label": "Sobre el proyecto",
+          "class": "project-detail_context__zLBpJ project-detail_contextColumns__c4Xp3"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-gallery-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-collaborations-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "NAV",
+          "label": "Archivo de proyectos",
+          "class": "project-detail_return__jf87s"
+        }
+      ],
+      "cover": {
+        "x": 48,
+        "y": 504.890625,
+        "width": 672,
+        "height": 479.796875
+      },
+      "coverImage": {
+        "x": 48,
+        "y": 504.890625,
+        "width": 672,
+        "height": 448,
+        "naturalWidth": 768,
+        "naturalHeight": 512
+      },
+      "gallery": [
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783886158/projects/otro_dia_otro_dolar/gallery/lxnzuwzwv551limhuvgi.jpg",
+          "rect": {
+            "x": 48,
+            "y": 1325.46875,
+            "width": 320,
+            "height": 244.796875
+          },
+          "caption": "Vista instalación"
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783887282/projects/otro_dia_otro_dolar/gallery/jji1pbd7rxtj4klogeoq.jpg",
+          "rect": {
+            "x": 400,
+            "y": 1325.46875,
+            "width": 320,
+            "height": 271.796875
+          },
+          "caption": "Detalle ensamblaje"
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783887297/projects/otro_dia_otro_dolar/gallery/tasfjn0calpsh2djbo0h.jpg",
+          "rect": {
+            "x": 48,
+            "y": 1637.265625,
+            "width": 320,
+            "height": 271.796875
+          },
+          "caption": "Detalle ensamblaje"
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783887959/projects/otro_dia_otro_dolar/gallery/ogy1rlzamvy2wvuv6n3u.jpg",
+          "rect": {
+            "x": 400,
+            "y": 1637.265625,
+            "width": 320,
+            "height": 258.296875
+          },
+          "caption": "Detalle dibujo"
+        }
+      ],
+      "captions": [
+        "Otro día, otro dólar",
+        "Vista instalación",
+        "Detalle ensamblaje",
+        "Detalle ensamblaje",
+        "Detalle dibujo"
+      ],
+      "images": [
+        {
+          "alt": "Otro día, otro dólar",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "Otro día, otro dólar",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "Detalle ensamblaje",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "Detalle ensamblaje",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "dibujo",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "Karen Aixa",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        }
+      ],
+      "entities": [
+        "Karen Aixa"
+      ],
+      "entityLinks": [
+        {
+          "href": "https://www.instagram.com/karenaixa",
+          "rel": "noopener noreferrer"
+        }
+      ],
+      "backLinks": [
+        "Volver a proyectos",
+        "Volver a todos los proyectos"
+      ],
+      "asideSticky": "static",
+      "video": null
+    },
+    {
+      "slug": "otro_dia_otro_dolar",
+      "locale": "es",
+      "meta": {
+        "title": "Otro día, otro dólar · MonkMonkeyKey",
+        "description": "[Una serie de pensamientos concatenados (o no) sobre el tiempo-capital y el trabajo.]        En mi trabajo me dieron una tarjeta de regalo de Amazon con un valor de $500 como compensación por haber perdido mis papeles de ingreso y retrasar mi pago inicial un mes.         En la Ley Federal del Trabajo de 2026 la palabra tiempo aparece 165 veces a lo largo de 83 páginas, descanso aparece 49 veces a lo largo de 28 páginas, dinero aparece 32 veces a lo largo de 21 páginas, vacaciones aparece 29 veces a lo largo de 18 páginas, capital aparece 10 veces a lo largo de 9 páginas. Las palabras desgaste y cuerpo aparecen 3 veces a lo largo de 3 páginas. La extensión total del documento es de 455 páginas.",
+        "image": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783886137/projects/otro_dia_otro_dolar/cover/obvadqy94jhbmftyqso3.jpg"
+      },
+      "width": 1024,
+      "h1": [
+        "Otro día, otro dólar"
+      ],
+      "overflow": false,
+      "children": [
+        {
+          "tag": "HEADER",
+          "label": null,
+          "class": "project-detail_header__OMp_B"
+        },
+        {
+          "tag": "FIGURE",
+          "label": null,
+          "class": "project-detail_cover__gXRX_"
+        },
+        {
+          "tag": "SECTION",
+          "label": "Sobre el proyecto",
+          "class": "project-detail_context__zLBpJ project-detail_contextColumns__c4Xp3"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-gallery-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-collaborations-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "NAV",
+          "label": "Archivo de proyectos",
+          "class": "project-detail_return__jf87s"
+        }
+      ],
+      "cover": {
+        "x": 64,
+        "y": 519.90625,
+        "width": 896,
+        "height": 629.125
+      },
+      "coverImage": {
+        "x": 64,
+        "y": 519.90625,
+        "width": 896,
+        "height": 597.328125,
+        "naturalWidth": 768,
+        "naturalHeight": 512
+      },
+      "gallery": [
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783886158/projects/otro_dia_otro_dolar/gallery/lxnzuwzwv551limhuvgi.jpg",
+          "rect": {
+            "x": 64,
+            "y": 1460.71875,
+            "width": 432,
+            "height": 319.34375
+          },
+          "caption": "Vista instalación"
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783887282/projects/otro_dia_otro_dolar/gallery/jji1pbd7rxtj4klogeoq.jpg",
+          "rect": {
+            "x": 528,
+            "y": 1460.71875,
+            "width": 432,
+            "height": 355.796875
+          },
+          "caption": "Detalle ensamblaje"
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783887297/projects/otro_dia_otro_dolar/gallery/tasfjn0calpsh2djbo0h.jpg",
+          "rect": {
+            "x": 64,
+            "y": 1856.515625,
+            "width": 432,
+            "height": 355.796875
+          },
+          "caption": "Detalle ensamblaje"
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783887959/projects/otro_dia_otro_dolar/gallery/ogy1rlzamvy2wvuv6n3u.jpg",
+          "rect": {
+            "x": 528,
+            "y": 1856.515625,
+            "width": 432,
+            "height": 337.5625
+          },
+          "caption": "Detalle dibujo"
+        }
+      ],
+      "captions": [
+        "Otro día, otro dólar",
+        "Vista instalación",
+        "Detalle ensamblaje",
+        "Detalle ensamblaje",
+        "Detalle dibujo"
+      ],
+      "images": [
+        {
+          "alt": "Otro día, otro dólar",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "Otro día, otro dólar",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "Detalle ensamblaje",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "Detalle ensamblaje",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "dibujo",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "Karen Aixa",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        }
+      ],
+      "entities": [
+        "Karen Aixa"
+      ],
+      "entityLinks": [
+        {
+          "href": "https://www.instagram.com/karenaixa",
+          "rel": "noopener noreferrer"
+        }
+      ],
+      "backLinks": [
+        "Volver a proyectos",
+        "Volver a todos los proyectos"
+      ],
+      "asideSticky": "static",
+      "video": null
+    },
+    {
+      "slug": "otro_dia_otro_dolar",
+      "locale": "es",
+      "meta": {
+        "title": "Otro día, otro dólar · MonkMonkeyKey",
+        "description": "[Una serie de pensamientos concatenados (o no) sobre el tiempo-capital y el trabajo.]        En mi trabajo me dieron una tarjeta de regalo de Amazon con un valor de $500 como compensación por haber perdido mis papeles de ingreso y retrasar mi pago inicial un mes.         En la Ley Federal del Trabajo de 2026 la palabra tiempo aparece 165 veces a lo largo de 83 páginas, descanso aparece 49 veces a lo largo de 28 páginas, dinero aparece 32 veces a lo largo de 21 páginas, vacaciones aparece 29 veces a lo largo de 18 páginas, capital aparece 10 veces a lo largo de 9 páginas. Las palabras desgaste y cuerpo aparecen 3 veces a lo largo de 3 páginas. La extensión total del documento es de 455 páginas.",
+        "image": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783886137/projects/otro_dia_otro_dolar/cover/obvadqy94jhbmftyqso3.jpg"
+      },
+      "width": 1440,
+      "h1": [
+        "Otro día, otro dólar"
+      ],
+      "overflow": false,
+      "children": [
+        {
+          "tag": "HEADER",
+          "label": null,
+          "class": "project-detail_header__OMp_B"
+        },
+        {
+          "tag": "FIGURE",
+          "label": null,
+          "class": "project-detail_cover__gXRX_"
+        },
+        {
+          "tag": "SECTION",
+          "label": "Sobre el proyecto",
+          "class": "project-detail_context__zLBpJ project-detail_contextColumns__c4Xp3"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-gallery-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-collaborations-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "NAV",
+          "label": "Archivo de proyectos",
+          "class": "project-detail_return__jf87s"
+        }
+      ],
+      "cover": {
+        "x": 124,
+        "y": 539.125,
+        "width": 1192,
+        "height": 826.453125
+      },
+      "coverImage": {
+        "x": 124,
+        "y": 539.125,
+        "width": 1192,
+        "height": 794.65625,
+        "naturalWidth": 1024,
+        "naturalHeight": 682
+      },
+      "gallery": [
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783886158/projects/otro_dia_otro_dolar/gallery/lxnzuwzwv551limhuvgi.jpg",
+          "rect": {
+            "x": 124,
+            "y": 1660.765625,
+            "width": 580,
+            "height": 417.859375
+          },
+          "caption": "Vista instalación"
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783887282/projects/otro_dia_otro_dolar/gallery/jji1pbd7rxtj4klogeoq.jpg",
+          "rect": {
+            "x": 736,
+            "y": 1660.765625,
+            "width": 580,
+            "height": 466.796875
+          },
+          "caption": "Detalle ensamblaje"
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783887297/projects/otro_dia_otro_dolar/gallery/tasfjn0calpsh2djbo0h.jpg",
+          "rect": {
+            "x": 124,
+            "y": 2167.5625,
+            "width": 580,
+            "height": 466.796875
+          },
+          "caption": "Detalle ensamblaje"
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783887959/projects/otro_dia_otro_dolar/gallery/ogy1rlzamvy2wvuv6n3u.jpg",
+          "rect": {
+            "x": 736,
+            "y": 2167.5625,
+            "width": 580,
+            "height": 442.328125
+          },
+          "caption": "Detalle dibujo"
+        }
+      ],
+      "captions": [
+        "Otro día, otro dólar",
+        "Vista instalación",
+        "Detalle ensamblaje",
+        "Detalle ensamblaje",
+        "Detalle dibujo"
+      ],
+      "images": [
+        {
+          "alt": "Otro día, otro dólar",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "Otro día, otro dólar",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "Detalle ensamblaje",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "Detalle ensamblaje",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "dibujo",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "Karen Aixa",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        }
+      ],
+      "entities": [
+        "Karen Aixa"
+      ],
+      "entityLinks": [
+        {
+          "href": "https://www.instagram.com/karenaixa",
+          "rel": "noopener noreferrer"
+        }
+      ],
+      "backLinks": [
+        "Volver a proyectos",
+        "Volver a todos los proyectos"
+      ],
+      "asideSticky": "static",
+      "video": null
+    },
+    {
+      "slug": "otro_dia_otro_dolar",
+      "locale": "en",
+      "meta": {
+        "title": "Otro día, otro dólar · MonkMonkeyKey",
+        "description": "[Una serie de pensamientos concatenados (o no) sobre el tiempo-capital y el trabajo.]        En mi trabajo me dieron una tarjeta de regalo de Amazon con un valor de $500 como compensación por haber perdido mis papeles de ingreso y retrasar mi pago inicial un mes.         En la Ley Federal del Trabajo de 2026 la palabra tiempo aparece 165 veces a lo largo de 83 páginas, descanso aparece 49 veces a lo largo de 28 páginas, dinero aparece 32 veces a lo largo de 21 páginas, vacaciones aparece 29 veces a lo largo de 18 páginas, capital aparece 10 veces a lo largo de 9 páginas. Las palabras desgaste y cuerpo aparecen 3 veces a lo largo de 3 páginas. La extensión total del documento es de 455 páginas.",
+        "image": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783886137/projects/otro_dia_otro_dolar/cover/obvadqy94jhbmftyqso3.jpg"
+      },
+      "width": 375,
+      "h1": [
+        "Otro día, otro dólar"
+      ],
+      "overflow": false,
+      "children": [
+        {
+          "tag": "HEADER",
+          "label": null,
+          "class": "project-detail_header__OMp_B"
+        },
+        {
+          "tag": "FIGURE",
+          "label": null,
+          "class": "project-detail_cover__gXRX_"
+        },
+        {
+          "tag": "SECTION",
+          "label": "About the project",
+          "class": "project-detail_context__zLBpJ project-detail_contextColumns__c4Xp3"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-gallery-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-collaborations-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "NAV",
+          "label": "Project archive",
+          "class": "project-detail_return__jf87s"
+        }
+      ],
+      "cover": {
+        "x": 24,
+        "y": 733.578125,
+        "width": 327,
+        "height": 249.796875
+      },
+      "coverImage": {
+        "x": 24,
+        "y": 733.578125,
+        "width": 327,
+        "height": 218,
+        "naturalWidth": 1192,
+        "naturalHeight": 794
+      },
+      "gallery": [
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783886158/projects/otro_dia_otro_dolar/gallery/lxnzuwzwv551limhuvgi.jpg",
+          "rect": {
+            "x": 24,
+            "y": 1300.15625,
+            "width": 327,
+            "height": 249.453125
+          },
+          "caption": "Vista instalación"
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783887282/projects/otro_dia_otro_dolar/gallery/jji1pbd7rxtj4klogeoq.jpg",
+          "rect": {
+            "x": 24,
+            "y": 1581.609375,
+            "width": 327,
+            "height": 277.046875
+          },
+          "caption": "Detalle ensamblaje"
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783887297/projects/otro_dia_otro_dolar/gallery/tasfjn0calpsh2djbo0h.jpg",
+          "rect": {
+            "x": 24,
+            "y": 1890.65625,
+            "width": 327,
+            "height": 277.046875
+          },
+          "caption": "Detalle ensamblaje"
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783887959/projects/otro_dia_otro_dolar/gallery/ogy1rlzamvy2wvuv6n3u.jpg",
+          "rect": {
+            "x": 24,
+            "y": 2199.703125,
+            "width": 327,
+            "height": 263.25
+          },
+          "caption": "Detalle dibujo"
+        }
+      ],
+      "captions": [
+        "Otro día, otro dólar",
+        "Vista instalación",
+        "Detalle ensamblaje",
+        "Detalle ensamblaje",
+        "Detalle dibujo"
+      ],
+      "images": [
+        {
+          "alt": "Otro día, otro dólar",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "Otro día, otro dólar",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "Detalle ensamblaje",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "Detalle ensamblaje",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "dibujo",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "Karen Aixa",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        }
+      ],
+      "entities": [
+        "Karen Aixa"
+      ],
+      "entityLinks": [
+        {
+          "href": "https://www.instagram.com/karenaixa",
+          "rel": "noopener noreferrer"
+        }
+      ],
+      "backLinks": [
+        "Back to projects",
+        "Back to all projects"
+      ],
+      "asideSticky": "static",
+      "video": null
+    },
+    {
+      "slug": "otro_dia_otro_dolar",
+      "locale": "en",
+      "meta": {
+        "title": "Otro día, otro dólar · MonkMonkeyKey",
+        "description": "[Una serie de pensamientos concatenados (o no) sobre el tiempo-capital y el trabajo.]        En mi trabajo me dieron una tarjeta de regalo de Amazon con un valor de $500 como compensación por haber perdido mis papeles de ingreso y retrasar mi pago inicial un mes.         En la Ley Federal del Trabajo de 2026 la palabra tiempo aparece 165 veces a lo largo de 83 páginas, descanso aparece 49 veces a lo largo de 28 páginas, dinero aparece 32 veces a lo largo de 21 páginas, vacaciones aparece 29 veces a lo largo de 18 páginas, capital aparece 10 veces a lo largo de 9 páginas. Las palabras desgaste y cuerpo aparecen 3 veces a lo largo de 3 páginas. La extensión total del documento es de 455 páginas.",
+        "image": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783886137/projects/otro_dia_otro_dolar/cover/obvadqy94jhbmftyqso3.jpg"
+      },
+      "width": 768,
+      "h1": [
+        "Otro día, otro dólar"
+      ],
+      "overflow": false,
+      "children": [
+        {
+          "tag": "HEADER",
+          "label": null,
+          "class": "project-detail_header__OMp_B"
+        },
+        {
+          "tag": "FIGURE",
+          "label": null,
+          "class": "project-detail_cover__gXRX_"
+        },
+        {
+          "tag": "SECTION",
+          "label": "About the project",
+          "class": "project-detail_context__zLBpJ project-detail_contextColumns__c4Xp3"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-gallery-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-collaborations-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "NAV",
+          "label": "Project archive",
+          "class": "project-detail_return__jf87s"
+        }
+      ],
+      "cover": {
+        "x": 48,
+        "y": 504.890625,
+        "width": 672,
+        "height": 479.796875
+      },
+      "coverImage": {
+        "x": 48,
+        "y": 504.890625,
+        "width": 672,
+        "height": 448,
+        "naturalWidth": 768,
+        "naturalHeight": 512
+      },
+      "gallery": [
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783886158/projects/otro_dia_otro_dolar/gallery/lxnzuwzwv551limhuvgi.jpg",
+          "rect": {
+            "x": 48,
+            "y": 1325.46875,
+            "width": 320,
+            "height": 244.796875
+          },
+          "caption": "Vista instalación"
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783887282/projects/otro_dia_otro_dolar/gallery/jji1pbd7rxtj4klogeoq.jpg",
+          "rect": {
+            "x": 400,
+            "y": 1325.46875,
+            "width": 320,
+            "height": 271.796875
+          },
+          "caption": "Detalle ensamblaje"
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783887297/projects/otro_dia_otro_dolar/gallery/tasfjn0calpsh2djbo0h.jpg",
+          "rect": {
+            "x": 48,
+            "y": 1637.265625,
+            "width": 320,
+            "height": 271.796875
+          },
+          "caption": "Detalle ensamblaje"
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783887959/projects/otro_dia_otro_dolar/gallery/ogy1rlzamvy2wvuv6n3u.jpg",
+          "rect": {
+            "x": 400,
+            "y": 1637.265625,
+            "width": 320,
+            "height": 258.296875
+          },
+          "caption": "Detalle dibujo"
+        }
+      ],
+      "captions": [
+        "Otro día, otro dólar",
+        "Vista instalación",
+        "Detalle ensamblaje",
+        "Detalle ensamblaje",
+        "Detalle dibujo"
+      ],
+      "images": [
+        {
+          "alt": "Otro día, otro dólar",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "Otro día, otro dólar",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "Detalle ensamblaje",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "Detalle ensamblaje",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "dibujo",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "Karen Aixa",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        }
+      ],
+      "entities": [
+        "Karen Aixa"
+      ],
+      "entityLinks": [
+        {
+          "href": "https://www.instagram.com/karenaixa",
+          "rel": "noopener noreferrer"
+        }
+      ],
+      "backLinks": [
+        "Back to projects",
+        "Back to all projects"
+      ],
+      "asideSticky": "static",
+      "video": null
+    },
+    {
+      "slug": "otro_dia_otro_dolar",
+      "locale": "en",
+      "meta": {
+        "title": "Otro día, otro dólar · MonkMonkeyKey",
+        "description": "[Una serie de pensamientos concatenados (o no) sobre el tiempo-capital y el trabajo.]        En mi trabajo me dieron una tarjeta de regalo de Amazon con un valor de $500 como compensación por haber perdido mis papeles de ingreso y retrasar mi pago inicial un mes.         En la Ley Federal del Trabajo de 2026 la palabra tiempo aparece 165 veces a lo largo de 83 páginas, descanso aparece 49 veces a lo largo de 28 páginas, dinero aparece 32 veces a lo largo de 21 páginas, vacaciones aparece 29 veces a lo largo de 18 páginas, capital aparece 10 veces a lo largo de 9 páginas. Las palabras desgaste y cuerpo aparecen 3 veces a lo largo de 3 páginas. La extensión total del documento es de 455 páginas.",
+        "image": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783886137/projects/otro_dia_otro_dolar/cover/obvadqy94jhbmftyqso3.jpg"
+      },
+      "width": 1024,
+      "h1": [
+        "Otro día, otro dólar"
+      ],
+      "overflow": false,
+      "children": [
+        {
+          "tag": "HEADER",
+          "label": null,
+          "class": "project-detail_header__OMp_B"
+        },
+        {
+          "tag": "FIGURE",
+          "label": null,
+          "class": "project-detail_cover__gXRX_"
+        },
+        {
+          "tag": "SECTION",
+          "label": "About the project",
+          "class": "project-detail_context__zLBpJ project-detail_contextColumns__c4Xp3"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-gallery-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-collaborations-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "NAV",
+          "label": "Project archive",
+          "class": "project-detail_return__jf87s"
+        }
+      ],
+      "cover": {
+        "x": 64,
+        "y": 519.90625,
+        "width": 896,
+        "height": 629.125
+      },
+      "coverImage": {
+        "x": 64,
+        "y": 519.90625,
+        "width": 896,
+        "height": 597.328125,
+        "naturalWidth": 1024,
+        "naturalHeight": 682
+      },
+      "gallery": [
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783886158/projects/otro_dia_otro_dolar/gallery/lxnzuwzwv551limhuvgi.jpg",
+          "rect": {
+            "x": 64,
+            "y": 1444.21875,
+            "width": 432,
+            "height": 319.34375
+          },
+          "caption": "Vista instalación"
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783887282/projects/otro_dia_otro_dolar/gallery/jji1pbd7rxtj4klogeoq.jpg",
+          "rect": {
+            "x": 528,
+            "y": 1444.21875,
+            "width": 432,
+            "height": 355.796875
+          },
+          "caption": "Detalle ensamblaje"
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783887297/projects/otro_dia_otro_dolar/gallery/tasfjn0calpsh2djbo0h.jpg",
+          "rect": {
+            "x": 64,
+            "y": 1840.015625,
+            "width": 432,
+            "height": 355.796875
+          },
+          "caption": "Detalle ensamblaje"
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783887959/projects/otro_dia_otro_dolar/gallery/ogy1rlzamvy2wvuv6n3u.jpg",
+          "rect": {
+            "x": 528,
+            "y": 1840.015625,
+            "width": 432,
+            "height": 337.5625
+          },
+          "caption": "Detalle dibujo"
+        }
+      ],
+      "captions": [
+        "Otro día, otro dólar",
+        "Vista instalación",
+        "Detalle ensamblaje",
+        "Detalle ensamblaje",
+        "Detalle dibujo"
+      ],
+      "images": [
+        {
+          "alt": "Otro día, otro dólar",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "Otro día, otro dólar",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "Detalle ensamblaje",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "Detalle ensamblaje",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "dibujo",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "Karen Aixa",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        }
+      ],
+      "entities": [
+        "Karen Aixa"
+      ],
+      "entityLinks": [
+        {
+          "href": "https://www.instagram.com/karenaixa",
+          "rel": "noopener noreferrer"
+        }
+      ],
+      "backLinks": [
+        "Back to projects",
+        "Back to all projects"
+      ],
+      "asideSticky": "static",
+      "video": null
+    },
+    {
+      "slug": "otro_dia_otro_dolar",
+      "locale": "en",
+      "meta": {
+        "title": "Otro día, otro dólar · MonkMonkeyKey",
+        "description": "[Una serie de pensamientos concatenados (o no) sobre el tiempo-capital y el trabajo.]        En mi trabajo me dieron una tarjeta de regalo de Amazon con un valor de $500 como compensación por haber perdido mis papeles de ingreso y retrasar mi pago inicial un mes.         En la Ley Federal del Trabajo de 2026 la palabra tiempo aparece 165 veces a lo largo de 83 páginas, descanso aparece 49 veces a lo largo de 28 páginas, dinero aparece 32 veces a lo largo de 21 páginas, vacaciones aparece 29 veces a lo largo de 18 páginas, capital aparece 10 veces a lo largo de 9 páginas. Las palabras desgaste y cuerpo aparecen 3 veces a lo largo de 3 páginas. La extensión total del documento es de 455 páginas.",
+        "image": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783886137/projects/otro_dia_otro_dolar/cover/obvadqy94jhbmftyqso3.jpg"
+      },
+      "width": 1440,
+      "h1": [
+        "Otro día, otro dólar"
+      ],
+      "overflow": false,
+      "children": [
+        {
+          "tag": "HEADER",
+          "label": null,
+          "class": "project-detail_header__OMp_B"
+        },
+        {
+          "tag": "FIGURE",
+          "label": null,
+          "class": "project-detail_cover__gXRX_"
+        },
+        {
+          "tag": "SECTION",
+          "label": "About the project",
+          "class": "project-detail_context__zLBpJ project-detail_contextColumns__c4Xp3"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-gallery-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-collaborations-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "NAV",
+          "label": "Project archive",
+          "class": "project-detail_return__jf87s"
+        }
+      ],
+      "cover": {
+        "x": 124,
+        "y": 539.125,
+        "width": 1192,
+        "height": 826.453125
+      },
+      "coverImage": {
+        "x": 124,
+        "y": 539.125,
+        "width": 1192,
+        "height": 794.65625,
+        "naturalWidth": 1024,
+        "naturalHeight": 682
+      },
+      "gallery": [
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783886158/projects/otro_dia_otro_dolar/gallery/lxnzuwzwv551limhuvgi.jpg",
+          "rect": {
+            "x": 124,
+            "y": 1660.765625,
+            "width": 580,
+            "height": 417.859375
+          },
+          "caption": "Vista instalación"
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783887282/projects/otro_dia_otro_dolar/gallery/jji1pbd7rxtj4klogeoq.jpg",
+          "rect": {
+            "x": 736,
+            "y": 1660.765625,
+            "width": 580,
+            "height": 466.796875
+          },
+          "caption": "Detalle ensamblaje"
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783887297/projects/otro_dia_otro_dolar/gallery/tasfjn0calpsh2djbo0h.jpg",
+          "rect": {
+            "x": 124,
+            "y": 2167.5625,
+            "width": 580,
+            "height": 466.796875
+          },
+          "caption": "Detalle ensamblaje"
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783887959/projects/otro_dia_otro_dolar/gallery/ogy1rlzamvy2wvuv6n3u.jpg",
+          "rect": {
+            "x": 736,
+            "y": 2167.5625,
+            "width": 580,
+            "height": 442.328125
+          },
+          "caption": "Detalle dibujo"
+        }
+      ],
+      "captions": [
+        "Otro día, otro dólar",
+        "Vista instalación",
+        "Detalle ensamblaje",
+        "Detalle ensamblaje",
+        "Detalle dibujo"
+      ],
+      "images": [
+        {
+          "alt": "Otro día, otro dólar",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "Otro día, otro dólar",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "Detalle ensamblaje",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "Detalle ensamblaje",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "dibujo",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "Karen Aixa",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        }
+      ],
+      "entities": [
+        "Karen Aixa"
+      ],
+      "entityLinks": [
+        {
+          "href": "https://www.instagram.com/karenaixa",
+          "rel": "noopener noreferrer"
+        }
+      ],
+      "backLinks": [
+        "Back to projects",
+        "Back to all projects"
+      ],
+      "asideSticky": "static",
+      "video": null
+    },
+    {
+      "slug": "nime2023",
+      "locale": "es",
+      "meta": {
+        "title": "New Interfaces for Musical Expression 2023. Ciudad de México · MonkMonkeyKey",
+        "description": "La Conferencia Internacional sobre Nuevas Interfaces para la Expresión Musical (NIME, por sus siglas en inglés) reúne a investigadores y músicos de todo el mundo para compartir sus conocimientos y trabajos de última generación sobre el diseño de nuevas interfaces musicales. La conferencia comenzó como un taller en la Conferencia sobre Factores Humanos en Sistemas Informáticos (CHI, por sus siglas en inglés) en 2001. Desde entonces, se han celebrado una serie anual de conferencias internacionales en todo el mundo, organizadas por grupos de investigación dedicados al diseño de interfaces, la interacción hombre-computadora y la música por computadora.  En 2023, NIME volverá a América del Norte, América Latina y su formato físico en la Ciudad de México. Sin embargo, también brindaremos soporte híbrido para aquellos que no puedan asistir a la conferencia en persona.  NIME 2023 se llevará a cabo en la Biblioteca Vasconcelos y el Centro de Cultura Digital, dos importantes centros culturales e innovadores en la Ciudad de México.",
+        "image": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766540899/projects/nime2023/cover/l6amlcsrijq1f3b4tjyq.jpg"
+      },
+      "width": 375,
+      "h1": [
+        "New Interfaces for Musical Expression 2023. Ciudad de México"
+      ],
+      "overflow": false,
+      "children": [
+        {
+          "tag": "HEADER",
+          "label": null,
+          "class": "project-detail_header__OMp_B"
+        },
+        {
+          "tag": "FIGURE",
+          "label": null,
+          "class": "project-detail_cover__gXRX_"
+        },
+        {
+          "tag": "SECTION",
+          "label": "Sobre el proyecto",
+          "class": "project-detail_context__zLBpJ project-detail_contextColumns__c4Xp3"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-video-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-gallery-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-collaborations-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "NAV",
+          "label": "Archivo de proyectos",
+          "class": "project-detail_return__jf87s"
+        }
+      ],
+      "cover": {
+        "x": 24,
+        "y": 1089.125,
+        "width": 327,
+        "height": 269.59375
+      },
+      "coverImage": {
+        "x": 24,
+        "y": 1089.125,
+        "width": 327,
+        "height": 218,
+        "naturalWidth": 1192,
+        "naturalHeight": 794
+      },
+      "gallery": [
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541359/projects/nime2023/gallery/qhzelpdus1cfj8tz9kuu.jpg",
+          "rect": {
+            "x": 24,
+            "y": 2060.21875,
+            "width": 327,
+            "height": 269.59375
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/projects/nime2023/gallery/tawrunmuwzacfkycmmsl",
+          "rect": {
+            "x": 24,
+            "y": 2361.8125,
+            "width": 327,
+            "height": 269.59375
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/projects/nime2023/gallery/wqsflcifvapdlhtpqzqh",
+          "rect": {
+            "x": 24,
+            "y": 2663.40625,
+            "width": 327,
+            "height": 269.59375
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541554/projects/nime2023/gallery/oin0vkligunqxg1jrtex.jpg",
+          "rect": {
+            "x": 24,
+            "y": 2965,
+            "width": 327,
+            "height": 269.59375
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541568/projects/nime2023/gallery/hurgcxbul0opsnpshxzr.jpg",
+          "rect": {
+            "x": 24,
+            "y": 3266.59375,
+            "width": 327,
+            "height": 269.59375
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541633/projects/nime2023/gallery/oyuffjym2rpgmpozix6q.jpg",
+          "rect": {
+            "x": 24,
+            "y": 3568.1875,
+            "width": 327,
+            "height": 269.59375
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        }
+      ],
+      "captions": [
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+      ],
+      "images": [
+        {
+          "alt": "NIME 2023",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "logo-nime",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        }
+      ],
+      "entities": [
+        "New Interfaces for Musical Expression 2023"
+      ],
+      "entityLinks": [
+        {
+          "href": "https://www.nime2023.org/",
+          "rel": "noopener noreferrer"
+        }
+      ],
+      "backLinks": [
+        "Volver a proyectos",
+        "Volver a todos los proyectos"
+      ],
+      "asideSticky": "static",
+      "video": {
+        "src": "https://www.youtube-nocookie.com/embed/HCTibzvNbmc",
+        "title": "NIME México 2023",
+        "loading": "lazy",
+        "allow": "accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+        "fullscreen": true
+      }
+    },
+    {
+      "slug": "nime2023",
+      "locale": "es",
+      "meta": {
+        "title": "New Interfaces for Musical Expression 2023. Ciudad de México · MonkMonkeyKey",
+        "description": "La Conferencia Internacional sobre Nuevas Interfaces para la Expresión Musical (NIME, por sus siglas en inglés) reúne a investigadores y músicos de todo el mundo para compartir sus conocimientos y trabajos de última generación sobre el diseño de nuevas interfaces musicales. La conferencia comenzó como un taller en la Conferencia sobre Factores Humanos en Sistemas Informáticos (CHI, por sus siglas en inglés) en 2001. Desde entonces, se han celebrado una serie anual de conferencias internacionales en todo el mundo, organizadas por grupos de investigación dedicados al diseño de interfaces, la interacción hombre-computadora y la música por computadora.  En 2023, NIME volverá a América del Norte, América Latina y su formato físico en la Ciudad de México. Sin embargo, también brindaremos soporte híbrido para aquellos que no puedan asistir a la conferencia en persona.  NIME 2023 se llevará a cabo en la Biblioteca Vasconcelos y el Centro de Cultura Digital, dos importantes centros culturales e innovadores en la Ciudad de México.",
+        "image": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766540899/projects/nime2023/cover/l6amlcsrijq1f3b4tjyq.jpg"
+      },
+      "width": 768,
+      "h1": [
+        "New Interfaces for Musical Expression 2023. Ciudad de México"
+      ],
+      "overflow": false,
+      "children": [
+        {
+          "tag": "HEADER",
+          "label": null,
+          "class": "project-detail_header__OMp_B"
+        },
+        {
+          "tag": "FIGURE",
+          "label": null,
+          "class": "project-detail_cover__gXRX_"
+        },
+        {
+          "tag": "SECTION",
+          "label": "Sobre el proyecto",
+          "class": "project-detail_context__zLBpJ project-detail_contextColumns__c4Xp3"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-video-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-gallery-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-collaborations-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "NAV",
+          "label": "Archivo de proyectos",
+          "class": "project-detail_return__jf87s"
+        }
+      ],
+      "cover": {
+        "x": 48,
+        "y": 687.546875,
+        "width": 672,
+        "height": 499.59375
+      },
+      "coverImage": {
+        "x": 48,
+        "y": 687.546875,
+        "width": 672,
+        "height": 448,
+        "naturalWidth": 375,
+        "naturalHeight": 250
+      },
+      "gallery": [
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541359/projects/nime2023/gallery/qhzelpdus1cfj8tz9kuu.jpg",
+          "rect": {
+            "x": 48,
+            "y": 2054.921875,
+            "width": 320,
+            "height": 264.921875
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/projects/nime2023/gallery/tawrunmuwzacfkycmmsl",
+          "rect": {
+            "x": 400,
+            "y": 2054.921875,
+            "width": 320,
+            "height": 264.921875
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/projects/nime2023/gallery/wqsflcifvapdlhtpqzqh",
+          "rect": {
+            "x": 48,
+            "y": 2359.84375,
+            "width": 320,
+            "height": 264.921875
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541554/projects/nime2023/gallery/oin0vkligunqxg1jrtex.jpg",
+          "rect": {
+            "x": 400,
+            "y": 2359.84375,
+            "width": 320,
+            "height": 264.921875
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541568/projects/nime2023/gallery/hurgcxbul0opsnpshxzr.jpg",
+          "rect": {
+            "x": 48,
+            "y": 2664.765625,
+            "width": 320,
+            "height": 291.59375
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541633/projects/nime2023/gallery/oyuffjym2rpgmpozix6q.jpg",
+          "rect": {
+            "x": 400,
+            "y": 2664.765625,
+            "width": 320,
+            "height": 264.921875
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        }
+      ],
+      "captions": [
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+      ],
+      "images": [
+        {
+          "alt": "NIME 2023",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "logo-nime",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        }
+      ],
+      "entities": [
+        "New Interfaces for Musical Expression 2023"
+      ],
+      "entityLinks": [
+        {
+          "href": "https://www.nime2023.org/",
+          "rel": "noopener noreferrer"
+        }
+      ],
+      "backLinks": [
+        "Volver a proyectos",
+        "Volver a todos los proyectos"
+      ],
+      "asideSticky": "static",
+      "video": {
+        "src": "https://www.youtube-nocookie.com/embed/HCTibzvNbmc",
+        "title": "NIME México 2023",
+        "loading": "lazy",
+        "allow": "accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+        "fullscreen": true
+      }
+    },
+    {
+      "slug": "nime2023",
+      "locale": "es",
+      "meta": {
+        "title": "New Interfaces for Musical Expression 2023. Ciudad de México · MonkMonkeyKey",
+        "description": "La Conferencia Internacional sobre Nuevas Interfaces para la Expresión Musical (NIME, por sus siglas en inglés) reúne a investigadores y músicos de todo el mundo para compartir sus conocimientos y trabajos de última generación sobre el diseño de nuevas interfaces musicales. La conferencia comenzó como un taller en la Conferencia sobre Factores Humanos en Sistemas Informáticos (CHI, por sus siglas en inglés) en 2001. Desde entonces, se han celebrado una serie anual de conferencias internacionales en todo el mundo, organizadas por grupos de investigación dedicados al diseño de interfaces, la interacción hombre-computadora y la música por computadora.  En 2023, NIME volverá a América del Norte, América Latina y su formato físico en la Ciudad de México. Sin embargo, también brindaremos soporte híbrido para aquellos que no puedan asistir a la conferencia en persona.  NIME 2023 se llevará a cabo en la Biblioteca Vasconcelos y el Centro de Cultura Digital, dos importantes centros culturales e innovadores en la Ciudad de México.",
+        "image": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766540899/projects/nime2023/cover/l6amlcsrijq1f3b4tjyq.jpg"
+      },
+      "width": 1024,
+      "h1": [
+        "New Interfaces for Musical Expression 2023. Ciudad de México"
+      ],
+      "overflow": false,
+      "children": [
+        {
+          "tag": "HEADER",
+          "label": null,
+          "class": "project-detail_header__OMp_B"
+        },
+        {
+          "tag": "FIGURE",
+          "label": null,
+          "class": "project-detail_cover__gXRX_"
+        },
+        {
+          "tag": "SECTION",
+          "label": "Sobre el proyecto",
+          "class": "project-detail_context__zLBpJ project-detail_contextColumns__c4Xp3"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-video-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-gallery-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-collaborations-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "NAV",
+          "label": "Archivo de proyectos",
+          "class": "project-detail_return__jf87s"
+        }
+      ],
+      "cover": {
+        "x": 64,
+        "y": 706.3125,
+        "width": 896,
+        "height": 648.921875
+      },
+      "coverImage": {
+        "x": 64,
+        "y": 706.3125,
+        "width": 896,
+        "height": 597.328125,
+        "naturalWidth": 768,
+        "naturalHeight": 512
+      },
+      "gallery": [
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541359/projects/nime2023/gallery/qhzelpdus1cfj8tz9kuu.jpg",
+          "rect": {
+            "x": 64,
+            "y": 2349.609375,
+            "width": 432,
+            "height": 339.59375
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/projects/nime2023/gallery/tawrunmuwzacfkycmmsl",
+          "rect": {
+            "x": 528,
+            "y": 2349.609375,
+            "width": 432,
+            "height": 339.59375
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/projects/nime2023/gallery/wqsflcifvapdlhtpqzqh",
+          "rect": {
+            "x": 64,
+            "y": 2729.203125,
+            "width": 432,
+            "height": 339.59375
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541554/projects/nime2023/gallery/oin0vkligunqxg1jrtex.jpg",
+          "rect": {
+            "x": 528,
+            "y": 2729.203125,
+            "width": 432,
+            "height": 339.59375
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541568/projects/nime2023/gallery/hurgcxbul0opsnpshxzr.jpg",
+          "rect": {
+            "x": 64,
+            "y": 3108.796875,
+            "width": 432,
+            "height": 375.59375
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541633/projects/nime2023/gallery/oyuffjym2rpgmpozix6q.jpg",
+          "rect": {
+            "x": 528,
+            "y": 3108.796875,
+            "width": 432,
+            "height": 339.59375
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        }
+      ],
+      "captions": [
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+      ],
+      "images": [
+        {
+          "alt": "NIME 2023",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "logo-nime",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        }
+      ],
+      "entities": [
+        "New Interfaces for Musical Expression 2023"
+      ],
+      "entityLinks": [
+        {
+          "href": "https://www.nime2023.org/",
+          "rel": "noopener noreferrer"
+        }
+      ],
+      "backLinks": [
+        "Volver a proyectos",
+        "Volver a todos los proyectos"
+      ],
+      "asideSticky": "static",
+      "video": {
+        "src": "https://www.youtube-nocookie.com/embed/HCTibzvNbmc",
+        "title": "NIME México 2023",
+        "loading": "lazy",
+        "allow": "accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+        "fullscreen": true
+      }
+    },
+    {
+      "slug": "nime2023",
+      "locale": "es",
+      "meta": {
+        "title": "New Interfaces for Musical Expression 2023. Ciudad de México · MonkMonkeyKey",
+        "description": "La Conferencia Internacional sobre Nuevas Interfaces para la Expresión Musical (NIME, por sus siglas en inglés) reúne a investigadores y músicos de todo el mundo para compartir sus conocimientos y trabajos de última generación sobre el diseño de nuevas interfaces musicales. La conferencia comenzó como un taller en la Conferencia sobre Factores Humanos en Sistemas Informáticos (CHI, por sus siglas en inglés) en 2001. Desde entonces, se han celebrado una serie anual de conferencias internacionales en todo el mundo, organizadas por grupos de investigación dedicados al diseño de interfaces, la interacción hombre-computadora y la música por computadora.  En 2023, NIME volverá a América del Norte, América Latina y su formato físico en la Ciudad de México. Sin embargo, también brindaremos soporte híbrido para aquellos que no puedan asistir a la conferencia en persona.  NIME 2023 se llevará a cabo en la Biblioteca Vasconcelos y el Centro de Cultura Digital, dos importantes centros culturales e innovadores en la Ciudad de México.",
+        "image": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766540899/projects/nime2023/cover/l6amlcsrijq1f3b4tjyq.jpg"
+      },
+      "width": 1440,
+      "h1": [
+        "New Interfaces for Musical Expression 2023. Ciudad de México"
+      ],
+      "overflow": false,
+      "children": [
+        {
+          "tag": "HEADER",
+          "label": null,
+          "class": "project-detail_header__OMp_B"
+        },
+        {
+          "tag": "FIGURE",
+          "label": null,
+          "class": "project-detail_cover__gXRX_"
+        },
+        {
+          "tag": "SECTION",
+          "label": "Sobre el proyecto",
+          "class": "project-detail_context__zLBpJ project-detail_contextColumns__c4Xp3"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-video-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-gallery-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-collaborations-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "NAV",
+          "label": "Archivo de proyectos",
+          "class": "project-detail_return__jf87s"
+        }
+      ],
+      "cover": {
+        "x": 124,
+        "y": 763.96875,
+        "width": 1192,
+        "height": 846.25
+      },
+      "coverImage": {
+        "x": 124,
+        "y": 763.96875,
+        "width": 1192,
+        "height": 794.65625,
+        "naturalWidth": 1192,
+        "naturalHeight": 794
+      },
+      "gallery": [
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541359/projects/nime2023/gallery/qhzelpdus1cfj8tz9kuu.jpg",
+          "rect": {
+            "x": 124,
+            "y": 2748,
+            "width": 580,
+            "height": 438.25
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/projects/nime2023/gallery/tawrunmuwzacfkycmmsl",
+          "rect": {
+            "x": 736,
+            "y": 2748,
+            "width": 580,
+            "height": 438.25
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/projects/nime2023/gallery/wqsflcifvapdlhtpqzqh",
+          "rect": {
+            "x": 124,
+            "y": 3226.25,
+            "width": 580,
+            "height": 438.25
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541554/projects/nime2023/gallery/oin0vkligunqxg1jrtex.jpg",
+          "rect": {
+            "x": 736,
+            "y": 3226.25,
+            "width": 580,
+            "height": 438.25
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541568/projects/nime2023/gallery/hurgcxbul0opsnpshxzr.jpg",
+          "rect": {
+            "x": 124,
+            "y": 3704.5,
+            "width": 580,
+            "height": 486.59375
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541633/projects/nime2023/gallery/oyuffjym2rpgmpozix6q.jpg",
+          "rect": {
+            "x": 736,
+            "y": 3704.5,
+            "width": 580,
+            "height": 438.25
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        }
+      ],
+      "captions": [
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+      ],
+      "images": [
+        {
+          "alt": "NIME 2023",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "logo-nime",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        }
+      ],
+      "entities": [
+        "New Interfaces for Musical Expression 2023"
+      ],
+      "entityLinks": [
+        {
+          "href": "https://www.nime2023.org/",
+          "rel": "noopener noreferrer"
+        }
+      ],
+      "backLinks": [
+        "Volver a proyectos",
+        "Volver a todos los proyectos"
+      ],
+      "asideSticky": "static",
+      "video": {
+        "src": "https://www.youtube-nocookie.com/embed/HCTibzvNbmc",
+        "title": "NIME México 2023",
+        "loading": "lazy",
+        "allow": "accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+        "fullscreen": true
+      }
+    },
+    {
+      "slug": "nime2023",
+      "locale": "en",
+      "meta": {
+        "title": "New Interfaces for Musical Expression 2023. Ciudad de México · MonkMonkeyKey",
+        "description": "La Conferencia Internacional sobre Nuevas Interfaces para la Expresión Musical (NIME, por sus siglas en inglés) reúne a investigadores y músicos de todo el mundo para compartir sus conocimientos y trabajos de última generación sobre el diseño de nuevas interfaces musicales. La conferencia comenzó como un taller en la Conferencia sobre Factores Humanos en Sistemas Informáticos (CHI, por sus siglas en inglés) en 2001. Desde entonces, se han celebrado una serie anual de conferencias internacionales en todo el mundo, organizadas por grupos de investigación dedicados al diseño de interfaces, la interacción hombre-computadora y la música por computadora.  En 2023, NIME volverá a América del Norte, América Latina y su formato físico en la Ciudad de México. Sin embargo, también brindaremos soporte híbrido para aquellos que no puedan asistir a la conferencia en persona.  NIME 2023 se llevará a cabo en la Biblioteca Vasconcelos y el Centro de Cultura Digital, dos importantes centros culturales e innovadores en la Ciudad de México.",
+        "image": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766540899/projects/nime2023/cover/l6amlcsrijq1f3b4tjyq.jpg"
+      },
+      "width": 375,
+      "h1": [
+        "La Conferencia Internacional sobre Nuevas Interfaces para la Expresión Musical (NIME, por sus siglas en inglés) reúne a investigadores y músicos de todo el mundo para compartir sus conocimientos y trabajos de última generación sobre el diseño de nuevas interfaces musicales. La conferencia comenzó como un taller en la Conferencia sobre Factores Humanos en Sistemas Informáticos (CHI, por sus siglas en inglés) en 2001. Desde entonces, se han celebrado una serie anual de conferencias internacionales en todo el mundo, organizadas por grupos de investigación dedicados al diseño de interfaces, la interacción hombre-computadora y la música por computadora.  En 2023, NIME volverá a América del Norte, América Latina y su formato físico en la Ciudad de México. Sin embargo, también brindaremos soporte híbrido para aquellos que no puedan asistir a la conferencia en persona.  NIME 2023 se llevará a cabo en la Biblioteca Vasconcelos y el Centro de Cultura Digital, dos importantes centros culturales e innovadores en la Ciudad de México."
+      ],
+      "overflow": false,
+      "children": [
+        {
+          "tag": "HEADER",
+          "label": null,
+          "class": "project-detail_header__OMp_B"
+        },
+        {
+          "tag": "FIGURE",
+          "label": null,
+          "class": "project-detail_cover__gXRX_"
+        },
+        {
+          "tag": "SECTION",
+          "label": "About the project",
+          "class": "project-detail_context__zLBpJ project-detail_contextColumns__c4Xp3"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-video-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-gallery-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-collaborations-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "NAV",
+          "label": "Project archive",
+          "class": "project-detail_return__jf87s"
+        }
+      ],
+      "cover": {
+        "x": 24,
+        "y": 1865.3125,
+        "width": 327,
+        "height": 269.59375
+      },
+      "coverImage": {
+        "x": 24,
+        "y": 1865.3125,
+        "width": 327,
+        "height": 218,
+        "naturalWidth": 375,
+        "naturalHeight": 250
+      },
+      "gallery": [
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541359/projects/nime2023/gallery/qhzelpdus1cfj8tz9kuu.jpg",
+          "rect": {
+            "x": 24,
+            "y": 2836.40625,
+            "width": 327,
+            "height": 269.75
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/projects/nime2023/gallery/tawrunmuwzacfkycmmsl",
+          "rect": {
+            "x": 24,
+            "y": 3138.15625,
+            "width": 327,
+            "height": 269.75
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/projects/nime2023/gallery/wqsflcifvapdlhtpqzqh",
+          "rect": {
+            "x": 24,
+            "y": 3439.90625,
+            "width": 327,
+            "height": 269.25
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541554/projects/nime2023/gallery/oin0vkligunqxg1jrtex.jpg",
+          "rect": {
+            "x": 24,
+            "y": 3741.15625,
+            "width": 327,
+            "height": 269.75
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541568/projects/nime2023/gallery/hurgcxbul0opsnpshxzr.jpg",
+          "rect": {
+            "x": 24,
+            "y": 4042.90625,
+            "width": 327,
+            "height": 296.84375
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541633/projects/nime2023/gallery/oyuffjym2rpgmpozix6q.jpg",
+          "rect": {
+            "x": 24,
+            "y": 4371.75,
+            "width": 327,
+            "height": 269.25
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        }
+      ],
+      "captions": [
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+      ],
+      "images": [
+        {
+          "alt": "NIME 2023",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "logo-nime",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        }
+      ],
+      "entities": [
+        "New Interfaces for Musical Expression 2023"
+      ],
+      "entityLinks": [
+        {
+          "href": "https://www.nime2023.org/",
+          "rel": "noopener noreferrer"
+        }
+      ],
+      "backLinks": [
+        "Back to projects",
+        "Back to all projects"
+      ],
+      "asideSticky": "static",
+      "video": {
+        "src": "https://www.youtube-nocookie.com/embed/HCTibzvNbmc",
+        "title": "NIME México 2023",
+        "loading": "lazy",
+        "allow": "accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+        "fullscreen": true
+      }
+    },
+    {
+      "slug": "nime2023",
+      "locale": "en",
+      "meta": {
+        "title": "New Interfaces for Musical Expression 2023. Ciudad de México · MonkMonkeyKey",
+        "description": "La Conferencia Internacional sobre Nuevas Interfaces para la Expresión Musical (NIME, por sus siglas en inglés) reúne a investigadores y músicos de todo el mundo para compartir sus conocimientos y trabajos de última generación sobre el diseño de nuevas interfaces musicales. La conferencia comenzó como un taller en la Conferencia sobre Factores Humanos en Sistemas Informáticos (CHI, por sus siglas en inglés) en 2001. Desde entonces, se han celebrado una serie anual de conferencias internacionales en todo el mundo, organizadas por grupos de investigación dedicados al diseño de interfaces, la interacción hombre-computadora y la música por computadora.  En 2023, NIME volverá a América del Norte, América Latina y su formato físico en la Ciudad de México. Sin embargo, también brindaremos soporte híbrido para aquellos que no puedan asistir a la conferencia en persona.  NIME 2023 se llevará a cabo en la Biblioteca Vasconcelos y el Centro de Cultura Digital, dos importantes centros culturales e innovadores en la Ciudad de México.",
+        "image": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766540899/projects/nime2023/cover/l6amlcsrijq1f3b4tjyq.jpg"
+      },
+      "width": 768,
+      "h1": [
+        "La Conferencia Internacional sobre Nuevas Interfaces para la Expresión Musical (NIME, por sus siglas en inglés) reúne a investigadores y músicos de todo el mundo para compartir sus conocimientos y trabajos de última generación sobre el diseño de nuevas interfaces musicales. La conferencia comenzó como un taller en la Conferencia sobre Factores Humanos en Sistemas Informáticos (CHI, por sus siglas en inglés) en 2001. Desde entonces, se han celebrado una serie anual de conferencias internacionales en todo el mundo, organizadas por grupos de investigación dedicados al diseño de interfaces, la interacción hombre-computadora y la música por computadora.  En 2023, NIME volverá a América del Norte, América Latina y su formato físico en la Ciudad de México. Sin embargo, también brindaremos soporte híbrido para aquellos que no puedan asistir a la conferencia en persona.  NIME 2023 se llevará a cabo en la Biblioteca Vasconcelos y el Centro de Cultura Digital, dos importantes centros culturales e innovadores en la Ciudad de México."
+      ],
+      "overflow": false,
+      "children": [
+        {
+          "tag": "HEADER",
+          "label": null,
+          "class": "project-detail_header__OMp_B"
+        },
+        {
+          "tag": "FIGURE",
+          "label": null,
+          "class": "project-detail_cover__gXRX_"
+        },
+        {
+          "tag": "SECTION",
+          "label": "About the project",
+          "class": "project-detail_context__zLBpJ project-detail_contextColumns__c4Xp3"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-video-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-gallery-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-collaborations-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "NAV",
+          "label": "Project archive",
+          "class": "project-detail_return__jf87s"
+        }
+      ],
+      "cover": {
+        "x": 48,
+        "y": 996.6875,
+        "width": 672,
+        "height": 499.59375
+      },
+      "coverImage": {
+        "x": 48,
+        "y": 996.6875,
+        "width": 672,
+        "height": 448,
+        "naturalWidth": 375,
+        "naturalHeight": 250
+      },
+      "gallery": [
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541359/projects/nime2023/gallery/qhzelpdus1cfj8tz9kuu.jpg",
+          "rect": {
+            "x": 48,
+            "y": 2364.0625,
+            "width": 320,
+            "height": 265.09375
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/projects/nime2023/gallery/tawrunmuwzacfkycmmsl",
+          "rect": {
+            "x": 400,
+            "y": 2364.0625,
+            "width": 320,
+            "height": 265.09375
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/projects/nime2023/gallery/wqsflcifvapdlhtpqzqh",
+          "rect": {
+            "x": 48,
+            "y": 2669.15625,
+            "width": 320,
+            "height": 264.59375
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541554/projects/nime2023/gallery/oin0vkligunqxg1jrtex.jpg",
+          "rect": {
+            "x": 400,
+            "y": 2669.15625,
+            "width": 320,
+            "height": 265.09375
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541568/projects/nime2023/gallery/hurgcxbul0opsnpshxzr.jpg",
+          "rect": {
+            "x": 48,
+            "y": 2974.25,
+            "width": 320,
+            "height": 291.59375
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541633/projects/nime2023/gallery/oyuffjym2rpgmpozix6q.jpg",
+          "rect": {
+            "x": 400,
+            "y": 2974.25,
+            "width": 320,
+            "height": 264.59375
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        }
+      ],
+      "captions": [
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+      ],
+      "images": [
+        {
+          "alt": "NIME 2023",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "logo-nime",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        }
+      ],
+      "entities": [
+        "New Interfaces for Musical Expression 2023"
+      ],
+      "entityLinks": [
+        {
+          "href": "https://www.nime2023.org/",
+          "rel": "noopener noreferrer"
+        }
+      ],
+      "backLinks": [
+        "Back to projects",
+        "Back to all projects"
+      ],
+      "asideSticky": "static",
+      "video": {
+        "src": "https://www.youtube-nocookie.com/embed/HCTibzvNbmc",
+        "title": "NIME México 2023",
+        "loading": "lazy",
+        "allow": "accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+        "fullscreen": true
+      }
+    },
+    {
+      "slug": "nime2023",
+      "locale": "en",
+      "meta": {
+        "title": "New Interfaces for Musical Expression 2023. Ciudad de México · MonkMonkeyKey",
+        "description": "La Conferencia Internacional sobre Nuevas Interfaces para la Expresión Musical (NIME, por sus siglas en inglés) reúne a investigadores y músicos de todo el mundo para compartir sus conocimientos y trabajos de última generación sobre el diseño de nuevas interfaces musicales. La conferencia comenzó como un taller en la Conferencia sobre Factores Humanos en Sistemas Informáticos (CHI, por sus siglas en inglés) en 2001. Desde entonces, se han celebrado una serie anual de conferencias internacionales en todo el mundo, organizadas por grupos de investigación dedicados al diseño de interfaces, la interacción hombre-computadora y la música por computadora.  En 2023, NIME volverá a América del Norte, América Latina y su formato físico en la Ciudad de México. Sin embargo, también brindaremos soporte híbrido para aquellos que no puedan asistir a la conferencia en persona.  NIME 2023 se llevará a cabo en la Biblioteca Vasconcelos y el Centro de Cultura Digital, dos importantes centros culturales e innovadores en la Ciudad de México.",
+        "image": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766540899/projects/nime2023/cover/l6amlcsrijq1f3b4tjyq.jpg"
+      },
+      "width": 1024,
+      "h1": [
+        "La Conferencia Internacional sobre Nuevas Interfaces para la Expresión Musical (NIME, por sus siglas en inglés) reúne a investigadores y músicos de todo el mundo para compartir sus conocimientos y trabajos de última generación sobre el diseño de nuevas interfaces musicales. La conferencia comenzó como un taller en la Conferencia sobre Factores Humanos en Sistemas Informáticos (CHI, por sus siglas en inglés) en 2001. Desde entonces, se han celebrado una serie anual de conferencias internacionales en todo el mundo, organizadas por grupos de investigación dedicados al diseño de interfaces, la interacción hombre-computadora y la música por computadora.  En 2023, NIME volverá a América del Norte, América Latina y su formato físico en la Ciudad de México. Sin embargo, también brindaremos soporte híbrido para aquellos que no puedan asistir a la conferencia en persona.  NIME 2023 se llevará a cabo en la Biblioteca Vasconcelos y el Centro de Cultura Digital, dos importantes centros culturales e innovadores en la Ciudad de México."
+      ],
+      "overflow": false,
+      "children": [
+        {
+          "tag": "HEADER",
+          "label": null,
+          "class": "project-detail_header__OMp_B"
+        },
+        {
+          "tag": "FIGURE",
+          "label": null,
+          "class": "project-detail_cover__gXRX_"
+        },
+        {
+          "tag": "SECTION",
+          "label": "About the project",
+          "class": "project-detail_context__zLBpJ project-detail_contextColumns__c4Xp3"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-video-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-gallery-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-collaborations-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "NAV",
+          "label": "Project archive",
+          "class": "project-detail_return__jf87s"
+        }
+      ],
+      "cover": {
+        "x": 64,
+        "y": 908.4375,
+        "width": 896,
+        "height": 648.921875
+      },
+      "coverImage": {
+        "x": 64,
+        "y": 908.4375,
+        "width": 896,
+        "height": 597.328125,
+        "naturalWidth": 768,
+        "naturalHeight": 512
+      },
+      "gallery": [
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541359/projects/nime2023/gallery/qhzelpdus1cfj8tz9kuu.jpg",
+          "rect": {
+            "x": 64,
+            "y": 2551.734375,
+            "width": 432,
+            "height": 339.8125
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/projects/nime2023/gallery/tawrunmuwzacfkycmmsl",
+          "rect": {
+            "x": 528,
+            "y": 2551.734375,
+            "width": 432,
+            "height": 339.8125
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/projects/nime2023/gallery/wqsflcifvapdlhtpqzqh",
+          "rect": {
+            "x": 64,
+            "y": 2931.546875,
+            "width": 432,
+            "height": 339.140625
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541554/projects/nime2023/gallery/oin0vkligunqxg1jrtex.jpg",
+          "rect": {
+            "x": 528,
+            "y": 2931.546875,
+            "width": 432,
+            "height": 339.8125
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541568/projects/nime2023/gallery/hurgcxbul0opsnpshxzr.jpg",
+          "rect": {
+            "x": 64,
+            "y": 3311.359375,
+            "width": 432,
+            "height": 375.59375
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541633/projects/nime2023/gallery/oyuffjym2rpgmpozix6q.jpg",
+          "rect": {
+            "x": 528,
+            "y": 3311.359375,
+            "width": 432,
+            "height": 339.140625
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        }
+      ],
+      "captions": [
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+      ],
+      "images": [
+        {
+          "alt": "NIME 2023",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "logo-nime",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        }
+      ],
+      "entities": [
+        "New Interfaces for Musical Expression 2023"
+      ],
+      "entityLinks": [
+        {
+          "href": "https://www.nime2023.org/",
+          "rel": "noopener noreferrer"
+        }
+      ],
+      "backLinks": [
+        "Back to projects",
+        "Back to all projects"
+      ],
+      "asideSticky": "static",
+      "video": {
+        "src": "https://www.youtube-nocookie.com/embed/HCTibzvNbmc",
+        "title": "NIME México 2023",
+        "loading": "lazy",
+        "allow": "accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+        "fullscreen": true
+      }
+    },
+    {
+      "slug": "nime2023",
+      "locale": "en",
+      "meta": {
+        "title": "New Interfaces for Musical Expression 2023. Ciudad de México · MonkMonkeyKey",
+        "description": "La Conferencia Internacional sobre Nuevas Interfaces para la Expresión Musical (NIME, por sus siglas en inglés) reúne a investigadores y músicos de todo el mundo para compartir sus conocimientos y trabajos de última generación sobre el diseño de nuevas interfaces musicales. La conferencia comenzó como un taller en la Conferencia sobre Factores Humanos en Sistemas Informáticos (CHI, por sus siglas en inglés) en 2001. Desde entonces, se han celebrado una serie anual de conferencias internacionales en todo el mundo, organizadas por grupos de investigación dedicados al diseño de interfaces, la interacción hombre-computadora y la música por computadora.  En 2023, NIME volverá a América del Norte, América Latina y su formato físico en la Ciudad de México. Sin embargo, también brindaremos soporte híbrido para aquellos que no puedan asistir a la conferencia en persona.  NIME 2023 se llevará a cabo en la Biblioteca Vasconcelos y el Centro de Cultura Digital, dos importantes centros culturales e innovadores en la Ciudad de México.",
+        "image": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766540899/projects/nime2023/cover/l6amlcsrijq1f3b4tjyq.jpg"
+      },
+      "width": 1440,
+      "h1": [
+        "La Conferencia Internacional sobre Nuevas Interfaces para la Expresión Musical (NIME, por sus siglas en inglés) reúne a investigadores y músicos de todo el mundo para compartir sus conocimientos y trabajos de última generación sobre el diseño de nuevas interfaces musicales. La conferencia comenzó como un taller en la Conferencia sobre Factores Humanos en Sistemas Informáticos (CHI, por sus siglas en inglés) en 2001. Desde entonces, se han celebrado una serie anual de conferencias internacionales en todo el mundo, organizadas por grupos de investigación dedicados al diseño de interfaces, la interacción hombre-computadora y la música por computadora.  En 2023, NIME volverá a América del Norte, América Latina y su formato físico en la Ciudad de México. Sin embargo, también brindaremos soporte híbrido para aquellos que no puedan asistir a la conferencia en persona.  NIME 2023 se llevará a cabo en la Biblioteca Vasconcelos y el Centro de Cultura Digital, dos importantes centros culturales e innovadores en la Ciudad de México."
+      ],
+      "overflow": false,
+      "children": [
+        {
+          "tag": "HEADER",
+          "label": null,
+          "class": "project-detail_header__OMp_B"
+        },
+        {
+          "tag": "FIGURE",
+          "label": null,
+          "class": "project-detail_cover__gXRX_"
+        },
+        {
+          "tag": "SECTION",
+          "label": "About the project",
+          "class": "project-detail_context__zLBpJ project-detail_contextColumns__c4Xp3"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-video-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-gallery-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-collaborations-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "NAV",
+          "label": "Project archive",
+          "class": "project-detail_return__jf87s"
+        }
+      ],
+      "cover": {
+        "x": 124,
+        "y": 1034.625,
+        "width": 1192,
+        "height": 846.25
+      },
+      "coverImage": {
+        "x": 124,
+        "y": 1034.625,
+        "width": 1192,
+        "height": 794.65625,
+        "naturalWidth": 768,
+        "naturalHeight": 512
+      },
+      "gallery": [
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541359/projects/nime2023/gallery/qhzelpdus1cfj8tz9kuu.jpg",
+          "rect": {
+            "x": 124,
+            "y": 3018.65625,
+            "width": 580,
+            "height": 438.5625
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/projects/nime2023/gallery/tawrunmuwzacfkycmmsl",
+          "rect": {
+            "x": 736,
+            "y": 3018.65625,
+            "width": 580,
+            "height": 438.5625
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/projects/nime2023/gallery/wqsflcifvapdlhtpqzqh",
+          "rect": {
+            "x": 124,
+            "y": 3497.21875,
+            "width": 580,
+            "height": 437.65625
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541554/projects/nime2023/gallery/oin0vkligunqxg1jrtex.jpg",
+          "rect": {
+            "x": 736,
+            "y": 3497.21875,
+            "width": 580,
+            "height": 438.5625
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541568/projects/nime2023/gallery/hurgcxbul0opsnpshxzr.jpg",
+          "rect": {
+            "x": 124,
+            "y": 3975.78125,
+            "width": 580,
+            "height": 486.59375
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541633/projects/nime2023/gallery/oyuffjym2rpgmpozix6q.jpg",
+          "rect": {
+            "x": 736,
+            "y": 3975.78125,
+            "width": 580,
+            "height": 437.65625
+          },
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        }
+      ],
+      "captions": [
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+        "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+      ],
+      "images": [
+        {
+          "alt": "NIME 2023",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "logo-nime",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        }
+      ],
+      "entities": [
+        "New Interfaces for Musical Expression 2023"
+      ],
+      "entityLinks": [
+        {
+          "href": "https://www.nime2023.org/",
+          "rel": "noopener noreferrer"
+        }
+      ],
+      "backLinks": [
+        "Back to projects",
+        "Back to all projects"
+      ],
+      "asideSticky": "static",
+      "video": {
+        "src": "https://www.youtube-nocookie.com/embed/HCTibzvNbmc",
+        "title": "NIME México 2023",
+        "loading": "lazy",
+        "allow": "accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+        "fullscreen": true
+      }
+    },
+    {
+      "slug": "leam2025",
+      "locale": "es",
+      "meta": {
+        "title": "1er Festival Internacional LEAM · MonkMonkeyKey",
+        "description": "Laboratorio de Ecología Acústica México",
+        "image": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766205110/projects/leam2025/cover/qqk9iubestqt1dxedhsl.jpg"
+      },
+      "width": 375,
+      "h1": [
+        "1er Festival Internacional LEAM"
+      ],
+      "overflow": false,
+      "children": [
+        {
+          "tag": "HEADER",
+          "label": null,
+          "class": "project-detail_header__OMp_B"
+        },
+        {
+          "tag": "FIGURE",
+          "label": null,
+          "class": "project-detail_cover__gXRX_"
+        },
+        {
+          "tag": "SECTION",
+          "label": "Sobre el proyecto",
+          "class": "project-detail_context__zLBpJ project-detail_contextColumns__c4Xp3"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-collaborations-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "NAV",
+          "label": "Archivo de proyectos",
+          "class": "project-detail_return__jf87s"
+        }
+      ],
+      "cover": {
+        "x": 24,
+        "y": 335.53125,
+        "width": 327,
+        "height": 218
+      },
+      "coverImage": {
+        "x": 24,
+        "y": 335.53125,
+        "width": 327,
+        "height": 218,
+        "naturalWidth": 1192,
+        "naturalHeight": 794
+      },
+      "gallery": [],
+      "captions": [],
+      "images": [
+        {
+          "alt": "Concierto Multicanal",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "leam",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        }
+      ],
+      "entities": [
+        "Laboratorio de Ecología Acústica México"
+      ],
+      "entityLinks": [
+        {
+          "href": "https://leam-mx.org",
+          "rel": "noopener noreferrer"
+        }
+      ],
+      "backLinks": [
+        "Volver a proyectos",
+        "Volver a todos los proyectos"
+      ],
+      "asideSticky": "static",
+      "video": null
+    },
+    {
+      "slug": "leam2025",
+      "locale": "es",
+      "meta": {
+        "title": "1er Festival Internacional LEAM · MonkMonkeyKey",
+        "description": "Laboratorio de Ecología Acústica México",
+        "image": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766205110/projects/leam2025/cover/qqk9iubestqt1dxedhsl.jpg"
+      },
+      "width": 768,
+      "h1": [
+        "1er Festival Internacional LEAM"
+      ],
+      "overflow": false,
+      "children": [
+        {
+          "tag": "HEADER",
+          "label": null,
+          "class": "project-detail_header__OMp_B"
+        },
+        {
+          "tag": "FIGURE",
+          "label": null,
+          "class": "project-detail_cover__gXRX_"
+        },
+        {
+          "tag": "SECTION",
+          "label": "Sobre el proyecto",
+          "class": "project-detail_context__zLBpJ project-detail_contextColumns__c4Xp3"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-collaborations-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "NAV",
+          "label": "Archivo de proyectos",
+          "class": "project-detail_return__jf87s"
+        }
+      ],
+      "cover": {
+        "x": 48,
+        "y": 314.578125,
+        "width": 672,
+        "height": 448
+      },
+      "coverImage": {
+        "x": 48,
+        "y": 314.578125,
+        "width": 672,
+        "height": 448,
+        "naturalWidth": 768,
+        "naturalHeight": 512
+      },
+      "gallery": [],
+      "captions": [],
+      "images": [
+        {
+          "alt": "Concierto Multicanal",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "leam",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        }
+      ],
+      "entities": [
+        "Laboratorio de Ecología Acústica México"
+      ],
+      "entityLinks": [
+        {
+          "href": "https://leam-mx.org",
+          "rel": "noopener noreferrer"
+        }
+      ],
+      "backLinks": [
+        "Volver a proyectos",
+        "Volver a todos los proyectos"
+      ],
+      "asideSticky": "static",
+      "video": null
+    },
+    {
+      "slug": "leam2025",
+      "locale": "es",
+      "meta": {
+        "title": "1er Festival Internacional LEAM · MonkMonkeyKey",
+        "description": "Laboratorio de Ecología Acústica México",
+        "image": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766205110/projects/leam2025/cover/qqk9iubestqt1dxedhsl.jpg"
+      },
+      "width": 1024,
+      "h1": [
+        "1er Festival Internacional LEAM"
+      ],
+      "overflow": false,
+      "children": [
+        {
+          "tag": "HEADER",
+          "label": null,
+          "class": "project-detail_header__OMp_B"
+        },
+        {
+          "tag": "FIGURE",
+          "label": null,
+          "class": "project-detail_cover__gXRX_"
+        },
+        {
+          "tag": "SECTION",
+          "label": "Sobre el proyecto",
+          "class": "project-detail_context__zLBpJ project-detail_contextColumns__c4Xp3"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-collaborations-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "NAV",
+          "label": "Archivo de proyectos",
+          "class": "project-detail_return__jf87s"
+        }
+      ],
+      "cover": {
+        "x": 64,
+        "y": 336.34375,
+        "width": 896,
+        "height": 597.328125
+      },
+      "coverImage": {
+        "x": 64,
+        "y": 336.34375,
+        "width": 896,
+        "height": 597.328125,
+        "naturalWidth": 768,
+        "naturalHeight": 512
+      },
+      "gallery": [],
+      "captions": [],
+      "images": [
+        {
+          "alt": "Concierto Multicanal",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "leam",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        }
+      ],
+      "entities": [
+        "Laboratorio de Ecología Acústica México"
+      ],
+      "entityLinks": [
+        {
+          "href": "https://leam-mx.org",
+          "rel": "noopener noreferrer"
+        }
+      ],
+      "backLinks": [
+        "Volver a proyectos",
+        "Volver a todos los proyectos"
+      ],
+      "asideSticky": "static",
+      "video": null
+    },
+    {
+      "slug": "leam2025",
+      "locale": "es",
+      "meta": {
+        "title": "1er Festival Internacional LEAM · MonkMonkeyKey",
+        "description": "Laboratorio de Ecología Acústica México",
+        "image": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766205110/projects/leam2025/cover/qqk9iubestqt1dxedhsl.jpg"
+      },
+      "width": 1440,
+      "h1": [
+        "1er Festival Internacional LEAM"
+      ],
+      "overflow": false,
+      "children": [
+        {
+          "tag": "HEADER",
+          "label": null,
+          "class": "project-detail_header__OMp_B"
+        },
+        {
+          "tag": "FIGURE",
+          "label": null,
+          "class": "project-detail_cover__gXRX_"
+        },
+        {
+          "tag": "SECTION",
+          "label": "Sobre el proyecto",
+          "class": "project-detail_context__zLBpJ project-detail_contextColumns__c4Xp3"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-collaborations-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "NAV",
+          "label": "Archivo de proyectos",
+          "class": "project-detail_return__jf87s"
+        }
+      ],
+      "cover": {
+        "x": 124,
+        "y": 355.5625,
+        "width": 1192,
+        "height": 794.65625
+      },
+      "coverImage": {
+        "x": 124,
+        "y": 355.5625,
+        "width": 1192,
+        "height": 794.65625,
+        "naturalWidth": 1192,
+        "naturalHeight": 794
+      },
+      "gallery": [],
+      "captions": [],
+      "images": [
+        {
+          "alt": "Concierto Multicanal",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "leam",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        }
+      ],
+      "entities": [
+        "Laboratorio de Ecología Acústica México"
+      ],
+      "entityLinks": [
+        {
+          "href": "https://leam-mx.org",
+          "rel": "noopener noreferrer"
+        }
+      ],
+      "backLinks": [
+        "Volver a proyectos",
+        "Volver a todos los proyectos"
+      ],
+      "asideSticky": "static",
+      "video": null
+    },
+    {
+      "slug": "leam2025",
+      "locale": "en",
+      "meta": {
+        "title": "1er Festival Internacional LEAM · MonkMonkeyKey",
+        "description": "Laboratorio de Ecología Acústica México",
+        "image": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766205110/projects/leam2025/cover/qqk9iubestqt1dxedhsl.jpg"
+      },
+      "width": 375,
+      "h1": [
+        "1st International Festival LEAM"
+      ],
+      "overflow": false,
+      "children": [
+        {
+          "tag": "HEADER",
+          "label": null,
+          "class": "project-detail_header__OMp_B"
+        },
+        {
+          "tag": "FIGURE",
+          "label": null,
+          "class": "project-detail_cover__gXRX_"
+        },
+        {
+          "tag": "SECTION",
+          "label": "About the project",
+          "class": "project-detail_context__zLBpJ project-detail_contextColumns__c4Xp3"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-collaborations-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "NAV",
+          "label": "Project archive",
+          "class": "project-detail_return__jf87s"
+        }
+      ],
+      "cover": {
+        "x": 24,
+        "y": 335.53125,
+        "width": 327,
+        "height": 218
+      },
+      "coverImage": {
+        "x": 24,
+        "y": 335.53125,
+        "width": 327,
+        "height": 218,
+        "naturalWidth": 375,
+        "naturalHeight": 250
+      },
+      "gallery": [],
+      "captions": [],
+      "images": [
+        {
+          "alt": "Concierto Multicanal",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "leam",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        }
+      ],
+      "entities": [
+        "Laboratorio de Ecología Acústica México"
+      ],
+      "entityLinks": [
+        {
+          "href": "https://leam-mx.org",
+          "rel": "noopener noreferrer"
+        }
+      ],
+      "backLinks": [
+        "Back to projects",
+        "Back to all projects"
+      ],
+      "asideSticky": "static",
+      "video": null
+    },
+    {
+      "slug": "leam2025",
+      "locale": "en",
+      "meta": {
+        "title": "1er Festival Internacional LEAM · MonkMonkeyKey",
+        "description": "Laboratorio de Ecología Acústica México",
+        "image": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766205110/projects/leam2025/cover/qqk9iubestqt1dxedhsl.jpg"
+      },
+      "width": 768,
+      "h1": [
+        "1st International Festival LEAM"
+      ],
+      "overflow": false,
+      "children": [
+        {
+          "tag": "HEADER",
+          "label": null,
+          "class": "project-detail_header__OMp_B"
+        },
+        {
+          "tag": "FIGURE",
+          "label": null,
+          "class": "project-detail_cover__gXRX_"
+        },
+        {
+          "tag": "SECTION",
+          "label": "About the project",
+          "class": "project-detail_context__zLBpJ project-detail_contextColumns__c4Xp3"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-collaborations-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "NAV",
+          "label": "Project archive",
+          "class": "project-detail_return__jf87s"
+        }
+      ],
+      "cover": {
+        "x": 48,
+        "y": 314.578125,
+        "width": 672,
+        "height": 448
+      },
+      "coverImage": {
+        "x": 48,
+        "y": 314.578125,
+        "width": 672,
+        "height": 448,
+        "naturalWidth": 375,
+        "naturalHeight": 250
+      },
+      "gallery": [],
+      "captions": [],
+      "images": [
+        {
+          "alt": "Concierto Multicanal",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "leam",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        }
+      ],
+      "entities": [
+        "Laboratorio de Ecología Acústica México"
+      ],
+      "entityLinks": [
+        {
+          "href": "https://leam-mx.org",
+          "rel": "noopener noreferrer"
+        }
+      ],
+      "backLinks": [
+        "Back to projects",
+        "Back to all projects"
+      ],
+      "asideSticky": "static",
+      "video": null
+    },
+    {
+      "slug": "leam2025",
+      "locale": "en",
+      "meta": {
+        "title": "1er Festival Internacional LEAM · MonkMonkeyKey",
+        "description": "Laboratorio de Ecología Acústica México",
+        "image": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766205110/projects/leam2025/cover/qqk9iubestqt1dxedhsl.jpg"
+      },
+      "width": 1024,
+      "h1": [
+        "1st International Festival LEAM"
+      ],
+      "overflow": false,
+      "children": [
+        {
+          "tag": "HEADER",
+          "label": null,
+          "class": "project-detail_header__OMp_B"
+        },
+        {
+          "tag": "FIGURE",
+          "label": null,
+          "class": "project-detail_cover__gXRX_"
+        },
+        {
+          "tag": "SECTION",
+          "label": "About the project",
+          "class": "project-detail_context__zLBpJ project-detail_contextColumns__c4Xp3"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-collaborations-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "NAV",
+          "label": "Project archive",
+          "class": "project-detail_return__jf87s"
+        }
+      ],
+      "cover": {
+        "x": 64,
+        "y": 336.34375,
+        "width": 896,
+        "height": 597.328125
+      },
+      "coverImage": {
+        "x": 64,
+        "y": 336.34375,
+        "width": 896,
+        "height": 597.328125,
+        "naturalWidth": 768,
+        "naturalHeight": 512
+      },
+      "gallery": [],
+      "captions": [],
+      "images": [
+        {
+          "alt": "Concierto Multicanal",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "leam",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        }
+      ],
+      "entities": [
+        "Laboratorio de Ecología Acústica México"
+      ],
+      "entityLinks": [
+        {
+          "href": "https://leam-mx.org",
+          "rel": "noopener noreferrer"
+        }
+      ],
+      "backLinks": [
+        "Back to projects",
+        "Back to all projects"
+      ],
+      "asideSticky": "static",
+      "video": null
+    },
+    {
+      "slug": "leam2025",
+      "locale": "en",
+      "meta": {
+        "title": "1er Festival Internacional LEAM · MonkMonkeyKey",
+        "description": "Laboratorio de Ecología Acústica México",
+        "image": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766205110/projects/leam2025/cover/qqk9iubestqt1dxedhsl.jpg"
+      },
+      "width": 1440,
+      "h1": [
+        "1st International Festival LEAM"
+      ],
+      "overflow": false,
+      "children": [
+        {
+          "tag": "HEADER",
+          "label": null,
+          "class": "project-detail_header__OMp_B"
+        },
+        {
+          "tag": "FIGURE",
+          "label": null,
+          "class": "project-detail_cover__gXRX_"
+        },
+        {
+          "tag": "SECTION",
+          "label": "About the project",
+          "class": "project-detail_context__zLBpJ project-detail_contextColumns__c4Xp3"
+        },
+        {
+          "tag": "SECTION",
+          "label": "project-collaborations-title",
+          "class": "project-detail_section__oPQtW"
+        },
+        {
+          "tag": "NAV",
+          "label": "Project archive",
+          "class": "project-detail_return__jf87s"
+        }
+      ],
+      "cover": {
+        "x": 124,
+        "y": 355.5625,
+        "width": 1192,
+        "height": 794.65625
+      },
+      "coverImage": {
+        "x": 124,
+        "y": 355.5625,
+        "width": 1192,
+        "height": 794.65625,
+        "naturalWidth": 768,
+        "naturalHeight": 512
+      },
+      "gallery": [],
+      "captions": [],
+      "images": [
+        {
+          "alt": "Concierto Multicanal",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        },
+        {
+          "alt": "leam",
+          "filter": "none",
+          "fit": "contain",
+          "transform": "none"
+        }
+      ],
+      "entities": [
+        "Laboratorio de Ecología Acústica México"
+      ],
+      "entityLinks": [
+        {
+          "href": "https://leam-mx.org",
+          "rel": "noopener noreferrer"
+        }
+      ],
+      "backLinks": [
+        "Back to projects",
+        "Back to all projects"
+      ],
+      "asideSticky": "static",
+      "video": null
+    }
+  ],
+  "viewerResults": [
+    {
+      "slug": "otro_dia_otro_dolar",
+      "width": 375,
+      "focusTrapped": true,
+      "restoredFocus": true,
+      "escapePassed": true,
+      "buttonClosePassed": true,
+      "backgroundLocked": true,
+      "metrics": {
+        "width": 375,
+        "dialogWidth": 351,
+        "height": 708.796875,
+        "viewportHeight": 900,
+        "overflow": false,
+        "fit": "contain"
+      }
+    },
+    {
+      "slug": "otro_dia_otro_dolar",
+      "width": 1440,
+      "focusTrapped": true,
+      "restoredFocus": true,
+      "escapePassed": true,
+      "buttonClosePassed": true,
+      "backgroundLocked": true,
+      "metrics": {
+        "width": 1440,
+        "dialogWidth": 1216,
+        "height": 724.796875,
+        "viewportHeight": 900,
+        "overflow": false,
+        "fit": "contain"
+      }
+    },
+    {
+      "slug": "nime2023",
+      "width": 375,
+      "focusTrapped": true,
+      "restoredFocus": true,
+      "escapePassed": true,
+      "buttonClosePassed": true,
+      "backgroundLocked": true,
+      "metrics": {
+        "width": 375,
+        "dialogWidth": 351,
+        "height": 728.59375,
+        "viewportHeight": 900,
+        "overflow": false,
+        "fit": "contain"
+      }
+    },
+    {
+      "slug": "nime2023",
+      "width": 1440,
+      "focusTrapped": true,
+      "restoredFocus": true,
+      "escapePassed": true,
+      "buttonClosePassed": true,
+      "backgroundLocked": true,
+      "metrics": {
+        "width": 1440,
+        "dialogWidth": 1216,
+        "height": 744.59375,
+        "viewportHeight": 900,
+        "overflow": false,
+        "fit": "contain"
+      }
+    },
+    {
+      "slug": "leam2025",
+      "width": 375,
+      "focusTrapped": true,
+      "restoredFocus": true,
+      "escapePassed": true,
+      "buttonClosePassed": true,
+      "backgroundLocked": true,
+      "metrics": {
+        "width": 375,
+        "dialogWidth": 351,
+        "height": 677,
+        "viewportHeight": 900,
+        "overflow": false,
+        "fit": "contain"
+      }
+    },
+    {
+      "slug": "leam2025",
+      "width": 1440,
+      "focusTrapped": true,
+      "restoredFocus": true,
+      "escapePassed": true,
+      "buttonClosePassed": true,
+      "backgroundLocked": true,
+      "metrics": {
+        "width": 1440,
+        "dialogWidth": 1216,
+        "height": 693,
+        "viewportHeight": 900,
+        "overflow": false,
+        "fit": "contain"
+      }
+    }
+  ],
+  "imageHealth": [
+    {
+      "slug": "otro_dia_otro_dolar",
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783886137/projects/otro_dia_otro_dolar/cover/obvadqy94jhbmftyqso3.jpg",
+          "loaded": true,
+          "naturalWidth": 1192,
+          "naturalHeight": 794
+        },
+        {
+          "src": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783886158/projects/otro_dia_otro_dolar/gallery/lxnzuwzwv551limhuvgi.jpg",
+          "loaded": true,
+          "naturalWidth": 580,
+          "naturalHeight": 386
+        },
+        {
+          "src": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783887282/projects/otro_dia_otro_dolar/gallery/jji1pbd7rxtj4klogeoq.jpg",
+          "loaded": true,
+          "naturalWidth": 580,
+          "naturalHeight": 435
+        },
+        {
+          "src": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783887297/projects/otro_dia_otro_dolar/gallery/tasfjn0calpsh2djbo0h.jpg",
+          "loaded": true,
+          "naturalWidth": 580,
+          "naturalHeight": 435
+        },
+        {
+          "src": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783887959/projects/otro_dia_otro_dolar/gallery/ogy1rlzamvy2wvuv6n3u.jpg",
+          "loaded": true,
+          "naturalWidth": 580,
+          "naturalHeight": 410
+        },
+        {
+          "src": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1783883530/clients/karen-aixa/rqn0kshudvev6roctte2.jpg",
+          "loaded": true,
+          "naturalWidth": 111,
+          "naturalHeight": 111
+        }
+      ]
+    },
+    {
+      "slug": "nime2023",
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766540899/projects/nime2023/cover/l6amlcsrijq1f3b4tjyq.jpg",
+          "loaded": true,
+          "naturalWidth": 768,
+          "naturalHeight": 512
+        },
+        {
+          "src": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541359/projects/nime2023/gallery/qhzelpdus1cfj8tz9kuu.jpg",
+          "loaded": true,
+          "naturalWidth": 384,
+          "naturalHeight": 256
+        },
+        {
+          "src": "https://res.cloudinary.com/dmrzmnjln/image/upload/projects/nime2023/gallery/tawrunmuwzacfkycmmsl",
+          "loaded": true,
+          "naturalWidth": 384,
+          "naturalHeight": 256
+        },
+        {
+          "src": "https://res.cloudinary.com/dmrzmnjln/image/upload/projects/nime2023/gallery/wqsflcifvapdlhtpqzqh",
+          "loaded": true,
+          "naturalWidth": 384,
+          "naturalHeight": 255
+        },
+        {
+          "src": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541554/projects/nime2023/gallery/oin0vkligunqxg1jrtex.jpg",
+          "loaded": true,
+          "naturalWidth": 384,
+          "naturalHeight": 256
+        },
+        {
+          "src": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541568/projects/nime2023/gallery/hurgcxbul0opsnpshxzr.jpg",
+          "loaded": true,
+          "naturalWidth": 384,
+          "naturalHeight": 288
+        },
+        {
+          "src": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766541633/projects/nime2023/gallery/oyuffjym2rpgmpozix6q.jpg",
+          "loaded": true,
+          "naturalWidth": 384,
+          "naturalHeight": 255
+        },
+        {
+          "src": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1765982060/clients/nime/fxj4r17abd4owxmzwmlo.jpg",
+          "loaded": true,
+          "naturalWidth": 111,
+          "naturalHeight": 76
+        }
+      ]
+    },
+    {
+      "slug": "leam2025",
+      "images": [
+        {
+          "src": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1766205110/projects/leam2025/cover/qqk9iubestqt1dxedhsl.jpg",
+          "loaded": true,
+          "naturalWidth": 1192,
+          "naturalHeight": 794
+        },
+        {
+          "src": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1765981674/clients/leam/fdnwr1eudagf8hhl9z8g.jpg",
+          "loaded": true,
+          "naturalWidth": 111,
+          "naturalHeight": 92
+        }
+      ]
+    }
+  ],
+  "reducedMotion": {
+    "transition": "1e-05s",
+    "animation": "none"
+  },
+  "missingStatus": 404,
+  "privateStatus": 404,
+  "cmsUnchanged": true,
+  "errors": []
+}

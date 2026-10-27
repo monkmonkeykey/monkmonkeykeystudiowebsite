@@ -9,13 +9,21 @@ import { formatProjectTimeline, translateCategoryLabel } from "@/domain/projects
 import { translate, type LocaleText } from "@/lib/i18n";
 import { useLocale } from "@/components/site/locale-context";
 import type { SiteContent } from "@/domain/site";
-import { RichText } from "@/components/site/rich-text";
+import { getPlainText, RichText } from "@/components/site/rich-text";
+import styles from "./projects.module.css";
 
 type ProjectsPageClientProps = {
   projects: Project[];
   categoryLabels: Record<ProjectCategory, LocaleText>;
   copy: SiteContent["projectsPage"];
 };
+
+// Only the archive's presentation changes; stored dates and other pages keep their formatting.
+const projectTimeline = (project: Project): string => {
+  if (project.startYear && project.startYear === project.endYear) return String(project.startYear);
+  return formatProjectTimeline(project).replace(/^(\d{4})\s*[–—-]\s*\1$/, "$1");
+};
+
 export default function ProjectsPageClient({
   projects,
   categoryLabels,
@@ -39,36 +47,21 @@ export default function ProjectsPageClient({
       : projects.filter((project) => project.categories.includes(activeCategory));
 
   return (
-    <div className="space-y-16 sm:space-y-24">
-      <header className="grid gap-8 border-t border-line pt-5 lg:grid-cols-12">
-        <div className="lg:col-span-10">
-        <RichText
-          as="h1"
-          value={copy.title}
-          className="studio-page-title"
-        />
-        <RichText
-          value={copy.copy}
-          className="studio-page-intro"
-        />
-        </div>
+    <div className={styles.archive}>
+      <header className={styles.intro}>
+        <h1 className={styles.title}>{getPlainText(translate(locale, copy.title))}</h1>
+        <RichText value={copy.copy} className={styles.introCopy} />
       </header>
 
-      <div className="border-y border-line py-5" role="group" aria-label={translate(locale, copy.filterAllLabel)}>
-        <div className="mb-4 flex items-center gap-3 font-mono text-[9px] uppercase tracking-[0.14em] text-muted">
-          <span className="size-1.5 rounded-full bg-signal" aria-hidden />
-          <span>{locale === "es" ? "Explorar por disciplina" : "Explore by discipline"}</span>
-        </div>
-        <div className="flex gap-6 overflow-x-auto pb-1 sm:flex-wrap sm:gap-x-8 sm:gap-y-2">
+      <div className={styles.filters} role="group" aria-label={locale === "es" ? "Filtrar proyectos por disciplina" : "Filter projects by discipline"}>
+        <p className={styles.filterLabel}>{locale === "es" ? "Explorar por disciplina" : "Explore by discipline"}</p>
+        <div className={styles.filterList}>
           <button
             type="button"
             onClick={() => setActiveCategory("all")}
-            className={`studio-filter ${
-              activeCategory === "all"
-                ? "studio-filter--active"
-                : "studio-filter--idle"
-            }`}
+            className={styles.filter}
             aria-pressed={activeCategory === "all"}
+            aria-controls="project-results"
           >
             {translate(locale, copy.filterAllLabel)}
           </button>
@@ -77,12 +70,9 @@ export default function ProjectsPageClient({
               key={category}
               type="button"
               onClick={() => setActiveCategory(category)}
-              className={`studio-filter ${
-                activeCategory === category
-                  ? "studio-filter--active"
-                  : "studio-filter--idle"
-              }`}
+              className={styles.filter}
               aria-pressed={activeCategory === category}
+              aria-controls="project-results"
             >
               {translateCategoryLabel(locale, category, categoryLabels)}
             </button>
@@ -90,83 +80,33 @@ export default function ProjectsPageClient({
         </div>
       </div>
 
-      <div>
+      <p role="status" className="sr-only">{filteredProjects.length} {locale === "es" ? "proyectos" : "projects"}</p>
+      <div id="project-results">
         {filteredProjects.length === 0 ? (
-          <p className="border border-dashed border-line bg-surface p-6 text-sm text-muted">
-            {translate(locale, copy.emptyState)}
-          </p>
+          <p className={styles.empty}>{translate(locale, copy.emptyState)}</p>
         ) : (
-          <div className="grid gap-x-6 gap-y-16 lg:grid-cols-2 lg:gap-y-24">
+          <div className={styles.grid}>
             {filteredProjects.map((project, index) => (
-              <Link
-                key={project.slug}
-                href={`/proyectos/${project.slug}`}
-                className={`group flex h-full flex-col ${index % 2 === 1 ? "lg:mt-24" : ""}`}
-              >
-                <div className="relative aspect-[16/10] w-full overflow-hidden bg-surface">
+              <Link key={project.slug} href={`/proyectos/${project.slug}`} className={styles.project}>
+                <div className={styles.image}>
                   <Image
                     src={project.cover.src}
                     alt={translate(locale, project.cover.alt)}
                     fill
-                    sizes="(min-width: 1024px) 50vw, 100vw"
-                    className="object-cover grayscale-[0.2] transition duration-700 group-hover:scale-[1.025] group-hover:grayscale-0"
+                    priority={index === 0}
+                    sizes="(min-width: 1320px) 580px, (min-width: 768px) 50vw, 100vw"
                   />
                 </div>
-                <div className="flex flex-1 flex-col gap-4 border-t border-line pt-4">
-                  <span className="text-xs text-muted">
-                    {formatProjectTimeline(project)}
-                  </span>
-                  <div className="space-y-2">
-                    <h2 className="studio-display text-3xl tracking-[-0.035em] text-foreground transition-opacity group-hover:text-signal sm:text-4xl">
-                      {translate(locale, project.name)}
-                    </h2>
-                    <p className="text-sm text-muted">
-                      {translate(locale, project.subtitle)}
-                    </p>
-                  </div>
-                  <p className="max-w-xl text-sm leading-relaxed text-foreground/65 line-clamp-3">
-                    {translate(locale, project.description[0])}
-                  </p>
-                  <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs text-muted">
-                    {project.categories.map((category) => (
-                      <span
-                        key={`${project.slug}-cat-${category}`}
-                        className="border-b border-line pb-1"
-                      >
-                        {translateCategoryLabel(locale, category, categoryLabels)}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="mt-auto flex items-center justify-between border-t border-line pt-3 text-xs text-muted">
-                    <RichText as="span" value={copy.cardCta} /> <span aria-hidden>↗</span>
-                  </div>
+                <h2>{getPlainText(translate(locale, project.name))}</h2>
+                <div className={styles.meta}>
+                  <span>{projectTimeline(project)}</span>
+                  <span>{project.categories.map((category) => translateCategoryLabel(locale, category, categoryLabels)).join(" / ")}</span>
                 </div>
               </Link>
             ))}
           </div>
         )}
       </div>
-
-      <section className="overflow-hidden border-y border-line bg-surface p-6 sm:p-8 lg:p-10">
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-          <div className="space-y-3">
-            <p className="studio-kicker">
-              <RichText as="span" value={copy.ctaTitle} />
-            </p>
-            <RichText
-              value={copy.ctaDescription}
-              className="max-w-2xl text-lg leading-relaxed text-foreground/75"
-            />
-          </div>
-          <Link
-            href="/contacto"
-            className="studio-action studio-action--primary"
-          >
-            <RichText as="span" value={copy.ctaAction} />
-            <span aria-hidden>↗</span>
-          </Link>
-        </div>
-      </section>
     </div>
   );
 }

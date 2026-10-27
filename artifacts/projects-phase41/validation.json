@@ -1,0 +1,3672 @@
+{
+  "viewports": [
+    {
+      "locale": "es",
+      "width": 375,
+      "overflow": false,
+      "h1": [
+        "Proyectos"
+      ],
+      "intro": {
+        "x": 24,
+        "y": 105,
+        "width": 327,
+        "height": 149.890625
+      },
+      "cards": [
+        {
+          "href": "/proyectos/maraton_musica_contemporanea-2023",
+          "title": "5to Maratón de Música Contemporánea",
+          "meta": "2026Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 24,
+            "y": 379.890625,
+            "width": 327,
+            "height": 296.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 379.890625,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "auto",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/otro_dia_otro_dolar",
+          "title": "Otro día, otro dólar",
+          "meta": "2026Produccion Tecnica",
+          "rect": {
+            "x": 24,
+            "y": 716.0625,
+            "width": 327,
+            "height": 271.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 716.0625,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": "Otro día, otro dólar",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "title": "1er Festival Internacional LEAM",
+          "meta": "2025Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 24,
+            "y": 1027.234375,
+            "width": 327,
+            "height": 271.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 1027.234375,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": "Concierto Multicanal",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/luminico_urtext_2025",
+          "title": "Lumínico / Ónix | Festival Urtext 2025",
+          "meta": "2025Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 24,
+            "y": 1338.40625,
+            "width": 327,
+            "height": 271.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 1338.40625,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/atl",
+          "title": "Atl | Agua, Música y Arte Sonoro",
+          "meta": "2024Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 24,
+            "y": 1649.578125,
+            "width": 327,
+            "height": 271.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 1649.578125,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/luminico_urtext_2024",
+          "title": "Lumínico / Ónix | Festival Urtext 2024",
+          "meta": "2024Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 24,
+            "y": 1960.75,
+            "width": 327,
+            "height": 271.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 1960.75,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/operauam",
+          "title": "Video ópera | In Calli Ixcahuicopa",
+          "meta": "2024Audio Multicanal",
+          "rect": {
+            "x": 24,
+            "y": 2271.921875,
+            "width": 327,
+            "height": 271.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 2271.921875,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": "opera-general",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/power-room",
+          "title": "power · room",
+          "meta": "2021 – 2024Arte Digital",
+          "rect": {
+            "x": 24,
+            "y": 2583.09375,
+            "width": 327,
+            "height": 271.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 2583.09375,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": "power · room",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/nime2023",
+          "title": "New Interfaces for Musical Expression 2023. Ciudad de México",
+          "meta": "2023Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 24,
+            "y": 2894.265625,
+            "width": 327,
+            "height": 296.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 2894.265625,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": "NIME 2023",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/pinball-banxico",
+          "title": "¿Por qué usamos el dinero?",
+          "meta": "2023Experiencias digitales",
+          "rect": {
+            "x": 24,
+            "y": 3230.4375,
+            "width": 327,
+            "height": 271.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 3230.4375,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": "Exhibición",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/maraton_musica_contemporanea-2022",
+          "title": "2do Maratón de Música Contemporánea 2022",
+          "meta": "2022Audio Multicanal",
+          "rect": {
+            "x": 24,
+            "y": 3541.609375,
+            "width": 327,
+            "height": 296.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 3541.609375,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/meryll_losa-2020",
+          "title": "París-México. Dos visiones Méryll Ampe y Diego Losa",
+          "meta": "2020Audio Multicanal",
+          "rect": {
+            "x": 24,
+            "y": 3877.78125,
+            "width": 327,
+            "height": 296.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 3877.78125,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/2do_coloquio_inmersividad",
+          "title": "2do Coloquio Internacional Espacio Inmersividad",
+          "meta": "2019Audio Multicanal / Produccion Tecnica / Live Streaming",
+          "rect": {
+            "x": 24,
+            "y": 4213.953125,
+            "width": 327,
+            "height": 319.96875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 4213.953125,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/homenaje_chowning",
+          "title": "Festival Ecos Urbanos 2019 | Homenaje John Chowning",
+          "meta": "2019Audio Multicanal",
+          "rect": {
+            "x": 24,
+            "y": 4573.921875,
+            "width": 327,
+            "height": 296.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 4573.921875,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/laser_talks_mexico",
+          "title": "LASER Talks México 2019",
+          "meta": "2019Live Streaming",
+          "rect": {
+            "x": 24,
+            "y": 4910.09375,
+            "width": 327,
+            "height": 271.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 4910.09375,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/rea_mx",
+          "title": "Red Ecología Acústica México [REA_MX]",
+          "meta": "2019Live Streaming",
+          "rect": {
+            "x": 24,
+            "y": 5221.265625,
+            "width": 327,
+            "height": 296.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 5221.265625,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/1er_coloquio_inmersividad",
+          "title": "1er Coloquio Internacional Espacio Inmersividad",
+          "meta": "2018Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 24,
+            "y": 5557.4375,
+            "width": 327,
+            "height": 296.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 5557.4375,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/beckett_transdiciplinar",
+          "title": "Beckett Transdiciplinar",
+          "meta": "2018Live Streaming",
+          "rect": {
+            "x": 24,
+            "y": 5893.609375,
+            "width": 327,
+            "height": 271.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 5893.609375,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        }
+      ],
+      "filterScroll": {
+        "width": 327,
+        "scrollWidth": 662
+      },
+      "contactBlocks": 0,
+      "footers": 1,
+      "background": "rgb(245, 246, 241)",
+      "foreground": "rgb(16, 20, 16)",
+      "muted": "rgb(83, 96, 88)"
+    },
+    {
+      "locale": "es",
+      "width": 768,
+      "overflow": false,
+      "h1": [
+        "Proyectos"
+      ],
+      "intro": {
+        "x": 48,
+        "y": 121,
+        "width": 672,
+        "height": 94.375
+      },
+      "cards": [
+        {
+          "href": "/proyectos/maraton_musica_contemporanea-2023",
+          "title": "5to Maratón de Música Contemporánea",
+          "meta": "2026Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 48,
+            "y": 396.375,
+            "width": 320,
+            "height": 291.796875
+          },
+          "imageRect": {
+            "x": 48,
+            "y": 396.375,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "auto",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/otro_dia_otro_dolar",
+          "title": "Otro día, otro dólar",
+          "meta": "2026Produccion Tecnica",
+          "rect": {
+            "x": 400,
+            "y": 396.375,
+            "width": 320,
+            "height": 291.796875
+          },
+          "imageRect": {
+            "x": 400,
+            "y": 396.375,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": "Otro día, otro dólar",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "title": "1er Festival Internacional LEAM",
+          "meta": "2025Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 48,
+            "y": 736.171875,
+            "width": 320,
+            "height": 291.796875
+          },
+          "imageRect": {
+            "x": 48,
+            "y": 736.171875,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": "Concierto Multicanal",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/luminico_urtext_2025",
+          "title": "Lumínico / Ónix | Festival Urtext 2025",
+          "meta": "2025Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 400,
+            "y": 736.171875,
+            "width": 320,
+            "height": 291.796875
+          },
+          "imageRect": {
+            "x": 400,
+            "y": 736.171875,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/atl",
+          "title": "Atl | Agua, Música y Arte Sonoro",
+          "meta": "2024Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 48,
+            "y": 1075.96875,
+            "width": 320,
+            "height": 291.796875
+          },
+          "imageRect": {
+            "x": 48,
+            "y": 1075.96875,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/luminico_urtext_2024",
+          "title": "Lumínico / Ónix | Festival Urtext 2024",
+          "meta": "2024Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 400,
+            "y": 1075.96875,
+            "width": 320,
+            "height": 291.796875
+          },
+          "imageRect": {
+            "x": 400,
+            "y": 1075.96875,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/operauam",
+          "title": "Video ópera | In Calli Ixcahuicopa",
+          "meta": "2024Audio Multicanal",
+          "rect": {
+            "x": 48,
+            "y": 1415.765625,
+            "width": 320,
+            "height": 266.796875
+          },
+          "imageRect": {
+            "x": 48,
+            "y": 1415.765625,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": "opera-general",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/power-room",
+          "title": "power · room",
+          "meta": "2021 – 2024Arte Digital",
+          "rect": {
+            "x": 400,
+            "y": 1415.765625,
+            "width": 320,
+            "height": 266.796875
+          },
+          "imageRect": {
+            "x": 400,
+            "y": 1415.765625,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": "power · room",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/nime2023",
+          "title": "New Interfaces for Musical Expression 2023. Ciudad de México",
+          "meta": "2023Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 48,
+            "y": 1730.5625,
+            "width": 320,
+            "height": 291.796875
+          },
+          "imageRect": {
+            "x": 48,
+            "y": 1730.5625,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": "NIME 2023",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/pinball-banxico",
+          "title": "¿Por qué usamos el dinero?",
+          "meta": "2023Experiencias digitales",
+          "rect": {
+            "x": 400,
+            "y": 1730.5625,
+            "width": 320,
+            "height": 291.796875
+          },
+          "imageRect": {
+            "x": 400,
+            "y": 1730.5625,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": "Exhibición",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/maraton_musica_contemporanea-2022",
+          "title": "2do Maratón de Música Contemporánea 2022",
+          "meta": "2022Audio Multicanal",
+          "rect": {
+            "x": 48,
+            "y": 2070.359375,
+            "width": 320,
+            "height": 291.796875
+          },
+          "imageRect": {
+            "x": 48,
+            "y": 2070.359375,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/meryll_losa-2020",
+          "title": "París-México. Dos visiones Méryll Ampe y Diego Losa",
+          "meta": "2020Audio Multicanal",
+          "rect": {
+            "x": 400,
+            "y": 2070.359375,
+            "width": 320,
+            "height": 291.796875
+          },
+          "imageRect": {
+            "x": 400,
+            "y": 2070.359375,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/2do_coloquio_inmersividad",
+          "title": "2do Coloquio Internacional Espacio Inmersividad",
+          "meta": "2019Audio Multicanal / Produccion Tecnica / Live Streaming",
+          "rect": {
+            "x": 48,
+            "y": 2410.15625,
+            "width": 320,
+            "height": 315.59375
+          },
+          "imageRect": {
+            "x": 48,
+            "y": 2410.15625,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/homenaje_chowning",
+          "title": "Festival Ecos Urbanos 2019 | Homenaje John Chowning",
+          "meta": "2019Audio Multicanal",
+          "rect": {
+            "x": 400,
+            "y": 2410.15625,
+            "width": 320,
+            "height": 315.59375
+          },
+          "imageRect": {
+            "x": 400,
+            "y": 2410.15625,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/laser_talks_mexico",
+          "title": "LASER Talks México 2019",
+          "meta": "2019Live Streaming",
+          "rect": {
+            "x": 48,
+            "y": 2773.75,
+            "width": 320,
+            "height": 291.796875
+          },
+          "imageRect": {
+            "x": 48,
+            "y": 2773.75,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/rea_mx",
+          "title": "Red Ecología Acústica México [REA_MX]",
+          "meta": "2019Live Streaming",
+          "rect": {
+            "x": 400,
+            "y": 2773.75,
+            "width": 320,
+            "height": 291.796875
+          },
+          "imageRect": {
+            "x": 400,
+            "y": 2773.75,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/1er_coloquio_inmersividad",
+          "title": "1er Coloquio Internacional Espacio Inmersividad",
+          "meta": "2018Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 48,
+            "y": 3113.546875,
+            "width": 320,
+            "height": 291.796875
+          },
+          "imageRect": {
+            "x": 48,
+            "y": 3113.546875,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/beckett_transdiciplinar",
+          "title": "Beckett Transdiciplinar",
+          "meta": "2018Live Streaming",
+          "rect": {
+            "x": 400,
+            "y": 3113.546875,
+            "width": 320,
+            "height": 291.796875
+          },
+          "imageRect": {
+            "x": 400,
+            "y": 3113.546875,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        }
+      ],
+      "filterScroll": {
+        "width": 672,
+        "scrollWidth": 672
+      },
+      "contactBlocks": 0,
+      "footers": 1,
+      "background": "rgb(245, 246, 241)",
+      "foreground": "rgb(16, 20, 16)",
+      "muted": "rgb(83, 96, 88)"
+    },
+    {
+      "locale": "es",
+      "width": 1024,
+      "overflow": false,
+      "h1": [
+        "Proyectos"
+      ],
+      "intro": {
+        "x": 64,
+        "y": 129,
+        "width": 896,
+        "height": 95.296875
+      },
+      "cards": [
+        {
+          "href": "/proyectos/maraton_musica_contemporanea-2023",
+          "title": "5to Maratón de Música Contemporánea",
+          "meta": "2026Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 64,
+            "y": 357.296875,
+            "width": 432,
+            "height": 337.390625
+          },
+          "imageRect": {
+            "x": 64,
+            "y": 357.296875,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "auto",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/otro_dia_otro_dolar",
+          "title": "Otro día, otro dólar",
+          "meta": "2026Produccion Tecnica",
+          "rect": {
+            "x": 528,
+            "y": 357.296875,
+            "width": 432,
+            "height": 337.390625
+          },
+          "imageRect": {
+            "x": 528,
+            "y": 357.296875,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": "Otro día, otro dólar",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "title": "1er Festival Internacional LEAM",
+          "meta": "2025Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 64,
+            "y": 750.6875,
+            "width": 432,
+            "height": 337.390625
+          },
+          "imageRect": {
+            "x": 64,
+            "y": 750.6875,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": "Concierto Multicanal",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/luminico_urtext_2025",
+          "title": "Lumínico / Ónix | Festival Urtext 2025",
+          "meta": "2025Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 528,
+            "y": 750.6875,
+            "width": 432,
+            "height": 337.390625
+          },
+          "imageRect": {
+            "x": 528,
+            "y": 750.6875,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/atl",
+          "title": "Atl | Agua, Música y Arte Sonoro",
+          "meta": "2024Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 64,
+            "y": 1144.078125,
+            "width": 432,
+            "height": 337.390625
+          },
+          "imageRect": {
+            "x": 64,
+            "y": 1144.078125,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/luminico_urtext_2024",
+          "title": "Lumínico / Ónix | Festival Urtext 2024",
+          "meta": "2024Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 528,
+            "y": 1144.078125,
+            "width": 432,
+            "height": 337.390625
+          },
+          "imageRect": {
+            "x": 528,
+            "y": 1144.078125,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/operauam",
+          "title": "Video ópera | In Calli Ixcahuicopa",
+          "meta": "2024Audio Multicanal",
+          "rect": {
+            "x": 64,
+            "y": 1537.46875,
+            "width": 432,
+            "height": 337.390625
+          },
+          "imageRect": {
+            "x": 64,
+            "y": 1537.46875,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": "opera-general",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/power-room",
+          "title": "power · room",
+          "meta": "2021 – 2024Arte Digital",
+          "rect": {
+            "x": 528,
+            "y": 1537.46875,
+            "width": 432,
+            "height": 337.390625
+          },
+          "imageRect": {
+            "x": 528,
+            "y": 1537.46875,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": "power · room",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/nime2023",
+          "title": "New Interfaces for Musical Expression 2023. Ciudad de México",
+          "meta": "2023Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 64,
+            "y": 1930.859375,
+            "width": 432,
+            "height": 362.984375
+          },
+          "imageRect": {
+            "x": 64,
+            "y": 1930.859375,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": "NIME 2023",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/pinball-banxico",
+          "title": "¿Por qué usamos el dinero?",
+          "meta": "2023Experiencias digitales",
+          "rect": {
+            "x": 528,
+            "y": 1930.859375,
+            "width": 432,
+            "height": 362.984375
+          },
+          "imageRect": {
+            "x": 528,
+            "y": 1930.859375,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": "Exhibición",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/maraton_musica_contemporanea-2022",
+          "title": "2do Maratón de Música Contemporánea 2022",
+          "meta": "2022Audio Multicanal",
+          "rect": {
+            "x": 64,
+            "y": 2349.84375,
+            "width": 432,
+            "height": 362.984375
+          },
+          "imageRect": {
+            "x": 64,
+            "y": 2349.84375,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/meryll_losa-2020",
+          "title": "París-México. Dos visiones Méryll Ampe y Diego Losa",
+          "meta": "2020Audio Multicanal",
+          "rect": {
+            "x": 528,
+            "y": 2349.84375,
+            "width": 432,
+            "height": 362.984375
+          },
+          "imageRect": {
+            "x": 528,
+            "y": 2349.84375,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/2do_coloquio_inmersividad",
+          "title": "2do Coloquio Internacional Espacio Inmersividad",
+          "meta": "2019Audio Multicanal / Produccion Tecnica / Live Streaming",
+          "rect": {
+            "x": 64,
+            "y": 2768.828125,
+            "width": 432,
+            "height": 362.984375
+          },
+          "imageRect": {
+            "x": 64,
+            "y": 2768.828125,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/homenaje_chowning",
+          "title": "Festival Ecos Urbanos 2019 | Homenaje John Chowning",
+          "meta": "2019Audio Multicanal",
+          "rect": {
+            "x": 528,
+            "y": 2768.828125,
+            "width": 432,
+            "height": 362.984375
+          },
+          "imageRect": {
+            "x": 528,
+            "y": 2768.828125,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/laser_talks_mexico",
+          "title": "LASER Talks México 2019",
+          "meta": "2019Live Streaming",
+          "rect": {
+            "x": 64,
+            "y": 3187.8125,
+            "width": 432,
+            "height": 337.390625
+          },
+          "imageRect": {
+            "x": 64,
+            "y": 3187.8125,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/rea_mx",
+          "title": "Red Ecología Acústica México [REA_MX]",
+          "meta": "2019Live Streaming",
+          "rect": {
+            "x": 528,
+            "y": 3187.8125,
+            "width": 432,
+            "height": 337.390625
+          },
+          "imageRect": {
+            "x": 528,
+            "y": 3187.8125,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/1er_coloquio_inmersividad",
+          "title": "1er Coloquio Internacional Espacio Inmersividad",
+          "meta": "2018Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 64,
+            "y": 3581.203125,
+            "width": 432,
+            "height": 362.984375
+          },
+          "imageRect": {
+            "x": 64,
+            "y": 3581.203125,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/beckett_transdiciplinar",
+          "title": "Beckett Transdiciplinar",
+          "meta": "2018Live Streaming",
+          "rect": {
+            "x": 528,
+            "y": 3581.203125,
+            "width": 432,
+            "height": 362.984375
+          },
+          "imageRect": {
+            "x": 528,
+            "y": 3581.203125,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        }
+      ],
+      "filterScroll": {
+        "width": 896,
+        "scrollWidth": 896
+      },
+      "contactBlocks": 0,
+      "footers": 1,
+      "background": "rgb(245, 246, 241)",
+      "foreground": "rgb(16, 20, 16)",
+      "muted": "rgb(83, 96, 88)"
+    },
+    {
+      "locale": "es",
+      "width": 1440,
+      "overflow": false,
+      "h1": [
+        "Proyectos"
+      ],
+      "intro": {
+        "x": 124,
+        "y": 129,
+        "width": 1192,
+        "height": 117.75
+      },
+      "cards": [
+        {
+          "href": "/proyectos/maraton_musica_contemporanea-2023",
+          "title": "5to Maratón de Música Contemporánea",
+          "meta": "2026Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 124,
+            "y": 379.75,
+            "width": 580,
+            "height": 439.296875
+          },
+          "imageRect": {
+            "x": 124,
+            "y": 379.75,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "auto",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/otro_dia_otro_dolar",
+          "title": "Otro día, otro dólar",
+          "meta": "2026Produccion Tecnica",
+          "rect": {
+            "x": 736,
+            "y": 379.75,
+            "width": 580,
+            "height": 439.296875
+          },
+          "imageRect": {
+            "x": 736,
+            "y": 379.75,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": "Otro día, otro dólar",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "title": "1er Festival Internacional LEAM",
+          "meta": "2025Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 124,
+            "y": 875.046875,
+            "width": 580,
+            "height": 439.296875
+          },
+          "imageRect": {
+            "x": 124,
+            "y": 875.046875,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": "Concierto Multicanal",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/luminico_urtext_2025",
+          "title": "Lumínico / Ónix | Festival Urtext 2025",
+          "meta": "2025Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 736,
+            "y": 875.046875,
+            "width": 580,
+            "height": 439.296875
+          },
+          "imageRect": {
+            "x": 736,
+            "y": 875.046875,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/atl",
+          "title": "Atl | Agua, Música y Arte Sonoro",
+          "meta": "2024Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 124,
+            "y": 1370.34375,
+            "width": 580,
+            "height": 439.296875
+          },
+          "imageRect": {
+            "x": 124,
+            "y": 1370.34375,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/luminico_urtext_2024",
+          "title": "Lumínico / Ónix | Festival Urtext 2024",
+          "meta": "2024Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 736,
+            "y": 1370.34375,
+            "width": 580,
+            "height": 439.296875
+          },
+          "imageRect": {
+            "x": 736,
+            "y": 1370.34375,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/operauam",
+          "title": "Video ópera | In Calli Ixcahuicopa",
+          "meta": "2024Audio Multicanal",
+          "rect": {
+            "x": 124,
+            "y": 1865.640625,
+            "width": 580,
+            "height": 439.296875
+          },
+          "imageRect": {
+            "x": 124,
+            "y": 1865.640625,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": "opera-general",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/power-room",
+          "title": "power · room",
+          "meta": "2021 – 2024Arte Digital",
+          "rect": {
+            "x": 736,
+            "y": 1865.640625,
+            "width": 580,
+            "height": 439.296875
+          },
+          "imageRect": {
+            "x": 736,
+            "y": 1865.640625,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": "power · room",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/nime2023",
+          "title": "New Interfaces for Musical Expression 2023. Ciudad de México",
+          "meta": "2023Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 124,
+            "y": 2360.9375,
+            "width": 580,
+            "height": 474.296875
+          },
+          "imageRect": {
+            "x": 124,
+            "y": 2360.9375,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": "NIME 2023",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/pinball-banxico",
+          "title": "¿Por qué usamos el dinero?",
+          "meta": "2023Experiencias digitales",
+          "rect": {
+            "x": 736,
+            "y": 2360.9375,
+            "width": 580,
+            "height": 474.296875
+          },
+          "imageRect": {
+            "x": 736,
+            "y": 2360.9375,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": "Exhibición",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/maraton_musica_contemporanea-2022",
+          "title": "2do Maratón de Música Contemporánea 2022",
+          "meta": "2022Audio Multicanal",
+          "rect": {
+            "x": 124,
+            "y": 2891.234375,
+            "width": 580,
+            "height": 474.296875
+          },
+          "imageRect": {
+            "x": 124,
+            "y": 2891.234375,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/meryll_losa-2020",
+          "title": "París-México. Dos visiones Méryll Ampe y Diego Losa",
+          "meta": "2020Audio Multicanal",
+          "rect": {
+            "x": 736,
+            "y": 2891.234375,
+            "width": 580,
+            "height": 474.296875
+          },
+          "imageRect": {
+            "x": 736,
+            "y": 2891.234375,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/2do_coloquio_inmersividad",
+          "title": "2do Coloquio Internacional Espacio Inmersividad",
+          "meta": "2019Audio Multicanal / Produccion Tecnica / Live Streaming",
+          "rect": {
+            "x": 124,
+            "y": 3421.53125,
+            "width": 580,
+            "height": 474.296875
+          },
+          "imageRect": {
+            "x": 124,
+            "y": 3421.53125,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/homenaje_chowning",
+          "title": "Festival Ecos Urbanos 2019 | Homenaje John Chowning",
+          "meta": "2019Audio Multicanal",
+          "rect": {
+            "x": 736,
+            "y": 3421.53125,
+            "width": 580,
+            "height": 474.296875
+          },
+          "imageRect": {
+            "x": 736,
+            "y": 3421.53125,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/laser_talks_mexico",
+          "title": "LASER Talks México 2019",
+          "meta": "2019Live Streaming",
+          "rect": {
+            "x": 124,
+            "y": 3951.828125,
+            "width": 580,
+            "height": 439.296875
+          },
+          "imageRect": {
+            "x": 124,
+            "y": 3951.828125,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/rea_mx",
+          "title": "Red Ecología Acústica México [REA_MX]",
+          "meta": "2019Live Streaming",
+          "rect": {
+            "x": 736,
+            "y": 3951.828125,
+            "width": 580,
+            "height": 439.296875
+          },
+          "imageRect": {
+            "x": 736,
+            "y": 3951.828125,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/1er_coloquio_inmersividad",
+          "title": "1er Coloquio Internacional Espacio Inmersividad",
+          "meta": "2018Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 124,
+            "y": 4447.125,
+            "width": 580,
+            "height": 474.296875
+          },
+          "imageRect": {
+            "x": 124,
+            "y": 4447.125,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/beckett_transdiciplinar",
+          "title": "Beckett Transdiciplinar",
+          "meta": "2018Live Streaming",
+          "rect": {
+            "x": 736,
+            "y": 4447.125,
+            "width": 580,
+            "height": 474.296875
+          },
+          "imageRect": {
+            "x": 736,
+            "y": 4447.125,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        }
+      ],
+      "filterScroll": {
+        "width": 1192,
+        "scrollWidth": 1192
+      },
+      "contactBlocks": 0,
+      "footers": 1,
+      "background": "rgb(245, 246, 241)",
+      "foreground": "rgb(16, 20, 16)",
+      "muted": "rgb(83, 96, 88)"
+    },
+    {
+      "locale": "en",
+      "width": 375,
+      "overflow": false,
+      "h1": [
+        "Projects"
+      ],
+      "intro": {
+        "x": 24,
+        "y": 105,
+        "width": 327,
+        "height": 149.890625
+      },
+      "cards": [
+        {
+          "href": "/proyectos/maraton_musica_contemporanea-2023",
+          "title": "5to Maratón de Música Contemporánea",
+          "meta": "2026Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 24,
+            "y": 379.890625,
+            "width": 327,
+            "height": 296.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 379.890625,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "auto",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/otro_dia_otro_dolar",
+          "title": "Otro día, otro dólar",
+          "meta": "2026Produccion Tecnica",
+          "rect": {
+            "x": 24,
+            "y": 716.0625,
+            "width": 327,
+            "height": 271.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 716.0625,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": "Otro día, otro dólar",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "title": "1st International Festival LEAM",
+          "meta": "2025Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 24,
+            "y": 1027.234375,
+            "width": 327,
+            "height": 271.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 1027.234375,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": "Concierto Multicanal",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/luminico_urtext_2025",
+          "title": "Lumínico / Ónix | Festival Urtext 2025",
+          "meta": "2025Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 24,
+            "y": 1338.40625,
+            "width": 327,
+            "height": 271.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 1338.40625,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/atl",
+          "title": "Atl | Agua, Música y Arte Sonoro",
+          "meta": "2024Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 24,
+            "y": 1649.578125,
+            "width": 327,
+            "height": 271.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 1649.578125,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/luminico_urtext_2024",
+          "title": "Lumínico / Ónix | Festival Urtext 2024",
+          "meta": "2024Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 24,
+            "y": 1960.75,
+            "width": 327,
+            "height": 271.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 1960.75,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/operauam",
+          "title": "Video ópera | In Calli Ixcahuicopa",
+          "meta": "2024Audio Multicanal",
+          "rect": {
+            "x": 24,
+            "y": 2271.921875,
+            "width": 327,
+            "height": 271.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 2271.921875,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": "opera-general",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/power-room",
+          "title": "power · room",
+          "meta": "2021 – 2024Arte Digital",
+          "rect": {
+            "x": 24,
+            "y": 2583.09375,
+            "width": 327,
+            "height": 271.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 2583.09375,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": "power · room",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/nime2023",
+          "title": "La Conferencia Internacional sobre Nuevas Interfaces para la Expresión Musical (NIME, por sus siglas en inglés) reúne a investigadores y músicos de todo el mundo para compartir sus conocimientos y trabajos de última generación sobre el diseño de nuevas interfaces musicales. La conferencia comenzó como un taller en la Conferencia sobre Factores Humanos en Sistemas Informáticos (CHI, por sus siglas en inglés) en 2001. Desde entonces, se han celebrado una serie anual de conferencias internacionales en todo el mundo, organizadas por grupos de investigación dedicados al diseño de interfaces, la interacción hombre-computadora y la música por computadora.  En 2023, NIME volverá a América del Norte, América Latina y su formato físico en la Ciudad de México. Sin embargo, también brindaremos soporte híbrido para aquellos que no puedan asistir a la conferencia en persona.  NIME 2023 se llevará a cabo en la Biblioteca Vasconcelos y el Centro de Cultura Digital, dos importantes centros culturales e innovadores en la Ciudad de México.",
+          "meta": "2023Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 24,
+            "y": 2894.265625,
+            "width": 327,
+            "height": 1021.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 2894.265625,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": "NIME 2023",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/pinball-banxico",
+          "title": "¿Por qué usamos el dinero?",
+          "meta": "2023Digital experiences",
+          "rect": {
+            "x": 24,
+            "y": 3955.4375,
+            "width": 327,
+            "height": 271.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 3955.4375,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": "Exhibición",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/maraton_musica_contemporanea-2022",
+          "title": "2do Maratón de Música Contemporánea 2022",
+          "meta": "2022Audio Multicanal",
+          "rect": {
+            "x": 24,
+            "y": 4266.609375,
+            "width": 327,
+            "height": 296.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 4266.609375,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/meryll_losa-2020",
+          "title": "París-México. Dos visiones Méryll Ampe y Diego Losa",
+          "meta": "2020Audio Multicanal",
+          "rect": {
+            "x": 24,
+            "y": 4602.78125,
+            "width": 327,
+            "height": 296.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 4602.78125,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/2do_coloquio_inmersividad",
+          "title": "2do Coloquio Internacional Espacio Inmersividad",
+          "meta": "2019Audio Multicanal / Produccion Tecnica / Live Streaming",
+          "rect": {
+            "x": 24,
+            "y": 4938.953125,
+            "width": 327,
+            "height": 319.96875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 4938.953125,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/homenaje_chowning",
+          "title": "Festival Ecos Urbanos 2019 | Homenaje John Chowning",
+          "meta": "2019Audio Multicanal",
+          "rect": {
+            "x": 24,
+            "y": 5298.921875,
+            "width": 327,
+            "height": 296.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 5298.921875,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/laser_talks_mexico",
+          "title": "LASER Talks México 2019",
+          "meta": "2019Live Streaming",
+          "rect": {
+            "x": 24,
+            "y": 5635.09375,
+            "width": 327,
+            "height": 271.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 5635.09375,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/rea_mx",
+          "title": "Red Ecología Acústica México [REA_MX]",
+          "meta": "2019Live Streaming",
+          "rect": {
+            "x": 24,
+            "y": 5946.265625,
+            "width": 327,
+            "height": 296.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 5946.265625,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/1er_coloquio_inmersividad",
+          "title": "1er Coloquio Internacional Espacio Inmersividad",
+          "meta": "2018Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 24,
+            "y": 6282.4375,
+            "width": 327,
+            "height": 296.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 6282.4375,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/beckett_transdiciplinar",
+          "title": "Beckett Transdiciplinar",
+          "meta": "2018Live Streaming",
+          "rect": {
+            "x": 24,
+            "y": 6618.609375,
+            "width": 327,
+            "height": 271.171875
+          },
+          "imageRect": {
+            "x": 24,
+            "y": 6618.609375,
+            "width": 327,
+            "height": 204.375
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        }
+      ],
+      "filterScroll": {
+        "width": 327,
+        "scrollWidth": 627
+      },
+      "contactBlocks": 0,
+      "footers": 1,
+      "background": "rgb(245, 246, 241)",
+      "foreground": "rgb(16, 20, 16)",
+      "muted": "rgb(83, 96, 88)"
+    },
+    {
+      "locale": "en",
+      "width": 768,
+      "overflow": false,
+      "h1": [
+        "Projects"
+      ],
+      "intro": {
+        "x": 48,
+        "y": 121,
+        "width": 672,
+        "height": 121.5625
+      },
+      "cards": [
+        {
+          "href": "/proyectos/maraton_musica_contemporanea-2023",
+          "title": "5to Maratón de Música Contemporánea",
+          "meta": "2026Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 48,
+            "y": 375.5625,
+            "width": 320,
+            "height": 291.796875
+          },
+          "imageRect": {
+            "x": 48,
+            "y": 375.5625,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "auto",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/otro_dia_otro_dolar",
+          "title": "Otro día, otro dólar",
+          "meta": "2026Produccion Tecnica",
+          "rect": {
+            "x": 400,
+            "y": 375.5625,
+            "width": 320,
+            "height": 291.796875
+          },
+          "imageRect": {
+            "x": 400,
+            "y": 375.5625,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": "Otro día, otro dólar",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "title": "1st International Festival LEAM",
+          "meta": "2025Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 48,
+            "y": 715.359375,
+            "width": 320,
+            "height": 291.796875
+          },
+          "imageRect": {
+            "x": 48,
+            "y": 715.359375,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": "Concierto Multicanal",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/luminico_urtext_2025",
+          "title": "Lumínico / Ónix | Festival Urtext 2025",
+          "meta": "2025Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 400,
+            "y": 715.359375,
+            "width": 320,
+            "height": 291.796875
+          },
+          "imageRect": {
+            "x": 400,
+            "y": 715.359375,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/atl",
+          "title": "Atl | Agua, Música y Arte Sonoro",
+          "meta": "2024Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 48,
+            "y": 1055.15625,
+            "width": 320,
+            "height": 291.796875
+          },
+          "imageRect": {
+            "x": 48,
+            "y": 1055.15625,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/luminico_urtext_2024",
+          "title": "Lumínico / Ónix | Festival Urtext 2024",
+          "meta": "2024Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 400,
+            "y": 1055.15625,
+            "width": 320,
+            "height": 291.796875
+          },
+          "imageRect": {
+            "x": 400,
+            "y": 1055.15625,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/operauam",
+          "title": "Video ópera | In Calli Ixcahuicopa",
+          "meta": "2024Audio Multicanal",
+          "rect": {
+            "x": 48,
+            "y": 1394.953125,
+            "width": 320,
+            "height": 266.796875
+          },
+          "imageRect": {
+            "x": 48,
+            "y": 1394.953125,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": "opera-general",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/power-room",
+          "title": "power · room",
+          "meta": "2021 – 2024Arte Digital",
+          "rect": {
+            "x": 400,
+            "y": 1394.953125,
+            "width": 320,
+            "height": 266.796875
+          },
+          "imageRect": {
+            "x": 400,
+            "y": 1394.953125,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": "power · room",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/nime2023",
+          "title": "La Conferencia Internacional sobre Nuevas Interfaces para la Expresión Musical (NIME, por sus siglas en inglés) reúne a investigadores y músicos de todo el mundo para compartir sus conocimientos y trabajos de última generación sobre el diseño de nuevas interfaces musicales. La conferencia comenzó como un taller en la Conferencia sobre Factores Humanos en Sistemas Informáticos (CHI, por sus siglas en inglés) en 2001. Desde entonces, se han celebrado una serie anual de conferencias internacionales en todo el mundo, organizadas por grupos de investigación dedicados al diseño de interfaces, la interacción hombre-computadora y la música por computadora.  En 2023, NIME volverá a América del Norte, América Latina y su formato físico en la Ciudad de México. Sin embargo, también brindaremos soporte híbrido para aquellos que no puedan asistir a la conferencia en persona.  NIME 2023 se llevará a cabo en la Biblioteca Vasconcelos y el Centro de Cultura Digital, dos importantes centros culturales e innovadores en la Ciudad de México.",
+          "meta": "2023Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 48,
+            "y": 1709.75,
+            "width": 320,
+            "height": 1066.796875
+          },
+          "imageRect": {
+            "x": 48,
+            "y": 1709.75,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": "NIME 2023",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/pinball-banxico",
+          "title": "¿Por qué usamos el dinero?",
+          "meta": "2023Digital experiences",
+          "rect": {
+            "x": 400,
+            "y": 1709.75,
+            "width": 320,
+            "height": 1066.796875
+          },
+          "imageRect": {
+            "x": 400,
+            "y": 1709.75,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": "Exhibición",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/maraton_musica_contemporanea-2022",
+          "title": "2do Maratón de Música Contemporánea 2022",
+          "meta": "2022Audio Multicanal",
+          "rect": {
+            "x": 48,
+            "y": 2824.546875,
+            "width": 320,
+            "height": 291.796875
+          },
+          "imageRect": {
+            "x": 48,
+            "y": 2824.546875,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/meryll_losa-2020",
+          "title": "París-México. Dos visiones Méryll Ampe y Diego Losa",
+          "meta": "2020Audio Multicanal",
+          "rect": {
+            "x": 400,
+            "y": 2824.546875,
+            "width": 320,
+            "height": 291.796875
+          },
+          "imageRect": {
+            "x": 400,
+            "y": 2824.546875,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/2do_coloquio_inmersividad",
+          "title": "2do Coloquio Internacional Espacio Inmersividad",
+          "meta": "2019Audio Multicanal / Produccion Tecnica / Live Streaming",
+          "rect": {
+            "x": 48,
+            "y": 3164.34375,
+            "width": 320,
+            "height": 315.59375
+          },
+          "imageRect": {
+            "x": 48,
+            "y": 3164.34375,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/homenaje_chowning",
+          "title": "Festival Ecos Urbanos 2019 | Homenaje John Chowning",
+          "meta": "2019Audio Multicanal",
+          "rect": {
+            "x": 400,
+            "y": 3164.34375,
+            "width": 320,
+            "height": 315.59375
+          },
+          "imageRect": {
+            "x": 400,
+            "y": 3164.34375,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/laser_talks_mexico",
+          "title": "LASER Talks México 2019",
+          "meta": "2019Live Streaming",
+          "rect": {
+            "x": 48,
+            "y": 3527.9375,
+            "width": 320,
+            "height": 291.796875
+          },
+          "imageRect": {
+            "x": 48,
+            "y": 3527.9375,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/rea_mx",
+          "title": "Red Ecología Acústica México [REA_MX]",
+          "meta": "2019Live Streaming",
+          "rect": {
+            "x": 400,
+            "y": 3527.9375,
+            "width": 320,
+            "height": 291.796875
+          },
+          "imageRect": {
+            "x": 400,
+            "y": 3527.9375,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/1er_coloquio_inmersividad",
+          "title": "1er Coloquio Internacional Espacio Inmersividad",
+          "meta": "2018Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 48,
+            "y": 3867.734375,
+            "width": 320,
+            "height": 291.796875
+          },
+          "imageRect": {
+            "x": 48,
+            "y": 3867.734375,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/beckett_transdiciplinar",
+          "title": "Beckett Transdiciplinar",
+          "meta": "2018Live Streaming",
+          "rect": {
+            "x": 400,
+            "y": 3867.734375,
+            "width": 320,
+            "height": 291.796875
+          },
+          "imageRect": {
+            "x": 400,
+            "y": 3867.734375,
+            "width": 320,
+            "height": 200
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        }
+      ],
+      "filterScroll": {
+        "width": 672,
+        "scrollWidth": 672
+      },
+      "contactBlocks": 0,
+      "footers": 1,
+      "background": "rgb(245, 246, 241)",
+      "foreground": "rgb(16, 20, 16)",
+      "muted": "rgb(83, 96, 88)"
+    },
+    {
+      "locale": "en",
+      "width": 1024,
+      "overflow": false,
+      "h1": [
+        "Projects"
+      ],
+      "intro": {
+        "x": 64,
+        "y": 129,
+        "width": 896,
+        "height": 95.296875
+      },
+      "cards": [
+        {
+          "href": "/proyectos/maraton_musica_contemporanea-2023",
+          "title": "5to Maratón de Música Contemporánea",
+          "meta": "2026Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 64,
+            "y": 357.296875,
+            "width": 432,
+            "height": 337.390625
+          },
+          "imageRect": {
+            "x": 64,
+            "y": 357.296875,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "auto",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/otro_dia_otro_dolar",
+          "title": "Otro día, otro dólar",
+          "meta": "2026Produccion Tecnica",
+          "rect": {
+            "x": 528,
+            "y": 357.296875,
+            "width": 432,
+            "height": 337.390625
+          },
+          "imageRect": {
+            "x": 528,
+            "y": 357.296875,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": "Otro día, otro dólar",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "title": "1st International Festival LEAM",
+          "meta": "2025Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 64,
+            "y": 750.6875,
+            "width": 432,
+            "height": 337.390625
+          },
+          "imageRect": {
+            "x": 64,
+            "y": 750.6875,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": "Concierto Multicanal",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/luminico_urtext_2025",
+          "title": "Lumínico / Ónix | Festival Urtext 2025",
+          "meta": "2025Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 528,
+            "y": 750.6875,
+            "width": 432,
+            "height": 337.390625
+          },
+          "imageRect": {
+            "x": 528,
+            "y": 750.6875,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/atl",
+          "title": "Atl | Agua, Música y Arte Sonoro",
+          "meta": "2024Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 64,
+            "y": 1144.078125,
+            "width": 432,
+            "height": 337.390625
+          },
+          "imageRect": {
+            "x": 64,
+            "y": 1144.078125,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/luminico_urtext_2024",
+          "title": "Lumínico / Ónix | Festival Urtext 2024",
+          "meta": "2024Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 528,
+            "y": 1144.078125,
+            "width": 432,
+            "height": 337.390625
+          },
+          "imageRect": {
+            "x": 528,
+            "y": 1144.078125,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/operauam",
+          "title": "Video ópera | In Calli Ixcahuicopa",
+          "meta": "2024Audio Multicanal",
+          "rect": {
+            "x": 64,
+            "y": 1537.46875,
+            "width": 432,
+            "height": 337.390625
+          },
+          "imageRect": {
+            "x": 64,
+            "y": 1537.46875,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": "opera-general",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/power-room",
+          "title": "power · room",
+          "meta": "2021 – 2024Arte Digital",
+          "rect": {
+            "x": 528,
+            "y": 1537.46875,
+            "width": 432,
+            "height": 337.390625
+          },
+          "imageRect": {
+            "x": 528,
+            "y": 1537.46875,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": "power · room",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/nime2023",
+          "title": "La Conferencia Internacional sobre Nuevas Interfaces para la Expresión Musical (NIME, por sus siglas en inglés) reúne a investigadores y músicos de todo el mundo para compartir sus conocimientos y trabajos de última generación sobre el diseño de nuevas interfaces musicales. La conferencia comenzó como un taller en la Conferencia sobre Factores Humanos en Sistemas Informáticos (CHI, por sus siglas en inglés) en 2001. Desde entonces, se han celebrado una serie anual de conferencias internacionales en todo el mundo, organizadas por grupos de investigación dedicados al diseño de interfaces, la interacción hombre-computadora y la música por computadora.  En 2023, NIME volverá a América del Norte, América Latina y su formato físico en la Ciudad de México. Sin embargo, también brindaremos soporte híbrido para aquellos que no puedan asistir a la conferencia en persona.  NIME 2023 se llevará a cabo en la Biblioteca Vasconcelos y el Centro de Cultura Digital, dos importantes centros culturales e innovadores en la Ciudad de México.",
+          "meta": "2023Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 64,
+            "y": 1930.859375,
+            "width": 432,
+            "height": 926.046875
+          },
+          "imageRect": {
+            "x": 64,
+            "y": 1930.859375,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": "NIME 2023",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/pinball-banxico",
+          "title": "¿Por qué usamos el dinero?",
+          "meta": "2023Digital experiences",
+          "rect": {
+            "x": 528,
+            "y": 1930.859375,
+            "width": 432,
+            "height": 926.046875
+          },
+          "imageRect": {
+            "x": 528,
+            "y": 1930.859375,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": "Exhibición",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/maraton_musica_contemporanea-2022",
+          "title": "2do Maratón de Música Contemporánea 2022",
+          "meta": "2022Audio Multicanal",
+          "rect": {
+            "x": 64,
+            "y": 2912.90625,
+            "width": 432,
+            "height": 362.984375
+          },
+          "imageRect": {
+            "x": 64,
+            "y": 2912.90625,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/meryll_losa-2020",
+          "title": "París-México. Dos visiones Méryll Ampe y Diego Losa",
+          "meta": "2020Audio Multicanal",
+          "rect": {
+            "x": 528,
+            "y": 2912.90625,
+            "width": 432,
+            "height": 362.984375
+          },
+          "imageRect": {
+            "x": 528,
+            "y": 2912.90625,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/2do_coloquio_inmersividad",
+          "title": "2do Coloquio Internacional Espacio Inmersividad",
+          "meta": "2019Audio Multicanal / Produccion Tecnica / Live Streaming",
+          "rect": {
+            "x": 64,
+            "y": 3331.890625,
+            "width": 432,
+            "height": 362.984375
+          },
+          "imageRect": {
+            "x": 64,
+            "y": 3331.890625,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/homenaje_chowning",
+          "title": "Festival Ecos Urbanos 2019 | Homenaje John Chowning",
+          "meta": "2019Audio Multicanal",
+          "rect": {
+            "x": 528,
+            "y": 3331.890625,
+            "width": 432,
+            "height": 362.984375
+          },
+          "imageRect": {
+            "x": 528,
+            "y": 3331.890625,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/laser_talks_mexico",
+          "title": "LASER Talks México 2019",
+          "meta": "2019Live Streaming",
+          "rect": {
+            "x": 64,
+            "y": 3750.875,
+            "width": 432,
+            "height": 337.390625
+          },
+          "imageRect": {
+            "x": 64,
+            "y": 3750.875,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/rea_mx",
+          "title": "Red Ecología Acústica México [REA_MX]",
+          "meta": "2019Live Streaming",
+          "rect": {
+            "x": 528,
+            "y": 3750.875,
+            "width": 432,
+            "height": 337.390625
+          },
+          "imageRect": {
+            "x": 528,
+            "y": 3750.875,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/1er_coloquio_inmersividad",
+          "title": "1er Coloquio Internacional Espacio Inmersividad",
+          "meta": "2018Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 64,
+            "y": 4144.265625,
+            "width": 432,
+            "height": 362.984375
+          },
+          "imageRect": {
+            "x": 64,
+            "y": 4144.265625,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/beckett_transdiciplinar",
+          "title": "Beckett Transdiciplinar",
+          "meta": "2018Live Streaming",
+          "rect": {
+            "x": 528,
+            "y": 4144.265625,
+            "width": 432,
+            "height": 362.984375
+          },
+          "imageRect": {
+            "x": 528,
+            "y": 4144.265625,
+            "width": 432,
+            "height": 270
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        }
+      ],
+      "filterScroll": {
+        "width": 896,
+        "scrollWidth": 896
+      },
+      "contactBlocks": 0,
+      "footers": 1,
+      "background": "rgb(245, 246, 241)",
+      "foreground": "rgb(16, 20, 16)",
+      "muted": "rgb(83, 96, 88)"
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "overflow": false,
+      "h1": [
+        "Projects"
+      ],
+      "intro": {
+        "x": 124,
+        "y": 129,
+        "width": 1192,
+        "height": 117.75
+      },
+      "cards": [
+        {
+          "href": "/proyectos/maraton_musica_contemporanea-2023",
+          "title": "5to Maratón de Música Contemporánea",
+          "meta": "2026Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 124,
+            "y": 379.75,
+            "width": 580,
+            "height": 439.296875
+          },
+          "imageRect": {
+            "x": 124,
+            "y": 379.75,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "auto",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/otro_dia_otro_dolar",
+          "title": "Otro día, otro dólar",
+          "meta": "2026Produccion Tecnica",
+          "rect": {
+            "x": 736,
+            "y": 379.75,
+            "width": 580,
+            "height": 439.296875
+          },
+          "imageRect": {
+            "x": 736,
+            "y": 379.75,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": "Otro día, otro dólar",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "title": "1st International Festival LEAM",
+          "meta": "2025Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 124,
+            "y": 875.046875,
+            "width": 580,
+            "height": 439.296875
+          },
+          "imageRect": {
+            "x": 124,
+            "y": 875.046875,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": "Concierto Multicanal",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/luminico_urtext_2025",
+          "title": "Lumínico / Ónix | Festival Urtext 2025",
+          "meta": "2025Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 736,
+            "y": 875.046875,
+            "width": 580,
+            "height": 439.296875
+          },
+          "imageRect": {
+            "x": 736,
+            "y": 875.046875,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/atl",
+          "title": "Atl | Agua, Música y Arte Sonoro",
+          "meta": "2024Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 124,
+            "y": 1370.34375,
+            "width": 580,
+            "height": 439.296875
+          },
+          "imageRect": {
+            "x": 124,
+            "y": 1370.34375,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/luminico_urtext_2024",
+          "title": "Lumínico / Ónix | Festival Urtext 2024",
+          "meta": "2024Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 736,
+            "y": 1370.34375,
+            "width": 580,
+            "height": 439.296875
+          },
+          "imageRect": {
+            "x": 736,
+            "y": 1370.34375,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/operauam",
+          "title": "Video ópera | In Calli Ixcahuicopa",
+          "meta": "2024Audio Multicanal",
+          "rect": {
+            "x": 124,
+            "y": 1865.640625,
+            "width": 580,
+            "height": 439.296875
+          },
+          "imageRect": {
+            "x": 124,
+            "y": 1865.640625,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": "opera-general",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/power-room",
+          "title": "power · room",
+          "meta": "2021 – 2024Arte Digital",
+          "rect": {
+            "x": 736,
+            "y": 1865.640625,
+            "width": 580,
+            "height": 439.296875
+          },
+          "imageRect": {
+            "x": 736,
+            "y": 1865.640625,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": "power · room",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/nime2023",
+          "title": "La Conferencia Internacional sobre Nuevas Interfaces para la Expresión Musical (NIME, por sus siglas en inglés) reúne a investigadores y músicos de todo el mundo para compartir sus conocimientos y trabajos de última generación sobre el diseño de nuevas interfaces musicales. La conferencia comenzó como un taller en la Conferencia sobre Factores Humanos en Sistemas Informáticos (CHI, por sus siglas en inglés) en 2001. Desde entonces, se han celebrado una serie anual de conferencias internacionales en todo el mundo, organizadas por grupos de investigación dedicados al diseño de interfaces, la interacción hombre-computadora y la música por computadora.  En 2023, NIME volverá a América del Norte, América Latina y su formato físico en la Ciudad de México. Sin embargo, también brindaremos soporte híbrido para aquellos que no puedan asistir a la conferencia en persona.  NIME 2023 se llevará a cabo en la Biblioteca Vasconcelos y el Centro de Cultura Digital, dos importantes centros culturales e innovadores en la Ciudad de México.",
+          "meta": "2023Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 124,
+            "y": 2360.9375,
+            "width": 580,
+            "height": 1244.296875
+          },
+          "imageRect": {
+            "x": 124,
+            "y": 2360.9375,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": "NIME 2023",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/pinball-banxico",
+          "title": "¿Por qué usamos el dinero?",
+          "meta": "2023Digital experiences",
+          "rect": {
+            "x": 736,
+            "y": 2360.9375,
+            "width": 580,
+            "height": 1244.296875
+          },
+          "imageRect": {
+            "x": 736,
+            "y": 2360.9375,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": "Exhibición",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/maraton_musica_contemporanea-2022",
+          "title": "2do Maratón de Música Contemporánea 2022",
+          "meta": "2022Audio Multicanal",
+          "rect": {
+            "x": 124,
+            "y": 3661.234375,
+            "width": 580,
+            "height": 474.296875
+          },
+          "imageRect": {
+            "x": 124,
+            "y": 3661.234375,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/meryll_losa-2020",
+          "title": "París-México. Dos visiones Méryll Ampe y Diego Losa",
+          "meta": "2020Audio Multicanal",
+          "rect": {
+            "x": 736,
+            "y": 3661.234375,
+            "width": 580,
+            "height": 474.296875
+          },
+          "imageRect": {
+            "x": 736,
+            "y": 3661.234375,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/2do_coloquio_inmersividad",
+          "title": "2do Coloquio Internacional Espacio Inmersividad",
+          "meta": "2019Audio Multicanal / Produccion Tecnica / Live Streaming",
+          "rect": {
+            "x": 124,
+            "y": 4191.53125,
+            "width": 580,
+            "height": 474.296875
+          },
+          "imageRect": {
+            "x": 124,
+            "y": 4191.53125,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/homenaje_chowning",
+          "title": "Festival Ecos Urbanos 2019 | Homenaje John Chowning",
+          "meta": "2019Audio Multicanal",
+          "rect": {
+            "x": 736,
+            "y": 4191.53125,
+            "width": 580,
+            "height": 474.296875
+          },
+          "imageRect": {
+            "x": 736,
+            "y": 4191.53125,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/laser_talks_mexico",
+          "title": "LASER Talks México 2019",
+          "meta": "2019Live Streaming",
+          "rect": {
+            "x": 124,
+            "y": 4721.828125,
+            "width": 580,
+            "height": 439.296875
+          },
+          "imageRect": {
+            "x": 124,
+            "y": 4721.828125,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/rea_mx",
+          "title": "Red Ecología Acústica México [REA_MX]",
+          "meta": "2019Live Streaming",
+          "rect": {
+            "x": 736,
+            "y": 4721.828125,
+            "width": 580,
+            "height": 439.296875
+          },
+          "imageRect": {
+            "x": 736,
+            "y": 4721.828125,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/1er_coloquio_inmersividad",
+          "title": "1er Coloquio Internacional Espacio Inmersividad",
+          "meta": "2018Audio Multicanal / Produccion Tecnica",
+          "rect": {
+            "x": 124,
+            "y": 5217.125,
+            "width": 580,
+            "height": 474.296875
+          },
+          "imageRect": {
+            "x": 124,
+            "y": 5217.125,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        },
+        {
+          "href": "/proyectos/beckett_transdiciplinar",
+          "title": "Beckett Transdiciplinar",
+          "meta": "2018Live Streaming",
+          "rect": {
+            "x": 736,
+            "y": 5217.125,
+            "width": 580,
+            "height": 474.296875
+          },
+          "imageRect": {
+            "x": 736,
+            "y": 5217.125,
+            "width": 580,
+            "height": 362.5
+          },
+          "imageAlt": ".",
+          "filter": "none",
+          "transform": "none",
+          "objectFit": "cover",
+          "loading": "lazy",
+          "extraParagraphs": 0
+        }
+      ],
+      "filterScroll": {
+        "width": 1192,
+        "scrollWidth": 1192
+      },
+      "contactBlocks": 0,
+      "footers": 1,
+      "background": "rgb(245, 246, 241)",
+      "foreground": "rgb(16, 20, 16)",
+      "muted": "rgb(83, 96, 88)"
+    }
+  ],
+  "filterResults": [
+    {
+      "locale": "es",
+      "category": "audio-multicanal",
+      "count": 12,
+      "orderPreserved": true
+    },
+    {
+      "locale": "es",
+      "category": "produccion-tecnica",
+      "count": 9,
+      "orderPreserved": true
+    },
+    {
+      "locale": "es",
+      "category": "arte-digital",
+      "count": 1,
+      "orderPreserved": true
+    },
+    {
+      "locale": "es",
+      "category": "experiencias-digitales",
+      "count": 1,
+      "orderPreserved": true
+    },
+    {
+      "locale": "es",
+      "category": "live-streaming",
+      "count": 4,
+      "orderPreserved": true
+    },
+    {
+      "locale": "en",
+      "category": "audio-multicanal",
+      "count": 12,
+      "orderPreserved": true
+    },
+    {
+      "locale": "en",
+      "category": "produccion-tecnica",
+      "count": 9,
+      "orderPreserved": true
+    },
+    {
+      "locale": "en",
+      "category": "arte-digital",
+      "count": 1,
+      "orderPreserved": true
+    },
+    {
+      "locale": "en",
+      "category": "experiencias-digitales",
+      "count": 1,
+      "orderPreserved": true
+    },
+    {
+      "locale": "en",
+      "category": "live-streaming",
+      "count": 4,
+      "orderPreserved": true
+    }
+  ],
+  "cardFocus": {
+    "style": "solid",
+    "width": "2px"
+  },
+  "filterFocus": {
+    "left": 268.59375,
+    "right": 356.125,
+    "viewport": 375
+  },
+  "hover": {
+    "filter": "none",
+    "transform": "none"
+  },
+  "reducedMotion": {
+    "duration": "1e-05s"
+  },
+  "checks": [
+    {
+      "href": "/proyectos/maraton_musica_contemporanea-2023",
+      "status": 200
+    },
+    {
+      "href": "/proyectos/otro_dia_otro_dolar",
+      "status": 200
+    },
+    {
+      "href": "/proyectos/leam2025",
+      "status": 200
+    },
+    {
+      "href": "/proyectos/luminico_urtext_2025",
+      "status": 200
+    },
+    {
+      "href": "/proyectos/atl",
+      "status": 200
+    },
+    {
+      "href": "/proyectos/luminico_urtext_2024",
+      "status": 200
+    },
+    {
+      "href": "/proyectos/operauam",
+      "status": 200
+    },
+    {
+      "href": "/proyectos/power-room",
+      "status": 200
+    },
+    {
+      "href": "/proyectos/nime2023",
+      "status": 200
+    },
+    {
+      "href": "/proyectos/pinball-banxico",
+      "status": 200
+    },
+    {
+      "href": "/proyectos/maraton_musica_contemporanea-2022",
+      "status": 200
+    },
+    {
+      "href": "/proyectos/meryll_losa-2020",
+      "status": 200
+    },
+    {
+      "href": "/proyectos/2do_coloquio_inmersividad",
+      "status": 200
+    },
+    {
+      "href": "/proyectos/homenaje_chowning",
+      "status": 200
+    },
+    {
+      "href": "/proyectos/laser_talks_mexico",
+      "status": 200
+    },
+    {
+      "href": "/proyectos/rea_mx",
+      "status": 200
+    },
+    {
+      "href": "/proyectos/1er_coloquio_inmersividad",
+      "status": 200
+    },
+    {
+      "href": "/proyectos/beckett_transdiciplinar",
+      "status": 200
+    }
+  ],
+  "cmsOnlyAuthorizedTextChanges": true,
+  "archiveOrderUnchanged": true,
+  "homeContentUnchanged": true,
+  "errors": []
+}

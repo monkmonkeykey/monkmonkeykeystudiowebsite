@@ -1,355 +1,238 @@
 "use client";
 
 import Image from "next/image";
-import type { LocalizedValue, Project, ProjectCategory } from "@/domain/projects";
+import Link from "next/link";
+import { useEffect, useId, useRef, useState, type MouseEvent } from "react";
+
+import type { LocalizedValue, Project, ProjectCategory, ProjectGalleryImage } from "@/domain/projects";
 import { formatProjectTimeline, translateCategoryLabel } from "@/domain/projects";
-import { translate, type Locale, type LocaleText } from "@/lib/i18n";
+import { translate, type LocaleText } from "@/lib/i18n";
 import { useLocale } from "@/components/site/locale-context";
-import { useEffect, useState } from "react";
+import { getPlainText, RichText } from "@/components/site/rich-text";
+import styles from "./project-detail.module.css";
 
-const YEAR_LABEL = {
-  es: "Año",
-  en: "Year",
-} as const;
-
-const LOCATION_LABEL = {
-  es: "Lugar",
-  en: "Location",
-} as const;
-
-const GALLERY_TITLE = {
-  es: "Galería",
-  en: "Gallery",
-} as const;
-
-const VIDEO_TITLE = {
-  es: "Video",
-  en: "Video",
-} as const;
-
-const VIDEO_LINK_PREFIX = {
-  es: "Ver en",
-  en: "Watch on",
-} as const;
-
-const ENTITIES_TITLE = {
-  es: "Cliente",
-  en: "Client",
-} as const;
-
-const ENTITY_WEBSITE = {
-  es: "Visitar sitio",
-  en: "Visit site",
-} as const;
-
-const hasLocaleContent = (value: LocaleText | undefined): boolean => {
-  if (!value) {
-    return false;
-  }
-
-  return value.es.trim().length > 0 || value.en.trim().length > 0;
+const labels = {
+  back: { es: "Volver a proyectos", en: "Back to projects" },
+  backAll: { es: "Volver a todos los proyectos", en: "Back to all projects" },
+  about: { es: "Sobre el proyecto", en: "About the project" },
+  facts: { es: "Ficha del proyecto", en: "Project information" },
+  location: { es: "Lugar", en: "Location" },
+  client: { es: "Cliente / institución", en: "Client / institution" },
+  video: { es: "Video", en: "Video" },
+  gallery: { es: "Galería", en: "Gallery" },
+  collaborations: { es: "Colaboraciones", en: "Collaborations" },
+  website: { es: "Visitar sitio", en: "Visit site" },
+  close: { es: "Cerrar", en: "Close" },
+  previous: { es: "Anterior", en: "Previous" },
+  next: { es: "Siguiente", en: "Next" },
 };
 
-const translateLocalizedValue = (locale: Locale, value: LocalizedValue): string =>
-  typeof value === "string" ? value : value[locale];
+const plain = (value: string) => getPlainText(value.replace(/<br\s*\/?>|<\/(?:p|div)>/gi, "\n"));
+
+// Compare the underlying Cloudinary asset, including differently versioned URLs.
+// Other image sources retain their path/query identity.
+const imageIdentity = (src: string): string => {
+  try {
+    const url = new URL(src.trim(), "https://local.invalid");
+    const marker = "/image/upload/";
+    if (url.hostname === "res.cloudinary.com" && url.pathname.includes(marker)) {
+      const [cloud, resource] = url.pathname.split(marker);
+      const parts = resource.split("/");
+      const version = parts.findIndex((part) => /^v\d+$/.test(part));
+      if (version >= 0) parts.splice(0, version + 1);
+      else while (parts.length > 1 && /^(?:[a-z]{1,3}_[^/]+)(?:,|$)/.test(parts[0])) parts.shift();
+      return `${cloud}/${parts.join("/").replace(/\.(?:jpe?g|png|webp|avif)$/i, "")}`;
+    }
+    return `${url.origin}${url.pathname}${url.search}`;
+  } catch {
+    return src.trim();
+  }
+};
+
+// Keep rich text while preventing a stored heading from introducing another H1.
+const paragraphCopy = (value: LocaleText): LocaleText => ({
+  es: value.es.replace(/<(\/?)h[1-6](?=[\s>])/gi, "<$1p"),
+  en: value.en.replace(/<(\/?)h[1-6](?=[\s>])/gi, "<$1p"),
+});
 
 type ProjectDetailProps = {
   project: Project;
   categoryLabels: Record<ProjectCategory, LocaleText>;
 };
 
+type ViewerPhoto = { image: ProjectGalleryImage; captions: string[] };
+
 export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
   const { locale } = useLocale();
-  const [activeImageIndex, setActiveImageIndex] = useState<number | null>(null);
-
-  const detailItems = [
-    { label: YEAR_LABEL, value: formatProjectTimeline(project) },
-    { label: LOCATION_LABEL, value: project.location },
-    ...project.meta,
-  ];
-
-  const closeLightbox = () => setActiveImageIndex(null);
-  useEffect(() => {
-    if (activeImageIndex === null) {
-      return undefined;
-    }
-
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        closeLightbox();
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [activeImageIndex]);
-  const goTo = (direction: -1 | 1) => {
-    setActiveImageIndex((current) => {
-      if (current === null) return 0;
-      const next = current + direction;
-      if (next < 0) return project.gallery.length - 1;
-      if (next >= project.gallery.length) return 0;
-      return next;
-    });
+  const text = (value: LocaleText) => plain(translate(locale, value));
+  const localized = (value: LocalizedValue) => typeof value === "string" ? plain(value) : text(value);
+  const photoAlt = (image: ProjectGalleryImage) => {
+    const alt = text(image.alt);
+    return /[\p{L}\p{N}]/u.test(alt) ? alt : (image.footnote ? text(image.footnote) : "") || text(project.name);
   };
+  const [activeImageIndex, setActiveImageIndex] = useState<number | null>(null);
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const openingButtonRef = useRef<HTMLButtonElement | null>(null);
+  const viewerTitleId = useId();
+
+  const cover = project.cover?.src.trim() ? project.cover : null;
+  const duplicateCovers = cover ? project.gallery.filter((image) => imageIdentity(image.src) === imageIdentity(cover.src)) : [];
+  const gallery = project.gallery.filter((image) => image.src.trim() && (!cover || imageIdentity(image.src) !== imageIdentity(cover.src)));
+  const captions = (images: ProjectGalleryImage[]) => Array.from(new Set(images.flatMap((image) => {
+    const caption = image.footnote ? text(image.footnote) : "";
+    return caption ? [caption] : [];
+  })));
+  const coverCaptions = cover ? captions([cover, ...duplicateCovers]) : [];
+  const photos: ViewerPhoto[] = [
+    ...(cover ? [{ image: cover, captions: coverCaptions }] : []),
+    ...gallery.map((image) => ({ image, captions: captions([image]) })),
+  ];
+  const activePhoto = activeImageIndex === null ? null : photos[activeImageIndex];
+  const isViewerOpen = Boolean(activePhoto);
+  const timeline = (project.startYear && project.startYear === project.endYear
+    ? String(project.startYear) : formatProjectTimeline(project)).replace(/^(\d{4})\s*[–—-]\s*\1$/, "$1");
+  const description = project.description.filter((paragraph) => text(paragraph));
+  const clientValue = localized(project.client);
+  const clientName = project.entities.find((entity) => entity.slug === clientValue)?.name ?? clientValue;
+  const detailItems = [
+    { label: labels.location, value: localized(project.location) },
+    { label: labels.client, value: clientName },
+    ...project.meta.map((item) => ({ label: item.label, value: localized(item.value) })),
+  ].filter((item) => text(item.label) && item.value && !(
+    /^(?:año|year|periodo|período|period)$/i.test(text(item.label)) && item.value === timeline
+  ));
+  const entities = project.entities.filter((entity) => plain(entity.name) || text(entity.summary) || entity.image?.src);
+
+  const openViewer = (index: number, event: MouseEvent<HTMLButtonElement>) => {
+    openingButtonRef.current = event.currentTarget;
+    setActiveImageIndex(index);
+  };
+  const closeViewer = () => setActiveImageIndex(null);
+  const goTo = (direction: -1 | 1) => setActiveImageIndex((current) => current === null ? null : (current + direction + photos.length) % photos.length);
+
+  useEffect(() => {
+    if (!isViewerOpen) return;
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+    const overflow = document.body.style.overflow;
+    const padding = document.body.style.paddingRight;
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    if (scrollbarWidth > 0) document.body.style.paddingRight = `${parseFloat(getComputedStyle(document.body).paddingRight) + scrollbarWidth}px`;
+    document.body.style.overflow = "hidden";
+    dialog.showModal();
+    closeButtonRef.current?.focus({ preventScroll: true });
+
+    return () => {
+      if (dialog.open) dialog.close();
+      document.body.style.overflow = overflow;
+      document.body.style.paddingRight = padding;
+      if (openingButtonRef.current?.isConnected) openingButtonRef.current.focus({ preventScroll: true });
+    };
+  }, [isViewerOpen]);
 
   return (
-    <article className="space-y-16">
-      <div className="border-y border-line">
-        <div className="grid gap-10 py-6 lg:grid-cols-[minmax(0,1.8fr)_minmax(0,1fr)] lg:py-10">
-          <div className="space-y-10">
-            <div className="relative overflow-hidden border border-line bg-surface">
-              <div className="relative aspect-[16/9] w-full">
-                <Image
-                  src={project.cover.src}
-                  alt={translate(locale, project.cover.alt)}
-                  fill
-                  sizes="(min-width: 1024px) 60vw, 100vw"
-                  className="object-cover"
-                  priority
-                />
-              </div>
-              {hasLocaleContent(project.cover.footnote) && (
-                <p className="border-t border-line bg-background/90 px-4 py-2 text-xs text-muted backdrop-blur">
-                  {translate(locale, project.cover.footnote!)}
-                </p>
-              )}
+    <article className={styles.detail} lang={locale}>
+      <header className={styles.header}>
+        <Link href="/proyectos" className={styles.link}>{text(labels.back)}</Link>
+        <h1 className={text(project.name).length > 160 ? styles.extendedTitle : undefined}>{text(project.name)}</h1>
+        {text(project.subtitle) && <RichText value={paragraphCopy(project.subtitle)} className={styles.subtitle} />}
+        {(timeline || project.categories.length > 0) && <div className={styles.headerMeta}>
+          {timeline && <span>{timeline}</span>}
+          {project.categories.length > 0 && <span>{project.categories.map((category) => translateCategoryLabel(locale, category, categoryLabels)).join(" / ")}</span>}
+        </div>}
+      </header>
+
+      {cover && <figure className={styles.cover}>
+        <button type="button" className={styles.photoButton} onClick={(event) => openViewer(0, event)}
+          aria-label={locale === "es" ? "Ampliar portada" : "Enlarge cover"}>
+          <Image src={cover.src} alt={photoAlt(cover)} width={1600} height={1000} priority sizes="(min-width: 1320px) 1192px, 100vw" className={styles.coverImage} />
+        </button>
+        {coverCaptions.length > 0 && <figcaption className={styles.caption}>{coverCaptions.map((caption) => <p key={caption}>{caption}</p>)}</figcaption>}
+      </figure>}
+
+      {(description.length > 0 || detailItems.length > 0) && <section aria-label={text(labels.about)} className={`${styles.context} ${description.length && detailItems.length ? styles.contextColumns : ""}`}>
+        {description.length > 0 && <div className={styles.description}>
+          {description.map((paragraph, index) => <RichText key={`${project.slug}-paragraph-${index}`} value={paragraphCopy(paragraph)} className={styles.paragraph} />)}
+        </div>}
+        {detailItems.length > 0 && <aside aria-label={text(labels.facts)} className={styles.facts}>
+          <dl>{detailItems.map((item, index) => <div key={`${project.slug}-detail-${index}`}>
+            <dt>{text(item.label)}</dt><dd>{item.value}</dd>
+          </div>)}</dl>
+        </aside>}
+      </section>}
+
+      {project.video && <section className={styles.section} aria-labelledby="project-video-title">
+        <div className={styles.sectionHeading}>
+          <h2 id="project-video-title">{text(labels.video)}</h2>
+          <a href={project.video.url} target="_blank" rel="noopener noreferrer" className={styles.link}>
+            {`${locale === "es" ? "Ver en" : "Watch on"} ${project.video.provider === "youtube" ? "YouTube" : "Vimeo"}`}
+          </a>
+        </div>
+        <div className={styles.video}>
+          <iframe src={project.video.embedUrl} title={text(project.video.title) || `${text(labels.video)}: ${text(project.name)}`}
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen loading="lazy" referrerPolicy="strict-origin-when-cross-origin" />
+        </div>
+      </section>}
+
+      {gallery.length > 0 && <section className={styles.section} aria-labelledby="project-gallery-title">
+        <h2 id="project-gallery-title">{text(labels.gallery)}</h2>
+        <div className={styles.gallery}>
+          {gallery.map((image, index) => <figure key={`${project.slug}-gallery-${index}`}>
+            <button type="button" className={styles.photoButton} onClick={(event) => openViewer(index + (cover ? 1 : 0), event)}
+              aria-label={`${locale === "es" ? "Ampliar fotografía" : "Enlarge photograph"} ${index + 1}`}>
+              <Image src={image.src} alt={photoAlt(image)} width={1200} height={800} loading="lazy"
+                sizes="(min-width: 1320px) 580px, (min-width: 768px) 50vw, 100vw" className={styles.galleryImage} />
+            </button>
+            {captions([image]).length > 0 && <figcaption className={styles.caption}>{captions([image]).map((caption) => <p key={caption}>{caption}</p>)}</figcaption>}
+          </figure>)}
+        </div>
+      </section>}
+
+      {entities.length > 0 && <section className={styles.section} aria-labelledby="project-collaborations-title">
+        <h2 id="project-collaborations-title">{text(labels.collaborations)}</h2>
+        <div className={styles.entities}>
+          {entities.map((entity) => <article key={entity.slug} className={styles.entity}>
+            {entity.image?.src && <div className={styles.entityLogo}><Image src={entity.image.src} alt={/[\p{L}\p{N}]/u.test(text(entity.image.alt)) ? text(entity.image.alt) : plain(entity.name)} fill sizes="112px" loading="lazy" /></div>}
+            <div className={styles.entityText}>
+              {plain(entity.name) && <h3>{plain(entity.name)}</h3>}
+              {text(entity.sector) && <p className={styles.entitySector}>{text(entity.sector)}</p>}
+              {text(entity.summary) && <p>{text(entity.summary)}</p>}
+              {entity.website && <a href={entity.website} target="_blank" rel="noopener noreferrer" className={styles.link}>{text(labels.website)}</a>}
             </div>
+          </article>)}
+        </div>
+      </section>}
 
-            <div className="space-y-5 border-t border-line pt-5">
-              <div className="flex flex-wrap items-end justify-between gap-3">
-                <h1 className="studio-display max-w-3xl text-[clamp(3.2rem,7vw,7.2rem)] leading-[0.9] tracking-[-0.05em]">
-                  {translate(locale, project.name)}
-                </h1>
-                <span className="text-xs text-muted">
-                  {formatProjectTimeline(project)}
-                </span>
-              </div>
-              <p className="max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
-                {translate(locale, project.subtitle)}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {project.categories.map((category) => (
-                  <span
-                    key={`${project.slug}-${category}`}
-                  className="border-b border-line pb-1 text-xs text-muted"
-                  >
-                    {translateCategoryLabel(locale, category, categoryLabels)}
-                  </span>
-                ))}
-              </div>
-            </div>
+      <nav className={styles.return} aria-label={locale === "es" ? "Archivo de proyectos" : "Project archive"}>
+        <Link href="/proyectos" className={styles.link}>{text(labels.backAll)}</Link>
+      </nav>
 
-            <div className="space-y-6 border-t border-line pt-6 text-sm leading-relaxed text-foreground/75 sm:text-base">
-              {project.description.map((paragraph, index) => (
-                <p key={`${project.slug}-paragraph-${index}`} className="max-w-3xl">
-                  {translate(locale, paragraph)}
-                </p>
-              ))}
-            </div>
-
-            {project.video && (
-              <div className="space-y-4 border-t border-line pt-5">
-                <div className="flex flex-wrap items-center justify-between gap-3">
-                  <h2 className="text-xs text-muted">
-                    {translate(locale, VIDEO_TITLE)}
-                  </h2>
-                  <a
-                    href={project.video.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 border-b border-line pb-1 text-xs text-muted transition hover:border-foreground hover:text-foreground"
-                  >
-                    <span>
-                      {`${translate(locale, VIDEO_LINK_PREFIX)} ${
-                        project.video.provider === "youtube" ? "YouTube" : "Vimeo"
-                      }`}
-                    </span>
-                  </a>
-                </div>
-                <div className="relative aspect-video overflow-hidden border border-line bg-surface">
-                  <iframe
-                    src={project.video.embedUrl}
-                    title={translate(locale, project.video.title)}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    className="absolute inset-0 h-full w-full"
-                  />
-                </div>
-              </div>
-            )}
-
-            <div className="space-y-5 border-t border-line pt-5">
-              <div className="flex items-center justify-between">
-                <h2 className="text-xs text-muted">
-                  {translate(locale, GALLERY_TITLE)}
-                </h2>
-                <div className="h-px flex-1 bg-foreground/10" />
-              </div>
-              <div className="columns-1 gap-4 sm:columns-2 lg:columns-3 [column-fill:_balance]">
-                {project.gallery.map((image, index) => (
-                  <button
-                    key={`${project.slug}-gallery-${index}`}
-                    type="button"
-                    onClick={() => setActiveImageIndex(index)}
-                    className="group relative mb-4 block w-full overflow-hidden border border-line bg-surface text-left transition hover:border-foreground"
-                    style={{ breakInside: "avoid" }}
-                    aria-label={`${translate(locale, image.alt)} (abrir en galería)`}
-                  >
-                    <div className="relative w-full overflow-hidden">
-                      <Image
-                        src={image.src}
-                        alt={translate(locale, image.alt)}
-                        width={1200}
-                        height={800}
-                        className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                      />
-                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/65 via-background/5 to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
-                      <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 p-3 text-xs text-background opacity-0 transition duration-300 group-hover:opacity-100">
-                        <p className="line-clamp-2 font-semibold drop-shadow">{translate(locale, image.alt)}</p>
-                        <span className="inline-flex items-center gap-1 bg-foreground px-3 py-1 text-xs text-background">
-                          {locale === "es" ? "Ver" : "View"}
-                        </span>
-                      </div>
-                    </div>
-                  </button>
-                ))}
-              </div>
-            </div>
-            </div>
-
-            <aside className="space-y-8 border border-line bg-surface p-5 lg:sticky lg:top-24 lg:self-start lg:p-6">
-              <dl className="space-y-4 text-sm text-foreground/80">
-                {detailItems.map((detail) => (
-                  <div
-                    key={`${project.slug}-${detail.label.es}`}
-                    className="grid grid-cols-[0.8fr_1.2fr] gap-4 border-t border-line py-3"
-                  >
-                    <dt className="text-xs text-muted">
-                      {translate(locale, detail.label)}
-                    </dt>
-                    <dd className="text-sm text-foreground/80">
-                      {translateLocalizedValue(locale, detail.value)}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-
-              {project.entities.length > 0 && (
-                <div className="space-y-4 border-t border-line pt-5">
-                  <div className="flex items-center justify-between">
-                    <h2 className="text-xs text-muted">
-                      {translate(locale, ENTITIES_TITLE)}
-                    </h2>
-                    <div className="h-px flex-1 bg-foreground/10" />
-                  </div>
-                  <div className="grid gap-3">
-                    {project.entities.map((entity) => (
-                      <div
-                        key={`${project.slug}-${entity.slug}`}
-                        className="flex gap-3 border-t border-line py-3"
-                      >
-                        {entity.image && (
-                          <div className="relative h-14 w-14 overflow-hidden border border-line bg-background">
-                            <Image
-                              src={entity.image.src}
-                              alt={translate(locale, entity.image.alt)}
-                              fill
-                              sizes="56px"
-                              className="object-cover"
-                            />
-                          </div>
-                        )}
-                        <div className="flex flex-1 flex-col gap-1">
-                          <p className="text-sm font-semibold text-foreground/80">{entity.name}</p>
-                          <p className="text-xs text-muted">
-                            {translate(locale, entity.sector)}
-                          </p>
-                          <p className="text-sm text-foreground/70">{translate(locale, entity.summary)}</p>
-                          {entity.website && (
-                            <a
-                              href={entity.website}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="inline-flex w-fit items-center gap-2 border-b border-line pb-1 text-xs text-muted transition hover:border-foreground hover:text-foreground"
-                            >
-                              <span>{translate(locale, ENTITY_WEBSITE)}</span>
-                            </a>
-                          )}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </aside>
+      {activePhoto && <dialog ref={dialogRef} className={styles.viewer} aria-labelledby={viewerTitleId}
+        onCancel={(event) => { event.preventDefault(); closeViewer(); }}
+        onKeyDown={(event) => {
+          if (event.key === "ArrowLeft" || event.key === "ArrowRight") { event.preventDefault(); goTo(event.key === "ArrowLeft" ? -1 : 1); }
+          if (event.key === "Tab") {
+            const controls = event.currentTarget.querySelectorAll<HTMLButtonElement>("button:not([disabled])");
+            const first = controls[0];
+            const last = controls[controls.length - 1];
+            if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+            else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+          }
+        }}>
+        <div className={styles.viewerToolbar}>
+          <div><p id={viewerTitleId}>{text(labels.gallery)}</p><p className={styles.viewerCount} role="status">{activeImageIndex! + 1} / {photos.length}</p></div>
+          <div className={styles.viewerControls}>
+            {photos.length > 1 && <><button type="button" onClick={() => goTo(-1)}>{text(labels.previous)}</button><button type="button" onClick={() => goTo(1)}>{text(labels.next)}</button></>}
+            <button ref={closeButtonRef} type="button" onClick={closeViewer}>{text(labels.close)}</button>
           </div>
         </div>
-
-      {activeImageIndex !== null && project.gallery[activeImageIndex] && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm"
-          role="dialog"
-          aria-modal="true"
-          aria-label={translate(locale, GALLERY_TITLE)}
-        >
-          <div className="relative w-full max-w-5xl space-y-4 border border-line bg-background/95 p-4 shadow-2xl">
-            <div className="flex items-center justify-between gap-3">
-              <div className="flex flex-col text-sm text-foreground/70">
-                <span className="text-xs text-muted">
-                  {translate(locale, GALLERY_TITLE)}
-                </span>
-                <span className="font-semibold text-foreground">
-                  {translate(locale, project.gallery[activeImageIndex].alt)}
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <button
-                  type="button"
-                  onClick={() => goTo(-1)}
-                  className="studio-action studio-action--secondary studio-action--small"
-                >
-                  <span>{locale === "es" ? "Anterior" : "Previous"}</span>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => goTo(1)}
-                  className="studio-action studio-action--secondary studio-action--small"
-                >
-                  <span>{locale === "es" ? "Siguiente" : "Next"}</span>
-                </button>
-                <button
-                  type="button"
-                  onClick={closeLightbox}
-                  className="studio-action studio-action--primary studio-action--small"
-                >
-                  <span>{locale === "es" ? "Cerrar" : "Close"}</span>
-                  <span aria-hidden>✕</span>
-                </button>
-              </div>
-            </div>
-
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/5">
-              <Image
-                src={project.gallery[activeImageIndex].src}
-                alt={translate(locale, project.gallery[activeImageIndex].alt)}
-                fill
-                sizes="(min-width: 1280px) 70vw, 100vw"
-                className="object-contain"
-                priority
-              />
-            </div>
-
-            {hasLocaleContent(project.gallery[activeImageIndex].footnote) && (
-              <p className="text-sm text-foreground/70">
-                {translate(locale, project.gallery[activeImageIndex].footnote!)}
-              </p>
-            )}
-          </div>
-        </div>
-      )}
+        <figure className={styles.viewerFigure}>
+          <div className={styles.viewerImage}><Image src={activePhoto.image.src} alt={photoAlt(activePhoto.image)} fill loading="eager" sizes="(min-width: 1280px) 1152px, 100vw" className={styles.viewerPhoto} /></div>
+          {activePhoto.captions.length > 0 && <figcaption className={styles.caption}>{activePhoto.captions.map((caption) => <p key={caption}>{caption}</p>)}</figcaption>}
+        </figure>
+      </dialog>}
     </article>
   );
 }

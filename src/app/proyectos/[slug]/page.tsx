@@ -4,9 +4,17 @@ import { notFound } from "next/navigation";
 import { ProjectDetail } from "@/components/projects/project-detail";
 import { PROJECT_CATEGORY_LABELS } from "@/domain/projects";
 import { getProjectBySlug } from "@/data/projects";
+import { getPlainText } from "@/components/site/rich-text";
+import { translate } from "@/lib/i18n";
 
-const DEFAULT_DESCRIPTION =
-  "MonkMonkeyKey acompaña a equipos de producto y museografía con experiencias memorables.";
+const isSocialImage = (src: string): boolean => {
+  if (src.startsWith("/") && !src.startsWith("//")) return true;
+  try {
+    return ["https:", "http:"].includes(new URL(src).protocol);
+  } catch {
+    return false;
+  }
+};
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -37,14 +45,17 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   const project = await getProjectBySlug(slug);
 
   if (!project) {
-    return {
-      title: "Proyecto no encontrado · MonkMonkeyKey",
-      description: DEFAULT_DESCRIPTION,
-    };
+    notFound();
   }
 
-  const title = `${project.name.es} · MonkMonkeyKey`;
-  const description = project.subtitle.es || DEFAULT_DESCRIPTION;
+  const name = getPlainText(translate("es", project.name));
+  const title = `${name} · MonkMonkeyKey`;
+  const description = getPlainText(translate("es", project.subtitle).replace(/<br\s*\/?>|<\/?(?:p|div)\b[^>]*>/gi, " ")).replace(/\s+/g, " ")
+    || project.description.map((paragraph) => getPlainText(translate("es", paragraph))).find(Boolean)
+    || name;
+  const cover = project.cover.src.trim();
+  const coverAlt = getPlainText(translate("es", project.cover.alt));
+  const images = cover && isSocialImage(cover) ? [{ url: cover, alt: /[\p{L}\p{N}]/u.test(coverAlt) ? coverAlt : name }] : [];
 
   return {
     title,
@@ -53,18 +64,13 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
       title,
       description,
       type: "article",
-      images: [
-        {
-          url: project.cover.src,
-          alt: project.cover.alt.es,
-        },
-      ],
+      images,
     },
     twitter: {
-      card: "summary_large_image",
+      card: images.length ? "summary_large_image" : "summary",
       title,
       description,
-      images: [project.cover.src],
+      images: images.map((image) => image.url),
     },
   };
 }
@@ -78,9 +84,5 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     notFound();
   }
 
-  return (
-    <div className="space-y-10">
-      <ProjectDetail project={project} categoryLabels={PROJECT_CATEGORY_LABELS} />
-    </div>
-  );
+  return <ProjectDetail key={project.slug} project={project} categoryLabels={PROJECT_CATEGORY_LABELS} />;
 }
