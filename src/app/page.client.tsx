@@ -2,207 +2,221 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useState } from "react";
 
 import type { Client } from "@/content/clients";
 import type { Service } from "@/content/services";
 import { useLocale } from "@/components/site/locale-context";
-import { RichText } from "@/components/site/rich-text";
-import type { LocalizedValue, Project, ProjectCategory } from "@/domain/projects";
+import { getPlainText } from "@/components/site/rich-text";
+import type { Project, ProjectCategory } from "@/domain/projects";
 import { formatProjectTimeline, translateCategoryLabel } from "@/domain/projects";
 import type { SiteContent } from "@/domain/site";
-import { translate, type Locale, type LocaleText } from "@/lib/i18n";
+import { translate, type LocaleText } from "@/lib/i18n";
+import styles from "./home.module.css";
 
 type HomePageClientProps = {
   projects: Project[];
+  heroProjects: Project[];
   clients: Client[];
   services: Service[];
   siteContent: SiteContent;
   categoryLabels: Record<ProjectCategory, LocaleText>;
 };
 
-const translateLocalizedValue = (locale: Locale, value: LocalizedValue): string =>
-  typeof value === "string" ? value : value[locale];
+// Home-only editorial copy; stored project, service and collaborator content stays intact.
+const copy = {
+  label: { es: "Estudio de producción artística", en: "Artistic production studio" },
+  title: { es: "Cada proyecto encuentra su forma.", en: "Every project finds its form." },
+  description: {
+    es: "Colaboramos con artistas e instituciones para desarrollar obras y experiencias que integran sonido, tecnología y nuevos medios.",
+    en: "We collaborate with artists and institutions to develop works and experiences that bring together sound, technology, and new media.",
+  },
+  explore: { es: "Explorar proyectos", en: "Explore projects" },
+  projects: { es: "Proyectos seleccionados", en: "Selected projects" },
+  archive: { es: "Ver todos los proyectos", en: "View all projects" },
+  practice: { es: "Nuestra práctica", en: "Our practice" },
+  practiceTitle: { es: "Distintas ideas, distintas maneras de hacer.", en: "Different ideas, different ways of making." },
+  practiceCopy: {
+    es: "Cada colaboración empieza por escuchar. Nos interesa comprender la intención de cada artista y explorar, en conjunto, las posibilidades de su proyecto.",
+    en: "Every collaboration begins with listening. We seek to understand each artist’s intention and explore the possibilities of their project together.",
+  },
+  practiceDetail: {
+    es: "Desde el sonido y las experiencias interactivas hasta la producción de obra, combinamos experimentación y trabajo técnico para acompañar las ideas hasta su materialización. Trabajamos desde la Ciudad de México, en diálogo con distintas prácticas y contextos.",
+    en: "From sound and interactive experiences to artwork production, we combine experimentation and technical work to help ideas take shape. Based in Mexico City, we work in dialogue with different practices and contexts.",
+  },
+  services: { es: "Capacidades y servicios", en: "Capabilities and services" },
+  serviceLink: { es: "Ver servicio", en: "View service" },
+  collaborations: { es: "Colaboraciones", en: "Collaborations" },
+  collaboratorsCopy: {
+    es: "Artistas, instituciones y equipos con quienes hemos compartido ideas y hecho posibles proyectos en distintos contextos.",
+    en: "Artists, institutions, and teams with whom we have shared ideas and brought projects to life across different contexts.",
+  },
+};
 
-export default function HomePageClient({
-  projects,
-  clients,
-  services,
-  siteContent,
-  categoryLabels,
-}: HomePageClientProps) {
+// English presentation of the existing service summaries, scoped to Home.
+// CMS records and destinations remain unchanged.
+const serviceEnglish: Record<string, { title: string; summary: string }> = {
+  audio: {
+    title: "Sound and technical production for concerts",
+    summary: "Audio equipment and backline rental, with technical production for experimental and electroacoustic music concerts and cultural events.",
+  },
+  "arte-nuevos-medios": {
+    title: "Art and new media production",
+    summary: "Production of artworks using digital technologies, interactive systems, and electronic devices.",
+  },
+  impresion3d: {
+    title: "3D printing",
+    summary: "Filament 3D printing for functional parts, artworks, and installations, with multicolour options and formats up to 30 × 30 × 60 cm.",
+  },
+};
+
+const homeCategoryEnglish: Record<string, string> = {
+  "audio-multicanal": "Multichannel audio",
+  "produccion-tecnica": "Technical production",
+};
+
+export default function HomePageClient({ projects, heroProjects, clients, services, categoryLabels }: HomePageClientProps) {
   const { locale } = useLocale();
-  const heroVideoUrl = siteContent.home.heroVideo?.url?.trim();
-  const heroVideoPoster = siteContent.home.heroVideo?.poster?.trim();
-  const heroVideoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    if (!heroVideoRef.current || !heroVideoUrl) {
-      return undefined;
-    }
-
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const updatePlayback = () => {
-      if (mediaQuery.matches) {
-        heroVideoRef.current?.pause();
-      } else {
-        void heroVideoRef.current?.play().catch(() => undefined);
-      }
-    };
-
-    updatePlayback();
-    mediaQuery.addEventListener("change", updatePlayback);
-
-    return () => mediaQuery.removeEventListener("change", updatePlayback);
-  }, [heroVideoUrl]);
-
+  const text = (value: LocaleText) => getPlainText(translate(locale, value));
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
+  const heroSlugs = new Set(heroProjects.map((project) => project.slug));
+  const remainingProjects = projects.filter((project) => !heroSlugs.has(project.slug));
+  // Keep the next section's existing order and design; avoid repeats where possible.
+  const selectedProjects = remainingProjects.length ? remainingProjects.slice(0, 5) : projects.slice(0, 5);
+  const timeline = (project: Project) => project.startYear && project.startYear === project.endYear
+    ? String(project.startYear)
+    : formatProjectTimeline(project);
+  const imageAlt = (alt: LocaleText, project: Project) => {
+    const description = text(alt);
+    return /[\p{L}\p{N}]/u.test(description)
+      ? description
+      : `${locale === "es" ? "Registro del proyecto" : "Project documentation"}: ${text(project.name)}`;
+  };
+  const serviceTitle = (service: Service) => locale === "en" && serviceEnglish[service.slug]
+    ? serviceEnglish[service.slug].title : text(service.title);
+  const serviceSummary = (service: Service) => locale === "en" && serviceEnglish[service.slug]
+    ? serviceEnglish[service.slug].summary
+    : text(service.summary).match(/^.*?[.!?](?:\s|$)/)?.[0]?.trim() || text(service.summary);
+  const categoryText = (category: ProjectCategory) => {
+    const label = translateCategoryLabel(locale, category, categoryLabels);
+    const key = label.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[ _]+/g, "-");
+    return locale === "en" ? homeCategoryEnglish[key] ?? label : label;
+  };
   return (
-    <div className="studio-home">
-      <section className="relative -mx-4 min-h-[32rem] overflow-hidden bg-surface sm:-mx-7 sm:aspect-video sm:min-h-0 lg:-mx-12">
-        {heroVideoUrl ? (
-          <video
-            key={heroVideoUrl}
-            ref={heroVideoRef}
-            className="absolute inset-0 h-full w-full object-cover"
-            autoPlay
-            loop
-            muted
-            playsInline
-            poster={heroVideoPoster || undefined}
-          >
-            <source src={heroVideoUrl} />
-          </video>
-        ) : (
-          <div className="hero-fallback absolute inset-0" aria-hidden />
-        )}
-
-        <div className="absolute inset-0 bg-black/45" />
-
-        <div className="absolute inset-0 z-10 flex items-center justify-center px-5 py-8 text-white sm:px-10 lg:px-14">
-          <div className="flex w-full max-w-5xl flex-col items-center gap-6 text-center sm:gap-8">
-            <RichText
-              as="h1"
-              value={siteContent.home.heroHeadline}
-              className="hero-headline hero-title text-[clamp(1.05rem,2vw,1.85rem)] font-medium leading-[1.3] tracking-[-0.02em] text-white drop-shadow-[0_2px_16px_rgba(0,0,0,0.5)]"
-            />
-
-            <div className="flex w-full flex-col justify-center gap-2 text-xs sm:w-auto sm:flex-row">
-              <Link href="/contacto" className="studio-action studio-action--primary studio-action--on-media">
-                <RichText as="span" value={siteContent.home.heroPrimaryCta} />
-                <span aria-hidden>↗</span>
-              </Link>
-              <Link href="/proyectos" className="studio-action studio-action--secondary studio-action--on-media">
-                {translate(locale, siteContent.home.heroSecondaryCta)}
-                <span aria-hidden>↗</span>
-              </Link>
-            </div>
+    <div className={styles.home}>
+      <section className={styles.hero} aria-labelledby="home-title">
+        <div className={styles.heroIntro}>
+          <div>
+            <p className={styles.kicker}>{text(copy.label)}</p>
+            <h1 id="home-title">{text(copy.title)}</h1>
+          </div>
+          <div className={styles.heroDescription}>
+            <p>{text(copy.description)}</p>
+            <Link href="/proyectos" className={styles.link}>{text(copy.archive)}</Link>
           </div>
         </div>
+        {heroProjects.length ? (
+          <div className={styles.heroProjects}>
+            {heroProjects.map((project, index) => (
+              <article key={project.slug} className={`${styles.heroProject} ${index === 0 ? styles.heroLead : ""}`}>
+                <div className={styles.heroMedia}>
+                  {activeVideo === project.slug && project.video ? (
+                    <iframe
+                      src={project.video.embedUrl}
+                      title={text(project.video.title) || text(project.name)}
+                      allow="fullscreen; picture-in-picture"
+                      allowFullScreen
+                      referrerPolicy="strict-origin-when-cross-origin"
+                    />
+                  ) : (
+                    <Link href={`/proyectos/${project.slug}`} aria-label={text(project.name)}>
+                      <Image
+                        src={project.cover.src}
+                        alt={imageAlt(project.cover.alt, project)}
+                        fill
+                        priority={index === 0}
+                        sizes={index === 0 ? "(min-width: 1320px) 784px, (min-width: 768px) 64vw, 100vw" : "(min-width: 1320px) 384px, (min-width: 768px) 32vw, 100vw"}
+                      />
+                    </Link>
+                  )}
+                </div>
+                <div className={styles.heroCaption}>
+                  <h2><Link href={`/proyectos/${project.slug}`}>{text(project.name)}</Link></h2>
+                  <span>{timeline(project)}</span>
+                  {project.video ? (
+                    <button
+                      type="button"
+                      className={styles.heroVideoButton}
+                      aria-expanded={activeVideo === project.slug}
+                      aria-label={`${locale === "es" ? "Video de" : "Video for"} ${text(project.name)}`}
+                      onClick={() => setActiveVideo(activeVideo === project.slug ? null : project.slug)}
+                    >
+                      {activeVideo === project.slug
+                        ? locale === "es" ? "Cerrar video" : "Close video"
+                        : locale === "es" ? "Ver video" : "Watch video"}
+                    </button>
+                  ) : null}
+                </div>
+              </article>
+            ))}
+          </div>
+        ) : null}
       </section>
 
-      <section className="py-24 sm:py-32 lg:py-40">
-        <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
-          <div className="lg:col-span-9">
-            <RichText
-              as="h2"
-              value={siteContent.home.servicesTitle}
-              className="max-w-5xl text-[clamp(2.8rem,6vw,6.5rem)] font-medium leading-[0.92] tracking-[-0.055em]"
-            />
-
-            <div className="mt-16 border-t border-line lg:mt-24">
-              {services.map((service) => (
-                <article key={service.slug} className="service-row group grid gap-5 border-b border-line py-8 sm:grid-cols-[minmax(13rem,0.8fr)_minmax(16rem,1.2fr)_auto] sm:items-start sm:py-10">
-                  <h3 className="text-2xl font-medium leading-tight tracking-[-0.035em] sm:text-3xl">
-                    <RichText as="span" value={service.title} />
-                  </h3>
-                  <div>
-                    <RichText as="p" value={service.summary} className="max-w-xl text-sm leading-relaxed text-muted sm:text-base" />
-                    <p className="mt-5 max-w-xl text-xs leading-relaxed text-foreground/50">
-                      {service.outcomes.slice(0, 2).map((outcome) => translate(locale, outcome)).join(" · ")}
-                    </p>
-                  </div>
-                  <Link href={`/servicios#${service.slug}`} className="studio-action-icon" aria-label={translate(locale, siteContent.home.servicesCardCta)}>
-                    ↗
-                  </Link>
-                </article>
-              ))}
-            </div>
-          </div>
+      <section className={styles.section} aria-labelledby="selected-projects">
+        <div className={styles.sectionHeading}>
+          <h2 id="selected-projects">{text(copy.projects)}</h2>
+          <Link href="/proyectos" className={styles.link}>{text(copy.archive)}</Link>
         </div>
-      </section>
-
-      <section className="border-t border-line py-24 sm:py-32 lg:py-40">
-        <div className="mb-14 grid gap-8 lg:grid-cols-12 lg:gap-8">
-          <div className="flex items-end justify-between gap-8 lg:col-span-9">
-            <RichText
-              as="h2"
-              value={siteContent.home.projectsTitle}
-              className="text-[clamp(2.8rem,6vw,6.5rem)] font-medium leading-[0.92] tracking-[-0.055em]"
-            />
-            <Link href="/proyectos" className="studio-text-link hidden text-xs sm:inline-flex">
-              {translate(locale, siteContent.home.projectsCta)} <span aria-hidden>↗</span>
-            </Link>
-          </div>
-        </div>
-
-        <div className="grid gap-x-6 gap-y-20 lg:grid-cols-12 lg:gap-y-28">
-          {projects.slice(0, 3).map((project, index) => (
-            <Link
-              key={project.slug}
-              href={`/proyectos/${project.slug}`}
-              className={`project-card group block ${index === 0 ? "lg:col-span-8" : index === 1 ? "lg:col-span-5 lg:col-start-8 lg:mt-28" : "lg:col-span-6 lg:col-start-2"}`}
-            >
-              <div className="relative aspect-[16/10] overflow-hidden bg-surface">
-                <Image
-                  src={project.cover.src}
-                  alt={translate(locale, project.cover.alt)}
-                  fill
-                  sizes={index === 0 ? "(min-width: 1024px) 66vw, 100vw" : "(min-width: 1024px) 50vw, 100vw"}
-                  className="object-cover saturate-[0.8] transition duration-700 group-hover:scale-[1.025] group-hover:saturate-100"
-                />
-                <div className="absolute inset-0 bg-black/0 transition group-hover:bg-black/10" />
-                <span className="absolute bottom-4 right-4 flex size-11 translate-y-2 items-center justify-center border border-signal bg-signal text-sm text-black opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">↗</span>
+        <div className={styles.projects}>
+          {selectedProjects.map((project, index) => (
+            <Link key={project.slug} href={`/proyectos/${project.slug}`} className={`${styles.project} ${index === 0 ? styles.featured : ""}`}>
+              <div className={styles.projectImage}>
+                <Image src={project.cover.src} alt={imageAlt(project.cover.alt, project)} fill sizes={index === 0 ? "(min-width: 1320px) 784px, (min-width: 1024px) 64vw, (min-width: 768px) 50vw, 100vw" : "(min-width: 1320px) 376px, (min-width: 1024px) 32vw, (min-width: 768px) 50vw, 100vw"} />
               </div>
-              <div className="grid gap-4 border-t border-line pt-4 sm:grid-cols-[1fr_auto]">
-                <div>
-                  <h3 className="text-2xl font-medium tracking-[-0.04em] transition-colors group-hover:text-signal sm:text-3xl">
-                    {translate(locale, project.name)}
-                  </h3>
-                  <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted">{translate(locale, project.subtitle)}</p>
-                </div>
-                <div className="space-y-1 font-mono text-[9px] uppercase tracking-[0.08em] text-muted sm:text-right">
-                  <p>{formatProjectTimeline(project)}</p>
-                  <p>{translateLocalizedValue(locale, project.location)}</p>
-                  <p>{project.categories.map((category) => translateCategoryLabel(locale, category, categoryLabels)).join(" / ")}</p>
-                </div>
+              <h3>{text(project.name)}</h3>
+              <div className={styles.projectMeta}>
+                <span>{timeline(project)}</span>
+                <span>{project.categories.map(categoryText).join(" / ")}</span>
               </div>
             </Link>
           ))}
         </div>
       </section>
 
-      <section className="border-t border-line py-24 sm:py-32 lg:py-36">
-        <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
-          <div className="lg:col-span-4">
-            <p className="max-w-sm text-2xl font-medium leading-tight tracking-[-0.035em]">
-              {locale === "es" ? "Colaboraciones construidas desde la confianza y el trabajo en equipo." : "Collaborations built through trust and teamwork."}
-            </p>
-          </div>
-          <div className="grid border-l border-t border-line sm:grid-cols-2 lg:col-span-8 lg:grid-cols-3">
-            {clients.map((client) => (
-              <article key={client.slug} className="client-cell group flex min-h-44 flex-col justify-between border-b border-r border-line p-5 transition-colors hover:bg-surface">
-                {client.image ? (
-                  <div className="relative h-10 w-24 opacity-55 grayscale transition group-hover:opacity-100 group-hover:grayscale-0">
-                    <Image src={client.image.src} alt={translate(locale, client.image.alt)} fill sizes="96px" className="object-contain object-left" />
-                  </div>
-                ) : <span />}
-                <div>
-                  <p className="text-sm font-medium">{client.name}</p>
-                  <p className="mt-1 text-xs text-muted">{translate(locale, client.sector)}</p>
-                </div>
-              </article>
-            ))}
-          </div>
+      <section className={`${styles.section} ${styles.practice}`} aria-labelledby="practice-title">
+        <div>
+          <p className={styles.kicker}>{text(copy.practice)}</p>
+          <h2 id="practice-title">{text(copy.practiceTitle)}</h2>
+        </div>
+        <div className={styles.practiceCopy}>
+          <p>{text(copy.practiceCopy)}</p>
+          <p>{text(copy.practiceDetail)}</p>
+        </div>
+      </section>
+
+      <section className={styles.section} aria-labelledby="capabilities-title">
+        <div className={styles.sectionHeading}><h2 id="capabilities-title">{text(copy.services)}</h2></div>
+        {services.map((service) => (
+          <article key={service.slug} className={styles.service}>
+            <h3>{serviceTitle(service)}</h3>
+            <p>{serviceSummary(service)}</p>
+            <Link href={`/servicios#${service.slug}`} className={styles.link} aria-label={`${text(copy.serviceLink)}: ${serviceTitle(service)}`}>{text(copy.serviceLink)}</Link>
+          </article>
+        ))}
+      </section>
+
+      <section className={styles.section} aria-labelledby="collaborations-title">
+        <h2 id="collaborations-title">{text(copy.collaborations)}</h2>
+        <p className={styles.collaborationIntro}>{text(copy.collaboratorsCopy)}</p>
+        <div className={styles.clients}>
+          {clients.map((client) => (
+            <article key={client.slug} className={styles.client}>
+              {client.image ? <div className={styles.clientLogo}><Image src={client.image.src} alt={text(client.image.alt)} fill sizes="144px" /></div> : null}
+              <h3>{client.website ? <a href={client.website} target="_blank" rel="noreferrer">{client.name}</a> : client.name}</h3>
+              <p>{locale === "en" && text(client.sector).toLowerCase() === "ensamble" ? "Ensemble" : text(client.sector)}</p>
+            </article>
+          ))}
         </div>
       </section>
     </div>

@@ -7,6 +7,7 @@
     "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
+    "test:home": "node --test tests/home-settings.test.mjs",
     "mongo:smoke": "node scripts/mongodb-smoke-test.mjs"
   },
   "dependencies": {

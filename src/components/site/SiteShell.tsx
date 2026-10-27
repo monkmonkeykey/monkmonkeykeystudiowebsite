@@ -21,7 +21,10 @@ export function SiteShell({ children, siteContent }: SiteShellProps) {
 
   return (
     <LocaleProvider value={{ locale, setLocale }}>
-      <div className="flex min-h-screen flex-col bg-background text-foreground">
+      <div
+        className="flex min-h-screen flex-col bg-background text-foreground"
+        data-theme={isAdminRoute ? "dark" : undefined}
+      >
         {isAdminRoute ? (
           <main className="flex-1">
             <div className="mx-auto w-full max-w-6xl px-6 py-12 sm:py-16">{children}</div>

@@ -8,6 +8,8 @@ import type { Service } from "@/content/services";
 import type { LocalizedValue, Project, ProjectCategory } from "@/domain/projects";
 import { PROJECT_CATEGORY_LABELS, translateCategoryLabel } from "@/domain/projects";
 import type { SiteContent } from "@/domain/site";
+import type { HomeSettings } from "@/domain/home";
+import HomeSettingsManager from "@/components/admin/HomeSettingsManager";
 
 import type { LocaleText } from "@/lib/i18n";
 import { extractApiErrorMessage } from "@/lib/admin-api";
@@ -22,6 +24,7 @@ type AdminDashboardProps = {
   clients: Client[];
   projects: Project[];
   siteContent: SiteContent;
+  homeSettings: HomeSettings;
   databaseReady: boolean;
   cloudinaryReady: boolean;
 };
@@ -3773,6 +3776,7 @@ const AdminDashboard = ({
   clients,
   projects,
   siteContent,
+  homeSettings,
   databaseReady,
   cloudinaryReady,
 }: AdminDashboardProps) => {
@@ -3800,6 +3804,9 @@ const AdminDashboard = ({
       />
 
       <nav className="flex flex-wrap gap-3 rounded-3xl border border-foreground/10 bg-background/60 p-4">
+        <a href="#configuracion-inicio" className="rounded-full border border-foreground/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-foreground/70 transition hover:border-foreground/30 hover:text-foreground">
+          Configuración del inicio
+        </a>
         <a
           href="#contenido-sitio"
           className="rounded-full border border-foreground/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-foreground/70 transition hover:border-foreground/30 hover:text-foreground"
@@ -3819,6 +3826,10 @@ const AdminDashboard = ({
           Proyectos
         </a>
       </nav>
+
+      <section id="configuracion-inicio">
+        <HomeSettingsManager projects={projects} settings={homeSettings} databaseReady={databaseReady} />
+      </section>
 
       <section id="contenido-sitio">
         <SiteContentManager

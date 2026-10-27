@@ -1,0 +1,128 @@
+{
+  "home": {
+    "status": 200,
+    "projects": [
+      "/proyectos/otro_dia_otro_dolar",
+      "/proyectos/luminico_urtext_2025"
+    ],
+    "links": [
+      {
+        "href": "/proyectos/otro_dia_otro_dolar",
+        "status": 200
+      },
+      {
+        "href": "/proyectos/luminico_urtext_2025",
+        "status": 200
+      }
+    ]
+  },
+  "admin": {
+    "initial": [
+      "Otro día, otro dólarCambiar selección ▾",
+      "Lumínico / Ónix | Festival Urtext 2025Cambiar selección ▾"
+    ],
+    "swapped": [
+      "Otro día, otro dólarCambiar selección ▾",
+      "1er Festival Internacional LEAMCambiar selección ▾"
+    ],
+    "saveRequests": [
+      {
+        "featuredProjectSlugs": [
+          "otro_dia_otro_dolar",
+          "leam2025"
+        ]
+      }
+    ],
+    "mockedSave": true,
+    "errorMessage": "No se pudo guardar la configuración del inicio. Intenta de nuevo.",
+    "reloaded": [
+      "Otro día, otro dólarCambiar selección ▾",
+      "Lumínico / Ónix | Festival Urtext 2025Cambiar selección ▾"
+    ]
+  },
+  "unauthorized": 401,
+  "rejected": [
+    {
+      "featuredProjectSlugs": [
+        "otro_dia_otro_dolar",
+        "otro_dia_otro_dolar"
+      ],
+      "status": 400
+    },
+    {
+      "featuredProjectSlugs": [
+        "missing-entry",
+        "luminico_urtext_2025"
+      ],
+      "status": 400
+    },
+    {
+      "featuredProjectSlugs": [
+        "test_uno",
+        "luminico_urtext_2025"
+      ],
+      "status": 400
+    }
+  ],
+  "responsive": [
+    {
+      "width": 375,
+      "overflow": false,
+      "cards": [
+        {
+          "x": 24,
+          "width": 327
+        },
+        {
+          "x": 24,
+          "width": 327
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "cards": [
+        {
+          "x": 48,
+          "width": 432
+        },
+        {
+          "x": 504,
+          "width": 216
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "overflow": false,
+      "cards": [
+        {
+          "x": 124,
+          "width": 778.65625
+        },
+        {
+          "x": 926.65625,
+          "width": 389.34375
+        }
+      ]
+    },
+    {
+      "admin": {
+        "width": 375,
+        "sectionWidth": 327,
+        "overflow": false
+      }
+    },
+    {
+      "admin": {
+        "width": 1440,
+        "sectionWidth": 1104,
+        "overflow": false
+      }
+    }
+  ],
+  "archiveUnchanged": true,
+  "errors": [],
+  "productionWrites": false
+}

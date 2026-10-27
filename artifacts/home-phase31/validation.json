@@ -1,0 +1,512 @@
+{
+  "rows": [
+    {
+      "width": 375,
+      "height": 812,
+      "title": "Cada proyecto encuentra su forma.",
+      "overflow": false,
+      "heroBottom": 1220.28125,
+      "cardRects": [
+        {
+          "x": 24,
+          "y": 377.15625,
+          "width": 327,
+          "height": 254.375,
+          "bottom": 631.53125
+        },
+        {
+          "x": 24,
+          "y": 655.53125,
+          "width": 327,
+          "height": 254.375,
+          "bottom": 909.90625
+        },
+        {
+          "x": 24,
+          "y": 933.90625,
+          "width": 327,
+          "height": 254.375,
+          "bottom": 1188.28125
+        }
+      ],
+      "cards": [
+        {
+          "href": "/proyectos/1er_coloquio_inmersividad",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766541921%2Fprojects%2F1er_coloquio_inmersividad%2Fcover%2Fuxzvhatb4b8rkncy9xc9.jpg&w=3840&q=75",
+          "alt": "Registro del proyecto: 1er Coloquio Internacional Espacio Inmersividad"
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766205110%2Fprojects%2Fleam2025%2Fcover%2Fqqk9iubestqt1dxedhsl.jpg&w=3840&q=75",
+          "alt": "Concierto Multicanal"
+        },
+        {
+          "href": "/proyectos/2do_coloquio_inmersividad",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766543300%2Fprojects%2F2do_coloquio_inmersividad%2Fcover%2Fwtnlyzxrodimlfyort8f.jpg&w=3840&q=75",
+          "alt": "Registro del proyecto: 2do Coloquio Internacional Espacio Inmersividad"
+        }
+      ],
+      "repeated": [],
+      "iframesBeforePlay": 0
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "title": "Cada proyecto encuentra su forma.",
+      "overflow": false,
+      "heroBottom": 646.75,
+      "cardRects": [
+        {
+          "x": 48,
+          "y": 318.75,
+          "width": 432,
+          "height": 296,
+          "bottom": 614.75
+        },
+        {
+          "x": 504,
+          "y": 318.75,
+          "width": 216,
+          "height": 140,
+          "bottom": 458.75
+        },
+        {
+          "x": 504,
+          "y": 474.75,
+          "width": 216,
+          "height": 140,
+          "bottom": 614.75
+        }
+      ],
+      "cards": [
+        {
+          "href": "/proyectos/1er_coloquio_inmersividad",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766541921%2Fprojects%2F1er_coloquio_inmersividad%2Fcover%2Fuxzvhatb4b8rkncy9xc9.jpg&w=3840&q=75",
+          "alt": "Registro del proyecto: 1er Coloquio Internacional Espacio Inmersividad"
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766205110%2Fprojects%2Fleam2025%2Fcover%2Fqqk9iubestqt1dxedhsl.jpg&w=3840&q=75",
+          "alt": "Concierto Multicanal"
+        },
+        {
+          "href": "/proyectos/2do_coloquio_inmersividad",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766543300%2Fprojects%2F2do_coloquio_inmersividad%2Fcover%2Fwtnlyzxrodimlfyort8f.jpg&w=3840&q=75",
+          "alt": "Registro del proyecto: 2do Coloquio Internacional Espacio Inmersividad"
+        }
+      ],
+      "repeated": [],
+      "iframesBeforePlay": 0
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "title": "Cada proyecto encuentra su forma.",
+      "overflow": false,
+      "heroBottom": 692.1875,
+      "cardRects": [
+        {
+          "x": 64,
+          "y": 302,
+          "width": 581.328125,
+          "height": 358.1875,
+          "bottom": 660.1875
+        },
+        {
+          "x": 669.328125,
+          "y": 302,
+          "width": 290.65625,
+          "height": 171.09375,
+          "bottom": 473.09375
+        },
+        {
+          "x": 669.328125,
+          "y": 489.09375,
+          "width": 290.65625,
+          "height": 171.09375,
+          "bottom": 660.1875
+        }
+      ],
+      "cards": [
+        {
+          "href": "/proyectos/1er_coloquio_inmersividad",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766541921%2Fprojects%2F1er_coloquio_inmersividad%2Fcover%2Fuxzvhatb4b8rkncy9xc9.jpg&w=3840&q=75",
+          "alt": "Registro del proyecto: 1er Coloquio Internacional Espacio Inmersividad"
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766205110%2Fprojects%2Fleam2025%2Fcover%2Fqqk9iubestqt1dxedhsl.jpg&w=3840&q=75",
+          "alt": "Concierto Multicanal"
+        },
+        {
+          "href": "/proyectos/2do_coloquio_inmersividad",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766543300%2Fprojects%2F2do_coloquio_inmersividad%2Fcover%2Fwtnlyzxrodimlfyort8f.jpg&w=3840&q=75",
+          "alt": "Registro del proyecto: 2do Coloquio Internacional Espacio Inmersividad"
+        }
+      ],
+      "repeated": [],
+      "iframesBeforePlay": 0
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "title": "Cada proyecto encuentra su forma.",
+      "overflow": false,
+      "heroBottom": 761.96875,
+      "cardRects": [
+        {
+          "x": 87,
+          "y": 289.53125,
+          "width": 778.65625,
+          "height": 440.4375,
+          "bottom": 729.96875
+        },
+        {
+          "x": 889.65625,
+          "y": 289.53125,
+          "width": 389.34375,
+          "height": 212.21875,
+          "bottom": 501.75
+        },
+        {
+          "x": 889.65625,
+          "y": 517.75,
+          "width": 389.34375,
+          "height": 212.21875,
+          "bottom": 729.96875
+        }
+      ],
+      "cards": [
+        {
+          "href": "/proyectos/1er_coloquio_inmersividad",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766541921%2Fprojects%2F1er_coloquio_inmersividad%2Fcover%2Fuxzvhatb4b8rkncy9xc9.jpg&w=3840&q=75",
+          "alt": "Registro del proyecto: 1er Coloquio Internacional Espacio Inmersividad"
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766205110%2Fprojects%2Fleam2025%2Fcover%2Fqqk9iubestqt1dxedhsl.jpg&w=3840&q=75",
+          "alt": "Concierto Multicanal"
+        },
+        {
+          "href": "/proyectos/2do_coloquio_inmersividad",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766543300%2Fprojects%2F2do_coloquio_inmersividad%2Fcover%2Fwtnlyzxrodimlfyort8f.jpg&w=3840&q=75",
+          "alt": "Registro del proyecto: 2do Coloquio Internacional Espacio Inmersividad"
+        }
+      ],
+      "repeated": [],
+      "iframesBeforePlay": 0
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "title": "Cada proyecto encuentra su forma.",
+      "overflow": false,
+      "heroBottom": 767.9375,
+      "cardRects": [
+        {
+          "x": 124,
+          "y": 295.5,
+          "width": 778.65625,
+          "height": 440.4375,
+          "bottom": 735.9375
+        },
+        {
+          "x": 926.65625,
+          "y": 295.5,
+          "width": 389.34375,
+          "height": 212.21875,
+          "bottom": 507.71875
+        },
+        {
+          "x": 926.65625,
+          "y": 523.71875,
+          "width": 389.34375,
+          "height": 212.21875,
+          "bottom": 735.9375
+        }
+      ],
+      "cards": [
+        {
+          "href": "/proyectos/1er_coloquio_inmersividad",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766541921%2Fprojects%2F1er_coloquio_inmersividad%2Fcover%2Fuxzvhatb4b8rkncy9xc9.jpg&w=3840&q=75",
+          "alt": "Registro del proyecto: 1er Coloquio Internacional Espacio Inmersividad"
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766205110%2Fprojects%2Fleam2025%2Fcover%2Fqqk9iubestqt1dxedhsl.jpg&w=3840&q=75",
+          "alt": "Concierto Multicanal"
+        },
+        {
+          "href": "/proyectos/2do_coloquio_inmersividad",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766543300%2Fprojects%2F2do_coloquio_inmersividad%2Fcover%2Fwtnlyzxrodimlfyort8f.jpg&w=3840&q=75",
+          "alt": "Registro del proyecto: 2do Coloquio Internacional Espacio Inmersividad"
+        }
+      ],
+      "repeated": [],
+      "iframesBeforePlay": 0
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "title": "Every project finds its form.",
+      "overflow": false,
+      "heroBottom": 1220.28125,
+      "cardRects": [
+        {
+          "x": 24,
+          "y": 377.15625,
+          "width": 327,
+          "height": 254.375,
+          "bottom": 631.53125
+        },
+        {
+          "x": 24,
+          "y": 655.53125,
+          "width": 327,
+          "height": 254.375,
+          "bottom": 909.90625
+        },
+        {
+          "x": 24,
+          "y": 933.90625,
+          "width": 327,
+          "height": 254.375,
+          "bottom": 1188.28125
+        }
+      ],
+      "cards": [
+        {
+          "href": "/proyectos/1er_coloquio_inmersividad",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766541921%2Fprojects%2F1er_coloquio_inmersividad%2Fcover%2Fuxzvhatb4b8rkncy9xc9.jpg&w=3840&q=75",
+          "alt": "Project documentation: 1er Coloquio Internacional Espacio Inmersividad"
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766205110%2Fprojects%2Fleam2025%2Fcover%2Fqqk9iubestqt1dxedhsl.jpg&w=3840&q=75",
+          "alt": "Concierto Multicanal"
+        },
+        {
+          "href": "/proyectos/2do_coloquio_inmersividad",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766543300%2Fprojects%2F2do_coloquio_inmersividad%2Fcover%2Fwtnlyzxrodimlfyort8f.jpg&w=3840&q=75",
+          "alt": "Project documentation: 2do Coloquio Internacional Espacio Inmersividad"
+        }
+      ],
+      "repeated": [],
+      "iframesBeforePlay": 0
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "title": "Every project finds its form.",
+      "overflow": false,
+      "heroBottom": 646.75,
+      "cardRects": [
+        {
+          "x": 48,
+          "y": 318.75,
+          "width": 432,
+          "height": 296,
+          "bottom": 614.75
+        },
+        {
+          "x": 504,
+          "y": 318.75,
+          "width": 216,
+          "height": 140,
+          "bottom": 458.75
+        },
+        {
+          "x": 504,
+          "y": 474.75,
+          "width": 216,
+          "height": 140,
+          "bottom": 614.75
+        }
+      ],
+      "cards": [
+        {
+          "href": "/proyectos/1er_coloquio_inmersividad",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766541921%2Fprojects%2F1er_coloquio_inmersividad%2Fcover%2Fuxzvhatb4b8rkncy9xc9.jpg&w=3840&q=75",
+          "alt": "Project documentation: 1er Coloquio Internacional Espacio Inmersividad"
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766205110%2Fprojects%2Fleam2025%2Fcover%2Fqqk9iubestqt1dxedhsl.jpg&w=3840&q=75",
+          "alt": "Concierto Multicanal"
+        },
+        {
+          "href": "/proyectos/2do_coloquio_inmersividad",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766543300%2Fprojects%2F2do_coloquio_inmersividad%2Fcover%2Fwtnlyzxrodimlfyort8f.jpg&w=3840&q=75",
+          "alt": "Project documentation: 2do Coloquio Internacional Espacio Inmersividad"
+        }
+      ],
+      "repeated": [],
+      "iframesBeforePlay": 0
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "title": "Every project finds its form.",
+      "overflow": false,
+      "heroBottom": 692.1875,
+      "cardRects": [
+        {
+          "x": 64,
+          "y": 302,
+          "width": 581.328125,
+          "height": 358.1875,
+          "bottom": 660.1875
+        },
+        {
+          "x": 669.328125,
+          "y": 302,
+          "width": 290.65625,
+          "height": 171.09375,
+          "bottom": 473.09375
+        },
+        {
+          "x": 669.328125,
+          "y": 489.09375,
+          "width": 290.65625,
+          "height": 171.09375,
+          "bottom": 660.1875
+        }
+      ],
+      "cards": [
+        {
+          "href": "/proyectos/1er_coloquio_inmersividad",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766541921%2Fprojects%2F1er_coloquio_inmersividad%2Fcover%2Fuxzvhatb4b8rkncy9xc9.jpg&w=3840&q=75",
+          "alt": "Project documentation: 1er Coloquio Internacional Espacio Inmersividad"
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766205110%2Fprojects%2Fleam2025%2Fcover%2Fqqk9iubestqt1dxedhsl.jpg&w=3840&q=75",
+          "alt": "Concierto Multicanal"
+        },
+        {
+          "href": "/proyectos/2do_coloquio_inmersividad",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766543300%2Fprojects%2F2do_coloquio_inmersividad%2Fcover%2Fwtnlyzxrodimlfyort8f.jpg&w=3840&q=75",
+          "alt": "Project documentation: 2do Coloquio Internacional Espacio Inmersividad"
+        }
+      ],
+      "repeated": [],
+      "iframesBeforePlay": 0
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "title": "Every project finds its form.",
+      "overflow": false,
+      "heroBottom": 749.6875,
+      "cardRects": [
+        {
+          "x": 87,
+          "y": 277.25,
+          "width": 778.65625,
+          "height": 440.4375,
+          "bottom": 717.6875
+        },
+        {
+          "x": 889.65625,
+          "y": 277.25,
+          "width": 389.34375,
+          "height": 212.21875,
+          "bottom": 489.46875
+        },
+        {
+          "x": 889.65625,
+          "y": 505.46875,
+          "width": 389.34375,
+          "height": 212.21875,
+          "bottom": 717.6875
+        }
+      ],
+      "cards": [
+        {
+          "href": "/proyectos/1er_coloquio_inmersividad",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766541921%2Fprojects%2F1er_coloquio_inmersividad%2Fcover%2Fuxzvhatb4b8rkncy9xc9.jpg&w=3840&q=75",
+          "alt": "Project documentation: 1er Coloquio Internacional Espacio Inmersividad"
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766205110%2Fprojects%2Fleam2025%2Fcover%2Fqqk9iubestqt1dxedhsl.jpg&w=3840&q=75",
+          "alt": "Concierto Multicanal"
+        },
+        {
+          "href": "/proyectos/2do_coloquio_inmersividad",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766543300%2Fprojects%2F2do_coloquio_inmersividad%2Fcover%2Fwtnlyzxrodimlfyort8f.jpg&w=3840&q=75",
+          "alt": "Project documentation: 2do Coloquio Internacional Espacio Inmersividad"
+        }
+      ],
+      "repeated": [],
+      "iframesBeforePlay": 0
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "title": "Every project finds its form.",
+      "overflow": false,
+      "heroBottom": 749.6875,
+      "cardRects": [
+        {
+          "x": 124,
+          "y": 277.25,
+          "width": 778.65625,
+          "height": 440.4375,
+          "bottom": 717.6875
+        },
+        {
+          "x": 926.65625,
+          "y": 277.25,
+          "width": 389.34375,
+          "height": 212.21875,
+          "bottom": 489.46875
+        },
+        {
+          "x": 926.65625,
+          "y": 505.46875,
+          "width": 389.34375,
+          "height": 212.21875,
+          "bottom": 717.6875
+        }
+      ],
+      "cards": [
+        {
+          "href": "/proyectos/1er_coloquio_inmersividad",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766541921%2Fprojects%2F1er_coloquio_inmersividad%2Fcover%2Fuxzvhatb4b8rkncy9xc9.jpg&w=3840&q=75",
+          "alt": "Project documentation: 1er Coloquio Internacional Espacio Inmersividad"
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766205110%2Fprojects%2Fleam2025%2Fcover%2Fqqk9iubestqt1dxedhsl.jpg&w=3840&q=75",
+          "alt": "Concierto Multicanal"
+        },
+        {
+          "href": "/proyectos/2do_coloquio_inmersividad",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766543300%2Fprojects%2F2do_coloquio_inmersividad%2Fcover%2Fwtnlyzxrodimlfyort8f.jpg&w=3840&q=75",
+          "alt": "Project documentation: 2do Coloquio Internacional Espacio Inmersividad"
+        }
+      ],
+      "repeated": [],
+      "iframesBeforePlay": 0
+    }
+  ],
+  "video": {
+    "available": 0
+  },
+  "linkResults": [
+    {
+      "href": "/proyectos/1er_coloquio_inmersividad",
+      "status": 200
+    },
+    {
+      "href": "/proyectos/leam2025",
+      "status": 200
+    },
+    {
+      "href": "/proyectos/2do_coloquio_inmersividad",
+      "status": 200
+    }
+  ],
+  "errors": []
+}

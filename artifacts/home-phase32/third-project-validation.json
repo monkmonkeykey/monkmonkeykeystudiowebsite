@@ -1,0 +1,35 @@
+{
+  "thirdOptional": true,
+  "addRemove": true,
+  "reordering": true,
+  "mockedSave": true,
+  "requests": [
+    {
+      "featuredProjectSlugs": [
+        "leam2025",
+        "otro_dia_otro_dolar",
+        "luminico_urtext_2025"
+      ]
+    },
+    {
+      "featuredProjectSlugs": [
+        "leam2025",
+        "otro_dia_otro_dolar",
+        null
+      ]
+    }
+  ],
+  "duplicateStatus": 400,
+  "responsive": [
+    {
+      "width": 375,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "overflow": false
+    }
+  ],
+  "errors": [],
+  "productionWrites": false
+}

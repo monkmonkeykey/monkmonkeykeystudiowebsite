@@ -1,18 +1,56 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0c0c0b;
-  --foreground: #f1eee8;
-  --surface: #151514;
-  --surface-raised: #1d1d1b;
-  --muted: #aaa69e;
-  --line: #393936;
-  --signal: #e76550;
-  --signal-soft: #ffab9b;
-  --ink: #080808;
+  --mmk-bg-primary: #101410;
+  --mmk-bg-secondary: #1b211b;
+  --mmk-green-forest: #234d37;
+  --mmk-green-medium: #77ac85;
+  --mmk-green-soft: #adc5ab;
+  --mmk-text-primary: #edefe8;
+  --mmk-text-secondary: #adc5ab;
+  --mmk-border: #3b5745;
+  --mmk-link: #77ac85;
+  --mmk-link-hover: #adc5ab;
+  --mmk-bg-light: #f5f6f1;
+  --mmk-surface-light: #EBEEE8;
+  --mmk-text-on-light: #101410;
+  --mmk-text-muted-light: #536058;
+  --mmk-green-on-light: #234d37;
+  --mmk-green-olive-dark: #526a55;
+  --mmk-border-light: #d1d8ce;
+  --mmk-wordmark-light: #edefe8;
+  --mmk-wordmark-dark: #101410;
+  --mmk-wordmark-light-monk: #101410;
+  --mmk-wordmark-light-monkey: #0f7a4b;
+  --mmk-wordmark-light-key: #6f7f2e;
+  --background: var(--mmk-bg-light);
+  --foreground: var(--mmk-text-on-light);
+  --surface: var(--mmk-surface-light);
+  --surface-raised: #e1e6df;
+  --muted: var(--mmk-text-muted-light);
+  --line: var(--mmk-border-light);
+  --signal: var(--mmk-green-on-light);
+  --signal-soft: var(--mmk-green-olive-dark);
+  --ink: var(--mmk-bg-light);
+  --grid-line: rgb(16 20 16 / 0.045);
+  --hover-surface: rgb(16 20 16 / 0.035);
   --font-studio-sans: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-studio-display: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-studio-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+[data-theme="dark"] {
+  --background: var(--mmk-bg-primary);
+  --foreground: var(--mmk-text-primary);
+  --surface: var(--mmk-bg-secondary);
+  --surface-raised: #263129;
+  --muted: var(--mmk-text-secondary);
+  --line: var(--mmk-border);
+  --signal: var(--mmk-link);
+  --signal-soft: var(--mmk-link-hover);
+  --ink: var(--mmk-bg-primary);
+  --grid-line: rgb(241 238 232 / 0.025);
+  --hover-surface: rgb(255 255 255 / 0.035);
 }
 
 @theme inline {
@@ -44,8 +82,26 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-::selection { background: var(--signal); color: #0c0c0b; }
-:focus-visible { outline: 1px solid var(--signal); outline-offset: 4px; }
+::selection { background: var(--mmk-green-forest); color: var(--mmk-text-primary); }
+:focus-visible { outline: 2px solid var(--mmk-green-olive-dark); outline-offset: 4px; }
+.wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  font-family: var(--font-studio-sans);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  white-space: nowrap;
+}
+.wordmark--color span:nth-child(1) { color: var(--mmk-wordmark-light-monk); }
+.wordmark--color span:nth-child(2) { color: var(--mmk-wordmark-light-monkey); }
+.wordmark--color span:nth-child(3) { color: var(--mmk-wordmark-light-key); }
+.wordmark--light { color: var(--mmk-wordmark-light); }
+.wordmark--dark { color: var(--mmk-wordmark-dark); }
+[data-theme="dark"] .wordmark--color span:nth-child(1) { color: var(--mmk-text-primary); }
+[data-theme="dark"] .wordmark--color span:nth-child(2) { color: var(--mmk-green-medium); }
+[data-theme="dark"] .wordmark--color span:nth-child(3) { color: var(--mmk-green-soft); }
+[data-theme="dark"] footer .wordmark--dark { color: var(--mmk-wordmark-light); }
 .studio-display {
   font-family: var(--font-studio-display);
   font-weight: 500;
@@ -83,8 +139,8 @@ body {
 
 .studio-grid {
   background-image:
-    linear-gradient(to right, rgb(241 238 232 / 0.025) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(241 238 232 / 0.025) 1px, transparent 1px);
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
   background-size: 96px 96px;
 }
 
@@ -103,7 +159,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  border-bottom: 1px solid var(--foreground);
+  border-bottom: 1px solid var(--signal);
   padding-bottom: 0.2rem;
   transition: color 180ms ease, border-color 180ms ease;
 }
@@ -175,7 +231,7 @@ body {
 .studio-action--on-media.studio-action--primary:hover {
   border-color: var(--signal);
   background: var(--signal);
-  color: #0c0c0b;
+  color: var(--mmk-bg-primary);
 }
 
 .studio-action--on-media.studio-action--secondary {
@@ -267,16 +323,12 @@ body {
   border-color: var(--line);
 }
 
-.hero-title {
-  animation: studio-title-in 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
 .service-row {
   transition: background-color 220ms ease, padding 220ms ease;
 }
 
 .service-row:hover {
-  background: rgb(255 255 255 / 0.035);
+  background: var(--hover-surface);
   padding-right: 0.5rem;
   padding-left: 0.5rem;
 }
@@ -312,23 +364,16 @@ body {
 
 .client-cell:hover::after { opacity: 1; }
 
-@keyframes studio-title-in {
-  from { opacity: 0; transform: translateY(2rem); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 .hero-fallback {
-  background:
-    radial-gradient(circle at 78% 30%, rgb(255 101 77 / 0.13), transparent 23%),
-    linear-gradient(125deg, #332522 0%, #0c0c0b 58%, #211716 100%);
+  background: var(--surface);
 }
 
 .hero-fallback::after {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(to right, rgb(255 255 255 / 0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(255 255 255 / 0.035) 1px, transparent 1px);
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
   background-size: 96px 96px;
   content: "";
 }
@@ -348,6 +393,25 @@ body {
 .rich-text-reset :is(strong, b) { font-weight: 600; }
 .rich-text-reset :is(em, i) { font-style: italic; }
 input, textarea, button { border-radius: 3px; }
+input,
+textarea {
+  border-color: var(--line);
+  background: var(--background);
+  color: var(--foreground);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--muted);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline-color: var(--mmk-green-on-light);
+}
+
 img,
 iframe { border-radius: 3px; }
 
@@ -376,5 +440,4 @@ button:disabled {
     animation-iteration-count: 1 !important;
   }
 
-  .hero-title { animation: none; }
 }

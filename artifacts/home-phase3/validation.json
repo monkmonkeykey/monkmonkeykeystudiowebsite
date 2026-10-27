@@ -1,0 +1,633 @@
+{
+  "reports": [
+    {
+      "width": 375,
+      "title": "Cada proyecto encuentra su forma.",
+      "h1": 1,
+      "overflow": false,
+      "sections": [
+        {
+          "heading": "Cada proyecto encuentra su forma.",
+          "height": 729
+        },
+        {
+          "heading": "Proyectos seleccionados",
+          "height": 1927
+        },
+        {
+          "heading": "Distintas ideas, distintas maneras de hacer.",
+          "height": 552
+        },
+        {
+          "heading": "Capacidades y servicios",
+          "height": 909
+        },
+        {
+          "heading": "Colaboraciones",
+          "height": 1157
+        }
+      ],
+      "projects": [
+        {
+          "href": "/proyectos/maraton_musica_contemporanea-2023",
+          "title": "5to Maratón de Música Contemporánea",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1779682681%2Fprojects%2Fmaraton_musica_contemporanea-2026%2Fcover%2Fwwmex6xahwlvd1ifj6ab.png&w=3840&q=75",
+          "alt": "Registro del proyecto: 5to Maratón de Música Contemporánea"
+        },
+        {
+          "href": "/proyectos/otro_dia_otro_dolar",
+          "title": "Otro día, otro dólar",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886137%2Fprojects%2Fotro_dia_otro_dolar%2Fcover%2Fobvadqy94jhbmftyqso3.jpg&w=3840&q=75",
+          "alt": "Otro día, otro dólar"
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "title": "1er Festival Internacional LEAM",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766205110%2Fprojects%2Fleam2025%2Fcover%2Fqqk9iubestqt1dxedhsl.jpg&w=3840&q=75",
+          "alt": "Concierto Multicanal"
+        },
+        {
+          "href": "/proyectos/luminico_urtext_2025",
+          "title": "Lumínico / Ónix | Festival Urtext 2025",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783891148%2Fprojects%2Fluminico_urtext_2025%2Fcover%2Fgvubb5irzpchlhynd3wo.jpg&w=3840&q=75",
+          "alt": "Registro del proyecto: Lumínico / Ónix | Festival Urtext 2025"
+        },
+        {
+          "href": "/proyectos/atl",
+          "title": "Atl | Agua, Música y Arte Sonoro",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766782667%2Fprojects%2Fatl%2Fcover%2Fr8zcsy5t8kxlw4y5bfno.jpg&w=3840&q=75",
+          "alt": "Registro del proyecto: Atl | Agua, Música y Arte Sonoro"
+        }
+      ],
+      "services": [
+        "/servicios#audio",
+        "/servicios#arte-nuevos-medios",
+        "/servicios#impresion3d"
+      ]
+    },
+    {
+      "width": 768,
+      "title": "Cada proyecto encuentra su forma.",
+      "h1": 1,
+      "overflow": false,
+      "sections": [
+        {
+          "heading": "Cada proyecto encuentra su forma.",
+          "height": 494
+        },
+        {
+          "heading": "Proyectos seleccionados",
+          "height": 1219
+        },
+        {
+          "heading": "Distintas ideas, distintas maneras de hacer.",
+          "height": 478
+        },
+        {
+          "heading": "Capacidades y servicios",
+          "height": 815
+        },
+        {
+          "heading": "Colaboraciones",
+          "height": 904
+        }
+      ],
+      "projects": [
+        {
+          "href": "/proyectos/maraton_musica_contemporanea-2023",
+          "title": "5to Maratón de Música Contemporánea",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1779682681%2Fprojects%2Fmaraton_musica_contemporanea-2026%2Fcover%2Fwwmex6xahwlvd1ifj6ab.png&w=3840&q=75",
+          "alt": "Registro del proyecto: 5to Maratón de Música Contemporánea"
+        },
+        {
+          "href": "/proyectos/otro_dia_otro_dolar",
+          "title": "Otro día, otro dólar",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886137%2Fprojects%2Fotro_dia_otro_dolar%2Fcover%2Fobvadqy94jhbmftyqso3.jpg&w=3840&q=75",
+          "alt": "Otro día, otro dólar"
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "title": "1er Festival Internacional LEAM",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766205110%2Fprojects%2Fleam2025%2Fcover%2Fqqk9iubestqt1dxedhsl.jpg&w=3840&q=75",
+          "alt": "Concierto Multicanal"
+        },
+        {
+          "href": "/proyectos/luminico_urtext_2025",
+          "title": "Lumínico / Ónix | Festival Urtext 2025",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783891148%2Fprojects%2Fluminico_urtext_2025%2Fcover%2Fgvubb5irzpchlhynd3wo.jpg&w=3840&q=75",
+          "alt": "Registro del proyecto: Lumínico / Ónix | Festival Urtext 2025"
+        },
+        {
+          "href": "/proyectos/atl",
+          "title": "Atl | Agua, Música y Arte Sonoro",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766782667%2Fprojects%2Fatl%2Fcover%2Fr8zcsy5t8kxlw4y5bfno.jpg&w=3840&q=75",
+          "alt": "Registro del proyecto: Atl | Agua, Música y Arte Sonoro"
+        }
+      ],
+      "services": [
+        "/servicios#audio",
+        "/servicios#arte-nuevos-medios",
+        "/servicios#impresion3d"
+      ]
+    },
+    {
+      "width": 1024,
+      "title": "Cada proyecto encuentra su forma.",
+      "h1": 1,
+      "overflow": false,
+      "sections": [
+        {
+          "heading": "Cada proyecto encuentra su forma.",
+          "height": 542
+        },
+        {
+          "heading": "Proyectos seleccionados",
+          "height": 893
+        },
+        {
+          "heading": "Distintas ideas, distintas maneras de hacer.",
+          "height": 407
+        },
+        {
+          "heading": "Capacidades y servicios",
+          "height": 609
+        },
+        {
+          "heading": "Colaboraciones",
+          "height": 768
+        }
+      ],
+      "projects": [
+        {
+          "href": "/proyectos/maraton_musica_contemporanea-2023",
+          "title": "5to Maratón de Música Contemporánea",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1779682681%2Fprojects%2Fmaraton_musica_contemporanea-2026%2Fcover%2Fwwmex6xahwlvd1ifj6ab.png&w=3840&q=75",
+          "alt": "Registro del proyecto: 5to Maratón de Música Contemporánea"
+        },
+        {
+          "href": "/proyectos/otro_dia_otro_dolar",
+          "title": "Otro día, otro dólar",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886137%2Fprojects%2Fotro_dia_otro_dolar%2Fcover%2Fobvadqy94jhbmftyqso3.jpg&w=3840&q=75",
+          "alt": "Otro día, otro dólar"
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "title": "1er Festival Internacional LEAM",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766205110%2Fprojects%2Fleam2025%2Fcover%2Fqqk9iubestqt1dxedhsl.jpg&w=3840&q=75",
+          "alt": "Concierto Multicanal"
+        },
+        {
+          "href": "/proyectos/luminico_urtext_2025",
+          "title": "Lumínico / Ónix | Festival Urtext 2025",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783891148%2Fprojects%2Fluminico_urtext_2025%2Fcover%2Fgvubb5irzpchlhynd3wo.jpg&w=3840&q=75",
+          "alt": "Registro del proyecto: Lumínico / Ónix | Festival Urtext 2025"
+        },
+        {
+          "href": "/proyectos/atl",
+          "title": "Atl | Agua, Música y Arte Sonoro",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766782667%2Fprojects%2Fatl%2Fcover%2Fr8zcsy5t8kxlw4y5bfno.jpg&w=3840&q=75",
+          "alt": "Registro del proyecto: Atl | Agua, Música y Arte Sonoro"
+        }
+      ],
+      "services": [
+        "/servicios#audio",
+        "/servicios#arte-nuevos-medios",
+        "/servicios#impresion3d"
+      ]
+    },
+    {
+      "width": 1440,
+      "title": "Cada proyecto encuentra su forma.",
+      "h1": 1,
+      "overflow": false,
+      "sections": [
+        {
+          "heading": "Cada proyecto encuentra su forma.",
+          "height": 697
+        },
+        {
+          "heading": "Proyectos seleccionados",
+          "height": 1046
+        },
+        {
+          "heading": "Distintas ideas, distintas maneras de hacer.",
+          "height": 379
+        },
+        {
+          "heading": "Capacidades y servicios",
+          "height": 571
+        },
+        {
+          "heading": "Colaboraciones",
+          "height": 782
+        }
+      ],
+      "projects": [
+        {
+          "href": "/proyectos/maraton_musica_contemporanea-2023",
+          "title": "5to Maratón de Música Contemporánea",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1779682681%2Fprojects%2Fmaraton_musica_contemporanea-2026%2Fcover%2Fwwmex6xahwlvd1ifj6ab.png&w=3840&q=75",
+          "alt": "Registro del proyecto: 5to Maratón de Música Contemporánea"
+        },
+        {
+          "href": "/proyectos/otro_dia_otro_dolar",
+          "title": "Otro día, otro dólar",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886137%2Fprojects%2Fotro_dia_otro_dolar%2Fcover%2Fobvadqy94jhbmftyqso3.jpg&w=3840&q=75",
+          "alt": "Otro día, otro dólar"
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "title": "1er Festival Internacional LEAM",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766205110%2Fprojects%2Fleam2025%2Fcover%2Fqqk9iubestqt1dxedhsl.jpg&w=3840&q=75",
+          "alt": "Concierto Multicanal"
+        },
+        {
+          "href": "/proyectos/luminico_urtext_2025",
+          "title": "Lumínico / Ónix | Festival Urtext 2025",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783891148%2Fprojects%2Fluminico_urtext_2025%2Fcover%2Fgvubb5irzpchlhynd3wo.jpg&w=3840&q=75",
+          "alt": "Registro del proyecto: Lumínico / Ónix | Festival Urtext 2025"
+        },
+        {
+          "href": "/proyectos/atl",
+          "title": "Atl | Agua, Música y Arte Sonoro",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766782667%2Fprojects%2Fatl%2Fcover%2Fr8zcsy5t8kxlw4y5bfno.jpg&w=3840&q=75",
+          "alt": "Registro del proyecto: Atl | Agua, Música y Arte Sonoro"
+        }
+      ],
+      "services": [
+        "/servicios#audio",
+        "/servicios#arte-nuevos-medios",
+        "/servicios#impresion3d"
+      ]
+    },
+    {
+      "width": 375,
+      "title": "Every project finds its form.",
+      "h1": 1,
+      "overflow": false,
+      "sections": [
+        {
+          "heading": "Every project finds its form.",
+          "height": 658
+        },
+        {
+          "heading": "Selected projects",
+          "height": 1927
+        },
+        {
+          "heading": "Different ideas, different ways of making.",
+          "height": 524
+        },
+        {
+          "heading": "Capabilities and services",
+          "height": 856
+        },
+        {
+          "heading": "Collaborations",
+          "height": 1157
+        }
+      ],
+      "projects": [
+        {
+          "href": "/proyectos/maraton_musica_contemporanea-2023",
+          "title": "5to Maratón de Música Contemporánea",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1779682681%2Fprojects%2Fmaraton_musica_contemporanea-2026%2Fcover%2Fwwmex6xahwlvd1ifj6ab.png&w=3840&q=75",
+          "alt": "Project documentation: 5to Maratón de Música Contemporánea"
+        },
+        {
+          "href": "/proyectos/otro_dia_otro_dolar",
+          "title": "Otro día, otro dólar",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886137%2Fprojects%2Fotro_dia_otro_dolar%2Fcover%2Fobvadqy94jhbmftyqso3.jpg&w=3840&q=75",
+          "alt": "Otro día, otro dólar"
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "title": "1st International Festival LEAM",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766205110%2Fprojects%2Fleam2025%2Fcover%2Fqqk9iubestqt1dxedhsl.jpg&w=3840&q=75",
+          "alt": "Concierto Multicanal"
+        },
+        {
+          "href": "/proyectos/luminico_urtext_2025",
+          "title": "Lumínico / Ónix | Festival Urtext 2025",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783891148%2Fprojects%2Fluminico_urtext_2025%2Fcover%2Fgvubb5irzpchlhynd3wo.jpg&w=3840&q=75",
+          "alt": "Project documentation: Lumínico / Ónix | Festival Urtext 2025"
+        },
+        {
+          "href": "/proyectos/atl",
+          "title": "Atl | Agua, Música y Arte Sonoro",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766782667%2Fprojects%2Fatl%2Fcover%2Fr8zcsy5t8kxlw4y5bfno.jpg&w=3840&q=75",
+          "alt": "Project documentation: Atl | Agua, Música y Arte Sonoro"
+        }
+      ],
+      "services": [
+        "/servicios#audio",
+        "/servicios#arte-nuevos-medios",
+        "/servicios#impresion3d"
+      ]
+    },
+    {
+      "width": 768,
+      "title": "Every project finds its form.",
+      "h1": 1,
+      "overflow": false,
+      "sections": [
+        {
+          "heading": "Every project finds its form.",
+          "height": 494
+        },
+        {
+          "heading": "Selected projects",
+          "height": 1219
+        },
+        {
+          "heading": "Different ideas, different ways of making.",
+          "height": 449
+        },
+        {
+          "heading": "Capabilities and services",
+          "height": 735
+        },
+        {
+          "heading": "Collaborations",
+          "height": 904
+        }
+      ],
+      "projects": [
+        {
+          "href": "/proyectos/maraton_musica_contemporanea-2023",
+          "title": "5to Maratón de Música Contemporánea",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1779682681%2Fprojects%2Fmaraton_musica_contemporanea-2026%2Fcover%2Fwwmex6xahwlvd1ifj6ab.png&w=3840&q=75",
+          "alt": "Project documentation: 5to Maratón de Música Contemporánea"
+        },
+        {
+          "href": "/proyectos/otro_dia_otro_dolar",
+          "title": "Otro día, otro dólar",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886137%2Fprojects%2Fotro_dia_otro_dolar%2Fcover%2Fobvadqy94jhbmftyqso3.jpg&w=3840&q=75",
+          "alt": "Otro día, otro dólar"
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "title": "1st International Festival LEAM",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766205110%2Fprojects%2Fleam2025%2Fcover%2Fqqk9iubestqt1dxedhsl.jpg&w=3840&q=75",
+          "alt": "Concierto Multicanal"
+        },
+        {
+          "href": "/proyectos/luminico_urtext_2025",
+          "title": "Lumínico / Ónix | Festival Urtext 2025",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783891148%2Fprojects%2Fluminico_urtext_2025%2Fcover%2Fgvubb5irzpchlhynd3wo.jpg&w=3840&q=75",
+          "alt": "Project documentation: Lumínico / Ónix | Festival Urtext 2025"
+        },
+        {
+          "href": "/proyectos/atl",
+          "title": "Atl | Agua, Música y Arte Sonoro",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766782667%2Fprojects%2Fatl%2Fcover%2Fr8zcsy5t8kxlw4y5bfno.jpg&w=3840&q=75",
+          "alt": "Project documentation: Atl | Agua, Música y Arte Sonoro"
+        }
+      ],
+      "services": [
+        "/servicios#audio",
+        "/servicios#arte-nuevos-medios",
+        "/servicios#impresion3d"
+      ]
+    },
+    {
+      "width": 1024,
+      "title": "Every project finds its form.",
+      "h1": 1,
+      "overflow": false,
+      "sections": [
+        {
+          "heading": "Every project finds its form.",
+          "height": 542
+        },
+        {
+          "heading": "Selected projects",
+          "height": 893
+        },
+        {
+          "heading": "Different ideas, different ways of making.",
+          "height": 379
+        },
+        {
+          "heading": "Capabilities and services",
+          "height": 556
+        },
+        {
+          "heading": "Collaborations",
+          "height": 768
+        }
+      ],
+      "projects": [
+        {
+          "href": "/proyectos/maraton_musica_contemporanea-2023",
+          "title": "5to Maratón de Música Contemporánea",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1779682681%2Fprojects%2Fmaraton_musica_contemporanea-2026%2Fcover%2Fwwmex6xahwlvd1ifj6ab.png&w=3840&q=75",
+          "alt": "Project documentation: 5to Maratón de Música Contemporánea"
+        },
+        {
+          "href": "/proyectos/otro_dia_otro_dolar",
+          "title": "Otro día, otro dólar",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886137%2Fprojects%2Fotro_dia_otro_dolar%2Fcover%2Fobvadqy94jhbmftyqso3.jpg&w=3840&q=75",
+          "alt": "Otro día, otro dólar"
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "title": "1st International Festival LEAM",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766205110%2Fprojects%2Fleam2025%2Fcover%2Fqqk9iubestqt1dxedhsl.jpg&w=3840&q=75",
+          "alt": "Concierto Multicanal"
+        },
+        {
+          "href": "/proyectos/luminico_urtext_2025",
+          "title": "Lumínico / Ónix | Festival Urtext 2025",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783891148%2Fprojects%2Fluminico_urtext_2025%2Fcover%2Fgvubb5irzpchlhynd3wo.jpg&w=3840&q=75",
+          "alt": "Project documentation: Lumínico / Ónix | Festival Urtext 2025"
+        },
+        {
+          "href": "/proyectos/atl",
+          "title": "Atl | Agua, Música y Arte Sonoro",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766782667%2Fprojects%2Fatl%2Fcover%2Fr8zcsy5t8kxlw4y5bfno.jpg&w=3840&q=75",
+          "alt": "Project documentation: Atl | Agua, Música y Arte Sonoro"
+        }
+      ],
+      "services": [
+        "/servicios#audio",
+        "/servicios#arte-nuevos-medios",
+        "/servicios#impresion3d"
+      ]
+    },
+    {
+      "width": 1440,
+      "title": "Every project finds its form.",
+      "h1": 1,
+      "overflow": false,
+      "sections": [
+        {
+          "heading": "Every project finds its form.",
+          "height": 697
+        },
+        {
+          "heading": "Selected projects",
+          "height": 1046
+        },
+        {
+          "heading": "Different ideas, different ways of making.",
+          "height": 321
+        },
+        {
+          "heading": "Capabilities and services",
+          "height": 518
+        },
+        {
+          "heading": "Collaborations",
+          "height": 782
+        }
+      ],
+      "projects": [
+        {
+          "href": "/proyectos/maraton_musica_contemporanea-2023",
+          "title": "5to Maratón de Música Contemporánea",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1779682681%2Fprojects%2Fmaraton_musica_contemporanea-2026%2Fcover%2Fwwmex6xahwlvd1ifj6ab.png&w=3840&q=75",
+          "alt": "Project documentation: 5to Maratón de Música Contemporánea"
+        },
+        {
+          "href": "/proyectos/otro_dia_otro_dolar",
+          "title": "Otro día, otro dólar",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886137%2Fprojects%2Fotro_dia_otro_dolar%2Fcover%2Fobvadqy94jhbmftyqso3.jpg&w=3840&q=75",
+          "alt": "Otro día, otro dólar"
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "title": "1st International Festival LEAM",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766205110%2Fprojects%2Fleam2025%2Fcover%2Fqqk9iubestqt1dxedhsl.jpg&w=3840&q=75",
+          "alt": "Concierto Multicanal"
+        },
+        {
+          "href": "/proyectos/luminico_urtext_2025",
+          "title": "Lumínico / Ónix | Festival Urtext 2025",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783891148%2Fprojects%2Fluminico_urtext_2025%2Fcover%2Fgvubb5irzpchlhynd3wo.jpg&w=3840&q=75",
+          "alt": "Project documentation: Lumínico / Ónix | Festival Urtext 2025"
+        },
+        {
+          "href": "/proyectos/atl",
+          "title": "Atl | Agua, Música y Arte Sonoro",
+          "image": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766782667%2Fprojects%2Fatl%2Fcover%2Fr8zcsy5t8kxlw4y5bfno.jpg&w=3840&q=75",
+          "alt": "Project documentation: Atl | Agua, Música y Arte Sonoro"
+        }
+      ],
+      "services": [
+        "/servicios#audio",
+        "/servicios#arte-nuevos-medios",
+        "/servicios#impresion3d"
+      ]
+    }
+  ],
+  "linkChecks": [
+    {
+      "href": "/proyectos/maraton_musica_contemporanea-2023",
+      "status": 200
+    },
+    {
+      "href": "/proyectos/otro_dia_otro_dolar",
+      "status": 200
+    },
+    {
+      "href": "/proyectos/leam2025",
+      "status": 200
+    },
+    {
+      "href": "/proyectos/luminico_urtext_2025",
+      "status": 200
+    },
+    {
+      "href": "/proyectos/atl",
+      "status": 200
+    }
+  ],
+  "images": [
+    {
+      "alt": "Registro del proyecto: 5to Maratón de Música Contemporánea",
+      "complete": true,
+      "naturalWidth": 600
+    },
+    {
+      "alt": "Registro del proyecto: 5to Maratón de Música Contemporánea",
+      "complete": true,
+      "naturalWidth": 784
+    },
+    {
+      "alt": "Otro día, otro dólar",
+      "complete": true,
+      "naturalWidth": 376
+    },
+    {
+      "alt": "Concierto Multicanal",
+      "complete": true,
+      "naturalWidth": 376
+    },
+    {
+      "alt": "Registro del proyecto: Lumínico / Ónix | Festival Urtext 2025",
+      "complete": true,
+      "naturalWidth": 376
+    },
+    {
+      "alt": "Registro del proyecto: Atl | Agua, Música y Arte Sonoro",
+      "complete": true,
+      "naturalWidth": 376
+    },
+    {
+      "alt": "leam",
+      "complete": true,
+      "naturalWidth": 144
+    },
+    {
+      "alt": "Luz María Sánchez",
+      "complete": true,
+      "naturalWidth": 144
+    },
+    {
+      "alt": "mide-logo",
+      "complete": true,
+      "naturalWidth": 144
+    },
+    {
+      "alt": "logo-nime",
+      "complete": true,
+      "naturalWidth": 144
+    },
+    {
+      "alt": "logo-image",
+      "complete": true,
+      "naturalWidth": 144
+    },
+    {
+      "alt": "uam lerma",
+      "complete": true,
+      "naturalWidth": 144
+    },
+    {
+      "alt": "logo-inbal",
+      "complete": true,
+      "naturalWidth": 144
+    },
+    {
+      "alt": "logo-musse",
+      "complete": true,
+      "naturalWidth": 123
+    },
+    {
+      "alt": "Karen Aixa",
+      "complete": true,
+      "naturalWidth": 144
+    },
+    {
+      "alt": "Raisa Pim",
+      "complete": true,
+      "naturalWidth": 144
+    }
+  ],
+  "focus": {
+    "element": "BUTTON",
+    "outline": "solid"
+  },
+  "problems": []
+}

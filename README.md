@@ -60,6 +60,18 @@ Si no configuras MongoDB, el sitio seguirá leyendo los archivos Markdown de `co
 
 Para cerrar sesión usa el botón “Cerrar sesión” dentro del panel o borra la cookie `mmk_admin_session`.
 
+### Proyectos destacados del inicio
+
+En `/admin`, abre **Configuración del inicio → Proyectos destacados en portada**. Abre cada selector y busca por título o año. Cada resultado muestra su miniatura, año y estado; solo se pueden elegir proyectos públicos con portada y sin repetirlos. Puedes usar **Intercambiar posiciones**, revisar la vista previa y pulsar **Guardar configuración**.
+
+El selector **Proyecto destacado 3 (opcional)** permite añadir una tercera entrada. Déjalo en **Sin tercer proyecto** para conservar solo dos. Con tres selecciones, puedes intercambiar las posiciones 1 y 2 o las posiciones 2 y 3 antes de guardar.
+
+La configuración guarda únicamente dos o tres slugs en el documento `siteContent` con `_id: "home"`, independiente de los textos generales y del orden del portafolio. No requiere migraciones ni cambios en las entradas. Las posiciones automáticas y las referencias eliminadas, privadas o sin portada se completan con proyectos públicos disponibles siguiendo el orden del archivo, sin duplicados. El administrador advierte sobre referencias inválidas. El Home recupera los datos actuales de cada proyecto al cargar la página.
+
+La selección inicial, cuando esas entradas están disponibles, es **Otro día, otro dólar** y **Lumínico / Ónix | Festival Urtext 2025**. Sin MongoDB puedes consultar la configuración, pero no guardarla.
+
+Consulta la [auditoría, los archivos y la validación de Fase 3.2](artifacts/home-phase32/README.md). Ejecuta `npm run test:home` para comprobar la resolución, el guardado y los permisos con almacenamiento aislado en memoria.
+
 ## Configurar el envío de correos del formulario de contacto
 El formulario de contacto enviará los mensajes por **Resend** o por **Gmail SMTP**. La app elige automáticamente el proveedor:
 - En modo `auto` (por defecto): usa **Resend** si existe `RESEND_API_KEY`; si no, usa **Gmail** si existen `GMAIL_USER` y `GMAIL_APP_PASSWORD`.
@@ -214,6 +226,7 @@ Checklist rápida para Gmail:
 - `npm run build`: genera el build de producción.
 - `npm run start`: arranca el servidor en modo producción (requiere `npm run build` previo).
 - `npm run lint`: ejecuta ESLint sobre el proyecto.
+- `npm run test:home`: comprueba la configuración de portada y su API sin escribir en MongoDB.
 
 ## Estructura relevante
 - `content/` – Entradas Markdown usadas como respaldo estático.

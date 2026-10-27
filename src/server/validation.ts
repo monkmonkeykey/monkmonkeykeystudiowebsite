@@ -1,5 +1,19 @@
 import { z } from "zod";
 
+const homeProjectSlugSchema = z.string().trim().min(1).max(200)
+  .refine((value) => !/[\s/\\?#\u0000-\u001f]/u.test(value), "Identificador de proyecto inválido.")
+  .nullable();
+
+export const homeSettingsSchema = z.object({
+  featuredProjectSlugs: z.tuple([homeProjectSlugSchema, homeProjectSlugSchema, homeProjectSlugSchema.optional()]),
+}).refine(({ featuredProjectSlugs }) => {
+  const selected = featuredProjectSlugs.filter((slug) => Boolean(slug));
+  return new Set(selected).size === selected.length;
+}, {
+  message: "El mismo proyecto no puede ocupar más de una posición.",
+  path: ["featuredProjectSlugs"],
+});
+
 export const localeTextSchema = z.object({
   es: z.string().min(1),
   en: z.string().min(1),
