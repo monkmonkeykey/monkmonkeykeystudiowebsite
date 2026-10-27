@@ -2,6 +2,8 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import ServiceHomeImagePicker from "@/components/admin/ServiceHomeImagePicker";
+import { isServicePhotoSource } from "@/domain/service-photos";
 
 import type { Client, ClientKind } from "@/content/clients";
 import type { Service } from "@/content/services";
@@ -62,6 +64,7 @@ type ServiceField = {
   summary: LocaleField;
   outcomes: LocaleField[];
   gallery: SiteGalleryImageField[];
+  homeFeaturedImageSrc: string;
 };
 
 type SiteGalleryImageField = {
@@ -239,6 +242,7 @@ const createServiceField = (id: string, service?: Service): ServiceField => ({
   summary: createLocaleField(service?.summary),
   outcomes: (service?.outcomes ?? []).map((outcome, index) => createDescriptionField(`${id}-outcome-${index}`, outcome).text),
   gallery: (service?.gallery ?? []).map((image, index) => createSiteGalleryImageField(`${id}-gallery-${index}`, image)),
+  homeFeaturedImageSrc: service?.homeFeaturedImageSrc ?? "",
 });
 
 const createSiteGalleryImageField = (
@@ -569,6 +573,7 @@ const buildSitePayload = (draft: SiteContentField): SiteContent => ({
           ? normalizedSummary
           : { es: "Descripción pendiente", en: "Pending description" },
       outcomes: normalizeLocaleListField(service.outcomes),
+      homeFeaturedImageSrc: service.homeFeaturedImageSrc.trim() || undefined,
       gallery: service.gallery
         .map((image, imageIndex) => {
           const normalizedAlt = localeFieldToTextWithFallback(trimLocaleField(image.alt));
@@ -950,6 +955,29 @@ const ServiceEditor = ({
       values={service.outcomes}
       onChange={(values) => onChange({ ...service, outcomes: values })}
     />
+    <ServiceHomeImagePicker
+      title={service.title}
+      gallery={service.gallery}
+      value={service.homeFeaturedImageSrc}
+      onChange={(src) => onChange({ ...service, homeFeaturedImageSrc: src })}
+      onPickLibrary={cloudinaryReady && openCloudinaryPicker ? () => openCloudinaryPicker({
+        onSelect: (asset) => {
+          if (!isServicePhotoSource(asset.url)) return;
+          const exists = service.gallery.some((image) => image.src === asset.url);
+          onChange({
+            ...service,
+            homeFeaturedImageSrc: asset.url,
+            gallery: exists ? service.gallery : [...service.gallery, createSiteGalleryImageField(randomId(), {
+              src: asset.url,
+              alt: {
+                es: "",
+                en: "",
+              },
+            })],
+          });
+        },
+      }) : undefined}
+    />
     <div className="space-y-2 rounded-2xl border border-foreground/10 bg-foreground/5 p-3">
       <div className="flex items-center justify-between">
         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-foreground/50">Galería del servicio</p>
@@ -973,7 +1001,10 @@ const ServiceEditor = ({
             <p className="text-xs text-foreground/50">Imagen</p>
             <button
               type="button"
-              onClick={() => onChange({ ...service, gallery: service.gallery.filter((item) => item.id !== image.id) })}
+              onClick={() => onChange({ ...service,
+                homeFeaturedImageSrc: service.homeFeaturedImageSrc && service.homeFeaturedImageSrc === image.src ? "" : service.homeFeaturedImageSrc,
+                gallery: service.gallery.filter((item) => item.id !== image.id),
+              })}
               className="text-xs font-semibold text-foreground/50 hover:text-foreground"
             >
               Eliminar
@@ -986,6 +1017,7 @@ const ServiceEditor = ({
             onChange={(event) =>
               onChange({
                 ...service,
+                homeFeaturedImageSrc: service.homeFeaturedImageSrc && service.homeFeaturedImageSrc === image.src ? event.target.value : service.homeFeaturedImageSrc,
                 gallery: service.gallery.map((item) =>
                   item.id === image.id ? { ...item, src: event.target.value } : item,
                 ),
@@ -1021,6 +1053,7 @@ const ServiceEditor = ({
                     const upload = await uploadToCloudinary(file, `services/${service.slug || "library"}`);
                     onChange({
                       ...service,
+                      homeFeaturedImageSrc: service.homeFeaturedImageSrc && service.homeFeaturedImageSrc === image.src ? upload.src : service.homeFeaturedImageSrc,
                       gallery: service.gallery.map((item) =>
                         item.id === image.id ? { ...item, src: upload.src } : item,
                       ),
@@ -1040,6 +1073,7 @@ const ServiceEditor = ({
                     onSelect: (asset) => {
                       onChange({
                         ...service,
+                        homeFeaturedImageSrc: service.homeFeaturedImageSrc && service.homeFeaturedImageSrc === image.src ? asset.url : service.homeFeaturedImageSrc,
                         gallery: service.gallery.map((item) =>
                           item.id === image.id ? { ...item, src: asset.url } : item,
                         ),

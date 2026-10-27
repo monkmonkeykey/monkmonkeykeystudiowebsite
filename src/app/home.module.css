@@ -36,6 +36,14 @@
 .practice h2 { max-width: 18ch; margin-top: 1rem; }
 .practiceCopy { margin-top: 1rem; max-width: 37rem; color: var(--muted); font-size: 1rem; line-height: 1.8; }
 .practiceIntro, .capabilities { min-width: 0; }
+.practiceIntro { grid-area: intro; }
+.capabilities { grid-area: capabilities; }
+.practice { grid-template-areas: "intro" "capabilities" "gallery"; }
+.practiceGallery { grid-area: gallery; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .75rem; min-width: 0; }
+.practicePhoto { position: relative; aspect-ratio: 3/2; overflow: hidden; }
+.practicePhotoLead { grid-column: 1 / -1; aspect-ratio: 16/9; }
+.practicePhoto:nth-child(2):last-child { grid-column: 1 / -1; aspect-ratio: 16/9; }
+.practicePhoto img { object-fit: cover; border-radius: 0; }
 .sectionLink { margin-top: 1.5rem; }
 .service { display: grid; gap: .75rem; padding: 1.25rem 0; border-top: 1px solid var(--line); }
 .service:last-child { padding-bottom: 0; }
@@ -61,7 +69,10 @@
   .heroLead .heroCaption h2 { font-size: 1.0625rem; }
   .section { padding: 3.5rem 0; }
   .projects { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 2.5rem 1.5rem; }
-  .practice { grid-template-columns: 1fr 1fr; align-items: start; gap: 3rem; }
+  .practice { grid-template-columns: minmax(0,1fr) minmax(0,1fr); grid-template-areas: "intro capabilities" "gallery capabilities"; grid-template-rows: auto 1fr; align-items: start; gap: 1.5rem 3rem; }
+  .practicePhoto { aspect-ratio: 2; }
+  .practicePhotoLead { aspect-ratio: 2.8; }
+  .practicePhoto:nth-child(2):last-child { aspect-ratio: 2.8; }
   .service > a { justify-self: start; }
   .clients { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 2rem; }
 }

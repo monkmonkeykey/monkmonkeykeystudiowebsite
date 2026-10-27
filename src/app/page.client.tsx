@@ -8,6 +8,7 @@ import type { Client } from "@/content/clients";
 import type { Service } from "@/content/services";
 import { useLocale } from "@/components/site/locale-context";
 import { getPlainText } from "@/components/site/rich-text";
+import PracticeGallery from "@/components/site/PracticeGallery";
 import type { Project, ProjectCategory } from "@/domain/projects";
 import { formatProjectTimeline, translateCategoryLabel } from "@/domain/projects";
 import type { SiteContent } from "@/domain/site";
@@ -173,6 +174,7 @@ export default function HomePageClient({ projects, heroProjects, clients, servic
             </article>
           ))}
         </div>
+        <PracticeGallery services={services} />
       </section>
 
       <section className={styles.section} aria-labelledby="collaborations-title">

@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "test:home": "node --test tests/home-settings.test.mjs",
+    "test:services": "node --test tests/service-photos.test.mjs",
     "mongo:smoke": "node scripts/mongodb-smoke-test.mjs"
   },
   "dependencies": {

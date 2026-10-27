@@ -1,0 +1,609 @@
+{
+  "rows": [
+    {
+      "locale": "es",
+      "width": 375,
+      "overflow": false,
+      "intro": {
+        "x": 24,
+        "y": -623.71875,
+        "width": 327,
+        "height": 229.90625,
+        "bottom": -393.8125
+      },
+      "services": {
+        "x": 24,
+        "y": -369.8125,
+        "width": 327,
+        "height": 695.5625,
+        "bottom": 325.75
+      },
+      "gallery": {
+        "x": 24,
+        "y": 349.75,
+        "width": 327,
+        "height": 300.9375,
+        "bottom": 650.6875
+      },
+      "photos": [
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1771979623/library/m7ufvpgqfetcztbkh7q8.jpg",
+          "alt": "Documentación de producción sonora y técnica en concierto",
+          "loaded": true,
+          "loading": "lazy",
+          "filter": "none",
+          "rect": {
+            "x": 24,
+            "y": 349.75,
+            "width": 327,
+            "height": 183.9375,
+            "bottom": 533.6875
+          }
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1771979482/library/qrps5pli0u4hynuoawpl.jpg",
+          "alt": "Documentación de una instalación de arte y nuevos medios",
+          "loaded": true,
+          "loading": "lazy",
+          "filter": "none",
+          "rect": {
+            "x": 24,
+            "y": 545.6875,
+            "width": 157.5,
+            "height": 105,
+            "bottom": 650.6875
+          }
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1771980091/library/exvgq0iikuanog7dhcdq.jpg",
+          "alt": "Piezas y prototipos de impresión 3D y fabricación",
+          "loaded": true,
+          "loading": "lazy",
+          "filter": "none",
+          "rect": {
+            "x": 193.5,
+            "y": 545.6875,
+            "width": 157.5,
+            "height": 105,
+            "bottom": 650.6875
+          }
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "width": 768,
+      "overflow": false,
+      "intro": {
+        "x": 48,
+        "y": 547.75,
+        "width": 312,
+        "height": 229.90625,
+        "bottom": 777.65625
+      },
+      "services": {
+        "x": 408,
+        "y": 547.75,
+        "width": 312,
+        "height": 748.0625,
+        "bottom": 1295.8125
+      },
+      "gallery": {
+        "x": 48,
+        "y": 801.65625,
+        "width": 312,
+        "height": 198.421875,
+        "bottom": 1000.078125
+      },
+      "photos": [
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1771979623/library/m7ufvpgqfetcztbkh7q8.jpg",
+          "alt": "Documentación de producción sonora y técnica en concierto",
+          "loaded": true,
+          "loading": "lazy",
+          "filter": "none",
+          "rect": {
+            "x": 48,
+            "y": 801.65625,
+            "width": 312,
+            "height": 111.421875,
+            "bottom": 913.078125
+          }
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1771979482/library/qrps5pli0u4hynuoawpl.jpg",
+          "alt": "Documentación de una instalación de arte y nuevos medios",
+          "loaded": true,
+          "loading": "lazy",
+          "filter": "none",
+          "rect": {
+            "x": 48,
+            "y": 925.078125,
+            "width": 150,
+            "height": 75,
+            "bottom": 1000.078125
+          }
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1771980091/library/exvgq0iikuanog7dhcdq.jpg",
+          "alt": "Piezas y prototipos de impresión 3D y fabricación",
+          "loaded": true,
+          "loading": "lazy",
+          "filter": "none",
+          "rect": {
+            "x": 210,
+            "y": 925.078125,
+            "width": 150,
+            "height": 75,
+            "bottom": 1000.078125
+          }
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "width": 1024,
+      "overflow": false,
+      "intro": {
+        "x": 64,
+        "y": 504.1875,
+        "width": 424,
+        "height": 205.515625,
+        "bottom": 709.703125
+      },
+      "services": {
+        "x": 536,
+        "y": 504.1875,
+        "width": 424,
+        "height": 618.109375,
+        "bottom": 1122.296875
+      },
+      "gallery": {
+        "x": 64,
+        "y": 733.703125,
+        "width": 424,
+        "height": 266.421875,
+        "bottom": 1000.125
+      },
+      "photos": [
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1771979623/library/m7ufvpgqfetcztbkh7q8.jpg",
+          "alt": "Documentación de producción sonora y técnica en concierto",
+          "loaded": true,
+          "loading": "lazy",
+          "filter": "none",
+          "rect": {
+            "x": 64,
+            "y": 733.703125,
+            "width": 424,
+            "height": 151.421875,
+            "bottom": 885.125
+          }
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1771979482/library/qrps5pli0u4hynuoawpl.jpg",
+          "alt": "Documentación de una instalación de arte y nuevos medios",
+          "loaded": true,
+          "loading": "lazy",
+          "filter": "none",
+          "rect": {
+            "x": 64,
+            "y": 897.125,
+            "width": 206,
+            "height": 103,
+            "bottom": 1000.125
+          }
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1771980091/library/exvgq0iikuanog7dhcdq.jpg",
+          "alt": "Piezas y prototipos de impresión 3D y fabricación",
+          "loaded": true,
+          "loading": "lazy",
+          "filter": "none",
+          "rect": {
+            "x": 282,
+            "y": 897.125,
+            "width": 206,
+            "height": 103,
+            "bottom": 1000.125
+          }
+        }
+      ]
+    },
+    {
+      "locale": "es",
+      "width": 1440,
+      "overflow": false,
+      "intro": {
+        "x": 124,
+        "y": 63.9375,
+        "width": 572,
+        "height": 234.234375,
+        "bottom": 298.171875
+      },
+      "services": {
+        "x": 744,
+        "y": 63.9375,
+        "width": 572,
+        "height": 591.859375,
+        "bottom": 655.796875
+      },
+      "gallery": {
+        "x": 124,
+        "y": 322.171875,
+        "width": 572,
+        "height": 356.28125,
+        "bottom": 678.453125
+      },
+      "photos": [
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1771979623/library/m7ufvpgqfetcztbkh7q8.jpg",
+          "alt": "Documentación de producción sonora y técnica en concierto",
+          "loaded": true,
+          "loading": "lazy",
+          "filter": "none",
+          "rect": {
+            "x": 124,
+            "y": 322.171875,
+            "width": 572,
+            "height": 204.28125,
+            "bottom": 526.453125
+          }
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1771979482/library/qrps5pli0u4hynuoawpl.jpg",
+          "alt": "Documentación de una instalación de arte y nuevos medios",
+          "loaded": true,
+          "loading": "lazy",
+          "filter": "none",
+          "rect": {
+            "x": 124,
+            "y": 538.453125,
+            "width": 280,
+            "height": 140,
+            "bottom": 678.453125
+          }
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1771980091/library/exvgq0iikuanog7dhcdq.jpg",
+          "alt": "Piezas y prototipos de impresión 3D y fabricación",
+          "loaded": true,
+          "loading": "lazy",
+          "filter": "none",
+          "rect": {
+            "x": 416,
+            "y": 538.453125,
+            "width": 280,
+            "height": 140,
+            "bottom": 678.453125
+          }
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 375,
+      "overflow": false,
+      "intro": {
+        "x": 24,
+        "y": -597.71875,
+        "width": 327,
+        "height": 229.90625,
+        "bottom": -367.8125
+      },
+      "services": {
+        "x": 24,
+        "y": -343.8125,
+        "width": 327,
+        "height": 669.3125,
+        "bottom": 325.5
+      },
+      "gallery": {
+        "x": 24,
+        "y": 349.5,
+        "width": 327,
+        "height": 300.9375,
+        "bottom": 650.4375
+      },
+      "photos": [
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1771979623/library/m7ufvpgqfetcztbkh7q8.jpg",
+          "alt": "Documentation of sound and technical production at a concert",
+          "loaded": true,
+          "loading": "lazy",
+          "filter": "none",
+          "rect": {
+            "x": 24,
+            "y": 349.5,
+            "width": 327,
+            "height": 183.9375,
+            "bottom": 533.4375
+          }
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1771979482/library/qrps5pli0u4hynuoawpl.jpg",
+          "alt": "Documentation of an art and new media installation",
+          "loaded": true,
+          "loading": "lazy",
+          "filter": "none",
+          "rect": {
+            "x": 24,
+            "y": 545.4375,
+            "width": 157.5,
+            "height": 105,
+            "bottom": 650.4375
+          }
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1771980091/library/exvgq0iikuanog7dhcdq.jpg",
+          "alt": "3D printed pieces and fabrication prototypes",
+          "loaded": true,
+          "loading": "lazy",
+          "filter": "none",
+          "rect": {
+            "x": 193.5,
+            "y": 545.4375,
+            "width": 157.5,
+            "height": 105,
+            "bottom": 650.4375
+          }
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 768,
+      "overflow": false,
+      "intro": {
+        "x": 48,
+        "y": 547.75,
+        "width": 312,
+        "height": 229.90625,
+        "bottom": 777.65625
+      },
+      "services": {
+        "x": 408,
+        "y": 547.75,
+        "width": 312,
+        "height": 669.3125,
+        "bottom": 1217.0625
+      },
+      "gallery": {
+        "x": 48,
+        "y": 801.65625,
+        "width": 312,
+        "height": 198.421875,
+        "bottom": 1000.078125
+      },
+      "photos": [
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1771979623/library/m7ufvpgqfetcztbkh7q8.jpg",
+          "alt": "Documentation of sound and technical production at a concert",
+          "loaded": true,
+          "loading": "lazy",
+          "filter": "none",
+          "rect": {
+            "x": 48,
+            "y": 801.65625,
+            "width": 312,
+            "height": 111.421875,
+            "bottom": 913.078125
+          }
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1771979482/library/qrps5pli0u4hynuoawpl.jpg",
+          "alt": "Documentation of an art and new media installation",
+          "loaded": true,
+          "loading": "lazy",
+          "filter": "none",
+          "rect": {
+            "x": 48,
+            "y": 925.078125,
+            "width": 150,
+            "height": 75,
+            "bottom": 1000.078125
+          }
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1771980091/library/exvgq0iikuanog7dhcdq.jpg",
+          "alt": "3D printed pieces and fabrication prototypes",
+          "loaded": true,
+          "loading": "lazy",
+          "filter": "none",
+          "rect": {
+            "x": 210,
+            "y": 925.078125,
+            "width": 150,
+            "height": 75,
+            "bottom": 1000.078125
+          }
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 1024,
+      "overflow": false,
+      "intro": {
+        "x": 64,
+        "y": 504.1875,
+        "width": 424,
+        "height": 205.515625,
+        "bottom": 709.703125
+      },
+      "services": {
+        "x": 536,
+        "y": 504.1875,
+        "width": 424,
+        "height": 591.859375,
+        "bottom": 1096.046875
+      },
+      "gallery": {
+        "x": 64,
+        "y": 733.703125,
+        "width": 424,
+        "height": 266.421875,
+        "bottom": 1000.125
+      },
+      "photos": [
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1771979623/library/m7ufvpgqfetcztbkh7q8.jpg",
+          "alt": "Documentation of sound and technical production at a concert",
+          "loaded": true,
+          "loading": "lazy",
+          "filter": "none",
+          "rect": {
+            "x": 64,
+            "y": 733.703125,
+            "width": 424,
+            "height": 151.421875,
+            "bottom": 885.125
+          }
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1771979482/library/qrps5pli0u4hynuoawpl.jpg",
+          "alt": "Documentation of an art and new media installation",
+          "loaded": true,
+          "loading": "lazy",
+          "filter": "none",
+          "rect": {
+            "x": 64,
+            "y": 897.125,
+            "width": 206,
+            "height": 103,
+            "bottom": 1000.125
+          }
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1771980091/library/exvgq0iikuanog7dhcdq.jpg",
+          "alt": "3D printed pieces and fabrication prototypes",
+          "loaded": true,
+          "loading": "lazy",
+          "filter": "none",
+          "rect": {
+            "x": 282,
+            "y": 897.125,
+            "width": 206,
+            "height": 103,
+            "bottom": 1000.125
+          }
+        }
+      ]
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "overflow": false,
+      "intro": {
+        "x": 124,
+        "y": 92.6875,
+        "width": 572,
+        "height": 205.4375,
+        "bottom": 298.125
+      },
+      "services": {
+        "x": 744,
+        "y": 92.6875,
+        "width": 572,
+        "height": 539.359375,
+        "bottom": 632.046875
+      },
+      "gallery": {
+        "x": 124,
+        "y": 322.125,
+        "width": 572,
+        "height": 356.28125,
+        "bottom": 678.40625
+      },
+      "photos": [
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1771979623/library/m7ufvpgqfetcztbkh7q8.jpg",
+          "alt": "Documentation of sound and technical production at a concert",
+          "loaded": true,
+          "loading": "lazy",
+          "filter": "none",
+          "rect": {
+            "x": 124,
+            "y": 322.125,
+            "width": 572,
+            "height": 204.28125,
+            "bottom": 526.40625
+          }
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1771979482/library/qrps5pli0u4hynuoawpl.jpg",
+          "alt": "Documentation of an art and new media installation",
+          "loaded": true,
+          "loading": "lazy",
+          "filter": "none",
+          "rect": {
+            "x": 124,
+            "y": 538.40625,
+            "width": 280,
+            "height": 140,
+            "bottom": 678.40625
+          }
+        },
+        {
+          "source": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1771980091/library/exvgq0iikuanog7dhcdq.jpg",
+          "alt": "3D printed pieces and fabrication prototypes",
+          "loaded": true,
+          "loading": "lazy",
+          "filter": "none",
+          "rect": {
+            "x": 416,
+            "y": 538.40625,
+            "width": 280,
+            "height": 140,
+            "bottom": 678.40625
+          }
+        }
+      ]
+    }
+  ],
+  "otherSectionsIdentical": true,
+  "admin": {
+    "selectors": 3,
+    "saveMocked": true,
+    "selected": [
+      "https://res.cloudinary.com/dmrzmnjln/image/upload/v1772425413/library/axtkacdgmwacutemlujn.jpg",
+      "https://res.cloudinary.com/dmrzmnjln/image/upload/v1771980056/library/zrahbpgvaz9lkqhhety7.jpg",
+      "https://res.cloudinary.com/dmrzmnjln/image/upload/v1771980104/library/pjefw9tnt8pbuhrcpuhz.jpg"
+    ],
+    "clearSelection": true,
+    "libraryReuseWithoutDuplicate": true
+  },
+  "failures": [
+    {
+      "name": "first-photo",
+      "visible": 3,
+      "sources": [
+        "https://res.cloudinary.com/dmrzmnjln/image/upload/v1772425413/library/axtkacdgmwacutemlujn.jpg",
+        "https://res.cloudinary.com/dmrzmnjln/image/upload/v1771979482/library/qrps5pli0u4hynuoawpl.jpg",
+        "https://res.cloudinary.com/dmrzmnjln/image/upload/v1771980091/library/exvgq0iikuanog7dhcdq.jpg"
+      ]
+    },
+    {
+      "name": "two-photos",
+      "visible": 2,
+      "sources": [
+        "https://res.cloudinary.com/dmrzmnjln/image/upload/v1771979623/library/m7ufvpgqfetcztbkh7q8.jpg",
+        "https://res.cloudinary.com/dmrzmnjln/image/upload/v1771980091/library/exvgq0iikuanog7dhcdq.jpg"
+      ]
+    },
+    {
+      "name": "one-photo",
+      "visible": 1,
+      "sources": [
+        "https://res.cloudinary.com/dmrzmnjln/image/upload/v1771979623/library/m7ufvpgqfetcztbkh7q8.jpg"
+      ]
+    },
+    {
+      "name": "no-photos",
+      "visible": 0,
+      "sources": []
+    }
+  ],
+  "errors": [],
+  "productionWrites": false
+}

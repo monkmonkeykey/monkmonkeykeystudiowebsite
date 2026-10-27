@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { isServicePhotoSource } from "@/domain/service-photos";
 
 const homeProjectSlugSchema = z.string().trim().min(1).max(200)
   .refine((value) => !/[\s/\\?#\u0000-\u001f]/u.test(value), "Identificador de proyecto inválido.")
@@ -94,6 +95,7 @@ export const serviceSchema = z.object({
   title: localeTextSchema,
   summary: localeTextSchema,
   outcomes: z.array(localeTextSchema).default([]),
+  homeFeaturedImageSrc: z.string().trim().refine(isServicePhotoSource, "Elige una fotografía válida de la galería del servicio.").optional(),
   gallery: z
     .array(
       z.object({
@@ -102,6 +104,9 @@ export const serviceSchema = z.object({
       }),
     )
     .default([]),
+}).refine((service) => !service.homeFeaturedImageSrc || service.gallery.some((image) => image.src.trim() === service.homeFeaturedImageSrc), {
+  message: "La imagen destacada debe pertenecer a la galería del servicio.",
+  path: ["homeFeaturedImageSrc"],
 });
 
 const mediaSchema = z

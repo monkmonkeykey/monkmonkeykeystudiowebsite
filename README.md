@@ -72,6 +72,12 @@ La selección inicial, cuando esas entradas están disponibles, es **Otro día, 
 
 Consulta la [auditoría, los archivos y la validación de Fase 3.2](artifacts/home-phase32/README.md). Ejecuta `npm run test:home` para comprobar la resolución, el guardado y los permisos con almacenamiento aislado en memoria.
 
+### Fotografías de Nuestra práctica
+
+En `/admin` → **Contenido del sitio** → **Lista de servicios**, cada servicio tiene **Imagen destacada en el Home**. Elige una foto de su galería o usa **Elegir destacada de biblioteca** para reutilizar un archivo existente de Cloudinary. Si la imagen aún no pertenece a la galería, se añade su referencia una sola vez; no se sube ni duplica el archivo. Edita su texto alternativo en la galería del servicio y pulsa **Guardar cambios** en el editor de contenido del sitio.
+
+La selección se guarda en `siteContent.services[].homeFeaturedImageSrc`, un campo opcional con la URL de una foto de esa misma galería. **Primera fotografía disponible** restablece el respaldo automático. El Home presenta sonido, arte y nuevos medios, e impresión 3D en ese orden. Si falta la selección o una imagen falla al cargar, intenta las demás fotos de ese servicio; si no queda ninguna, ajusta la composición a las disponibles sin relleno. No requiere migración. Consulta la [documentación y capturas de Fase 3.4](artifacts/home-phase34/README.md).
+
 ## Configurar el envío de correos del formulario de contacto
 El formulario de contacto enviará los mensajes por **Resend** o por **Gmail SMTP**. La app elige automáticamente el proveedor:
 - En modo `auto` (por defecto): usa **Resend** si existe `RESEND_API_KEY`; si no, usa **Gmail** si existen `GMAIL_USER` y `GMAIL_APP_PASSWORD`.
@@ -227,6 +233,7 @@ Checklist rápida para Gmail:
 - `npm run start`: arranca el servidor en modo producción (requiere `npm run build` previo).
 - `npm run lint`: ejecuta ESLint sobre el proyecto.
 - `npm run test:home`: comprueba la configuración de portada y su API sin escribir en MongoDB.
+- `npm run test:services`: comprueba selección, persistencia y respaldo de fotografías de servicios con almacenamiento aislado.
 
 ## Estructura relevante
 - `content/` – Entradas Markdown usadas como respaldo estático.

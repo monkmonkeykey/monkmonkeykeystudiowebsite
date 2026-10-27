@@ -11,6 +11,7 @@ export type Service = {
   summary: LocaleText;
   outcomes: LocaleText[];
   gallery?: ServiceGalleryImage[];
+  homeFeaturedImageSrc?: string;
 };
 
 export const SERVICES: Service[] = [
