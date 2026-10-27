@@ -1,0 +1,22 @@
+{
+  "certificates": [
+    {
+      "ip": "216.198.79.1",
+      "subject": {
+        "CN": "www.monkmonkeykey.com"
+      },
+      "subjectAltName": "DNS:www.monkmonkeykey.com",
+      "authorized": false,
+      "authorizationError": "ERR_TLS_CERT_ALTNAME_INVALID"
+    },
+    {
+      "ip": "162.240.81.81",
+      "error": "TLS connection timeout"
+    }
+  ],
+  "nameservers": [
+    "dns3.hostgator.com.br",
+    "dns4.hostgator.com.br"
+  ],
+  "caa": "ENODATA"
+}

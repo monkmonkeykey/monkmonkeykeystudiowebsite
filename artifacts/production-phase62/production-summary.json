@@ -1,0 +1,2121 @@
+{
+  "checkedAt": "2026-10-27T22:19:57.207Z",
+  "totalChecks": 38,
+  "normalSuccessfulPages": 32,
+  "apexFailures": [
+    {
+      "engine": "chromium",
+      "viewport": 375,
+      "error": "page.goto: net::ERR_ABORTED at https://monkmonkeykey.com/\nCall log:\n\u001b[2m  - navigating to \"https://monkmonkeykey.com/\", waiting until \"domcontentloaded\"\u001b[22m\n"
+    },
+    {
+      "engine": "chromium",
+      "viewport": 1440,
+      "error": "page.goto: net::ERR_ABORTED at https://monkmonkeykey.com/\nCall log:\n\u001b[2m  - navigating to \"https://monkmonkeykey.com/\", waiting until \"domcontentloaded\"\u001b[22m\n"
+    },
+    {
+      "engine": "webkit",
+      "viewport": 375,
+      "error": "page.goto: The certificate for this server is invalid.\nCall log:\n\u001b[2m  - navigating to \"https://monkmonkeykey.com/\", waiting until \"domcontentloaded\"\u001b[22m\n"
+    },
+    {
+      "engine": "webkit",
+      "viewport": 1440,
+      "error": "page.goto: The certificate for this server is invalid.\nCall log:\n\u001b[2m  - navigating to \"https://monkmonkeykey.com/\", waiting until \"domcontentloaded\"\u001b[22m\n"
+    }
+  ],
+  "stylesheetCount": 64,
+  "scriptCount": 256,
+  "criticalResourceFailures": [],
+  "pageErrors": [],
+  "imageHTTPFailures": [],
+  "resourceFailures": [
+    {
+      "url": "https://www.monkmonkeykey.com/proyectos/pinball-banxico?_rsc=1r34m",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/?_rsc=1r34m",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/proyectos/luminico_urtext_2025?_rsc=p37cr",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/proyectos/pinball-banxico?_rsc=p37cr",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/proyectos/otro_dia_otro_dolar?_rsc=p37cr",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/?_rsc=1g2af",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/proyectos/otro_dia_otro_dolar?_rsc=1cvr6",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/proyectos/maraton_musica_contemporanea-2023?_rsc=1cvr6",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/?_rsc=5ftua",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/proyectos?_rsc=5ftua",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/?_rsc=189he",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/proyectos?_rsc=189he",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/?_rsc=15j9d",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/proyectos/pinball-banxico?_rsc=1r34m",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/proyectos?_rsc=1r34m",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/proyectos/luminico_urtext_2025?_rsc=1r34m",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/proyectos/pinball-banxico?_rsc=p37cr",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/?_rsc=1r34m",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/proyectos/luminico_urtext_2025?_rsc=p37cr",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/proyectos/otro_dia_otro_dolar?_rsc=p37cr",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/?_rsc=p37cr",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/proyectos/otro_dia_otro_dolar?_rsc=1g2af",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/proyectos/maraton_musica_contemporanea-2023?_rsc=1g2af",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/?_rsc=1g2af",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/proyectos/otro_dia_otro_dolar?_rsc=1cvr6",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/?_rsc=1cvr6",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/proyectos/maraton_musica_contemporanea-2023?_rsc=1cvr6",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/?_rsc=5ftua",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/proyectos?_rsc=5ftua",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/?_rsc=189he",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/proyectos?_rsc=189he",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/?_rsc=1t45s",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/proyectos/pinball-banxico?_rsc=1r34m",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/proyectos/luminico_urtext_2025?_rsc=1r34m",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/servicios?_rsc=1r34m",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/proyectos?_rsc=1r34m",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/clientes?_rsc=1r34m",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/contacto?_rsc=1r34m",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/?_rsc=1r34m",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/proyectos/pinball-banxico?_rsc=p37cr",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/proyectos/otro_dia_otro_dolar?_rsc=p37cr",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/proyectos?_rsc=p37cr",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/contacto?_rsc=p37cr",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/?_rsc=p37cr",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/proyectos/leam2025?_rsc=1g2af",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/proyectos/luminico_urtext_2025?_rsc=1g2af",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/proyectos/maraton_musica_contemporanea-2023?_rsc=1g2af",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/proyectos?_rsc=1g2af",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/servicios?_rsc=1g2af",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/clientes?_rsc=1g2af",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/proyectos/leam2025?_rsc=1cvr6",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/proyectos/luminico_urtext_2025?_rsc=1cvr6",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/proyectos/otro_dia_otro_dolar?_rsc=1cvr6",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/proyectos/maraton_musica_contemporanea-2023?_rsc=1cvr6",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/proyectos?_rsc=1cvr6",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/contacto?_rsc=1cvr6",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/clientes?_rsc=1cvr6",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/clientes?_rsc=5ftua",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/contacto?_rsc=5ftua",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/proyectos?_rsc=5ftua",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/contacto?_rsc=189he",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/servicios?_rsc=189he",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/contacto?_rsc=15j9d",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/proyectos?_rsc=15j9d",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/servicios?_rsc=15j9d",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/clientes?_rsc=15j9d",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/?_rsc=15j9d",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/contacto?_rsc=1t45s",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/clientes?_rsc=1t45s",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/servicios?_rsc=1t45s",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/?_rsc=1t45s",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/proyectos/luminico_urtext_2025?_rsc=1r34m",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/servicios?_rsc=1r34m",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/proyectos/pinball-banxico?_rsc=1r34m",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/clientes?_rsc=1r34m",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/?_rsc=1r34m",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/contacto?_rsc=1r34m",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/proyectos/pinball-banxico?_rsc=p37cr",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/servicios?_rsc=p37cr",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/proyectos/otro_dia_otro_dolar?_rsc=p37cr",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/proyectos/luminico_urtext_2025?_rsc=p37cr",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/proyectos?_rsc=p37cr",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/contacto?_rsc=p37cr",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/?_rsc=p37cr",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/proyectos/leam2025?_rsc=1g2af",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/proyectos/maraton_musica_contemporanea-2023?_rsc=1g2af",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/proyectos/luminico_urtext_2025?_rsc=1g2af",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/servicios?_rsc=1g2af",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/clientes?_rsc=1g2af",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/?_rsc=1g2af",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/proyectos/leam2025?_rsc=1cvr6",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/proyectos/luminico_urtext_2025?_rsc=1cvr6",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/proyectos/otro_dia_otro_dolar?_rsc=1cvr6",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/proyectos/maraton_musica_contemporanea-2023?_rsc=1cvr6",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/clientes?_rsc=1cvr6",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/servicios?_rsc=1cvr6",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/contacto?_rsc=5ftua",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/proyectos?_rsc=5ftua",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/clientes?_rsc=5ftua",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/?_rsc=5ftua",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/contacto?_rsc=189he",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/clientes?_rsc=189he",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/proyectos?_rsc=189he",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/servicios?_rsc=189he",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/servicios?_rsc=15j9d",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/contacto?_rsc=15j9d",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/clientes?_rsc=1t45s",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/contacto?_rsc=1t45s",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/proyectos?_rsc=1t45s",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/servicios?_rsc=1t45s",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/?_rsc=1t45s",
+      "type": "fetch",
+      "failure": "net::ERR_ABORTED"
+    }
+  ],
+  "consoleErrors": [],
+  "overflow": [],
+  "comparisons": [
+    {
+      "path": "/",
+      "identicalAcrossBothDomainsAndWidths": true,
+      "fingerprints": [
+        {
+          "engine": "chromium",
+          "origin": "https://www.monkmonkeykey.com",
+          "viewport": 375,
+          "resources": [
+            {
+              "path": "/_next/static/chunks/1-b025027a63979f8d.js",
+              "sha256": "4161d83faabe652e030463cab90a016cb4f4c1c24c400572da65d874b3692c34"
+            },
+            {
+              "path": "/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+              "sha256": "973335ea8299b25007424c41255cda0b01eb0b8cee3d312902612340f7d6d5e3"
+            },
+            {
+              "path": "/_next/static/chunks/549-dba7a76498e1ff2e.js",
+              "sha256": "c6d516ad49cc4ab3a5a0bff2b44aca25bd49f37d8272513f960402cf54c84476"
+            },
+            {
+              "path": "/_next/static/chunks/826-35d3f1850c807e90.js",
+              "sha256": "0480f6c4eef95fab55ebe316ca60ecca553b7a626217b82ff6b78753c93a6743"
+            },
+            {
+              "path": "/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+              "sha256": "4ddf372339edf8a7e89c3c94bce2824131a582b0fbb3b628c6c8e13bfdfa27a0"
+            },
+            {
+              "path": "/_next/static/chunks/app/page-105fb152b5e37488.js",
+              "sha256": "5e2d8cfb2b3f2d624832485b10af949965e2d5b7a9d51750a23d9275c868cbf3"
+            },
+            {
+              "path": "/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+              "sha256": "718d2deb6b70491cff569760504aee47205b33d2490f177da319c1b8ae18efc5"
+            },
+            {
+              "path": "/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+              "sha256": "9850c8f4802d3b016848b0e5d7fb82300d11fd44eea1ab43e876c50c604bec35"
+            },
+            {
+              "path": "/_next/static/css/4052aa66d07f85ff.css",
+              "sha256": "ae9a7512aa3970028d7a3ac03f8abae520417134a1e42a859d24301d73ba4d2f"
+            },
+            {
+              "path": "/_next/static/css/bd56f9cabe1b3edf.css",
+              "sha256": "3772984188c163a52c9083b7bdf7aac20d6665dbdf813a0eeb4d1e60d2c17ed3"
+            }
+          ]
+        },
+        {
+          "engine": "chromium",
+          "origin": "https://monkmonkeykeystudiowebsite.vercel.app",
+          "viewport": 375,
+          "resources": [
+            {
+              "path": "/_next/static/chunks/1-b025027a63979f8d.js",
+              "sha256": "4161d83faabe652e030463cab90a016cb4f4c1c24c400572da65d874b3692c34"
+            },
+            {
+              "path": "/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+              "sha256": "973335ea8299b25007424c41255cda0b01eb0b8cee3d312902612340f7d6d5e3"
+            },
+            {
+              "path": "/_next/static/chunks/549-dba7a76498e1ff2e.js",
+              "sha256": "c6d516ad49cc4ab3a5a0bff2b44aca25bd49f37d8272513f960402cf54c84476"
+            },
+            {
+              "path": "/_next/static/chunks/826-35d3f1850c807e90.js",
+              "sha256": "0480f6c4eef95fab55ebe316ca60ecca553b7a626217b82ff6b78753c93a6743"
+            },
+            {
+              "path": "/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+              "sha256": "4ddf372339edf8a7e89c3c94bce2824131a582b0fbb3b628c6c8e13bfdfa27a0"
+            },
+            {
+              "path": "/_next/static/chunks/app/page-105fb152b5e37488.js",
+              "sha256": "5e2d8cfb2b3f2d624832485b10af949965e2d5b7a9d51750a23d9275c868cbf3"
+            },
+            {
+              "path": "/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+              "sha256": "718d2deb6b70491cff569760504aee47205b33d2490f177da319c1b8ae18efc5"
+            },
+            {
+              "path": "/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+              "sha256": "9850c8f4802d3b016848b0e5d7fb82300d11fd44eea1ab43e876c50c604bec35"
+            },
+            {
+              "path": "/_next/static/css/4052aa66d07f85ff.css",
+              "sha256": "ae9a7512aa3970028d7a3ac03f8abae520417134a1e42a859d24301d73ba4d2f"
+            },
+            {
+              "path": "/_next/static/css/bd56f9cabe1b3edf.css",
+              "sha256": "3772984188c163a52c9083b7bdf7aac20d6665dbdf813a0eeb4d1e60d2c17ed3"
+            }
+          ]
+        },
+        {
+          "engine": "chromium",
+          "origin": "https://www.monkmonkeykey.com",
+          "viewport": 1440,
+          "resources": [
+            {
+              "path": "/_next/static/chunks/1-b025027a63979f8d.js",
+              "sha256": "4161d83faabe652e030463cab90a016cb4f4c1c24c400572da65d874b3692c34"
+            },
+            {
+              "path": "/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+              "sha256": "973335ea8299b25007424c41255cda0b01eb0b8cee3d312902612340f7d6d5e3"
+            },
+            {
+              "path": "/_next/static/chunks/549-dba7a76498e1ff2e.js",
+              "sha256": "c6d516ad49cc4ab3a5a0bff2b44aca25bd49f37d8272513f960402cf54c84476"
+            },
+            {
+              "path": "/_next/static/chunks/826-35d3f1850c807e90.js",
+              "sha256": "0480f6c4eef95fab55ebe316ca60ecca553b7a626217b82ff6b78753c93a6743"
+            },
+            {
+              "path": "/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+              "sha256": "4ddf372339edf8a7e89c3c94bce2824131a582b0fbb3b628c6c8e13bfdfa27a0"
+            },
+            {
+              "path": "/_next/static/chunks/app/page-105fb152b5e37488.js",
+              "sha256": "5e2d8cfb2b3f2d624832485b10af949965e2d5b7a9d51750a23d9275c868cbf3"
+            },
+            {
+              "path": "/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+              "sha256": "718d2deb6b70491cff569760504aee47205b33d2490f177da319c1b8ae18efc5"
+            },
+            {
+              "path": "/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+              "sha256": "9850c8f4802d3b016848b0e5d7fb82300d11fd44eea1ab43e876c50c604bec35"
+            },
+            {
+              "path": "/_next/static/css/4052aa66d07f85ff.css",
+              "sha256": "ae9a7512aa3970028d7a3ac03f8abae520417134a1e42a859d24301d73ba4d2f"
+            },
+            {
+              "path": "/_next/static/css/bd56f9cabe1b3edf.css",
+              "sha256": "3772984188c163a52c9083b7bdf7aac20d6665dbdf813a0eeb4d1e60d2c17ed3"
+            }
+          ]
+        },
+        {
+          "engine": "chromium",
+          "origin": "https://monkmonkeykeystudiowebsite.vercel.app",
+          "viewport": 1440,
+          "resources": [
+            {
+              "path": "/_next/static/chunks/1-b025027a63979f8d.js",
+              "sha256": "4161d83faabe652e030463cab90a016cb4f4c1c24c400572da65d874b3692c34"
+            },
+            {
+              "path": "/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+              "sha256": "973335ea8299b25007424c41255cda0b01eb0b8cee3d312902612340f7d6d5e3"
+            },
+            {
+              "path": "/_next/static/chunks/549-dba7a76498e1ff2e.js",
+              "sha256": "c6d516ad49cc4ab3a5a0bff2b44aca25bd49f37d8272513f960402cf54c84476"
+            },
+            {
+              "path": "/_next/static/chunks/826-35d3f1850c807e90.js",
+              "sha256": "0480f6c4eef95fab55ebe316ca60ecca553b7a626217b82ff6b78753c93a6743"
+            },
+            {
+              "path": "/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+              "sha256": "4ddf372339edf8a7e89c3c94bce2824131a582b0fbb3b628c6c8e13bfdfa27a0"
+            },
+            {
+              "path": "/_next/static/chunks/app/page-105fb152b5e37488.js",
+              "sha256": "5e2d8cfb2b3f2d624832485b10af949965e2d5b7a9d51750a23d9275c868cbf3"
+            },
+            {
+              "path": "/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+              "sha256": "718d2deb6b70491cff569760504aee47205b33d2490f177da319c1b8ae18efc5"
+            },
+            {
+              "path": "/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+              "sha256": "9850c8f4802d3b016848b0e5d7fb82300d11fd44eea1ab43e876c50c604bec35"
+            },
+            {
+              "path": "/_next/static/css/4052aa66d07f85ff.css",
+              "sha256": "ae9a7512aa3970028d7a3ac03f8abae520417134a1e42a859d24301d73ba4d2f"
+            },
+            {
+              "path": "/_next/static/css/bd56f9cabe1b3edf.css",
+              "sha256": "3772984188c163a52c9083b7bdf7aac20d6665dbdf813a0eeb4d1e60d2c17ed3"
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "origin": "https://www.monkmonkeykey.com",
+          "viewport": 375,
+          "resources": [
+            {
+              "path": "/_next/static/chunks/1-b025027a63979f8d.js",
+              "sha256": "4161d83faabe652e030463cab90a016cb4f4c1c24c400572da65d874b3692c34"
+            },
+            {
+              "path": "/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+              "sha256": "973335ea8299b25007424c41255cda0b01eb0b8cee3d312902612340f7d6d5e3"
+            },
+            {
+              "path": "/_next/static/chunks/549-dba7a76498e1ff2e.js",
+              "sha256": "c6d516ad49cc4ab3a5a0bff2b44aca25bd49f37d8272513f960402cf54c84476"
+            },
+            {
+              "path": "/_next/static/chunks/826-35d3f1850c807e90.js",
+              "sha256": "0480f6c4eef95fab55ebe316ca60ecca553b7a626217b82ff6b78753c93a6743"
+            },
+            {
+              "path": "/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+              "sha256": "4ddf372339edf8a7e89c3c94bce2824131a582b0fbb3b628c6c8e13bfdfa27a0"
+            },
+            {
+              "path": "/_next/static/chunks/app/page-105fb152b5e37488.js",
+              "sha256": "5e2d8cfb2b3f2d624832485b10af949965e2d5b7a9d51750a23d9275c868cbf3"
+            },
+            {
+              "path": "/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+              "sha256": "718d2deb6b70491cff569760504aee47205b33d2490f177da319c1b8ae18efc5"
+            },
+            {
+              "path": "/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+              "sha256": "9850c8f4802d3b016848b0e5d7fb82300d11fd44eea1ab43e876c50c604bec35"
+            },
+            {
+              "path": "/_next/static/css/4052aa66d07f85ff.css",
+              "sha256": "ae9a7512aa3970028d7a3ac03f8abae520417134a1e42a859d24301d73ba4d2f"
+            },
+            {
+              "path": "/_next/static/css/bd56f9cabe1b3edf.css",
+              "sha256": "3772984188c163a52c9083b7bdf7aac20d6665dbdf813a0eeb4d1e60d2c17ed3"
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "origin": "https://monkmonkeykeystudiowebsite.vercel.app",
+          "viewport": 375,
+          "resources": [
+            {
+              "path": "/_next/static/chunks/1-b025027a63979f8d.js",
+              "sha256": "4161d83faabe652e030463cab90a016cb4f4c1c24c400572da65d874b3692c34"
+            },
+            {
+              "path": "/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+              "sha256": "973335ea8299b25007424c41255cda0b01eb0b8cee3d312902612340f7d6d5e3"
+            },
+            {
+              "path": "/_next/static/chunks/549-dba7a76498e1ff2e.js",
+              "sha256": "c6d516ad49cc4ab3a5a0bff2b44aca25bd49f37d8272513f960402cf54c84476"
+            },
+            {
+              "path": "/_next/static/chunks/826-35d3f1850c807e90.js",
+              "sha256": "0480f6c4eef95fab55ebe316ca60ecca553b7a626217b82ff6b78753c93a6743"
+            },
+            {
+              "path": "/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+              "sha256": "4ddf372339edf8a7e89c3c94bce2824131a582b0fbb3b628c6c8e13bfdfa27a0"
+            },
+            {
+              "path": "/_next/static/chunks/app/page-105fb152b5e37488.js",
+              "sha256": "5e2d8cfb2b3f2d624832485b10af949965e2d5b7a9d51750a23d9275c868cbf3"
+            },
+            {
+              "path": "/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+              "sha256": "718d2deb6b70491cff569760504aee47205b33d2490f177da319c1b8ae18efc5"
+            },
+            {
+              "path": "/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+              "sha256": "9850c8f4802d3b016848b0e5d7fb82300d11fd44eea1ab43e876c50c604bec35"
+            },
+            {
+              "path": "/_next/static/css/4052aa66d07f85ff.css",
+              "sha256": "ae9a7512aa3970028d7a3ac03f8abae520417134a1e42a859d24301d73ba4d2f"
+            },
+            {
+              "path": "/_next/static/css/bd56f9cabe1b3edf.css",
+              "sha256": "3772984188c163a52c9083b7bdf7aac20d6665dbdf813a0eeb4d1e60d2c17ed3"
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "origin": "https://www.monkmonkeykey.com",
+          "viewport": 1440,
+          "resources": [
+            {
+              "path": "/_next/static/chunks/1-b025027a63979f8d.js",
+              "sha256": "4161d83faabe652e030463cab90a016cb4f4c1c24c400572da65d874b3692c34"
+            },
+            {
+              "path": "/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+              "sha256": "973335ea8299b25007424c41255cda0b01eb0b8cee3d312902612340f7d6d5e3"
+            },
+            {
+              "path": "/_next/static/chunks/549-dba7a76498e1ff2e.js",
+              "sha256": "c6d516ad49cc4ab3a5a0bff2b44aca25bd49f37d8272513f960402cf54c84476"
+            },
+            {
+              "path": "/_next/static/chunks/826-35d3f1850c807e90.js",
+              "sha256": "0480f6c4eef95fab55ebe316ca60ecca553b7a626217b82ff6b78753c93a6743"
+            },
+            {
+              "path": "/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+              "sha256": "4ddf372339edf8a7e89c3c94bce2824131a582b0fbb3b628c6c8e13bfdfa27a0"
+            },
+            {
+              "path": "/_next/static/chunks/app/page-105fb152b5e37488.js",
+              "sha256": "5e2d8cfb2b3f2d624832485b10af949965e2d5b7a9d51750a23d9275c868cbf3"
+            },
+            {
+              "path": "/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+              "sha256": "718d2deb6b70491cff569760504aee47205b33d2490f177da319c1b8ae18efc5"
+            },
+            {
+              "path": "/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+              "sha256": "9850c8f4802d3b016848b0e5d7fb82300d11fd44eea1ab43e876c50c604bec35"
+            },
+            {
+              "path": "/_next/static/css/4052aa66d07f85ff.css",
+              "sha256": "ae9a7512aa3970028d7a3ac03f8abae520417134a1e42a859d24301d73ba4d2f"
+            },
+            {
+              "path": "/_next/static/css/bd56f9cabe1b3edf.css",
+              "sha256": "3772984188c163a52c9083b7bdf7aac20d6665dbdf813a0eeb4d1e60d2c17ed3"
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "origin": "https://monkmonkeykeystudiowebsite.vercel.app",
+          "viewport": 1440,
+          "resources": [
+            {
+              "path": "/_next/static/chunks/1-b025027a63979f8d.js",
+              "sha256": "4161d83faabe652e030463cab90a016cb4f4c1c24c400572da65d874b3692c34"
+            },
+            {
+              "path": "/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+              "sha256": "973335ea8299b25007424c41255cda0b01eb0b8cee3d312902612340f7d6d5e3"
+            },
+            {
+              "path": "/_next/static/chunks/549-dba7a76498e1ff2e.js",
+              "sha256": "c6d516ad49cc4ab3a5a0bff2b44aca25bd49f37d8272513f960402cf54c84476"
+            },
+            {
+              "path": "/_next/static/chunks/826-35d3f1850c807e90.js",
+              "sha256": "0480f6c4eef95fab55ebe316ca60ecca553b7a626217b82ff6b78753c93a6743"
+            },
+            {
+              "path": "/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+              "sha256": "4ddf372339edf8a7e89c3c94bce2824131a582b0fbb3b628c6c8e13bfdfa27a0"
+            },
+            {
+              "path": "/_next/static/chunks/app/page-105fb152b5e37488.js",
+              "sha256": "5e2d8cfb2b3f2d624832485b10af949965e2d5b7a9d51750a23d9275c868cbf3"
+            },
+            {
+              "path": "/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+              "sha256": "718d2deb6b70491cff569760504aee47205b33d2490f177da319c1b8ae18efc5"
+            },
+            {
+              "path": "/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+              "sha256": "9850c8f4802d3b016848b0e5d7fb82300d11fd44eea1ab43e876c50c604bec35"
+            },
+            {
+              "path": "/_next/static/css/4052aa66d07f85ff.css",
+              "sha256": "ae9a7512aa3970028d7a3ac03f8abae520417134a1e42a859d24301d73ba4d2f"
+            },
+            {
+              "path": "/_next/static/css/bd56f9cabe1b3edf.css",
+              "sha256": "3772984188c163a52c9083b7bdf7aac20d6665dbdf813a0eeb4d1e60d2c17ed3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/proyectos",
+      "identicalAcrossBothDomainsAndWidths": true,
+      "fingerprints": [
+        {
+          "engine": "chromium",
+          "origin": "https://www.monkmonkeykey.com",
+          "viewport": 375,
+          "resources": [
+            {
+              "path": "/_next/static/chunks/1-b025027a63979f8d.js",
+              "sha256": "4161d83faabe652e030463cab90a016cb4f4c1c24c400572da65d874b3692c34"
+            },
+            {
+              "path": "/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+              "sha256": "973335ea8299b25007424c41255cda0b01eb0b8cee3d312902612340f7d6d5e3"
+            },
+            {
+              "path": "/_next/static/chunks/549-dba7a76498e1ff2e.js",
+              "sha256": "c6d516ad49cc4ab3a5a0bff2b44aca25bd49f37d8272513f960402cf54c84476"
+            },
+            {
+              "path": "/_next/static/chunks/826-35d3f1850c807e90.js",
+              "sha256": "0480f6c4eef95fab55ebe316ca60ecca553b7a626217b82ff6b78753c93a6743"
+            },
+            {
+              "path": "/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+              "sha256": "4ddf372339edf8a7e89c3c94bce2824131a582b0fbb3b628c6c8e13bfdfa27a0"
+            },
+            {
+              "path": "/_next/static/chunks/app/proyectos/page-bab0744a08fdce58.js",
+              "sha256": "730c2aaf44aa5cd328e182013b9507376aaf19236c6640be53a3d98ddc890487"
+            },
+            {
+              "path": "/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+              "sha256": "718d2deb6b70491cff569760504aee47205b33d2490f177da319c1b8ae18efc5"
+            },
+            {
+              "path": "/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+              "sha256": "9850c8f4802d3b016848b0e5d7fb82300d11fd44eea1ab43e876c50c604bec35"
+            },
+            {
+              "path": "/_next/static/css/2f3c04e721b80d3e.css",
+              "sha256": "a5c7d06fd1b682cfbd10fd4efac5c251c37acd2d897b767906f4657537f37403"
+            },
+            {
+              "path": "/_next/static/css/4052aa66d07f85ff.css",
+              "sha256": "ae9a7512aa3970028d7a3ac03f8abae520417134a1e42a859d24301d73ba4d2f"
+            }
+          ]
+        },
+        {
+          "engine": "chromium",
+          "origin": "https://monkmonkeykeystudiowebsite.vercel.app",
+          "viewport": 375,
+          "resources": [
+            {
+              "path": "/_next/static/chunks/1-b025027a63979f8d.js",
+              "sha256": "4161d83faabe652e030463cab90a016cb4f4c1c24c400572da65d874b3692c34"
+            },
+            {
+              "path": "/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+              "sha256": "973335ea8299b25007424c41255cda0b01eb0b8cee3d312902612340f7d6d5e3"
+            },
+            {
+              "path": "/_next/static/chunks/549-dba7a76498e1ff2e.js",
+              "sha256": "c6d516ad49cc4ab3a5a0bff2b44aca25bd49f37d8272513f960402cf54c84476"
+            },
+            {
+              "path": "/_next/static/chunks/826-35d3f1850c807e90.js",
+              "sha256": "0480f6c4eef95fab55ebe316ca60ecca553b7a626217b82ff6b78753c93a6743"
+            },
+            {
+              "path": "/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+              "sha256": "4ddf372339edf8a7e89c3c94bce2824131a582b0fbb3b628c6c8e13bfdfa27a0"
+            },
+            {
+              "path": "/_next/static/chunks/app/proyectos/page-bab0744a08fdce58.js",
+              "sha256": "730c2aaf44aa5cd328e182013b9507376aaf19236c6640be53a3d98ddc890487"
+            },
+            {
+              "path": "/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+              "sha256": "718d2deb6b70491cff569760504aee47205b33d2490f177da319c1b8ae18efc5"
+            },
+            {
+              "path": "/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+              "sha256": "9850c8f4802d3b016848b0e5d7fb82300d11fd44eea1ab43e876c50c604bec35"
+            },
+            {
+              "path": "/_next/static/css/2f3c04e721b80d3e.css",
+              "sha256": "a5c7d06fd1b682cfbd10fd4efac5c251c37acd2d897b767906f4657537f37403"
+            },
+            {
+              "path": "/_next/static/css/4052aa66d07f85ff.css",
+              "sha256": "ae9a7512aa3970028d7a3ac03f8abae520417134a1e42a859d24301d73ba4d2f"
+            }
+          ]
+        },
+        {
+          "engine": "chromium",
+          "origin": "https://www.monkmonkeykey.com",
+          "viewport": 1440,
+          "resources": [
+            {
+              "path": "/_next/static/chunks/1-b025027a63979f8d.js",
+              "sha256": "4161d83faabe652e030463cab90a016cb4f4c1c24c400572da65d874b3692c34"
+            },
+            {
+              "path": "/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+              "sha256": "973335ea8299b25007424c41255cda0b01eb0b8cee3d312902612340f7d6d5e3"
+            },
+            {
+              "path": "/_next/static/chunks/549-dba7a76498e1ff2e.js",
+              "sha256": "c6d516ad49cc4ab3a5a0bff2b44aca25bd49f37d8272513f960402cf54c84476"
+            },
+            {
+              "path": "/_next/static/chunks/826-35d3f1850c807e90.js",
+              "sha256": "0480f6c4eef95fab55ebe316ca60ecca553b7a626217b82ff6b78753c93a6743"
+            },
+            {
+              "path": "/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+              "sha256": "4ddf372339edf8a7e89c3c94bce2824131a582b0fbb3b628c6c8e13bfdfa27a0"
+            },
+            {
+              "path": "/_next/static/chunks/app/proyectos/page-bab0744a08fdce58.js",
+              "sha256": "730c2aaf44aa5cd328e182013b9507376aaf19236c6640be53a3d98ddc890487"
+            },
+            {
+              "path": "/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+              "sha256": "718d2deb6b70491cff569760504aee47205b33d2490f177da319c1b8ae18efc5"
+            },
+            {
+              "path": "/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+              "sha256": "9850c8f4802d3b016848b0e5d7fb82300d11fd44eea1ab43e876c50c604bec35"
+            },
+            {
+              "path": "/_next/static/css/2f3c04e721b80d3e.css",
+              "sha256": "a5c7d06fd1b682cfbd10fd4efac5c251c37acd2d897b767906f4657537f37403"
+            },
+            {
+              "path": "/_next/static/css/4052aa66d07f85ff.css",
+              "sha256": "ae9a7512aa3970028d7a3ac03f8abae520417134a1e42a859d24301d73ba4d2f"
+            }
+          ]
+        },
+        {
+          "engine": "chromium",
+          "origin": "https://monkmonkeykeystudiowebsite.vercel.app",
+          "viewport": 1440,
+          "resources": [
+            {
+              "path": "/_next/static/chunks/1-b025027a63979f8d.js",
+              "sha256": "4161d83faabe652e030463cab90a016cb4f4c1c24c400572da65d874b3692c34"
+            },
+            {
+              "path": "/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+              "sha256": "973335ea8299b25007424c41255cda0b01eb0b8cee3d312902612340f7d6d5e3"
+            },
+            {
+              "path": "/_next/static/chunks/549-dba7a76498e1ff2e.js",
+              "sha256": "c6d516ad49cc4ab3a5a0bff2b44aca25bd49f37d8272513f960402cf54c84476"
+            },
+            {
+              "path": "/_next/static/chunks/826-35d3f1850c807e90.js",
+              "sha256": "0480f6c4eef95fab55ebe316ca60ecca553b7a626217b82ff6b78753c93a6743"
+            },
+            {
+              "path": "/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+              "sha256": "4ddf372339edf8a7e89c3c94bce2824131a582b0fbb3b628c6c8e13bfdfa27a0"
+            },
+            {
+              "path": "/_next/static/chunks/app/proyectos/page-bab0744a08fdce58.js",
+              "sha256": "730c2aaf44aa5cd328e182013b9507376aaf19236c6640be53a3d98ddc890487"
+            },
+            {
+              "path": "/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+              "sha256": "718d2deb6b70491cff569760504aee47205b33d2490f177da319c1b8ae18efc5"
+            },
+            {
+              "path": "/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+              "sha256": "9850c8f4802d3b016848b0e5d7fb82300d11fd44eea1ab43e876c50c604bec35"
+            },
+            {
+              "path": "/_next/static/css/2f3c04e721b80d3e.css",
+              "sha256": "a5c7d06fd1b682cfbd10fd4efac5c251c37acd2d897b767906f4657537f37403"
+            },
+            {
+              "path": "/_next/static/css/4052aa66d07f85ff.css",
+              "sha256": "ae9a7512aa3970028d7a3ac03f8abae520417134a1e42a859d24301d73ba4d2f"
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "origin": "https://www.monkmonkeykey.com",
+          "viewport": 375,
+          "resources": [
+            {
+              "path": "/_next/static/chunks/1-b025027a63979f8d.js",
+              "sha256": "4161d83faabe652e030463cab90a016cb4f4c1c24c400572da65d874b3692c34"
+            },
+            {
+              "path": "/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+              "sha256": "973335ea8299b25007424c41255cda0b01eb0b8cee3d312902612340f7d6d5e3"
+            },
+            {
+              "path": "/_next/static/chunks/549-dba7a76498e1ff2e.js",
+              "sha256": "c6d516ad49cc4ab3a5a0bff2b44aca25bd49f37d8272513f960402cf54c84476"
+            },
+            {
+              "path": "/_next/static/chunks/826-35d3f1850c807e90.js",
+              "sha256": "0480f6c4eef95fab55ebe316ca60ecca553b7a626217b82ff6b78753c93a6743"
+            },
+            {
+              "path": "/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+              "sha256": "4ddf372339edf8a7e89c3c94bce2824131a582b0fbb3b628c6c8e13bfdfa27a0"
+            },
+            {
+              "path": "/_next/static/chunks/app/proyectos/page-bab0744a08fdce58.js",
+              "sha256": "730c2aaf44aa5cd328e182013b9507376aaf19236c6640be53a3d98ddc890487"
+            },
+            {
+              "path": "/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+              "sha256": "718d2deb6b70491cff569760504aee47205b33d2490f177da319c1b8ae18efc5"
+            },
+            {
+              "path": "/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+              "sha256": "9850c8f4802d3b016848b0e5d7fb82300d11fd44eea1ab43e876c50c604bec35"
+            },
+            {
+              "path": "/_next/static/css/2f3c04e721b80d3e.css",
+              "sha256": "a5c7d06fd1b682cfbd10fd4efac5c251c37acd2d897b767906f4657537f37403"
+            },
+            {
+              "path": "/_next/static/css/4052aa66d07f85ff.css",
+              "sha256": "ae9a7512aa3970028d7a3ac03f8abae520417134a1e42a859d24301d73ba4d2f"
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "origin": "https://monkmonkeykeystudiowebsite.vercel.app",
+          "viewport": 375,
+          "resources": [
+            {
+              "path": "/_next/static/chunks/1-b025027a63979f8d.js",
+              "sha256": "4161d83faabe652e030463cab90a016cb4f4c1c24c400572da65d874b3692c34"
+            },
+            {
+              "path": "/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+              "sha256": "973335ea8299b25007424c41255cda0b01eb0b8cee3d312902612340f7d6d5e3"
+            },
+            {
+              "path": "/_next/static/chunks/549-dba7a76498e1ff2e.js",
+              "sha256": "c6d516ad49cc4ab3a5a0bff2b44aca25bd49f37d8272513f960402cf54c84476"
+            },
+            {
+              "path": "/_next/static/chunks/826-35d3f1850c807e90.js",
+              "sha256": "0480f6c4eef95fab55ebe316ca60ecca553b7a626217b82ff6b78753c93a6743"
+            },
+            {
+              "path": "/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+              "sha256": "4ddf372339edf8a7e89c3c94bce2824131a582b0fbb3b628c6c8e13bfdfa27a0"
+            },
+            {
+              "path": "/_next/static/chunks/app/proyectos/page-bab0744a08fdce58.js",
+              "sha256": "730c2aaf44aa5cd328e182013b9507376aaf19236c6640be53a3d98ddc890487"
+            },
+            {
+              "path": "/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+              "sha256": "718d2deb6b70491cff569760504aee47205b33d2490f177da319c1b8ae18efc5"
+            },
+            {
+              "path": "/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+              "sha256": "9850c8f4802d3b016848b0e5d7fb82300d11fd44eea1ab43e876c50c604bec35"
+            },
+            {
+              "path": "/_next/static/css/2f3c04e721b80d3e.css",
+              "sha256": "a5c7d06fd1b682cfbd10fd4efac5c251c37acd2d897b767906f4657537f37403"
+            },
+            {
+              "path": "/_next/static/css/4052aa66d07f85ff.css",
+              "sha256": "ae9a7512aa3970028d7a3ac03f8abae520417134a1e42a859d24301d73ba4d2f"
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "origin": "https://www.monkmonkeykey.com",
+          "viewport": 1440,
+          "resources": [
+            {
+              "path": "/_next/static/chunks/1-b025027a63979f8d.js",
+              "sha256": "4161d83faabe652e030463cab90a016cb4f4c1c24c400572da65d874b3692c34"
+            },
+            {
+              "path": "/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+              "sha256": "973335ea8299b25007424c41255cda0b01eb0b8cee3d312902612340f7d6d5e3"
+            },
+            {
+              "path": "/_next/static/chunks/549-dba7a76498e1ff2e.js",
+              "sha256": "c6d516ad49cc4ab3a5a0bff2b44aca25bd49f37d8272513f960402cf54c84476"
+            },
+            {
+              "path": "/_next/static/chunks/826-35d3f1850c807e90.js",
+              "sha256": "0480f6c4eef95fab55ebe316ca60ecca553b7a626217b82ff6b78753c93a6743"
+            },
+            {
+              "path": "/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+              "sha256": "4ddf372339edf8a7e89c3c94bce2824131a582b0fbb3b628c6c8e13bfdfa27a0"
+            },
+            {
+              "path": "/_next/static/chunks/app/proyectos/page-bab0744a08fdce58.js",
+              "sha256": "730c2aaf44aa5cd328e182013b9507376aaf19236c6640be53a3d98ddc890487"
+            },
+            {
+              "path": "/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+              "sha256": "718d2deb6b70491cff569760504aee47205b33d2490f177da319c1b8ae18efc5"
+            },
+            {
+              "path": "/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+              "sha256": "9850c8f4802d3b016848b0e5d7fb82300d11fd44eea1ab43e876c50c604bec35"
+            },
+            {
+              "path": "/_next/static/css/2f3c04e721b80d3e.css",
+              "sha256": "a5c7d06fd1b682cfbd10fd4efac5c251c37acd2d897b767906f4657537f37403"
+            },
+            {
+              "path": "/_next/static/css/4052aa66d07f85ff.css",
+              "sha256": "ae9a7512aa3970028d7a3ac03f8abae520417134a1e42a859d24301d73ba4d2f"
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "origin": "https://monkmonkeykeystudiowebsite.vercel.app",
+          "viewport": 1440,
+          "resources": [
+            {
+              "path": "/_next/static/chunks/1-b025027a63979f8d.js",
+              "sha256": "4161d83faabe652e030463cab90a016cb4f4c1c24c400572da65d874b3692c34"
+            },
+            {
+              "path": "/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+              "sha256": "973335ea8299b25007424c41255cda0b01eb0b8cee3d312902612340f7d6d5e3"
+            },
+            {
+              "path": "/_next/static/chunks/549-dba7a76498e1ff2e.js",
+              "sha256": "c6d516ad49cc4ab3a5a0bff2b44aca25bd49f37d8272513f960402cf54c84476"
+            },
+            {
+              "path": "/_next/static/chunks/826-35d3f1850c807e90.js",
+              "sha256": "0480f6c4eef95fab55ebe316ca60ecca553b7a626217b82ff6b78753c93a6743"
+            },
+            {
+              "path": "/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+              "sha256": "4ddf372339edf8a7e89c3c94bce2824131a582b0fbb3b628c6c8e13bfdfa27a0"
+            },
+            {
+              "path": "/_next/static/chunks/app/proyectos/page-bab0744a08fdce58.js",
+              "sha256": "730c2aaf44aa5cd328e182013b9507376aaf19236c6640be53a3d98ddc890487"
+            },
+            {
+              "path": "/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+              "sha256": "718d2deb6b70491cff569760504aee47205b33d2490f177da319c1b8ae18efc5"
+            },
+            {
+              "path": "/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+              "sha256": "9850c8f4802d3b016848b0e5d7fb82300d11fd44eea1ab43e876c50c604bec35"
+            },
+            {
+              "path": "/_next/static/css/2f3c04e721b80d3e.css",
+              "sha256": "a5c7d06fd1b682cfbd10fd4efac5c251c37acd2d897b767906f4657537f37403"
+            },
+            {
+              "path": "/_next/static/css/4052aa66d07f85ff.css",
+              "sha256": "ae9a7512aa3970028d7a3ac03f8abae520417134a1e42a859d24301d73ba4d2f"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/proyectos/otro_dia_otro_dolar",
+      "identicalAcrossBothDomainsAndWidths": true,
+      "fingerprints": [
+        {
+          "engine": "chromium",
+          "origin": "https://www.monkmonkeykey.com",
+          "viewport": 375,
+          "resources": [
+            {
+              "path": "/_next/static/chunks/1-b025027a63979f8d.js",
+              "sha256": "4161d83faabe652e030463cab90a016cb4f4c1c24c400572da65d874b3692c34"
+            },
+            {
+              "path": "/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+              "sha256": "973335ea8299b25007424c41255cda0b01eb0b8cee3d312902612340f7d6d5e3"
+            },
+            {
+              "path": "/_next/static/chunks/549-dba7a76498e1ff2e.js",
+              "sha256": "c6d516ad49cc4ab3a5a0bff2b44aca25bd49f37d8272513f960402cf54c84476"
+            },
+            {
+              "path": "/_next/static/chunks/826-35d3f1850c807e90.js",
+              "sha256": "0480f6c4eef95fab55ebe316ca60ecca553b7a626217b82ff6b78753c93a6743"
+            },
+            {
+              "path": "/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+              "sha256": "4ddf372339edf8a7e89c3c94bce2824131a582b0fbb3b628c6c8e13bfdfa27a0"
+            },
+            {
+              "path": "/_next/static/chunks/app/proyectos/%5Bslug%5D/page-ffdd34352c4db45b.js",
+              "sha256": "cac39597f26423a8f4e37ff4f831058c8ca643930981b1b43d55d459fcaf443f"
+            },
+            {
+              "path": "/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+              "sha256": "718d2deb6b70491cff569760504aee47205b33d2490f177da319c1b8ae18efc5"
+            },
+            {
+              "path": "/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+              "sha256": "9850c8f4802d3b016848b0e5d7fb82300d11fd44eea1ab43e876c50c604bec35"
+            },
+            {
+              "path": "/_next/static/css/4052aa66d07f85ff.css",
+              "sha256": "ae9a7512aa3970028d7a3ac03f8abae520417134a1e42a859d24301d73ba4d2f"
+            },
+            {
+              "path": "/_next/static/css/7ccd9f3aa33472b1.css",
+              "sha256": "1e07e1e646b1efa5654cd0abb457932b0e21057d81dc1abc539575da9cf1ab27"
+            }
+          ]
+        },
+        {
+          "engine": "chromium",
+          "origin": "https://monkmonkeykeystudiowebsite.vercel.app",
+          "viewport": 375,
+          "resources": [
+            {
+              "path": "/_next/static/chunks/1-b025027a63979f8d.js",
+              "sha256": "4161d83faabe652e030463cab90a016cb4f4c1c24c400572da65d874b3692c34"
+            },
+            {
+              "path": "/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+              "sha256": "973335ea8299b25007424c41255cda0b01eb0b8cee3d312902612340f7d6d5e3"
+            },
+            {
+              "path": "/_next/static/chunks/549-dba7a76498e1ff2e.js",
+              "sha256": "c6d516ad49cc4ab3a5a0bff2b44aca25bd49f37d8272513f960402cf54c84476"
+            },
+            {
+              "path": "/_next/static/chunks/826-35d3f1850c807e90.js",
+              "sha256": "0480f6c4eef95fab55ebe316ca60ecca553b7a626217b82ff6b78753c93a6743"
+            },
+            {
+              "path": "/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+              "sha256": "4ddf372339edf8a7e89c3c94bce2824131a582b0fbb3b628c6c8e13bfdfa27a0"
+            },
+            {
+              "path": "/_next/static/chunks/app/proyectos/%5Bslug%5D/page-ffdd34352c4db45b.js",
+              "sha256": "cac39597f26423a8f4e37ff4f831058c8ca643930981b1b43d55d459fcaf443f"
+            },
+            {
+              "path": "/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+              "sha256": "718d2deb6b70491cff569760504aee47205b33d2490f177da319c1b8ae18efc5"
+            },
+            {
+              "path": "/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+              "sha256": "9850c8f4802d3b016848b0e5d7fb82300d11fd44eea1ab43e876c50c604bec35"
+            },
+            {
+              "path": "/_next/static/css/4052aa66d07f85ff.css",
+              "sha256": "ae9a7512aa3970028d7a3ac03f8abae520417134a1e42a859d24301d73ba4d2f"
+            },
+            {
+              "path": "/_next/static/css/7ccd9f3aa33472b1.css",
+              "sha256": "1e07e1e646b1efa5654cd0abb457932b0e21057d81dc1abc539575da9cf1ab27"
+            }
+          ]
+        },
+        {
+          "engine": "chromium",
+          "origin": "https://www.monkmonkeykey.com",
+          "viewport": 1440,
+          "resources": [
+            {
+              "path": "/_next/static/chunks/1-b025027a63979f8d.js",
+              "sha256": "4161d83faabe652e030463cab90a016cb4f4c1c24c400572da65d874b3692c34"
+            },
+            {
+              "path": "/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+              "sha256": "973335ea8299b25007424c41255cda0b01eb0b8cee3d312902612340f7d6d5e3"
+            },
+            {
+              "path": "/_next/static/chunks/549-dba7a76498e1ff2e.js",
+              "sha256": "c6d516ad49cc4ab3a5a0bff2b44aca25bd49f37d8272513f960402cf54c84476"
+            },
+            {
+              "path": "/_next/static/chunks/826-35d3f1850c807e90.js",
+              "sha256": "0480f6c4eef95fab55ebe316ca60ecca553b7a626217b82ff6b78753c93a6743"
+            },
+            {
+              "path": "/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+              "sha256": "4ddf372339edf8a7e89c3c94bce2824131a582b0fbb3b628c6c8e13bfdfa27a0"
+            },
+            {
+              "path": "/_next/static/chunks/app/proyectos/%5Bslug%5D/page-ffdd34352c4db45b.js",
+              "sha256": "cac39597f26423a8f4e37ff4f831058c8ca643930981b1b43d55d459fcaf443f"
+            },
+            {
+              "path": "/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+              "sha256": "718d2deb6b70491cff569760504aee47205b33d2490f177da319c1b8ae18efc5"
+            },
+            {
+              "path": "/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+              "sha256": "9850c8f4802d3b016848b0e5d7fb82300d11fd44eea1ab43e876c50c604bec35"
+            },
+            {
+              "path": "/_next/static/css/4052aa66d07f85ff.css",
+              "sha256": "ae9a7512aa3970028d7a3ac03f8abae520417134a1e42a859d24301d73ba4d2f"
+            },
+            {
+              "path": "/_next/static/css/7ccd9f3aa33472b1.css",
+              "sha256": "1e07e1e646b1efa5654cd0abb457932b0e21057d81dc1abc539575da9cf1ab27"
+            }
+          ]
+        },
+        {
+          "engine": "chromium",
+          "origin": "https://monkmonkeykeystudiowebsite.vercel.app",
+          "viewport": 1440,
+          "resources": [
+            {
+              "path": "/_next/static/chunks/1-b025027a63979f8d.js",
+              "sha256": "4161d83faabe652e030463cab90a016cb4f4c1c24c400572da65d874b3692c34"
+            },
+            {
+              "path": "/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+              "sha256": "973335ea8299b25007424c41255cda0b01eb0b8cee3d312902612340f7d6d5e3"
+            },
+            {
+              "path": "/_next/static/chunks/549-dba7a76498e1ff2e.js",
+              "sha256": "c6d516ad49cc4ab3a5a0bff2b44aca25bd49f37d8272513f960402cf54c84476"
+            },
+            {
+              "path": "/_next/static/chunks/826-35d3f1850c807e90.js",
+              "sha256": "0480f6c4eef95fab55ebe316ca60ecca553b7a626217b82ff6b78753c93a6743"
+            },
+            {
+              "path": "/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+              "sha256": "4ddf372339edf8a7e89c3c94bce2824131a582b0fbb3b628c6c8e13bfdfa27a0"
+            },
+            {
+              "path": "/_next/static/chunks/app/proyectos/%5Bslug%5D/page-ffdd34352c4db45b.js",
+              "sha256": "cac39597f26423a8f4e37ff4f831058c8ca643930981b1b43d55d459fcaf443f"
+            },
+            {
+              "path": "/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+              "sha256": "718d2deb6b70491cff569760504aee47205b33d2490f177da319c1b8ae18efc5"
+            },
+            {
+              "path": "/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+              "sha256": "9850c8f4802d3b016848b0e5d7fb82300d11fd44eea1ab43e876c50c604bec35"
+            },
+            {
+              "path": "/_next/static/css/4052aa66d07f85ff.css",
+              "sha256": "ae9a7512aa3970028d7a3ac03f8abae520417134a1e42a859d24301d73ba4d2f"
+            },
+            {
+              "path": "/_next/static/css/7ccd9f3aa33472b1.css",
+              "sha256": "1e07e1e646b1efa5654cd0abb457932b0e21057d81dc1abc539575da9cf1ab27"
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "origin": "https://www.monkmonkeykey.com",
+          "viewport": 375,
+          "resources": [
+            {
+              "path": "/_next/static/chunks/1-b025027a63979f8d.js",
+              "sha256": "4161d83faabe652e030463cab90a016cb4f4c1c24c400572da65d874b3692c34"
+            },
+            {
+              "path": "/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+              "sha256": "973335ea8299b25007424c41255cda0b01eb0b8cee3d312902612340f7d6d5e3"
+            },
+            {
+              "path": "/_next/static/chunks/549-dba7a76498e1ff2e.js",
+              "sha256": "c6d516ad49cc4ab3a5a0bff2b44aca25bd49f37d8272513f960402cf54c84476"
+            },
+            {
+              "path": "/_next/static/chunks/826-35d3f1850c807e90.js",
+              "sha256": "0480f6c4eef95fab55ebe316ca60ecca553b7a626217b82ff6b78753c93a6743"
+            },
+            {
+              "path": "/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+              "sha256": "4ddf372339edf8a7e89c3c94bce2824131a582b0fbb3b628c6c8e13bfdfa27a0"
+            },
+            {
+              "path": "/_next/static/chunks/app/proyectos/%5Bslug%5D/page-ffdd34352c4db45b.js",
+              "sha256": "cac39597f26423a8f4e37ff4f831058c8ca643930981b1b43d55d459fcaf443f"
+            },
+            {
+              "path": "/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+              "sha256": "718d2deb6b70491cff569760504aee47205b33d2490f177da319c1b8ae18efc5"
+            },
+            {
+              "path": "/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+              "sha256": "9850c8f4802d3b016848b0e5d7fb82300d11fd44eea1ab43e876c50c604bec35"
+            },
+            {
+              "path": "/_next/static/css/4052aa66d07f85ff.css",
+              "sha256": "ae9a7512aa3970028d7a3ac03f8abae520417134a1e42a859d24301d73ba4d2f"
+            },
+            {
+              "path": "/_next/static/css/7ccd9f3aa33472b1.css",
+              "sha256": "1e07e1e646b1efa5654cd0abb457932b0e21057d81dc1abc539575da9cf1ab27"
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "origin": "https://monkmonkeykeystudiowebsite.vercel.app",
+          "viewport": 375,
+          "resources": [
+            {
+              "path": "/_next/static/chunks/1-b025027a63979f8d.js",
+              "sha256": "4161d83faabe652e030463cab90a016cb4f4c1c24c400572da65d874b3692c34"
+            },
+            {
+              "path": "/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+              "sha256": "973335ea8299b25007424c41255cda0b01eb0b8cee3d312902612340f7d6d5e3"
+            },
+            {
+              "path": "/_next/static/chunks/549-dba7a76498e1ff2e.js",
+              "sha256": "c6d516ad49cc4ab3a5a0bff2b44aca25bd49f37d8272513f960402cf54c84476"
+            },
+            {
+              "path": "/_next/static/chunks/826-35d3f1850c807e90.js",
+              "sha256": "0480f6c4eef95fab55ebe316ca60ecca553b7a626217b82ff6b78753c93a6743"
+            },
+            {
+              "path": "/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+              "sha256": "4ddf372339edf8a7e89c3c94bce2824131a582b0fbb3b628c6c8e13bfdfa27a0"
+            },
+            {
+              "path": "/_next/static/chunks/app/proyectos/%5Bslug%5D/page-ffdd34352c4db45b.js",
+              "sha256": "cac39597f26423a8f4e37ff4f831058c8ca643930981b1b43d55d459fcaf443f"
+            },
+            {
+              "path": "/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+              "sha256": "718d2deb6b70491cff569760504aee47205b33d2490f177da319c1b8ae18efc5"
+            },
+            {
+              "path": "/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+              "sha256": "9850c8f4802d3b016848b0e5d7fb82300d11fd44eea1ab43e876c50c604bec35"
+            },
+            {
+              "path": "/_next/static/css/4052aa66d07f85ff.css",
+              "sha256": "ae9a7512aa3970028d7a3ac03f8abae520417134a1e42a859d24301d73ba4d2f"
+            },
+            {
+              "path": "/_next/static/css/7ccd9f3aa33472b1.css",
+              "sha256": "1e07e1e646b1efa5654cd0abb457932b0e21057d81dc1abc539575da9cf1ab27"
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "origin": "https://www.monkmonkeykey.com",
+          "viewport": 1440,
+          "resources": [
+            {
+              "path": "/_next/static/chunks/1-b025027a63979f8d.js",
+              "sha256": "4161d83faabe652e030463cab90a016cb4f4c1c24c400572da65d874b3692c34"
+            },
+            {
+              "path": "/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+              "sha256": "973335ea8299b25007424c41255cda0b01eb0b8cee3d312902612340f7d6d5e3"
+            },
+            {
+              "path": "/_next/static/chunks/549-dba7a76498e1ff2e.js",
+              "sha256": "c6d516ad49cc4ab3a5a0bff2b44aca25bd49f37d8272513f960402cf54c84476"
+            },
+            {
+              "path": "/_next/static/chunks/826-35d3f1850c807e90.js",
+              "sha256": "0480f6c4eef95fab55ebe316ca60ecca553b7a626217b82ff6b78753c93a6743"
+            },
+            {
+              "path": "/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+              "sha256": "4ddf372339edf8a7e89c3c94bce2824131a582b0fbb3b628c6c8e13bfdfa27a0"
+            },
+            {
+              "path": "/_next/static/chunks/app/proyectos/%5Bslug%5D/page-ffdd34352c4db45b.js",
+              "sha256": "cac39597f26423a8f4e37ff4f831058c8ca643930981b1b43d55d459fcaf443f"
+            },
+            {
+              "path": "/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+              "sha256": "718d2deb6b70491cff569760504aee47205b33d2490f177da319c1b8ae18efc5"
+            },
+            {
+              "path": "/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+              "sha256": "9850c8f4802d3b016848b0e5d7fb82300d11fd44eea1ab43e876c50c604bec35"
+            },
+            {
+              "path": "/_next/static/css/4052aa66d07f85ff.css",
+              "sha256": "ae9a7512aa3970028d7a3ac03f8abae520417134a1e42a859d24301d73ba4d2f"
+            },
+            {
+              "path": "/_next/static/css/7ccd9f3aa33472b1.css",
+              "sha256": "1e07e1e646b1efa5654cd0abb457932b0e21057d81dc1abc539575da9cf1ab27"
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "origin": "https://monkmonkeykeystudiowebsite.vercel.app",
+          "viewport": 1440,
+          "resources": [
+            {
+              "path": "/_next/static/chunks/1-b025027a63979f8d.js",
+              "sha256": "4161d83faabe652e030463cab90a016cb4f4c1c24c400572da65d874b3692c34"
+            },
+            {
+              "path": "/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+              "sha256": "973335ea8299b25007424c41255cda0b01eb0b8cee3d312902612340f7d6d5e3"
+            },
+            {
+              "path": "/_next/static/chunks/549-dba7a76498e1ff2e.js",
+              "sha256": "c6d516ad49cc4ab3a5a0bff2b44aca25bd49f37d8272513f960402cf54c84476"
+            },
+            {
+              "path": "/_next/static/chunks/826-35d3f1850c807e90.js",
+              "sha256": "0480f6c4eef95fab55ebe316ca60ecca553b7a626217b82ff6b78753c93a6743"
+            },
+            {
+              "path": "/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+              "sha256": "4ddf372339edf8a7e89c3c94bce2824131a582b0fbb3b628c6c8e13bfdfa27a0"
+            },
+            {
+              "path": "/_next/static/chunks/app/proyectos/%5Bslug%5D/page-ffdd34352c4db45b.js",
+              "sha256": "cac39597f26423a8f4e37ff4f831058c8ca643930981b1b43d55d459fcaf443f"
+            },
+            {
+              "path": "/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+              "sha256": "718d2deb6b70491cff569760504aee47205b33d2490f177da319c1b8ae18efc5"
+            },
+            {
+              "path": "/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+              "sha256": "9850c8f4802d3b016848b0e5d7fb82300d11fd44eea1ab43e876c50c604bec35"
+            },
+            {
+              "path": "/_next/static/css/4052aa66d07f85ff.css",
+              "sha256": "ae9a7512aa3970028d7a3ac03f8abae520417134a1e42a859d24301d73ba4d2f"
+            },
+            {
+              "path": "/_next/static/css/7ccd9f3aa33472b1.css",
+              "sha256": "1e07e1e646b1efa5654cd0abb457932b0e21057d81dc1abc539575da9cf1ab27"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/clientes",
+      "identicalAcrossBothDomainsAndWidths": true,
+      "fingerprints": [
+        {
+          "engine": "chromium",
+          "origin": "https://www.monkmonkeykey.com",
+          "viewport": 375,
+          "resources": [
+            {
+              "path": "/_next/static/chunks/1-b025027a63979f8d.js",
+              "sha256": "4161d83faabe652e030463cab90a016cb4f4c1c24c400572da65d874b3692c34"
+            },
+            {
+              "path": "/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+              "sha256": "973335ea8299b25007424c41255cda0b01eb0b8cee3d312902612340f7d6d5e3"
+            },
+            {
+              "path": "/_next/static/chunks/549-dba7a76498e1ff2e.js",
+              "sha256": "c6d516ad49cc4ab3a5a0bff2b44aca25bd49f37d8272513f960402cf54c84476"
+            },
+            {
+              "path": "/_next/static/chunks/826-35d3f1850c807e90.js",
+              "sha256": "0480f6c4eef95fab55ebe316ca60ecca553b7a626217b82ff6b78753c93a6743"
+            },
+            {
+              "path": "/_next/static/chunks/app/clientes/page-f2b5245337aa04a8.js",
+              "sha256": "637723e1cf6b0acba1aecca3a5112dc7b0d51ef5d71bf10ed6a4495193048a58"
+            },
+            {
+              "path": "/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+              "sha256": "4ddf372339edf8a7e89c3c94bce2824131a582b0fbb3b628c6c8e13bfdfa27a0"
+            },
+            {
+              "path": "/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+              "sha256": "718d2deb6b70491cff569760504aee47205b33d2490f177da319c1b8ae18efc5"
+            },
+            {
+              "path": "/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+              "sha256": "9850c8f4802d3b016848b0e5d7fb82300d11fd44eea1ab43e876c50c604bec35"
+            },
+            {
+              "path": "/_next/static/css/4052aa66d07f85ff.css",
+              "sha256": "ae9a7512aa3970028d7a3ac03f8abae520417134a1e42a859d24301d73ba4d2f"
+            },
+            {
+              "path": "/_next/static/css/7ccd9f3aa33472b1.css",
+              "sha256": "1e07e1e646b1efa5654cd0abb457932b0e21057d81dc1abc539575da9cf1ab27"
+            }
+          ]
+        },
+        {
+          "engine": "chromium",
+          "origin": "https://monkmonkeykeystudiowebsite.vercel.app",
+          "viewport": 375,
+          "resources": [
+            {
+              "path": "/_next/static/chunks/1-b025027a63979f8d.js",
+              "sha256": "4161d83faabe652e030463cab90a016cb4f4c1c24c400572da65d874b3692c34"
+            },
+            {
+              "path": "/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+              "sha256": "973335ea8299b25007424c41255cda0b01eb0b8cee3d312902612340f7d6d5e3"
+            },
+            {
+              "path": "/_next/static/chunks/549-dba7a76498e1ff2e.js",
+              "sha256": "c6d516ad49cc4ab3a5a0bff2b44aca25bd49f37d8272513f960402cf54c84476"
+            },
+            {
+              "path": "/_next/static/chunks/826-35d3f1850c807e90.js",
+              "sha256": "0480f6c4eef95fab55ebe316ca60ecca553b7a626217b82ff6b78753c93a6743"
+            },
+            {
+              "path": "/_next/static/chunks/app/clientes/page-f2b5245337aa04a8.js",
+              "sha256": "637723e1cf6b0acba1aecca3a5112dc7b0d51ef5d71bf10ed6a4495193048a58"
+            },
+            {
+              "path": "/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+              "sha256": "4ddf372339edf8a7e89c3c94bce2824131a582b0fbb3b628c6c8e13bfdfa27a0"
+            },
+            {
+              "path": "/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+              "sha256": "718d2deb6b70491cff569760504aee47205b33d2490f177da319c1b8ae18efc5"
+            },
+            {
+              "path": "/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+              "sha256": "9850c8f4802d3b016848b0e5d7fb82300d11fd44eea1ab43e876c50c604bec35"
+            },
+            {
+              "path": "/_next/static/css/4052aa66d07f85ff.css",
+              "sha256": "ae9a7512aa3970028d7a3ac03f8abae520417134a1e42a859d24301d73ba4d2f"
+            },
+            {
+              "path": "/_next/static/css/7ccd9f3aa33472b1.css",
+              "sha256": "1e07e1e646b1efa5654cd0abb457932b0e21057d81dc1abc539575da9cf1ab27"
+            }
+          ]
+        },
+        {
+          "engine": "chromium",
+          "origin": "https://www.monkmonkeykey.com",
+          "viewport": 1440,
+          "resources": [
+            {
+              "path": "/_next/static/chunks/1-b025027a63979f8d.js",
+              "sha256": "4161d83faabe652e030463cab90a016cb4f4c1c24c400572da65d874b3692c34"
+            },
+            {
+              "path": "/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+              "sha256": "973335ea8299b25007424c41255cda0b01eb0b8cee3d312902612340f7d6d5e3"
+            },
+            {
+              "path": "/_next/static/chunks/549-dba7a76498e1ff2e.js",
+              "sha256": "c6d516ad49cc4ab3a5a0bff2b44aca25bd49f37d8272513f960402cf54c84476"
+            },
+            {
+              "path": "/_next/static/chunks/826-35d3f1850c807e90.js",
+              "sha256": "0480f6c4eef95fab55ebe316ca60ecca553b7a626217b82ff6b78753c93a6743"
+            },
+            {
+              "path": "/_next/static/chunks/app/clientes/page-f2b5245337aa04a8.js",
+              "sha256": "637723e1cf6b0acba1aecca3a5112dc7b0d51ef5d71bf10ed6a4495193048a58"
+            },
+            {
+              "path": "/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+              "sha256": "4ddf372339edf8a7e89c3c94bce2824131a582b0fbb3b628c6c8e13bfdfa27a0"
+            },
+            {
+              "path": "/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+              "sha256": "718d2deb6b70491cff569760504aee47205b33d2490f177da319c1b8ae18efc5"
+            },
+            {
+              "path": "/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+              "sha256": "9850c8f4802d3b016848b0e5d7fb82300d11fd44eea1ab43e876c50c604bec35"
+            },
+            {
+              "path": "/_next/static/css/4052aa66d07f85ff.css",
+              "sha256": "ae9a7512aa3970028d7a3ac03f8abae520417134a1e42a859d24301d73ba4d2f"
+            },
+            {
+              "path": "/_next/static/css/7ccd9f3aa33472b1.css",
+              "sha256": "1e07e1e646b1efa5654cd0abb457932b0e21057d81dc1abc539575da9cf1ab27"
+            }
+          ]
+        },
+        {
+          "engine": "chromium",
+          "origin": "https://monkmonkeykeystudiowebsite.vercel.app",
+          "viewport": 1440,
+          "resources": [
+            {
+              "path": "/_next/static/chunks/1-b025027a63979f8d.js",
+              "sha256": "4161d83faabe652e030463cab90a016cb4f4c1c24c400572da65d874b3692c34"
+            },
+            {
+              "path": "/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+              "sha256": "973335ea8299b25007424c41255cda0b01eb0b8cee3d312902612340f7d6d5e3"
+            },
+            {
+              "path": "/_next/static/chunks/549-dba7a76498e1ff2e.js",
+              "sha256": "c6d516ad49cc4ab3a5a0bff2b44aca25bd49f37d8272513f960402cf54c84476"
+            },
+            {
+              "path": "/_next/static/chunks/826-35d3f1850c807e90.js",
+              "sha256": "0480f6c4eef95fab55ebe316ca60ecca553b7a626217b82ff6b78753c93a6743"
+            },
+            {
+              "path": "/_next/static/chunks/app/clientes/page-f2b5245337aa04a8.js",
+              "sha256": "637723e1cf6b0acba1aecca3a5112dc7b0d51ef5d71bf10ed6a4495193048a58"
+            },
+            {
+              "path": "/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+              "sha256": "4ddf372339edf8a7e89c3c94bce2824131a582b0fbb3b628c6c8e13bfdfa27a0"
+            },
+            {
+              "path": "/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+              "sha256": "718d2deb6b70491cff569760504aee47205b33d2490f177da319c1b8ae18efc5"
+            },
+            {
+              "path": "/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+              "sha256": "9850c8f4802d3b016848b0e5d7fb82300d11fd44eea1ab43e876c50c604bec35"
+            },
+            {
+              "path": "/_next/static/css/4052aa66d07f85ff.css",
+              "sha256": "ae9a7512aa3970028d7a3ac03f8abae520417134a1e42a859d24301d73ba4d2f"
+            },
+            {
+              "path": "/_next/static/css/7ccd9f3aa33472b1.css",
+              "sha256": "1e07e1e646b1efa5654cd0abb457932b0e21057d81dc1abc539575da9cf1ab27"
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "origin": "https://www.monkmonkeykey.com",
+          "viewport": 375,
+          "resources": [
+            {
+              "path": "/_next/static/chunks/1-b025027a63979f8d.js",
+              "sha256": "4161d83faabe652e030463cab90a016cb4f4c1c24c400572da65d874b3692c34"
+            },
+            {
+              "path": "/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+              "sha256": "973335ea8299b25007424c41255cda0b01eb0b8cee3d312902612340f7d6d5e3"
+            },
+            {
+              "path": "/_next/static/chunks/549-dba7a76498e1ff2e.js",
+              "sha256": "c6d516ad49cc4ab3a5a0bff2b44aca25bd49f37d8272513f960402cf54c84476"
+            },
+            {
+              "path": "/_next/static/chunks/826-35d3f1850c807e90.js",
+              "sha256": "0480f6c4eef95fab55ebe316ca60ecca553b7a626217b82ff6b78753c93a6743"
+            },
+            {
+              "path": "/_next/static/chunks/app/clientes/page-f2b5245337aa04a8.js",
+              "sha256": "637723e1cf6b0acba1aecca3a5112dc7b0d51ef5d71bf10ed6a4495193048a58"
+            },
+            {
+              "path": "/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+              "sha256": "4ddf372339edf8a7e89c3c94bce2824131a582b0fbb3b628c6c8e13bfdfa27a0"
+            },
+            {
+              "path": "/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+              "sha256": "718d2deb6b70491cff569760504aee47205b33d2490f177da319c1b8ae18efc5"
+            },
+            {
+              "path": "/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+              "sha256": "9850c8f4802d3b016848b0e5d7fb82300d11fd44eea1ab43e876c50c604bec35"
+            },
+            {
+              "path": "/_next/static/css/4052aa66d07f85ff.css",
+              "sha256": "ae9a7512aa3970028d7a3ac03f8abae520417134a1e42a859d24301d73ba4d2f"
+            },
+            {
+              "path": "/_next/static/css/7ccd9f3aa33472b1.css",
+              "sha256": "1e07e1e646b1efa5654cd0abb457932b0e21057d81dc1abc539575da9cf1ab27"
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "origin": "https://monkmonkeykeystudiowebsite.vercel.app",
+          "viewport": 375,
+          "resources": [
+            {
+              "path": "/_next/static/chunks/1-b025027a63979f8d.js",
+              "sha256": "4161d83faabe652e030463cab90a016cb4f4c1c24c400572da65d874b3692c34"
+            },
+            {
+              "path": "/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+              "sha256": "973335ea8299b25007424c41255cda0b01eb0b8cee3d312902612340f7d6d5e3"
+            },
+            {
+              "path": "/_next/static/chunks/549-dba7a76498e1ff2e.js",
+              "sha256": "c6d516ad49cc4ab3a5a0bff2b44aca25bd49f37d8272513f960402cf54c84476"
+            },
+            {
+              "path": "/_next/static/chunks/826-35d3f1850c807e90.js",
+              "sha256": "0480f6c4eef95fab55ebe316ca60ecca553b7a626217b82ff6b78753c93a6743"
+            },
+            {
+              "path": "/_next/static/chunks/app/clientes/page-f2b5245337aa04a8.js",
+              "sha256": "637723e1cf6b0acba1aecca3a5112dc7b0d51ef5d71bf10ed6a4495193048a58"
+            },
+            {
+              "path": "/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+              "sha256": "4ddf372339edf8a7e89c3c94bce2824131a582b0fbb3b628c6c8e13bfdfa27a0"
+            },
+            {
+              "path": "/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+              "sha256": "718d2deb6b70491cff569760504aee47205b33d2490f177da319c1b8ae18efc5"
+            },
+            {
+              "path": "/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+              "sha256": "9850c8f4802d3b016848b0e5d7fb82300d11fd44eea1ab43e876c50c604bec35"
+            },
+            {
+              "path": "/_next/static/css/4052aa66d07f85ff.css",
+              "sha256": "ae9a7512aa3970028d7a3ac03f8abae520417134a1e42a859d24301d73ba4d2f"
+            },
+            {
+              "path": "/_next/static/css/7ccd9f3aa33472b1.css",
+              "sha256": "1e07e1e646b1efa5654cd0abb457932b0e21057d81dc1abc539575da9cf1ab27"
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "origin": "https://www.monkmonkeykey.com",
+          "viewport": 1440,
+          "resources": [
+            {
+              "path": "/_next/static/chunks/1-b025027a63979f8d.js",
+              "sha256": "4161d83faabe652e030463cab90a016cb4f4c1c24c400572da65d874b3692c34"
+            },
+            {
+              "path": "/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+              "sha256": "973335ea8299b25007424c41255cda0b01eb0b8cee3d312902612340f7d6d5e3"
+            },
+            {
+              "path": "/_next/static/chunks/549-dba7a76498e1ff2e.js",
+              "sha256": "c6d516ad49cc4ab3a5a0bff2b44aca25bd49f37d8272513f960402cf54c84476"
+            },
+            {
+              "path": "/_next/static/chunks/826-35d3f1850c807e90.js",
+              "sha256": "0480f6c4eef95fab55ebe316ca60ecca553b7a626217b82ff6b78753c93a6743"
+            },
+            {
+              "path": "/_next/static/chunks/app/clientes/page-f2b5245337aa04a8.js",
+              "sha256": "637723e1cf6b0acba1aecca3a5112dc7b0d51ef5d71bf10ed6a4495193048a58"
+            },
+            {
+              "path": "/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+              "sha256": "4ddf372339edf8a7e89c3c94bce2824131a582b0fbb3b628c6c8e13bfdfa27a0"
+            },
+            {
+              "path": "/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+              "sha256": "718d2deb6b70491cff569760504aee47205b33d2490f177da319c1b8ae18efc5"
+            },
+            {
+              "path": "/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+              "sha256": "9850c8f4802d3b016848b0e5d7fb82300d11fd44eea1ab43e876c50c604bec35"
+            },
+            {
+              "path": "/_next/static/css/4052aa66d07f85ff.css",
+              "sha256": "ae9a7512aa3970028d7a3ac03f8abae520417134a1e42a859d24301d73ba4d2f"
+            },
+            {
+              "path": "/_next/static/css/7ccd9f3aa33472b1.css",
+              "sha256": "1e07e1e646b1efa5654cd0abb457932b0e21057d81dc1abc539575da9cf1ab27"
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "origin": "https://monkmonkeykeystudiowebsite.vercel.app",
+          "viewport": 1440,
+          "resources": [
+            {
+              "path": "/_next/static/chunks/1-b025027a63979f8d.js",
+              "sha256": "4161d83faabe652e030463cab90a016cb4f4c1c24c400572da65d874b3692c34"
+            },
+            {
+              "path": "/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+              "sha256": "973335ea8299b25007424c41255cda0b01eb0b8cee3d312902612340f7d6d5e3"
+            },
+            {
+              "path": "/_next/static/chunks/549-dba7a76498e1ff2e.js",
+              "sha256": "c6d516ad49cc4ab3a5a0bff2b44aca25bd49f37d8272513f960402cf54c84476"
+            },
+            {
+              "path": "/_next/static/chunks/826-35d3f1850c807e90.js",
+              "sha256": "0480f6c4eef95fab55ebe316ca60ecca553b7a626217b82ff6b78753c93a6743"
+            },
+            {
+              "path": "/_next/static/chunks/app/clientes/page-f2b5245337aa04a8.js",
+              "sha256": "637723e1cf6b0acba1aecca3a5112dc7b0d51ef5d71bf10ed6a4495193048a58"
+            },
+            {
+              "path": "/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+              "sha256": "4ddf372339edf8a7e89c3c94bce2824131a582b0fbb3b628c6c8e13bfdfa27a0"
+            },
+            {
+              "path": "/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+              "sha256": "718d2deb6b70491cff569760504aee47205b33d2490f177da319c1b8ae18efc5"
+            },
+            {
+              "path": "/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+              "sha256": "9850c8f4802d3b016848b0e5d7fb82300d11fd44eea1ab43e876c50c604bec35"
+            },
+            {
+              "path": "/_next/static/css/4052aa66d07f85ff.css",
+              "sha256": "ae9a7512aa3970028d7a3ac03f8abae520417134a1e42a859d24301d73ba4d2f"
+            },
+            {
+              "path": "/_next/static/css/7ccd9f3aa33472b1.css",
+              "sha256": "1e07e1e646b1efa5654cd0abb457932b0e21057d81dc1abc539575da9cf1ab27"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

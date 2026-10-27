@@ -1,0 +1,15 @@
+{
+  "subject": {
+    "CN": "www.monkmonkeykey.com"
+  },
+  "issuer": {
+    "C": "US",
+    "O": "Let's Encrypt",
+    "CN": "YR2"
+  },
+  "subjectAltName": "DNS:www.monkmonkeykey.com",
+  "validFrom": "Sep 22 13:40:17 2026 GMT",
+  "validTo": "Dec 21 13:40:16 2026 GMT",
+  "authorized": false,
+  "authorizationError": "ERR_TLS_CERT_ALTNAME_INVALID"
+}

@@ -17,6 +17,10 @@ const labels = {
   backAll: { es: "Volver a todos los proyectos", en: "Back to all projects" },
   about: { es: "Sobre el proyecto", en: "About the project" },
   facts: { es: "Ficha del proyecto", en: "Project information" },
+  credits: { es: "Autoría y producción", en: "Authorship and production" },
+  authorship: { es: "Autoría artística", en: "Artistic authorship" },
+  contribution: { es: "Participación de monkmonkeykey", en: "monkmonkeykey’s contribution" },
+  additionalCredits: { es: "Créditos adicionales", en: "Additional credits" },
   location: { es: "Lugar", en: "Location" },
   client: { es: "Cliente / institución", en: "Client / institution" },
   video: { es: "Video", en: "Video" },
@@ -164,6 +168,14 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
     /^(?:año|year|periodo|período|period)$/i.test(text(item.label)) && item.value === timeline
   ));
   const entities = project.entities.filter((entity) => plain(entity.name) || text(entity.summary) || entity.image?.src);
+  const artisticAuthorship = (project.artisticAuthorship ?? []).map((author) => ({
+    name: plain(author.name), role: author.role ? text(author.role) : "",
+  })).filter((author) => author.name);
+  const studioContribution = project.studioContribution ? text(project.studioContribution) : "";
+  const additionalCredits = (project.additionalCredits ?? []).map((credit) => ({
+    name: plain(credit.name), role: text(credit.role),
+  })).filter((credit) => credit.name);
+  const hasCredits = artisticAuthorship.length > 0 || Boolean(studioContribution) || additionalCredits.length > 0;
 
   const openViewer = (index: number, event: MouseEvent<HTMLButtonElement>) => {
     openingButtonRef.current = event.currentTarget;
@@ -225,6 +237,34 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
             <dt>{text(item.label)}</dt><dd>{item.value}</dd>
           </div>)}</dl>
         </aside>}
+      </section>}
+
+      {hasCredits && <section className={styles.section} aria-labelledby="project-credits-title">
+        <h2 id="project-credits-title">{text(labels.credits)}</h2>
+        <div className={styles.creditsGrid}>
+          {artisticAuthorship.length > 0 && <div className={styles.creditsGroup}>
+            <h3>{text(labels.authorship)}</h3>
+            <ol className={styles.creditsList} role="list">
+              {artisticAuthorship.map((author, index) => <li key={`${index}-${author.name}`}>
+                <p className={styles.creditName}>{author.name}</p>
+                {author.role && <p className={styles.creditRole}>{author.role}</p>}
+              </li>)}
+            </ol>
+          </div>}
+          {studioContribution && <div className={styles.creditsGroup}>
+            <h3>{text(labels.contribution)}</h3>
+            <p className={styles.studioContribution}>{studioContribution}</p>
+          </div>}
+          {additionalCredits.length > 0 && <div className={styles.creditsGroup}>
+            <h3>{text(labels.additionalCredits)}</h3>
+            <ol className={styles.creditsList} role="list">
+              {additionalCredits.map((credit, index) => <li key={`${index}-${credit.name}`}>
+                <p className={styles.creditName}>{credit.name}</p>
+                {credit.role && <p className={styles.creditRole}>{credit.role}</p>}
+              </li>)}
+            </ol>
+          </div>}
+        </div>
       </section>}
 
       {project.video && <section className={styles.section} aria-labelledby="project-video-title">

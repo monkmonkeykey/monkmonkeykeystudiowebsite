@@ -253,7 +253,7 @@ test('authentication, malformed JSON and database outages never write or report 
   assert.equal(writes, 0);
 });
 
-test('new editorial fields are available in the project object but do not change public project HTML in either language', () => {
+test('public credits render only explicit editorial data; all other project HTML stays unchanged in both languages', () => {
   const React = require('react');
   const { renderToStaticMarkup } = require('react-dom/server');
   const { ImageConfigContext } = require('next/dist/shared/lib/image-config-context.shared-runtime');
@@ -262,6 +262,30 @@ test('new editorial fields are available in the project object but do not change
   const { ProjectDetail } = require('../src/components/projects/project-detail.tsx');
   const project = PROJECTS[0];
   const render = (project, language) => renderToStaticMarkup(React.createElement(ImageConfigContext.Provider, { value: { ...imageConfigDefault, remotePatterns: [{ hostname: 'res.cloudinary.com' }] } }, React.createElement(LocaleProvider, { value: { locale: language, setLocale() {} } }, React.createElement(ProjectDetail, { project, categoryLabels: {} }))));
-  for (const language of ['es', 'en']) assert.equal(render(project, language), render({ ...project, ...credits() }, language));
+  for (const language of ['es', 'en']) {
+    const original = render(project, language);
+    const html = render({ ...project, ...credits() }, language);
+    assert.ok(html.includes('id="project-credits-title"'));
+    assert.ok(html.includes('Colectivo Uno'));
+    assert.ok(html.includes(credits().studioContribution[language]));
+    assert.ok(html.indexOf('Colectivo Uno') < html.indexOf('Artista Dos'));
+    assert.ok(html.indexOf('Equipo A') < html.indexOf('Equipo B'));
+    assert.ok(html.indexOf('project-credits-title') < html.indexOf('project-gallery-title') || !html.includes('project-gallery-title'));
+    assert.equal(html.replace(/<section[^>]*aria-labelledby="project-credits-title">[\s\S]*?<\/section>/, ''), original);
+    for (const [fields, headings] of [
+      [{}, []],
+      [{ artisticAuthorship: [], studioContribution: locale(' ', ''), additionalCredits: [] }, []],
+      [{ artisticAuthorship: [{ name: 'Colectivo Uno' }] }, [language === 'es' ? 'Autoría artística' : 'Artistic authorship']],
+      [{ studioContribution: credits().studioContribution }, [language === 'es' ? 'Participación de monkmonkeykey' : 'monkmonkeykey’s contribution']],
+      [{ additionalCredits: credits().additionalCredits }, [language === 'es' ? 'Créditos adicionales' : 'Additional credits']],
+    ]) {
+      const html = render({ ...project, ...fields }, language);
+      const section = html.match(/<section[^>]*aria-labelledby="project-credits-title">[\s\S]*?<\/section>/)?.[0] ?? '';
+      assert.equal(Boolean(section), headings.length > 0);
+      assert.equal((section.match(/<h3/g) ?? []).length, headings.length);
+      for (const heading of headings) assert.ok(section.includes(heading));
+      if (!headings.length) assert.equal(html, original);
+    }
+  }
   assert.equal(projectPayloadSchema.safeParse(base()).success, true);
 });
