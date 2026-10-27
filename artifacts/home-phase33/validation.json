@@ -1,0 +1,828 @@
+{
+  "rows": [
+    {
+      "locale": "es",
+      "width": 375,
+      "overflow": false,
+      "sectionIds": [
+        "home-title",
+        "practice-title",
+        "collaborations-title",
+        "selected-projects"
+      ],
+      "headings": [
+        "Cada proyecto encuentra su forma.",
+        "Distintas ideas, distintas maneras de hacer.",
+        "Colaboraciones",
+        "Más proyectos"
+      ],
+      "services": [
+        {
+          "title": "Producción sonora y técnica para conciertos",
+          "href": "/servicios#audio"
+        },
+        {
+          "title": "Producción de arte y nuevos medios",
+          "href": "/servicios#arte-nuevos-medios"
+        },
+        {
+          "title": "Impresión 3D",
+          "href": "/servicios#impresion3d"
+        }
+      ],
+      "clients": [
+        {
+          "title": "Laboratorio de Ecología Acústica México",
+          "href": "https://leam-mx.org",
+          "filter": "none"
+        },
+        {
+          "title": "Luz María Sánchez",
+          "href": "https://www.luzmariasanchez.com/",
+          "filter": "none"
+        },
+        {
+          "title": "MIDE (Museo Interactivo de Economía)",
+          "href": "https://www.mide.org.mx/",
+          "filter": "none"
+        },
+        {
+          "title": "New Interfaces for Musical Expression 2023",
+          "href": "https://www.nime2023.org/",
+          "filter": "none"
+        },
+        {
+          "title": "Onix Ensamble",
+          "href": "https://onixensamble.com/",
+          "filter": "none"
+        },
+        {
+          "title": "Universidad Autónoma Metropolitana, Unidad Lerma",
+          "href": "https://www.ler.uam.mx/",
+          "filter": "none"
+        }
+      ],
+      "clientArchive": "Ver todas las colaboraciones",
+      "heroProjects": [
+        "/proyectos/otro_dia_otro_dolar",
+        "/proyectos/luminico_urtext_2025",
+        "/proyectos/pinball-banxico"
+      ],
+      "moreProjects": [
+        {
+          "href": "/proyectos/maraton_musica_contemporanea-2023",
+          "title": "5to Maratón de Música Contemporánea",
+          "meta": "2026Audio Multicanal / Produccion Tecnica"
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "title": "1er Festival Internacional LEAM",
+          "meta": "2025Audio Multicanal / Produccion Tecnica"
+        },
+        {
+          "href": "/proyectos/atl",
+          "title": "Atl | Agua, Música y Arte Sonoro",
+          "meta": "2024Audio Multicanal / Produccion Tecnica"
+        }
+      ],
+      "archiveAtEnd": true,
+      "footerAfterMain": true,
+      "footerLast": true,
+      "footerGap": 0,
+      "background": "rgb(245, 246, 241)",
+      "textColor": "rgb(16, 20, 16)",
+      "muted": "rgb(83, 96, 88)"
+    },
+    {
+      "locale": "es",
+      "width": 768,
+      "overflow": false,
+      "sectionIds": [
+        "home-title",
+        "practice-title",
+        "collaborations-title",
+        "selected-projects"
+      ],
+      "headings": [
+        "Cada proyecto encuentra su forma.",
+        "Distintas ideas, distintas maneras de hacer.",
+        "Colaboraciones",
+        "Más proyectos"
+      ],
+      "services": [
+        {
+          "title": "Producción sonora y técnica para conciertos",
+          "href": "/servicios#audio"
+        },
+        {
+          "title": "Producción de arte y nuevos medios",
+          "href": "/servicios#arte-nuevos-medios"
+        },
+        {
+          "title": "Impresión 3D",
+          "href": "/servicios#impresion3d"
+        }
+      ],
+      "clients": [
+        {
+          "title": "Laboratorio de Ecología Acústica México",
+          "href": "https://leam-mx.org",
+          "filter": "none"
+        },
+        {
+          "title": "Luz María Sánchez",
+          "href": "https://www.luzmariasanchez.com/",
+          "filter": "none"
+        },
+        {
+          "title": "MIDE (Museo Interactivo de Economía)",
+          "href": "https://www.mide.org.mx/",
+          "filter": "none"
+        },
+        {
+          "title": "New Interfaces for Musical Expression 2023",
+          "href": "https://www.nime2023.org/",
+          "filter": "none"
+        },
+        {
+          "title": "Onix Ensamble",
+          "href": "https://onixensamble.com/",
+          "filter": "none"
+        },
+        {
+          "title": "Universidad Autónoma Metropolitana, Unidad Lerma",
+          "href": "https://www.ler.uam.mx/",
+          "filter": "none"
+        }
+      ],
+      "clientArchive": "Ver todas las colaboraciones",
+      "heroProjects": [
+        "/proyectos/otro_dia_otro_dolar",
+        "/proyectos/luminico_urtext_2025",
+        "/proyectos/pinball-banxico"
+      ],
+      "moreProjects": [
+        {
+          "href": "/proyectos/maraton_musica_contemporanea-2023",
+          "title": "5to Maratón de Música Contemporánea",
+          "meta": "2026Audio Multicanal / Produccion Tecnica"
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "title": "1er Festival Internacional LEAM",
+          "meta": "2025Audio Multicanal / Produccion Tecnica"
+        },
+        {
+          "href": "/proyectos/atl",
+          "title": "Atl | Agua, Música y Arte Sonoro",
+          "meta": "2024Audio Multicanal / Produccion Tecnica"
+        }
+      ],
+      "archiveAtEnd": true,
+      "footerAfterMain": true,
+      "footerLast": true,
+      "footerGap": 0,
+      "background": "rgb(245, 246, 241)",
+      "textColor": "rgb(16, 20, 16)",
+      "muted": "rgb(83, 96, 88)"
+    },
+    {
+      "locale": "es",
+      "width": 1024,
+      "overflow": false,
+      "sectionIds": [
+        "home-title",
+        "practice-title",
+        "collaborations-title",
+        "selected-projects"
+      ],
+      "headings": [
+        "Cada proyecto encuentra su forma.",
+        "Distintas ideas, distintas maneras de hacer.",
+        "Colaboraciones",
+        "Más proyectos"
+      ],
+      "services": [
+        {
+          "title": "Producción sonora y técnica para conciertos",
+          "href": "/servicios#audio"
+        },
+        {
+          "title": "Producción de arte y nuevos medios",
+          "href": "/servicios#arte-nuevos-medios"
+        },
+        {
+          "title": "Impresión 3D",
+          "href": "/servicios#impresion3d"
+        }
+      ],
+      "clients": [
+        {
+          "title": "Laboratorio de Ecología Acústica México",
+          "href": "https://leam-mx.org",
+          "filter": "none"
+        },
+        {
+          "title": "Luz María Sánchez",
+          "href": "https://www.luzmariasanchez.com/",
+          "filter": "none"
+        },
+        {
+          "title": "MIDE (Museo Interactivo de Economía)",
+          "href": "https://www.mide.org.mx/",
+          "filter": "none"
+        },
+        {
+          "title": "New Interfaces for Musical Expression 2023",
+          "href": "https://www.nime2023.org/",
+          "filter": "none"
+        },
+        {
+          "title": "Onix Ensamble",
+          "href": "https://onixensamble.com/",
+          "filter": "none"
+        },
+        {
+          "title": "Universidad Autónoma Metropolitana, Unidad Lerma",
+          "href": "https://www.ler.uam.mx/",
+          "filter": "none"
+        }
+      ],
+      "clientArchive": "Ver todas las colaboraciones",
+      "heroProjects": [
+        "/proyectos/otro_dia_otro_dolar",
+        "/proyectos/luminico_urtext_2025",
+        "/proyectos/pinball-banxico"
+      ],
+      "moreProjects": [
+        {
+          "href": "/proyectos/maraton_musica_contemporanea-2023",
+          "title": "5to Maratón de Música Contemporánea",
+          "meta": "2026Audio Multicanal / Produccion Tecnica"
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "title": "1er Festival Internacional LEAM",
+          "meta": "2025Audio Multicanal / Produccion Tecnica"
+        },
+        {
+          "href": "/proyectos/atl",
+          "title": "Atl | Agua, Música y Arte Sonoro",
+          "meta": "2024Audio Multicanal / Produccion Tecnica"
+        }
+      ],
+      "archiveAtEnd": true,
+      "footerAfterMain": true,
+      "footerLast": true,
+      "footerGap": 0,
+      "background": "rgb(245, 246, 241)",
+      "textColor": "rgb(16, 20, 16)",
+      "muted": "rgb(83, 96, 88)"
+    },
+    {
+      "locale": "es",
+      "width": 1440,
+      "overflow": false,
+      "sectionIds": [
+        "home-title",
+        "practice-title",
+        "collaborations-title",
+        "selected-projects"
+      ],
+      "headings": [
+        "Cada proyecto encuentra su forma.",
+        "Distintas ideas, distintas maneras de hacer.",
+        "Colaboraciones",
+        "Más proyectos"
+      ],
+      "services": [
+        {
+          "title": "Producción sonora y técnica para conciertos",
+          "href": "/servicios#audio"
+        },
+        {
+          "title": "Producción de arte y nuevos medios",
+          "href": "/servicios#arte-nuevos-medios"
+        },
+        {
+          "title": "Impresión 3D",
+          "href": "/servicios#impresion3d"
+        }
+      ],
+      "clients": [
+        {
+          "title": "Laboratorio de Ecología Acústica México",
+          "href": "https://leam-mx.org",
+          "filter": "none"
+        },
+        {
+          "title": "Luz María Sánchez",
+          "href": "https://www.luzmariasanchez.com/",
+          "filter": "none"
+        },
+        {
+          "title": "MIDE (Museo Interactivo de Economía)",
+          "href": "https://www.mide.org.mx/",
+          "filter": "none"
+        },
+        {
+          "title": "New Interfaces for Musical Expression 2023",
+          "href": "https://www.nime2023.org/",
+          "filter": "none"
+        },
+        {
+          "title": "Onix Ensamble",
+          "href": "https://onixensamble.com/",
+          "filter": "none"
+        },
+        {
+          "title": "Universidad Autónoma Metropolitana, Unidad Lerma",
+          "href": "https://www.ler.uam.mx/",
+          "filter": "none"
+        }
+      ],
+      "clientArchive": "Ver todas las colaboraciones",
+      "heroProjects": [
+        "/proyectos/otro_dia_otro_dolar",
+        "/proyectos/luminico_urtext_2025",
+        "/proyectos/pinball-banxico"
+      ],
+      "moreProjects": [
+        {
+          "href": "/proyectos/maraton_musica_contemporanea-2023",
+          "title": "5to Maratón de Música Contemporánea",
+          "meta": "2026Audio Multicanal / Produccion Tecnica"
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "title": "1er Festival Internacional LEAM",
+          "meta": "2025Audio Multicanal / Produccion Tecnica"
+        },
+        {
+          "href": "/proyectos/atl",
+          "title": "Atl | Agua, Música y Arte Sonoro",
+          "meta": "2024Audio Multicanal / Produccion Tecnica"
+        }
+      ],
+      "archiveAtEnd": true,
+      "footerAfterMain": true,
+      "footerLast": true,
+      "footerGap": 0,
+      "background": "rgb(245, 246, 241)",
+      "textColor": "rgb(16, 20, 16)",
+      "muted": "rgb(83, 96, 88)"
+    },
+    {
+      "locale": "en",
+      "width": 375,
+      "overflow": false,
+      "sectionIds": [
+        "home-title",
+        "practice-title",
+        "collaborations-title",
+        "selected-projects"
+      ],
+      "headings": [
+        "Every project finds its form.",
+        "Different ideas, different ways of making.",
+        "Collaborations",
+        "More projects"
+      ],
+      "services": [
+        {
+          "title": "Sound and technical production for concerts",
+          "href": "/servicios#audio"
+        },
+        {
+          "title": "Art and new media production",
+          "href": "/servicios#arte-nuevos-medios"
+        },
+        {
+          "title": "3D printing",
+          "href": "/servicios#impresion3d"
+        }
+      ],
+      "clients": [
+        {
+          "title": "Laboratorio de Ecología Acústica México",
+          "href": "https://leam-mx.org",
+          "filter": "none"
+        },
+        {
+          "title": "Luz María Sánchez",
+          "href": "https://www.luzmariasanchez.com/",
+          "filter": "none"
+        },
+        {
+          "title": "MIDE (Museo Interactivo de Economía)",
+          "href": "https://www.mide.org.mx/",
+          "filter": "none"
+        },
+        {
+          "title": "New Interfaces for Musical Expression 2023",
+          "href": "https://www.nime2023.org/",
+          "filter": "none"
+        },
+        {
+          "title": "Onix Ensamble",
+          "href": "https://onixensamble.com/",
+          "filter": "none"
+        },
+        {
+          "title": "Universidad Autónoma Metropolitana, Unidad Lerma",
+          "href": "https://www.ler.uam.mx/",
+          "filter": "none"
+        }
+      ],
+      "clientArchive": "View all collaborations",
+      "heroProjects": [
+        "/proyectos/otro_dia_otro_dolar",
+        "/proyectos/luminico_urtext_2025",
+        "/proyectos/pinball-banxico"
+      ],
+      "moreProjects": [
+        {
+          "href": "/proyectos/maraton_musica_contemporanea-2023",
+          "title": "5to Maratón de Música Contemporánea",
+          "meta": "2026Multichannel audio / Technical production"
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "title": "1st International Festival LEAM",
+          "meta": "2025Multichannel audio / Technical production"
+        },
+        {
+          "href": "/proyectos/atl",
+          "title": "Atl | Agua, Música y Arte Sonoro",
+          "meta": "2024Multichannel audio / Technical production"
+        }
+      ],
+      "archiveAtEnd": true,
+      "footerAfterMain": true,
+      "footerLast": true,
+      "footerGap": 0,
+      "background": "rgb(245, 246, 241)",
+      "textColor": "rgb(16, 20, 16)",
+      "muted": "rgb(83, 96, 88)"
+    },
+    {
+      "locale": "en",
+      "width": 768,
+      "overflow": false,
+      "sectionIds": [
+        "home-title",
+        "practice-title",
+        "collaborations-title",
+        "selected-projects"
+      ],
+      "headings": [
+        "Every project finds its form.",
+        "Different ideas, different ways of making.",
+        "Collaborations",
+        "More projects"
+      ],
+      "services": [
+        {
+          "title": "Sound and technical production for concerts",
+          "href": "/servicios#audio"
+        },
+        {
+          "title": "Art and new media production",
+          "href": "/servicios#arte-nuevos-medios"
+        },
+        {
+          "title": "3D printing",
+          "href": "/servicios#impresion3d"
+        }
+      ],
+      "clients": [
+        {
+          "title": "Laboratorio de Ecología Acústica México",
+          "href": "https://leam-mx.org",
+          "filter": "none"
+        },
+        {
+          "title": "Luz María Sánchez",
+          "href": "https://www.luzmariasanchez.com/",
+          "filter": "none"
+        },
+        {
+          "title": "MIDE (Museo Interactivo de Economía)",
+          "href": "https://www.mide.org.mx/",
+          "filter": "none"
+        },
+        {
+          "title": "New Interfaces for Musical Expression 2023",
+          "href": "https://www.nime2023.org/",
+          "filter": "none"
+        },
+        {
+          "title": "Onix Ensamble",
+          "href": "https://onixensamble.com/",
+          "filter": "none"
+        },
+        {
+          "title": "Universidad Autónoma Metropolitana, Unidad Lerma",
+          "href": "https://www.ler.uam.mx/",
+          "filter": "none"
+        }
+      ],
+      "clientArchive": "View all collaborations",
+      "heroProjects": [
+        "/proyectos/otro_dia_otro_dolar",
+        "/proyectos/luminico_urtext_2025",
+        "/proyectos/pinball-banxico"
+      ],
+      "moreProjects": [
+        {
+          "href": "/proyectos/maraton_musica_contemporanea-2023",
+          "title": "5to Maratón de Música Contemporánea",
+          "meta": "2026Multichannel audio / Technical production"
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "title": "1st International Festival LEAM",
+          "meta": "2025Multichannel audio / Technical production"
+        },
+        {
+          "href": "/proyectos/atl",
+          "title": "Atl | Agua, Música y Arte Sonoro",
+          "meta": "2024Multichannel audio / Technical production"
+        }
+      ],
+      "archiveAtEnd": true,
+      "footerAfterMain": true,
+      "footerLast": true,
+      "footerGap": 0,
+      "background": "rgb(245, 246, 241)",
+      "textColor": "rgb(16, 20, 16)",
+      "muted": "rgb(83, 96, 88)"
+    },
+    {
+      "locale": "en",
+      "width": 1024,
+      "overflow": false,
+      "sectionIds": [
+        "home-title",
+        "practice-title",
+        "collaborations-title",
+        "selected-projects"
+      ],
+      "headings": [
+        "Every project finds its form.",
+        "Different ideas, different ways of making.",
+        "Collaborations",
+        "More projects"
+      ],
+      "services": [
+        {
+          "title": "Sound and technical production for concerts",
+          "href": "/servicios#audio"
+        },
+        {
+          "title": "Art and new media production",
+          "href": "/servicios#arte-nuevos-medios"
+        },
+        {
+          "title": "3D printing",
+          "href": "/servicios#impresion3d"
+        }
+      ],
+      "clients": [
+        {
+          "title": "Laboratorio de Ecología Acústica México",
+          "href": "https://leam-mx.org",
+          "filter": "none"
+        },
+        {
+          "title": "Luz María Sánchez",
+          "href": "https://www.luzmariasanchez.com/",
+          "filter": "none"
+        },
+        {
+          "title": "MIDE (Museo Interactivo de Economía)",
+          "href": "https://www.mide.org.mx/",
+          "filter": "none"
+        },
+        {
+          "title": "New Interfaces for Musical Expression 2023",
+          "href": "https://www.nime2023.org/",
+          "filter": "none"
+        },
+        {
+          "title": "Onix Ensamble",
+          "href": "https://onixensamble.com/",
+          "filter": "none"
+        },
+        {
+          "title": "Universidad Autónoma Metropolitana, Unidad Lerma",
+          "href": "https://www.ler.uam.mx/",
+          "filter": "none"
+        }
+      ],
+      "clientArchive": "View all collaborations",
+      "heroProjects": [
+        "/proyectos/otro_dia_otro_dolar",
+        "/proyectos/luminico_urtext_2025",
+        "/proyectos/pinball-banxico"
+      ],
+      "moreProjects": [
+        {
+          "href": "/proyectos/maraton_musica_contemporanea-2023",
+          "title": "5to Maratón de Música Contemporánea",
+          "meta": "2026Multichannel audio / Technical production"
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "title": "1st International Festival LEAM",
+          "meta": "2025Multichannel audio / Technical production"
+        },
+        {
+          "href": "/proyectos/atl",
+          "title": "Atl | Agua, Música y Arte Sonoro",
+          "meta": "2024Multichannel audio / Technical production"
+        }
+      ],
+      "archiveAtEnd": true,
+      "footerAfterMain": true,
+      "footerLast": true,
+      "footerGap": 0,
+      "background": "rgb(245, 246, 241)",
+      "textColor": "rgb(16, 20, 16)",
+      "muted": "rgb(83, 96, 88)"
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "overflow": false,
+      "sectionIds": [
+        "home-title",
+        "practice-title",
+        "collaborations-title",
+        "selected-projects"
+      ],
+      "headings": [
+        "Every project finds its form.",
+        "Different ideas, different ways of making.",
+        "Collaborations",
+        "More projects"
+      ],
+      "services": [
+        {
+          "title": "Sound and technical production for concerts",
+          "href": "/servicios#audio"
+        },
+        {
+          "title": "Art and new media production",
+          "href": "/servicios#arte-nuevos-medios"
+        },
+        {
+          "title": "3D printing",
+          "href": "/servicios#impresion3d"
+        }
+      ],
+      "clients": [
+        {
+          "title": "Laboratorio de Ecología Acústica México",
+          "href": "https://leam-mx.org",
+          "filter": "none"
+        },
+        {
+          "title": "Luz María Sánchez",
+          "href": "https://www.luzmariasanchez.com/",
+          "filter": "none"
+        },
+        {
+          "title": "MIDE (Museo Interactivo de Economía)",
+          "href": "https://www.mide.org.mx/",
+          "filter": "none"
+        },
+        {
+          "title": "New Interfaces for Musical Expression 2023",
+          "href": "https://www.nime2023.org/",
+          "filter": "none"
+        },
+        {
+          "title": "Onix Ensamble",
+          "href": "https://onixensamble.com/",
+          "filter": "none"
+        },
+        {
+          "title": "Universidad Autónoma Metropolitana, Unidad Lerma",
+          "href": "https://www.ler.uam.mx/",
+          "filter": "none"
+        }
+      ],
+      "clientArchive": "View all collaborations",
+      "heroProjects": [
+        "/proyectos/otro_dia_otro_dolar",
+        "/proyectos/luminico_urtext_2025",
+        "/proyectos/pinball-banxico"
+      ],
+      "moreProjects": [
+        {
+          "href": "/proyectos/maraton_musica_contemporanea-2023",
+          "title": "5to Maratón de Música Contemporánea",
+          "meta": "2026Multichannel audio / Technical production"
+        },
+        {
+          "href": "/proyectos/leam2025",
+          "title": "1st International Festival LEAM",
+          "meta": "2025Multichannel audio / Technical production"
+        },
+        {
+          "href": "/proyectos/atl",
+          "title": "Atl | Agua, Música y Arte Sonoro",
+          "meta": "2024Multichannel audio / Technical production"
+        }
+      ],
+      "archiveAtEnd": true,
+      "footerAfterMain": true,
+      "footerLast": true,
+      "footerGap": 0,
+      "background": "rgb(245, 246, 241)",
+      "textColor": "rgb(16, 20, 16)",
+      "muted": "rgb(83, 96, 88)"
+    }
+  ],
+  "heroComparisons": [
+    {
+      "width": 375,
+      "htmlIdentical": true,
+      "geometryIdentical": true,
+      "stylesIdentical": true
+    },
+    {
+      "width": 768,
+      "htmlIdentical": true,
+      "geometryIdentical": true,
+      "stylesIdentical": true
+    },
+    {
+      "width": 1024,
+      "htmlIdentical": true,
+      "geometryIdentical": true,
+      "stylesIdentical": true
+    },
+    {
+      "width": 1440,
+      "htmlIdentical": true,
+      "geometryIdentical": true,
+      "stylesIdentical": true
+    }
+  ],
+  "links": [
+    {
+      "href": "/proyectos/maraton_musica_contemporanea-2023",
+      "status": 200
+    },
+    {
+      "href": "/proyectos/leam2025",
+      "status": 200
+    },
+    {
+      "href": "/proyectos/atl",
+      "status": 200
+    },
+    {
+      "href": "/proyectos/otro_dia_otro_dolar",
+      "status": 200
+    },
+    {
+      "href": "/proyectos/luminico_urtext_2025",
+      "status": 200
+    },
+    {
+      "href": "/proyectos/pinball-banxico",
+      "status": 200
+    },
+    {
+      "href": "/clientes",
+      "status": 200
+    },
+    {
+      "href": "/proyectos",
+      "status": 200
+    }
+  ],
+  "serviceChecks": [
+    {
+      "href": "/servicios#audio",
+      "status": 200,
+      "anchorExists": false
+    },
+    {
+      "href": "/servicios#arte-nuevos-medios",
+      "status": 200,
+      "anchorExists": false
+    },
+    {
+      "href": "/servicios#impresion3d",
+      "status": 200,
+      "anchorExists": false
+    }
+  ],
+  "existingServiceAnchorLimitation": true,
+  "mobileMenuPassed": true,
+  "errors": []
+}

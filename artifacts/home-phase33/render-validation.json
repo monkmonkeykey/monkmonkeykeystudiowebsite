@@ -1,0 +1,42 @@
+[
+  {
+    "locale": "es",
+    "additionalProjects": 0,
+    "sectionHidden": true
+  },
+  {
+    "locale": "es",
+    "additionalProjects": 1,
+    "sectionHidden": false
+  },
+  {
+    "locale": "es",
+    "additionalProjects": 2,
+    "sectionHidden": false
+  },
+  {
+    "locale": "es",
+    "additionalProjects": 3,
+    "sectionHidden": false
+  },
+  {
+    "locale": "en",
+    "additionalProjects": 0,
+    "sectionHidden": true
+  },
+  {
+    "locale": "en",
+    "additionalProjects": 1,
+    "sectionHidden": false
+  },
+  {
+    "locale": "en",
+    "additionalProjects": 2,
+    "sectionHidden": false
+  },
+  {
+    "locale": "en",
+    "additionalProjects": 3,
+    "sectionHidden": false
+  }
+]

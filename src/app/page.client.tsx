@@ -31,8 +31,7 @@ const copy = {
     es: "Colaboramos con artistas e instituciones para desarrollar obras y experiencias que integran sonido, tecnología y nuevos medios.",
     en: "We collaborate with artists and institutions to develop works and experiences that bring together sound, technology, and new media.",
   },
-  explore: { es: "Explorar proyectos", en: "Explore projects" },
-  projects: { es: "Proyectos seleccionados", en: "Selected projects" },
+  projects: { es: "Más proyectos", en: "More projects" },
   archive: { es: "Ver todos los proyectos", en: "View all projects" },
   practice: { es: "Nuestra práctica", en: "Our practice" },
   practiceTitle: { es: "Distintas ideas, distintas maneras de hacer.", en: "Different ideas, different ways of making." },
@@ -40,13 +39,9 @@ const copy = {
     es: "Cada colaboración empieza por escuchar. Nos interesa comprender la intención de cada artista y explorar, en conjunto, las posibilidades de su proyecto.",
     en: "Every collaboration begins with listening. We seek to understand each artist’s intention and explore the possibilities of their project together.",
   },
-  practiceDetail: {
-    es: "Desde el sonido y las experiencias interactivas hasta la producción de obra, combinamos experimentación y trabajo técnico para acompañar las ideas hasta su materialización. Trabajamos desde la Ciudad de México, en diálogo con distintas prácticas y contextos.",
-    en: "From sound and interactive experiences to artwork production, we combine experimentation and technical work to help ideas take shape. Based in Mexico City, we work in dialogue with different practices and contexts.",
-  },
-  services: { es: "Capacidades y servicios", en: "Capabilities and services" },
   serviceLink: { es: "Ver servicio", en: "View service" },
   collaborations: { es: "Colaboraciones", en: "Collaborations" },
+  allCollaborators: { es: "Ver todas las colaboraciones", en: "View all collaborations" },
   collaboratorsCopy: {
     es: "Artistas, instituciones y equipos con quienes hemos compartido ideas y hecho posibles proyectos en distintos contextos.",
     en: "Artists, institutions, and teams with whom we have shared ideas and brought projects to life across different contexts.",
@@ -81,8 +76,8 @@ export default function HomePageClient({ projects, heroProjects, clients, servic
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
   const heroSlugs = new Set(heroProjects.map((project) => project.slug));
   const remainingProjects = projects.filter((project) => !heroSlugs.has(project.slug));
-  // Keep the next section's existing order and design; avoid repeats where possible.
-  const selectedProjects = remainingProjects.length ? remainingProjects.slice(0, 5) : projects.slice(0, 5);
+  const selectedProjects = remainingProjects.slice(0, 3);
+  const homeClients = clients.slice(0, 6);
   const timeline = (project: Project) => project.startYear && project.startYear === project.endYear
     ? String(project.startYear)
     : formatProjectTimeline(project);
@@ -163,16 +158,47 @@ export default function HomePageClient({ projects, heroProjects, clients, servic
         ) : null}
       </section>
 
-      <section className={styles.section} aria-labelledby="selected-projects">
+      <section className={`${styles.section} ${styles.practice}`} aria-labelledby="practice-title">
+        <div className={styles.practiceIntro}>
+          <p className={styles.kicker}>{text(copy.practice)}</p>
+          <h2 id="practice-title">{text(copy.practiceTitle)}</h2>
+          <p className={styles.practiceCopy}>{text(copy.practiceCopy)}</p>
+        </div>
+        <div className={styles.capabilities}>
+          {services.map((service) => (
+            <article key={service.slug} className={styles.service}>
+              <h3>{serviceTitle(service)}</h3>
+              <p>{serviceSummary(service)}</p>
+              <Link href={`/servicios#${service.slug}`} className={styles.link} aria-label={`${text(copy.serviceLink)}: ${serviceTitle(service)}`}>{text(copy.serviceLink)}</Link>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.section} aria-labelledby="collaborations-title">
+        <h2 id="collaborations-title">{text(copy.collaborations)}</h2>
+        <p className={styles.collaborationIntro}>{text(copy.collaboratorsCopy)}</p>
+        <div className={styles.clients}>
+          {homeClients.map((client) => (
+            <article key={client.slug} className={styles.client}>
+              {client.image ? <div className={styles.clientLogo}><Image src={client.image.src} alt={text(client.image.alt)} fill sizes="144px" /></div> : null}
+              <h3>{client.website ? <a href={client.website} target="_blank" rel="noreferrer">{client.name}</a> : client.name}</h3>
+              <p>{locale === "en" && text(client.sector).toLowerCase() === "ensamble" ? "Ensemble" : text(client.sector)}</p>
+            </article>
+          ))}
+        </div>
+        <Link href="/clientes" className={`${styles.link} ${styles.sectionLink}`}>{text(copy.allCollaborators)}</Link>
+      </section>
+
+      {selectedProjects.length > 0 && <section className={styles.section} aria-labelledby="selected-projects">
         <div className={styles.sectionHeading}>
           <h2 id="selected-projects">{text(copy.projects)}</h2>
-          <Link href="/proyectos" className={styles.link}>{text(copy.archive)}</Link>
         </div>
         <div className={styles.projects}>
-          {selectedProjects.map((project, index) => (
-            <Link key={project.slug} href={`/proyectos/${project.slug}`} className={`${styles.project} ${index === 0 ? styles.featured : ""}`}>
+          {selectedProjects.map((project) => (
+            <Link key={project.slug} href={`/proyectos/${project.slug}`} className={styles.project}>
               <div className={styles.projectImage}>
-                <Image src={project.cover.src} alt={imageAlt(project.cover.alt, project)} fill sizes={index === 0 ? "(min-width: 1320px) 784px, (min-width: 1024px) 64vw, (min-width: 768px) 50vw, 100vw" : "(min-width: 1320px) 376px, (min-width: 1024px) 32vw, (min-width: 768px) 50vw, 100vw"} />
+                <Image src={project.cover.src} alt={imageAlt(project.cover.alt, project)} fill sizes="(min-width: 1320px) 376px, (min-width: 1024px) 32vw, (min-width: 768px) 50vw, 100vw" />
               </div>
               <h3>{text(project.name)}</h3>
               <div className={styles.projectMeta}>
@@ -182,43 +208,9 @@ export default function HomePageClient({ projects, heroProjects, clients, servic
             </Link>
           ))}
         </div>
-      </section>
+        <Link href="/proyectos" className={`${styles.link} ${styles.sectionLink}`}>{text(copy.archive)}</Link>
+      </section>}
 
-      <section className={`${styles.section} ${styles.practice}`} aria-labelledby="practice-title">
-        <div>
-          <p className={styles.kicker}>{text(copy.practice)}</p>
-          <h2 id="practice-title">{text(copy.practiceTitle)}</h2>
-        </div>
-        <div className={styles.practiceCopy}>
-          <p>{text(copy.practiceCopy)}</p>
-          <p>{text(copy.practiceDetail)}</p>
-        </div>
-      </section>
-
-      <section className={styles.section} aria-labelledby="capabilities-title">
-        <div className={styles.sectionHeading}><h2 id="capabilities-title">{text(copy.services)}</h2></div>
-        {services.map((service) => (
-          <article key={service.slug} className={styles.service}>
-            <h3>{serviceTitle(service)}</h3>
-            <p>{serviceSummary(service)}</p>
-            <Link href={`/servicios#${service.slug}`} className={styles.link} aria-label={`${text(copy.serviceLink)}: ${serviceTitle(service)}`}>{text(copy.serviceLink)}</Link>
-          </article>
-        ))}
-      </section>
-
-      <section className={styles.section} aria-labelledby="collaborations-title">
-        <h2 id="collaborations-title">{text(copy.collaborations)}</h2>
-        <p className={styles.collaborationIntro}>{text(copy.collaboratorsCopy)}</p>
-        <div className={styles.clients}>
-          {clients.map((client) => (
-            <article key={client.slug} className={styles.client}>
-              {client.image ? <div className={styles.clientLogo}><Image src={client.image.src} alt={text(client.image.alt)} fill sizes="144px" /></div> : null}
-              <h3>{client.website ? <a href={client.website} target="_blank" rel="noreferrer">{client.name}</a> : client.name}</h3>
-              <p>{locale === "en" && text(client.sector).toLowerCase() === "ensamble" ? "Ensemble" : text(client.sector)}</p>
-            </article>
-          ))}
-        </div>
-      </section>
     </div>
   );
 }
