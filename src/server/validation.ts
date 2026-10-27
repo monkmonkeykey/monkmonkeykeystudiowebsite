@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { isServicePhotoSource } from "@/domain/service-photos";
+import { projectCreditsSchema } from "@/domain/project-credits";
 
 const homeProjectSlugSchema = z.string().trim().min(1).max(200)
   .refine((value) => !/[\s/\\?#\u0000-\u001f]/u.test(value), "Identificador de proyecto inválido.")
@@ -70,7 +71,7 @@ export const projectVideoSchema = z
   .optional()
   .nullable();
 
-export const projectPayloadSchema = z.object({
+export const projectPayloadSchema = projectCreditsSchema.extend({
   slug: z.string().min(1),
   name: localeTextSchema,
   subtitle: localeTextSchema,

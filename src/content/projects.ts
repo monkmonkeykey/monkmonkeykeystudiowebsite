@@ -13,8 +13,9 @@ import type {
   ProjectVideo,
 } from "@/domain/projects";
 import type { Locale, LocaleText } from "@/lib/i18n";
+import { normalizeProjectCredits, type ProjectCreditsPayload } from "@/domain/project-credits";
 
-type ProjectFrontmatter = {
+type ProjectFrontmatter = ProjectCreditsPayload & {
   order?: number;
   slug: string;
   name: LocaleText;
@@ -282,7 +283,7 @@ const parseEntities = (value: unknown, projectSlug: string): ProjectEntity[] => 
   });
 };
 
-const readProjectFile = (filePath: string): { project: Project; order: number } => {
+export const readProjectFile = (filePath: string): { project: Project; order: number } => {
   const rawContent = fs.readFileSync(filePath, "utf8");
   const match = rawContent.match(FRONTMATTER_REGEX);
 
@@ -313,6 +314,7 @@ const readProjectFile = (filePath: string): { project: Project; order: number } 
   }
 
   const project: Project = {
+    ...normalizeProjectCredits(frontmatter),
     slug: frontmatter.slug,
     name,
     subtitle,

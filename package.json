@@ -9,6 +9,7 @@
     "lint": "eslint",
     "test:home": "node --test tests/home-settings.test.mjs",
     "test:services": "node --test tests/service-photos.test.mjs",
+    "test:projects": "node --test tests/project-credits.test.mjs",
     "mongo:smoke": "node scripts/mongodb-smoke-test.mjs"
   },
   "dependencies": {

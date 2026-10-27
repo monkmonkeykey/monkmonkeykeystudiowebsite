@@ -9,6 +9,7 @@ import { formatProjectTimeline, translateCategoryLabel } from "@/domain/projects
 import { translate, type LocaleText } from "@/lib/i18n";
 import { useLocale } from "@/components/site/locale-context";
 import { getPlainText, RichText } from "@/components/site/rich-text";
+import { CollaboratorCard, CollaboratorGrid } from "@/components/site/CollaboratorCard";
 import styles from "./project-detail.module.css";
 
 const labels = {
@@ -21,7 +22,6 @@ const labels = {
   video: { es: "Video", en: "Video" },
   gallery: { es: "Galería", en: "Gallery" },
   collaborations: { es: "Colaboraciones", en: "Collaborations" },
-  website: { es: "Visitar sitio", en: "Visit site" },
   close: { es: "Cerrar", en: "Close" },
   previous: { es: "Anterior", en: "Previous" },
   next: { es: "Siguiente", en: "Next" },
@@ -246,17 +246,9 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
 
       {entities.length > 0 && <section className={styles.section} aria-labelledby="project-collaborations-title">
         <h2 id="project-collaborations-title">{text(labels.collaborations)}</h2>
-        <div className={styles.entities}>
-          {entities.map((entity) => <article key={entity.slug} className={styles.entity}>
-            {entity.image?.src && <div className={styles.entityLogo}><Image src={entity.image.src} alt={/[\p{L}\p{N}]/u.test(text(entity.image.alt)) ? text(entity.image.alt) : plain(entity.name)} fill sizes="112px" loading="lazy" /></div>}
-            <div className={styles.entityText}>
-              {plain(entity.name) && <h3>{plain(entity.name)}</h3>}
-              {text(entity.sector) && <p className={styles.entitySector}>{text(entity.sector)}</p>}
-              {text(entity.summary) && <p>{text(entity.summary)}</p>}
-              {entity.website && <a href={entity.website} target="_blank" rel="noopener noreferrer" className={styles.link}>{text(labels.website)}</a>}
-            </div>
-          </article>)}
-        </div>
+        <CollaboratorGrid variant="project">
+          {entities.map((entity) => <CollaboratorCard key={entity.slug} {...entity} headingLevel={3} />)}
+        </CollaboratorGrid>
       </section>}
 
       <nav className={styles.return} aria-label={locale === "es" ? "Archivo de proyectos" : "Project archive"}>

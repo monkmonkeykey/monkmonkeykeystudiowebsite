@@ -12,6 +12,7 @@ import { CLIENTS } from "@/content/clients";
 import { buildCloudinaryImageUrl } from "@/server/cloudinary";
 import { fetchClientsFromDatabase } from "@/server/clients";
 import { getMongoDatabase } from "@/server/mongodb";
+import { normalizeProjectCredits, type ProjectCreditsPayload } from "@/domain/project-credits";
 
 type ProjectImagePayload = {
   src?: string | null;
@@ -20,7 +21,7 @@ type ProjectImagePayload = {
   footnote?: LocaleText | null;
 };
 
-export type ProjectPayload = {
+export type ProjectPayload = ProjectCreditsPayload & {
   slug: string;
   name: LocaleText;
   subtitle: LocaleText;
@@ -40,7 +41,7 @@ export type ProjectPayload = {
   isPrivate?: boolean;
 };
 
-type ProjectDocument = {
+type ProjectDocument = ProjectCreditsPayload & {
   slug: string;
   name: LocaleText;
   subtitle: LocaleText;
@@ -260,6 +261,7 @@ const normalizeProjectDocument = async (document: ProjectDocument): Promise<Proj
         }))
       : [],
     entities,
+    ...normalizeProjectCredits(document),
     isPrivate: Boolean(document.isPrivate),
   } satisfies Project;
 };
@@ -307,6 +309,7 @@ export const fetchProjectBySlug = async (slug: string): Promise<Project | null> 
 
 const prepareProjectDocument = (payload: ProjectPayload) => {
   return {
+    ...normalizeProjectCredits(payload),
     slug: payload.slug,
     name: normalizeLocaleText(payload.name),
     subtitle: normalizeLocaleText(payload.subtitle),
@@ -334,9 +337,9 @@ const prepareProjectDocument = (payload: ProjectPayload) => {
         }))
       : [],
     entities: payload.entities ?? [],
-    order: payload.order ?? null,
+    ...(payload.order !== undefined ? { order: payload.order } : {}),
     updatedAt: new Date(),
-    isPrivate: Boolean(payload.isPrivate),
+    ...(payload.isPrivate !== undefined ? { isPrivate: payload.isPrivate } : {}),
   };
 };
 
@@ -355,6 +358,8 @@ export const upsertProject = async (payload: ProjectPayload): Promise<Project | 
     { slug: payload.slug },
     {
       $set: document,
+      ...(payload.studioContribution !== undefined && !("studioContribution" in document)
+        ? { $unset: { studioContribution: "" as const } } : {}),
       $setOnInsert: { createdAt: new Date() },
     },
     { upsert: true },

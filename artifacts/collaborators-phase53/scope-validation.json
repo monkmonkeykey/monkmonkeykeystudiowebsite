@@ -1,0 +1,90 @@
+{
+  "passed": true,
+  "projectJSXOutsideCollaborationsUnchanged": true,
+  "projectCSSOutsideCollaborationsUnchanged": true,
+  "protectedFiles": [
+    {
+      "path": "src/app/page.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/page.client.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/home.module.css",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/proyectos/page.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/proyectos/page.client.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/proyectos/projects.module.css",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/proyectos/[slug]/page.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/clientes/page.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/admin/page.client.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/components/site/Header.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/components/site/Footer.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/components/site/PracticeGallery.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/components/site/SiteShell.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/globals.css",
+      "unchanged": true
+    },
+    {
+      "path": "src/domain/projects.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/content/clients.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/data/clients.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/server/clients.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/server/projects.ts",
+      "unchanged": true
+    }
+  ],
+  "checks": {
+    "lint": "passed",
+    "types": "passed",
+    "productionBuild": "passed",
+    "homeTests": 11,
+    "serviceTests": 5
+  }
+}

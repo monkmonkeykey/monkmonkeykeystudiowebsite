@@ -6,6 +6,7 @@ import { hasDatabaseConfig } from "@/lib/env";
 import { upsertProject } from "@/server/projects";
 import { projectPayloadSchema } from "@/server/validation";
 import { verifyRequestSession } from "@/server/auth";
+import { projectCreditFieldErrors } from "@/domain/project-credits";
 
 export async function GET() {
   const projects = await getProjects();
@@ -37,7 +38,7 @@ export async function POST(request: Request) {
   const parseResult = projectPayloadSchema.safeParse(payload);
 
   if (!parseResult.success) {
-    return NextResponse.json({ error: parseResult.error.flatten() }, { status: 400 });
+    return NextResponse.json({ error: parseResult.error.flatten(), fieldErrors: projectCreditFieldErrors(parseResult.error.issues) }, { status: 400 });
   }
 
   const project = await upsertProject(parseResult.data);

@@ -1,5 +1,6 @@
 import type { ClientImage } from "@/content/clients";
 import type { Locale, LocaleText } from "@/lib/i18n";
+import type { ProjectCredits } from "./project-credits";
 
 export type LocalizedValue = string | LocaleText;
 
@@ -48,7 +49,7 @@ export const PROJECT_CATEGORY_LABELS: Record<ProjectCategory, LocaleText> = {
   },
 };
 
-export type Project = {
+export type Project = ProjectCredits & {
   slug: string;
   name: LocaleText;
   subtitle: LocaleText;

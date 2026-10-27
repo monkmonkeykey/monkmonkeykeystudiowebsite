@@ -1,0 +1,164 @@
+{
+  "scope": "Actual AdminDashboard, ProjectCreditsEditor, schemas and API handlers with MongoDB operations intercepted in memory. Next Image and router are test adapters. All browser requests intercepted; no production writes.",
+  "checks": [
+    {
+      "newProjectStartsEmpty": true
+    },
+    {
+      "legacyProjectSavesEmpty": true
+    },
+    {
+      "savedValuesLoaded": true
+    },
+    {
+      "blankNamesAndIncompleteTranslationsShowInlineErrors": true
+    },
+    {
+      "reorderEditRemoveAndPersist": true,
+      "keyboardReorder": true,
+      "privacyPreserved": true
+    },
+    {
+      "viewport": 375,
+      "width": 275,
+      "scroll": 275,
+      "overflow": false,
+      "controls": [
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44
+      ]
+    },
+    {
+      "viewport": 768,
+      "width": 668,
+      "scroll": 668,
+      "overflow": false,
+      "controls": [
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44
+      ]
+    },
+    {
+      "viewport": 1024,
+      "width": 680,
+      "scroll": 680,
+      "overflow": false,
+      "controls": [
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44
+      ]
+    },
+    {
+      "viewport": 1440,
+      "width": 848,
+      "scroll": 848,
+      "overflow": false,
+      "controls": [
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44,
+        44
+      ]
+    },
+    {
+      "switchingProjectsDoesNotTransferCredits": true
+    },
+    {
+      "reopeningRestoresSavedOrderAndText": true
+    },
+    {
+      "serverErrorsAppearBesideTheField": true
+    },
+    {
+      "clearAllFieldsPersists": true
+    },
+    {
+      "createProjectWithoutNewFieldsViaAdmin": true
+    },
+    {
+      "reopenNewProjectWithoutCredits": true
+    }
+  ],
+  "errors": [],
+  "interceptedWrites": [
+    {
+      "method": "PATCH",
+      "path": "/api/projects/nime2023"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/projects/operauam"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/projects/operauam"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/projects/operauam"
+    },
+    {
+      "method": "POST",
+      "path": "/api/projects"
+    }
+  ],
+  "passed": true
+}

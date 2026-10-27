@@ -6,6 +6,7 @@ import { hasDatabaseConfig } from "@/lib/env";
 import { deleteProject, upsertProject } from "@/server/projects";
 import { projectPayloadSchema } from "@/server/validation";
 import { verifyRequestSession } from "@/server/auth";
+import { projectCreditFieldErrors } from "@/domain/project-credits";
 
 type RouteContext = {
   params: Promise<{ slug: string }>;
@@ -52,7 +53,7 @@ export async function PATCH(request: Request, context: RouteContext) {
   const parseResult = projectPayloadSchema.safeParse({ ...bodyRecord, slug: params.slug });
 
   if (!parseResult.success) {
-    return NextResponse.json({ error: parseResult.error.flatten() }, { status: 400 });
+    return NextResponse.json({ error: parseResult.error.flatten(), fieldErrors: projectCreditFieldErrors(parseResult.error.issues) }, { status: 400 });
   }
 
   const project = await upsertProject(parseResult.data);

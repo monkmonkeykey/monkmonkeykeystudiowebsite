@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "publicProjectSlugsAndOrderPreserved": true,
+  "pages": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/proyectos",
+      "status": 200
+    },
+    {
+      "path": "/proyectos/nime2023",
+      "status": 200
+    },
+    {
+      "path": "/clientes",
+      "status": 200
+    },
+    {
+      "path": "/proyectos/otro_dia_otro_dolar",
+      "status": 200
+    }
+  ],
+  "errors": [],
+  "noWrites": true,
+  "projectsWithEditorialFields": [
+    "otro_dia_otro_dolar"
+  ],
+  "historicalSnapshot": "Phase 5.3 snapshot predates this phase; current CMS data has differences and was not changed by this read-only validation.",
+  "observedDifferences": [
+    {
+      "slug": "otro_dia_otro_dolar",
+      "fields": [
+        "categories",
+        "artisticAuthorship",
+        "additionalCredits",
+        "studioContribution"
+      ]
+    }
+  ]
+}

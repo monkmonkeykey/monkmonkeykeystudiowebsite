@@ -12,6 +12,9 @@ import { PROJECT_CATEGORY_LABELS, translateCategoryLabel } from "@/domain/projec
 import type { SiteContent } from "@/domain/site";
 import type { HomeSettings } from "@/domain/home";
 import HomeSettingsManager from "@/components/admin/HomeSettingsManager";
+import ProjectCreditsEditor from "@/components/admin/ProjectCreditsEditor";
+import { createProjectCreditsDraft, validateProjectCreditsDraft } from "@/lib/project-credit-form";
+import type { ProjectCreditsPayload } from "@/domain/project-credits";
 
 import type { LocaleText } from "@/lib/i18n";
 import { extractApiErrorMessage } from "@/lib/admin-api";
@@ -2573,6 +2576,7 @@ const ProjectManager = ({
   const [status, setStatus] = useState<"idle" | "saving" | "deleting">("idle");
   const [message, setMessage] = useState<string | null>(null);
   const [newCategoryInput, setNewCategoryInput] = useState("");
+  const [creditErrors, setCreditErrors] = useState<Record<string, string>>({});
 
   const emptyForm = useMemo(
     () => ({
@@ -2591,6 +2595,7 @@ const ProjectManager = ({
       description: [createDescriptionField(randomId())],
       meta: [] as ProjectMetaField[],
       entities: [] as string[],
+      editorialCredits: createProjectCreditsDraft(),
       order: "",
       isPrivate: false,
     }),
@@ -2614,6 +2619,7 @@ const ProjectManager = ({
   }, [projects, form.categories]);
 
   useEffect(() => {
+    setCreditErrors({});
     if (selectedSlug === "new") {
       setForm({
         ...emptyForm,
@@ -2647,6 +2653,7 @@ const ProjectManager = ({
             : [createDescriptionField(randomId())],
         meta: project.meta.map((item) => createMetaField(randomId(), item)),
         entities: project.entities.map((entity) => entity.slug),
+        editorialCredits: createProjectCreditsDraft(project),
         order: "",
         isPrivate: Boolean(project.isPrivate),
       });
@@ -2684,7 +2691,7 @@ const ProjectManager = ({
     setNewCategoryInput("");
   };
 
-  const buildPayload = () => {
+  const buildPayload = (credits: ProjectCreditsPayload) => {
     if (!form.slug.trim()) {
       throw new Error("El proyecto necesita un slug");
     }
@@ -2722,6 +2729,7 @@ const ProjectManager = ({
     }
 
     const payload: Record<string, unknown> = {
+      ...credits,
       slug: form.slug.trim(),
       name: requireLocaleField(form.name, "el nombre del proyecto"),
       subtitle: requireLocaleField(form.subtitle, "el subtítulo del proyecto"),
@@ -2778,7 +2786,14 @@ const ProjectManager = ({
     setMessage(null);
 
     try {
-      const payload = buildPayload();
+      const credits = validateProjectCreditsDraft(form.editorialCredits);
+      setCreditErrors(credits.errors);
+      if (!credits.success) {
+        setMessage("Revisa los campos señalados en Autoría, participación y créditos.");
+        setStatus("idle");
+        return;
+      }
+      const payload = buildPayload(credits.data);
       const payloadSlug = typeof payload.slug === "string" ? payload.slug : "";
       const shouldCreateProject = selectedSlug === "new" || payloadSlug !== selectedSlug;
       const endpoint = shouldCreateProject ? "/api/projects" : `/api/projects/${selectedSlug}`;
@@ -2793,6 +2808,7 @@ const ProjectManager = ({
 
       if (!response.ok) {
         const data = await response.json().catch(() => ({}));
+        if (data.fieldErrors) setCreditErrors(data.fieldErrors);
         throw new Error(extractApiErrorMessage(data, "No fue posible guardar el proyecto"));
       }
 
@@ -3756,6 +3772,12 @@ const ProjectManager = ({
               </div>
             </div>
           </div>
+
+          <ProjectCreditsEditor value={form.editorialCredits} errors={creditErrors} disabled={status !== "idle"}
+            onChange={(editorialCredits) => {
+              setForm((previous) => ({ ...previous, editorialCredits }));
+              setCreditErrors({});
+            }} />
 
           <div className="space-y-3">
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-foreground/60">
