@@ -1,0 +1,221 @@
+{
+  "passed": true,
+  "scope": "Isolated render tests using copies of existing public project media; no CMS or API writes.",
+  "checks": [
+    {
+      "locale": "es",
+      "count": 0,
+      "rows": [],
+      "order": true,
+      "inputUnchanged": true
+    },
+    {
+      "locale": "es",
+      "count": 1,
+      "rows": [
+        1
+      ],
+      "order": true,
+      "inputUnchanged": true
+    },
+    {
+      "locale": "es",
+      "count": 2,
+      "rows": [
+        2
+      ],
+      "order": true,
+      "inputUnchanged": true
+    },
+    {
+      "locale": "es",
+      "count": 3,
+      "rows": [
+        1,
+        2
+      ],
+      "order": true,
+      "inputUnchanged": true
+    },
+    {
+      "locale": "es",
+      "count": 4,
+      "rows": [
+        1,
+        2,
+        1
+      ],
+      "order": true,
+      "inputUnchanged": true
+    },
+    {
+      "locale": "es",
+      "count": 5,
+      "rows": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "order": true,
+      "inputUnchanged": true
+    },
+    {
+      "locale": "es",
+      "count": 6,
+      "rows": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "order": true,
+      "inputUnchanged": true
+    },
+    {
+      "locale": "es",
+      "count": 7,
+      "rows": [
+        1,
+        2,
+        1,
+        2,
+        1
+      ],
+      "order": true,
+      "inputUnchanged": true
+    },
+    {
+      "locale": "es",
+      "count": 8,
+      "rows": [
+        1,
+        2,
+        1,
+        2,
+        1,
+        1
+      ],
+      "order": true,
+      "inputUnchanged": true
+    },
+    {
+      "locale": "en",
+      "count": 0,
+      "rows": [],
+      "order": true,
+      "inputUnchanged": true
+    },
+    {
+      "locale": "en",
+      "count": 1,
+      "rows": [
+        1
+      ],
+      "order": true,
+      "inputUnchanged": true
+    },
+    {
+      "locale": "en",
+      "count": 2,
+      "rows": [
+        2
+      ],
+      "order": true,
+      "inputUnchanged": true
+    },
+    {
+      "locale": "en",
+      "count": 3,
+      "rows": [
+        1,
+        2
+      ],
+      "order": true,
+      "inputUnchanged": true
+    },
+    {
+      "locale": "en",
+      "count": 4,
+      "rows": [
+        1,
+        2,
+        1
+      ],
+      "order": true,
+      "inputUnchanged": true
+    },
+    {
+      "locale": "en",
+      "count": 5,
+      "rows": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "order": true,
+      "inputUnchanged": true
+    },
+    {
+      "locale": "en",
+      "count": 6,
+      "rows": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "order": true,
+      "inputUnchanged": true
+    },
+    {
+      "locale": "en",
+      "count": 7,
+      "rows": [
+        1,
+        2,
+        1,
+        2,
+        1
+      ],
+      "order": true,
+      "inputUnchanged": true
+    },
+    {
+      "locale": "en",
+      "count": 8,
+      "rows": [
+        1,
+        2,
+        1,
+        2,
+        1,
+        1
+      ],
+      "order": true,
+      "inputUnchanged": true
+    },
+    {
+      "reorderOrDelete": true,
+      "count": 8,
+      "order": true
+    },
+    {
+      "reorderOrDelete": true,
+      "count": 7,
+      "order": true
+    },
+    {
+      "reorderOrDelete": true,
+      "count": 3,
+      "order": true
+    },
+    {
+      "coverDuplicateExcludedFromPresentation": true
+    },
+    {
+      "absentCaptionDoesNotUseAlt": true
+    }
+  ]
+}

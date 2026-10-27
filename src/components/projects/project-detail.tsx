@@ -62,6 +62,67 @@ type ProjectDetailProps = {
 
 type ViewerPhoto = { image: ProjectGalleryImage; captions: string[] };
 
+type ProjectGalleryProps = {
+  images: ProjectGalleryImage[];
+  locale: "es" | "en";
+  alt: (image: ProjectGalleryImage) => string;
+  captions: (images: ProjectGalleryImage[]) => string[];
+  onOpen: (index: number, event: MouseEvent<HTMLButtonElement>) => void;
+};
+
+function ProjectGallery({ images, locale, alt, captions, onOpen }: ProjectGalleryProps) {
+  const [ratios, setRatios] = useState<Record<string, number>>({});
+  const rows: number[][] = [];
+  if (images.length === 2) rows.push([0, 1]);
+  else for (let index = 0; index < images.length; index += 3) {
+    rows.push([index]);
+    if (index + 1 < images.length) rows.push(index + 2 < images.length ? [index + 1, index + 2] : [index + 1]);
+  }
+
+  return (
+    <section className={styles.section} aria-labelledby="project-gallery-title">
+      <h2 id="project-gallery-title">{translate(locale, labels.gallery)}</h2>
+      <div className={styles.gallery}>
+        {rows.map((row) => {
+          const firstRatio = ratios[images[row[0]].src];
+          const secondRatio = row.length > 1 ? ratios[images[row[1]].src] : undefined;
+          // Stack mixed portrait/landscape pairs, very different formats, and panoramas.
+          const incompatible = firstRatio && secondRatio && (
+            (firstRatio < .85 && secondRatio > 1.15) || (secondRatio < .85 && firstRatio > 1.15)
+            || Math.max(firstRatio, secondRatio) / Math.min(firstRatio, secondRatio) > 1.8
+            || Math.max(firstRatio, secondRatio) > 2.4
+          );
+          const paired = row.length === 2 && !incompatible;
+
+          return <div key={row[0]} className={`${styles.galleryRow} ${paired ? styles.galleryPair : ""}`}>
+            {row.map((index) => {
+              const image = images[index];
+              const notes = captions([image]);
+              return <figure key={`${image.src}-${index}`}>
+                <button type="button" className={`${styles.photoButton} ${styles.galleryButton} ${ratios[image.src] ? "" : styles.galleryPending}`}
+                  onClick={(event) => onOpen(index, event)}
+                  aria-label={`${locale === "es" ? "Ampliar fotografía" : "Enlarge photograph"} ${index + 1}`}>
+                  {/* No invented dimensions: CSS keeps the optimized image in normal flow at its intrinsic ratio. */}
+                  <Image src={image.src} alt={alt(image)} fill loading="lazy" className={styles.galleryImage}
+                    sizes={paired ? "(min-width: 1320px) 580px, (min-width: 768px) 44vw, 100vw" : "(min-width: 1320px) 1192px, 100vw"}
+                    onLoad={(event) => {
+                      const { naturalWidth, naturalHeight } = event.currentTarget;
+                      if (!naturalWidth || !naturalHeight) return;
+                      const ratio = naturalWidth / naturalHeight;
+                      // Keep one measurement per asset; responsive variants can round pixel dimensions differently.
+                      setRatios((previous) => previous[image.src] ? previous : { ...previous, [image.src]: ratio });
+                    }} />
+                </button>
+                {notes.length > 0 && <figcaption className={styles.caption}>{notes.map((note) => <p key={note}>{note}</p>)}</figcaption>}
+              </figure>;
+            })}
+          </div>;
+        })}
+      </div>
+    </section>
+  );
+}
+
 export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
   const { locale } = useLocale();
   const text = (value: LocaleText) => plain(translate(locale, value));
@@ -109,7 +170,11 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
     setActiveImageIndex(index);
   };
   const closeViewer = () => setActiveImageIndex(null);
-  const goTo = (direction: -1 | 1) => setActiveImageIndex((current) => current === null ? null : (current + direction + photos.length) % photos.length);
+  const goTo = (direction: -1 | 1) => {
+    // A caption can disappear on the next photo; keep keyboard focus in the viewer.
+    if (document.activeElement?.tagName === "FIGCAPTION") closeButtonRef.current?.focus({ preventScroll: true });
+    setActiveImageIndex((current) => current === null ? null : (current + direction + photos.length) % photos.length);
+  };
 
   useEffect(() => {
     if (!isViewerOpen) return;
@@ -176,19 +241,8 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
         </div>
       </section>}
 
-      {gallery.length > 0 && <section className={styles.section} aria-labelledby="project-gallery-title">
-        <h2 id="project-gallery-title">{text(labels.gallery)}</h2>
-        <div className={styles.gallery}>
-          {gallery.map((image, index) => <figure key={`${project.slug}-gallery-${index}`}>
-            <button type="button" className={styles.photoButton} onClick={(event) => openViewer(index + (cover ? 1 : 0), event)}
-              aria-label={`${locale === "es" ? "Ampliar fotografía" : "Enlarge photograph"} ${index + 1}`}>
-              <Image src={image.src} alt={photoAlt(image)} width={1200} height={800} loading="lazy"
-                sizes="(min-width: 1320px) 580px, (min-width: 768px) 50vw, 100vw" className={styles.galleryImage} />
-            </button>
-            {captions([image]).length > 0 && <figcaption className={styles.caption}>{captions([image]).map((caption) => <p key={caption}>{caption}</p>)}</figcaption>}
-          </figure>)}
-        </div>
-      </section>}
+      {gallery.length > 0 && <ProjectGallery images={gallery} locale={locale} alt={photoAlt} captions={captions}
+        onOpen={(index, event) => openViewer(index + (cover ? 1 : 0), event)} />}
 
       {entities.length > 0 && <section className={styles.section} aria-labelledby="project-collaborations-title">
         <h2 id="project-collaborations-title">{text(labels.collaborations)}</h2>
@@ -214,7 +268,7 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
         onKeyDown={(event) => {
           if (event.key === "ArrowLeft" || event.key === "ArrowRight") { event.preventDefault(); goTo(event.key === "ArrowLeft" ? -1 : 1); }
           if (event.key === "Tab") {
-            const controls = event.currentTarget.querySelectorAll<HTMLButtonElement>("button:not([disabled])");
+            const controls = event.currentTarget.querySelectorAll<HTMLElement>("button:not([disabled]), [tabindex='0']");
             const first = controls[0];
             const last = controls[controls.length - 1];
             if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
@@ -222,15 +276,15 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
           }
         }}>
         <div className={styles.viewerToolbar}>
-          <div><p id={viewerTitleId}>{text(labels.gallery)}</p><p className={styles.viewerCount} role="status">{activeImageIndex! + 1} / {photos.length}</p></div>
+          <div><p id={viewerTitleId}>{text(labels.gallery)}</p><p className={styles.viewerCount} role="status">{String(activeImageIndex! + 1).padStart(2, "0")} / {String(photos.length).padStart(2, "0")}</p></div>
           <div className={styles.viewerControls}>
             {photos.length > 1 && <><button type="button" onClick={() => goTo(-1)}>{text(labels.previous)}</button><button type="button" onClick={() => goTo(1)}>{text(labels.next)}</button></>}
             <button ref={closeButtonRef} type="button" onClick={closeViewer}>{text(labels.close)}</button>
           </div>
         </div>
         <figure className={styles.viewerFigure}>
-          <div className={styles.viewerImage}><Image src={activePhoto.image.src} alt={photoAlt(activePhoto.image)} fill loading="eager" sizes="(min-width: 1280px) 1152px, 100vw" className={styles.viewerPhoto} /></div>
-          {activePhoto.captions.length > 0 && <figcaption className={styles.caption}>{activePhoto.captions.map((caption) => <p key={caption}>{caption}</p>)}</figcaption>}
+          <div className={styles.viewerImage}><Image src={activePhoto.image.src} alt={photoAlt(activePhoto.image)} fill loading="eager" sizes="(min-width: 768px) calc(100vw - 3rem), calc(100vw - 2rem)" className={styles.viewerPhoto} /></div>
+          {activePhoto.captions.length > 0 && <figcaption tabIndex={0} className={`${styles.caption} ${styles.viewerCaption}`}>{activePhoto.captions.map((caption) => <p key={caption}>{caption}</p>)}</figcaption>}
         </figure>
       </dialog>}
     </article>

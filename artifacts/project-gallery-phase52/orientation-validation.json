@@ -1,0 +1,199 @@
+{
+  "scope": "Isolated browser-only media substitution using the existing Luz María Sánchez portrait; no project data, files or CMS writes.",
+  "portraitSource": "https://res.cloudinary.com/dmrzmnjln/image/upload/v1765944735/clients/luz-maria/wgo1hqnafc0zn63qlfbo.jpg",
+  "checks": [
+    {
+      "mode": "portrait-landscape",
+      "viewport": 375,
+      "paired": false,
+      "className": "project-detail_galleryRow__tU0_R ",
+      "cols": "327px",
+      "images": [
+        {
+          "x": 24,
+          "y": 1463.078125,
+          "w": 327,
+          "h": 452.34375,
+          "ratio": 0.720164609053498
+        },
+        {
+          "x": 24,
+          "y": 2018.8125,
+          "w": 327,
+          "h": 245.25,
+          "ratio": 1.3345195729537367
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "mode": "portrait-landscape",
+      "viewport": 768,
+      "paired": false,
+      "className": "project-detail_galleryRow__tU0_R ",
+      "cols": "672px",
+      "images": [
+        {
+          "x": 48,
+          "y": 1382.25,
+          "w": 672,
+          "h": 929.59375,
+          "ratio": 0.7239583333333334
+        },
+        {
+          "x": 48,
+          "y": 2403.4375,
+          "w": 672,
+          "h": 504,
+          "ratio": 1.3333333333333333
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "mode": "portrait-landscape",
+      "viewport": 1024,
+      "paired": false,
+      "className": "project-detail_galleryRow__tU0_R ",
+      "cols": "896px",
+      "images": [
+        {
+          "x": 64,
+          "y": 1514.40625,
+          "w": 896,
+          "h": 1239.453125,
+          "ratio": 0.72264631043257
+        },
+        {
+          "x": 64,
+          "y": 2845.453125,
+          "w": 896,
+          "h": 672,
+          "ratio": 1.3333333333333333
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "mode": "portrait-landscape",
+      "viewport": 1440,
+      "paired": false,
+      "className": "project-detail_galleryRow__tU0_R ",
+      "cols": "1192px",
+      "images": [
+        {
+          "x": 124,
+          "y": 1691.359375,
+          "w": 1192,
+          "h": 1648.921875,
+          "ratio": 0.7233009708737864
+        },
+        {
+          "x": 124,
+          "y": 3431.875,
+          "w": 1192,
+          "h": 894,
+          "ratio": 1.3333333333333333
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "mode": "portrait-portrait",
+      "viewport": 375,
+      "paired": false,
+      "className": "project-detail_galleryRow__tU0_R project-detail_galleryPair__Jd9pH",
+      "cols": "327px",
+      "images": [
+        {
+          "x": 24,
+          "y": 1463.078125,
+          "w": 327,
+          "h": 452.34375,
+          "ratio": 0.7209876543209877
+        },
+        {
+          "x": 24,
+          "y": 2018.8125,
+          "w": 327,
+          "h": 452.34375,
+          "ratio": 0.7209876543209877
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "mode": "portrait-portrait",
+      "viewport": 768,
+      "paired": true,
+      "className": "project-detail_galleryRow__tU0_R project-detail_galleryPair__Jd9pH",
+      "cols": "320px 320px",
+      "images": [
+        {
+          "x": 48,
+          "y": 1382.25,
+          "w": 320,
+          "h": 442.65625,
+          "ratio": 0.7232876712328767
+        },
+        {
+          "x": 400,
+          "y": 1382.25,
+          "w": 320,
+          "h": 442.65625,
+          "ratio": 0.7232876712328767
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "mode": "portrait-portrait",
+      "viewport": 1024,
+      "paired": true,
+      "className": "project-detail_galleryRow__tU0_R project-detail_galleryPair__Jd9pH",
+      "cols": "432px 432px",
+      "images": [
+        {
+          "x": 64,
+          "y": 1514.40625,
+          "w": 432,
+          "h": 597.59375,
+          "ratio": 0.7226027397260274
+        },
+        {
+          "x": 528,
+          "y": 1514.40625,
+          "w": 432,
+          "h": 597.59375,
+          "ratio": 0.7226027397260274
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "mode": "portrait-portrait",
+      "viewport": 1440,
+      "paired": true,
+      "className": "project-detail_galleryRow__tU0_R project-detail_galleryPair__Jd9pH",
+      "cols": "580px 580px",
+      "images": [
+        {
+          "x": 124,
+          "y": 1691.359375,
+          "w": 580,
+          "h": 802.328125,
+          "ratio": 0.7207446808510638
+        },
+        {
+          "x": 736,
+          "y": 1691.359375,
+          "w": 580,
+          "h": 802.328125,
+          "ratio": 0.7207446808510638
+        }
+      ],
+      "overflow": false
+    }
+  ],
+  "passed": true
+}

@@ -12,7 +12,10 @@
 .photoButton { display: flex; justify-content: center; width: 100%; padding: 0; border: 0; border-radius: 0; background: transparent; cursor: zoom-in; }
 .coverImage, .galleryImage { display: block; width: 100%; height: auto; object-fit: contain; border-radius: 0; }
 .coverImage { max-height: min(80svh,56rem); }
-.galleryImage { max-height: min(80svh,48rem); }
+.galleryImage { position: static !important; height: auto !important; max-height: none; }
+.galleryButton { position: relative; display: block; }
+/* Temporary loading space; actual proportions come from the decoded image. */
+.galleryPending { min-height: clamp(12rem,45vw,50rem); }
 .caption { margin-top: .75rem; max-width: 80ch; color: var(--muted); font-size: .75rem; line-height: 1.65; white-space: pre-line; }
 .caption p + p { margin-top: .5rem; }
 .context { display: grid; gap: 2rem; margin-top: 2rem; }
@@ -31,6 +34,7 @@
 .video { position: relative; aspect-ratio: 16/9; margin-top: 1rem; overflow: hidden; isolation: isolate; }
 .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; border-radius: 0; }
 .gallery { display: grid; gap: 2rem; margin-top: 1.5rem; align-items: start; }
+.galleryRow { display: grid; gap: 2rem; align-items: start; min-width: 0; }
 .entities { display: grid; gap: 1.5rem 2rem; margin-top: 1.5rem; }
 .entity { min-width: 0; display: flex; align-items: start; gap: 1.25rem; }
 .entityLogo { position: relative; width: 6rem; height: 4.5rem; flex-shrink: 0; }
@@ -40,20 +44,26 @@
 .entityText p { margin-top: .5rem; color: var(--muted); font-size: .875rem; line-height: 1.7; white-space: pre-line; }
 .entityText .entitySector { font-size: .75rem; }
 .return { margin-top: 2.5rem; border-top: 1px solid var(--line); padding-top: 1rem; }
-.viewer { position: fixed; inset: 0; width: calc(100% - 1.5rem); max-width: 76rem; max-height: calc(100dvh - 1.5rem); margin: auto; padding: 1rem; overflow: auto; border: 0; color: var(--foreground); background: var(--background); }
-.viewer::backdrop { background: rgb(16 20 16 / .8); }
+.viewer { position: fixed; inset: 0; width: 100%; max-width: none; height: 100dvh; max-height: 100dvh; margin: 0; padding: 1rem; overflow: hidden; border: 0; color: var(--mmk-bg-light); background: var(--mmk-bg-primary); }
+.viewer::backdrop { background: var(--mmk-bg-primary); }
 .viewer[open] { display: flex; flex-direction: column; gap: 1rem; }
 .viewerToolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 1rem; font-size: .875rem; }
-.viewerCount { margin-top: .25rem; color: var(--muted); font-size: .75rem; }
+.viewerCount { margin-top: .25rem; opacity: .75; font-size: .75rem; font-variant-numeric: tabular-nums; }
 .viewerControls { display: flex; flex-wrap: wrap; gap: .5rem; }
-.viewerControls button { min-height: 44px; border: 1px solid var(--line); border-radius: 0; padding: .5rem .75rem; background: transparent; color: var(--foreground); font-size: .8125rem; cursor: pointer; }
-.viewerControls button:hover { border-color: var(--signal); color: var(--signal); }
-.viewerImage { position: relative; width: 100%; height: min(65dvh,50rem); }
+.viewerControls button { min-height: 44px; border: 0; border-radius: 0; padding: .5rem .75rem; background: transparent; color: inherit; font-size: .8125rem; cursor: pointer; }
+.viewerControls button:hover { text-decoration: underline; text-underline-offset: .3em; }
+.viewer :focus-visible { outline: 2px solid var(--mmk-bg-light) !important; outline-offset: 2px; }
+.viewerFigure { display: flex; flex: 1; flex-direction: column; min-height: 0; gap: 1rem; }
+.viewerImage { position: relative; flex: 1; min-height: 0; width: 100%; }
 .viewerPhoto { object-fit: contain; border-radius: 0; }
+.viewer .caption { color: inherit; }
+.viewerCaption { flex-shrink: 0; width: 100%; max-width: 90ch; max-height: 25dvh; margin: 0 auto; overflow-y: auto; opacity: .8; }
 @media(min-width:768px) {
   .detail { padding-top: 2rem; }
   .header { margin-bottom: 2rem; }
-  .gallery { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 2.5rem 2rem; }
+  .gallery, .galleryRow { gap: 2.5rem 2rem; }
+  .galleryPair { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .galleryPair .galleryPending { min-height: clamp(12rem,25vw,26rem); }
   .section { margin-top: 3.5rem; padding-top: 2rem; }
   .entities { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .viewer { padding: 1.5rem; }

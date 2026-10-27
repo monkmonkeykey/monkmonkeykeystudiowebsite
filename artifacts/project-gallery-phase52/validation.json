@@ -1,0 +1,2365 @@
+{
+  "checks": [
+    {
+      "slug": "nime2023",
+      "viewport": 375,
+      "count": 6,
+      "width": 327,
+      "articleWidth": 327,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766541359%2Fprojects%2Fnime2023%2Fgallery%2Fqhzelpdus1cfj8tz9kuu.jpg&w=3840&q=75",
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "width": 327,
+          "height": 218,
+          "naturalWidth": 375,
+          "naturalHeight": 250,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fprojects%2Fnime2023%2Fgallery%2Ftawrunmuwzacfkycmmsl&w=3840&q=75",
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "width": 327,
+          "height": 218.15625,
+          "naturalWidth": 375,
+          "naturalHeight": 250,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fprojects%2Fnime2023%2Fgallery%2Fwqsflcifvapdlhtpqzqh&w=3840&q=75",
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "width": 327,
+          "height": 217.65625,
+          "naturalWidth": 375,
+          "naturalHeight": 249,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766541554%2Fprojects%2Fnime2023%2Fgallery%2Foin0vkligunqxg1jrtex.jpg&w=3840&q=75",
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "width": 327,
+          "height": 218,
+          "naturalWidth": 375,
+          "naturalHeight": 250,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766541568%2Fprojects%2Fnime2023%2Fgallery%2Fhurgcxbul0opsnpshxzr.jpg&w=3840&q=75",
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "width": 327,
+          "height": 245.25,
+          "naturalWidth": 375,
+          "naturalHeight": 281,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766541633%2Fprojects%2Fnime2023%2Fgallery%2Foyuffjym2rpgmpozix6q.jpg&w=3840&q=75",
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "width": 327,
+          "height": 217.65625,
+          "naturalWidth": 375,
+          "naturalHeight": 249,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        }
+      ],
+      "rows": [
+        {
+          "count": 1,
+          "columns": "327px",
+          "top": [
+            2060.21875
+          ],
+          "width": 327
+        },
+        {
+          "count": 2,
+          "columns": "327px",
+          "top": [
+            2361.8125,
+            2663.5625
+          ],
+          "width": 327
+        },
+        {
+          "count": 1,
+          "columns": "327px",
+          "top": [
+            2964.8125
+          ],
+          "width": 327
+        },
+        {
+          "count": 2,
+          "columns": "327px",
+          "top": [
+            3266.40625,
+            3595.25
+          ],
+          "width": 327
+        }
+      ],
+      "viewer": {
+        "width": 375,
+        "height": 1000,
+        "bg": "rgb(16, 20, 16)",
+        "border": "0px",
+        "fit": "contain",
+        "controls": [
+          {
+            "text": "Anterior",
+            "height": 44
+          },
+          {
+            "text": "Siguiente",
+            "height": 44
+          },
+          {
+            "text": "Cerrar",
+            "height": 44
+          }
+        ],
+        "transition": "1e-05s"
+      },
+      "keyboardPassed": true
+    },
+    {
+      "slug": "nime2023",
+      "viewport": 768,
+      "count": 6,
+      "width": 672,
+      "articleWidth": 672,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766541359%2Fprojects%2Fnime2023%2Fgallery%2Fqhzelpdus1cfj8tz9kuu.jpg&w=3840&q=75",
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "width": 672,
+          "height": 448,
+          "naturalWidth": 768,
+          "naturalHeight": 512,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fprojects%2Fnime2023%2Fgallery%2Ftawrunmuwzacfkycmmsl&w=3840&q=75",
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "width": 320,
+          "height": 213.5,
+          "naturalWidth": 337,
+          "naturalHeight": 225,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fprojects%2Fnime2023%2Fgallery%2Fwqsflcifvapdlhtpqzqh&w=3840&q=75",
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "width": 320,
+          "height": 213,
+          "naturalWidth": 337,
+          "naturalHeight": 224,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766541554%2Fprojects%2Fnime2023%2Fgallery%2Foin0vkligunqxg1jrtex.jpg&w=3840&q=75",
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "width": 672,
+          "height": 448,
+          "naturalWidth": 768,
+          "naturalHeight": 512,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766541568%2Fprojects%2Fnime2023%2Fgallery%2Fhurgcxbul0opsnpshxzr.jpg&w=3840&q=75",
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "width": 320,
+          "height": 240,
+          "naturalWidth": 337,
+          "naturalHeight": 253,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766541633%2Fprojects%2Fnime2023%2Fgallery%2Foyuffjym2rpgmpozix6q.jpg&w=3840&q=75",
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "width": 320,
+          "height": 213,
+          "naturalWidth": 337,
+          "naturalHeight": 224,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        }
+      ],
+      "rows": [
+        {
+          "count": 1,
+          "columns": "672px",
+          "top": [
+            2054.921875
+          ],
+          "width": 672
+        },
+        {
+          "count": 2,
+          "columns": "320px 320px",
+          "top": [
+            2594.515625,
+            2594.515625
+          ],
+          "width": 672
+        },
+        {
+          "count": 1,
+          "columns": "672px",
+          "top": [
+            2899.609375
+          ],
+          "width": 672
+        },
+        {
+          "count": 2,
+          "columns": "320px 320px",
+          "top": [
+            3439.203125,
+            3439.203125
+          ],
+          "width": 672
+        }
+      ],
+      "viewer": {
+        "width": 768,
+        "height": 1000,
+        "bg": "rgb(16, 20, 16)",
+        "border": "0px",
+        "fit": "contain",
+        "controls": [
+          {
+            "text": "Anterior",
+            "height": 44
+          },
+          {
+            "text": "Siguiente",
+            "height": 44
+          },
+          {
+            "text": "Cerrar",
+            "height": 44
+          }
+        ],
+        "transition": "1e-05s"
+      },
+      "keyboardPassed": true
+    },
+    {
+      "slug": "nime2023",
+      "viewport": 1024,
+      "count": 6,
+      "width": 896,
+      "articleWidth": 896,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766541359%2Fprojects%2Fnime2023%2Fgallery%2Fqhzelpdus1cfj8tz9kuu.jpg&w=3840&q=75",
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "width": 896,
+          "height": 597.328125,
+          "naturalWidth": 1024,
+          "naturalHeight": 682,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fprojects%2Fnime2023%2Fgallery%2Ftawrunmuwzacfkycmmsl&w=3840&q=75",
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "width": 432,
+          "height": 288,
+          "naturalWidth": 450,
+          "naturalHeight": 300,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fprojects%2Fnime2023%2Fgallery%2Fwqsflcifvapdlhtpqzqh&w=3840&q=75",
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "width": 432,
+          "height": 287.546875,
+          "naturalWidth": 450,
+          "naturalHeight": 299,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766541554%2Fprojects%2Fnime2023%2Fgallery%2Foin0vkligunqxg1jrtex.jpg&w=3840&q=75",
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "width": 896,
+          "height": 597.328125,
+          "naturalWidth": 1024,
+          "naturalHeight": 682,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766541568%2Fprojects%2Fnime2023%2Fgallery%2Fhurgcxbul0opsnpshxzr.jpg&w=3840&q=75",
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "width": 432,
+          "height": 324,
+          "naturalWidth": 450,
+          "naturalHeight": 337,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766541633%2Fprojects%2Fnime2023%2Fgallery%2Foyuffjym2rpgmpozix6q.jpg&w=3840&q=75",
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "width": 432,
+          "height": 288,
+          "naturalWidth": 450,
+          "naturalHeight": 300,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        }
+      ],
+      "rows": [
+        {
+          "count": 1,
+          "columns": "896px",
+          "top": [
+            388.609375
+          ],
+          "width": 896
+        },
+        {
+          "count": 2,
+          "columns": "432px 432px",
+          "top": [
+            1077.53125,
+            1077.53125
+          ],
+          "width": 896
+        },
+        {
+          "count": 1,
+          "columns": "896px",
+          "top": [
+            1457.125
+          ],
+          "width": 896
+        },
+        {
+          "count": 2,
+          "columns": "432px 432px",
+          "top": [
+            2146.046875,
+            2146.046875
+          ],
+          "width": 896
+        }
+      ],
+      "viewer": {
+        "width": 1024,
+        "height": 1000,
+        "bg": "rgb(16, 20, 16)",
+        "border": "0px",
+        "fit": "contain",
+        "controls": [
+          {
+            "text": "Anterior",
+            "height": 44
+          },
+          {
+            "text": "Siguiente",
+            "height": 44
+          },
+          {
+            "text": "Cerrar",
+            "height": 44
+          }
+        ],
+        "transition": "1e-05s"
+      },
+      "keyboardPassed": true
+    },
+    {
+      "slug": "nime2023",
+      "viewport": 1440,
+      "count": 6,
+      "width": 1192,
+      "articleWidth": 1192,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766541359%2Fprojects%2Fnime2023%2Fgallery%2Fqhzelpdus1cfj8tz9kuu.jpg&w=3840&q=75",
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "width": 1192,
+          "height": 794.65625,
+          "naturalWidth": 1192,
+          "naturalHeight": 794,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fprojects%2Fnime2023%2Fgallery%2Ftawrunmuwzacfkycmmsl&w=3840&q=75",
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "width": 580,
+          "height": 386.65625,
+          "naturalWidth": 580,
+          "naturalHeight": 386,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fprojects%2Fnime2023%2Fgallery%2Fwqsflcifvapdlhtpqzqh&w=3840&q=75",
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "width": 580,
+          "height": 386.0625,
+          "naturalWidth": 580,
+          "naturalHeight": 386,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766541554%2Fprojects%2Fnime2023%2Fgallery%2Foin0vkligunqxg1jrtex.jpg&w=3840&q=75",
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "width": 1192,
+          "height": 794.65625,
+          "naturalWidth": 1192,
+          "naturalHeight": 794,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766541568%2Fprojects%2Fnime2023%2Fgallery%2Fhurgcxbul0opsnpshxzr.jpg&w=3840&q=75",
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "width": 580,
+          "height": 435,
+          "naturalWidth": 580,
+          "naturalHeight": 435,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766541633%2Fprojects%2Fnime2023%2Fgallery%2Foyuffjym2rpgmpozix6q.jpg&w=3840&q=75",
+          "alt": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME.",
+          "width": 580,
+          "height": 386.65625,
+          "naturalWidth": 580,
+          "naturalHeight": 386,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "NIME México. Centro de Cultura Digital, Ciudad de México, 2023. Fotografía: Yola Reyes. Cortesía: NIME."
+        }
+      ],
+      "rows": [
+        {
+          "count": 1,
+          "columns": "1192px",
+          "top": [
+            555
+          ],
+          "width": 1192
+        },
+        {
+          "count": 2,
+          "columns": "580px 580px",
+          "top": [
+            1441.25,
+            1441.25
+          ],
+          "width": 1192
+        },
+        {
+          "count": 1,
+          "columns": "1192px",
+          "top": [
+            1919.5
+          ],
+          "width": 1192
+        },
+        {
+          "count": 2,
+          "columns": "580px 580px",
+          "top": [
+            2805.75,
+            2805.75
+          ],
+          "width": 1192
+        }
+      ],
+      "viewer": {
+        "width": 1440,
+        "height": 1000,
+        "bg": "rgb(16, 20, 16)",
+        "border": "0px",
+        "fit": "contain",
+        "controls": [
+          {
+            "text": "Anterior",
+            "height": 44
+          },
+          {
+            "text": "Siguiente",
+            "height": 44
+          },
+          {
+            "text": "Cerrar",
+            "height": 44
+          }
+        ],
+        "transition": "1e-05s"
+      },
+      "keyboardPassed": true
+    },
+    {
+      "slug": "luminico_urtext_2025",
+      "viewport": 375,
+      "count": 1,
+      "width": 327,
+      "articleWidth": 327,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783891162%2Fprojects%2Fluminico_urtext_2025%2Fgallery%2Fxnawoshvllmkuqvyashx.jpg&w=3840&q=75",
+          "alt": "Lumínico / Ónix | Festival Urtext 2025. Museo Kaluz, Ciudad de México, 2025.",
+          "width": 327,
+          "height": 245.25,
+          "naturalWidth": 375,
+          "naturalHeight": 281,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Lumínico / Ónix | Festival Urtext 2025. Museo Kaluz, Ciudad de México, 2025."
+        }
+      ],
+      "rows": [
+        {
+          "count": 1,
+          "columns": "327px",
+          "top": [
+            1206.25
+          ],
+          "width": 327
+        }
+      ],
+      "viewer": {
+        "width": 375,
+        "height": 1000,
+        "bg": "rgb(16, 20, 16)",
+        "border": "0px",
+        "fit": "contain",
+        "controls": [
+          {
+            "text": "Anterior",
+            "height": 44
+          },
+          {
+            "text": "Siguiente",
+            "height": 44
+          },
+          {
+            "text": "Cerrar",
+            "height": 44
+          }
+        ],
+        "transition": "1e-05s"
+      },
+      "keyboardPassed": true
+    },
+    {
+      "slug": "luminico_urtext_2025",
+      "viewport": 768,
+      "count": 1,
+      "width": 672,
+      "articleWidth": 672,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783891162%2Fprojects%2Fluminico_urtext_2025%2Fgallery%2Fxnawoshvllmkuqvyashx.jpg&w=3840&q=75",
+          "alt": "Lumínico / Ónix | Festival Urtext 2025. Museo Kaluz, Ciudad de México, 2025.",
+          "width": 672,
+          "height": 504,
+          "naturalWidth": 768,
+          "naturalHeight": 576,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Lumínico / Ónix | Festival Urtext 2025. Museo Kaluz, Ciudad de México, 2025."
+        }
+      ],
+      "rows": [
+        {
+          "count": 1,
+          "columns": "672px",
+          "top": [
+            340.859375
+          ],
+          "width": 672
+        }
+      ],
+      "viewer": {
+        "width": 768,
+        "height": 1000,
+        "bg": "rgb(16, 20, 16)",
+        "border": "0px",
+        "fit": "contain",
+        "controls": [
+          {
+            "text": "Anterior",
+            "height": 44
+          },
+          {
+            "text": "Siguiente",
+            "height": 44
+          },
+          {
+            "text": "Cerrar",
+            "height": 44
+          }
+        ],
+        "transition": "1e-05s"
+      },
+      "keyboardPassed": true
+    },
+    {
+      "slug": "luminico_urtext_2025",
+      "viewport": 1024,
+      "count": 1,
+      "width": 896,
+      "articleWidth": 896,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783891162%2Fprojects%2Fluminico_urtext_2025%2Fgallery%2Fxnawoshvllmkuqvyashx.jpg&w=3840&q=75",
+          "alt": "Lumínico / Ónix | Festival Urtext 2025. Museo Kaluz, Ciudad de México, 2025.",
+          "width": 896,
+          "height": 672,
+          "naturalWidth": 1024,
+          "naturalHeight": 768,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Lumínico / Ónix | Festival Urtext 2025. Museo Kaluz, Ciudad de México, 2025."
+        }
+      ],
+      "rows": [
+        {
+          "count": 1,
+          "columns": "896px",
+          "top": [
+            319.015625
+          ],
+          "width": 896
+        }
+      ],
+      "viewer": {
+        "width": 1024,
+        "height": 1000,
+        "bg": "rgb(16, 20, 16)",
+        "border": "0px",
+        "fit": "contain",
+        "controls": [
+          {
+            "text": "Anterior",
+            "height": 44
+          },
+          {
+            "text": "Siguiente",
+            "height": 44
+          },
+          {
+            "text": "Cerrar",
+            "height": 44
+          }
+        ],
+        "transition": "1e-05s"
+      },
+      "keyboardPassed": true
+    },
+    {
+      "slug": "luminico_urtext_2025",
+      "viewport": 1440,
+      "count": 1,
+      "width": 1192,
+      "articleWidth": 1192,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783891162%2Fprojects%2Fluminico_urtext_2025%2Fgallery%2Fxnawoshvllmkuqvyashx.jpg&w=3840&q=75",
+          "alt": "Lumínico / Ónix | Festival Urtext 2025. Museo Kaluz, Ciudad de México, 2025.",
+          "width": 1192,
+          "height": 894,
+          "naturalWidth": 1192,
+          "naturalHeight": 894,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Lumínico / Ónix | Festival Urtext 2025. Museo Kaluz, Ciudad de México, 2025."
+        }
+      ],
+      "rows": [
+        {
+          "count": 1,
+          "columns": "1192px",
+          "top": [
+            278.859375
+          ],
+          "width": 1192
+        }
+      ],
+      "viewer": {
+        "width": 1440,
+        "height": 1000,
+        "bg": "rgb(16, 20, 16)",
+        "border": "0px",
+        "fit": "contain",
+        "controls": [
+          {
+            "text": "Anterior",
+            "height": 44
+          },
+          {
+            "text": "Siguiente",
+            "height": 44
+          },
+          {
+            "text": "Cerrar",
+            "height": 44
+          }
+        ],
+        "transition": "1e-05s"
+      },
+      "keyboardPassed": true
+    },
+    {
+      "slug": "operauam",
+      "viewport": 375,
+      "count": 2,
+      "width": 327,
+      "articleWidth": 327,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766540254%2Fprojects%2Foperauam%2Fgallery%2Fdqxclwywozx0aimj5re6.jpg&w=3840&q=75",
+          "alt": "Video ópera | In Calli Ixcahuicopa",
+          "width": 327,
+          "height": 327,
+          "naturalWidth": 375,
+          "naturalHeight": 375,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Video ópera: In Calli Ixcahuicopa. Sala Elisa Carrillo, Texcoco, Edo. Méx., 2024. Cortesía: Universidad Autónoma Metropolitana."
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766540606%2Fprojects%2Foperauam%2Fgallery%2Fbyywq6r4rfurh4ucnzb7.jpg&w=3840&q=75",
+          "alt": "Video ópera | In Calli Ixcahuicopa",
+          "width": 327,
+          "height": 245.25,
+          "naturalWidth": 375,
+          "naturalHeight": 281,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Video ópera: In Calli Ixcahuicopa. Sala Elisa Carrillo, Texcoco, Edo. Méx., 2024."
+        }
+      ],
+      "rows": [
+        {
+          "count": 2,
+          "columns": "327px",
+          "top": [
+            1463.078125,
+            1893.46875
+          ],
+          "width": 327
+        }
+      ],
+      "viewer": {
+        "width": 375,
+        "height": 1000,
+        "bg": "rgb(16, 20, 16)",
+        "border": "0px",
+        "fit": "contain",
+        "controls": [
+          {
+            "text": "Anterior",
+            "height": 44
+          },
+          {
+            "text": "Siguiente",
+            "height": 44
+          },
+          {
+            "text": "Cerrar",
+            "height": 44
+          }
+        ],
+        "transition": "1e-05s"
+      },
+      "keyboardPassed": true
+    },
+    {
+      "slug": "operauam",
+      "viewport": 768,
+      "count": 2,
+      "width": 672,
+      "articleWidth": 672,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766540254%2Fprojects%2Foperauam%2Fgallery%2Fdqxclwywozx0aimj5re6.jpg&w=3840&q=75",
+          "alt": "Video ópera | In Calli Ixcahuicopa",
+          "width": 320,
+          "height": 320,
+          "naturalWidth": 337,
+          "naturalHeight": 337,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Video ópera: In Calli Ixcahuicopa. Sala Elisa Carrillo, Texcoco, Edo. Méx., 2024. Cortesía: Universidad Autónoma Metropolitana."
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766540606%2Fprojects%2Foperauam%2Fgallery%2Fbyywq6r4rfurh4ucnzb7.jpg&w=3840&q=75",
+          "alt": "Video ópera | In Calli Ixcahuicopa",
+          "width": 320,
+          "height": 240,
+          "naturalWidth": 337,
+          "naturalHeight": 253,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Video ópera: In Calli Ixcahuicopa. Sala Elisa Carrillo, Texcoco, Edo. Méx., 2024."
+        }
+      ],
+      "rows": [
+        {
+          "count": 2,
+          "columns": "320px 320px",
+          "top": [
+            294.25,
+            294.25
+          ],
+          "width": 672
+        }
+      ],
+      "viewer": {
+        "width": 768,
+        "height": 1000,
+        "bg": "rgb(16, 20, 16)",
+        "border": "0px",
+        "fit": "contain",
+        "controls": [
+          {
+            "text": "Anterior",
+            "height": 44
+          },
+          {
+            "text": "Siguiente",
+            "height": 44
+          },
+          {
+            "text": "Cerrar",
+            "height": 44
+          }
+        ],
+        "transition": "1e-05s"
+      },
+      "keyboardPassed": true
+    },
+    {
+      "slug": "operauam",
+      "viewport": 1024,
+      "count": 2,
+      "width": 896,
+      "articleWidth": 896,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766540254%2Fprojects%2Foperauam%2Fgallery%2Fdqxclwywozx0aimj5re6.jpg&w=3840&q=75",
+          "alt": "Video ópera | In Calli Ixcahuicopa",
+          "width": 432,
+          "height": 432,
+          "naturalWidth": 450,
+          "naturalHeight": 450,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Video ópera: In Calli Ixcahuicopa. Sala Elisa Carrillo, Texcoco, Edo. Méx., 2024. Cortesía: Universidad Autónoma Metropolitana."
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766540606%2Fprojects%2Foperauam%2Fgallery%2Fbyywq6r4rfurh4ucnzb7.jpg&w=3840&q=75",
+          "alt": "Video ópera | In Calli Ixcahuicopa",
+          "width": 432,
+          "height": 324.28125,
+          "naturalWidth": 450,
+          "naturalHeight": 338,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Video ópera: In Calli Ixcahuicopa. Sala Elisa Carrillo, Texcoco, Edo. Méx., 2024."
+        }
+      ],
+      "rows": [
+        {
+          "count": 2,
+          "columns": "432px 432px",
+          "top": [
+            426.40625,
+            426.40625
+          ],
+          "width": 896
+        }
+      ],
+      "viewer": {
+        "width": 1024,
+        "height": 1000,
+        "bg": "rgb(16, 20, 16)",
+        "border": "0px",
+        "fit": "contain",
+        "controls": [
+          {
+            "text": "Anterior",
+            "height": 44
+          },
+          {
+            "text": "Siguiente",
+            "height": 44
+          },
+          {
+            "text": "Cerrar",
+            "height": 44
+          }
+        ],
+        "transition": "1e-05s"
+      },
+      "keyboardPassed": true
+    },
+    {
+      "slug": "operauam",
+      "viewport": 1440,
+      "count": 2,
+      "width": 1192,
+      "articleWidth": 1192,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766540254%2Fprojects%2Foperauam%2Fgallery%2Fdqxclwywozx0aimj5re6.jpg&w=3840&q=75",
+          "alt": "Video ópera | In Calli Ixcahuicopa",
+          "width": 580,
+          "height": 580,
+          "naturalWidth": 580,
+          "naturalHeight": 580,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Video ópera: In Calli Ixcahuicopa. Sala Elisa Carrillo, Texcoco, Edo. Méx., 2024. Cortesía: Universidad Autónoma Metropolitana."
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766540606%2Fprojects%2Foperauam%2Fgallery%2Fbyywq6r4rfurh4ucnzb7.jpg&w=3840&q=75",
+          "alt": "Video ópera | In Calli Ixcahuicopa",
+          "width": 580,
+          "height": 435,
+          "naturalWidth": 580,
+          "naturalHeight": 434,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Video ópera: In Calli Ixcahuicopa. Sala Elisa Carrillo, Texcoco, Edo. Méx., 2024."
+        }
+      ],
+      "rows": [
+        {
+          "count": 2,
+          "columns": "580px 580px",
+          "top": [
+            584.359375,
+            584.359375
+          ],
+          "width": 1192
+        }
+      ],
+      "viewer": {
+        "width": 1440,
+        "height": 1000,
+        "bg": "rgb(16, 20, 16)",
+        "border": "0px",
+        "fit": "contain",
+        "controls": [
+          {
+            "text": "Anterior",
+            "height": 44
+          },
+          {
+            "text": "Siguiente",
+            "height": 44
+          },
+          {
+            "text": "Cerrar",
+            "height": 44
+          }
+        ],
+        "transition": "1e-05s"
+      },
+      "keyboardPassed": true
+    },
+    {
+      "slug": "atl",
+      "viewport": 375,
+      "count": 3,
+      "width": 327,
+      "articleWidth": 327,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766782701%2Fprojects%2Fatl%2Fgallery%2Fotc4czorzjdrera1nk9v.jpg&w=3840&q=75",
+          "alt": "Atl | Agua, Música y Arte Sonoro. El Colegio Nacional, Ciudad de México, 2024.",
+          "width": 327,
+          "height": 218,
+          "naturalWidth": 375,
+          "naturalHeight": 250,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Atl | Agua, Música y Arte Sonoro. El Colegio Nacional, Ciudad de México, 2024."
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766782720%2Fprojects%2Fatl%2Fgallery%2Fqtnfgd8ujwo5zaugvpbh.jpg&w=3840&q=75",
+          "alt": "Atl | Agua, Música y Arte Sonoro. El Colegio Nacional, Ciudad de México, 2024.",
+          "width": 327,
+          "height": 218.15625,
+          "naturalWidth": 375,
+          "naturalHeight": 250,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Atl | Agua, Música y Arte Sonoro. El Colegio Nacional, Ciudad de México, 2024."
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766782928%2Fprojects%2Fatl%2Fgallery%2Fig1ndsl17w2ddswakuc5.jpg&w=3840&q=75",
+          "alt": "Atl | Agua, Música y Arte Sonoro. El Colegio Nacional, Ciudad de México, 2024.",
+          "width": 327,
+          "height": 218.15625,
+          "naturalWidth": 375,
+          "naturalHeight": 250,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Atl | Agua, Música y Arte Sonoro. El Colegio Nacional, Ciudad de México, 2024."
+        }
+      ],
+      "rows": [
+        {
+          "count": 1,
+          "columns": "327px",
+          "top": [
+            1155.90625
+          ],
+          "width": 327
+        },
+        {
+          "count": 2,
+          "columns": "327px",
+          "top": [
+            1457.5,
+            1759.25
+          ],
+          "width": 327
+        }
+      ],
+      "viewer": {
+        "width": 375,
+        "height": 1000,
+        "bg": "rgb(16, 20, 16)",
+        "border": "0px",
+        "fit": "contain",
+        "controls": [
+          {
+            "text": "Anterior",
+            "height": 44
+          },
+          {
+            "text": "Siguiente",
+            "height": 44
+          },
+          {
+            "text": "Cerrar",
+            "height": 44
+          }
+        ],
+        "transition": "1e-05s"
+      },
+      "keyboardPassed": true
+    },
+    {
+      "slug": "atl",
+      "viewport": 768,
+      "count": 3,
+      "width": 672,
+      "articleWidth": 672,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766782701%2Fprojects%2Fatl%2Fgallery%2Fotc4czorzjdrera1nk9v.jpg&w=3840&q=75",
+          "alt": "Atl | Agua, Música y Arte Sonoro. El Colegio Nacional, Ciudad de México, 2024.",
+          "width": 672,
+          "height": 448,
+          "naturalWidth": 768,
+          "naturalHeight": 512,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Atl | Agua, Música y Arte Sonoro. El Colegio Nacional, Ciudad de México, 2024."
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766782720%2Fprojects%2Fatl%2Fgallery%2Fqtnfgd8ujwo5zaugvpbh.jpg&w=3840&q=75",
+          "alt": "Atl | Agua, Música y Arte Sonoro. El Colegio Nacional, Ciudad de México, 2024.",
+          "width": 320,
+          "height": 213.5,
+          "naturalWidth": 337,
+          "naturalHeight": 225,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Atl | Agua, Música y Arte Sonoro. El Colegio Nacional, Ciudad de México, 2024."
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766782928%2Fprojects%2Fatl%2Fgallery%2Fig1ndsl17w2ddswakuc5.jpg&w=3840&q=75",
+          "alt": "Atl | Agua, Música y Arte Sonoro. El Colegio Nacional, Ciudad de México, 2024.",
+          "width": 320,
+          "height": 213.5,
+          "naturalWidth": 337,
+          "naturalHeight": 225,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Atl | Agua, Música y Arte Sonoro. El Colegio Nacional, Ciudad de México, 2024."
+        }
+      ],
+      "rows": [
+        {
+          "count": 1,
+          "columns": "672px",
+          "top": [
+            616.71875
+          ],
+          "width": 672
+        },
+        {
+          "count": 2,
+          "columns": "320px 320px",
+          "top": [
+            1136.515625,
+            1136.515625
+          ],
+          "width": 672
+        }
+      ],
+      "viewer": {
+        "width": 768,
+        "height": 1000,
+        "bg": "rgb(16, 20, 16)",
+        "border": "0px",
+        "fit": "contain",
+        "controls": [
+          {
+            "text": "Anterior",
+            "height": 44
+          },
+          {
+            "text": "Siguiente",
+            "height": 44
+          },
+          {
+            "text": "Cerrar",
+            "height": 44
+          }
+        ],
+        "transition": "1e-05s"
+      },
+      "keyboardPassed": true
+    },
+    {
+      "slug": "atl",
+      "viewport": 1024,
+      "count": 3,
+      "width": 896,
+      "articleWidth": 896,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766782701%2Fprojects%2Fatl%2Fgallery%2Fotc4czorzjdrera1nk9v.jpg&w=3840&q=75",
+          "alt": "Atl | Agua, Música y Arte Sonoro. El Colegio Nacional, Ciudad de México, 2024.",
+          "width": 896,
+          "height": 597.328125,
+          "naturalWidth": 1024,
+          "naturalHeight": 682,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Atl | Agua, Música y Arte Sonoro. El Colegio Nacional, Ciudad de México, 2024."
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766782720%2Fprojects%2Fatl%2Fgallery%2Fqtnfgd8ujwo5zaugvpbh.jpg&w=3840&q=75",
+          "alt": "Atl | Agua, Música y Arte Sonoro. El Colegio Nacional, Ciudad de México, 2024.",
+          "width": 432,
+          "height": 288,
+          "naturalWidth": 450,
+          "naturalHeight": 300,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Atl | Agua, Música y Arte Sonoro. El Colegio Nacional, Ciudad de México, 2024."
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766782928%2Fprojects%2Fatl%2Fgallery%2Fig1ndsl17w2ddswakuc5.jpg&w=3840&q=75",
+          "alt": "Atl | Agua, Música y Arte Sonoro. El Colegio Nacional, Ciudad de México, 2024.",
+          "width": 432,
+          "height": 288,
+          "naturalWidth": 450,
+          "naturalHeight": 300,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Atl | Agua, Música y Arte Sonoro. El Colegio Nacional, Ciudad de México, 2024."
+        }
+      ],
+      "rows": [
+        {
+          "count": 1,
+          "columns": "896px",
+          "top": [
+            679.9375
+          ],
+          "width": 896
+        },
+        {
+          "count": 2,
+          "columns": "432px 432px",
+          "top": [
+            1349.0625,
+            1349.0625
+          ],
+          "width": 896
+        }
+      ],
+      "viewer": {
+        "width": 1024,
+        "height": 1000,
+        "bg": "rgb(16, 20, 16)",
+        "border": "0px",
+        "fit": "contain",
+        "controls": [
+          {
+            "text": "Anterior",
+            "height": 44
+          },
+          {
+            "text": "Siguiente",
+            "height": 44
+          },
+          {
+            "text": "Cerrar",
+            "height": 44
+          }
+        ],
+        "transition": "1e-05s"
+      },
+      "keyboardPassed": true
+    },
+    {
+      "slug": "atl",
+      "viewport": 1440,
+      "count": 3,
+      "width": 1192,
+      "articleWidth": 1192,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766782701%2Fprojects%2Fatl%2Fgallery%2Fotc4czorzjdrera1nk9v.jpg&w=3840&q=75",
+          "alt": "Atl | Agua, Música y Arte Sonoro. El Colegio Nacional, Ciudad de México, 2024.",
+          "width": 1192,
+          "height": 794.65625,
+          "naturalWidth": 1192,
+          "naturalHeight": 794,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Atl | Agua, Música y Arte Sonoro. El Colegio Nacional, Ciudad de México, 2024."
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766782720%2Fprojects%2Fatl%2Fgallery%2Fqtnfgd8ujwo5zaugvpbh.jpg&w=3840&q=75",
+          "alt": "Atl | Agua, Música y Arte Sonoro. El Colegio Nacional, Ciudad de México, 2024.",
+          "width": 580,
+          "height": 386.65625,
+          "naturalWidth": 580,
+          "naturalHeight": 386,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Atl | Agua, Música y Arte Sonoro. El Colegio Nacional, Ciudad de México, 2024."
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766782928%2Fprojects%2Fatl%2Fgallery%2Fig1ndsl17w2ddswakuc5.jpg&w=3840&q=75",
+          "alt": "Atl | Agua, Música y Arte Sonoro. El Colegio Nacional, Ciudad de México, 2024.",
+          "width": 580,
+          "height": 386.65625,
+          "naturalWidth": 580,
+          "naturalHeight": 386,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Atl | Agua, Música y Arte Sonoro. El Colegio Nacional, Ciudad de México, 2024."
+        }
+      ],
+      "rows": [
+        {
+          "count": 1,
+          "columns": "1192px",
+          "top": [
+            583.984375
+          ],
+          "width": 1192
+        },
+        {
+          "count": 2,
+          "columns": "580px 580px",
+          "top": [
+            1450.4375,
+            1450.4375
+          ],
+          "width": 1192
+        }
+      ],
+      "viewer": {
+        "width": 1440,
+        "height": 1000,
+        "bg": "rgb(16, 20, 16)",
+        "border": "0px",
+        "fit": "contain",
+        "controls": [
+          {
+            "text": "Anterior",
+            "height": 44
+          },
+          {
+            "text": "Siguiente",
+            "height": 44
+          },
+          {
+            "text": "Cerrar",
+            "height": 44
+          }
+        ],
+        "transition": "1e-05s"
+      },
+      "keyboardPassed": true
+    },
+    {
+      "slug": "otro_dia_otro_dolar",
+      "viewport": 375,
+      "count": 4,
+      "width": 327,
+      "articleWidth": 327,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886158%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Flxnzuwzwv551limhuvgi.jpg&w=3840&q=75",
+          "alt": "Otro día, otro dólar",
+          "width": 327,
+          "height": 218,
+          "naturalWidth": 375,
+          "naturalHeight": 250,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Vista instalación"
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887282%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Fjji1pbd7rxtj4klogeoq.jpg&w=3840&q=75",
+          "alt": "Detalle ensamblaje",
+          "width": 327,
+          "height": 245.25,
+          "naturalWidth": 375,
+          "naturalHeight": 281,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Detalle ensamblaje"
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887297%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Ftasfjn0calpsh2djbo0h.jpg&w=3840&q=75",
+          "alt": "Detalle ensamblaje",
+          "width": 327,
+          "height": 245.25,
+          "naturalWidth": 375,
+          "naturalHeight": 281,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Detalle ensamblaje"
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887959%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Fogy1rlzamvy2wvuv6n3u.jpg&w=3840&q=75",
+          "alt": "dibujo",
+          "width": 327,
+          "height": 231.078125,
+          "naturalWidth": 375,
+          "naturalHeight": 265,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Detalle dibujo"
+        }
+      ],
+      "rows": [
+        {
+          "count": 1,
+          "columns": "327px",
+          "top": [
+            1343.84375
+          ],
+          "width": 327
+        },
+        {
+          "count": 2,
+          "columns": "327px",
+          "top": [
+            1625.640625,
+            1934.6875
+          ],
+          "width": 327
+        },
+        {
+          "count": 1,
+          "columns": "327px",
+          "top": [
+            2243.734375
+          ],
+          "width": 327
+        }
+      ],
+      "viewer": {
+        "width": 375,
+        "height": 1000,
+        "bg": "rgb(16, 20, 16)",
+        "border": "0px",
+        "fit": "contain",
+        "controls": [
+          {
+            "text": "Anterior",
+            "height": 44
+          },
+          {
+            "text": "Siguiente",
+            "height": 44
+          },
+          {
+            "text": "Cerrar",
+            "height": 44
+          }
+        ],
+        "transition": "1e-05s"
+      },
+      "keyboardPassed": true
+    },
+    {
+      "slug": "otro_dia_otro_dolar",
+      "viewport": 768,
+      "count": 4,
+      "width": 672,
+      "articleWidth": 672,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886158%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Flxnzuwzwv551limhuvgi.jpg&w=3840&q=75",
+          "alt": "Otro día, otro dólar",
+          "width": 672,
+          "height": 448,
+          "naturalWidth": 768,
+          "naturalHeight": 512,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Vista instalación"
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887282%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Fjji1pbd7rxtj4klogeoq.jpg&w=3840&q=75",
+          "alt": "Detalle ensamblaje",
+          "width": 320,
+          "height": 240,
+          "naturalWidth": 337,
+          "naturalHeight": 253,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Detalle ensamblaje"
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887297%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Ftasfjn0calpsh2djbo0h.jpg&w=3840&q=75",
+          "alt": "Detalle ensamblaje",
+          "width": 320,
+          "height": 240,
+          "naturalWidth": 337,
+          "naturalHeight": 253,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Detalle ensamblaje"
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887959%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Fogy1rlzamvy2wvuv6n3u.jpg&w=3840&q=75",
+          "alt": "dibujo",
+          "width": 672,
+          "height": 474.875,
+          "naturalWidth": 768,
+          "naturalHeight": 542,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Detalle dibujo"
+        }
+      ],
+      "rows": [
+        {
+          "count": 1,
+          "columns": "672px",
+          "top": [
+            636.65625
+          ],
+          "width": 672
+        },
+        {
+          "count": 2,
+          "columns": "320px 320px",
+          "top": [
+            1156.453125,
+            1156.453125
+          ],
+          "width": 672
+        },
+        {
+          "count": 1,
+          "columns": "672px",
+          "top": [
+            1468.25
+          ],
+          "width": 672
+        }
+      ],
+      "viewer": {
+        "width": 768,
+        "height": 1000,
+        "bg": "rgb(16, 20, 16)",
+        "border": "0px",
+        "fit": "contain",
+        "controls": [
+          {
+            "text": "Anterior",
+            "height": 44
+          },
+          {
+            "text": "Siguiente",
+            "height": 44
+          },
+          {
+            "text": "Cerrar",
+            "height": 44
+          }
+        ],
+        "transition": "1e-05s"
+      },
+      "keyboardPassed": true
+    },
+    {
+      "slug": "otro_dia_otro_dolar",
+      "viewport": 1024,
+      "count": 4,
+      "width": 896,
+      "articleWidth": 896,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886158%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Flxnzuwzwv551limhuvgi.jpg&w=3840&q=75",
+          "alt": "Otro día, otro dólar",
+          "width": 896,
+          "height": 597.328125,
+          "naturalWidth": 1024,
+          "naturalHeight": 682,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Vista instalación"
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887282%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Fjji1pbd7rxtj4klogeoq.jpg&w=3840&q=75",
+          "alt": "Detalle ensamblaje",
+          "width": 432,
+          "height": 324.28125,
+          "naturalWidth": 450,
+          "naturalHeight": 338,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Detalle ensamblaje"
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887297%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Ftasfjn0calpsh2djbo0h.jpg&w=3840&q=75",
+          "alt": "Detalle ensamblaje",
+          "width": 432,
+          "height": 324,
+          "naturalWidth": 450,
+          "naturalHeight": 337,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Detalle ensamblaje"
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887959%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Fogy1rlzamvy2wvuv6n3u.jpg&w=3840&q=75",
+          "alt": "dibujo",
+          "width": 896,
+          "height": 633.171875,
+          "naturalWidth": 1024,
+          "naturalHeight": 723,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Detalle dibujo"
+        }
+      ],
+      "rows": [
+        {
+          "count": 1,
+          "columns": "896px",
+          "top": [
+            679.3125
+          ],
+          "width": 896
+        },
+        {
+          "count": 2,
+          "columns": "432px 432px",
+          "top": [
+            1348.4375,
+            1348.4375
+          ],
+          "width": 896
+        },
+        {
+          "count": 1,
+          "columns": "896px",
+          "top": [
+            1744.515625
+          ],
+          "width": 896
+        }
+      ],
+      "viewer": {
+        "width": 1024,
+        "height": 1000,
+        "bg": "rgb(16, 20, 16)",
+        "border": "0px",
+        "fit": "contain",
+        "controls": [
+          {
+            "text": "Anterior",
+            "height": 44
+          },
+          {
+            "text": "Siguiente",
+            "height": 44
+          },
+          {
+            "text": "Cerrar",
+            "height": 44
+          }
+        ],
+        "transition": "1e-05s"
+      },
+      "keyboardPassed": true
+    },
+    {
+      "slug": "otro_dia_otro_dolar",
+      "viewport": 1440,
+      "count": 4,
+      "width": 1192,
+      "articleWidth": 1192,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886158%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Flxnzuwzwv551limhuvgi.jpg&w=3840&q=75",
+          "alt": "Otro día, otro dólar",
+          "width": 1192,
+          "height": 794.65625,
+          "naturalWidth": 1192,
+          "naturalHeight": 794,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Vista instalación"
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887282%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Fjji1pbd7rxtj4klogeoq.jpg&w=3840&q=75",
+          "alt": "Detalle ensamblaje",
+          "width": 580,
+          "height": 435,
+          "naturalWidth": 580,
+          "naturalHeight": 434,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Detalle ensamblaje"
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887297%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Ftasfjn0calpsh2djbo0h.jpg&w=3840&q=75",
+          "alt": "Detalle ensamblaje",
+          "width": 580,
+          "height": 435,
+          "naturalWidth": 580,
+          "naturalHeight": 435,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Detalle ensamblaje"
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887959%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Fogy1rlzamvy2wvuv6n3u.jpg&w=3840&q=75",
+          "alt": "dibujo",
+          "width": 1192,
+          "height": 842.34375,
+          "naturalWidth": 1192,
+          "naturalHeight": 842,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Detalle dibujo"
+        }
+      ],
+      "rows": [
+        {
+          "count": 1,
+          "columns": "1192px",
+          "top": [
+            583.359375
+          ],
+          "width": 1192
+        },
+        {
+          "count": 2,
+          "columns": "580px 580px",
+          "top": [
+            1449.8125,
+            1449.8125
+          ],
+          "width": 1192
+        },
+        {
+          "count": 1,
+          "columns": "1192px",
+          "top": [
+            1956.609375
+          ],
+          "width": 1192
+        }
+      ],
+      "viewer": {
+        "width": 1440,
+        "height": 1000,
+        "bg": "rgb(16, 20, 16)",
+        "border": "0px",
+        "fit": "contain",
+        "controls": [
+          {
+            "text": "Anterior",
+            "height": 44
+          },
+          {
+            "text": "Siguiente",
+            "height": 44
+          },
+          {
+            "text": "Cerrar",
+            "height": 44
+          }
+        ],
+        "transition": "1e-05s"
+      },
+      "keyboardPassed": true
+    },
+    {
+      "slug": "leam2025",
+      "width": 375,
+      "count": 0,
+      "sectionHidden": true
+    },
+    {
+      "slug": "leam2025",
+      "width": 768,
+      "count": 0,
+      "sectionHidden": true
+    },
+    {
+      "slug": "leam2025",
+      "width": 1024,
+      "count": 0,
+      "sectionHidden": true
+    },
+    {
+      "slug": "leam2025",
+      "width": 1440,
+      "count": 0,
+      "sectionHidden": true
+    },
+    {
+      "slug": "power-room",
+      "viewport": 375,
+      "count": 1,
+      "width": 327,
+      "articleWidth": 327,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1763359443%2Fprojects%2Fpower-room%2Fgallery%2Fxmqix5ql21ehlfnznjom.jpg&w=3840&q=75",
+          "alt": "a",
+          "width": 327,
+          "height": 183.65625,
+          "naturalWidth": 375,
+          "naturalHeight": 210,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": null
+        }
+      ],
+      "rows": [
+        {
+          "count": 1,
+          "columns": "327px",
+          "top": [
+            847.3125
+          ],
+          "width": 327
+        }
+      ],
+      "viewer": {
+        "width": 375,
+        "height": 1000,
+        "bg": "rgb(16, 20, 16)",
+        "border": "0px",
+        "fit": "contain",
+        "controls": [
+          {
+            "text": "Anterior",
+            "height": 44
+          },
+          {
+            "text": "Siguiente",
+            "height": 44
+          },
+          {
+            "text": "Cerrar",
+            "height": 44
+          }
+        ],
+        "transition": "1e-05s"
+      },
+      "keyboardPassed": true
+    },
+    {
+      "slug": "power-room",
+      "viewport": 768,
+      "count": 1,
+      "width": 672,
+      "articleWidth": 672,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1763359443%2Fprojects%2Fpower-room%2Fgallery%2Fxmqix5ql21ehlfnznjom.jpg&w=3840&q=75",
+          "alt": "a",
+          "width": 672,
+          "height": 377.4375,
+          "naturalWidth": 768,
+          "naturalHeight": 431,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": null
+        }
+      ],
+      "rows": [
+        {
+          "count": 1,
+          "columns": "672px",
+          "top": [
+            1033.59375
+          ],
+          "width": 672
+        }
+      ],
+      "viewer": {
+        "width": 768,
+        "height": 1000,
+        "bg": "rgb(16, 20, 16)",
+        "border": "0px",
+        "fit": "contain",
+        "controls": [
+          {
+            "text": "Anterior",
+            "height": 44
+          },
+          {
+            "text": "Siguiente",
+            "height": 44
+          },
+          {
+            "text": "Cerrar",
+            "height": 44
+          }
+        ],
+        "transition": "1e-05s"
+      },
+      "keyboardPassed": true
+    },
+    {
+      "slug": "power-room",
+      "viewport": 1024,
+      "count": 1,
+      "width": 896,
+      "articleWidth": 896,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1763359443%2Fprojects%2Fpower-room%2Fgallery%2Fxmqix5ql21ehlfnznjom.jpg&w=3840&q=75",
+          "alt": "a",
+          "width": 896,
+          "height": 503.25,
+          "naturalWidth": 1024,
+          "naturalHeight": 575,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": null
+        }
+      ],
+      "rows": [
+        {
+          "count": 1,
+          "columns": "896px",
+          "top": [
+            430.078125
+          ],
+          "width": 896
+        }
+      ],
+      "viewer": {
+        "width": 1024,
+        "height": 1000,
+        "bg": "rgb(16, 20, 16)",
+        "border": "0px",
+        "fit": "contain",
+        "controls": [
+          {
+            "text": "Anterior",
+            "height": 44
+          },
+          {
+            "text": "Siguiente",
+            "height": 44
+          },
+          {
+            "text": "Cerrar",
+            "height": 44
+          }
+        ],
+        "transition": "1e-05s"
+      },
+      "keyboardPassed": true
+    },
+    {
+      "slug": "power-room",
+      "viewport": 1440,
+      "count": 1,
+      "width": 1192,
+      "articleWidth": 1192,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1763359443%2Fprojects%2Fpower-room%2Fgallery%2Fxmqix5ql21ehlfnznjom.jpg&w=3840&q=75",
+          "alt": "a",
+          "width": 1192,
+          "height": 669.5,
+          "naturalWidth": 1192,
+          "naturalHeight": 669,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": null
+        }
+      ],
+      "rows": [
+        {
+          "count": 1,
+          "columns": "1192px",
+          "top": [
+            579.046875
+          ],
+          "width": 1192
+        }
+      ],
+      "viewer": {
+        "width": 1440,
+        "height": 1000,
+        "bg": "rgb(16, 20, 16)",
+        "border": "0px",
+        "fit": "contain",
+        "controls": [
+          {
+            "text": "Anterior",
+            "height": 44
+          },
+          {
+            "text": "Siguiente",
+            "height": 44
+          },
+          {
+            "text": "Cerrar",
+            "height": 44
+          }
+        ],
+        "transition": "1e-05s"
+      },
+      "keyboardPassed": true
+    },
+    {
+      "slug": "pinball-banxico",
+      "viewport": 375,
+      "count": 2,
+      "width": 327,
+      "articleWidth": 327,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1763361348%2Fprojects%2Fpinball-banxico%2Fgallery%2Fqmwb8dnks9oi8jyqquuc.jpg&w=3840&q=75",
+          "alt": "Exhibición 1",
+          "width": 327,
+          "height": 245.25,
+          "naturalWidth": 375,
+          "naturalHeight": 281,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": null
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1763361369%2Fprojects%2Fpinball-banxico%2Fgallery%2Fcs2owrsjphg2ebvro5lh.png&w=3840&q=75",
+          "alt": "Exhibición 2",
+          "width": 327,
+          "height": 251.375,
+          "naturalWidth": 375,
+          "naturalHeight": 288,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Diseño y fabricación de PCB"
+        }
+      ],
+      "rows": [
+        {
+          "count": 2,
+          "columns": "327px",
+          "top": [
+            914.0625,
+            1191.3125
+          ],
+          "width": 327
+        }
+      ],
+      "viewer": {
+        "width": 375,
+        "height": 1000,
+        "bg": "rgb(16, 20, 16)",
+        "border": "0px",
+        "fit": "contain",
+        "controls": [
+          {
+            "text": "Anterior",
+            "height": 44
+          },
+          {
+            "text": "Siguiente",
+            "height": 44
+          },
+          {
+            "text": "Cerrar",
+            "height": 44
+          }
+        ],
+        "transition": "1e-05s"
+      },
+      "keyboardPassed": true
+    },
+    {
+      "slug": "pinball-banxico",
+      "viewport": 768,
+      "count": 2,
+      "width": 672,
+      "articleWidth": 672,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1763361348%2Fprojects%2Fpinball-banxico%2Fgallery%2Fqmwb8dnks9oi8jyqquuc.jpg&w=3840&q=75",
+          "alt": "Exhibición 1",
+          "width": 320,
+          "height": 240,
+          "naturalWidth": 337,
+          "naturalHeight": 253,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": null
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1763361369%2Fprojects%2Fpinball-banxico%2Fgallery%2Fcs2owrsjphg2ebvro5lh.png&w=3840&q=75",
+          "alt": "Exhibición 2",
+          "width": 320,
+          "height": 246,
+          "naturalWidth": 337,
+          "naturalHeight": 259,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Diseño y fabricación de PCB"
+        }
+      ],
+      "rows": [
+        {
+          "count": 2,
+          "columns": "320px 320px",
+          "top": [
+            1000.359375,
+            1000.359375
+          ],
+          "width": 672
+        }
+      ],
+      "viewer": {
+        "width": 768,
+        "height": 1000,
+        "bg": "rgb(16, 20, 16)",
+        "border": "0px",
+        "fit": "contain",
+        "controls": [
+          {
+            "text": "Anterior",
+            "height": 44
+          },
+          {
+            "text": "Siguiente",
+            "height": 44
+          },
+          {
+            "text": "Cerrar",
+            "height": 44
+          }
+        ],
+        "transition": "1e-05s"
+      },
+      "keyboardPassed": true
+    },
+    {
+      "slug": "pinball-banxico",
+      "viewport": 1024,
+      "count": 2,
+      "width": 896,
+      "articleWidth": 896,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1763361348%2Fprojects%2Fpinball-banxico%2Fgallery%2Fqmwb8dnks9oi8jyqquuc.jpg&w=3840&q=75",
+          "alt": "Exhibición 1",
+          "width": 432,
+          "height": 324.28125,
+          "naturalWidth": 450,
+          "naturalHeight": 338,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": null
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1763361369%2Fprojects%2Fpinball-banxico%2Fgallery%2Fcs2owrsjphg2ebvro5lh.png&w=3840&q=75",
+          "alt": "Exhibición 2",
+          "width": 432,
+          "height": 332.34375,
+          "naturalWidth": 450,
+          "naturalHeight": 346,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Diseño y fabricación de PCB"
+        }
+      ],
+      "rows": [
+        {
+          "count": 2,
+          "columns": "432px 432px",
+          "top": [
+            528.03125,
+            528.03125
+          ],
+          "width": 896
+        }
+      ],
+      "viewer": {
+        "width": 1024,
+        "height": 1000,
+        "bg": "rgb(16, 20, 16)",
+        "border": "0px",
+        "fit": "contain",
+        "controls": [
+          {
+            "text": "Anterior",
+            "height": 44
+          },
+          {
+            "text": "Siguiente",
+            "height": 44
+          },
+          {
+            "text": "Cerrar",
+            "height": 44
+          }
+        ],
+        "transition": "1e-05s"
+      },
+      "keyboardPassed": true
+    },
+    {
+      "slug": "pinball-banxico",
+      "viewport": 1440,
+      "count": 2,
+      "width": 1192,
+      "articleWidth": 1192,
+      "overflow": false,
+      "images": [
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1763361348%2Fprojects%2Fpinball-banxico%2Fgallery%2Fqmwb8dnks9oi8jyqquuc.jpg&w=3840&q=75",
+          "alt": "Exhibición 1",
+          "width": 580,
+          "height": 435,
+          "naturalWidth": 580,
+          "naturalHeight": 434,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": null
+        },
+        {
+          "src": "/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1763361369%2Fprojects%2Fpinball-banxico%2Fgallery%2Fcs2owrsjphg2ebvro5lh.png&w=3840&q=75",
+          "alt": "Exhibición 2",
+          "width": 580,
+          "height": 446.265625,
+          "naturalWidth": 580,
+          "naturalHeight": 446,
+          "widthAttr": null,
+          "heightAttr": null,
+          "fit": "contain",
+          "caption": "Diseño y fabricación de PCB"
+        }
+      ],
+      "rows": [
+        {
+          "count": 2,
+          "columns": "580px 580px",
+          "top": [
+            638.75,
+            638.75
+          ],
+          "width": 1192
+        }
+      ],
+      "viewer": {
+        "width": 1440,
+        "height": 1000,
+        "bg": "rgb(16, 20, 16)",
+        "border": "0px",
+        "fit": "contain",
+        "controls": [
+          {
+            "text": "Anterior",
+            "height": 44
+          },
+          {
+            "text": "Siguiente",
+            "height": 44
+          },
+          {
+            "text": "Cerrar",
+            "height": 44
+          }
+        ],
+        "transition": "1e-05s"
+      },
+      "keyboardPassed": true
+    }
+  ],
+  "errors": [],
+  "apiUnchanged": true,
+  "englishControls": true,
+  "protectedSectionsUnchanged": true,
+  "passed": true
+}

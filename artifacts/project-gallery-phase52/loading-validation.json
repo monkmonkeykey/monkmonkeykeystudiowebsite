@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "nativeLazyLoading": true,
+  "naturalScrollLoadedAllPhotos": true,
+  "viewerAbsentUntilOpened": true,
+  "reducedMotion": true,
+  "initialOptimizedRequests": 1,
+  "totalOptimizedRequests": 8,
+  "requestedWidths": [
+    "640",
+    "384",
+    "128"
+  ]
+}
