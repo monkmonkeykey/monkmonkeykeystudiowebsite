@@ -1,0 +1,1646 @@
+{
+  "checkedAt": "2026-10-28T00:01:01.916Z",
+  "checks": [
+    {
+      "engine": "chromium",
+      "origin": "https://monkmonkeykeystudiowebsite.vercel.app",
+      "viewport": 375,
+      "locale": "es",
+      "creditsSections": 2,
+      "status": 200,
+      "galleryViewer": true,
+      "collaborators": true
+    },
+    {
+      "engine": "chromium",
+      "origin": "https://monkmonkeykeystudiowebsite.vercel.app",
+      "viewport": 375,
+      "locale": "en",
+      "creditsSections": 2,
+      "status": 200,
+      "galleryViewer": true,
+      "collaborators": true
+    },
+    {
+      "engine": "chromium",
+      "origin": "https://monkmonkeykeystudiowebsite.vercel.app",
+      "viewport": 375,
+      "legacyProjectHidesEmptySection": true
+    },
+    {
+      "engine": "chromium",
+      "origin": "https://monkmonkeykeystudiowebsite.vercel.app",
+      "viewport": 1440,
+      "locale": "es",
+      "creditsSections": 2,
+      "status": 200,
+      "galleryViewer": true,
+      "collaborators": true
+    },
+    {
+      "engine": "chromium",
+      "origin": "https://monkmonkeykeystudiowebsite.vercel.app",
+      "viewport": 1440,
+      "locale": "en",
+      "creditsSections": 2,
+      "status": 200,
+      "galleryViewer": true,
+      "collaborators": true
+    },
+    {
+      "engine": "chromium",
+      "origin": "https://monkmonkeykeystudiowebsite.vercel.app",
+      "viewport": 1440,
+      "legacyProjectHidesEmptySection": true
+    },
+    {
+      "engine": "chromium",
+      "origin": "https://www.monkmonkeykey.com",
+      "viewport": 375,
+      "locale": "es",
+      "creditsSections": 2,
+      "status": 200,
+      "galleryViewer": true,
+      "collaborators": true
+    },
+    {
+      "engine": "chromium",
+      "origin": "https://www.monkmonkeykey.com",
+      "viewport": 375,
+      "locale": "en",
+      "creditsSections": 2,
+      "status": 200,
+      "galleryViewer": true,
+      "collaborators": true
+    },
+    {
+      "engine": "chromium",
+      "origin": "https://www.monkmonkeykey.com",
+      "viewport": 375,
+      "legacyProjectHidesEmptySection": true
+    },
+    {
+      "engine": "chromium",
+      "origin": "https://www.monkmonkeykey.com",
+      "viewport": 1440,
+      "locale": "es",
+      "creditsSections": 2,
+      "status": 200,
+      "galleryViewer": true,
+      "collaborators": true
+    },
+    {
+      "engine": "chromium",
+      "origin": "https://www.monkmonkeykey.com",
+      "viewport": 1440,
+      "locale": "en",
+      "creditsSections": 2,
+      "status": 200,
+      "galleryViewer": true,
+      "collaborators": true
+    },
+    {
+      "engine": "chromium",
+      "origin": "https://www.monkmonkeykey.com",
+      "viewport": 1440,
+      "legacyProjectHidesEmptySection": true
+    },
+    {
+      "engine": "webkit",
+      "origin": "https://monkmonkeykeystudiowebsite.vercel.app",
+      "viewport": 375,
+      "locale": "es",
+      "creditsSections": 2,
+      "status": 200,
+      "galleryViewer": true,
+      "collaborators": true
+    },
+    {
+      "engine": "webkit",
+      "origin": "https://monkmonkeykeystudiowebsite.vercel.app",
+      "viewport": 375,
+      "locale": "en",
+      "creditsSections": 2,
+      "status": 200,
+      "galleryViewer": true,
+      "collaborators": true
+    },
+    {
+      "engine": "webkit",
+      "origin": "https://monkmonkeykeystudiowebsite.vercel.app",
+      "viewport": 375,
+      "legacyProjectHidesEmptySection": true
+    },
+    {
+      "engine": "webkit",
+      "origin": "https://monkmonkeykeystudiowebsite.vercel.app",
+      "viewport": 1440,
+      "locale": "es",
+      "creditsSections": 2,
+      "status": 200,
+      "galleryViewer": true,
+      "collaborators": true
+    },
+    {
+      "engine": "webkit",
+      "origin": "https://monkmonkeykeystudiowebsite.vercel.app",
+      "viewport": 1440,
+      "locale": "en",
+      "creditsSections": 2,
+      "status": 200,
+      "galleryViewer": true,
+      "collaborators": true
+    },
+    {
+      "engine": "webkit",
+      "origin": "https://monkmonkeykeystudiowebsite.vercel.app",
+      "viewport": 1440,
+      "legacyProjectHidesEmptySection": true
+    },
+    {
+      "engine": "webkit",
+      "origin": "https://www.monkmonkeykey.com",
+      "viewport": 375,
+      "locale": "es",
+      "creditsSections": 2,
+      "status": 200,
+      "galleryViewer": true,
+      "collaborators": true
+    },
+    {
+      "engine": "webkit",
+      "origin": "https://www.monkmonkeykey.com",
+      "viewport": 375,
+      "locale": "en",
+      "creditsSections": 2,
+      "status": 200,
+      "galleryViewer": true,
+      "collaborators": true
+    },
+    {
+      "engine": "webkit",
+      "origin": "https://www.monkmonkeykey.com",
+      "viewport": 375,
+      "legacyProjectHidesEmptySection": true
+    },
+    {
+      "engine": "webkit",
+      "origin": "https://www.monkmonkeykey.com",
+      "viewport": 1440,
+      "locale": "es",
+      "creditsSections": 2,
+      "status": 200,
+      "galleryViewer": true,
+      "collaborators": true
+    },
+    {
+      "engine": "webkit",
+      "origin": "https://www.monkmonkeykey.com",
+      "viewport": 1440,
+      "locale": "en",
+      "creditsSections": 2,
+      "status": 200,
+      "galleryViewer": true,
+      "collaborators": true
+    },
+    {
+      "engine": "webkit",
+      "origin": "https://www.monkmonkeykey.com",
+      "viewport": 1440,
+      "legacyProjectHidesEmptySection": true
+    }
+  ],
+  "pageErrors": [],
+  "resources": [
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/css/4052aa66d07f85ff.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/549-dba7a76498e1ff2e.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/826-35d3f1850c807e90.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/app/proyectos/%5Bslug%5D/page-5cefe9211ea70e4f.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/1-b025027a63979f8d.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/css/83ad7994cfdc7834.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886137%2Fprojects%2Fotro_dia_otro_dolar%2Fcover%2Fobvadqy94jhbmftyqso3.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886158%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Flxnzuwzwv551limhuvgi.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887282%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Fjji1pbd7rxtj4klogeoq.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783883530%2Fclients%2Fkaren-aixa%2Frqn0kshudvev6roctte2.jpg&w=640&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887959%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Fogy1rlzamvy2wvuv6n3u.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887297%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Ftasfjn0calpsh2djbo0h.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/css/4052aa66d07f85ff.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/css/83ad7994cfdc7834.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/826-35d3f1850c807e90.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/549-dba7a76498e1ff2e.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/1-b025027a63979f8d.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/app/proyectos/%5Bslug%5D/page-5cefe9211ea70e4f.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766540899%2Fprojects%2Fnime2023%2Fcover%2Fl6amlcsrijq1f3b4tjyq.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/app/proyectos/%5Bslug%5D/page-5cefe9211ea70e4f.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/css/4052aa66d07f85ff.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/826-35d3f1850c807e90.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886137%2Fprojects%2Fotro_dia_otro_dolar%2Fcover%2Fobvadqy94jhbmftyqso3.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/549-dba7a76498e1ff2e.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/css/83ad7994cfdc7834.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/1-b025027a63979f8d.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783883530%2Fclients%2Fkaren-aixa%2Frqn0kshudvev6roctte2.jpg&w=256&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887282%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Fjji1pbd7rxtj4klogeoq.jpg&w=640&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887959%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Fogy1rlzamvy2wvuv6n3u.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887297%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Ftasfjn0calpsh2djbo0h.jpg&w=640&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886158%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Flxnzuwzwv551limhuvgi.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887282%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Fjji1pbd7rxtj4klogeoq.jpg&w=1920&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/css/4052aa66d07f85ff.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/css/83ad7994cfdc7834.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/826-35d3f1850c807e90.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/1-b025027a63979f8d.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/549-dba7a76498e1ff2e.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/app/proyectos/%5Bslug%5D/page-5cefe9211ea70e4f.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766540899%2Fprojects%2Fnime2023%2Fcover%2Fl6amlcsrijq1f3b4tjyq.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/css/83ad7994cfdc7834.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/css/4052aa66d07f85ff.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/app/proyectos/%5Bslug%5D/page-5cefe9211ea70e4f.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/549-dba7a76498e1ff2e.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/1-b025027a63979f8d.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886137%2Fprojects%2Fotro_dia_otro_dolar%2Fcover%2Fobvadqy94jhbmftyqso3.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/826-35d3f1850c807e90.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887297%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Ftasfjn0calpsh2djbo0h.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886158%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Flxnzuwzwv551limhuvgi.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887282%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Fjji1pbd7rxtj4klogeoq.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783883530%2Fclients%2Fkaren-aixa%2Frqn0kshudvev6roctte2.jpg&w=640&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887959%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Fogy1rlzamvy2wvuv6n3u.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/css/4052aa66d07f85ff.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/css/83ad7994cfdc7834.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/826-35d3f1850c807e90.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/549-dba7a76498e1ff2e.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/1-b025027a63979f8d.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/app/proyectos/%5Bslug%5D/page-5cefe9211ea70e4f.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766540899%2Fprojects%2Fnime2023%2Fcover%2Fl6amlcsrijq1f3b4tjyq.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766541359%2Fprojects%2Fnime2023%2Fgallery%2Fqhzelpdus1cfj8tz9kuu.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/css/83ad7994cfdc7834.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886137%2Fprojects%2Fotro_dia_otro_dolar%2Fcover%2Fobvadqy94jhbmftyqso3.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/css/4052aa66d07f85ff.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/app/proyectos/%5Bslug%5D/page-5cefe9211ea70e4f.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/549-dba7a76498e1ff2e.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/826-35d3f1850c807e90.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/1-b025027a63979f8d.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886158%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Flxnzuwzwv551limhuvgi.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887959%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Fogy1rlzamvy2wvuv6n3u.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783883530%2Fclients%2Fkaren-aixa%2Frqn0kshudvev6roctte2.jpg&w=256&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887282%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Fjji1pbd7rxtj4klogeoq.jpg&w=640&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887297%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Ftasfjn0calpsh2djbo0h.jpg&w=640&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887282%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Fjji1pbd7rxtj4klogeoq.jpg&w=1920&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/css/4052aa66d07f85ff.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/css/83ad7994cfdc7834.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/826-35d3f1850c807e90.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/549-dba7a76498e1ff2e.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/1-b025027a63979f8d.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/app/proyectos/%5Bslug%5D/page-5cefe9211ea70e4f.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766540899%2Fprojects%2Fnime2023%2Fcover%2Fl6amlcsrijq1f3b4tjyq.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/css/4052aa66d07f85ff.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/css/83ad7994cfdc7834.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/1-b025027a63979f8d.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886137%2Fprojects%2Fotro_dia_otro_dolar%2Fcover%2Fobvadqy94jhbmftyqso3.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/app/proyectos/%5Bslug%5D/page-5cefe9211ea70e4f.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/826-35d3f1850c807e90.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/549-dba7a76498e1ff2e.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886158%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Flxnzuwzwv551limhuvgi.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783883530%2Fclients%2Fkaren-aixa%2Frqn0kshudvev6roctte2.jpg&w=640&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887959%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Fogy1rlzamvy2wvuv6n3u.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887282%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Fjji1pbd7rxtj4klogeoq.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887297%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Ftasfjn0calpsh2djbo0h.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886158%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Flxnzuwzwv551limhuvgi.jpg&w=1080&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887282%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Fjji1pbd7rxtj4klogeoq.jpg&w=1080&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/css/4052aa66d07f85ff.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/css/83ad7994cfdc7834.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/826-35d3f1850c807e90.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/549-dba7a76498e1ff2e.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/1-b025027a63979f8d.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/app/proyectos/%5Bslug%5D/page-5cefe9211ea70e4f.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766540899%2Fprojects%2Fnime2023%2Fcover%2Fl6amlcsrijq1f3b4tjyq.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/css/4052aa66d07f85ff.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/css/83ad7994cfdc7834.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/1-b025027a63979f8d.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/826-35d3f1850c807e90.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/app/proyectos/%5Bslug%5D/page-5cefe9211ea70e4f.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886137%2Fprojects%2Fotro_dia_otro_dolar%2Fcover%2Fobvadqy94jhbmftyqso3.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/549-dba7a76498e1ff2e.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886158%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Flxnzuwzwv551limhuvgi.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887282%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Fjji1pbd7rxtj4klogeoq.jpg&w=1920&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887297%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Ftasfjn0calpsh2djbo0h.jpg&w=640&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887282%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Fjji1pbd7rxtj4klogeoq.jpg&w=640&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887959%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Fogy1rlzamvy2wvuv6n3u.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783883530%2Fclients%2Fkaren-aixa%2Frqn0kshudvev6roctte2.jpg&w=256&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886158%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Flxnzuwzwv551limhuvgi.jpg&w=1920&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/css/4052aa66d07f85ff.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/css/83ad7994cfdc7834.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/826-35d3f1850c807e90.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/549-dba7a76498e1ff2e.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/1-b025027a63979f8d.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/static/chunks/app/proyectos/%5Bslug%5D/page-5cefe9211ea70e4f.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766540899%2Fprojects%2Fnime2023%2Fcover%2Fl6amlcsrijq1f3b4tjyq.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.youtube-nocookie.com/s/player/6b2fce74/www-player.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://www.youtube-nocookie.com/s/_/ytembeds/_/ss/k=ytembeds.base.ky1PPkpotFU.L.W.O/am=AAAAQA/d=1/br=1/rs=AGKMywHmQXC_syZeb7xHiarm5BjcVihrew/m=root,base",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=UTF-8"
+    },
+    {
+      "url": "https://www.youtube-nocookie.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.Zx_MC7cHIKw.2021.O/am=AAAAQA/d=1/excm=base,root/br=1/rs=AGKMywH9FRISq-W6w9Q0rlhmkZkSGFOcgQ/m=root,base",
+      "type": "script",
+      "status": 200,
+      "contentType": "text/javascript; charset=UTF-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/css/4052aa66d07f85ff.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/css/83ad7994cfdc7834.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/1-b025027a63979f8d.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/549-dba7a76498e1ff2e.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886137%2Fprojects%2Fotro_dia_otro_dolar%2Fcover%2Fobvadqy94jhbmftyqso3.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/826-35d3f1850c807e90.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/app/proyectos/%5Bslug%5D/page-5cefe9211ea70e4f.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886158%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Flxnzuwzwv551limhuvgi.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887282%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Fjji1pbd7rxtj4klogeoq.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887297%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Ftasfjn0calpsh2djbo0h.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783883530%2Fclients%2Fkaren-aixa%2Frqn0kshudvev6roctte2.jpg&w=640&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887959%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Fogy1rlzamvy2wvuv6n3u.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886158%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Flxnzuwzwv551limhuvgi.jpg&w=1080&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887282%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Fjji1pbd7rxtj4klogeoq.jpg&w=1080&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/css/4052aa66d07f85ff.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/css/83ad7994cfdc7834.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/826-35d3f1850c807e90.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/549-dba7a76498e1ff2e.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/1-b025027a63979f8d.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/app/proyectos/%5Bslug%5D/page-5cefe9211ea70e4f.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766540899%2Fprojects%2Fnime2023%2Fcover%2Fl6amlcsrijq1f3b4tjyq.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.youtube-nocookie.com/s/player/6b2fce74/www-player.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css"
+    },
+    {
+      "url": "https://www.youtube-nocookie.com/s/_/ytembeds/_/ss/k=ytembeds.base.ky1PPkpotFU.L.W.O/am=AAAAQA/d=1/br=1/rs=AGKMywHmQXC_syZeb7xHiarm5BjcVihrew/m=root,base",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=UTF-8"
+    },
+    {
+      "url": "https://www.youtube-nocookie.com/s/_/ytembeds/_/js/k=ytembeds.base.en_US.Zx_MC7cHIKw.2021.O/am=AAAAQA/d=1/excm=base,root/br=1/rs=AGKMywH9FRISq-W6w9Q0rlhmkZkSGFOcgQ/m=root,base",
+      "type": "script",
+      "status": 200,
+      "contentType": "text/javascript; charset=UTF-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/css/4052aa66d07f85ff.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/826-35d3f1850c807e90.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/549-dba7a76498e1ff2e.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/css/83ad7994cfdc7834.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/1-b025027a63979f8d.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/app/proyectos/%5Bslug%5D/page-5cefe9211ea70e4f.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886137%2Fprojects%2Fotro_dia_otro_dolar%2Fcover%2Fobvadqy94jhbmftyqso3.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887297%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Ftasfjn0calpsh2djbo0h.jpg&w=640&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886158%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Flxnzuwzwv551limhuvgi.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887959%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Fogy1rlzamvy2wvuv6n3u.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887282%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Fjji1pbd7rxtj4klogeoq.jpg&w=640&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886158%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Flxnzuwzwv551limhuvgi.jpg&w=1920&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783887282%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Fjji1pbd7rxtj4klogeoq.jpg&w=1920&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/css/4052aa66d07f85ff.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/css/83ad7994cfdc7834.css",
+      "type": "stylesheet",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/webpack-b0c3f0da343e644c.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/4bd1b696-4c5ff41c8f844aa5.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/826-35d3f1850c807e90.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/main-app-56bdd0dbd8c7f1e1.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/549-dba7a76498e1ff2e.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/app/layout-8870fd7349a4694e.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/1-b025027a63979f8d.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/static/chunks/app/proyectos/%5Bslug%5D/page-5cefe9211ea70e4f.js",
+      "type": "script",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1766540899%2Fprojects%2Fnime2023%2Fcover%2Fl6amlcsrijq1f3b4tjyq.jpg&w=1200&q=75",
+      "type": "image",
+      "status": 200,
+      "contentType": "image/webp"
+    }
+  ],
+  "failedRequests": [
+    {
+      "engine": "chromium",
+      "origin": "https://monkmonkeykeystudiowebsite.vercel.app",
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886158%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Flxnzuwzwv551limhuvgi.jpg&w=1920&q=75",
+      "type": "image",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "engine": "chromium",
+      "origin": "https://monkmonkeykeystudiowebsite.vercel.app",
+      "url": "https://monkmonkeykeystudiowebsite.vercel.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886158%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Flxnzuwzwv551limhuvgi.jpg&w=1920&q=75",
+      "type": "image",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "engine": "chromium",
+      "origin": "https://www.monkmonkeykey.com",
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886158%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Flxnzuwzwv551limhuvgi.jpg&w=1920&q=75",
+      "type": "image",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "engine": "chromium",
+      "origin": "https://www.monkmonkeykey.com",
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783886158%2Fprojects%2Fotro_dia_otro_dolar%2Fgallery%2Flxnzuwzwv551limhuvgi.jpg&w=1920&q=75",
+      "type": "image",
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "engine": "webkit",
+      "origin": "https://www.monkmonkeykey.com",
+      "url": "https://www.monkmonkeykey.com/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdmrzmnjln%2Fimage%2Fupload%2Fv1783883530%2Fclients%2Fkaren-aixa%2Frqn0kshudvev6roctte2.jpg&w=256&q=75",
+      "type": "image",
+      "error": "cancelled"
+    }
+  ],
+  "passed": true
+}

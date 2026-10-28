@@ -1,0 +1,36 @@
+[
+  {
+    "ns": "dns3.hostgator.com.br",
+    "ip": "162.240.81.81",
+    "apex": [
+      {
+        "address": "162.240.81.81",
+        "ttl": 14400
+      },
+      {
+        "address": "216.198.79.1",
+        "ttl": 14400
+      }
+    ],
+    "www": [
+      "15dcad176d8779ce.vercel-dns-017.com"
+    ]
+  },
+  {
+    "ns": "dns4.hostgator.com.br",
+    "ip": "162.240.81.83",
+    "apex": [
+      {
+        "address": "216.198.79.1",
+        "ttl": 14400
+      },
+      {
+        "address": "162.240.81.81",
+        "ttl": 14400
+      }
+    ],
+    "www": [
+      "15dcad176d8779ce.vercel-dns-017.com"
+    ]
+  }
+]

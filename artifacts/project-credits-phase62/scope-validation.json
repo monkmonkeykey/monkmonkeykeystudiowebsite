@@ -1,0 +1,175 @@
+{
+  "passed": true,
+  "protectedFiles": [
+    {
+      "path": "src/app/layout.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/globals.css",
+      "unchanged": true
+    },
+    {
+      "path": "next.config.ts",
+      "unchanged": true
+    },
+    {
+      "path": "postcss.config.mjs",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/page.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/page.client.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/home.module.css",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/proyectos/page.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/proyectos/page.client.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/proyectos/projects.module.css",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/proyectos/[slug]/page.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/admin/page.client.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/components/admin/ProjectCreditsEditor.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/domain/project-credits.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/domain/projects.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/lib/project-credit-form.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/server/projects.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/server/validation.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/content/projects.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/api/projects/route.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/api/projects/[slug]/route.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/clientes/page.client.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/components/site/CollaboratorCard.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/components/site/collaborator-card.module.css",
+      "unchanged": true
+    },
+    {
+      "path": "src/components/site/Header.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/components/site/Footer.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/components/site/PracticeGallery.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/components/site/SiteShell.tsx",
+      "unchanged": true
+    }
+  ],
+  "contentFiles": [
+    {
+      "path": "content/clients/atlas-labs.md",
+      "unchanged": true
+    },
+    {
+      "path": "content/clients/aulalibre.md",
+      "unchanged": true
+    },
+    {
+      "path": "content/clients/logitrack.md",
+      "unchanged": true
+    },
+    {
+      "path": "content/clients/loop-brand-labs.md",
+      "unchanged": true
+    },
+    {
+      "path": "content/clients/museo-banco-de-mexico.md",
+      "unchanged": true
+    },
+    {
+      "path": "content/clients/museo-interactivo-de-economia.md",
+      "unchanged": true
+    },
+    {
+      "path": "content/clients/solaria.md",
+      "unchanged": true
+    },
+    {
+      "path": "content/clients/syntropy-labs.md",
+      "unchanged": true
+    },
+    {
+      "path": "content/projects/atlas-experience-lab.md",
+      "unchanged": true
+    },
+    {
+      "path": "content/projects/loop-brand-labs.md",
+      "unchanged": true
+    },
+    {
+      "path": "content/projects/museo-banco-mexico.md",
+      "unchanged": true
+    }
+  ],
+  "projectMarkupOutsideCreditsUnchanged": true,
+  "projectStylesOutsideCreditsUnchanged": true,
+  "checks": {
+    "lint": "passed",
+    "types": "passed",
+    "build": "passed",
+    "projectTests": 14,
+    "homeTests": 11,
+    "serviceTests": 5
+  },
+  "databaseWrites": false,
+  "externalConfigurationChanges": false
+}
