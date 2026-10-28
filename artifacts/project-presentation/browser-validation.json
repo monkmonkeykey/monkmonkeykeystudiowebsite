@@ -1,0 +1,46 @@
+{
+  "scope": "Actual AdminDashboard, ProjectCreditsEditor, schemas and API handlers with MongoDB operations intercepted in memory. Next Image and router are test adapters. All browser requests intercepted; no production writes.",
+  "checks": [
+    {
+      "hideHeadingSavedWithoutDeletingData": true
+    },
+    {
+      "allSixBilingualLabelsPersist": true,
+      "incompleteLabelsShowInlineError": true
+    },
+    {
+      "publicLabelsAndHiddenHeadingRendered": true,
+      "headingSpaceRemoved": true
+    },
+    {
+      "wholeBlockHidesWithoutDeletingCredits": true,
+      "otherSectionsRemain": true
+    },
+    {
+      "reopeningAndSwitchingProjectsPreserveIndependentSettings": true
+    },
+    {
+      "restoreVisibilityAndDefaultLabels": true
+    }
+  ],
+  "errors": [],
+  "interceptedWrites": [
+    {
+      "method": "PATCH",
+      "path": "/api/projects/operauam"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/projects/operauam"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/projects/operauam"
+    },
+    {
+      "method": "PATCH",
+      "path": "/api/projects/operauam"
+    }
+  ],
+  "passed": true
+}

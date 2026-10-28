@@ -1,5 +1,6 @@
 import { z } from "zod";
 import type { LocaleText } from "@/lib/i18n";
+import type { ProjectEditorialPresentation } from "./project-presentation";
 
 export type ArtisticAuthor = { name: string; role?: LocaleText };
 export type AdditionalCredit = { name: string; role: LocaleText };
@@ -8,6 +9,7 @@ export type ProjectCredits = {
   artisticAuthorship?: ArtisticAuthor[];
   studioContribution?: LocaleText;
   additionalCredits?: AdditionalCredit[];
+  editorialPresentation?: ProjectEditorialPresentation;
 };
 
 // Null explicitly clears the studio text. Omitted fields leave stored values alone.
@@ -28,7 +30,22 @@ const optionalBilingualText = z.object({
 const nameSchema = z.string({ error: "Escribe el nombre de la persona o colectivo." })
   .trim().min(1, "Escribe el nombre de la persona o colectivo.");
 
+const optionalLabel = optionalBilingualText.transform((value) => value.es ? value : undefined).optional();
+const editorialPresentationSchema = z.object({
+  visible: z.boolean().optional(),
+  showHeading: z.boolean().optional(),
+  labels: z.object({
+    about: optionalLabel,
+    authorship: optionalLabel,
+    contribution: optionalLabel,
+    additionalCredits: optionalLabel,
+    location: optionalLabel,
+    client: optionalLabel,
+  }).transform((labels) => Object.fromEntries(Object.entries(labels).filter(([, value]) => value !== undefined))).optional(),
+});
+
 export const projectCreditsSchema = z.object({
+  editorialPresentation: editorialPresentationSchema.optional(),
   artisticAuthorship: z.array(z.object({
     name: nameSchema,
     role: optionalBilingualText.transform((value) => value.es ? value : undefined).optional(),
@@ -46,7 +63,7 @@ export const projectCreditsSchema = z.object({
 export const projectCreditFieldErrors = (issues: { path: PropertyKey[]; message: string }[]): Record<string, string> => {
   const errors: Record<string, string> = {};
   for (const issue of issues) {
-    if (!["artisticAuthorship", "studioContribution", "additionalCredits"].includes(String(issue.path[0]))) continue;
+    if (!["artisticAuthorship", "studioContribution", "additionalCredits", "editorialPresentation"].includes(String(issue.path[0]))) continue;
     const path = issue.path.join(".");
     errors[path] ??= issue.message;
   }
@@ -55,6 +72,7 @@ export const projectCreditFieldErrors = (issues: { path: PropertyKey[]; message:
 
 export const normalizeProjectCredits = (value: ProjectCreditsPayload): ProjectCredits => {
   const result = projectCreditsSchema.parse({
+    ...(value.editorialPresentation !== undefined ? { editorialPresentation: value.editorialPresentation } : {}),
     ...(value.artisticAuthorship !== undefined ? { artisticAuthorship: value.artisticAuthorship } : {}),
     ...(value.studioContribution !== undefined ? { studioContribution: value.studioContribution } : {}),
     ...(value.additionalCredits !== undefined ? { additionalCredits: value.additionalCredits } : {}),

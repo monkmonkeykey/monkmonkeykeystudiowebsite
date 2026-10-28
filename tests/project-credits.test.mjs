@@ -127,7 +127,9 @@ test('reorder authors and credits, edit a function, remove one credit, save and 
   assert.deepEqual(reloaded.artisticAuthorship, next.artisticAuthorship);
   assert.deepEqual(reloaded.additionalCredits, next.additionalCredits);
   const draft = createProjectCreditsDraft(reloaded);
-  assert.deepEqual(validateProjectCreditsDraft(draft).data, next);
+  const { editorialPresentation, ...reopenedCredits } = validateProjectCreditsDraft(draft).data;
+  assert.deepEqual(reopenedCredits, next);
+  assert.deepEqual(editorialPresentation, { visible: true, showHeading: true, labels: {} });
   for (const key of ['slug', 'name', 'subtitle', 'categories', 'year', 'startYear', 'endYear', 'client', 'location', 'cover', 'gallery', 'video', 'description', 'meta', 'entities', 'createdAt', 'order', 'isPrivate']) assert.deepEqual(saved()[key], original[key], key);
 });
 
@@ -187,7 +189,11 @@ test('a legacy document opens empty and can be saved with empty editorial fields
   const legacy = structuredClone(saved());
   const project = await fetchProjectBySlug(base().slug);
   const draft = createProjectCreditsDraft(project);
-  assert.deepEqual(draft, { artisticAuthorship: [], studioContribution: locale('', ''), additionalCredits: [] });
+  assert.deepEqual(draft.artisticAuthorship, []);
+  assert.deepEqual(draft.studioContribution, locale('', ''));
+  assert.deepEqual(draft.additionalCredits, []);
+  assert.equal(draft.editorialPresentation.visible, true);
+  assert.equal(draft.editorialPresentation.showHeading, true);
   const parsed = validateProjectCreditsDraft(draft);
   assert.equal(parsed.success, true);
   assert.equal((await patch({ ...base(), ...parsed.data })).status, 200);
@@ -223,11 +229,12 @@ test('Markdown readers accept legacy files and optional editorial frontmatter wi
     assert.equal(old.project.artisticAuthorship, undefined);
     assert.equal(old.project.studioContribution, undefined);
     assert.equal(old.project.additionalCredits, undefined);
-    fs.writeFileSync(file, `---\n${JSON.stringify({ ...frontmatter, ...credits(), isPrivate: true }, null, 2)}\n---\n`);
+    fs.writeFileSync(file, `---\n${JSON.stringify({ ...frontmatter, ...credits(), isPrivate: true, editorialPresentation: { visible: false, showHeading: false, labels: { about: locale('Obra', 'Work') } } }, null, 2)}\n---\n`);
     const next = readProjectFile(file);
     for (const field of Object.keys(credits())) assert.deepEqual(next.project[field], credits()[field]);
     for (const field of ['slug', 'cover', 'gallery', 'description', 'categories', 'entities', 'video', 'client', 'meta']) assert.deepEqual(next.project[field], old.project[field], field);
     assert.equal(next.project.isPrivate, true);
+    assert.deepEqual(next.project.editorialPresentation, { visible: false, showHeading: false, labels: { about: locale('Obra', 'Work') } });
     assert.equal(next.order, old.order);
     assert.equal(fs.readFileSync(sourcePath, 'utf8'), raw);
   } finally { fs.rmSync(dir, { recursive: true, force: true }); }
@@ -253,7 +260,7 @@ test('authentication, malformed JSON and database outages never write or report 
   assert.equal(writes, 0);
 });
 
-test('public credits render only explicit editorial data; all other project HTML stays unchanged in both languages', () => {
+test('integrated project information preserves content, credit order and the rest of the page in both languages', () => {
   const React = require('react');
   const { renderToStaticMarkup } = require('react-dom/server');
   const { ImageConfigContext } = require('next/dist/shared/lib/image-config-context.shared-runtime');
@@ -262,30 +269,125 @@ test('public credits render only explicit editorial data; all other project HTML
   const { ProjectDetail } = require('../src/components/projects/project-detail.tsx');
   const project = PROJECTS[0];
   const render = (project, language) => renderToStaticMarkup(React.createElement(ImageConfigContext.Provider, { value: { ...imageConfigDefault, remotePatterns: [{ hostname: 'res.cloudinary.com' }] } }, React.createElement(LocaleProvider, { value: { locale: language, setLocale() {} } }, React.createElement(ProjectDetail, { project, categoryLabels: {} }))));
+  const withoutAbout = html => {
+    const marker = html.indexOf('aria-labelledby="project-about-title"');
+    if (marker < 0) return html;
+    const start = html.lastIndexOf('<section', marker);
+    const tags = /<\/?section\b[^>]*>/g;
+    tags.lastIndex = start;
+    let depth = 0;
+    let tag;
+    while ((tag = tags.exec(html))) {
+      depth += tag[0].startsWith('</') ? -1 : 1;
+      if (!depth) return html.slice(0, start) + html.slice(tags.lastIndex);
+    }
+    throw new Error('Unclosed project information section');
+  };
   for (const language of ['es', 'en']) {
     const original = render(project, language);
     const html = render({ ...project, ...credits() }, language);
-    assert.ok(html.includes('id="project-credits-title"'));
+    assert.ok(html.includes('id="project-about-title"'));
+    assert.ok(!html.includes('id="project-credits-title"'));
     assert.ok(html.includes('Colectivo Uno'));
     assert.ok(html.includes(credits().studioContribution[language]));
     assert.ok(html.indexOf('Colectivo Uno') < html.indexOf('Artista Dos'));
     assert.ok(html.indexOf('Equipo A') < html.indexOf('Equipo B'));
-    assert.ok(html.indexOf('project-credits-title') < html.indexOf('project-gallery-title') || !html.includes('project-gallery-title'));
-    assert.equal(html.replace(/<section[^>]*aria-labelledby="project-credits-title">[\s\S]*?<\/section>/, ''), original);
+    assert.ok(html.indexOf('project-contribution-title') < html.indexOf('project-authorship-title'));
+    assert.ok(html.indexOf('project-authorship-title') < html.indexOf('project-additional-credits-title'));
+    assert.equal(withoutAbout(html), withoutAbout(original));
     for (const [fields, headings] of [
       [{}, []],
       [{ artisticAuthorship: [], studioContribution: locale(' ', ''), additionalCredits: [] }, []],
-      [{ artisticAuthorship: [{ name: 'Colectivo Uno' }] }, [language === 'es' ? 'Autoría artística' : 'Artistic authorship']],
-      [{ studioContribution: credits().studioContribution }, [language === 'es' ? 'Participación de monkmonkeykey' : 'monkmonkeykey’s contribution']],
-      [{ additionalCredits: credits().additionalCredits }, [language === 'es' ? 'Créditos adicionales' : 'Additional credits']],
+      [{ artisticAuthorship: [{ name: 'Colectivo Uno' }] }, ['project-authorship-title']],
+      [{ studioContribution: credits().studioContribution }, ['project-contribution-title']],
+      [{ additionalCredits: credits().additionalCredits }, ['project-additional-credits-title']],
     ]) {
       const html = render({ ...project, ...fields }, language);
-      const section = html.match(/<section[^>]*aria-labelledby="project-credits-title">[\s\S]*?<\/section>/)?.[0] ?? '';
-      assert.equal(Boolean(section), headings.length > 0);
-      assert.equal((section.match(/<h3/g) ?? []).length, headings.length);
-      for (const heading of headings) assert.ok(section.includes(heading));
+      assert.equal((html.match(/<h3/g) ?? []).length, (original.match(/<h3/g) ?? []).length + headings.length);
+      for (const heading of headings) assert.ok(html.includes(`id="${heading}"`));
       if (!headings.length) assert.equal(html, original);
     }
+    const minimal = { ...project, description: [], client: '', location: '', meta: [], artisticAuthorship: [], additionalCredits: [], studioContribution: undefined };
+    assert.ok(!render(minimal, language).includes('id="project-about-title"'));
+    for (const fields of [
+      { studioContribution: credits().studioContribution },
+      { artisticAuthorship: credits().artisticAuthorship },
+      { additionalCredits: credits().additionalCredits },
+      { description: [locale('Descripción completa', 'Full description')] },
+    ]) {
+      const singleColumn = render({ ...minimal, ...fields }, language);
+      assert.ok(singleColumn.includes('id="project-about-title"'));
+      assert.ok(!singleColumn.includes('contextColumns'));
+      assert.ok(!singleColumn.includes('<dl>'));
+    }
+    const duplicate = render({ ...project, client: locale('Colectivo Uno'), artisticAuthorship: [{ name: 'Colectivo Uno' }] }, language);
+    assert.equal((duplicate.match(/Colectivo Uno/g) ?? []).length, 2);
   }
   assert.equal(projectPayloadSchema.safeParse(base()).success, true);
+});
+
+test('per-project visibility and bilingual labels persist and reload without deleting information', async () => {
+  const presentation = { visible: false, showHeading: false, labels: {
+    about: locale('Acerca de la obra', 'About the work'),
+    authorship: locale('Creación', 'Creation'),
+    contribution: locale('Nuestro trabajo', 'Our work'),
+    additionalCredits: locale('Equipo', 'Team'),
+    location: locale('Sede', 'Venue'),
+    client: locale('Institución', 'Institution'),
+  } };
+  assert.equal((await collectionRoute.POST(request({ ...base(), ...credits(), editorialPresentation: presentation }))).status, 200);
+  const reloaded = await fetchProjectBySlug(base().slug);
+  assert.deepEqual(reloaded.editorialPresentation, presentation);
+  assert.deepEqual(reloaded.artisticAuthorship, credits().artisticAuthorship);
+  assert.deepEqual(reloaded.description, base().description);
+  assert.ok((await getProjects()).some(p => p.slug === base().slug));
+  const draft = createProjectCreditsDraft(reloaded);
+  assert.deepEqual(draft.editorialPresentation, presentation);
+  assert.deepEqual(validateProjectCreditsDraft(draft).data.editorialPresentation, presentation);
+  assert.equal((await patch(base())).status, 200);
+  assert.deepEqual(saved().editorialPresentation, presentation);
+  assert.equal((await patch({ ...base(), editorialPresentation: { visible: true, showHeading: true, labels: {} } })).status, 200);
+  assert.deepEqual(saved().editorialPresentation, { visible: true, showHeading: true, labels: {} });
+  assert.deepEqual(saved().additionalCredits, credits().additionalCredits);
+});
+
+test('custom labels require both languages and clearing a label restores the default without storing null entries', async () => {
+  const response = await collectionRoute.POST(request({ ...base(), editorialPresentation: { labels: { authorship: locale('Creación', '') } } }));
+  assert.equal(response.status, 400);
+  assert.ok((await response.json()).fieldErrors['editorialPresentation.labels.authorship.en']);
+  assert.equal(writes, 0);
+  const draft = createProjectCreditsDraft();
+  draft.editorialPresentation.labels.about.es = 'Obra';
+  assert.ok(validateProjectCreditsDraft(draft).errors['editorialPresentation.labels.about.en']);
+  assert.equal((await collectionRoute.POST(request({ ...base(), editorialPresentation: { labels: { about: locale(' ', '') } } }))).status, 200);
+  assert.deepEqual(saved().editorialPresentation.labels, {});
+  const { projectEditorialLabel } = require('../src/domain/project-presentation.ts');
+  assert.deepEqual(projectEditorialLabel(saved().editorialPresentation, 'about'), locale('Sobre el proyecto', 'About the project'));
+});
+
+test('public presentation can hide only the heading or the complete block and render all custom labels', () => {
+  const React = require('react');
+  const { renderToStaticMarkup } = require('react-dom/server');
+  const { ImageConfigContext } = require('next/dist/shared/lib/image-config-context.shared-runtime');
+  const { imageConfigDefault } = require('next/dist/shared/lib/image-config');
+  const { LocaleProvider } = require('../src/components/site/locale-context.tsx');
+  const { ProjectDetail } = require('../src/components/projects/project-detail.tsx');
+  const { PROJECT_EDITORIAL_LABELS } = require('../src/domain/project-presentation.ts');
+  const project = { ...PROJECTS[0], ...credits() };
+  const render = (presentation, language) => renderToStaticMarkup(React.createElement(ImageConfigContext.Provider, { value: { ...imageConfigDefault, remotePatterns: [{ hostname: 'res.cloudinary.com' }] } }, React.createElement(LocaleProvider, { value: { locale: language, setLocale() {} } }, React.createElement(ProjectDetail, { project: { ...project, editorialPresentation: presentation }, categoryLabels: {} }))));
+  for (const language of ['es', 'en']) {
+    const hiddenHeading = render({ showHeading: false }, language);
+    assert.ok(!hiddenHeading.includes('id="project-about-title"'));
+    assert.ok(hiddenHeading.includes('Colectivo Uno'));
+    assert.ok(hiddenHeading.includes(credits().studioContribution[language]));
+    assert.ok(hiddenHeading.includes('aria-label="'+PROJECT_EDITORIAL_LABELS.about[language]+'"'));
+    const hiddenBlock = render({ visible: false }, language);
+    assert.ok(!hiddenBlock.includes('Colectivo Uno'));
+    assert.ok(!hiddenBlock.includes('id="project-about-title"'));
+    assert.ok(!hiddenBlock.includes('id="project-authorship-title"'));
+    assert.ok(hiddenBlock.includes('Ampliar portada') || hiddenBlock.includes('Enlarge cover'));
+    const labels = Object.fromEntries(Object.keys(PROJECT_EDITORIAL_LABELS).map(key => [key, locale('Etiqueta '+key, 'Label '+key)]));
+    const customized = render({ labels }, language);
+    for (const key of Object.keys(labels)) assert.ok(customized.includes(labels[key][language]), key);
+  }
 });

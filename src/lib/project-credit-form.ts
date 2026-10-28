@@ -1,5 +1,6 @@
 import type { LocaleText } from "@/lib/i18n";
 import { projectCreditsSchema, projectCreditFieldErrors, type ProjectCredits } from "@/domain/project-credits";
+import { PROJECT_EDITORIAL_LABELS, type ProjectEditorialLabel } from "@/domain/project-presentation";
 
 // IDs exist only in the editor, to retain the correct input/focus when reordering.
 export type ProjectCreditEntryDraft = { id: string; name: string; role: LocaleText };
@@ -7,6 +8,11 @@ export type ProjectCreditsDraft = {
   artisticAuthorship: ProjectCreditEntryDraft[];
   studioContribution: LocaleText;
   additionalCredits: ProjectCreditEntryDraft[];
+  editorialPresentation: {
+    visible: boolean;
+    showHeading: boolean;
+    labels: Record<ProjectEditorialLabel, LocaleText>;
+  };
 };
 
 export const createProjectCreditEntry = (entry?: { name: string; role?: LocaleText }): ProjectCreditEntryDraft => ({
@@ -19,10 +25,19 @@ export const createProjectCreditsDraft = (project?: ProjectCredits): ProjectCred
   artisticAuthorship: (project?.artisticAuthorship ?? []).map(createProjectCreditEntry),
   studioContribution: { es: project?.studioContribution?.es ?? "", en: project?.studioContribution?.en ?? "" },
   additionalCredits: (project?.additionalCredits ?? []).map(createProjectCreditEntry),
+  editorialPresentation: {
+    visible: project?.editorialPresentation?.visible ?? true,
+    showHeading: project?.editorialPresentation?.showHeading ?? true,
+    labels: Object.fromEntries(Object.keys(PROJECT_EDITORIAL_LABELS).map((key) => {
+      const label = project?.editorialPresentation?.labels?.[key as ProjectEditorialLabel];
+      return [key, { es: label?.es ?? "", en: label?.en ?? "" }];
+    })) as Record<ProjectEditorialLabel, LocaleText>,
+  },
 });
 
 export const validateProjectCreditsDraft = (draft: ProjectCreditsDraft) => {
   const result = projectCreditsSchema.safeParse({
+    editorialPresentation: draft.editorialPresentation,
     artisticAuthorship: draft.artisticAuthorship.map(({ name, role }) => ({ name, role })),
     studioContribution: draft.studioContribution,
     additionalCredits: draft.additionalCredits.map(({ name, role }) => ({ name, role })),

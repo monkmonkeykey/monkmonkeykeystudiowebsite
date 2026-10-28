@@ -1,0 +1,364 @@
+{
+  "passed": true,
+  "protectedFiles": [
+    {
+      "path": "src/app/admin/login/page.client.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/admin/login/page.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/admin/page.client.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/admin/page.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/api/auth/login/route.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/api/auth/logout/route.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/api/clients/[slug]/route.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/api/clients/route.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/api/cloudinary/library/route.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/api/contact/route.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/api/diagnostics/database/route.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/api/projects/[slug]/route.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/api/projects/route.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/api/site/home/route.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/api/site/route.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/api/uploads/route.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/api/uploads/signature/route.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/clientes/page.client.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/clientes/page.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/contacto/page.client.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/contacto/page.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/favicon.ico",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/globals.css",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/home.module.css",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/layout.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/page.client.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/page.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/proyectos/[slug]/page.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/proyectos/page.client.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/proyectos/page.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/proyectos/projects.module.css",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/servicios/page.client.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/app/servicios/page.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/components/admin/HomeSettingsManager.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/components/admin/ProjectCreditsEditor.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/components/admin/ServiceHomeImagePicker.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/components/cloudinary/picker.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/components/site/CollaboratorCard.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/components/site/Footer.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/components/site/Header.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/components/site/PracticeGallery.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/components/site/SiteShell.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/components/site/Wordmark.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/components/site/collaborator-card.module.css",
+      "unchanged": true
+    },
+    {
+      "path": "src/components/site/locale-context.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/components/site/rich-text.tsx",
+      "unchanged": true
+    },
+    {
+      "path": "src/content/clients.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/content/navigation.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/content/projects.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/content/services.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/content/site.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/data/clients.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/data/projects.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/data/site.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/domain/home.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/domain/project-credits.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/domain/projects.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/domain/service-photos.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/domain/site.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/lib/admin-api.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/lib/env.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/lib/i18n.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/lib/project-credit-form.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/server/auth.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/server/clients.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/server/cloudinary.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/server/email.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/server/home.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/server/mongodb.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/server/projects.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/server/site.ts",
+      "unchanged": true
+    },
+    {
+      "path": "src/server/validation.ts",
+      "unchanged": true
+    }
+  ],
+  "contentFiles": [
+    {
+      "path": "content/clients/atlas-labs.md",
+      "unchanged": true
+    },
+    {
+      "path": "content/clients/aulalibre.md",
+      "unchanged": true
+    },
+    {
+      "path": "content/clients/logitrack.md",
+      "unchanged": true
+    },
+    {
+      "path": "content/clients/loop-brand-labs.md",
+      "unchanged": true
+    },
+    {
+      "path": "content/clients/museo-banco-de-mexico.md",
+      "unchanged": true
+    },
+    {
+      "path": "content/clients/museo-interactivo-de-economia.md",
+      "unchanged": true
+    },
+    {
+      "path": "content/clients/solaria.md",
+      "unchanged": true
+    },
+    {
+      "path": "content/clients/syntropy-labs.md",
+      "unchanged": true
+    },
+    {
+      "path": "content/projects/atlas-experience-lab.md",
+      "unchanged": true
+    },
+    {
+      "path": "content/projects/loop-brand-labs.md",
+      "unchanged": true
+    },
+    {
+      "path": "content/projects/museo-banco-mexico.md",
+      "unchanged": true
+    }
+  ],
+  "configuration": [
+    {
+      "path": "package.json",
+      "unchanged": true
+    },
+    {
+      "path": "package-lock.json",
+      "unchanged": true
+    },
+    {
+      "path": "next.config.ts",
+      "unchanged": true
+    }
+  ],
+  "projectJSXOutsideInformationUnchanged": true,
+  "projectCSSOutsideInformationUnchanged": true,
+  "checks": {
+    "lint": "passed",
+    "types": "passed",
+    "build": "passed",
+    "projectTests": 14,
+    "homeTests": 11,
+    "serviceTests": 5
+  },
+  "databaseWrites": false
+}

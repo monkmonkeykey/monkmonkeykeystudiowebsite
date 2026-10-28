@@ -1,6 +1,7 @@
 "use client";
 
 import { useId } from "react";
+import { PROJECT_EDITORIAL_LABELS, projectEditorialLabel, type ProjectEditorialLabel } from "@/domain/project-presentation";
 import {
   createProjectCreditEntry, moveProjectCredit,
   type ProjectCreditsDraft, type ProjectCreditEntryDraft,
@@ -16,15 +17,16 @@ export default function ProjectCreditsEditor({ value, onChange, errors, disabled
   disabled?: boolean;
 }) {
   const id = useId();
-  const field = (label: string, path: string, content: string, change: (text: string) => void, multiline = false, fieldId = path) => {
+  const presentation = value.editorialPresentation;
+  const field = (label: string, path: string, content: string, change: (text: string) => void, multiline = false, fieldId = path, placeholder?: string) => {
     const error = errors[path];
     const inputId = `${id}-${fieldId}`;
     const props = {
-      id: inputId, value: content, onChange: (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => change(event.target.value),
+      id: inputId, value: content, placeholder, onChange: (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => change(event.target.value),
       "aria-invalid": Boolean(error), "aria-describedby": error ? `${inputId}-error` : undefined,
       className: inputClass,
     };
-    return <div className="space-y-2">
+    return <div key={inputId} className="space-y-2">
       <label htmlFor={inputId} className="block text-xs font-semibold uppercase tracking-[0.18em] text-foreground/60">{label}</label>
       {multiline ? <textarea {...props} rows={4} /> : <input {...props} />}
       {error && <p id={`${inputId}-error`} role="alert" className="text-sm text-red-600">{error}</p>}
@@ -69,9 +71,39 @@ export default function ProjectCreditsEditor({ value, onChange, errors, disabled
   return <fieldset disabled={disabled} className="min-w-0 space-y-6 rounded-3xl border border-foreground/10 p-4 sm:p-6">
     <legend className="px-2 text-base font-semibold text-foreground">Autoría, participación y créditos</legend>
     <p className="text-sm text-foreground/60">Información opcional e independiente del cliente y las organizaciones asociadas. No se asigna autoría ni participación automáticamente.</p>
-    {list("artisticAuthorship", "Autoría artística", "Agregar artista")}
+    <fieldset className="min-w-0 space-y-3 rounded-2xl border border-foreground/10 p-4">
+      <legend className="px-1 text-sm font-semibold text-foreground/80">Presentación en la ficha pública</legend>
+      <label className="flex min-h-11 items-center gap-3 text-sm">
+        <input type="checkbox" checked={presentation.visible}
+          onChange={(event) => onChange({ ...value, editorialPresentation: { ...presentation, visible: event.target.checked } })} />
+        Mostrar el bloque de información del proyecto
+      </label>
+      <label className="flex min-h-11 items-center gap-3 text-sm">
+        <input type="checkbox" checked={presentation.showHeading}
+          onChange={(event) => onChange({ ...value, editorialPresentation: { ...presentation, showHeading: event.target.checked } })} />
+        Mostrar el título principal del bloque
+      </label>
+      <p className="text-sm text-foreground/60">Para quitar solo «Sobre el proyecto», desmarca el título. Al ocultar todo el bloque se retiran de la ficha la descripción, participación, información, autoría y créditos; sus datos se conservan para volver a mostrarlos.</p>
+      <details className="min-w-0">
+        <summary className="min-h-11 cursor-pointer py-3 text-sm font-semibold text-foreground/80">Personalizar títulos y etiquetas</summary>
+        <p className="mb-4 text-sm text-foreground/60">Estos ajustes son exclusivos de este proyecto. Completa ES y EN para personalizar una etiqueta. Deja ambas versiones vacías para recuperar el nombre predeterminado.</p>
+        <div className="space-y-4">
+          {(Object.keys(PROJECT_EDITORIAL_LABELS) as ProjectEditorialLabel[]).map((key) => <div key={key} className="grid gap-3 md:grid-cols-2">
+            {(["es", "en"] as const).map((locale) => field(
+              `${PROJECT_EDITORIAL_LABELS[key].es} — ${locale.toUpperCase()}`,
+              `editorialPresentation.labels.${key}.${locale}`,
+              presentation.labels[key][locale],
+              (text) => onChange({ ...value, editorialPresentation: { ...presentation, labels: {
+                ...presentation.labels, [key]: { ...presentation.labels[key], [locale]: text },
+              } } }), false, `presentation-${key}-${locale}`, PROJECT_EDITORIAL_LABELS[key][locale],
+            ))}
+          </div>)}
+        </div>
+      </details>
+    </fieldset>
+    {list("artisticAuthorship", projectEditorialLabel(presentation, "authorship").es, "Agregar artista")}
     <fieldset className="min-w-0 space-y-3">
-      <legend className="text-sm font-semibold text-foreground/80">Participación de monkmonkeykey</legend>
+      <legend className="text-sm font-semibold text-foreground/80">{projectEditorialLabel(presentation, "contribution").es}</legend>
       <p className="text-sm text-foreground/60">Describe las tareas realizadas por el estudio. Deja ambas versiones vacías si no deseas registrar participación.</p>
       <div className="grid gap-3 md:grid-cols-2">
         {field("Participación — ES", "studioContribution.es", value.studioContribution.es, (es) => onChange({ ...value, studioContribution: { ...value.studioContribution, es } }), true)}
@@ -79,6 +111,6 @@ export default function ProjectCreditsEditor({ value, onChange, errors, disabled
       </div>
       {errors.studioContribution && <p role="alert" className="text-sm text-red-600">{errors.studioContribution}</p>}
     </fieldset>
-    {list("additionalCredits", "Créditos adicionales", "Agregar crédito")}
+    {list("additionalCredits", projectEditorialLabel(presentation, "additionalCredits").es, "Agregar crédito")}
   </fieldset>;
 }

@@ -1,0 +1,38 @@
+{
+  "observedAt": "2026-10-28T01:21:30.630Z",
+  "source": "https://www.monkmonkeykey.com/api/projects",
+  "slug": "otro_dia_otro_dolar",
+  "values": {
+    "description": [
+      {
+        "es": "Detalle de instalación y ensamblaje",
+        "en": "Detalle de instalación y ensamblaje"
+      }
+    ],
+    "location": {
+      "es": "SOMA México",
+      "en": "SOMA México"
+    },
+    "client": {
+      "es": "karen-aixa",
+      "en": "karen-aixa"
+    },
+    "clientDisplayName": "Karen Aixa",
+    "meta": [],
+    "artisticAuthorship": [
+      {
+        "name": "Karen Aixa",
+        "role": {
+          "es": "Artista",
+          "en": "Artista"
+        }
+      }
+    ],
+    "studioContribution": {
+      "es": "Producción de sistema interactivo.",
+      "en": "Producción de sistema interactivo."
+    },
+    "additionalCredits": []
+  },
+  "productionWrites": false
+}

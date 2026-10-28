@@ -10,19 +10,13 @@ import { translate, type LocaleText } from "@/lib/i18n";
 import { useLocale } from "@/components/site/locale-context";
 import { getPlainText, RichText } from "@/components/site/rich-text";
 import { CollaboratorCard, CollaboratorGrid } from "@/components/site/CollaboratorCard";
+import { projectEditorialLabel, type ProjectEditorialLabel } from "@/domain/project-presentation";
 import styles from "./project-detail.module.css";
 
 const labels = {
   back: { es: "Volver a proyectos", en: "Back to projects" },
   backAll: { es: "Volver a todos los proyectos", en: "Back to all projects" },
-  about: { es: "Sobre el proyecto", en: "About the project" },
   facts: { es: "Ficha del proyecto", en: "Project information" },
-  credits: { es: "Autoría y producción", en: "Authorship and production" },
-  authorship: { es: "Autoría artística", en: "Artistic authorship" },
-  contribution: { es: "Participación de monkmonkeykey", en: "monkmonkeykey’s contribution" },
-  additionalCredits: { es: "Créditos adicionales", en: "Additional credits" },
-  location: { es: "Lugar", en: "Location" },
-  client: { es: "Cliente / institución", en: "Client / institution" },
   video: { es: "Video", en: "Video" },
   gallery: { es: "Galería", en: "Gallery" },
   collaborations: { es: "Colaboraciones", en: "Collaborations" },
@@ -130,6 +124,7 @@ function ProjectGallery({ images, locale, alt, captions, onOpen }: ProjectGaller
 export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
   const { locale } = useLocale();
   const text = (value: LocaleText) => plain(translate(locale, value));
+  const editorialLabel = (key: ProjectEditorialLabel) => projectEditorialLabel(project.editorialPresentation, key);
   const localized = (value: LocalizedValue) => typeof value === "string" ? plain(value) : text(value);
   const photoAlt = (image: ProjectGalleryImage) => {
     const alt = text(image.alt);
@@ -161,8 +156,8 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
   const clientValue = localized(project.client);
   const clientName = project.entities.find((entity) => entity.slug === clientValue)?.name ?? clientValue;
   const detailItems = [
-    { label: labels.location, value: localized(project.location) },
-    { label: labels.client, value: clientName },
+    { label: editorialLabel("location"), value: localized(project.location) },
+    { label: editorialLabel("client"), value: clientName },
     ...project.meta.map((item) => ({ label: item.label, value: localized(item.value) })),
   ].filter((item) => text(item.label) && item.value && !(
     /^(?:año|year|periodo|período|period)$/i.test(text(item.label)) && item.value === timeline
@@ -175,7 +170,10 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
   const additionalCredits = (project.additionalCredits ?? []).map((credit) => ({
     name: plain(credit.name), role: text(credit.role),
   })).filter((credit) => credit.name);
-  const hasCredits = artisticAuthorship.length > 0 || Boolean(studioContribution) || additionalCredits.length > 0;
+  const hasNarrative = description.length > 0 || Boolean(studioContribution);
+  const hasInformation = detailItems.length > 0 || artisticAuthorship.length > 0;
+  const hasAbout = project.editorialPresentation?.visible !== false && (hasNarrative || hasInformation || additionalCredits.length > 0);
+  const showAboutHeading = project.editorialPresentation?.showHeading !== false;
 
   const openViewer = (index: number, event: MouseEvent<HTMLButtonElement>) => {
     openingButtonRef.current = event.currentTarget;
@@ -228,43 +226,43 @@ export function ProjectDetail({ project, categoryLabels }: ProjectDetailProps) {
         {coverCaptions.length > 0 && <figcaption className={styles.caption}>{coverCaptions.map((caption) => <p key={caption}>{caption}</p>)}</figcaption>}
       </figure>}
 
-      {(description.length > 0 || detailItems.length > 0) && <section aria-label={text(labels.about)} className={`${styles.context} ${description.length && detailItems.length ? styles.contextColumns : ""}`}>
-        {description.length > 0 && <div className={styles.description}>
-          {description.map((paragraph, index) => <RichText key={`${project.slug}-paragraph-${index}`} value={paragraphCopy(paragraph)} className={styles.paragraph} />)}
+      {hasAbout && <section className={styles.section} aria-labelledby={showAboutHeading ? "project-about-title" : undefined}
+        aria-label={showAboutHeading ? undefined : text(editorialLabel("about"))}>
+        {showAboutHeading && <h2 id="project-about-title">{text(editorialLabel("about"))}</h2>}
+        {(hasNarrative || hasInformation) && <div className={`${styles.context} ${hasNarrative && hasInformation ? styles.contextColumns : ""}`}>
+          {hasNarrative && <div className={styles.narrative}>
+            {description.length > 0 && <div className={styles.description}>
+              {description.map((paragraph, index) => <RichText key={`${project.slug}-paragraph-${index}`} value={paragraphCopy(paragraph)} className={styles.paragraph} />)}
+            </div>}
+            {studioContribution && <section className={styles.contribution} aria-labelledby="project-contribution-title">
+              <h3 id="project-contribution-title">{text(editorialLabel("contribution"))}</h3>
+              <p className={styles.studioContribution}>{studioContribution}</p>
+            </section>}
+          </div>}
+          {hasInformation && <aside aria-label={text(labels.facts)} className={styles.facts}>
+            {detailItems.length > 0 && <dl>{detailItems.map((item, index) => <div key={`${project.slug}-detail-${index}`}>
+              <dt>{text(item.label)}</dt><dd>{item.value}</dd>
+            </div>)}</dl>}
+            {artisticAuthorship.length > 0 && <section className={styles.authorship} aria-labelledby="project-authorship-title">
+              <h3 id="project-authorship-title">{text(editorialLabel("authorship"))}</h3>
+              <ol className={styles.creditsList} role="list">
+                {artisticAuthorship.map((author, index) => <li key={`${index}-${author.name}`}>
+                  <p className={styles.creditName}>{author.name}</p>
+                  {author.role && <p className={styles.creditRole}>{author.role}</p>}
+                </li>)}
+              </ol>
+            </section>}
+          </aside>}
         </div>}
-        {detailItems.length > 0 && <aside aria-label={text(labels.facts)} className={styles.facts}>
-          <dl>{detailItems.map((item, index) => <div key={`${project.slug}-detail-${index}`}>
-            <dt>{text(item.label)}</dt><dd>{item.value}</dd>
-          </div>)}</dl>
-        </aside>}
-      </section>}
-
-      {hasCredits && <section className={styles.section} aria-labelledby="project-credits-title">
-        <h2 id="project-credits-title">{text(labels.credits)}</h2>
-        <div className={styles.creditsGrid}>
-          {artisticAuthorship.length > 0 && <div className={styles.creditsGroup}>
-            <h3>{text(labels.authorship)}</h3>
-            <ol className={styles.creditsList} role="list">
-              {artisticAuthorship.map((author, index) => <li key={`${index}-${author.name}`}>
-                <p className={styles.creditName}>{author.name}</p>
-                {author.role && <p className={styles.creditRole}>{author.role}</p>}
-              </li>)}
-            </ol>
-          </div>}
-          {studioContribution && <div className={styles.creditsGroup}>
-            <h3>{text(labels.contribution)}</h3>
-            <p className={styles.studioContribution}>{studioContribution}</p>
-          </div>}
-          {additionalCredits.length > 0 && <div className={styles.creditsGroup}>
-            <h3>{text(labels.additionalCredits)}</h3>
-            <ol className={styles.creditsList} role="list">
+        {additionalCredits.length > 0 && <section className={styles.additionalCredits} aria-labelledby="project-additional-credits-title">
+            <h3 id="project-additional-credits-title">{text(editorialLabel("additionalCredits"))}</h3>
+            <ol className={`${styles.creditsList} ${styles.productionCredits}`} role="list">
               {additionalCredits.map((credit, index) => <li key={`${index}-${credit.name}`}>
                 <p className={styles.creditName}>{credit.name}</p>
                 {credit.role && <p className={styles.creditRole}>{credit.role}</p>}
               </li>)}
             </ol>
-          </div>}
-        </div>
+        </section>}
       </section>}
 
       {project.video && <section className={styles.section} aria-labelledby="project-video-title">
